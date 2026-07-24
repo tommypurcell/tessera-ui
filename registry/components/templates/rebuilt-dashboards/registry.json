@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "name": "rebuilt-dashboards",
+  "title": "Rebuilt Dashboards",
+  "description": "Custom-built dashboard shells that establish hierarchy before adding product-specific data.",
+  "category": "templates",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["dashboard", "shell", "settings", "template", "custom-built"],
+  "useWhen": [
+    "You need a calm, responsive starting structure for an authenticated product surface."
+  ],
+  "avoidWhen": [
+    "You need a finished product workflow with domain-specific navigation and data behavior."
+  ],
+  "dependencies": ["No external runtime dependency."],
+  "responsiveBehavior": "The desktop rail becomes a compact header and content remains constrained with consistent page padding.",
+  "accessibility": [
+    "Navigation is contained in a landmark with a visible current destination.",
+    "The document keeps a logical heading order and usable focus targets."
+  ],
+  "compatibleWith": ["charts", "tables", "sidebars", "settings forms"],
+  "variants": [
+    {
+      "id": "dashboard-template",
+      "title": "Dashboard template",
+      "description": "A complete but intentionally quiet dashboard frame with navigation, heading hierarchy, and summary surfaces.",
+      "source": {
+        "html": "../../../../public/examples/templates/rebuilt-dashboards/1.html",
+        "tsx": "tsx/RebuiltDashboards.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "responsive"],
+      "accessibility": ["Keep navigation and main content landmarks distinct."]
+    },
+    {
+      "id": "dashboard-shell",
+      "title": "Dashboard shell",
+      "description": "A reusable shell that supplies the content rail, top bar, and responsive surface without product assumptions.",
+      "source": {
+        "html": "../../../../public/examples/templates/rebuilt-dashboards/1.html",
+        "tsx": "tsx/RebuiltDashboards.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "collapsed"],
+      "accessibility": ["Provide a labelled navigation toggle at compact widths."]
+    },
+    {
+      "id": "settings-layout",
+      "title": "Settings layout",
+      "description": "A focused settings frame with section navigation and a readable content column for forms.",
+      "source": {
+        "html": "../../../../public/examples/templates/rebuilt-dashboards/1.html",
+        "tsx": "tsx/RebuiltDashboards.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "mobile"],
+      "accessibility": ["Use section headings and mark the active settings section."]
+    }
+  ]
+}

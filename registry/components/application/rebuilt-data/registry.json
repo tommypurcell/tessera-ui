@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "name": "rebuilt-data",
+  "title": "Rebuilt Data Views",
+  "description": "Custom-built data primitives for readable charts and tables in application interfaces.",
+  "category": "application",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["chart", "table", "data", "custom-built", "tailwind"],
+  "useWhen": [
+    "You need a readable data surface that can be composed into an application workflow."
+  ],
+  "avoidWhen": ["You need a complete analytics dashboard with domain-specific data behavior."],
+  "dependencies": ["No external runtime dependency."],
+  "responsiveBehavior": "Tables scroll horizontally when needed and charts preserve their visual hierarchy at narrower widths.",
+  "accessibility": [
+    "Charts include a visible summary and tables retain native row and header semantics.",
+    "Color is paired with labels and values rather than carrying meaning alone."
+  ],
+  "compatibleWith": ["filters", "cards", "dashboards"],
+  "variants": [
+    {
+      "id": "chart",
+      "title": "Chart",
+      "description": "A compact data visualization with direct labels, a quiet grid, and a clear primary series.",
+      "source": {
+        "html": "../../../../public/examples/application/rebuilt-data/1.html",
+        "tsx": "tsx/RebuiltData.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "loading", "empty"],
+      "accessibility": ["Pair the visual with a text summary or accessible data table."]
+    },
+    {
+      "id": "data-table",
+      "title": "Data table",
+      "description": "A compact table that uses alignment, spacing, and restrained borders to keep rows scannable.",
+      "source": {
+        "html": "../../../../public/examples/application/rebuilt-data/1.html",
+        "tsx": "tsx/RebuiltData.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "selected", "empty"],
+      "accessibility": ["Use scoped column headers and preserve keyboard access for row actions."]
+    }
+  ]
+}

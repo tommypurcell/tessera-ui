@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "name": "rebuilt-sections",
+  "title": "Rebuilt Sections",
+  "description": "Custom-built marketing sections for navigation, authentication, and pricing decisions.",
+  "category": "marketing",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["navigation", "authentication", "pricing", "marketing", "custom-built"],
+  "useWhen": [
+    "You need a clear marketing section that leads visitors toward one understandable next step."
+  ],
+  "avoidWhen": [
+    "The section requires product-specific business logic that belongs in the consuming app."
+  ],
+  "dependencies": ["No external runtime dependency."],
+  "responsiveBehavior": "Sections collapse into a single readable column while preserving action prominence and content order.",
+  "accessibility": [
+    "Navigation uses landmarks and visible focus states.",
+    "Forms and pricing actions retain meaningful labels and heading hierarchy."
+  ],
+  "compatibleWith": ["hero sections", "forms", "cards", "footers"],
+  "variants": [
+    {
+      "id": "navigation",
+      "title": "Navigation",
+      "description": "A restrained marketing navigation with one clear primary action and a compact responsive rhythm.",
+      "source": {
+        "html": "../../../../public/examples/marketing/rebuilt-sections/1.html",
+        "tsx": "tsx/RebuiltSections.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "mobile"],
+      "accessibility": ["Use a navigation landmark and a labelled menu toggle on small screens."]
+    },
+    {
+      "id": "authentication-layout",
+      "title": "Authentication layout",
+      "description": "A focused sign-in frame that gives the form priority while keeping supporting context quiet.",
+      "source": {
+        "html": "../../../../public/examples/marketing/rebuilt-sections/1.html",
+        "tsx": "tsx/RebuiltSections.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "invalid", "loading"],
+      "accessibility": [
+        "Associate labels and errors with their controls and keep the submit action explicit."
+      ]
+    },
+    {
+      "id": "pricing",
+      "title": "Pricing",
+      "description": "A comparison section with one emphasized plan, short benefit groups, and an obvious decision path.",
+      "source": {
+        "html": "../../../../public/examples/marketing/rebuilt-sections/1.html",
+        "tsx": "tsx/RebuiltSections.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "selected", "responsive"],
+      "accessibility": [
+        "Do not communicate plan differences with color alone; retain visible names and values."
+      ]
+    }
+  ]
+}

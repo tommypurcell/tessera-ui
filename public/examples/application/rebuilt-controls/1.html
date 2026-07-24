@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="/component.css" />
+  </head>
+  <body>
+    <div class="grid max-w-2xl gap-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+      <div class="flex flex-wrap items-center gap-2">
+        <button class="rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white">
+          Open command menu
+        </button>
+        <button
+          class="rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700"
+        >
+          Select date
+        </button>
+        <button
+          class="rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700"
+        >
+          Upload files
+        </button>
+      </div>
+      <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <input
+          aria-label="Search"
+          placeholder="Search"
+          class="h-10 rounded-lg border border-slate-300 px-3 text-sm"
+        />
+        <input
+          aria-label="Date"
+          type="date"
+          class="h-10 rounded-lg border border-slate-300 px-3 text-sm"
+        />
+        <div
+          class="col-span-2 flex h-10 items-center gap-2 rounded-lg border border-slate-300 px-3 text-sm text-slate-500"
+        >
+          <span class="rounded bg-blue-50 px-2 py-1 text-xs text-blue-700">Design ×</span
+          ><span>Add filter…</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-2 text-xs text-slate-500">
+        <span class="rounded-full bg-emerald-50 px-2 py-1 text-emerald-700">Ready</span
+        ><span>Keyboard-first, focus-visible, responsive</span>
+      </div>
+    </div>
+  </body>
+</html>
