@@ -12,4 +12,8 @@ components:
   - { title: 'Layout' }
 ---
 
-Every named primitive in this source is intentionally small: it owns a visual atom or native control and leaves larger composition to the consuming component.
+Every named primitive in this source is intentionally small: it owns one visual atom or native control and leaves larger composition to the consuming component.
+
+The shared contract is deliberately predictable: `xs` through `xl` sizes map to 24, 32, 40, 48, and 56px; semantic tones stay consistent across signals, controls, and progress; focus-visible rings remain outside the control; native inputs retain keyboard behavior; and motion is guarded with `motion-safe` utilities. Dark classes are included at the atom boundary so composed components do not need to rewrite every state.
+
+These are the pieces to compose into buttons, cards, dialogs, menus, tables, and sidebars—not finished components by themselves.
