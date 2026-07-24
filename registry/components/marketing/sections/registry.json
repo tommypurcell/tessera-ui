@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "name": "marketing-sections",
+  "title": "Sections",
+  "description": "Section components created with Tailwind CSS. These responsive, SEO-optimized layouts are perfect for building content blocks, feature sections, and landing page segments for marketing websites and web applications.",
+  "category": "marketing/content",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "section",
+    "content",
+    "image",
+    "split-layout",
+    "landing-page",
+    "marketing"
+  ],
+  "useWhen": [
+    "Explaining a feature, product benefit, or story with paired copy and an illustrative image.",
+    "Breaking a landing page into scannable, visually distinct content sections."
+  ],
+  "avoidWhen": [
+    "The image is purely decorative and creates an unnecessary large gap.",
+    "The content is a dense comparison or task workflow that needs a more structured layout."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Split layouts stack image and content vertically on small screens. Preserve a comfortable text measure and avoid placing essential copy over an image at narrow widths.",
+  "accessibility": [
+    "Use a meaningful heading that fits the page outline.",
+    "Decorative images use empty alt text; informative images need concise descriptive alt text.",
+    "Keep source order logical when CSS visually rearranges columns."
+  ],
+  "compatibleWith": [
+    "marketing-feature-grids",
+    "marketing-ctas",
+    "marketing-banners"
+  ],
+  "variants": [
+    {
+      "id": "sections-1",
+      "title": "Content with image, 1/2 grid",
+      "description": "Copy-and-image section using a 1/2 grid column proportion that balances explanatory text with visual support.",
+      "source": {
+        "html": "../../../../public/examples/marketing/sections/1.html",
+        "tsx": "tsx/SectionsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use a meaningful heading that fits the page outline."
+      ]
+    },
+    {
+      "id": "sections-2",
+      "title": "Content with image, 2/3 grid",
+      "description": "Copy-and-image section using a 2/3 grid column proportion that balances explanatory text with visual support.",
+      "source": {
+        "html": "../../../../public/examples/marketing/sections/2.html",
+        "tsx": "tsx/SectionsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use a meaningful heading that fits the page outline."
+      ]
+    },
+    {
+      "id": "sections-3",
+      "title": "Content with image, 3/2 grid",
+      "description": "Copy-and-image section using a 3/2 grid column proportion that balances explanatory text with visual support.",
+      "source": {
+        "html": "../../../../public/examples/marketing/sections/3.html",
+        "tsx": "tsx/SectionsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use a meaningful heading that fits the page outline."
+      ]
+    },
+    {
+      "id": "sections-4",
+      "title": "Content with image, vertical split",
+      "description": "Copy-and-image section using a vertical split column proportion that balances explanatory text with visual support.",
+      "source": {
+        "html": "../../../../public/examples/marketing/sections/4.html",
+        "tsx": "tsx/SectionsVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use a meaningful heading that fits the page outline."
+      ]
+    }
+  ]
+}

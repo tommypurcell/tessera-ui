@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "marketing-newsletter-signup",
+  "title": "Newsletter Signup",
+  "description": "Compact email capture forms for embedding within marketing pages, with a simple inline signup and a centered-layout variant suitable for mid-page or footer placement.",
+  "category": "marketing/forms",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["newsletter", "email", "signup", "subscribe", "form", "lead", "marketing"],
+  "useWhen": [
+    "Capturing email leads inline on a blog, resource page, or between content sections.",
+    "Adding an email subscription form to the footer without a full contact form.",
+    "Offering a content upgrade or update notification on a product or documentation page."
+  ],
+  "avoidWhen": [
+    "A full lead-capture form with name, company, and message is needed — use a contact form instead.",
+    "The page already has a newsletter CTA in the CTA section — duplicate signups add noise.",
+    "Subscribers need to select preferences or lists — use a form with checkboxes instead."
+  ],
+  "dependencies": ["@tailwindcss/forms"],
+  "responsiveBehavior": "Inline signup forms stack the email input and subscribe button vertically on small screens. Centered variants maintain their center alignment but compress padding on mobile.",
+  "accessibility": [
+    "The email input must have a visible <label> or aria-label — placeholder text is not a substitute.",
+    "The subscribe button label must clearly describe the action (e.g., 'Subscribe to updates').",
+    "After form submission, provide a success confirmation that is announced via aria-live='polite'."
+  ],
+  "compatibleWith": ["marketing-footers", "marketing-ctas", "marketing-sections"],
+  "variants": [
+    {
+      "id": "newsletter-signup-1",
+      "title": "Simple signup",
+      "description": "Inline left-aligned newsletter form with a short headline, email input, and subscribe button — for embedding in footers and content sections.",
+      "source": {
+        "html": "../../../../public/examples/marketing/newsletter-signup/1.html",
+        "tsx": "tsx/NewsletterSignupVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Email input has a linked label; subscribe button has a descriptive label; success message uses aria-live."
+      ]
+    },
+    {
+      "id": "newsletter-signup-1-dark",
+      "title": "Simple signup (Dark)",
+      "description": "Inline newsletter signup form adapted for dark marketing page and footer surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/newsletter-signup/1-dark.html",
+        "tsx": "tsx/NewsletterSignupVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Email input and subscribe button must meet WCAG AA contrast on dark form backgrounds."
+      ]
+    },
+    {
+      "id": "newsletter-signup-2",
+      "title": "Simple signup centered",
+      "description": "Centered newsletter form with a headline, short description, and email input — suited for dedicated section blocks and mid-page conversion moments.",
+      "source": {
+        "html": "../../../../public/examples/marketing/newsletter-signup/2.html",
+        "tsx": "tsx/NewsletterSignupVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Centered email input must have a linked label or aria-label; heading introduces the signup context."
+      ]
+    },
+    {
+      "id": "newsletter-signup-2-dark",
+      "title": "Simple signup centered (Dark)",
+      "description": "Centered newsletter signup section adapted for dark marketing page surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/newsletter-signup/2-dark.html",
+        "tsx": "tsx/NewsletterSignupVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Heading, input, and subscribe button must meet WCAG AA contrast on dark section backgrounds."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "name": "marketing-contact-forms",
+  "title": "Contact Forms",
+  "description": "Lead capture and inquiry forms for marketing websites, with base, triage-category, checkbox-consent, grid-layout, and side-by-side-with-description variants for contacting sales, support, or general inquiries.",
+  "category": "marketing/forms",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["contact", "form", "lead", "inquiry", "email", "marketing", "sales"],
+  "useWhen": [
+    "Capturing sales leads or support inquiries on a marketing website contact page.",
+    "Collecting user categorization (triage) before routing to the right team via subject-line or category selection.",
+    "Presenting a form alongside company contact details (address, phone, map) in a split layout."
+  ],
+  "avoidWhen": [
+    "Complex multi-step qualification flows — use a wizard or multi-step form component instead.",
+    "Authentication or account forms — use dedicated login/signup components.",
+    "The primary goal is newsletter subscription — use newsletter-signup components instead."
+  ],
+  "dependencies": ["@tailwindcss/forms"],
+  "responsiveBehavior": "Side-by-side layouts with description collapse to stacked single-column on mobile. Grid layouts reflow from two-column to single-column field layout on small screens.",
+  "accessibility": [
+    "Every form field must have a visible <label> element linked by for/id.",
+    "Required fields must be indicated both visually (asterisk) and programmatically (required attribute or aria-required).",
+    "Error messages must be linked to their field via aria-describedby and not communicated by color alone."
+  ],
+  "compatibleWith": ["marketing-ctas", "marketing-sections", "marketing-newsletter-signup"],
+  "variants": [
+    {
+      "id": "contact-forms-1",
+      "title": "Base",
+      "description": "Standard contact form with name, email, subject, and message fields — the minimal pattern for marketing contact pages.",
+      "source": {
+        "html": "../../../../public/examples/marketing/contact-forms/1.html",
+        "tsx": "tsx/ContactFormsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "All fields must have linked <label> elements; submit button label clearly describes the action."
+      ]
+    },
+    {
+      "id": "contact-forms-1-dark",
+      "title": "Base (Dark)",
+      "description": "Standard contact form adapted for dark marketing surfaces with dark input backgrounds and light labels.",
+      "source": {
+        "html": "../../../../public/examples/marketing/contact-forms/1-dark.html",
+        "tsx": "tsx/ContactFormsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Input text, labels, and placeholder text must meet WCAG AA contrast on dark input backgrounds."
+      ]
+    },
+    {
+      "id": "contact-forms-2",
+      "title": "Base with triage",
+      "description": "Contact form with a subject-type or department selector to route inquiries to the right team — sales, support, press, or partnerships.",
+      "source": {
+        "html": "../../../../public/examples/marketing/contact-forms/2.html",
+        "tsx": "tsx/ContactFormsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Triage select must have a linked label; selected option value is announced when changed."
+      ]
+    },
+    {
+      "id": "contact-forms-2-dark",
+      "title": "Base with triage (Dark)",
+      "description": "Triage contact form adapted for dark marketing surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/contact-forms/2-dark.html",
+        "tsx": "tsx/ContactFormsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Select input and label must meet contrast requirements on dark form backgrounds."
+      ]
+    },
+    {
+      "id": "contact-forms-3",
+      "title": "Base with checkboxes",
+      "description": "Contact form with checkbox consent fields for GDPR marketing consent, privacy policy acceptance, or inquiry type selection.",
+      "source": {
+        "html": "../../../../public/examples/marketing/contact-forms/3.html",
+        "tsx": "tsx/ContactFormsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Checkbox groups must be wrapped in <fieldset>/<legend>; each checkbox must have a linked <label>."
+      ]
+    },
+    {
+      "id": "contact-forms-3-dark",
+      "title": "Base with checkboxes (Dark)",
+      "description": "Checkbox-consent contact form adapted for dark marketing surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/contact-forms/3-dark.html",
+        "tsx": "tsx/ContactFormsVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Checkbox indicators and labels must meet WCAG AA contrast on dark form backgrounds."
+      ]
+    },
+    {
+      "id": "contact-forms-4",
+      "title": "Grid",
+      "description": "Two-column grid form layout placing first name, last name, email, and phone side by side — reduces vertical height for longer contact forms.",
+      "source": {
+        "html": "../../../../public/examples/marketing/contact-forms/4.html",
+        "tsx": "tsx/ContactFormsVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Grid layout does not change semantic requirements — each field still needs a linked label."
+      ]
+    },
+    {
+      "id": "contact-forms-4-dark",
+      "title": "Grid (Dark)",
+      "description": "Two-column grid contact form adapted for dark marketing surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/contact-forms/4-dark.html",
+        "tsx": "tsx/ContactFormsVariant4Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "All input fields in the grid must meet contrast requirements on dark backgrounds."
+      ]
+    },
+    {
+      "id": "contact-forms-5",
+      "title": "Side-by-side form with description",
+      "description": "Split layout with a company description, contact details, and social links on the left and the form on the right — for contact pages that need to communicate trust before form submission.",
+      "source": {
+        "html": "../../../../public/examples/marketing/contact-forms/5.html",
+        "tsx": "tsx/ContactFormsVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Form section must be a distinct landmark; description column and form column stack on mobile."
+      ]
+    },
+    {
+      "id": "contact-forms-5-dark",
+      "title": "Side-by-side form with description (Dark)",
+      "description": "Split description-and-form contact layout adapted for dark marketing surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/contact-forms/5-dark.html",
+        "tsx": "tsx/ContactFormsVariant5Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Description text and form inputs must both meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

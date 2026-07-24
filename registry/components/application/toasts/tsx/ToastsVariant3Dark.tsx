@@ -1,0 +1,45 @@
+import type { HTMLAttributes } from 'react'
+
+export type ToastsVariant3DarkProps = HTMLAttributes<HTMLDivElement>
+
+/**
+ * Copy-and-own Tailwind component. Add application-specific state and event handlers where needed.
+ */
+export function ToastsVariant3Dark({ className, ...props }: ToastsVariant3DarkProps) {
+  return (
+    <div className={className} {...props}>
+      <div
+        role="alert"
+        className="rounded-md border border-amber-500 bg-amber-50 p-4 shadow-sm dark:border-amber-400 dark:bg-amber-800"
+      >
+        <div className="flex items-start gap-4">
+          <svg
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="-mt-0.5 size-6 text-amber-700 dark:text-amber-200"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z"
+            />
+          </svg>
+
+          <div className="flex-1">
+            <strong className="block leading-tight font-medium text-amber-800 dark:text-amber-100">
+              Warning
+            </strong>
+
+            <p className="mt-0.5 text-sm text-amber-700 dark:text-amber-200">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, dignissimos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}

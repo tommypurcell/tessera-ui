@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "templates-saas-landing-page",
+  "title": "SaaS Landing Page",
+  "description": "A starting-point marketing landing page example built with Tailwind CSS, combining a header, hero, stats, features, pricing, and footer into a single page. Not a production-ready template.",
+  "category": "templates/marketing",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "saas",
+    "landing-page",
+    "template",
+    "hero",
+    "pricing",
+    "conversion"
+  ],
+  "useWhen": [
+    "Starting a SaaS marketing page with a coherent header, hero, proof points, features, pricing, and footer.",
+    "Prototyping a product landing page before replacing placeholder copy and imagery with real product material."
+  ],
+  "avoidWhen": [
+    "Publishing without brand-specific copy, legal links, analytics, and real conversion destinations.",
+    "Building an authenticated application screen or dashboard."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Hero and feature layouts stack on small screens; header navigation becomes a labelled mobile menu; pricing cards and logo rows reflow without horizontal clipping.",
+  "accessibility": [
+    "Use one clear page h1 and a logical heading hierarchy throughout sections.",
+    "Ensure every CTA names its destination or action, and mark decorative images with empty alt text."
+  ],
+  "compatibleWith": [
+    "marketing-headers",
+    "marketing-banners",
+    "marketing-feature-grids",
+    "marketing-pricing",
+    "marketing-footers"
+  ],
+  "variants": [
+    {
+      "id": "saas-landing-page-1",
+      "title": "SaaS landing page",
+      "description": "Complete SaaS marketing-page composition that combines the library’s header, hero, proof, feature, pricing, and footer patterns.",
+      "source": {
+        "html": "../../../../public/examples/templates/saas-landing-page/1.html",
+        "tsx": "tsx/SaasLandingPageVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use one clear page h1 and a logical heading hierarchy throughout sections."
+      ]
+    }
+  ]
+}

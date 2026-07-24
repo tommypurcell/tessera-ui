@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "name": "marketing-banners",
+  "title": "Banners",
+  "description": "Hero banner sections for marketing landing pages combining a headline, supporting copy, CTA buttons, and optional imagery in center-aligned, left-aligned, and image-paired layouts.",
+  "category": "marketing/hero",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["banner", "hero", "landing-page", "headline", "cta", "marketing"],
+  "useWhen": [
+    "Building the primary hero section at the top of a landing page or marketing site home page.",
+    "Introducing a product or feature with a headline, short description, and one or two CTA buttons.",
+    "Pairing marketing copy with a product screenshot or illustration in a two-column layout."
+  ],
+  "avoidWhen": [
+    "The section is a secondary content block mid-page — use a marketing section or CTA component instead.",
+    "No image or visual reinforcement is available — a minimal text-only hero may look incomplete in these layouts.",
+    "The hero needs animated or video background — these static variants don't include media backgrounds."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Two-column image banners collapse to a single stacked column on mobile with the image below the copy. Center-aligned variants remain centered at all widths, reducing font size on small screens.",
+  "accessibility": [
+    "The banner headline should use an <h1> element — it is typically the primary page heading.",
+    "Images paired with the headline must have descriptive alt text; decorative images use empty alt.",
+    "CTA buttons must have descriptive labels — 'Get started' is ambiguous; 'Start your free trial' is better."
+  ],
+  "compatibleWith": ["marketing-headers", "marketing-ctas", "marketing-feature-grids"],
+  "variants": [
+    {
+      "id": "banners-1",
+      "title": "Center",
+      "description": "Center-aligned hero with a headline, subheadline, and CTA buttons — the classic landing page opener for SaaS and product sites.",
+      "source": {
+        "html": "../../../../public/examples/marketing/banners/1.html",
+        "tsx": "tsx/BannersVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Headline uses <h1>; CTA buttons have descriptive labels; decorative background elements are aria-hidden."
+      ]
+    },
+    {
+      "id": "banners-1-dark",
+      "title": "Center (Dark)",
+      "description": "Center-aligned hero banner adapted for dark marketing page surfaces with light text and CTA buttons.",
+      "source": {
+        "html": "../../../../public/examples/marketing/banners/1-dark.html",
+        "tsx": "tsx/BannersVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Headline, subtext, and CTA button colors must meet WCAG AA contrast on dark banner backgrounds."
+      ]
+    },
+    {
+      "id": "banners-2",
+      "title": "Left",
+      "description": "Left-aligned hero with copy and CTA on the left and whitespace on the right — a clean layout for content-first product introductions.",
+      "source": {
+        "html": "../../../../public/examples/marketing/banners/2.html",
+        "tsx": "tsx/BannersVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Left-aligned text follows natural reading order; ensure CTA button label clearly states the action."
+      ]
+    },
+    {
+      "id": "banners-2-dark",
+      "title": "Left (Dark)",
+      "description": "Left-aligned hero banner adapted for dark marketing surfaces with left-anchored copy and CTAs.",
+      "source": {
+        "html": "../../../../public/examples/marketing/banners/2-dark.html",
+        "tsx": "tsx/BannersVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Text and button contrast must be maintained against the dark background."
+      ]
+    },
+    {
+      "id": "banners-3",
+      "title": "Left with image",
+      "description": "Two-column hero with copy and CTA buttons on the left and a product image or illustration on the right — the most common SaaS landing page layout.",
+      "source": {
+        "html": "../../../../public/examples/marketing/banners/3.html",
+        "tsx": "tsx/BannersVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Product image must have descriptive alt text if it conveys information; the image stacks below the copy on mobile."
+      ]
+    },
+    {
+      "id": "banners-3-dark",
+      "title": "Left with image (Dark)",
+      "description": "Two-column copy-and-image hero banner adapted for dark marketing surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/banners/3-dark.html",
+        "tsx": "tsx/BannersVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Image alt text and copy colors must meet contrast requirements on the dark banner background."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "name": "application-steps",
+  "title": "Steps",
+  "description": "Step indicator components that show a user's position within a multi-step process, supporting numbered, icon, and progress-bar styles for onboarding flows and multi-page forms.",
+  "category": "application/navigation",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["steps", "wizard", "progress", "onboarding", "multi-step", "stepper"],
+  "useWhen": [
+    "Guiding users through a multi-step form, checkout, or onboarding flow where showing progress reduces abandonment.",
+    "A process has three or more distinct sequential phases that the user cannot skip.",
+    "Users need orientation — knowing which step they are on and how many remain reduces uncertainty."
+  ],
+  "avoidWhen": [
+    "The process has only one or two steps — a simple heading or subtitle is sufficient.",
+    "Steps can be completed in any order — a checklist or task list communicates non-linear progress better.",
+    "The form fits on a single page without overwhelming the user — pagination adds unnecessary friction."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Horizontal step indicators compress to a progress-bar-only or step-count summary on small screens to avoid horizontal overflow. Vertical and timeline variants remain readable at all widths.",
+  "accessibility": [
+    "Wrap the step list in a <nav> or <ol> element so screen readers announce it as an ordered list of steps.",
+    "Mark the current step with aria-current='step' on the active item.",
+    "Do not rely on color alone to distinguish completed, current, and upcoming steps — use icons or text labels alongside color."
+  ],
+  "compatibleWith": ["application-progress-bars", "application-modals", "application-breadcrumbs"],
+  "variants": [
+    {
+      "id": "steps-1",
+      "title": "Title, icon and progress bar",
+      "description": "Horizontal step row showing a step icon, step title, and a progress bar beneath to communicate overall completion percentage.",
+      "source": {
+        "html": "../../../../public/examples/application/steps/1.html",
+        "tsx": "tsx/StepsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Progress bar should use a native <progress> element or role='progressbar' with aria-valuenow, aria-valuemin, and aria-valuemax."
+      ]
+    },
+    {
+      "id": "steps-1-dark",
+      "title": "Title, icon and progress bar (Dark)",
+      "description": "Icon-and-progress-bar step indicator adapted for dark application surfaces such as dark-mode onboarding flows.",
+      "source": {
+        "html": "../../../../public/examples/application/steps/1-dark.html",
+        "tsx": "tsx/StepsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Step icon, title, and progress bar colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    },
+    {
+      "id": "steps-2",
+      "title": "Title, step/total and progress bar",
+      "description": "Step header showing a 'Step X of Y' text counter alongside a title and a progress bar — ideal when icon-free brevity is preferred.",
+      "source": {
+        "html": "../../../../public/examples/application/steps/2.html",
+        "tsx": "tsx/StepsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The step counter text (e.g., 'Step 2 of 5') provides a text alternative for the progress bar's numeric value."
+      ]
+    },
+    {
+      "id": "steps-2-dark",
+      "title": "Title, step/total and progress bar (Dark)",
+      "description": "Step-counter-and-progress-bar header adapted for dark surfaces, keeping the 'X of Y' readout visible without icons.",
+      "source": {
+        "html": "../../../../public/examples/application/steps/2-dark.html",
+        "tsx": "tsx/StepsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Counter text and progress bar track colors must meet contrast requirements on dark backgrounds."
+      ]
+    },
+    {
+      "id": "steps-3",
+      "title": "Title, check icon and progress bar",
+      "description": "Step indicator that replaces numeric or category icons with a check icon for completed steps, reinforcing completion visually.",
+      "source": {
+        "html": "../../../../public/examples/application/steps/3.html",
+        "tsx": "tsx/StepsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Check icons for completed steps should carry aria-label='Completed' or equivalent so screen readers announce the state."
+      ]
+    },
+    {
+      "id": "steps-3-dark",
+      "title": "Title, check icon and progress bar (Dark)",
+      "description": "Check-icon step indicator adapted for dark surfaces, retaining completion-state clarity against dark backgrounds.",
+      "source": {
+        "html": "../../../../public/examples/application/steps/3-dark.html",
+        "tsx": "tsx/StepsVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Check icon stroke and fill colors must meet contrast requirements against dark card backgrounds."
+      ]
+    },
+    {
+      "id": "steps-4",
+      "title": "Grouped with title and description, with highlighted current step",
+      "description": "Full step list showing all steps simultaneously with titles, short descriptions, and a highlighted active step — best for multi-step settings or onboarding wizards where context matters.",
+      "source": {
+        "html": "../../../../public/examples/application/steps/4.html",
+        "tsx": "tsx/StepsVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Active step uses aria-current='step'; completed steps should be distinguishable via icon or text, not color alone."
+      ]
+    },
+    {
+      "id": "steps-4-dark",
+      "title": "Grouped with title and description, with highlighted current step (Dark)",
+      "description": "Full grouped step list with descriptions adapted for dark application shells, with the active step visually distinguished.",
+      "source": {
+        "html": "../../../../public/examples/application/steps/4-dark.html",
+        "tsx": "tsx/StepsVariant4Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Active step highlight and description text must meet WCAG AA contrast on dark surfaces."
+      ]
+    },
+    {
+      "id": "steps-5",
+      "title": "Timeline with title, with highlighted current step",
+      "description": "Vertical timeline-style step indicator showing all steps in a vertical list with a connecting line, suitable for taller layouts or side panels.",
+      "source": {
+        "html": "../../../../public/examples/application/steps/5.html",
+        "tsx": "tsx/StepsVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Use an <ol> for the step list; the connecting line is decorative and should be hidden from assistive technology."
+      ]
+    },
+    {
+      "id": "steps-5-dark",
+      "title": "Timeline with title, with highlighted current step (Dark)",
+      "description": "Vertical timeline step indicator adapted for dark surfaces, with the connector line and step markers visible against dark backgrounds.",
+      "source": {
+        "html": "../../../../public/examples/application/steps/5-dark.html",
+        "tsx": "tsx/StepsVariant5Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Connector line color and step dot borders must meet contrast requirements on dark card or panel backgrounds."
+      ]
+    }
+  ]
+}

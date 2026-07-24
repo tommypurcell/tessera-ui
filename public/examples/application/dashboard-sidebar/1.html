@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="max-w-xs">
+    <aside class="flex h-screen w-64 flex-col border-e border-slate-200 bg-slate-50 p-4">
+      <a href="#main-content" class="text-sm font-semibold text-slate-950">Workspace</a>
+
+      <div class="mt-5">
+        <label class="sr-only" for="sidebar-search">Search navigation</label>
+        <input
+          id="sidebar-search"
+          class="w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm text-slate-950 placeholder:text-slate-400"
+          placeholder="Search"
+        />
+      </div>
+
+      <nav class="mt-5 space-y-1" aria-label="Primary navigation">
+        <a href="#" aria-current="page" class="block rounded-md bg-slate-200 px-3 py-2 text-sm font-medium text-slate-950">
+          Overview
+        </a>
+        <a href="#" class="block rounded-md px-3 py-2 text-sm text-slate-600 hover:bg-slate-100">
+          Projects
+        </a>
+        <a href="#" class="block rounded-md px-3 py-2 text-sm text-slate-600 hover:bg-slate-100">
+          Team
+        </a>
+        <a href="#" class="block rounded-md px-3 py-2 text-sm text-slate-600 hover:bg-slate-100">
+          Settings
+        </a>
+      </nav>
+    </aside>
+  </body>
+</html>

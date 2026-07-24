@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-range-inputs",
+  "title": "Range Inputs",
+  "description": "Slider controls for selecting a value within a continuous numeric range, used for volume, brightness, price filters, and tolerance settings.",
+  "category": "application/forms",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["range", "slider", "number", "filter", "form", "volume"],
+  "useWhen": [
+    "Users need to select a value within a continuous numeric range, such as volume or brightness.",
+    "Filtering by a price range or distance in a search interface.",
+    "Setting a tolerance or threshold that can be tuned rather than typed precisely."
+  ],
+  "avoidWhen": [
+    "An exact numeric value is required — a number input is more precise and easier to keyboard-navigate.",
+    "The value has only a few discrete steps — radio buttons or a segmented control communicate the options more clearly.",
+    "Users need to set both a minimum and maximum bound simultaneously — implement a dual-handle range slider."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Range sliders fill their container width. Track and thumb sizes should be large enough for comfortable touch interaction without additional styling.",
+  "accessibility": [
+    "Use the native <input type='range'> element so keyboard users can adjust the value with arrow keys.",
+    "Link a visible <label> to the range input; display the current value in an adjacent <output> element.",
+    "Provide min, max, and step attributes so screen readers can announce the full context."
+  ],
+  "compatibleWith": ["application-filters", "application-inputs", "application-quantity-inputs"],
+  "variants": [
+    {
+      "id": "range-inputs-1",
+      "title": "Base",
+      "description": "Simple horizontal range slider with no visible value label, for contexts where the current value is communicated elsewhere.",
+      "source": {
+        "html": "../../../../public/examples/application/range-inputs/1.html",
+        "tsx": "tsx/RangeInputsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "focus"],
+      "accessibility": [
+        "Must have a linked label; consider pairing with an <output> to display the current value."
+      ]
+    },
+    {
+      "id": "range-inputs-2",
+      "title": "Base with output",
+      "description": "Range slider with a live numeric output that updates as the user drags the thumb.",
+      "source": {
+        "html": "../../../../public/examples/application/range-inputs/2.html",
+        "tsx": "tsx/RangeInputsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "focus"],
+      "accessibility": [
+        "The <output> element updates in real time and is announced by screen readers on change."
+      ]
+    },
+    {
+      "id": "range-inputs-3",
+      "title": "Base with min and max labels",
+      "description": "Range slider with fixed min and max text labels at each end of the track to communicate the value boundaries.",
+      "source": {
+        "html": "../../../../public/examples/application/range-inputs/3.html",
+        "tsx": "tsx/RangeInputsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "focus"],
+      "accessibility": [
+        "End labels are informational; the input's min and max attributes communicate boundaries programmatically."
+      ]
+    },
+    {
+      "id": "range-inputs-4",
+      "title": "Native with tick marks",
+      "description": "Browser-native range slider with a <datalist> providing visible tick marks at interval positions.",
+      "source": {
+        "html": "../../../../public/examples/application/range-inputs/4.html",
+        "tsx": "tsx/RangeInputsVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "focus"],
+      "accessibility": [
+        "Tick marks are rendered by the browser; <datalist> option values snap the slider to available positions."
+      ]
+    },
+    {
+      "id": "range-inputs-5",
+      "title": "Native with label marks",
+      "description": "Range slider with a <datalist> providing both tick marks and visible text labels below each stop.",
+      "source": {
+        "html": "../../../../public/examples/application/range-inputs/5.html",
+        "tsx": "tsx/RangeInputsVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "focus"],
+      "accessibility": [
+        "Label text below tick marks supplements the slider; the <datalist> IDs remain the accessible reference."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "name": "marketing-cards",
+  "title": "Cards",
+  "description": "General-purpose marketing content cards for displaying blog posts, profiles, products, podcasts, and forum threads with image, author, excerpt, price, social links, and hover-reveal content patterns.",
+  "category": "marketing/content",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["card", "content", "profile", "post", "preview", "marketing"],
+  "useWhen": [
+    "Displaying a collection of mixed content types on a marketing site such as blog posts, podcasts, and resource guides.",
+    "Showcasing team members, contributors, or authors in a profile card grid.",
+    "Presenting product or service offerings with image, price, and detail in an eCommerce-adjacent marketing context."
+  ],
+  "avoidWhen": [
+    "Purely eCommerce product listings — use product-cards instead for better cart integration guidance.",
+    "Structured data tables where row/column comparison is needed — cards cannot replace tabular data.",
+    "The card content is too long to preview — link to a full page instead of expanding a card."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Card grids flow from three columns on desktop to two on tablet and one on mobile. Horizontal-layout cards (side-by-side image and text) stack vertically on small screens.",
+  "accessibility": [
+    "Card images must have descriptive alt text; decorative background images use empty alt or aria-hidden.",
+    "If the entire card is clickable, wrap in an <a> with aria-label containing the card title.",
+    "Hover-reveal content must also be accessible on keyboard focus — use :focus-within CSS to show the overlay."
+  ],
+  "compatibleWith": ["marketing-blog-cards", "marketing-team-sections", "marketing-product-cards"],
+  "variants": [
+    {
+      "id": "cards-1",
+      "title": "Title, author, avatar, excerpt, published date and reading time",
+      "description": "Blog-post-style card with author avatar, title, excerpt, publication date, and reading time — the standard editorial article card.",
+      "source": {
+        "html": "../../../../public/examples/marketing/cards/1.html",
+        "tsx": "tsx/CardsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Author avatar alt text should name the author; <time datetime> element wraps the publication date."
+      ]
+    },
+    {
+      "id": "cards-2",
+      "title": "Stacked with Large Image and Content",
+      "description": "Large featured-image card stacked above text content — for prominent post or case study previews on resource pages.",
+      "source": {
+        "html": "../../../../public/examples/marketing/cards/2.html",
+        "tsx": "tsx/CardsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Large image should have descriptive alt text relating to the featured content."
+      ]
+    },
+    {
+      "id": "cards-3",
+      "title": "Darkened Background with Content on Hover",
+      "description": "Image card with a dark overlay that reveals title and excerpt on hover — a cinematic style for portfolio and media collections.",
+      "source": {
+        "html": "../../../../public/examples/marketing/cards/3.html",
+        "tsx": "tsx/CardsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "Hover-reveal content must be visible on keyboard focus via :focus-within; do not hide content from screen readers on default state."
+      ]
+    },
+    {
+      "id": "cards-4",
+      "title": "Bordered with Content on Hover",
+      "description": "Bordered card that reveals additional content or actions on hover, keeping the default state clean and minimal.",
+      "source": {
+        "html": "../../../../public/examples/marketing/cards/4.html",
+        "tsx": "tsx/CardsVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "Hidden-on-default content must be accessible on keyboard focus; avoid using visibility:hidden for interactive elements."
+      ]
+    },
+    {
+      "id": "cards-5",
+      "title": "Bordered with Image, Price, Content and Details",
+      "description": "Product-adjacent card with image, price, description, and detail attributes — for marketing showcases of physical or digital products.",
+      "source": {
+        "html": "../../../../public/examples/marketing/cards/5.html",
+        "tsx": "tsx/CardsVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Price should be announced clearly by screen readers; use aria-label if the price format could be ambiguous."
+      ]
+    },
+    {
+      "id": "cards-6",
+      "title": "Image, Name, with Social Links and Project Links",
+      "description": "Profile card combining a headshot, name, role, social media links, and project portfolio links — for team pages and contributor showcases.",
+      "source": {
+        "html": "../../../../public/examples/marketing/cards/6.html",
+        "tsx": "tsx/CardsVariant6.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Social links must have aria-label identifying the platform (e.g., 'Follow on Twitter'); headshot alt names the person."
+      ]
+    },
+    {
+      "id": "cards-7",
+      "title": "Shaped with Image and Content",
+      "description": "Card with a non-standard shaped image (circular, diagonal, or clipped) alongside content — for creative and lifestyle brand marketing.",
+      "source": {
+        "html": "../../../../public/examples/marketing/cards/7.html",
+        "tsx": "tsx/CardsVariant7.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Shaped images use CSS clip-path or border-radius; the <img> alt text still describes the content regardless of shape."
+      ]
+    },
+    {
+      "id": "cards-8",
+      "title": "Podcast Post",
+      "description": "Podcast episode card with cover art, episode number, title, and play/listen CTA — for marketing pages promoting audio content.",
+      "source": {
+        "html": "../../../../public/examples/marketing/cards/8.html",
+        "tsx": "tsx/CardsVariant8.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Cover art alt text describes the podcast or episode topic; play button must have an aria-label indicating the episode title."
+      ]
+    },
+    {
+      "id": "cards-9",
+      "title": "Forum Post",
+      "description": "Community forum post card with author avatar, post title, excerpt, reply count, and timestamp — for community sections on marketing sites.",
+      "source": {
+        "html": "../../../../public/examples/marketing/cards/9.html",
+        "tsx": "tsx/CardsVariant9.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Reply count and timestamp must be announced to screen readers; use <time datetime> for publication date."
+      ]
+    }
+  ]
+}

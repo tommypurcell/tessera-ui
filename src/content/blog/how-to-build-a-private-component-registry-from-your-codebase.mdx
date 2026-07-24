@@ -1,0 +1,87 @@
+---
+title: How to Build a Private Component Registry From Your Codebase
+description: Turn proven UI patterns from existing projects into a private, searchable component registry for developers and coding agents.
+slug: how-to-build-a-private-component-registry-from-your-codebase
+pubDate: 2026-07-23
+updatedDate: 2026-07-23
+terms:
+  - private component registry
+  - reuse components across projects
+  - coding agent memory
+---
+
+Most teams already have a component library. It is just spread across product
+repositories, named inconsistently, and difficult for a coding agent to search.
+
+A private component registry creates a deliberate inventory of the patterns
+that have already survived real product work.
+
+## Start With Proven Components
+
+Do not index every file in the first pass. Start with components that have been
+used in more than one feature or project:
+
+```txt
+application navigation
+empty states
+data tables
+confirmation dialogs
+file uploads
+pricing sections
+```
+
+These categories map naturally to existing catalog patterns such as
+[application tables](/components/application/tables),
+[modals](/components/application/modals), and
+[file uploaders](/components/application/file-uploaders).
+
+## Create a Small Manifest
+
+Each registry item needs enough information for a person or agent to decide
+whether it is safe to reuse.
+
+```json
+{
+  "name": "customer-table",
+  "title": "Customer table with row actions",
+  "sourcePath": "src/components/customer-table.tsx",
+  "useWhen": ["browsing a pageable customer list"],
+  "avoidWhen": ["showing a small summary of customer metrics"],
+  "dependencies": ["@tanstack/react-table"],
+  "related": ["filters", "pagination", "empty-states"]
+}
+```
+
+The `sourcePath` makes the original implementation inspectable. The `useWhen`
+and `avoidWhen` fields help an agent avoid treating every table-shaped request
+as the same component.
+
+## Preserve Context, Not Just Files
+
+Copying a component without its context often creates more work. Record the
+information that explains why the source works:
+
+- expected data shape
+- required tokens or styles
+- accessibility behavior
+- responsive rules
+- dependencies and setup steps
+
+For example, a [responsive side menu](/components/application/side-menu) is
+not only navigation markup. Its collapsed state, current-page indicator, and
+keyboard behavior are part of the reusable pattern.
+
+## Add Search Before Automation
+
+The first useful registry does not need a complex installation system. A
+searchable manifest and a source preview are enough to validate that people
+and agents can find the right components.
+
+```txt
+query: "filterable customer table"
+matches: customer-table, filters, pagination
+```
+
+Once the catalog is trustworthy, it can power a CLI, an API, or MCP tools. The
+important order is inventory first, automation second. A fast installation path
+cannot fix a registry full of unclear or outdated components.

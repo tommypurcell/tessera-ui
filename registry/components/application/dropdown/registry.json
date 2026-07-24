@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "name": "application-dropdown",
+  "title": "Dropdowns",
+  "description": "Contextual menu panels triggered by a button, for surfacing navigation, action, and settings options without leaving the current view.",
+  "category": "application/navigation",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["dropdown", "menu", "context-menu", "actions", "navigation", "popover"],
+  "useWhen": [
+    "Providing secondary actions or contextual options that don't need to be permanently visible.",
+    "Building user account menus, per-row action menus in tables, or settings overflow menus.",
+    "Grouping navigation links that belong under a single top-level label."
+  ],
+  "avoidWhen": [
+    "There is only one option — use a plain button instead.",
+    "The options are the primary way to navigate the site — use a persistent nav instead.",
+    "Users need to compare all options simultaneously before choosing — show them inline."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Dropdown panels open relative to their trigger and reposition to avoid viewport overflow. On small screens, consider a bottom sheet or modal as an alternative for touch usability.",
+  "accessibility": [
+    "Use role=\"menu\" and role=\"menuitem\" on the panel and its items so assistive technologies announce the menu pattern.",
+    "Trigger button must have aria-haspopup=\"true\" and aria-expanded reflecting the open/closed state.",
+    "Arrow keys must navigate between menu items; Escape must close the menu and return focus to the trigger."
+  ],
+  "compatibleWith": ["application-tables", "application-side-menu", "application-vertical-menu"],
+  "variants": [
+    {
+      "id": "dropdown-1",
+      "title": "Base",
+      "description": "A simple list of action items in a floating panel triggered by a button press.",
+      "source": {
+        "html": "../../../../public/examples/application/dropdown/1.html",
+        "tsx": "tsx/DropdownVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["closed", "open", "hover"],
+      "accessibility": [
+        "Panel uses role=\"menu\"; items use role=\"menuitem\"; Escape closes and returns focus to trigger."
+      ]
+    },
+    {
+      "id": "dropdown-1-dark",
+      "title": "Base (Dark)",
+      "description": "Simple action-item dropdown panel adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/dropdown/1-dark.html",
+        "tsx": "tsx/DropdownVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["closed", "open", "hover"],
+      "accessibility": [
+        "Dark panel background and item text colors must meet WCAG AA contrast requirements."
+      ]
+    },
+    {
+      "id": "dropdown-2",
+      "title": "Divided",
+      "description": "Action list dropdown with horizontal dividers separating logically distinct groups of items.",
+      "source": {
+        "html": "../../../../public/examples/application/dropdown/2.html",
+        "tsx": "tsx/DropdownVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["closed", "open", "hover"],
+      "accessibility": [
+        "Dividers should use role=\"separator\" to communicate group boundaries to assistive technologies."
+      ]
+    },
+    {
+      "id": "dropdown-2-dark",
+      "title": "Divided (Dark)",
+      "description": "Divider-grouped action dropdown adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/dropdown/2-dark.html",
+        "tsx": "tsx/DropdownVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["closed", "open", "hover"],
+      "accessibility": [
+        "Dark separator colors must provide sufficient visual distinction between groups."
+      ]
+    },
+    {
+      "id": "dropdown-3",
+      "title": "Grouped",
+      "description": "Dropdown with labeled sections for organizing a larger set of actions into named categories.",
+      "source": {
+        "html": "../../../../public/examples/application/dropdown/3.html",
+        "tsx": "tsx/DropdownVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["closed", "open", "hover"],
+      "accessibility": [
+        "Group labels should use role=\"group\" with aria-label to name each section for screen readers."
+      ]
+    },
+    {
+      "id": "dropdown-3-dark",
+      "title": "Grouped (Dark)",
+      "description": "Labeled-section action dropdown adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/dropdown/3-dark.html",
+        "tsx": "tsx/DropdownVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["closed", "open", "hover"],
+      "accessibility": [
+        "Dark group label and item text colors must meet WCAG AA contrast requirements."
+      ]
+    }
+  ]
+}

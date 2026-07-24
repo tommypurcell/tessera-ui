@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 1,
+  "name": "marketing-blog-cards",
+  "title": "Blog Cards",
+  "description": "Article preview cards for blog index pages and content sections, combining post image, date, title, excerpt, and optional CTA in bordered, floating-image, gradient-border, icon, and artistic layout styles.",
+  "category": "marketing/content",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["blog", "article", "post", "card", "content", "preview"],
+  "useWhen": [
+    "Displaying a grid or list of blog post previews on a blog index page or marketing site section.",
+    "Linking to related articles at the bottom of a post or landing page.",
+    "Showcasing a mix of content types (articles, tutorials, case studies) on a resources page."
+  ],
+  "avoidWhen": [
+    "Displaying more than six to eight cards without pagination — use a paginated list instead.",
+    "The content is product or eCommerce items — use product-cards instead.",
+    "A single featured post needs prominence — use a full-width hero section rather than a card."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Card grids collapse from three columns on desktop to two on tablet and one on mobile. Floating-image and artistic variants may reflow their image position to stacked on small screens.",
+  "accessibility": [
+    "Card images must have descriptive alt text describing the post topic, not just 'blog image'.",
+    "Card titles should be heading elements (<h2> or <h3>) within a list or grid context.",
+    "If the entire card is a link, use an <a> wrapping the card with an aria-label for the full post title."
+  ],
+  "compatibleWith": ["marketing-sections", "marketing-cards", "marketing-feature-grids"],
+  "variants": [
+    {
+      "id": "blog-cards-1",
+      "title": "Bordered with image, date, title and excerpt, shadow on hover",
+      "description": "Bordered blog card with a top image, publication date, post title, and excerpt that gains a drop shadow on hover — the standard blog grid card pattern.",
+      "source": {
+        "html": "../../../../public/examples/marketing/blog-cards/1.html",
+        "tsx": "tsx/BlogCardsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "Post image alt text should describe the image content; title uses a heading element; date uses <time datetime>."
+      ]
+    },
+    {
+      "id": "blog-cards-1-dark",
+      "title": "Bordered with image, date, title and excerpt, shadow on hover (Dark)",
+      "description": "Standard bordered blog card adapted for dark marketing surfaces with dark card background and light text.",
+      "source": {
+        "html": "../../../../public/examples/marketing/blog-cards/1-dark.html",
+        "tsx": "tsx/BlogCardsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "Title, excerpt, and date text must meet WCAG AA contrast on dark card backgrounds."
+      ]
+    },
+    {
+      "id": "blog-cards-2",
+      "title": "Floating image with title and excerpt",
+      "description": "Blog card where the featured image floats at the top with a slight overlap into the card body, giving a layered depth effect.",
+      "source": {
+        "html": "../../../../public/examples/marketing/blog-cards/2.html",
+        "tsx": "tsx/BlogCardsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Floating image alt describes the post topic; ensure overlapping does not obscure heading text."
+      ]
+    },
+    {
+      "id": "blog-cards-2-dark",
+      "title": "Floating image with title and excerpt (Dark)",
+      "description": "Floating-image blog card adapted for dark surfaces, with the card body and text visible on dark backgrounds.",
+      "source": {
+        "html": "../../../../public/examples/marketing/blog-cards/2-dark.html",
+        "tsx": "tsx/BlogCardsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Text content beneath the floating image must remain legible on dark card backgrounds."
+      ]
+    },
+    {
+      "id": "blog-cards-3",
+      "title": "Bordered with image, title, excerpt and call to action",
+      "description": "Blog card with a full-width image, title, excerpt, and an explicit 'Read more' CTA link at the bottom — for collections where each post needs a clear entry point.",
+      "source": {
+        "html": "../../../../public/examples/marketing/blog-cards/3.html",
+        "tsx": "tsx/BlogCardsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "CTA link should include the post title in its accessible name, e.g. 'Read more about Topic' via aria-label."
+      ]
+    },
+    {
+      "id": "blog-cards-3-dark",
+      "title": "Bordered with image, title, excerpt and call to action (Dark)",
+      "description": "CTA-equipped blog card adapted for dark surfaces with visible link and excerpt on dark backgrounds.",
+      "source": {
+        "html": "../../../../public/examples/marketing/blog-cards/3-dark.html",
+        "tsx": "tsx/BlogCardsVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "CTA link text and image alt must maintain contrast on dark card backgrounds."
+      ]
+    },
+    {
+      "id": "blog-cards-4",
+      "title": "Gradient border with date, title and tags, animated gradient on hover",
+      "description": "Blog card with a gradient border that animates on hover, plus date, title, and topic tags — a visually distinctive style for developer blogs and design publications.",
+      "source": {
+        "html": "../../../../public/examples/marketing/blog-cards/4.html",
+        "tsx": "tsx/BlogCardsVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "Gradient border is decorative — ensure title and tag text contrast meets WCAG AA against the card background, not the border."
+      ]
+    },
+    {
+      "id": "blog-cards-4-dark",
+      "title": "Gradient border with date, title and tags, animated gradient on hover (Dark)",
+      "description": "Animated-gradient-border blog card adapted for dark surfaces with tags and title legible on dark card backgrounds.",
+      "source": {
+        "html": "../../../../public/examples/marketing/blog-cards/4-dark.html",
+        "tsx": "tsx/BlogCardsVariant4Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "Title, date, and tag text must meet contrast requirements on dark card body backgrounds."
+      ]
+    },
+    {
+      "id": "blog-cards-5",
+      "title": "Bordered with icon, title, excerpt and call to action, shadow on hover",
+      "description": "Blog card that replaces the photo with a category icon, suited for text-heavy content like documentation, tutorials, and reference guides.",
+      "source": {
+        "html": "../../../../public/examples/marketing/blog-cards/5.html",
+        "tsx": "tsx/BlogCardsVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "Category icon is decorative when the title describes the post; set aria-hidden='true' on the icon element."
+      ]
+    },
+    {
+      "id": "blog-cards-5-dark",
+      "title": "Bordered with icon, title, excerpt and call to action, shadow on hover (Dark)",
+      "description": "Icon-based blog card adapted for dark surfaces with icon, title, and excerpt visible on dark card backgrounds.",
+      "source": {
+        "html": "../../../../public/examples/marketing/blog-cards/5-dark.html",
+        "tsx": "tsx/BlogCardsVariant5Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "Icon fill and text content must meet WCAG AA contrast on dark card backgrounds."
+      ]
+    },
+    {
+      "id": "blog-cards-6",
+      "title": "Artistic with rotated date, image, title, excerpt and call to action, shadow on hover",
+      "description": "Stylized blog card with a rotated date stamp, full image, title, excerpt, and CTA — for editorial and creative publications where visual flair matters.",
+      "source": {
+        "html": "../../../../public/examples/marketing/blog-cards/6.html",
+        "tsx": "tsx/BlogCardsVariant6.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "Rotated date text must still meet contrast requirements; ensure rotation does not make the text unreadable."
+      ]
+    },
+    {
+      "id": "blog-cards-6-dark",
+      "title": "Artistic with rotated date, image, title, excerpt and call to action, shadow on hover (Dark)",
+      "description": "Artistic rotated-date blog card adapted for dark marketing surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/blog-cards/6-dark.html",
+        "tsx": "tsx/BlogCardsVariant6Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "All text including rotated date must meet contrast requirements on dark card backgrounds."
+      ]
+    },
+    {
+      "id": "blog-cards-7",
+      "title": "Background image with overlay containing date, title and excerpt",
+      "description": "Full-bleed background image card with a semi-transparent overlay showing date, title, and excerpt — for magazine-style and editorial content sections.",
+      "source": {
+        "html": "../../../../public/examples/marketing/blog-cards/7.html",
+        "tsx": "tsx/BlogCardsVariant7.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Text on image overlay must meet WCAG AA contrast against the darkened image; avoid relying solely on the overlay color."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+import type { HTMLAttributes } from 'react'
+
+export type ProductCardsVariant1Props = HTMLAttributes<HTMLDivElement>
+
+/**
+ * Copy-and-own Tailwind component. Add application-specific state and event handlers where needed.
+ */
+export function ProductCardsVariant1({ className, ...props }: ProductCardsVariant1Props) {
+  return (
+    <div className={className} {...props}>
+      <a href="#" className="group block overflow-hidden">
+        <div className="relative h-87.5 sm:h-112.5">
+          <img
+            src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&q=80&w=1160"
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover opacity-100 group-hover:opacity-0"
+          />
+
+          <img
+            src="https://images.unsplash.com/photo-1523381140794-a1eef18a37c7?auto=format&fit=crop&q=80&w=1160"
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover opacity-0 group-hover:opacity-100"
+          />
+        </div>
+
+        <div className="relative bg-white pt-3">
+          <h3 className="text-sm text-gray-700 group-hover:underline group-hover:underline-offset-4">
+            Limited Edition Sports Trainer
+          </h3>
+
+          <p className="mt-1.5 tracking-wide text-gray-900">$189.99</p>
+        </div>
+      </a>
+    </div>
+  )
+}

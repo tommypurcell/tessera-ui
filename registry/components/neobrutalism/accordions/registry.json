@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "name": "neobrutalism-accordions",
+  "title": "Accordions",
+  "description": "Neobrutalism-style accordion components built with Tailwind CSS. Featuring thick borders, hard shadows, and bold typography. Perfect for adding a retro, high-contrast look to your FAQs, collapsible content, and information sections.",
+  "category": "neobrutalism/disclosure",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "accordion",
+    "faq",
+    "disclosure",
+    "neobrutalism",
+    "retro",
+    "content"
+  ],
+  "useWhen": [
+    "Revealing answers or supporting content while preserving a bold neobrutalist visual language.",
+    "Grouping a short set of independent questions or disclosures."
+  ],
+  "avoidWhen": [
+    "Users need to compare every answer simultaneously.",
+    "The content is sequential instructions that should remain visible."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Accordion headers remain full-width tap targets at every viewport. Long answer content wraps within the bordered panel and never relies on horizontal scrolling.",
+  "accessibility": [
+    "Use a button with aria-expanded and aria-controls for every accordion trigger.",
+    "Keep focus visible against thick, high-contrast borders."
+  ],
+  "compatibleWith": [
+    "neobrutalism-buttons",
+    "neobrutalism-cards",
+    "marketing-faqs"
+  ],
+  "variants": [
+    {
+      "id": "accordions-1",
+      "title": "Base",
+      "description": "Single bold disclosure row with thick borders and an expanded-content state.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/accordions/1.html",
+        "tsx": "tsx/AccordionsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "collapsed",
+        "expanded"
+      ],
+      "accessibility": [
+        "Use a button with aria-expanded and aria-controls for every accordion trigger."
+      ]
+    },
+    {
+      "id": "accordions-1-dark",
+      "title": "Base (Dark)",
+      "description": "Single bold disclosure row with thick borders and an expanded-content state. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/accordions/1-dark.html",
+        "tsx": "tsx/AccordionsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "collapsed",
+        "expanded"
+      ],
+      "accessibility": [
+        "Use a button with aria-expanded and aria-controls for every accordion trigger."
+      ]
+    },
+    {
+      "id": "accordions-2",
+      "title": "Contained",
+      "description": "Contained neobrutalist disclosure panel with a distinct bordered wrapper.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/accordions/2.html",
+        "tsx": "tsx/AccordionsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "collapsed",
+        "expanded"
+      ],
+      "accessibility": [
+        "Use a button with aria-expanded and aria-controls for every accordion trigger."
+      ]
+    },
+    {
+      "id": "accordions-2-dark",
+      "title": "Contained (Dark)",
+      "description": "Contained neobrutalist disclosure panel with a distinct bordered wrapper. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/accordions/2-dark.html",
+        "tsx": "tsx/AccordionsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "collapsed",
+        "expanded"
+      ],
+      "accessibility": [
+        "Use a button with aria-expanded and aria-controls for every accordion trigger."
+      ]
+    },
+    {
+      "id": "accordions-3",
+      "title": "Grouped",
+      "description": "Grouped neobrutalist disclosure set with shared heavy borders and hard-shadow treatment.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/accordions/3.html",
+        "tsx": "tsx/AccordionsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "collapsed",
+        "expanded"
+      ],
+      "accessibility": [
+        "Use a button with aria-expanded and aria-controls for every accordion trigger."
+      ]
+    },
+    {
+      "id": "accordions-3-dark",
+      "title": "Grouped (Dark)",
+      "description": "Grouped neobrutalist disclosure set with shared heavy borders and hard-shadow treatment. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/accordions/3-dark.html",
+        "tsx": "tsx/AccordionsVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "collapsed",
+        "expanded"
+      ],
+      "accessibility": [
+        "Use a button with aria-expanded and aria-controls for every accordion trigger."
+      ]
+    }
+  ]
+}

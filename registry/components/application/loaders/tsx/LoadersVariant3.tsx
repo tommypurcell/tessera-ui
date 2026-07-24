@@ -1,0 +1,39 @@
+import type { HTMLAttributes } from 'react'
+
+export type LoadersVariant3Props = HTMLAttributes<HTMLDivElement>
+
+/**
+ * Copy-and-own Tailwind component. Add application-specific state and event handlers where needed.
+ */
+export function LoadersVariant3({ className, ...props }: LoadersVariant3Props) {
+  return (
+    <div className={className} {...props}>
+      <div className="inline-flex items-center gap-3" role="status">
+        <svg
+          className="size-6 animate-spin text-indigo-600"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <circle
+            className="opacity-25"
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="currentColor"
+            strokeWidth="4"
+          ></circle>
+
+          <path
+            className="opacity-75"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+          ></path>
+        </svg>
+
+        <p className="font-medium text-gray-700">Loading...</p>
+      </div>
+    </div>
+  )
+}

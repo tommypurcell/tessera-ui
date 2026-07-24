@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root { color-scheme: light; }
+      * { box-sizing: border-box; }
+      body { margin: 0; min-height: 372px; overflow: hidden; display: grid; place-items: center; background: #f3f5fb; color: #172033; font-family: Arial, Helvetica, sans-serif; }
+      .stage { position: relative; isolation: isolate; width: min(100%, 1060px); height: 372px; overflow: hidden; background: radial-gradient(circle at 50% 28%, #ffffff 0, #f7f8fc 35%, #e8edf8 100%); }
+      .eyebrow { position: absolute; top: 51px; left: 50%; z-index: 4; transform: translateX(-50%); color: #64748b; font-size: 11px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+      h1 { position: absolute; z-index: 4; top: 78px; left: 50%; width: min(92%, 720px); margin: 0; transform: translateX(-50%); text-align: center; color: #172033; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(36px, 5.2vw, 62px); font-weight: 500; line-height: .98; letter-spacing: -.055em; }
+      .ghost { position: absolute; z-index: 1; top: 213px; left: -100px; width: 620px; margin: 0; color: rgba(71, 85, 105, .28); font-size: 19px; line-height: 1.35; transform: rotate(12deg); white-space: nowrap; animation: ghost-drift 12s ease-in-out infinite alternate; }
+      .ribbon-wrap { position: absolute; z-index: 2; left: -7%; right: -7%; bottom: 12px; height: 126px; transform: rotate(-7deg); }
+      .ribbon { position: absolute; top: 53px; left: 0; width: 100%; overflow: hidden; border: 1px solid #101827; border-radius: 999px; background: #172033; box-shadow: 0 18px 32px rgba(30, 41, 59, .18); }
+      .track { display: flex; width: max-content; animation: transcript-flow 19s linear infinite; }
+      .words { display: flex; align-items: center; gap: 28px; padding: 14px 18px; color: #f8fafc; font-size: 18px; font-weight: 650; letter-spacing: -.02em; white-space: nowrap; }
+      .words span { color: #aab9d5; }
+      .separator { color: #70d6bd !important; font-size: 13px; }
+      .recorder { position: absolute; z-index: 5; left: 50%; bottom: 38px; display: flex; align-items: center; justify-content: center; gap: 4px; width: 112px; height: 61px; transform: translateX(-50%); border: 1px solid #c5d0e6; border-radius: 999px; background: rgba(255, 255, 255, .94); box-shadow: 0 16px 30px rgba(30, 41, 59, .16); animation: recorder-float 3.4s ease-in-out infinite; }
+      .bar { display: block; width: 3px; border-radius: 999px; background: #315efb; animation: voice-bar 900ms ease-in-out infinite alternate; }
+      .bar:nth-child(1), .bar:nth-child(9) { height: 11px; animation-delay: -580ms; }
+      .bar:nth-child(2), .bar:nth-child(8) { height: 19px; animation-delay: -120ms; }
+      .bar:nth-child(3), .bar:nth-child(7) { height: 28px; animation-delay: -430ms; }
+      .bar:nth-child(4), .bar:nth-child(6) { height: 17px; animation-delay: -260ms; }
+      .bar:nth-child(5) { height: 34px; animation-delay: -710ms; }
+      .stage:hover .track, .stage:focus-within .track, .stage:hover .recorder, .stage:focus-within .recorder, .stage:hover .bar, .stage:focus-within .bar, .stage:hover .ghost, .stage:focus-within .ghost { animation-play-state: paused; }
+      @keyframes transcript-flow { to { transform: translateX(-50%); } }
+      @keyframes ghost-drift { to { transform: translate(45px, -11px) rotate(12deg); } }
+      @keyframes recorder-float { 50% { transform: translate(-50%, -7px); } }
+      @keyframes voice-bar { to { transform: scaleY(.48); opacity: .68; } }
+      @media (prefers-reduced-motion: reduce) { .track, .ghost, .recorder, .bar { animation: none; } .ribbon-wrap { transform: rotate(-7deg); } .words[aria-hidden='true'] { display: none; } }
+    </style>
+  </head>
+  <body>
+    <section class="stage" aria-labelledby="transcript-title">
+      <p class="eyebrow">Voice, in motion</p>
+      <h1 id="transcript-title">Let the idea move first.</h1>
+      <p class="ghost" aria-hidden="true">Start with a thought. Keep the detail. Let the next line find its shape.</p>
+      <div class="ribbon-wrap" aria-label="A moving transcript">
+        <div class="ribbon">
+          <div class="track">
+            <div class="words"><span class="separator">●</span> Keep the thought moving <span>— the next step is already taking shape.</span><span class="separator">●</span> Keep the thought moving <span>— the next step is already taking shape.</span></div>
+            <div class="words" aria-hidden="true"><span class="separator">●</span> Keep the thought moving <span>— the next step is already taking shape.</span><span class="separator">●</span> Keep the thought moving <span>— the next step is already taking shape.</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="recorder" aria-label="Voice activity" role="img"><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i></div>
+    </section>
+  </body>
+</html>

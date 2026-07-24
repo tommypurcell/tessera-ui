@@ -1,0 +1,67 @@
+---
+title: CLI vs API vs MCP for UI Component Libraries
+description: Compare CLI, API, and MCP access patterns for helping coding agents discover and retrieve reusable UI components.
+slug: cli-vs-api-vs-mcp-for-ui-component-libraries
+pubDate: 2026-07-23
+updatedDate: 2026-07-23
+terms:
+  - mcp ui components
+  - component cli
+  - component api
+---
+
+Coding agents need a reliable way to discover and retrieve components. A CLI,
+an API, and an MCP server can all help, but they solve different parts of the
+workflow.
+
+## Use a CLI for Deterministic Installation
+
+A CLI is a good choice when the action is explicit: add a named component and
+write its files into the current project.
+
+```shell
+npx acme-ui add dashboard-sidebar
+```
+
+The command should show which files and dependencies it will add. It works best
+when a user or agent already knows the component name.
+
+## Use an API for Product Integrations
+
+An API is useful when another service needs to search metadata, fetch component
+source, or report usage. Keep the response focused on machine-readable facts:
+
+```json
+{
+  "name": "dashboard-sidebar",
+  "category": "application",
+  "dependencies": ["lucide-react"],
+  "sourceUrl": "/registry/dashboard-sidebar.json"
+}
+```
+
+An API can power a website search, internal tooling, or a custom installation
+workflow. It is not a substitute for concise component documentation.
+
+## Use MCP for Agent-Native Discovery
+
+MCP is a useful layer when a coding agent needs to ask questions such as “find
+an accessible empty state for a filtered table.” The server can expose tools
+for searching components, reading metadata, and retrieving source.
+
+```txt
+search_components(query, category)
+get_component(name)
+get_component_source(name)
+```
+
+The MCP layer should return the same trusted data that the CLI and API use. Do
+not create separate, inconsistent catalogs for each integration.
+
+## Start With the Smallest Useful Surface
+
+Begin with component metadata and predictable source retrieval. Add a CLI for
+installation, an API for integrations, and MCP tools when agents need
+natural-language discovery. Each path should lead back to documented patterns
+such as [empty states](/components/application/empty-states) and
+[application tables](/components/application/tables).

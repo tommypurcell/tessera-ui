@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-progress-bars",
+  "title": "Progress Bars",
+  "description": "Visual indicators for communicating task completion, upload progress, storage usage, and multi-step workflow advancement.",
+  "category": "application/feedback",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["progress", "progress-bar", "indicator", "completion", "upload", "status"],
+  "useWhen": [
+    "Showing the completion percentage of a file upload, import job, or background task.",
+    "Displaying storage or quota usage as a filled bar within a settings or billing panel.",
+    "Communicating how far through a multi-step process the user currently is."
+  ],
+  "avoidWhen": [
+    "The operation duration is unpredictable — use an indeterminate spinner instead.",
+    "Showing just a numeric value is sufficient — a stat block is simpler than a bar.",
+    "The progress metric is part of a larger data visualization — use a chart instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Progress bars fill their container width at all viewport sizes. Labels and metadata beside the bar reflow or stack on narrow viewports.",
+  "accessibility": [
+    "Use the native <progress> element with value and max attributes for determinate progress.",
+    "Add aria-label or an associated <label> to describe what is being measured.",
+    "Do not rely on color alone to communicate status — pair color with a visible text label."
+  ],
+  "compatibleWith": ["application-loaders", "application-stats", "application-file-uploaders"],
+  "variants": [
+    {
+      "id": "progress-bars-1",
+      "title": "Basic",
+      "description": "A single thin progress bar showing percentage completion without labels or decorative elements.",
+      "source": {
+        "html": "../../../../public/examples/application/progress-bars/1.html",
+        "tsx": "tsx/ProgressBarsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Use <progress value=\"X\" max=\"100\"> or role=\"progressbar\" with aria-valuenow, aria-valuemin, aria-valuemax."
+      ]
+    },
+    {
+      "id": "progress-bars-2",
+      "title": "With labels and status colors",
+      "description": "Progress bars with percentage labels and semantic color coding — green for on-track, yellow for warning, red for critical.",
+      "source": {
+        "html": "../../../../public/examples/application/progress-bars/2.html",
+        "tsx": "tsx/ProgressBarsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Color conveys status; pair each color with a visible text label so colorblind users are not excluded."
+      ]
+    },
+    {
+      "id": "progress-bars-3",
+      "title": "Compact with metadata",
+      "description": "Slim progress bar with an inline label and numeric value beside it, for dense list or card views.",
+      "source": {
+        "html": "../../../../public/examples/application/progress-bars/3.html",
+        "tsx": "tsx/ProgressBarsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Numeric label beside the bar provides the value to screen readers in addition to the progress element."
+      ]
+    },
+    {
+      "id": "progress-bars-4",
+      "title": "Circular progress",
+      "description": "SVG-based circular ring indicator displaying a completion percentage in the center, for dashboards and stat cards.",
+      "source": {
+        "html": "../../../../public/examples/application/progress-bars/4.html",
+        "tsx": "tsx/ProgressBarsVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "SVG ring is decorative; expose the value via role=\"progressbar\" with aria-valuenow on the container."
+      ]
+    }
+  ]
+}

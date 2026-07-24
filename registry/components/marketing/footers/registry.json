@@ -1,0 +1,366 @@
+{
+  "schemaVersion": 1,
+  "name": "marketing-footers",
+  "title": "Footers",
+  "description": "Marketing website footer sections with navigation link columns, newsletter forms, social icons, branding, and copyright — in large multi-column, simple stacked, simple row, CTA-gradient, split, and slim styles.",
+  "category": "marketing/layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["footer", "navigation", "links", "branding", "copyright", "newsletter", "social"],
+  "useWhen": [
+    "Closing every page of a marketing website with navigation links, legal text, and branding.",
+    "Providing a newsletter signup in the footer as a low-commitment conversion touchpoint.",
+    "Organizing secondary navigation links (product, company, legal) that don't belong in the primary header."
+  ],
+  "avoidWhen": [
+    "Building an application shell footer — use a simpler footer without marketing navigation columns.",
+    "The page is a focused conversion page (signup, checkout) where footer distraction should be minimized.",
+    "The footer would be the only navigation on a page — pair it with a header navigation instead."
+  ],
+  "dependencies": ["@tailwindcss/forms"],
+  "responsiveBehavior": "Multi-column footer link grids collapse to a single column or two columns on mobile. Newsletter form fields stack input and button vertically on small screens. Social icons remain in a row at all widths.",
+  "accessibility": [
+    "Wrap the footer in a <footer> element, which is a landmark region accessible to screen reader navigation.",
+    "Each column of links should be a <nav> with a descriptive aria-label (e.g., 'Product links').",
+    "Newsletter form inputs must have visible labels; social icon links must have aria-label naming the platform."
+  ],
+  "compatibleWith": ["marketing-headers", "marketing-newsletter-signup", "marketing-ctas"],
+  "variants": [
+    {
+      "id": "footers-1",
+      "title": "Large with newsletter form",
+      "description": "Full-featured footer with multiple link columns, a newsletter signup form in the header area, social icons, and copyright row.",
+      "source": {
+        "html": "../../../../public/examples/marketing/footers/1.html",
+        "tsx": "tsx/FootersVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Newsletter form field must have a linked label; link columns wrapped in <nav> with aria-label."
+      ]
+    },
+    {
+      "id": "footers-1-dark",
+      "title": "Large with newsletter form (Dark)",
+      "description": "Large newsletter-footer adapted for dark marketing sites with dark background and light text.",
+      "source": {
+        "html": "../../../../public/examples/marketing/footers/1-dark.html",
+        "tsx": "tsx/FootersVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "All footer text, links, and form fields must meet WCAG AA contrast on dark footer backgrounds."
+      ]
+    },
+    {
+      "id": "footers-2",
+      "title": "Simple stacked",
+      "description": "Compact footer with logo, a short link row, social icons, and copyright stacked vertically — for minimal landing pages.",
+      "source": {
+        "html": "../../../../public/examples/marketing/footers/2.html",
+        "tsx": "tsx/FootersVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Footer landmark and nav landmark must be present; social links have aria-label naming the platform."
+      ]
+    },
+    {
+      "id": "footers-2-dark",
+      "title": "Simple stacked (Dark)",
+      "description": "Compact stacked footer adapted for dark marketing pages.",
+      "source": {
+        "html": "../../../../public/examples/marketing/footers/2-dark.html",
+        "tsx": "tsx/FootersVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Logo alt and link text must meet contrast requirements on dark footer backgrounds."
+      ]
+    },
+    {
+      "id": "footers-3",
+      "title": "Simple row",
+      "description": "Minimal single-row footer with logo on the left, navigation links in the center, and copyright on the right — for SaaS apps and simple product sites.",
+      "source": {
+        "html": "../../../../public/examples/marketing/footers/3.html",
+        "tsx": "tsx/FootersVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Single-row footer collapses gracefully on mobile; <footer> landmark wraps the entire element."
+      ]
+    },
+    {
+      "id": "footers-3-dark",
+      "title": "Simple row (Dark)",
+      "description": "Single-row minimal footer adapted for dark marketing and application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/footers/3-dark.html",
+        "tsx": "tsx/FootersVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Link and copyright text must meet contrast requirements on dark footer backgrounds."
+      ]
+    },
+    {
+      "id": "footers-4",
+      "title": "Call to action with gradient",
+      "description": "Footer with a bold gradient CTA section above the standard links row — for converting visitors at the bottom of the page before they leave.",
+      "source": {
+        "html": "../../../../public/examples/marketing/footers/4.html",
+        "tsx": "tsx/FootersVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "CTA button on gradient background must meet WCAG AA contrast; gradient must not reduce text legibility."
+      ]
+    },
+    {
+      "id": "footers-4-dark",
+      "title": "Call to action with gradient (Dark)",
+      "description": "Gradient-CTA footer adapted for dark marketing sites.",
+      "source": {
+        "html": "../../../../public/examples/marketing/footers/4-dark.html",
+        "tsx": "tsx/FootersVariant4Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Gradient CTA and surrounding dark footer text must all meet contrast requirements."
+      ]
+    },
+    {
+      "id": "footers-5",
+      "title": "Split with company info, links and image",
+      "description": "Two-column footer with company description and branding image on one side and navigation columns on the other.",
+      "source": {
+        "html": "../../../../public/examples/marketing/footers/5.html",
+        "tsx": "tsx/FootersVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Company image must have descriptive or empty alt text; link columns each have a descriptive aria-label."
+      ]
+    },
+    {
+      "id": "footers-5-dark",
+      "title": "Split with company info, links and image (Dark)",
+      "description": "Split company-info-and-links footer adapted for dark marketing sites.",
+      "source": {
+        "html": "../../../../public/examples/marketing/footers/5-dark.html",
+        "tsx": "tsx/FootersVariant5Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "All link columns and company description text must meet contrast requirements on dark footer backgrounds."
+      ]
+    },
+    {
+      "id": "footers-6",
+      "title": "Split with company info, links and call to action",
+      "description": "Two-column footer with company description on the left and navigation columns plus a CTA button on the right.",
+      "source": {
+        "html": "../../../../public/examples/marketing/footers/6.html",
+        "tsx": "tsx/FootersVariant6.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "CTA button has a descriptive label; company description and links have sufficient contrast."
+      ]
+    },
+    {
+      "id": "footers-6-dark",
+      "title": "Split with company info, links and call to action (Dark)",
+      "description": "Company-info-plus-CTA split footer adapted for dark marketing sites.",
+      "source": {
+        "html": "../../../../public/examples/marketing/footers/6-dark.html",
+        "tsx": "tsx/FootersVariant6Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "CTA button and footer link text must meet contrast requirements on dark backgrounds."
+      ]
+    },
+    {
+      "id": "footers-7",
+      "title": "Newsletter form as priority",
+      "description": "Footer where the primary visual element is a large newsletter signup form with the navigation links below it — maximizes email capture at page bottom.",
+      "source": {
+        "html": "../../../../public/examples/marketing/footers/7.html",
+        "tsx": "tsx/FootersVariant7.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Newsletter form must have a visible label for the email input; submit button label describes the action."
+      ]
+    },
+    {
+      "id": "footers-7-dark",
+      "title": "Newsletter form as priority (Dark)",
+      "description": "Newsletter-first footer adapted for dark marketing sites.",
+      "source": {
+        "html": "../../../../public/examples/marketing/footers/7-dark.html",
+        "tsx": "tsx/FootersVariant7Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Email input and subscribe button must meet contrast requirements on dark footer backgrounds."
+      ]
+    },
+    {
+      "id": "footers-8",
+      "title": "Centered with branding",
+      "description": "Centered footer with logo, tagline, social icons, navigation links, and copyright — a clean, symmetrical style for brand-forward marketing sites.",
+      "source": {
+        "html": "../../../../public/examples/marketing/footers/8.html",
+        "tsx": "tsx/FootersVariant8.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Logo alt text names the company; social icon links have aria-label for each platform."
+      ]
+    },
+    {
+      "id": "footers-8-dark",
+      "title": "Centered with branding (Dark)",
+      "description": "Centered branding footer adapted for dark marketing pages.",
+      "source": {
+        "html": "../../../../public/examples/marketing/footers/8-dark.html",
+        "tsx": "tsx/FootersVariant8Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Logo, social icons, and navigation links must meet contrast requirements on dark centered footer backgrounds."
+      ]
+    },
+    {
+      "id": "footers-9",
+      "title": "Slim with branding and link top",
+      "description": "Very compact footer with minimal branding and a single 'Back to top' link — for long-form marketing articles and blog posts.",
+      "source": {
+        "html": "../../../../public/examples/marketing/footers/9.html",
+        "tsx": "tsx/FootersVariant9.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "'Back to top' link must move focus to the top of the page or a skip-link target, not just scroll."
+      ]
+    },
+    {
+      "id": "footers-9-dark",
+      "title": "Slim with branding and link top (Dark)",
+      "description": "Slim compact footer adapted for dark marketing page surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/footers/9-dark.html",
+        "tsx": "tsx/FootersVariant9Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Link text and branding must meet contrast requirements on dark footer backgrounds."
+      ]
+    },
+    {
+      "id": "footers-10",
+      "title": "Company info and links",
+      "description": "Footer combining company logo, short description, contact information, and multi-column link navigation — a comprehensive marketing footer.",
+      "source": {
+        "html": "../../../../public/examples/marketing/footers/10.html",
+        "tsx": "tsx/FootersVariant10.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Contact information (phone, address) uses semantic microdata or <address> element where appropriate."
+      ]
+    },
+    {
+      "id": "footers-10-dark",
+      "title": "Company info and links (Dark)",
+      "description": "Company info and link-columns footer adapted for dark marketing sites.",
+      "source": {
+        "html": "../../../../public/examples/marketing/footers/10-dark.html",
+        "tsx": "tsx/FootersVariant10Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Company info text and all link columns must meet WCAG AA contrast on dark footer backgrounds."
+      ]
+    },
+    {
+      "id": "footers-11",
+      "title": "Inline with logo and copyright",
+      "description": "Minimal single-row inline footer with logo and copyright on the same line — the simplest footer for single-page apps and focused landing pages.",
+      "source": {
+        "html": "../../../../public/examples/marketing/footers/11.html",
+        "tsx": "tsx/FootersVariant11.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Logo alt text names the company; copyright text meets contrast requirements."
+      ]
+    },
+    {
+      "id": "footers-11-dark",
+      "title": "Inline with logo and copyright (Dark)",
+      "description": "Minimal inline logo-and-copyright footer adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/footers/11-dark.html",
+        "tsx": "tsx/FootersVariant11Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Logo alt and copyright text must meet contrast requirements on dark footer backgrounds."
+      ]
+    },
+    {
+      "id": "footers-12",
+      "title": "With call to action",
+      "description": "Footer with a prominent CTA block at the top (headline, description, and button) above the standard link columns and copyright — for maximizing conversion at page end.",
+      "source": {
+        "html": "../../../../public/examples/marketing/footers/12.html",
+        "tsx": "tsx/FootersVariant12.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "CTA button has a descriptive label; footer CTA and navigation sections are distinct landmark regions."
+      ]
+    },
+    {
+      "id": "footers-12-dark",
+      "title": "With call to action (Dark)",
+      "description": "CTA-topped footer adapted for dark marketing sites.",
+      "source": {
+        "html": "../../../../public/examples/marketing/footers/12-dark.html",
+        "tsx": "tsx/FootersVariant12Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "CTA button and surrounding footer text must meet contrast requirements on dark backgrounds."
+      ]
+    }
+  ]
+}

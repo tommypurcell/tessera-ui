@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "name": "marketing-announcements",
+  "title": "Announcements",
+  "description": "Top-of-page and floating notification bars for communicating promotions, product updates, or site-wide notices on marketing websites, with dismissable and fixed-position variants.",
+  "category": "marketing/notifications",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["announcement", "banner", "notification", "promotion", "alert", "dismissable"],
+  "useWhen": [
+    "Communicating a time-limited promotion, new feature launch, or site-wide notice without interrupting the main page flow.",
+    "Drawing attention to a critical update at the top of a marketing page before the hero section.",
+    "Showing a dismissable cookie or privacy notice at the bottom of the viewport."
+  ],
+  "avoidWhen": [
+    "The message is permanent and critical — use an inline alert or dedicated page section instead.",
+    "The page already has a cookie banner or legal notice — stacking multiple announcement bars creates visual noise.",
+    "The announcement requires user action beyond a single CTA — use a modal or dedicated landing page."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Announcements stack vertically on mobile and display inline on tablet and above. Fixed announcements account for the banner height in the page scroll offset.",
+  "accessibility": [
+    "Use role='banner' or role='alert' depending on urgency; polite announcements use aria-live='polite'.",
+    "Dismiss buttons must have an aria-label such as 'Dismiss announcement' for screen reader users.",
+    "Ensure the announcement does not obscure page content when fixed-positioned — add body padding-top equal to banner height."
+  ],
+  "compatibleWith": ["marketing-headers", "marketing-banners", "marketing-ctas"],
+  "variants": [
+    {
+      "id": "announcements-1",
+      "title": "Base",
+      "description": "Simple inline announcement bar at the top of the page with a short message and optional link — the minimal pattern for promotion notices.",
+      "source": {
+        "html": "../../../../public/examples/marketing/announcements/1.html",
+        "tsx": "tsx/AnnouncementsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Wrap in a <div role='alert'> or <aside> depending on whether the message is time-sensitive."
+      ]
+    },
+    {
+      "id": "announcements-1-dark",
+      "title": "Base (Dark)",
+      "description": "Inline announcement bar adapted for dark marketing page surfaces with dark background and light message text.",
+      "source": {
+        "html": "../../../../public/examples/marketing/announcements/1-dark.html",
+        "tsx": "tsx/AnnouncementsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Announcement text must meet WCAG AA contrast on the dark bar background."
+      ]
+    },
+    {
+      "id": "announcements-2",
+      "title": "Base with dismiss",
+      "description": "Inline announcement bar with a dismiss (×) button allowing users to hide the notice and continue to the page.",
+      "source": {
+        "html": "../../../../public/examples/marketing/announcements/2.html",
+        "tsx": "tsx/AnnouncementsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Dismiss button must have aria-label='Dismiss announcement'; after dismissal, focus should move to the next logical element."
+      ]
+    },
+    {
+      "id": "announcements-2-dark",
+      "title": "Base with dismiss (Dark)",
+      "description": "Dismissable inline announcement bar adapted for dark marketing surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/announcements/2-dark.html",
+        "tsx": "tsx/AnnouncementsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Dismiss icon and announcement text must meet contrast requirements on dark bar backgrounds."
+      ]
+    },
+    {
+      "id": "announcements-3",
+      "title": "Fixed",
+      "description": "Announcement bar that sticks to the top of the viewport as the user scrolls — for promotions that must remain visible throughout the page experience.",
+      "source": {
+        "html": "../../../../public/examples/marketing/announcements/3.html",
+        "tsx": "tsx/AnnouncementsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Fixed bars must not cover interactive page content; apply equivalent padding-top to the page body."
+      ]
+    },
+    {
+      "id": "announcements-3-dark",
+      "title": "Fixed (Dark)",
+      "description": "Fixed-position announcement bar adapted for dark marketing sites, remaining visible at the top of the viewport while scrolling.",
+      "source": {
+        "html": "../../../../public/examples/marketing/announcements/3-dark.html",
+        "tsx": "tsx/AnnouncementsVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Dark fixed bar must have a solid background so it visually separates from scrolled page content beneath."
+      ]
+    },
+    {
+      "id": "announcements-4",
+      "title": "Fixed with dismiss",
+      "description": "Fixed-position announcement bar with a dismiss button, letting users permanently hide the notice while scrolling.",
+      "source": {
+        "html": "../../../../public/examples/marketing/announcements/4.html",
+        "tsx": "tsx/AnnouncementsVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Dismiss button must be keyboard-focusable; after dismiss, remove the bar from DOM so it no longer occupies space."
+      ]
+    },
+    {
+      "id": "announcements-4-dark",
+      "title": "Fixed with dismiss (Dark)",
+      "description": "Fixed dismissable announcement bar adapted for dark marketing sites.",
+      "source": {
+        "html": "../../../../public/examples/marketing/announcements/4-dark.html",
+        "tsx": "tsx/AnnouncementsVariant4Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Dismiss button contrast and announcement text must meet WCAG AA on the dark fixed bar."
+      ]
+    },
+    {
+      "id": "announcements-5",
+      "title": "Floating",
+      "description": "Floating notification bar that appears above the page content without affecting layout flow — ideal for cookie notices and limited-time offers.",
+      "source": {
+        "html": "../../../../public/examples/marketing/announcements/5.html",
+        "tsx": "tsx/AnnouncementsVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Floating bars must not cover keyboard focus indicators; use z-index carefully to avoid overlapping interactive elements."
+      ]
+    },
+    {
+      "id": "announcements-5-dark",
+      "title": "Floating (Dark)",
+      "description": "Floating announcement adapted for dark marketing surfaces, appearing above page content without disrupting the layout.",
+      "source": {
+        "html": "../../../../public/examples/marketing/announcements/5-dark.html",
+        "tsx": "tsx/AnnouncementsVariant5Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Floating dark bar must have a visible shadow or border to differentiate it from the page background."
+      ]
+    },
+    {
+      "id": "announcements-6",
+      "title": "Floating with dismiss",
+      "description": "Floating announcement bar with a dismiss button — the standard pattern for cookie consent notices and non-blocking promotional popups.",
+      "source": {
+        "html": "../../../../public/examples/marketing/announcements/6.html",
+        "tsx": "tsx/AnnouncementsVariant6.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Dismissable floating bars should use role='dialog' with aria-label if they interrupt the page flow on appearance."
+      ]
+    },
+    {
+      "id": "announcements-6-dark",
+      "title": "Floating with dismiss (Dark)",
+      "description": "Floating dismissable announcement bar adapted for dark marketing pages.",
+      "source": {
+        "html": "../../../../public/examples/marketing/announcements/6-dark.html",
+        "tsx": "tsx/AnnouncementsVariant6Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Dismiss icon and text must meet contrast requirements on the dark floating bar background."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "name": "application-breadcrumbs",
+  "title": "Breadcrumbs",
+  "description": "Landmark navigation trails showing a user's path through a site hierarchy and allowing them to step back to any parent level.",
+  "category": "application/navigation",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["breadcrumb", "navigation", "wayfinding", "hierarchy", "trail"],
+  "useWhen": [
+    "Content lives more than one level deep and users frequently need to step back up the hierarchy.",
+    "Supplementing a sidebar or top-nav on category, record, or settings drill-down pages.",
+    "E-commerce product pages, admin record detail views, and documentation nested sections."
+  ],
+  "avoidWhen": [
+    "The site is flat and pages have no meaningful parent–child relationship.",
+    "A single back button already satisfies the navigation need.",
+    "The breadcrumb would repeat labels already visible in the primary navigation."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Breadcrumbs truncate or collapse intermediate items on small viewports. The current page label and at least one parent should remain visible at all widths.",
+  "accessibility": [
+    "Wrap in a <nav> element with aria-label=\"Breadcrumb\" so screen readers identify the landmark.",
+    "Mark the current page item with aria-current=\"page\" and do not make it a link.",
+    "Divider characters must be hidden from assistive technology with aria-hidden=\"true\"."
+  ],
+  "compatibleWith": ["application-side-menu", "application-tabs", "application-vertical-menu"],
+  "variants": [
+    {
+      "id": "breadcrumbs-1",
+      "title": "Base",
+      "description": "Text links separated by chevron dividers — the simplest breadcrumb pattern for multi-level hierarchies.",
+      "source": {
+        "html": "../../../../public/examples/application/breadcrumbs/1.html",
+        "tsx": "tsx/BreadcrumbsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Wrap in <nav aria-label=\"Breadcrumb\"> and add aria-current=\"page\" to the last item."
+      ]
+    },
+    {
+      "id": "breadcrumbs-1-dark",
+      "title": "Base (Dark)",
+      "description": "Chevron-divided text breadcrumbs adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/breadcrumbs/1-dark.html",
+        "tsx": "tsx/BreadcrumbsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Dark link and divider colors maintain readable contrast on dark backgrounds."
+      ]
+    },
+    {
+      "id": "breadcrumbs-2",
+      "title": "Base with home icon",
+      "description": "Breadcrumbs replacing the top-level text label with a recognizable home icon for cleaner root navigation.",
+      "source": {
+        "html": "../../../../public/examples/application/breadcrumbs/2.html",
+        "tsx": "tsx/BreadcrumbsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Home icon link must have an aria-label or visually-hidden text for screen readers."
+      ]
+    },
+    {
+      "id": "breadcrumbs-2-dark",
+      "title": "Base with home icon (Dark)",
+      "description": "Home-icon-prefixed breadcrumbs adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/breadcrumbs/2-dark.html",
+        "tsx": "tsx/BreadcrumbsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Home icon link must have an aria-label or visually-hidden text for screen readers."
+      ]
+    },
+    {
+      "id": "breadcrumbs-3",
+      "title": "Slash divider",
+      "description": "Breadcrumbs using a slash separator, a common convention in file-path and URL-style hierarchies.",
+      "source": {
+        "html": "../../../../public/examples/application/breadcrumbs/3.html",
+        "tsx": "tsx/BreadcrumbsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Slash dividers must carry aria-hidden=\"true\" to avoid being read aloud."
+      ]
+    },
+    {
+      "id": "breadcrumbs-3-dark",
+      "title": "Slash divider (Dark)",
+      "description": "Slash-separated breadcrumbs adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/breadcrumbs/3-dark.html",
+        "tsx": "tsx/BreadcrumbsVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Slash dividers must carry aria-hidden=\"true\" to avoid being read aloud."
+      ]
+    },
+    {
+      "id": "breadcrumbs-4",
+      "title": "Slash divider with home icon",
+      "description": "Combines a home icon root with slash dividers between subsequent levels for a compact, file-path style trail.",
+      "source": {
+        "html": "../../../../public/examples/application/breadcrumbs/4.html",
+        "tsx": "tsx/BreadcrumbsVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Home icon link needs an aria-label; slash dividers use aria-hidden."
+      ]
+    },
+    {
+      "id": "breadcrumbs-4-dark",
+      "title": "Slash divider with home icon (Dark)",
+      "description": "Home-icon-root slash breadcrumbs adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/breadcrumbs/4-dark.html",
+        "tsx": "tsx/BreadcrumbsVariant4Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Home icon link needs an aria-label; slash dividers use aria-hidden."
+      ]
+    },
+    {
+      "id": "breadcrumbs-5",
+      "title": "Grouped with chevron divider",
+      "description": "Breadcrumbs enclosed in a pill-shaped container, visually grouping the trail as a distinct navigational unit.",
+      "source": {
+        "html": "../../../../public/examples/application/breadcrumbs/5.html",
+        "tsx": "tsx/BreadcrumbsVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The pill container is decorative; landmark semantics come from the inner <nav> element."
+      ]
+    },
+    {
+      "id": "breadcrumbs-5-dark",
+      "title": "Grouped with chevron divider (Dark)",
+      "description": "Pill-contained chevron breadcrumbs adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/breadcrumbs/5-dark.html",
+        "tsx": "tsx/BreadcrumbsVariant5Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "The pill container is decorative; landmark semantics come from the inner <nav> element."
+      ]
+    }
+  ]
+}

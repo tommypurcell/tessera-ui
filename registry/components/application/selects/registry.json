@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "name": "application-selects",
+  "title": "Selects",
+  "description": "Native dropdown select inputs for choosing a single option from a list, with option group and datalist variants.",
+  "category": "application/forms",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["select", "dropdown", "form", "option", "single-select", "filter"],
+  "useWhen": [
+    "Users must choose exactly one value from a list too long to show as radio buttons.",
+    "Filtering a dataset by a single attribute such as status, country, or category.",
+    "Providing a settings or preference picker where all options fit in a compact list."
+  ],
+  "avoidWhen": [
+    "There are only 2–3 options — radio buttons make all choices immediately visible.",
+    "Multi-selection is needed — use a multi-select or checkbox group instead.",
+    "The list is very long and users benefit from search or autocomplete — use a combobox."
+  ],
+  "dependencies": ["@tailwindcss/forms"],
+  "responsiveBehavior": "Select inputs fill their container width. Browser-native dropdowns inherit platform-appropriate mobile handling automatically.",
+  "accessibility": [
+    "Every select must have an associated <label> linked by for/id or as a wrapping element.",
+    "Use <optgroup label='...'>  to group related options in longer lists.",
+    "The native <select> element provides built-in keyboard navigation (arrow keys and search-by-typing)."
+  ],
+  "compatibleWith": ["application-filters", "application-radio-groups", "application-pagination"],
+  "variants": [
+    {
+      "id": "selects-1",
+      "title": "Base",
+      "description": "Standard single-option native select input with a visible label for form fields and filters.",
+      "source": {
+        "html": "../../../../public/examples/application/selects/1.html",
+        "tsx": "tsx/SelectsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "focus"],
+      "accessibility": [
+        "Requires a linked <label>; native <select> keyboard navigation is built in."
+      ]
+    },
+    {
+      "id": "selects-1-dark",
+      "title": "Base (Dark)",
+      "description": "Standard single-option native select adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/selects/1-dark.html",
+        "tsx": "tsx/SelectsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "focus"],
+      "accessibility": [
+        "Dark select background and text must meet WCAG AA contrast requirements."
+      ]
+    },
+    {
+      "id": "selects-2",
+      "title": "Option groups",
+      "description": "Select input with options organized into labeled <optgroup> sections for a structured, categorized list.",
+      "source": {
+        "html": "../../../../public/examples/application/selects/2.html",
+        "tsx": "tsx/SelectsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "focus"],
+      "accessibility": [
+        "<optgroup> labels are announced by screen readers when the user enters each group."
+      ]
+    },
+    {
+      "id": "selects-2-dark",
+      "title": "Option groups (Dark)",
+      "description": "Grouped-option select input adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/selects/2-dark.html",
+        "tsx": "tsx/SelectsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "focus"],
+      "accessibility": [
+        "Option text colors within the browser-native dropdown may depend on the OS theme."
+      ]
+    },
+    {
+      "id": "selects-3",
+      "title": "Datalist",
+      "description": "Text input enhanced with a <datalist> for type-ahead suggestion of predefined options while still allowing free entry.",
+      "source": {
+        "html": "../../../../public/examples/application/selects/3.html",
+        "tsx": "tsx/SelectsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "focus", "open"],
+      "accessibility": [
+        "Datalist suggestions are announced natively; the text input must still have a linked label."
+      ]
+    },
+    {
+      "id": "selects-3-dark",
+      "title": "Datalist (Dark)",
+      "description": "Type-ahead datalist input adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/selects/3-dark.html",
+        "tsx": "tsx/SelectsVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "focus", "open"],
+      "accessibility": [
+        "Input text and border must meet WCAG AA contrast; datalist popup appearance depends on the browser."
+      ]
+    }
+  ]
+}

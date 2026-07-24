@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "dashboard-sidebar",
+  "title": "Dashboard Sidebar",
+  "description": "Responsive application sidebar with searchable navigation, active destinations, and a mobile-drawer-ready structure for multi-section product interfaces.",
+  "category": "application/navigation",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": [
+    "sidebar",
+    "dashboard",
+    "navigation",
+    "responsive",
+    "mobile drawer",
+    "application shell"
+  ],
+  "useWhen": [
+    "A SaaS dashboard, admin panel, or internal tool has several primary destinations.",
+    "Navigation should remain available on desktop while changing to a drawer or disclosure on mobile.",
+    "Users benefit from filtering or searching a larger set of navigation destinations."
+  ],
+  "avoidWhen": [
+    "A marketing page has only a few top-level links — use a header navigation instead.",
+    "The product has one focused workflow with no persistent destination switching.",
+    "Navigation must display more than one independent hierarchy without a defined information architecture."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The sidebar remains persistent beside content on desktop. On small viewports it must move into a labelled drawer or disclosure triggered from the application header, with focus returned to the trigger on close.",
+  "accessibility": [
+    "Wrap destinations in a nav landmark with an accessible label such as 'Primary navigation'.",
+    "Mark the current destination with aria-current='page' and do not rely only on its visual fill color.",
+    "The mobile drawer trigger needs an accessible name, aria-expanded state, and keyboard-operable close control.",
+    "Search input needs a visible label or an equivalent accessible name."
+  ],
+  "compatibleWith": [
+    "application-breadcrumbs",
+    "application-side-menu",
+    "application-inputs",
+    "application-skip-links"
+  ],
+  "variants": [
+    {
+      "id": "searchable-navigation",
+      "title": "Searchable navigation",
+      "description": "Responsive dashboard sidebar with a navigation search field, active destination state, and a content area that demonstrates the intended application-shell relationship.",
+      "source": {
+        "html": "../../../../public/examples/application/dashboard-sidebar/1.html",
+        "tsx": "tsx/DashboardSidebar.tsx"
+      },
+      "appearance": "light",
+      "states": ["desktop", "active destination", "search", "mobile drawer"],
+      "accessibility": [
+        "Use aria-current='page' on the active link and retain a visible focus style for every destination.",
+        "When rendered in a drawer, trap focus only while the drawer is open and restore focus to its trigger on close."
+      ]
+    }
+  ]
+}

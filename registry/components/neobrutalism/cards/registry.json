@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "name": "neobrutalism-cards",
+  "title": "Cards",
+  "description": "Neobrutalism-style card components built with Tailwind CSS. Featuring thick borders, hard shadows, and distinct layouts. Great for displaying content, products, and features with a unique, high-contrast retro style.",
+  "category": "neobrutalism/content",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "card",
+    "content",
+    "neobrutalism",
+    "retro",
+    "layout",
+    "panel"
+  ],
+  "useWhen": [
+    "Grouping related content, a feature, or a product in a bold bordered panel.",
+    "Using hard shadows and typography to establish an intentionally retro visual hierarchy."
+  ],
+  "avoidWhen": [
+    "Displaying dense tabular data.",
+    "The visual style must blend into a restrained or neutral design system."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Cards expand to their container on small screens and internal media stacks above content when necessary. Hard shadows do not cause horizontal overflow.",
+  "accessibility": [
+    "Use headings to identify card content and avoid making a whole card clickable when it contains other controls.",
+    "Maintain text contrast against saturated card backgrounds."
+  ],
+  "compatibleWith": [
+    "neobrutalism-buttons",
+    "neobrutalism-badges",
+    "neobrutalism-alerts"
+  ],
+  "variants": [
+    {
+      "id": "cards-1",
+      "title": "Base",
+      "description": "Base neobrutalist content card with strong border, hard shadow, and bold type.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/cards/1.html",
+        "tsx": "tsx/CardsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use headings to identify card content and avoid making a whole card clickable when it contains other controls."
+      ]
+    },
+    {
+      "id": "cards-1-dark",
+      "title": "Base (Dark)",
+      "description": "Base neobrutalist content card with strong border, hard shadow, and bold type. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/cards/1-dark.html",
+        "tsx": "tsx/CardsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use headings to identify card content and avoid making a whole card clickable when it contains other controls."
+      ]
+    },
+    {
+      "id": "cards-2",
+      "title": "Base stacked",
+      "description": "Layered card composition that uses offset panels and hard shadows for depth.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/cards/2.html",
+        "tsx": "tsx/CardsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use headings to identify card content and avoid making a whole card clickable when it contains other controls."
+      ]
+    },
+    {
+      "id": "cards-2-dark",
+      "title": "Base stacked (Dark)",
+      "description": "Layered card composition that uses offset panels and hard shadows for depth. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/cards/2-dark.html",
+        "tsx": "tsx/CardsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use headings to identify card content and avoid making a whole card clickable when it contains other controls."
+      ]
+    },
+    {
+      "id": "cards-3",
+      "title": "Base dashed",
+      "description": "Content card using dashed heavy borders to create a handmade neobrutalist surface.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/cards/3.html",
+        "tsx": "tsx/CardsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use headings to identify card content and avoid making a whole card clickable when it contains other controls."
+      ]
+    },
+    {
+      "id": "cards-3-dark",
+      "title": "Base dashed (Dark)",
+      "description": "Content card using dashed heavy borders to create a handmade neobrutalist surface. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/cards/3-dark.html",
+        "tsx": "tsx/CardsVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use headings to identify card content and avoid making a whole card clickable when it contains other controls."
+      ]
+    },
+    {
+      "id": "cards-4",
+      "title": "Retro window",
+      "description": "Card styled as a retro application window with chrome-like header and high-contrast content panel.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/cards/4.html",
+        "tsx": "tsx/CardsVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use headings to identify card content and avoid making a whole card clickable when it contains other controls."
+      ]
+    },
+    {
+      "id": "cards-4-dark",
+      "title": "Retro window (Dark)",
+      "description": "Card styled as a retro application window with chrome-like header and high-contrast content panel. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/cards/4-dark.html",
+        "tsx": "tsx/CardsVariant4Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use headings to identify card content and avoid making a whole card clickable when it contains other controls."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root { color-scheme: light; }
+      * { box-sizing: border-box; }
+      body { min-height: 560px; margin: 0; display: grid; place-items: center; overflow: hidden; background: #f5f7fb; color: #172033; font-family: Arial, Helvetica, sans-serif; }
+      .scene { position: relative; width: min(100%, 980px); height: 560px; overflow: hidden; display: grid; place-items: center; background: radial-gradient(circle at 52% 43%, #fff 0 20%, #edf1fa 61%, #e6ebf6 100%); }
+      .halo { position: absolute; width: 420px; height: 420px; border: 1px solid rgba(49, 94, 251, .18); border-radius: 50%; box-shadow: 0 0 0 42px rgba(49, 94, 251, .05), 0 0 0 96px rgba(49, 94, 251, .03); }
+      .device { position: relative; z-index: 1; width: 267px; padding: 9px; border: 2px solid #1a2231; border-radius: 42px; background: linear-gradient(135deg, #48566e, #121a29 33%, #1f2b40 70%, #111827); box-shadow: 0 28px 45px rgba(26, 34, 49, .28), inset 0 1px 1px rgba(255,255,255,.36); }
+      .device::before, .device::after { content: ''; position: absolute; right: -4px; width: 3px; border-radius: 0 3px 3px 0; background: #3c485e; }
+      .device::before { top: 101px; height: 43px; } .device::after { top: 158px; height: 72px; }
+      .screen { position: relative; height: 522px; overflow: hidden; border-radius: 33px; background: #d9ecff; }
+      .island { position: absolute; z-index: 3; top: 11px; left: 50%; width: 86px; height: 24px; transform: translateX(-50%); border: 1px solid rgba(255,255,255,.07); border-radius: 999px; background: #101522; box-shadow: inset 0 1px 1px rgba(255,255,255,.12); }
+      .lens { position: absolute; top: 8px; right: 13px; width: 7px; height: 7px; border: 1px solid #293951; border-radius: 50%; background: #0b162a; box-shadow: 0 0 0 1px #121e34; }
+      .wallpaper { position: absolute; inset: 0; background: linear-gradient(150deg, #9cd8ff 0%, #d4ebff 36%, #f6c8bb 37%, #fae0b8 61%, #edb3de 62%, #b2a7f4 100%); }
+      .orb { position: absolute; border-radius: 50%; filter: blur(1px); mix-blend-mode: soft-light; } .orb.one { top: 85px; left: -48px; width: 242px; height: 242px; background: #4c62f6; } .orb.two { right: -58px; bottom: 34px; width: 230px; height: 230px; background: #fd9267; }
+      .status { position: absolute; z-index: 2; top: 15px; right: 20px; left: 20px; display: flex; justify-content: space-between; color: #15223a; font-size: 10px; font-weight: 800; letter-spacing: .04em; }
+      .status .icons { letter-spacing: .12em; }
+      .card { position: absolute; z-index: 2; right: 14px; bottom: 33px; left: 14px; padding: 17px; border: 1px solid rgba(255,255,255,.58); border-radius: 21px; background: rgba(255,255,255,.7); box-shadow: 0 12px 22px rgba(54, 67, 110, .16); backdrop-filter: blur(16px); }
+      .card small { display: block; color: #42526c; font-size: 10px; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; } .card h1 { margin: 7px 0 13px; font-size: 22px; line-height: 1; letter-spacing: -.055em; }
+      .card-row { display: flex; align-items: center; justify-content: space-between; color: #34445d; font-size: 11px; font-weight: 700; } .avatar-stack { display: flex; } .avatar { width: 19px; height: 19px; margin-left: -5px; border: 2px solid rgba(255,255,255,.8); border-radius: 50%; background: #315efb; } .avatar:first-child { margin-left: 0; background: #ea7d7a; } .avatar:last-child { background: #55bfa6; }
+      .home { position: absolute; z-index: 3; bottom: 10px; left: 50%; width: 88px; height: 4px; transform: translateX(-50%); border-radius: 999px; background: rgba(21,34,58,.82); }
+      @media (max-width: 460px) { .scene { transform: scale(.88); transform-origin: center; } }
+    </style>
+  </head>
+  <body>
+    <section class="scene" aria-label="Mobile product preview">
+      <div class="halo" aria-hidden="true"></div>
+      <div class="device">
+        <div class="screen">
+          <div class="wallpaper" aria-hidden="true"><i class="orb one"></i><i class="orb two"></i></div>
+          <div class="status"><span>9:41</span><span class="icons">▮▮▮ ◒</span></div>
+          <div class="island" aria-label="Front camera and sensor"><i class="lens"></i></div>
+          <div class="card"><small>Daily focus</small><h1>Make room<br>for what matters.</h1><div class="card-row"><span>3 collaborators</span><div class="avatar-stack" aria-hidden="true"><i class="avatar"></i><i class="avatar"></i><i class="avatar"></i></div></div></div>
+          <div class="home" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

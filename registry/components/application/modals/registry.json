@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "name": "application-modals",
+  "title": "Modals",
+  "description": "Dialog panels that overlay the page to capture focused attention for confirmations, forms, and critical actions.",
+  "category": "application/overlays",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["modal", "dialog", "overlay", "popup", "confirmation"],
+  "useWhen": [
+    "Requesting explicit user confirmation before a destructive or irreversible action.",
+    "Collecting a small amount of input (e.g., a name, email, or quick setting) without leaving the current page.",
+    "Displaying additional detail or a secondary action flow without a full page navigation."
+  ],
+  "avoidWhen": [
+    "The content requires significant scrolling — use a dedicated page or slide-over panel instead.",
+    "The action is not urgent and can be deferred — do not interrupt user flow unnecessarily.",
+    "The modal would open another modal — nested dialogs are inaccessible and disorienting."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Modals are centered on desktop and expand to near-full-screen on mobile viewports. Maximum width should be constrained so content remains readable on wide screens.",
+  "accessibility": [
+    "Use the native <dialog> element or role=\"dialog\" with aria-modal=\"true\" to trap focus and announce the dialog.",
+    "On open, move focus to the first interactive element or the dialog title.",
+    "Escape key must close the dialog and return focus to the element that triggered it.",
+    "The page behind the modal must be inert — use the inert attribute or a focus trap."
+  ],
+  "compatibleWith": ["application-inputs", "application-textareas", "application-checkboxes"],
+  "variants": [
+    {
+      "id": "modals-1",
+      "title": "Base",
+      "description": "Plain dialog panel with a title and body text — the minimal pattern for informational confirmations.",
+      "source": {
+        "html": "../../../../public/examples/application/modals/1.html",
+        "tsx": "tsx/ModalsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["open"],
+      "accessibility": [
+        "Focus moves to the dialog on open; Escape closes it and returns focus to the trigger."
+      ]
+    },
+    {
+      "id": "modals-1-dark",
+      "title": "Base (Dark)",
+      "description": "Plain informational dialog adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/modals/1-dark.html",
+        "tsx": "tsx/ModalsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["open"],
+      "accessibility": [
+        "Dark dialog background and text colors must meet WCAG AA contrast requirements."
+      ]
+    },
+    {
+      "id": "modals-2",
+      "title": "Base with close",
+      "description": "Informational dialog with an X close button in the top-right corner for explicit dismissal.",
+      "source": {
+        "html": "../../../../public/examples/application/modals/2.html",
+        "tsx": "tsx/ModalsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["open"],
+      "accessibility": [
+        "Close button must have an aria-label='Close dialog'; Escape should also close the dialog."
+      ]
+    },
+    {
+      "id": "modals-2-dark",
+      "title": "Base with close (Dark)",
+      "description": "Informational dialog with close button adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/modals/2-dark.html",
+        "tsx": "tsx/ModalsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["open"],
+      "accessibility": [
+        "Close button icon and hover state must remain visible against dark dialog backgrounds."
+      ]
+    },
+    {
+      "id": "modals-3",
+      "title": "Actions",
+      "description": "Dialog with a primary action and cancel button in the footer — for confirmations and simple decision prompts.",
+      "source": {
+        "html": "../../../../public/examples/application/modals/3.html",
+        "tsx": "tsx/ModalsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["open"],
+      "accessibility": [
+        "Initial focus should land on the less destructive action (Cancel) in confirmation dialogs."
+      ]
+    },
+    {
+      "id": "modals-3-dark",
+      "title": "Actions (Dark)",
+      "description": "Confirm/cancel action dialog adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/modals/3-dark.html",
+        "tsx": "tsx/ModalsVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["open"],
+      "accessibility": [
+        "Button colors must maintain contrast for both primary and cancel states on dark backgrounds."
+      ]
+    },
+    {
+      "id": "modals-4",
+      "title": "Actions with close",
+      "description": "Confirm/cancel action dialog that also includes a corner X close button for explicit dismissal.",
+      "source": {
+        "html": "../../../../public/examples/application/modals/4.html",
+        "tsx": "tsx/ModalsVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": ["open"],
+      "accessibility": [
+        "Three close paths (Escape, X button, Cancel) give users multiple keyboard-accessible ways to dismiss."
+      ]
+    },
+    {
+      "id": "modals-4-dark",
+      "title": "Actions with close (Dark)",
+      "description": "Action dialog with corner close button adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/modals/4-dark.html",
+        "tsx": "tsx/ModalsVariant4Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["open"],
+      "accessibility": [
+        "All three close paths must be keyboard-operable; button colors must meet contrast on dark backgrounds."
+      ]
+    },
+    {
+      "id": "modals-5",
+      "title": "Input",
+      "description": "Dialog containing a form input field for collecting a single piece of information such as a name or URL.",
+      "source": {
+        "html": "../../../../public/examples/application/modals/5.html",
+        "tsx": "tsx/ModalsVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": ["open"],
+      "accessibility": [
+        "Focus moves directly to the input on dialog open; input must have a visible linked label."
+      ]
+    },
+    {
+      "id": "modals-5-dark",
+      "title": "Input (Dark)",
+      "description": "Single-input dialog adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/modals/5-dark.html",
+        "tsx": "tsx/ModalsVariant5Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["open"],
+      "accessibility": [
+        "Input border, label, and placeholder colors must meet contrast requirements on dark backgrounds."
+      ]
+    },
+    {
+      "id": "modals-6",
+      "title": "Input with close",
+      "description": "Single-input dialog with an X close button, combining input collection with an explicit dismiss affordance.",
+      "source": {
+        "html": "../../../../public/examples/application/modals/6.html",
+        "tsx": "tsx/ModalsVariant6.tsx"
+      },
+      "appearance": "light",
+      "states": ["open"],
+      "accessibility": [
+        "Focus moves to the input; close button has aria-label='Close dialog'; Escape also dismisses."
+      ]
+    },
+    {
+      "id": "modals-6-dark",
+      "title": "Input with close (Dark)",
+      "description": "Single-input dialog with close button adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/modals/6-dark.html",
+        "tsx": "tsx/ModalsVariant6Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["open"],
+      "accessibility": [
+        "Input, close button, and footer action colors must meet WCAG AA on dark backgrounds."
+      ]
+    }
+  ]
+}

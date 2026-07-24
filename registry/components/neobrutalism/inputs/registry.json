@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "name": "neobrutalism-inputs",
+  "title": "Inputs",
+  "description": "Neobrutalism-style input components built with Tailwind CSS. Featuring thick borders, hard shadows, and bold focus states. Ideal for search bars, contact forms, and data entry with a distinctive retro look.",
+  "category": "neobrutalism/forms",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "input",
+    "form",
+    "search",
+    "neobrutalism",
+    "field",
+    "data-entry"
+  ],
+  "useWhen": [
+    "Collecting short text, search terms, or identifiers in a bold neobrutalist form.",
+    "Pairing an input with a recognizable icon or a direct search action."
+  ],
+  "avoidWhen": [
+    "Collecting long-form prose — use a textarea.",
+    "Choosing from a fixed list — use a select or radio group."
+  ],
+  "dependencies": [
+    "@tailwindcss/forms"
+  ],
+  "responsiveBehavior": "Inputs stretch to container width on mobile while icons and buttons remain inside or adjacent to the field without clipping.",
+  "accessibility": [
+    "Every input requires a visible label or accessible name.",
+    "Do not use placeholder text as the only label."
+  ],
+  "compatibleWith": [
+    "neobrutalism-buttons",
+    "neobrutalism-checkboxes",
+    "neobrutalism-textareas"
+  ],
+  "variants": [
+    {
+      "id": "inputs-1",
+      "title": "Base",
+      "description": "Standard short-text input with thick border, hard shadow, and prominent focus treatment.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/inputs/1.html",
+        "tsx": "tsx/InputsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Every input requires a visible label or accessible name."
+      ]
+    },
+    {
+      "id": "inputs-1-dark",
+      "title": "Base (Dark)",
+      "description": "Standard short-text input with thick border, hard shadow, and prominent focus treatment. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/inputs/1-dark.html",
+        "tsx": "tsx/InputsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Every input requires a visible label or accessible name."
+      ]
+    },
+    {
+      "id": "inputs-2",
+      "title": "Base with icon",
+      "description": "Text input with a supporting icon positioned inside the bold bordered field.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/inputs/2.html",
+        "tsx": "tsx/InputsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Every input requires a visible label or accessible name."
+      ]
+    },
+    {
+      "id": "inputs-2-dark",
+      "title": "Base with icon (Dark)",
+      "description": "Text input with a supporting icon positioned inside the bold bordered field. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/inputs/2-dark.html",
+        "tsx": "tsx/InputsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Every input requires a visible label or accessible name."
+      ]
+    },
+    {
+      "id": "inputs-3",
+      "title": "Search",
+      "description": "Search-specific input with a recognizable search affordance and room for a concise query.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/inputs/3.html",
+        "tsx": "tsx/InputsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Every input requires a visible label or accessible name."
+      ]
+    },
+    {
+      "id": "inputs-3-dark",
+      "title": "Search (Dark)",
+      "description": "Search-specific input with a recognizable search affordance and room for a concise query. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/inputs/3-dark.html",
+        "tsx": "tsx/InputsVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Every input requires a visible label or accessible name."
+      ]
+    }
+  ]
+}

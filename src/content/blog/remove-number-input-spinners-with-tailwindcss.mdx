@@ -1,0 +1,70 @@
+---
+title: Copy-and-Own Components vs an npm UI Component Package
+description: Compare copy-and-own UI components with npm packages to choose the right distribution model for your product team.
+slug: copy-and-own-components-vs-npm-ui-package
+pubDate: 2026-07-23
+updatedDate: 2026-07-23
+terms:
+  - npm ui package
+  - copy and paste components
+  - reusable components
+---
+
+There are two common ways to share UI components: install a package, or copy
+the component source into the project. Neither is automatically better.
+
+The right choice depends on how often the component needs to change, who owns
+its behavior, and whether every product should stay in lockstep.
+
+## Copy-and-Own Works Well for Product UI
+
+Copy-and-own components are installed once, then become normal application
+code. The team can adjust markup, accessibility behavior, and styling without
+waiting for a package release.
+
+For example, a [pricing section](/components/marketing/pricing) often needs
+product-specific plans and billing rules. Owning the source keeps that work
+close to the product:
+
+```tsx
+<PricingCard
+  plan={teamPlan}
+  onStartTrial={() => startCheckout('team')}
+  showAnnualSavings
+/>
+```
+
+The tradeoff is that updates are intentional. Once copied, the project—not the
+library—owns future fixes.
+
+## Packages Work Well for Stable Primitives
+
+An npm package is a strong fit when the same API should behave identically
+across many projects. Think of tokens, icons, date utilities, or a tightly
+governed design-system primitive.
+
+```json
+{
+  "dependencies": {
+    "@acme/ui": "^2.4.0"
+  }
+}
+```
+
+The package can centralize fixes, but version upgrades become part of each
+consumer’s maintenance work. Avoid using a package only because it feels more
+official; a package with frequent breaking changes can slow teams down.
+
+## Use a Simple Decision Rule
+
+Choose copy-and-own when a component is expected to be adapted per product.
+Choose a package when consistency and coordinated upgrades matter more than
+local flexibility.
+
+Many teams use both. They share stable foundations through packages and use a
+catalog of copyable components for product layouts, dashboards, forms, and
+marketing sections.
+
+Start with a documented component such as a [responsive application sidebar](/components/application/side-menu)
+or [marketing card](/components/marketing/cards). The distribution model should
+make the component easier to maintain, not harder to ship.

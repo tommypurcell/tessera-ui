@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "name": "marketing-headers",
+  "title": "Header",
+  "description": "Top navigation bars for marketing websites, combining logo branding, navigation links, and CTA buttons in left-links, centered-links, right-links, and authenticated user-dropdown layouts.",
+  "category": "marketing/layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["header", "navigation", "navbar", "logo", "cta", "marketing", "menu"],
+  "useWhen": [
+    "Providing top-level navigation for a marketing website, landing page, or product site.",
+    "Combining a logo, navigation links, and sign-in / sign-up CTAs in a single persistent top bar.",
+    "Adding a user-account dropdown for authenticated states in a marketing site that also has an app."
+  ],
+  "avoidWhen": [
+    "Building navigation for a web application — use a side-menu or application breadcrumb pattern instead.",
+    "The page is a focused landing page where navigation would distract from the conversion goal.",
+    "Mobile navigation requires a mega-menu — these variants use a simple link row that collapses to a hamburger."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Navigation links collapse to a hamburger menu on mobile. CTAs remain visible as icon-only buttons or inside the mobile drawer. Logo stays in the top-left at all viewports.",
+  "accessibility": [
+    "Wrap the header in a <header> element with role='banner' for the primary site header landmark.",
+    "The navigation links must be in a <nav> element with aria-label='Main navigation'.",
+    "The mobile hamburger toggle must have aria-expanded reflecting the drawer state and aria-controls pointing to the menu id."
+  ],
+  "compatibleWith": ["marketing-banners", "marketing-footers", "application-skip-links"],
+  "variants": [
+    {
+      "id": "headers-1",
+      "title": "Icon and links on the left, call to actions on the right",
+      "description": "Logo and navigation links grouped on the left, with sign-in and sign-up CTA buttons on the right — the most common SaaS marketing header layout.",
+      "source": {
+        "html": "../../../../public/examples/marketing/headers/1.html",
+        "tsx": "tsx/HeadersVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Logo image alt names the company; nav links are in <nav aria-label='Main navigation'>; CTA buttons have descriptive labels."
+      ]
+    },
+    {
+      "id": "headers-1-dark",
+      "title": "Icon and links on the left, call to actions on the right (Dark)",
+      "description": "Left-logo-and-links marketing header adapted for dark website surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/headers/1-dark.html",
+        "tsx": "tsx/HeadersVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Logo, navigation links, and CTA buttons must meet WCAG AA contrast on dark header backgrounds."
+      ]
+    },
+    {
+      "id": "headers-2",
+      "title": "Icon on the left, links in the middle and call to actions on the right",
+      "description": "Three-zone header with logo on the far left, navigation links centered, and sign-in / CTA buttons on the far right — the classic horizontal-centered nav layout.",
+      "source": {
+        "html": "../../../../public/examples/marketing/headers/2.html",
+        "tsx": "tsx/HeadersVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Centered nav links are inside <nav>; logo alt names the company; mobile hamburger uses aria-expanded."
+      ]
+    },
+    {
+      "id": "headers-2-dark",
+      "title": "Icon on the left, links in the middle and call to actions on the right (Dark)",
+      "description": "Three-zone marketing header adapted for dark website surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/headers/2-dark.html",
+        "tsx": "tsx/HeadersVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "All three zones — logo, nav links, and CTA buttons — must meet contrast requirements on dark header backgrounds."
+      ]
+    },
+    {
+      "id": "headers-3",
+      "title": "Icon on the left, links and call to actions on the right",
+      "description": "Logo on the left with navigation links and CTA buttons grouped together on the right — a compact layout for sites with fewer nav items.",
+      "source": {
+        "html": "../../../../public/examples/marketing/headers/3.html",
+        "tsx": "tsx/HeadersVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Logo alt names the company; right-side links and buttons are in a <nav>; all items have descriptive labels."
+      ]
+    },
+    {
+      "id": "headers-3-dark",
+      "title": "Icon on the left, links and call to actions on the right (Dark)",
+      "description": "Logo-left-links-right compact marketing header adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/headers/3-dark.html",
+        "tsx": "tsx/HeadersVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Navigation links and CTA buttons on the right must meet contrast requirements on dark header backgrounds."
+      ]
+    },
+    {
+      "id": "headers-4",
+      "title": "Icon on the left, links and user dropdown on the right",
+      "description": "Authenticated header with logo, navigation links, and a user-avatar dropdown for account settings, profile, and sign-out — for marketing sites that also have an application.",
+      "source": {
+        "html": "../../../../public/examples/marketing/headers/4.html",
+        "tsx": "tsx/HeadersVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "open"],
+      "accessibility": [
+        "User avatar button must have aria-expanded and aria-haspopup='true'; dropdown menu uses role='menu' with role='menuitem' items."
+      ]
+    },
+    {
+      "id": "headers-4-dark",
+      "title": "Icon on the left, links and user dropdown on the right (Dark)",
+      "description": "Authenticated user-dropdown marketing header adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/headers/4-dark.html",
+        "tsx": "tsx/HeadersVariant4Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "open"],
+      "accessibility": [
+        "User avatar and dropdown menu items must meet contrast requirements on dark header and dropdown backgrounds."
+      ]
+    }
+  ]
+}

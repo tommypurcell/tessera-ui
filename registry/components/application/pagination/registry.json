@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "name": "application-pagination",
+  "title": "Pagination",
+  "description": "Navigation controls for moving between pages of a paginated list, table, or search results set.",
+  "category": "application/navigation",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["pagination", "paging", "navigation", "page-number", "table", "next-prev"],
+  "useWhen": [
+    "A dataset is too large to show all at once and is split into discrete pages.",
+    "A data table or list view needs previous/next navigation with optional page-jump controls.",
+    "Users benefit from knowing their current position within a numbered sequence of pages."
+  ],
+  "avoidWhen": [
+    "The dataset is small enough to display entirely — pagination adds friction for short lists.",
+    "Infinite scroll is the preferred pattern for the content type (e.g., social feed, image gallery).",
+    "The total page count is unknown — use a simple previous/next control without page numbers."
+  ],
+  "dependencies": ["@tailwindcss/forms"],
+  "responsiveBehavior": "On narrow viewports, page number buttons collapse to show only prev/next arrows and the current page. Full numbered pagination appears at md: and wider.",
+  "accessibility": [
+    "Wrap pagination in a <nav> element with aria-label=\"Pagination\" to identify it as a landmark.",
+    "Mark the current page with aria-current=\"page\" on the active page button.",
+    "Previous and next buttons must have descriptive aria-labels when they use icon-only treatment."
+  ],
+  "compatibleWith": ["application-tables", "application-filters", "application-grids"],
+  "variants": [
+    {
+      "id": "pagination-1",
+      "title": "Navigation",
+      "description": "Numbered page buttons with previous and next arrows — the standard pattern for paginated tables and lists.",
+      "source": {
+        "html": "../../../../public/examples/application/pagination/1.html",
+        "tsx": "tsx/PaginationVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "page-active"],
+      "accessibility": [
+        "Wrap in <nav aria-label=\"Pagination\">; mark active page with aria-current=\"page\"."
+      ]
+    },
+    {
+      "id": "pagination-1-dark",
+      "title": "Navigation (Dark)",
+      "description": "Numbered page navigation adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/pagination/1-dark.html",
+        "tsx": "tsx/PaginationVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "page-active"],
+      "accessibility": [
+        "Active page and hover states must maintain WCAG AA contrast on dark backgrounds."
+      ]
+    },
+    {
+      "id": "pagination-2",
+      "title": "Input",
+      "description": "Compact pagination with a text input for jumping directly to a specific page number.",
+      "source": {
+        "html": "../../../../public/examples/application/pagination/2.html",
+        "tsx": "tsx/PaginationVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Page input requires a linked visible label; pressing Enter should navigate to the entered page."
+      ]
+    },
+    {
+      "id": "pagination-2-dark",
+      "title": "Input (Dark)",
+      "description": "Page-jump input pagination adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/pagination/2-dark.html",
+        "tsx": "tsx/PaginationVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Input border and text meet WCAG AA contrast requirements on dark backgrounds."
+      ]
+    },
+    {
+      "id": "pagination-3",
+      "title": "X/Y",
+      "description": "Minimal 'current / total' counter with previous and next arrows, for compact or mobile pagination contexts.",
+      "source": {
+        "html": "../../../../public/examples/application/pagination/3.html",
+        "tsx": "tsx/PaginationVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Counter text 'Page X of Y' is self-describing; prev/next icons need aria-labels."
+      ]
+    },
+    {
+      "id": "pagination-3-dark",
+      "title": "X/Y (Dark)",
+      "description": "Compact current/total counter with arrows adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/pagination/3-dark.html",
+        "tsx": "tsx/PaginationVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Counter text and arrow button colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

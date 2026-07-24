@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-side-menu",
+  "title": "Side Menu",
+  "description": "Persistent sidebar navigation panels for dashboards and application shells, featuring logo, nav links, sub-menus, and user profile areas.",
+  "category": "application/navigation",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["sidebar", "side-menu", "navigation", "dashboard", "admin", "nav"],
+  "useWhen": [
+    "The application has multiple top-level sections and needs persistent visible navigation.",
+    "Building a dashboard or admin panel shell where the sidebar stays in view across all pages.",
+    "Navigation requires expandable sub-sections or nested menu items that would clutter a top nav."
+  ],
+  "avoidWhen": [
+    "Screen space is at a premium on a primary mobile experience — use a bottom tab bar or hamburger drawer instead.",
+    "The site has only three to five top-level pages — a top navigation bar is simpler.",
+    "The sidebar content would be mostly empty on most pages — surface navigation only where it adds value."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Side menus collapse to a hidden off-canvas drawer on small viewports, triggered by a hamburger button. On medium screens and above, the sidebar appears persistently.",
+  "accessibility": [
+    "Wrap the sidebar in a <nav> element with aria-label='Main navigation' to identify it as the primary navigation landmark.",
+    "The currently active page link should carry aria-current='page'.",
+    "Expandable sub-menus use native <details>/<summary> for keyboard-accessible disclosure without JavaScript."
+  ],
+  "compatibleWith": ["application-breadcrumbs", "application-vertical-menu", "application-grids"],
+  "variants": [
+    {
+      "id": "side-menu-1",
+      "title": "Logo, links with accordion menu and profile details",
+      "description": "Full-height sidebar with a logo at top, expandable accordion nav sections in the middle, and a user profile row at the bottom.",
+      "source": {
+        "html": "../../../../public/examples/application/side-menu/1.html",
+        "tsx": "tsx/SideMenuVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["collapsed", "expanded"],
+      "accessibility": [
+        "Native <details>/<summary> handles accordion sections; active link uses aria-current='page'; avatar has meaningful alt text."
+      ]
+    },
+    {
+      "id": "side-menu-1-dark",
+      "title": "Logo, links with accordion menu and profile details (Dark)",
+      "description": "Full-height accordion sidebar with logo and user profile adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/side-menu/1-dark.html",
+        "tsx": "tsx/SideMenuVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["collapsed", "expanded"],
+      "accessibility": [
+        "Dark nav link and active-state colors must meet WCAG AA contrast requirements."
+      ]
+    },
+    {
+      "id": "side-menu-2",
+      "title": "Icon, links with tooltips and logout action",
+      "description": "Compact icon-only sidebar where each nav item shows a tooltip with its label on hover, with a logout button at the bottom.",
+      "source": {
+        "html": "../../../../public/examples/application/side-menu/2.html",
+        "tsx": "tsx/SideMenuVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "Icon-only nav items must have visible tooltips and aria-label attributes for screen reader users."
+      ]
+    },
+    {
+      "id": "side-menu-2-dark",
+      "title": "Icon, links with tooltips and logout action (Dark)",
+      "description": "Compact icon-only sidebar with tooltips and logout adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/side-menu/2-dark.html",
+        "tsx": "tsx/SideMenuVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "Icon colors and tooltip text must meet contrast requirements on dark sidebar backgrounds."
+      ]
+    }
+  ]
+}

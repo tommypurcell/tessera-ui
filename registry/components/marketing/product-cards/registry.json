@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "name": "marketing-product-cards",
+  "title": "Product Cards",
+  "description": "Product card components built with Tailwind CSS. These responsive, SEO-friendly cards are perfect for showcasing products in eCommerce stores, landing pages, and marketing sites. Easily customizable for any brand or catalog.",
+  "category": "marketing/ecommerce",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "product",
+    "card",
+    "ecommerce",
+    "catalog",
+    "price",
+    "shopping"
+  ],
+  "useWhen": [
+    "Showing products in a collection, search result, recommendation rail, or category grid.",
+    "Giving shoppers a compact route to inspect a product, choose a variant, or add an item to a cart."
+  ],
+  "avoidWhen": [
+    "Displaying detailed specifications or reviews — use a product detail page.",
+    "The collection has no consistent image aspect ratio or pricing information."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Card grids reduce their column count as space narrows. Images preserve their intended aspect ratio, while actions remain visible and large enough for touch input.",
+  "accessibility": [
+    "Product images need useful alt text unless the product title already provides the equivalent description.",
+    "Every icon-only wishlist or quick-action control needs an accessible name.",
+    "Use a single clear product link instead of nested interactive controls."
+  ],
+  "compatibleWith": [
+    "marketing-carts",
+    "marketing-product-collections",
+    "marketing-buttons"
+  ],
+  "variants": [
+    {
+      "id": "product-cards-1",
+      "title": "Product with image, title and price",
+      "description": "Product card with image, title and price for compact catalog browsing and product discovery.",
+      "source": {
+        "html": "../../../../public/examples/marketing/product-cards/1.html",
+        "tsx": "tsx/ProductCardsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Product images need useful alt text unless the product title already provides the equivalent description."
+      ]
+    },
+    {
+      "id": "product-cards-2",
+      "title": "Product with image, title, price and variant count",
+      "description": "Product card with image, title, price and variant count for compact catalog browsing and product discovery.",
+      "source": {
+        "html": "../../../../public/examples/marketing/product-cards/2.html",
+        "tsx": "tsx/ProductCardsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Product images need useful alt text unless the product title already provides the equivalent description."
+      ]
+    },
+    {
+      "id": "product-cards-3",
+      "title": "Product with image, title, price and description",
+      "description": "Product card with image, title, price and description for compact catalog browsing and product discovery.",
+      "source": {
+        "html": "../../../../public/examples/marketing/product-cards/3.html",
+        "tsx": "tsx/ProductCardsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Product images need useful alt text unless the product title already provides the equivalent description."
+      ]
+    },
+    {
+      "id": "product-cards-4",
+      "title": "Product with rounded image, title and price",
+      "description": "Product card with rounded image, title and price for compact catalog browsing and product discovery.",
+      "source": {
+        "html": "../../../../public/examples/marketing/product-cards/4.html",
+        "tsx": "tsx/ProductCardsVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Product images need useful alt text unless the product title already provides the equivalent description."
+      ]
+    },
+    {
+      "id": "product-cards-5",
+      "title": "Product with image, title, price and variant options",
+      "description": "Product card with image, title, price and variant options for compact catalog browsing and product discovery.",
+      "source": {
+        "html": "../../../../public/examples/marketing/product-cards/5.html",
+        "tsx": "tsx/ProductCardsVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Product images need useful alt text unless the product title already provides the equivalent description."
+      ]
+    },
+    {
+      "id": "product-cards-6",
+      "title": "Product with image, title, price, tag, wishlist and call to action",
+      "description": "Product card with image, title, price, tag, wishlist and call to action for compact catalog browsing and product discovery.",
+      "source": {
+        "html": "../../../../public/examples/marketing/product-cards/6.html",
+        "tsx": "tsx/ProductCardsVariant6.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Product images need useful alt text unless the product title already provides the equivalent description."
+      ]
+    },
+    {
+      "id": "product-cards-7",
+      "title": "Product with image, title, description, offer and call to action",
+      "description": "Product card with image, title, description, offer and call to action for compact catalog browsing and product discovery.",
+      "source": {
+        "html": "../../../../public/examples/marketing/product-cards/7.html",
+        "tsx": "tsx/ProductCardsVariant7.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Product images need useful alt text unless the product title already provides the equivalent description."
+      ]
+    },
+    {
+      "id": "product-cards-8",
+      "title": "Product with image, title, price, wishlist and call to actions",
+      "description": "Product card with image, title, price, wishlist and call to actions for compact catalog browsing and product discovery.",
+      "source": {
+        "html": "../../../../public/examples/marketing/product-cards/8.html",
+        "tsx": "tsx/ProductCardsVariant8.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Product images need useful alt text unless the product title already provides the equivalent description."
+      ]
+    }
+  ]
+}

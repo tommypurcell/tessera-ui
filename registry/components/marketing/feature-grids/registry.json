@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "name": "marketing-feature-grids",
+  "title": "Feature Grids",
+  "description": "Product feature and benefit showcase sections for marketing landing pages, displaying icon-plus-copy feature items in grid, list, and simple-grid layouts with a section header.",
+  "category": "marketing/content",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["features", "benefits", "grid", "marketing", "landing-page", "highlights", "icons"],
+  "useWhen": [
+    "Listing the key features or benefits of a product or service on a landing page below the hero section.",
+    "Comparing multiple capabilities in a scannable grid for potential buyers evaluating the product.",
+    "Highlighting a set of six to twelve core value propositions with icons and short descriptions."
+  ],
+  "avoidWhen": [
+    "More than twelve features need to be shown — group them under categories or use tabbed sections.",
+    "Features require detailed explanations longer than two to three sentences — use a dedicated feature sections layout with image.",
+    "The content is a comparison between plans or competitors — use a pricing table or comparison table instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Feature grids collapse from three or four columns on desktop to two on tablet and one on mobile. List variants display as a single column at all widths.",
+  "accessibility": [
+    "Feature icons are decorative when labels and descriptions are present; set aria-hidden='true' on icon elements.",
+    "Section heading that introduces the feature grid must be a semantic heading element (<h2>).",
+    "Feature descriptions must have sufficient color contrast against the section background."
+  ],
+  "compatibleWith": ["marketing-banners", "marketing-sections", "marketing-ctas"],
+  "variants": [
+    {
+      "id": "feature-grids-1",
+      "title": "Grid with content",
+      "description": "Three-column feature grid with a section heading, feature icon, feature title, and short description per item — the standard feature section for SaaS landing pages.",
+      "source": {
+        "html": "../../../../public/examples/marketing/feature-grids/1.html",
+        "tsx": "tsx/FeatureGridsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Section heading introduces the grid; feature icons are aria-hidden; feature descriptions have sufficient contrast."
+      ]
+    },
+    {
+      "id": "feature-grids-1-dark",
+      "title": "Grid with content (Dark)",
+      "description": "Three-column feature grid adapted for dark marketing surfaces with light text and icons.",
+      "source": {
+        "html": "../../../../public/examples/marketing/feature-grids/1-dark.html",
+        "tsx": "tsx/FeatureGridsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Feature titles and descriptions must meet WCAG AA contrast on dark section backgrounds."
+      ]
+    },
+    {
+      "id": "feature-grids-2",
+      "title": "List with content",
+      "description": "Vertical list feature display with an icon and horizontal text alignment — for features with longer descriptions or when a grid would feel too condensed.",
+      "source": {
+        "html": "../../../../public/examples/marketing/feature-grids/2.html",
+        "tsx": "tsx/FeatureGridsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "List items use semantic list markup; feature icons are aria-hidden; text has sufficient contrast."
+      ]
+    },
+    {
+      "id": "feature-grids-2-dark",
+      "title": "List with content (Dark)",
+      "description": "Vertical-list feature section adapted for dark marketing surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/feature-grids/2-dark.html",
+        "tsx": "tsx/FeatureGridsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "List feature text and icon colors must meet contrast requirements on dark backgrounds."
+      ]
+    },
+    {
+      "id": "feature-grids-3",
+      "title": "Simple grid",
+      "description": "Minimal feature grid with only a title and short label per item, no icons — for dense feature checklists or capability summaries.",
+      "source": {
+        "html": "../../../../public/examples/marketing/feature-grids/3.html",
+        "tsx": "tsx/FeatureGridsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Feature titles have sufficient contrast; grid items use semantic list or article elements."
+      ]
+    },
+    {
+      "id": "feature-grids-3-dark",
+      "title": "Simple grid (Dark)",
+      "description": "Minimal icon-free feature grid adapted for dark marketing surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/feature-grids/3-dark.html",
+        "tsx": "tsx/FeatureGridsVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Feature text must meet WCAG AA contrast on dark grid section backgrounds."
+      ]
+    },
+    {
+      "id": "feature-grids-4",
+      "title": "Grid with list items",
+      "description": "Feature grid where each card contains a bulleted list of sub-features rather than a single description — for grouping related capabilities under a category heading.",
+      "source": {
+        "html": "../../../../public/examples/marketing/feature-grids/4.html",
+        "tsx": "tsx/FeatureGridsVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Sub-feature lists use <ul> elements; list items and category headings must have sufficient contrast."
+      ]
+    },
+    {
+      "id": "feature-grids-4-dark",
+      "title": "Grid with list items (Dark)",
+      "description": "Sub-feature list grid adapted for dark marketing surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/feature-grids/4-dark.html",
+        "tsx": "tsx/FeatureGridsVariant4Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Category headings and list item text must meet contrast requirements on dark card backgrounds."
+      ]
+    }
+  ]
+}

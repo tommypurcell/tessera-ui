@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "name": "marketing-ctas",
+  "title": "CTAs",
+  "description": "Full-section call-to-action blocks for marketing landing pages, combining headline copy, supporting text, CTA buttons, and imagery in side-by-side, centered newsletter, and image-grid layout patterns.",
+  "category": "marketing/conversion",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["cta", "call-to-action", "conversion", "signup", "marketing", "landing-page"],
+  "useWhen": [
+    "Closing a marketing page section with a conversion-oriented message and primary CTA button.",
+    "Presenting a newsletter signup inline within a landing page between feature sections.",
+    "Combining a text pitch with product imagery in a two-column layout to drive trial signups."
+  ],
+  "avoidWhen": [
+    "The CTA is a single button inline with body text — use a button component instead.",
+    "Multiple competing CTAs are needed in the same section — users should focus on one action.",
+    "The action requires significant user input beyond an email — use a contact form instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Two-column CTA layouts stack to a single column on mobile with the image below the copy. Newsletter signup CTAs compress to a stacked input+button layout on small screens.",
+  "accessibility": [
+    "CTA buttons must have descriptive labels — 'Get started' is acceptable only if context makes the action clear.",
+    "Form fields in newsletter CTA variants must have visible or programmatic labels.",
+    "Decorative background images or shapes must use aria-hidden='true' or empty alt text."
+  ],
+  "compatibleWith": ["marketing-banners", "marketing-footers", "marketing-newsletter-signup"],
+  "variants": [
+    {
+      "id": "ctas-1",
+      "title": "Base with content and call to action on the left, image on the right",
+      "description": "Two-column CTA block with headline, description, and buttons on the left and a product screenshot or illustration on the right.",
+      "source": {
+        "html": "../../../../public/examples/marketing/ctas/1.html",
+        "tsx": "tsx/CtasVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Right-side image must have descriptive alt text; CTA buttons have specific action labels."
+      ]
+    },
+    {
+      "id": "ctas-1-dark",
+      "title": "Base with content and call to action on the left, image on the right (Dark)",
+      "description": "Two-column image-and-copy CTA block adapted for dark marketing page surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/ctas/1-dark.html",
+        "tsx": "tsx/CtasVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Headline, body text, and CTA button colors must meet WCAG AA contrast on dark section backgrounds."
+      ]
+    },
+    {
+      "id": "ctas-2",
+      "title": "Newsletter sign up form with centered content and form",
+      "description": "Centered newsletter CTA section with a headline, subtext, and an inline email input plus subscribe button — for mid-page lead capture.",
+      "source": {
+        "html": "../../../../public/examples/marketing/ctas/2.html",
+        "tsx": "tsx/CtasVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Email input must have a visible or programmatic label; submit button label clearly describes the action."
+      ]
+    },
+    {
+      "id": "ctas-2-dark",
+      "title": "Newsletter sign up form with centered content and form (Dark)",
+      "description": "Centered newsletter signup CTA adapted for dark marketing surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/ctas/2-dark.html",
+        "tsx": "tsx/CtasVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Email input and subscribe button must meet contrast requirements on dark CTA section backgrounds."
+      ]
+    },
+    {
+      "id": "ctas-3",
+      "title": "Base with content can call to action on the left, offset image on the right",
+      "description": "Two-column CTA with a vertically offset or oversized image on the right that bleeds outside the section boundary — a design-forward layout for product launches.",
+      "source": {
+        "html": "../../../../public/examples/marketing/ctas/3.html",
+        "tsx": "tsx/CtasVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Offset image must have descriptive alt text; ensure the overflow image does not hide page content on smaller screens."
+      ]
+    },
+    {
+      "id": "ctas-3-dark",
+      "title": "Base with content can call to action on the left, offset image on the right (Dark)",
+      "description": "Offset-image two-column CTA adapted for dark marketing page surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/ctas/3-dark.html",
+        "tsx": "tsx/CtasVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Text and button contrast must be maintained on dark CTA section backgrounds."
+      ]
+    },
+    {
+      "id": "ctas-4",
+      "title": "Content and call to action in block color on the left, grid of images on the right",
+      "description": "Block-color CTA panel on the left paired with a grid of product or lifestyle images on the right — for brand-heavy sections on eCommerce and lifestyle marketing pages.",
+      "source": {
+        "html": "../../../../public/examples/marketing/ctas/4.html",
+        "tsx": "tsx/CtasVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Each image in the grid must have descriptive alt text; CTA button on block-color background must meet contrast requirements."
+      ]
+    },
+    {
+      "id": "ctas-4-dark",
+      "title": "Content and call to action in block color on the left, grid of images on the right (Dark)",
+      "description": "Block-color panel plus image grid CTA adapted for dark marketing surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/ctas/4-dark.html",
+        "tsx": "tsx/CtasVariant4Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Block color panel text and CTA must meet contrast on both the block color and the surrounding dark page background."
+      ]
+    }
+  ]
+}

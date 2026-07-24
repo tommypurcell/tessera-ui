@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "name": "marketing-team-sections",
+  "title": "Team Sections",
+  "description": "Explore a curated collection of team section components built with Tailwind CSS. Display team member profiles with images, names, roles, and social links perfect for company websites and about pages.",
+  "category": "marketing/content",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "team",
+    "people",
+    "profiles",
+    "about",
+    "company",
+    "social-proof"
+  ],
+  "useWhen": [
+    "Introducing a company team, leadership group, or contributors on an about or recruiting page.",
+    "Pairing names and roles with optional bios or social profile links."
+  ],
+  "avoidWhen": [
+    "Displaying a large staff directory with search and filtering — use an application directory.",
+    "The page lacks permission to publish personal images or profile information."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Profile grids reduce to fewer columns and then a single column on small screens. Keep names and roles adjacent to their image in all layouts.",
+  "accessibility": [
+    "Use descriptive alt text for a person photograph, normally their name.",
+    "Icon-only social links need accessible names that identify the destination.",
+    "Use heading levels consistently for the section and each profile name."
+  ],
+  "compatibleWith": [
+    "marketing-sections",
+    "marketing-cards",
+    "marketing-footers"
+  ],
+  "variants": [
+    {
+      "id": "team-sections-1",
+      "title": "Base",
+      "description": "Standard team-member grid with photo, name, role, and optional social links.",
+      "source": {
+        "html": "../../../../public/examples/marketing/team-sections/1.html",
+        "tsx": "tsx/TeamSectionsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use descriptive alt text for a person photograph, normally their name."
+      ]
+    },
+    {
+      "id": "team-sections-1-dark",
+      "title": "Base (Dark)",
+      "description": "Standard team-member grid with photo, name, role, and optional social links. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/marketing/team-sections/1-dark.html",
+        "tsx": "tsx/TeamSectionsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use descriptive alt text for a person photograph, normally their name."
+      ]
+    },
+    {
+      "id": "team-sections-2",
+      "title": "Base with description",
+      "description": "Team profile grid with an introductory description that explains the group before individual member cards.",
+      "source": {
+        "html": "../../../../public/examples/marketing/team-sections/2.html",
+        "tsx": "tsx/TeamSectionsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use descriptive alt text for a person photograph, normally their name."
+      ]
+    },
+    {
+      "id": "team-sections-2-dark",
+      "title": "Base with description (Dark)",
+      "description": "Team profile grid with an introductory description that explains the group before individual member cards. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/marketing/team-sections/2-dark.html",
+        "tsx": "tsx/TeamSectionsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use descriptive alt text for a person photograph, normally their name."
+      ]
+    },
+    {
+      "id": "team-sections-3",
+      "title": "Small",
+      "description": "Compact team-member row for a dense about-page or advisory-board section.",
+      "source": {
+        "html": "../../../../public/examples/marketing/team-sections/3.html",
+        "tsx": "tsx/TeamSectionsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use descriptive alt text for a person photograph, normally their name."
+      ]
+    },
+    {
+      "id": "team-sections-3-dark",
+      "title": "Small (Dark)",
+      "description": "Compact team-member row for a dense about-page or advisory-board section. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/marketing/team-sections/3-dark.html",
+        "tsx": "tsx/TeamSectionsVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use descriptive alt text for a person photograph, normally their name."
+      ]
+    }
+  ]
+}

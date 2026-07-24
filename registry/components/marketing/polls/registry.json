@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "name": "marketing-polls",
+  "title": "Polls",
+  "description": "Interactive single-question, multiple-choice, and rating poll components for gathering audience feedback, running surveys, and engaging visitors on marketing websites and content pages.",
+  "category": "marketing/engagement",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["poll", "survey", "feedback", "rating", "vote", "engagement", "marketing"],
+  "useWhen": [
+    "Collecting audience opinion with a quick single-question poll embedded in a blog post or content page.",
+    "Running a multi-option survey to understand user preferences on a product page.",
+    "Capturing a rating (1–5 stars or NPS score) at the end of an article or resource."
+  ],
+  "avoidWhen": [
+    "Detailed feedback collection with open-text responses is needed — use a contact form or embedded survey tool.",
+    "Results need real-time aggregation and reporting — these components are presentational and require backend integration.",
+    "The poll interferes with the primary conversion goal of the page — use sparingly in high-conversion contexts."
+  ],
+  "dependencies": ["@tailwindcss/forms"],
+  "responsiveBehavior": "Poll options stack vertically on all screen sizes. Rating polls display star or score buttons in a row that wraps gracefully on small screens.",
+  "accessibility": [
+    "Poll questions must use a <fieldset> and <legend> for the question text; each option uses a radio or checkbox with a linked <label>.",
+    "Rating inputs must have aria-label indicating both the rating value and the maximum (e.g., '4 out of 5 stars').",
+    "Results bars shown after voting must have text alternatives conveying the percentage, not just visual fill."
+  ],
+  "compatibleWith": ["marketing-sections", "marketing-blog-cards", "marketing-ctas"],
+  "variants": [
+    {
+      "id": "polls-1",
+      "title": "Single question poll",
+      "description": "Binary or short-option radio poll with a single question and two to four answer choices — for quick audience opinion checks embedded in content.",
+      "source": {
+        "html": "../../../../public/examples/marketing/polls/1.html",
+        "tsx": "tsx/PollsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "<fieldset>/<legend> wraps the question; each radio option has a linked <label>."
+      ]
+    },
+    {
+      "id": "polls-1-dark",
+      "title": "Single question poll (Dark)",
+      "description": "Single-question radio poll adapted for dark marketing page surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/polls/1-dark.html",
+        "tsx": "tsx/PollsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Radio indicators and option labels must meet WCAG AA contrast on dark poll backgrounds."
+      ]
+    },
+    {
+      "id": "polls-2",
+      "title": "Multiple choice survey",
+      "description": "Checkbox-based multi-select survey allowing visitors to choose multiple applicable answers — for preference surveys and feature prioritization.",
+      "source": {
+        "html": "../../../../public/examples/marketing/polls/2.html",
+        "tsx": "tsx/PollsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "<fieldset>/<legend> wraps the question; each checkbox has a linked <label>; submit button announces action."
+      ]
+    },
+    {
+      "id": "polls-2-dark",
+      "title": "Multiple choice survey (Dark)",
+      "description": "Multi-select checkbox survey adapted for dark marketing surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/polls/2-dark.html",
+        "tsx": "tsx/PollsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Checkbox indicators and option labels must meet contrast requirements on dark survey backgrounds."
+      ]
+    },
+    {
+      "id": "polls-3",
+      "title": "Rating poll",
+      "description": "Star or numeric rating poll for collecting satisfaction scores, NPS, or product ratings inline within content pages.",
+      "source": {
+        "html": "../../../../public/examples/marketing/polls/3.html",
+        "tsx": "tsx/PollsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Rating inputs use radio buttons; each rating option has aria-label indicating its value out of the maximum."
+      ]
+    },
+    {
+      "id": "polls-3-dark",
+      "title": "Rating poll (Dark)",
+      "description": "Star/numeric rating poll adapted for dark marketing page surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/polls/3-dark.html",
+        "tsx": "tsx/PollsVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Rating indicators and labels must meet WCAG AA contrast on dark poll backgrounds."
+      ]
+    }
+  ]
+}

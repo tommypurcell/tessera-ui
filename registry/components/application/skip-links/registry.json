@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "name": "application-skip-links",
+  "title": "Skip Links",
+  "description": "Hidden keyboard shortcuts that appear on focus to let users bypass repeated navigation and jump directly to main content.",
+  "category": "application/navigation",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["skip-link", "accessibility", "keyboard", "navigation", "bypass"],
+  "useWhen": [
+    "Every page or view has a navigation region that keyboard users would otherwise have to tab through repeatedly.",
+    "Adding baseline keyboard accessibility to any application shell with a persistent header or sidebar.",
+    "Meeting WCAG 2.4.1 (Bypass Blocks) success criterion."
+  ],
+  "avoidWhen": [
+    "There is no repeated navigation to bypass — a single-page form does not need a skip link.",
+    "The page has only one interactive region — skip links are most valuable on pages with multiple landmarks."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Skip links are visually hidden at all viewport sizes and become visible only when they receive keyboard focus. Ensure the visible state renders above all other page content.",
+  "accessibility": [
+    "Skip links must be the first focusable elements in the document so they appear at the top of the tab order.",
+    "The href target must match the id of the destination landmark (e.g., <main id='main-content'>).",
+    "Skip links must be visible — not just programmatically focused — when they receive keyboard focus."
+  ],
+  "compatibleWith": ["application-side-menu", "marketing-headers", "application-breadcrumbs"],
+  "variants": [
+    {
+      "id": "skip-links-1",
+      "title": "Basic skip link",
+      "description": "A single 'Skip to main content' link that is visually hidden until focused, the standard minimal implementation.",
+      "source": {
+        "html": "../../../../public/examples/application/skip-links/1.html",
+        "tsx": "tsx/SkipLinksVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "focus"],
+      "accessibility": [
+        "Must be the first focusable element in the document; visible on focus; href targets <main> by id."
+      ]
+    },
+    {
+      "id": "skip-links-2",
+      "title": "Multiple skip links with dark background",
+      "description": "A set of skip links on a dark background offering multiple bypass targets such as navigation, search, and main content.",
+      "source": {
+        "html": "../../../../public/examples/application/skip-links/2.html",
+        "tsx": "tsx/SkipLinksVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "focus"],
+      "accessibility": [
+        "Multiple skip links let keyboard users jump to specific landmarks; each target id must exist in the page."
+      ]
+    },
+    {
+      "id": "skip-links-3",
+      "title": "Skip links with title and light background",
+      "description": "Skip links with an accessible section title on a light background, visually styled as a visible banner when focused.",
+      "source": {
+        "html": "../../../../public/examples/application/skip-links/3.html",
+        "tsx": "tsx/SkipLinksVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "focus"],
+      "accessibility": [
+        "Section title is visible on focus along with the links; background color must contrast with the link text."
+      ]
+    }
+  ]
+}

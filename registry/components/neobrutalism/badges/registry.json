@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "name": "neobrutalism-badges",
+  "title": "Badges",
+  "description": "Neobrutalism-style badge components built with Tailwind CSS. Featuring thick borders, hard shadows, and bold typography. Ideal for labeling content, status indicators, and tags with a distinct, retro aesthetic.",
+  "category": "neobrutalism/data-display",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "badge",
+    "tag",
+    "status",
+    "neobrutalism",
+    "label",
+    "retro"
+  ],
+  "useWhen": [
+    "Applying a compact, high-contrast label to a status, category, or small piece of metadata.",
+    "Adding a visually emphatic tag within a bold card or list interface."
+  ],
+  "avoidWhen": [
+    "The text is the primary content and needs paragraph-level readability.",
+    "The label must carry complex actions or explanations."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Badges keep intrinsic width and wrap to the next line alongside surrounding text. Status badges preserve text labels at every width.",
+  "accessibility": [
+    "Status meaning must be present in text, not only badge color.",
+    "Dismissible badges need a labelled button and must remain keyboard reachable."
+  ],
+  "compatibleWith": [
+    "neobrutalism-cards",
+    "neobrutalism-buttons",
+    "application-stats"
+  ],
+  "variants": [
+    {
+      "id": "badges-1",
+      "title": "Base",
+      "description": "Compact neobrutalist tag with thick border and hard-shadow styling.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/badges/1.html",
+        "tsx": "tsx/BadgesVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Status meaning must be present in text, not only badge color."
+      ]
+    },
+    {
+      "id": "badges-1-dark",
+      "title": "Base (Dark)",
+      "description": "Compact neobrutalist tag with thick border and hard-shadow styling. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/badges/1-dark.html",
+        "tsx": "tsx/BadgesVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Status meaning must be present in text, not only badge color."
+      ]
+    },
+    {
+      "id": "badges-2",
+      "title": "Base with status",
+      "description": "High-contrast status badge that pairs a visual indicator with readable status text.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/badges/2.html",
+        "tsx": "tsx/BadgesVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Status meaning must be present in text, not only badge color."
+      ]
+    },
+    {
+      "id": "badges-2-dark",
+      "title": "Base with status (Dark)",
+      "description": "High-contrast status badge that pairs a visual indicator with readable status text. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/badges/2-dark.html",
+        "tsx": "tsx/BadgesVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Status meaning must be present in text, not only badge color."
+      ]
+    },
+    {
+      "id": "badges-3",
+      "title": "Base with dismiss",
+      "description": "Bold removable badge with a dedicated dismiss control for editable filters or tags.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/badges/3.html",
+        "tsx": "tsx/BadgesVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Status meaning must be present in text, not only badge color."
+      ]
+    },
+    {
+      "id": "badges-3-dark",
+      "title": "Base with dismiss (Dark)",
+      "description": "Bold removable badge with a dedicated dismiss control for editable filters or tags. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/badges/3-dark.html",
+        "tsx": "tsx/BadgesVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Status meaning must be present in text, not only badge color."
+      ]
+    }
+  ]
+}

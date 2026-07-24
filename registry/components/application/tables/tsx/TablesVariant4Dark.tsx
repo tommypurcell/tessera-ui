@@ -1,0 +1,62 @@
+import type { HTMLAttributes } from 'react'
+
+export type TablesVariant4DarkProps = HTMLAttributes<HTMLDivElement>
+
+/**
+ * Copy-and-own Tailwind component. Add application-specific state and event handlers where needed.
+ */
+export function TablesVariant4Dark({ className, ...props }: TablesVariant4DarkProps) {
+  return (
+    <div className={className} {...props}>
+      <div className="max-h-46 overflow-x-auto">
+        <table className="min-w-full divide-y-2 divide-gray-200 dark:divide-gray-700">
+          <thead className="sticky top-0 bg-white ltr:text-left rtl:text-right dark:bg-gray-900">
+            <tr className="*:font-medium *:text-gray-900 dark:*:text-white">
+              <th className="px-3 py-2 whitespace-nowrap">Name</th>
+              <th className="px-3 py-2 whitespace-nowrap">DoB</th>
+              <th className="px-3 py-2 whitespace-nowrap">Role</th>
+              <th className="px-3 py-2 whitespace-nowrap">Salary</th>
+            </tr>
+          </thead>
+
+          <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+            <tr className="*:text-gray-900 *:first:font-medium dark:*:text-white">
+              <td className="px-3 py-2 whitespace-nowrap">Nandor the Relentless</td>
+              <td className="px-3 py-2 whitespace-nowrap">04/06/1262</td>
+              <td className="px-3 py-2 whitespace-nowrap">Vampire Warrior</td>
+              <td className="px-3 py-2 whitespace-nowrap">$0</td>
+            </tr>
+
+            <tr className="*:text-gray-900 *:first:font-medium dark:*:text-white">
+              <td className="px-3 py-2 whitespace-nowrap">Laszlo Cravensworth</td>
+              <td className="px-3 py-2 whitespace-nowrap">19/10/1678</td>
+              <td className="px-3 py-2 whitespace-nowrap">Vampire Gentleman</td>
+              <td className="px-3 py-2 whitespace-nowrap">$0</td>
+            </tr>
+
+            <tr className="*:text-gray-900 *:first:font-medium dark:*:text-white">
+              <td className="px-3 py-2 whitespace-nowrap">Nadja</td>
+              <td className="px-3 py-2 whitespace-nowrap">15/03/1593</td>
+              <td className="px-3 py-2 whitespace-nowrap">Vampire Seductress</td>
+              <td className="px-3 py-2 whitespace-nowrap">$0</td>
+            </tr>
+
+            <tr className="*:text-gray-900 *:first:font-medium dark:*:text-white">
+              <td className="px-3 py-2 whitespace-nowrap">Colin Robinson</td>
+              <td className="px-3 py-2 whitespace-nowrap">01/09/1971</td>
+              <td className="px-3 py-2 whitespace-nowrap">Energy Vampire</td>
+              <td className="px-3 py-2 whitespace-nowrap">$53,000</td>
+            </tr>
+
+            <tr className="*:text-gray-900 *:first:font-medium dark:*:text-white">
+              <td className="px-3 py-2 whitespace-nowrap">Guillermo de la Cruz</td>
+              <td className="px-3 py-2 whitespace-nowrap">18/11/1991</td>
+              <td className="px-3 py-2 whitespace-nowrap">Familiar/Vampire Hunter</td>
+              <td className="px-3 py-2 whitespace-nowrap">$0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )
+}

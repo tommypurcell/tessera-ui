@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "name": "application-tables",
+  "title": "Tables",
+  "description": "Semantic HTML table components for displaying structured data in dashboards and admin panels, with base, bordered, striped, sticky-heading, and sticky-column variants.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["table", "data", "grid", "dashboard", "admin", "list", "rows"],
+  "useWhen": [
+    "Displaying structured relational data where rows and columns have a clear semantic relationship.",
+    "Users need to scan, compare, or sort multiple records across several attributes simultaneously.",
+    "An admin panel or dashboard needs a full data listing with row actions such as edit or delete."
+  ],
+  "avoidWhen": [
+    "The data has only one or two columns — a simple list or definition list communicates this more cleanly.",
+    "The table would have more than eight or nine columns on desktop — consider hiding secondary columns or switching to a detail/master layout.",
+    "The primary use case is a summary of a single entity — a details-list or card is more appropriate."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Tables scroll horizontally inside an overflow wrapper on small viewports. Sticky-column variants keep the first column fixed during horizontal scroll. Avoid hiding columns with display:none unless confirmed non-essential.",
+  "accessibility": [
+    "Use <th scope='col'> for column headers and <th scope='row'> for row headers so screen readers announce the correct context.",
+    "Add a <caption> or aria-label to the <table> element to identify its purpose when the page has multiple tables.",
+    "Sortable column headers should use aria-sort='ascending' or 'descending' and be keyboard-focusable buttons."
+  ],
+  "compatibleWith": ["application-pagination", "application-filters", "application-badges", "application-stats"],
+  "variants": [
+    {
+      "id": "tables-1",
+      "title": "Base",
+      "description": "Clean table with a header row and alternating body rows, no borders — the standard starting point for data listings.",
+      "source": {
+        "html": "../../../../public/examples/application/tables/1.html",
+        "tsx": "tsx/TablesVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Column headers use <th scope='col'>; all cells have sufficient color contrast against the white background."
+      ]
+    },
+    {
+      "id": "tables-1-dark",
+      "title": "Base (Dark)",
+      "description": "Standard clean table adapted for dark dashboard surfaces with dark background header and body rows.",
+      "source": {
+        "html": "../../../../public/examples/application/tables/1-dark.html",
+        "tsx": "tsx/TablesVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Cell and header text must meet WCAG AA contrast against the dark table background."
+      ]
+    },
+    {
+      "id": "tables-2",
+      "title": "Bordered",
+      "description": "Table with visible borders on all cells, making column and row boundaries explicit — ideal for dense data or financial tables where precision matters.",
+      "source": {
+        "html": "../../../../public/examples/application/tables/2.html",
+        "tsx": "tsx/TablesVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Borders provide visual structure; <th scope> attributes remain necessary for screen reader row/column association."
+      ]
+    },
+    {
+      "id": "tables-2-dark",
+      "title": "Bordered (Dark)",
+      "description": "Bordered table adapted for dark surfaces, with visible cell borders distinguishable from the dark background.",
+      "source": {
+        "html": "../../../../public/examples/application/tables/2-dark.html",
+        "tsx": "tsx/TablesVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Border color must contrast with both the dark cell background and the cell text."
+      ]
+    },
+    {
+      "id": "tables-3",
+      "title": "Striped",
+      "description": "Table with alternating row background colors to improve row-tracking readability for wide tables with many columns.",
+      "source": {
+        "html": "../../../../public/examples/application/tables/3.html",
+        "tsx": "tsx/TablesVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Stripe background colors are decorative; do not rely on stripe color alone to convey data meaning."
+      ]
+    },
+    {
+      "id": "tables-3-dark",
+      "title": "Striped (Dark)",
+      "description": "Alternating-row striped table adapted for dark surfaces with subtle dark stripe differentiation.",
+      "source": {
+        "html": "../../../../public/examples/application/tables/3-dark.html",
+        "tsx": "tsx/TablesVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Stripe colors on dark backgrounds must still provide sufficient contrast for text within both row types."
+      ]
+    },
+    {
+      "id": "tables-4",
+      "title": "Sticky headings",
+      "description": "Table with a sticky header row that remains visible as the user scrolls vertically through a long data set — essential for tables with many rows.",
+      "source": {
+        "html": "../../../../public/examples/application/tables/4.html",
+        "tsx": "tsx/TablesVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Sticky <thead> retains its semantics; ensure the sticky header background occludes scrolled rows fully to avoid visual confusion."
+      ]
+    },
+    {
+      "id": "tables-4-dark",
+      "title": "Sticky headings (Dark)",
+      "description": "Sticky-header table adapted for dark surfaces, keeping the header visible against dark body rows during vertical scroll.",
+      "source": {
+        "html": "../../../../public/examples/application/tables/4-dark.html",
+        "tsx": "tsx/TablesVariant4Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Sticky header background must fully cover underlying dark rows to avoid readability issues at scroll boundary."
+      ]
+    },
+    {
+      "id": "tables-5",
+      "title": "Sticky first column",
+      "description": "Table with the first column fixed during horizontal scroll, allowing users to maintain row context when navigating many columns on narrow screens.",
+      "source": {
+        "html": "../../../../public/examples/application/tables/5.html",
+        "tsx": "tsx/TablesVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Sticky column must have a solid background to prevent overlap with scrolling cells; use <th scope='row'> for identity columns."
+      ]
+    },
+    {
+      "id": "tables-5-dark",
+      "title": "Sticky first column (Dark)",
+      "description": "Sticky-first-column table adapted for dark surfaces with the fixed column visually separated from scrolling columns.",
+      "source": {
+        "html": "../../../../public/examples/application/tables/5-dark.html",
+        "tsx": "tsx/TablesVariant5Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Sticky column background on dark theme must be opaque to prevent scrolling rows from bleeding through."
+      ]
+    }
+  ]
+}

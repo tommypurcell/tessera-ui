@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "name": "application-checkboxes",
+  "title": "Checkboxes",
+  "description": "Styled checkbox inputs for selecting one or more options in forms, settings panels, and filter lists.",
+  "category": "application/forms",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["checkbox", "form", "input", "filter", "multi-select", "settings"],
+  "useWhen": [
+    "Users can select zero or more independent options from a list.",
+    "Building filter panels where multiple categories can be active simultaneously.",
+    "Presenting a list of settings that each have a binary on/off state."
+  ],
+  "avoidWhen": [
+    "Only one option can be selected at a time — use radio buttons instead.",
+    "The toggle represents an immediate system state change — use a toggle switch instead.",
+    "There are more than ten options — consider a multi-select dropdown to save space."
+  ],
+  "dependencies": ["@tailwindcss/forms"],
+  "responsiveBehavior": "Checkboxes remain their natural size; surrounding layout reflows at small viewports. Ensure the tap target area extends beyond the checkbox element itself.",
+  "accessibility": [
+    "Each checkbox must have an associated <label> element linked via for/id or wrapping.",
+    "Group related checkboxes in a <fieldset> with a <legend> that names the group.",
+    "Do not rely on color alone to indicate the checked state — the browser-native checkmark provides the signal."
+  ],
+  "compatibleWith": ["application-filters", "application-radio-groups", "application-toggles"],
+  "variants": [
+    {
+      "id": "checkboxes-1",
+      "title": "Base",
+      "description": "Simple labelled checkbox list for selecting multiple independent options in a settings or filter context.",
+      "source": {
+        "html": "../../../../public/examples/application/checkboxes/1.html",
+        "tsx": "tsx/CheckboxesVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["unchecked", "checked", "focus"],
+      "accessibility": [
+        "Each checkbox requires a linked <label>; group the list in a <fieldset> with a <legend>."
+      ]
+    },
+    {
+      "id": "checkboxes-1-dark",
+      "title": "Base (Dark)",
+      "description": "Simple labelled checkbox list adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/checkboxes/1-dark.html",
+        "tsx": "tsx/CheckboxesVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["unchecked", "checked", "focus"],
+      "accessibility": [
+        "Dark label text and checkbox border colors must meet WCAG AA contrast requirements."
+      ]
+    },
+    {
+      "id": "checkboxes-2",
+      "title": "Described",
+      "description": "Checkbox list where each option includes a label and a supporting description line for additional context.",
+      "source": {
+        "html": "../../../../public/examples/application/checkboxes/2.html",
+        "tsx": "tsx/CheckboxesVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["unchecked", "checked", "focus"],
+      "accessibility": [
+        "Description text should be associated with the checkbox via aria-describedby."
+      ]
+    },
+    {
+      "id": "checkboxes-2-dark",
+      "title": "Described (Dark)",
+      "description": "Checkbox list with per-option description lines adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/checkboxes/2-dark.html",
+        "tsx": "tsx/CheckboxesVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["unchecked", "checked", "focus"],
+      "accessibility": [
+        "Description text color must maintain sufficient contrast against dark backgrounds."
+      ]
+    },
+    {
+      "id": "checkboxes-3",
+      "title": "Described with divide",
+      "description": "Described checkbox list with horizontal dividers between options to improve scannability in longer lists.",
+      "source": {
+        "html": "../../../../public/examples/application/checkboxes/3.html",
+        "tsx": "tsx/CheckboxesVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["unchecked", "checked", "focus"],
+      "accessibility": [
+        "Dividers are decorative and must not interrupt the logical reading order of the list."
+      ]
+    },
+    {
+      "id": "checkboxes-3-dark",
+      "title": "Described with divide (Dark)",
+      "description": "Divider-separated described checkbox list adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/checkboxes/3-dark.html",
+        "tsx": "tsx/CheckboxesVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["unchecked", "checked", "focus"],
+      "accessibility": [
+        "Dark divider colors must provide sufficient visual separation without obscuring focus indicators."
+      ]
+    }
+  ]
+}

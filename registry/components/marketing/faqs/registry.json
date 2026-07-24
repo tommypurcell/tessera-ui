@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "name": "marketing-faqs",
+  "title": "FAQs",
+  "description": "Accordion-style FAQ sections for marketing landing pages and support pages, letting visitors expand answers to common questions without leaving the page, with chevron, divided, and background-styled variants.",
+  "category": "marketing/content",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["faq", "accordion", "question", "answer", "support", "landing-page"],
+  "useWhen": [
+    "Answering common pre-sales questions on a pricing or product landing page to reduce support inquiries.",
+    "Building a lightweight FAQ or help section without a full knowledge base.",
+    "Structuring common objections and answers in a conversion-focused page flow."
+  ],
+  "avoidWhen": [
+    "More than 15–20 questions are needed — use a searchable knowledge base or docs site instead.",
+    "Answers contain rich formatting (code, tables, images) — a dedicated help article layout is more appropriate.",
+    "All answers should be visible simultaneously — use a simple list or definition list instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "FAQ sections are full-width at all viewports. Accordion items stack vertically and expand without horizontal overflow. Text wraps naturally within expanded answers at all widths.",
+  "accessibility": [
+    "Use native <details>/<summary> elements for zero-JavaScript keyboard-accessible disclosure — no ARIA widget needed.",
+    "Question text inside <summary> should be wrapped in a heading or have sufficient visual hierarchy.",
+    "Expanded answers must not be hidden from the accessibility tree when open."
+  ],
+  "compatibleWith": ["marketing-sections", "marketing-ctas", "marketing-pricing"],
+  "variants": [
+    {
+      "id": "faqs-1",
+      "title": "Base with chevrons",
+      "description": "Bordered FAQ accordion with a rotating chevron icon on each question — the standard collapsible FAQ pattern for landing pages.",
+      "source": {
+        "html": "../../../../public/examples/marketing/faqs/1.html",
+        "tsx": "tsx/FaqsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["collapsed", "expanded"],
+      "accessibility": [
+        "Native <details>/<summary> provides keyboard-accessible expand/collapse; no JavaScript required."
+      ]
+    },
+    {
+      "id": "faqs-1-dark",
+      "title": "Base with chevrons (Dark)",
+      "description": "Chevron-style FAQ accordion adapted for dark marketing page surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/faqs/1-dark.html",
+        "tsx": "tsx/FaqsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["collapsed", "expanded"],
+      "accessibility": [
+        "Question and answer text must meet WCAG AA contrast on dark accordion backgrounds."
+      ]
+    },
+    {
+      "id": "faqs-2",
+      "title": "Divided with chevrons",
+      "description": "FAQ accordion where each question is separated by a horizontal divider rather than a card border — a lighter, text-forward style.",
+      "source": {
+        "html": "../../../../public/examples/marketing/faqs/2.html",
+        "tsx": "tsx/FaqsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["collapsed", "expanded"],
+      "accessibility": [
+        "Divider lines are decorative; <details>/<summary> semantics remain unchanged."
+      ]
+    },
+    {
+      "id": "faqs-2-dark",
+      "title": "Divided with chevrons (Dark)",
+      "description": "Divider-separated FAQ accordion adapted for dark marketing surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/faqs/2-dark.html",
+        "tsx": "tsx/FaqsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["collapsed", "expanded"],
+      "accessibility": [
+        "Divider colors and question text must meet contrast requirements on dark backgrounds."
+      ]
+    },
+    {
+      "id": "faqs-3",
+      "title": "Background",
+      "description": "FAQ accordion with a distinct background color or section background — used when the FAQ is embedded in a section that needs visual separation from the surrounding page.",
+      "source": {
+        "html": "../../../../public/examples/marketing/faqs/3.html",
+        "tsx": "tsx/FaqsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["collapsed", "expanded"],
+      "accessibility": [
+        "Background-colored section must maintain WCAG AA contrast between question text, divider, and the section background."
+      ]
+    },
+    {
+      "id": "faqs-3-dark",
+      "title": "Background (Dark)",
+      "description": "Background-section FAQ accordion adapted for dark marketing page surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/faqs/3-dark.html",
+        "tsx": "tsx/FaqsVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["collapsed", "expanded"],
+      "accessibility": [
+        "Section background and question text contrast must be maintained on dark page surfaces."
+      ]
+    }
+  ]
+}

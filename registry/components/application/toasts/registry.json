@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "name": "application-toasts",
+  "title": "Toasts",
+  "description": "Temporary notification banners that appear to confirm actions, report errors, or surface warnings without blocking the user's workflow, with success, error, warning, info, action, and standout variants.",
+  "category": "application/feedback",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["toast", "notification", "alert", "feedback", "snackbar", "banner", "message"],
+  "useWhen": [
+    "Confirming that a user action succeeded, such as 'Changes saved' or 'Item deleted'.",
+    "Surfacing non-blocking error or warning messages that do not require immediate user intervention.",
+    "Providing brief contextual feedback that should dismiss itself automatically after a few seconds."
+  ],
+  "avoidWhen": [
+    "The message requires the user to make a decision — use a modal or inline alert instead.",
+    "The error is critical and must not be missed — a toast that auto-dismisses is too ephemeral for critical errors.",
+    "Multiple simultaneous toasts are needed — stacked toasts overwhelm users; queue them or use a notification center."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Toasts are typically positioned fixed at the bottom-right or top-right of the viewport. On mobile they span the full width at the bottom of the screen. Z-index must be high enough to appear above modals and overlays.",
+  "accessibility": [
+    "Use role='status' and aria-live='polite' for informational toasts so screen readers announce them without interrupting.",
+    "Use role='alert' and aria-live='assertive' for error toasts that require immediate attention.",
+    "Include a close button in toasts so keyboard users can dismiss them without waiting for auto-dismiss."
+  ],
+  "compatibleWith": ["application-modals", "application-buttons", "application-badges"],
+  "variants": [
+    {
+      "id": "toasts-1",
+      "title": "Success",
+      "description": "Green-themed toast confirming that a user action completed successfully, such as saving, submitting, or deleting.",
+      "source": {
+        "html": "../../../../public/examples/application/toasts/1.html",
+        "tsx": "tsx/ToastsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Uses role='status' and aria-live='polite'; success icon is aria-hidden with the message text carrying the meaning."
+      ]
+    },
+    {
+      "id": "toasts-1-dark",
+      "title": "Success (Dark)",
+      "description": "Success toast adapted for dark application surfaces with dark background and light success-colored icon and text.",
+      "source": {
+        "html": "../../../../public/examples/application/toasts/1-dark.html",
+        "tsx": "tsx/ToastsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Success icon and message text must meet WCAG AA contrast on the dark toast background."
+      ]
+    },
+    {
+      "id": "toasts-2",
+      "title": "Error",
+      "description": "Red-themed toast reporting that an action failed, such as a network error, validation failure, or server rejection.",
+      "source": {
+        "html": "../../../../public/examples/application/toasts/2.html",
+        "tsx": "tsx/ToastsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Error toasts use role='alert' and aria-live='assertive' to interrupt the screen reader immediately."
+      ]
+    },
+    {
+      "id": "toasts-2-dark",
+      "title": "Error (Dark)",
+      "description": "Error toast adapted for dark surfaces, keeping the red error icon and message legible against dark backgrounds.",
+      "source": {
+        "html": "../../../../public/examples/application/toasts/2-dark.html",
+        "tsx": "tsx/ToastsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Error text and icon must meet contrast requirements; do not rely on red color alone to communicate failure."
+      ]
+    },
+    {
+      "id": "toasts-3",
+      "title": "Warning",
+      "description": "Amber-themed toast surfacing a caution condition that the user should be aware of but that doesn't block their current task.",
+      "source": {
+        "html": "../../../../public/examples/application/toasts/3.html",
+        "tsx": "tsx/ToastsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Warning toasts use role='status'; the warning icon is aria-hidden and text carries the full message."
+      ]
+    },
+    {
+      "id": "toasts-3-dark",
+      "title": "Warning (Dark)",
+      "description": "Warning toast adapted for dark surfaces with amber warning icon and message text visible on dark backgrounds.",
+      "source": {
+        "html": "../../../../public/examples/application/toasts/3-dark.html",
+        "tsx": "tsx/ToastsVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Amber warning colors must meet WCAG AA contrast on dark toast backgrounds."
+      ]
+    },
+    {
+      "id": "toasts-4",
+      "title": "Info",
+      "description": "Blue-themed toast for informational messages that provide context or updates without indicating success or failure.",
+      "source": {
+        "html": "../../../../public/examples/application/toasts/4.html",
+        "tsx": "tsx/ToastsVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Informational toasts use role='status' and aria-live='polite'; icon is aria-hidden with text carrying the meaning."
+      ]
+    },
+    {
+      "id": "toasts-4-dark",
+      "title": "Info (Dark)",
+      "description": "Informational toast adapted for dark surfaces with blue info icon and message text legible on dark backgrounds.",
+      "source": {
+        "html": "../../../../public/examples/application/toasts/4-dark.html",
+        "tsx": "tsx/ToastsVariant4Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Blue info icon and message text must meet contrast requirements on dark toast backgrounds."
+      ]
+    },
+    {
+      "id": "toasts-5",
+      "title": "With action button",
+      "description": "Toast with an embedded action button allowing users to undo the last action, view details, or navigate directly from the notification.",
+      "source": {
+        "html": "../../../../public/examples/application/toasts/5.html",
+        "tsx": "tsx/ToastsVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Action button inside the toast must be keyboard focusable; if the toast auto-dismisses, pause the timer on focus."
+      ]
+    },
+    {
+      "id": "toasts-5-dark",
+      "title": "With action button (Dark)",
+      "description": "Action-button toast adapted for dark surfaces, keeping the embedded action clearly distinguishable on dark backgrounds.",
+      "source": {
+        "html": "../../../../public/examples/application/toasts/5-dark.html",
+        "tsx": "tsx/ToastsVariant5Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Action button text and border must meet contrast requirements against the dark toast background."
+      ]
+    },
+    {
+      "id": "toasts-6",
+      "title": "Standout",
+      "description": "High-contrast solid-background toast with strong visual weight — use for critical status messages that must not be missed in a busy UI.",
+      "source": {
+        "html": "../../../../public/examples/application/toasts/6.html",
+        "tsx": "tsx/ToastsVariant6.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "High-contrast backgrounds increase visual urgency; ensure icon and text still meet WCAG AA on the standout background color."
+      ]
+    },
+    {
+      "id": "toasts-6-dark",
+      "title": "Standout (Dark)",
+      "description": "High-contrast standout toast adapted for dark surfaces, retaining its visual prominence against dark application backgrounds.",
+      "source": {
+        "html": "../../../../public/examples/application/toasts/6-dark.html",
+        "tsx": "tsx/ToastsVariant6Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Standout background must remain distinct from the dark page background; text must meet contrast on the standout color."
+      ]
+    }
+  ]
+}

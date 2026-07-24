@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "name": "marketing-pricing",
+  "title": "Pricing",
+  "description": "Pricing components built with Tailwind CSS. These responsive, customizable pricing tables and plan layouts are ideal for SaaS, eCommerce, and service websites. Improve conversions and SEO with clear, accessible pricing options for your users.",
+  "category": "marketing/conversion",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "pricing",
+    "plans",
+    "subscription",
+    "saas",
+    "conversion",
+    "comparison"
+  ],
+  "useWhen": [
+    "Presenting a small number of plans with clear prices, feature differences, and a direct signup action.",
+    "Comparing subscription tiers for a SaaS, service, or membership product."
+  ],
+  "avoidWhen": [
+    "Customers need to compare a large matrix of technical capabilities — use a dedicated comparison table.",
+    "Pricing varies by contract, geography, or usage in ways that cannot be expressed clearly on a card."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Pricing cards stack vertically on small screens. Keep the recommended plan visually distinct without changing the reading order, and keep every call to action full-width enough to tap.",
+  "accessibility": [
+    "Use headings for plan names and a list for included features.",
+    "Announce any billed-period qualification next to the price; do not hide it in a tooltip.",
+    "The recommended plan must not be identified by color alone."
+  ],
+  "compatibleWith": [
+    "marketing-ctas",
+    "marketing-faqs",
+    "marketing-headers"
+  ],
+  "variants": [
+    {
+      "id": "pricing-1",
+      "title": "Options with tier, price, features and call to action with highlighted option",
+      "description": "Plan comparison with one visually recommended tier, a price, feature list, and direct conversion action.",
+      "source": {
+        "html": "../../../../public/examples/marketing/pricing/1.html",
+        "tsx": "tsx/PricingVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use headings for plan names and a list for included features."
+      ]
+    },
+    {
+      "id": "pricing-2",
+      "title": "Options with tier, description, price, call to action and features",
+      "description": "Plan comparison that adds supporting plan context before the price, feature list, and conversion action.",
+      "source": {
+        "html": "../../../../public/examples/marketing/pricing/2.html",
+        "tsx": "tsx/PricingVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use headings for plan names and a list for included features."
+      ]
+    }
+  ]
+}

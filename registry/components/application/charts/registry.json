@@ -1,0 +1,338 @@
+{
+  "schemaVersion": 1,
+  "name": "application-charts",
+  "title": "Charts",
+  "description": "Data visualization components — line, bar, donut, radar, scatter, bubble, and combo charts — for dashboard and analytics pages.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["chart", "graph", "analytics", "data-visualization", "dashboard", "line-chart", "bar-chart", "donut"],
+  "useWhen": [
+    "Users need to understand trends, distributions, or comparisons in quantitative data.",
+    "An analytics or reporting dashboard requires embedded visual summaries of key metrics.",
+    "A stat card needs a compact sparkline to show directional movement over time."
+  ],
+  "avoidWhen": [
+    "Precise values matter more than trends — use a data table instead.",
+    "The dataset has fewer than three data points — a stat with a delta label is clearer.",
+    "The chart cannot be made accessible to keyboard and screen-reader users in the deployment context."
+  ],
+  "dependencies": ["chart.js"],
+  "responsiveBehavior": "Chart canvases resize via Chart.js built-in handling. Constrain container widths and supply explicit heights so charts do not collapse on small viewports.",
+  "accessibility": [
+    "Provide a text summary or data table alongside each chart for screen-reader users.",
+    "Do not rely solely on color to differentiate data series — use distinct line patterns or direct labels.",
+    "Tooltips must be keyboard-reachable and must not disappear on focus loss."
+  ],
+  "compatibleWith": ["application-stats", "application-tables", "templates-analytics-dashboard"],
+  "variants": [
+    {
+      "id": "charts-1",
+      "title": "Line chart with filled area and range toggle",
+      "description": "Filled-area line chart with period-range toggle buttons for showing revenue or traffic trends over selectable time windows.",
+      "source": {
+        "html": "../../../../public/examples/application/charts/1.html",
+        "tsx": "tsx/ChartsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "range-selected"],
+      "accessibility": [
+        "Range toggle buttons use aria-pressed to communicate the selected period to screen readers."
+      ]
+    },
+    {
+      "id": "charts-1-dark",
+      "title": "Line chart with filled area and range toggle (Dark)",
+      "description": "Filled-area line chart with period-range toggle adapted for dark dashboard surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/charts/1-dark.html",
+        "tsx": "tsx/ChartsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "range-selected"],
+      "accessibility": [
+        "Dark chart grid lines and axis labels maintain readable contrast."
+      ]
+    },
+    {
+      "id": "charts-2",
+      "title": "Bar chart with tooltip",
+      "description": "Vertical bar chart for comparing discrete values across categories, with a hover tooltip showing exact figures.",
+      "source": {
+        "html": "../../../../public/examples/application/charts/2.html",
+        "tsx": "tsx/ChartsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "Tooltip values should also be available in an adjacent data table for keyboard users."
+      ]
+    },
+    {
+      "id": "charts-2-dark",
+      "title": "Bar chart with tooltip (Dark)",
+      "description": "Vertical bar chart with hover tooltip adapted for dark dashboard surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/charts/2-dark.html",
+        "tsx": "tsx/ChartsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "Dark bar fill colors must be distinguishable from the background at all zoom levels."
+      ]
+    },
+    {
+      "id": "charts-3",
+      "title": "Donut chart with legend",
+      "description": "Proportional donut chart with a colour-coded legend for category breakdowns such as traffic sources or revenue split.",
+      "source": {
+        "html": "../../../../public/examples/application/charts/3.html",
+        "tsx": "tsx/ChartsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Legend items pair color swatches with text labels so colorblind users can identify segments."
+      ]
+    },
+    {
+      "id": "charts-3-dark",
+      "title": "Donut chart with legend (Dark)",
+      "description": "Proportional donut chart with colour-coded legend adapted for dark dashboard surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/charts/3-dark.html",
+        "tsx": "tsx/ChartsVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Legend text labels maintain readable contrast on dark backgrounds."
+      ]
+    },
+    {
+      "id": "charts-4",
+      "title": "Sparkline for stat cards",
+      "description": "Minimal inline sparkline designed to embed inside a stat card and convey directional trend without axis labels.",
+      "source": {
+        "html": "../../../../public/examples/application/charts/4.html",
+        "tsx": "tsx/ChartsVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The sparkline is decorative; the stat card's text value carries the accessible information."
+      ]
+    },
+    {
+      "id": "charts-4-dark",
+      "title": "Sparkline for stat cards (Dark)",
+      "description": "Inline sparkline trend indicator adapted for dark stat card surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/charts/4-dark.html",
+        "tsx": "tsx/ChartsVariant4Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "The sparkline is decorative; the stat card's text value carries the accessible information."
+      ]
+    },
+    {
+      "id": "charts-5",
+      "title": "Stacked bar chart by category",
+      "description": "Stacked vertical bars showing both the total and the per-category breakdown within each bar.",
+      "source": {
+        "html": "../../../../public/examples/application/charts/5.html",
+        "tsx": "tsx/ChartsVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Segment colors must be distinguishable from each other without relying on hue alone."
+      ]
+    },
+    {
+      "id": "charts-5-dark",
+      "title": "Stacked bar chart by category (Dark)",
+      "description": "Category-stacked bar chart adapted for dark dashboard surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/charts/5-dark.html",
+        "tsx": "tsx/ChartsVariant5Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Segment fill colors must remain distinguishable from each other on dark backgrounds."
+      ]
+    },
+    {
+      "id": "charts-6",
+      "title": "Combo chart with bars and a target line",
+      "description": "Combined bar and line chart overlaying a performance target or benchmark line on top of bar series data.",
+      "source": {
+        "html": "../../../../public/examples/application/charts/6.html",
+        "tsx": "tsx/ChartsVariant6.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Legend must label both the bar series and the target line so users understand both data sets."
+      ]
+    },
+    {
+      "id": "charts-6-dark",
+      "title": "Combo chart with bars and a target line (Dark)",
+      "description": "Bar-and-target-line combo chart adapted for dark dashboard surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/charts/6-dark.html",
+        "tsx": "tsx/ChartsVariant6Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Target line must contrast clearly with bars and the dark background."
+      ]
+    },
+    {
+      "id": "charts-7",
+      "title": "Line chart comparing two periods",
+      "description": "Dual-series line chart overlaying two time periods for year-over-year or month-over-month comparison.",
+      "source": {
+        "html": "../../../../public/examples/application/charts/7.html",
+        "tsx": "tsx/ChartsVariant7.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Two series should use distinct colors and line patterns to remain distinguishable without color."
+      ]
+    },
+    {
+      "id": "charts-7-dark",
+      "title": "Line chart comparing two periods (Dark)",
+      "description": "Dual-series period-comparison line chart adapted for dark dashboard surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/charts/7-dark.html",
+        "tsx": "tsx/ChartsVariant7Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Both series lines must contrast with the dark background and with each other."
+      ]
+    },
+    {
+      "id": "charts-8",
+      "title": "Radar chart comparing two series",
+      "description": "Spider/radar chart for comparing two entities across multiple dimensions, such as skill profiles or product attributes.",
+      "source": {
+        "html": "../../../../public/examples/application/charts/8.html",
+        "tsx": "tsx/ChartsVariant8.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Radar axes should be labeled; provide a data table for screen-reader users who cannot interpret the shape."
+      ]
+    },
+    {
+      "id": "charts-8-dark",
+      "title": "Radar chart comparing two series (Dark)",
+      "description": "Multi-dimension radar comparison chart adapted for dark dashboard surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/charts/8-dark.html",
+        "tsx": "tsx/ChartsVariant8Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Axis grid lines and labels maintain readable contrast on dark backgrounds."
+      ]
+    },
+    {
+      "id": "charts-9",
+      "title": "Polar area chart with legend",
+      "description": "Polar area chart where segment radius encodes magnitude, for comparing categories that share a common center.",
+      "source": {
+        "html": "../../../../public/examples/application/charts/9.html",
+        "tsx": "tsx/ChartsVariant9.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Legend text labels are required since segment size encodes data without numeric axis labels."
+      ]
+    },
+    {
+      "id": "charts-9-dark",
+      "title": "Polar area chart with legend (Dark)",
+      "description": "Polar area chart with colour-coded legend adapted for dark dashboard surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/charts/9-dark.html",
+        "tsx": "tsx/ChartsVariant9Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Legend text labels must maintain readable contrast on dark backgrounds."
+      ]
+    },
+    {
+      "id": "charts-10",
+      "title": "Scatter chart with axis titles",
+      "description": "Two-axis scatter plot for visualizing correlation between two continuous variables, with explicit axis titles.",
+      "source": {
+        "html": "../../../../public/examples/application/charts/10.html",
+        "tsx": "tsx/ChartsVariant10.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Axis titles must be present; provide a summary of the correlation pattern in adjacent text."
+      ]
+    },
+    {
+      "id": "charts-10-dark",
+      "title": "Scatter chart with axis titles (Dark)",
+      "description": "Labeled-axis scatter plot adapted for dark dashboard surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/charts/10-dark.html",
+        "tsx": "tsx/ChartsVariant10Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Axis titles and data point markers maintain readable contrast on dark backgrounds."
+      ]
+    },
+    {
+      "id": "charts-11",
+      "title": "Bubble chart with sized data points",
+      "description": "Three-variable bubble chart where X position, Y position, and bubble radius each encode a distinct data dimension.",
+      "source": {
+        "html": "../../../../public/examples/application/charts/11.html",
+        "tsx": "tsx/ChartsVariant11.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Bubble size encodes data; provide axis labels, a size scale legend, and a data table for screen readers."
+      ]
+    },
+    {
+      "id": "charts-11-dark",
+      "title": "Bubble chart with sized data points (Dark)",
+      "description": "Three-variable bubble chart adapted for dark dashboard surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/charts/11-dark.html",
+        "tsx": "tsx/ChartsVariant11Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Bubble fill colors must contrast with the dark background so size differences remain visible."
+      ]
+    }
+  ]
+}

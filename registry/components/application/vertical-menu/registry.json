@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "name": "application-vertical-menu",
+  "title": "Vertical Menu",
+  "description": "Vertical navigation list components for sidebar and panel menus, supporting plain links, badges, icons, left-border active states, accordion disclosure, and divided sections.",
+  "category": "application/navigation",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["vertical-menu", "sidebar", "navigation", "menu", "nav", "accordion", "badge"],
+  "useWhen": [
+    "Building a secondary or contextual navigation panel within an application section, such as account settings or a docs sidebar.",
+    "Navigation items require supplementary badges to show unread counts or status indicators.",
+    "Nested sub-navigation is needed within a section — accordion disclosure groups related items cleanly."
+  ],
+  "avoidWhen": [
+    "Primary application navigation is needed — use a side-menu component with logo and profile areas instead.",
+    "There are only two or three navigation items — inline links or tabs are simpler.",
+    "Navigation must be accessible on mobile without a sidebar — use a bottom tab bar or hamburger drawer."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Vertical menus are typically placed inside a sidebar that is visible at medium widths and above. On small viewports they should be hidden behind a drawer or omitted in favor of a mobile navigation pattern.",
+  "accessibility": [
+    "Wrap the menu in a <nav> element with a descriptive aria-label so screen readers identify it as a distinct navigation landmark.",
+    "The active link should carry aria-current='page' or aria-current='true'.",
+    "Accordion sections using <details>/<summary> provide keyboard-accessible disclosure without JavaScript."
+  ],
+  "compatibleWith": ["application-side-menu", "application-breadcrumbs", "application-badges"],
+  "variants": [
+    {
+      "id": "vertical-menu-1",
+      "title": "Base",
+      "description": "Simple vertical list of navigation links with an active state highlight — the minimal pattern for settings and section navigation.",
+      "source": {
+        "html": "../../../../public/examples/application/vertical-menu/1.html",
+        "tsx": "tsx/VerticalMenuVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "active"],
+      "accessibility": [
+        "Active link uses aria-current='page'; wrap in <nav> with an aria-label."
+      ]
+    },
+    {
+      "id": "vertical-menu-1-dark",
+      "title": "Base (Dark)",
+      "description": "Simple vertical link list adapted for dark sidebar panels, with active state and hover highlight visible on dark backgrounds.",
+      "source": {
+        "html": "../../../../public/examples/application/vertical-menu/1-dark.html",
+        "tsx": "tsx/VerticalMenuVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "active"],
+      "accessibility": [
+        "Link text and active highlight colors must meet WCAG AA contrast on dark sidebar backgrounds."
+      ]
+    },
+    {
+      "id": "vertical-menu-2",
+      "title": "Base with badge",
+      "description": "Vertical navigation list where items carry numeric badges for unread counts, pending items, or status indicators.",
+      "source": {
+        "html": "../../../../public/examples/application/vertical-menu/2.html",
+        "tsx": "tsx/VerticalMenuVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "active"],
+      "accessibility": [
+        "Badge counts should include a screen-reader text like 'Notifications: 5' alongside the visual number."
+      ]
+    },
+    {
+      "id": "vertical-menu-2-dark",
+      "title": "Base with badge (Dark)",
+      "description": "Badge-carrying vertical navigation list adapted for dark surfaces, with badge colors legible on dark backgrounds.",
+      "source": {
+        "html": "../../../../public/examples/application/vertical-menu/2-dark.html",
+        "tsx": "tsx/VerticalMenuVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "active"],
+      "accessibility": [
+        "Badge background and text must meet contrast requirements on the dark sidebar background."
+      ]
+    },
+    {
+      "id": "vertical-menu-3",
+      "title": "Base with icon",
+      "description": "Vertical navigation list with an icon preceding each link label for faster visual scanning and category identification.",
+      "source": {
+        "html": "../../../../public/examples/application/vertical-menu/3.html",
+        "tsx": "tsx/VerticalMenuVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "active"],
+      "accessibility": [
+        "Icons are decorative when labels are present; set aria-hidden='true' on icon elements."
+      ]
+    },
+    {
+      "id": "vertical-menu-3-dark",
+      "title": "Base with icon (Dark)",
+      "description": "Icon-labeled vertical navigation list adapted for dark sidebar panels with icons and labels legible on dark backgrounds.",
+      "source": {
+        "html": "../../../../public/examples/application/vertical-menu/3-dark.html",
+        "tsx": "tsx/VerticalMenuVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "active"],
+      "accessibility": [
+        "Icon fill and label text must meet contrast requirements on dark sidebar backgrounds."
+      ]
+    },
+    {
+      "id": "vertical-menu-4",
+      "title": "Base with badge, icon",
+      "description": "Vertical navigation list combining icons and badges for the most information-dense sidebar layout — suitable for notification-heavy dashboards.",
+      "source": {
+        "html": "../../../../public/examples/application/vertical-menu/4.html",
+        "tsx": "tsx/VerticalMenuVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "active"],
+      "accessibility": [
+        "Both icons and badges must have appropriate aria-hidden or screen-reader text; label carries primary meaning."
+      ]
+    },
+    {
+      "id": "vertical-menu-4-dark",
+      "title": "Base with badge, icon (Dark)",
+      "description": "Icon-and-badge vertical navigation list adapted for dark surfaces with all elements visible on dark backgrounds.",
+      "source": {
+        "html": "../../../../public/examples/application/vertical-menu/4-dark.html",
+        "tsx": "tsx/VerticalMenuVariant4Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "active"],
+      "accessibility": [
+        "Icon, badge, and label must all meet contrast requirements on dark sidebar backgrounds."
+      ]
+    },
+    {
+      "id": "vertical-menu-5",
+      "title": "Base with icon, color with left border",
+      "description": "Icon navigation list where the active item is marked with a colored left border accent — a common pattern in admin panels and settings pages.",
+      "source": {
+        "html": "../../../../public/examples/application/vertical-menu/5.html",
+        "tsx": "tsx/VerticalMenuVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "active"],
+      "accessibility": [
+        "Left border is a visual accent; aria-current='page' on the active link provides the semantic active state."
+      ]
+    },
+    {
+      "id": "vertical-menu-5-dark",
+      "title": "Base with icon, color with left border (Dark)",
+      "description": "Left-border-active icon navigation list adapted for dark surfaces, with border color visible against dark backgrounds.",
+      "source": {
+        "html": "../../../../public/examples/application/vertical-menu/5-dark.html",
+        "tsx": "tsx/VerticalMenuVariant5Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "active"],
+      "accessibility": [
+        "Active left border color must meet contrast requirements against the dark sidebar background."
+      ]
+    },
+    {
+      "id": "vertical-menu-6",
+      "title": "Accordion menu",
+      "description": "Vertical navigation menu with expandable accordion sections using native <details>/<summary> — for grouping related links under collapsible category headers.",
+      "source": {
+        "html": "../../../../public/examples/application/vertical-menu/6.html",
+        "tsx": "tsx/VerticalMenuVariant6.tsx"
+      },
+      "appearance": "light",
+      "states": ["collapsed", "expanded"],
+      "accessibility": [
+        "Native <details>/<summary> provides keyboard-accessible open/close without JavaScript; no ARIA disclosure widget needed."
+      ]
+    },
+    {
+      "id": "vertical-menu-6-dark",
+      "title": "Accordion menu (Dark)",
+      "description": "Accordion navigation menu adapted for dark surfaces with disclosure headers and nested link items legible on dark backgrounds.",
+      "source": {
+        "html": "../../../../public/examples/application/vertical-menu/6-dark.html",
+        "tsx": "tsx/VerticalMenuVariant6Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["collapsed", "expanded"],
+      "accessibility": [
+        "Summary toggle and child link colors must meet WCAG AA contrast in both collapsed and expanded states on dark backgrounds."
+      ]
+    },
+    {
+      "id": "vertical-menu-7",
+      "title": "Accordion menu with icon",
+      "description": "Accordion navigation menu with category icons on section headers and nested icon-prefixed links — the richest vertical nav pattern.",
+      "source": {
+        "html": "../../../../public/examples/application/vertical-menu/7.html",
+        "tsx": "tsx/VerticalMenuVariant7.tsx"
+      },
+      "appearance": "light",
+      "states": ["collapsed", "expanded"],
+      "accessibility": [
+        "Section header icons are decorative; <summary> text carries the accessible name for the accordion section."
+      ]
+    },
+    {
+      "id": "vertical-menu-7-dark",
+      "title": "Accordion menu with icon (Dark)",
+      "description": "Icon-accordion navigation menu adapted for dark surfaces, keeping section headers and nested links legible on dark backgrounds.",
+      "source": {
+        "html": "../../../../public/examples/application/vertical-menu/7-dark.html",
+        "tsx": "tsx/VerticalMenuVariant7Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["collapsed", "expanded"],
+      "accessibility": [
+        "Icon and label colors in both section headers and nested items must meet contrast requirements on dark backgrounds."
+      ]
+    },
+    {
+      "id": "vertical-menu-8",
+      "title": "Base with divided sections",
+      "description": "Vertical navigation list split into labeled sections separated by dividers — useful for grouping unrelated navigation items within the same sidebar panel.",
+      "source": {
+        "html": "../../../../public/examples/application/vertical-menu/8.html",
+        "tsx": "tsx/VerticalMenuVariant8.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "active"],
+      "accessibility": [
+        "Section dividers are decorative; use visible section headings or aria-label on nested lists to identify grouped link sets."
+      ]
+    },
+    {
+      "id": "vertical-menu-8-dark",
+      "title": "Base with divided sections (Dark)",
+      "description": "Divided-section navigation list adapted for dark surfaces, with dividers and section labels visible on dark sidebar backgrounds.",
+      "source": {
+        "html": "../../../../public/examples/application/vertical-menu/8-dark.html",
+        "tsx": "tsx/VerticalMenuVariant8Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "active"],
+      "accessibility": [
+        "Divider colors and section heading text must meet contrast requirements against dark sidebar backgrounds."
+      ]
+    }
+  ]
+}

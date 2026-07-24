@@ -1,0 +1,67 @@
+---
+title: What Makes a UI Component Agent-Readable?
+description: Agent-readable UI components combine source code with clear metadata, constraints, and examples that make safe reuse possible.
+slug: what-makes-a-ui-component-agent-readable
+pubDate: 2026-07-23
+updatedDate: 2026-07-23
+terms:
+  - agent readable components
+  - ui components for agents
+  - component metadata
+---
+
+Code is necessary, but code alone is a poor interface for a coding agent. An
+agent can read a component file, yet still miss when to use it, what it depends
+on, and which product rules it must preserve.
+
+An agent-readable component makes those decisions explicit.
+
+## Give the Component a Specific Job
+
+Start with a name and description that explain the user problem. “Settings
+sidebar with grouped navigation” is more useful than “Sidebar.”
+
+```json
+{
+  "name": "settings-sidebar",
+  "title": "Settings sidebar with grouped navigation",
+  "useWhen": ["organizing account or workspace settings"],
+  "avoidWhen": ["showing a short, linear setup flow"]
+}
+```
+
+That is enough context to distinguish it from a [vertical navigation menu](/components/application/vertical-menu)
+or a compact [breadcrumb](/components/application/breadcrumbs).
+
+## Explain the Rules the Source Cannot Show
+
+Source code does not reliably communicate interaction and accessibility
+expectations. Put those requirements in metadata and documentation:
+
+```json
+{
+  "accessibility": [
+    "Keeps the current page identifiable in navigation.",
+    "Does not use color as the only active-state indicator."
+  ],
+  "responsive": "Collapses into a menu below the medium breakpoint.",
+  "dependencies": ["@tailwindcss/forms"]
+}
+```
+
+This lets an agent adapt the component without accidentally removing its
+important behavior.
+
+## Provide Searchable Examples
+
+Examples should include meaningful titles, descriptions, and links to related
+patterns. A search for “confirm delete” should find a
+[confirmation modal](/components/application/modals), not force an agent to
+invent one from scratch.
+
+## Keep Metadata Near the Component
+
+Metadata is most useful when it changes with the source. Review it when a
+component gains a dependency, supports a new breakpoint, or changes its
+interaction model. The goal is simple: make the correct reuse decision easier
+than generating a new variation.

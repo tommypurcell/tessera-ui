@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "name": "templates-analytics-dashboard",
+  "title": "Analytics Dashboard",
+  "description": "A starting-point application dashboard example built with Tailwind CSS, combining a sidebar, topbar, stat cards, revenue and order charts, and a data table into a single page. Not a production-ready template.",
+  "category": "templates/application",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "dashboard",
+    "analytics",
+    "template",
+    "charts",
+    "table",
+    "sidebar"
+  ],
+  "useWhen": [
+    "Starting a simple analytics dashboard that combines navigation, key metrics, charts, and a records table.",
+    "Prototyping an internal reporting interface with the library’s existing application components."
+  ],
+  "avoidWhen": [
+    "Shipping a production dashboard without connecting real data, authentication, loading states, and error handling.",
+    "Building a non-analytic workflow that does not need metrics or chart-driven summaries."
+  ],
+  "dependencies": [
+    "chart.js"
+  ],
+  "responsiveBehavior": "The sidebar becomes a mobile drawer or collapsible navigation. Metric cards and charts reflow into a single-column dashboard while tables retain a deliberate overflow strategy.",
+  "accessibility": [
+    "Provide a text or table alternative for every chart.",
+    "Use landmarks for sidebar, header, and main content, and give every table a caption or accessible name."
+  ],
+  "compatibleWith": [
+    "application-charts",
+    "application-stats",
+    "application-tables",
+    "application-side-menu"
+  ],
+  "variants": [
+    {
+      "id": "analytics-dashboard-1",
+      "title": "Overview",
+      "description": "Overview dashboard route showing the matching analytics workspace section with navigation and data-display components.",
+      "source": {
+        "html": "../../../../public/examples/templates/analytics-dashboard/1.html",
+        "tsx": "tsx/AnalyticsDashboardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide a text or table alternative for every chart."
+      ]
+    },
+    {
+      "id": "analytics-dashboard-2",
+      "title": "Customers",
+      "description": "Customers dashboard route showing the matching analytics workspace section with navigation and data-display components.",
+      "source": {
+        "html": "../../../../public/examples/templates/analytics-dashboard/2.html",
+        "tsx": "tsx/AnalyticsDashboardVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide a text or table alternative for every chart."
+      ]
+    },
+    {
+      "id": "analytics-dashboard-3",
+      "title": "Orders",
+      "description": "Orders dashboard route showing the matching analytics workspace section with navigation and data-display components.",
+      "source": {
+        "html": "../../../../public/examples/templates/analytics-dashboard/3.html",
+        "tsx": "tsx/AnalyticsDashboardVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide a text or table alternative for every chart."
+      ]
+    },
+    {
+      "id": "analytics-dashboard-4",
+      "title": "Billing",
+      "description": "Billing dashboard route showing the matching analytics workspace section with navigation and data-display components.",
+      "source": {
+        "html": "../../../../public/examples/templates/analytics-dashboard/4.html",
+        "tsx": "tsx/AnalyticsDashboardVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide a text or table alternative for every chart."
+      ]
+    },
+    {
+      "id": "analytics-dashboard-5",
+      "title": "Settings",
+      "description": "Settings dashboard route showing the matching analytics workspace section with navigation and data-display components.",
+      "source": {
+        "html": "../../../../public/examples/templates/analytics-dashboard/5.html",
+        "tsx": "tsx/AnalyticsDashboardVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide a text or table alternative for every chart."
+      ]
+    }
+  ]
+}

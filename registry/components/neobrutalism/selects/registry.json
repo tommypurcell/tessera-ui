@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "name": "neobrutalism-selects",
+  "title": "Selects",
+  "description": "Neobrutalism-style select components built with Tailwind CSS. Featuring thick borders, hard shadows, and custom dropdown styling. Great for forms, filtering options, and menus with a bold, high-contrast design.",
+  "category": "neobrutalism/forms",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "select",
+    "form",
+    "choice",
+    "neobrutalism",
+    "dropdown",
+    "filter"
+  ],
+  "useWhen": [
+    "Choosing one option from a known list in a high-contrast form or filter.",
+    "Grouping related options while preserving native selection behavior."
+  ],
+  "avoidWhen": [
+    "Users need to choose several values — use checkboxes or a multi-select.",
+    "The option set is large enough to require search."
+  ],
+  "dependencies": [
+    "@tailwindcss/forms"
+  ],
+  "responsiveBehavior": "Select controls fill their container on mobile and keep their native or custom indicator visible. Option groups remain readable when the menu is opened.",
+  "accessibility": [
+    "Use a visible label connected to the select element.",
+    "Use optgroup labels for grouped options and do not rely on styling alone."
+  ],
+  "compatibleWith": [
+    "neobrutalism-inputs",
+    "neobrutalism-buttons",
+    "application-filters"
+  ],
+  "variants": [
+    {
+      "id": "selects-1",
+      "title": "Base",
+      "description": "Default single-select field with thick neobrutalist border and clear selected value.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/selects/1.html",
+        "tsx": "tsx/SelectsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use a visible label connected to the select element."
+      ]
+    },
+    {
+      "id": "selects-1-dark",
+      "title": "Base (Dark)",
+      "description": "Default single-select field with thick neobrutalist border and clear selected value. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/selects/1-dark.html",
+        "tsx": "tsx/SelectsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use a visible label connected to the select element."
+      ]
+    },
+    {
+      "id": "selects-2",
+      "title": "Option groups",
+      "description": "Select field with labelled option groups for organizing related choices.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/selects/2.html",
+        "tsx": "tsx/SelectsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use a visible label connected to the select element."
+      ]
+    },
+    {
+      "id": "selects-2-dark",
+      "title": "Option groups (Dark)",
+      "description": "Select field with labelled option groups for organizing related choices. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/selects/2-dark.html",
+        "tsx": "tsx/SelectsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use a visible label connected to the select element."
+      ]
+    },
+    {
+      "id": "selects-3",
+      "title": "Datalist",
+      "description": "Text field with suggested values for flexible entry plus a constrained recommendation list.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/selects/3.html",
+        "tsx": "tsx/SelectsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use a visible label connected to the select element."
+      ]
+    },
+    {
+      "id": "selects-3-dark",
+      "title": "Datalist (Dark)",
+      "description": "Text field with suggested values for flexible entry plus a constrained recommendation list. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/selects/3-dark.html",
+        "tsx": "tsx/SelectsVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use a visible label connected to the select element."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "name": "neobrutalism-alerts",
+  "title": "Alerts",
+  "description": "Neobrutalism-style alert components built with Tailwind CSS. Featuring thick borders, hard shadows, and bold colors. Perfect for displaying important messages, notifications, and feedback with a retro, high-contrast look.",
+  "category": "neobrutalism/feedback",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "alert",
+    "feedback",
+    "status",
+    "neobrutalism",
+    "message",
+    "notification"
+  ],
+  "useWhen": [
+    "Showing a prominent success, error, or informational message in a high-contrast interface.",
+    "Drawing immediate attention to the outcome of a completed user action."
+  ],
+  "avoidWhen": [
+    "Showing a transient background update — use a toast instead.",
+    "Communicating many unrelated messages at the same time."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Alert content wraps while preserving icon and message alignment. The bordered panel spans its container on narrow screens rather than overflowing.",
+  "accessibility": [
+    "Use role=\"alert\" for urgent errors and role=\"status\" for non-urgent updates.",
+    "Do not communicate alert severity through color alone."
+  ],
+  "compatibleWith": [
+    "neobrutalism-buttons",
+    "neobrutalism-cards",
+    "application-toasts"
+  ],
+  "variants": [
+    {
+      "id": "alerts-1",
+      "title": "Info",
+      "description": "Info severity alert with bold color, thick borders, and a hard-shadow feedback treatment.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/alerts/1.html",
+        "tsx": "tsx/AlertsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use role=\"alert\" for urgent errors and role=\"status\" for non-urgent updates."
+      ]
+    },
+    {
+      "id": "alerts-1-dark",
+      "title": "Info (Dark)",
+      "description": "Info severity alert with bold color, thick borders, and a hard-shadow feedback treatment. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/alerts/1-dark.html",
+        "tsx": "tsx/AlertsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use role=\"alert\" for urgent errors and role=\"status\" for non-urgent updates."
+      ]
+    },
+    {
+      "id": "alerts-2",
+      "title": "Success",
+      "description": "Success severity alert with bold color, thick borders, and a hard-shadow feedback treatment.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/alerts/2.html",
+        "tsx": "tsx/AlertsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use role=\"alert\" for urgent errors and role=\"status\" for non-urgent updates."
+      ]
+    },
+    {
+      "id": "alerts-2-dark",
+      "title": "Success (Dark)",
+      "description": "Success severity alert with bold color, thick borders, and a hard-shadow feedback treatment. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/alerts/2-dark.html",
+        "tsx": "tsx/AlertsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use role=\"alert\" for urgent errors and role=\"status\" for non-urgent updates."
+      ]
+    },
+    {
+      "id": "alerts-3",
+      "title": "Error",
+      "description": "Error severity alert with bold color, thick borders, and a hard-shadow feedback treatment.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/alerts/3.html",
+        "tsx": "tsx/AlertsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use role=\"alert\" for urgent errors and role=\"status\" for non-urgent updates."
+      ]
+    },
+    {
+      "id": "alerts-3-dark",
+      "title": "Error (Dark)",
+      "description": "Error severity alert with bold color, thick borders, and a hard-shadow feedback treatment. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/alerts/3-dark.html",
+        "tsx": "tsx/AlertsVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use role=\"alert\" for urgent errors and role=\"status\" for non-urgent updates."
+      ]
+    }
+  ]
+}

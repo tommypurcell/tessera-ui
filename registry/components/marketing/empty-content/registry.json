@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "name": "marketing-empty-content",
+  "title": "Empty Content",
+  "description": "Engagement-oriented placeholder states for marketing and eCommerce pages, with no-search-results, coming-soon countdown, related-content suggestions, and out-of-stock messaging variants.",
+  "category": "marketing/feedback",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["empty-state", "placeholder", "no-results", "coming-soon", "out-of-stock", "marketing"],
+  "useWhen": [
+    "A product catalog search returns no matching results and you want to retain the user with alternative content suggestions.",
+    "A page or feature is not yet launched and you need a coming-soon holding page with optional notification signup.",
+    "A product is out of stock and you want to offer related alternatives rather than a dead end."
+  ],
+  "avoidWhen": [
+    "The empty state is inside an application UI (dashboard tables, form lists) — use application empty-states instead.",
+    "The page has enough content to show something useful — do not render empty state components preemptively.",
+    "The absence of results indicates a permanent product gap — address the catalog instead of adding a placeholder."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Empty content sections center vertically and horizontally within their container at all viewport sizes. Coming-soon countdown timers reflow to a 2×2 grid on mobile from a 4-column row on desktop.",
+  "accessibility": [
+    "The primary heading of the empty state must clearly explain what happened (e.g., 'No results for \"blue shoes\"').",
+    "Related content suggestions and CTA links must have descriptive labels — not 'click here'.",
+    "Coming-soon countdown timers should use <time datetime> elements with aria-live for live countdown updates."
+  ],
+  "compatibleWith": ["marketing-product-collections", "marketing-ctas", "marketing-newsletter-signup"],
+  "variants": [
+    {
+      "id": "empty-content-1",
+      "title": "No search results",
+      "description": "Empty state for zero-results search pages with an icon, 'No results found' message, and suggested alternative actions to keep users engaged.",
+      "source": {
+        "html": "../../../../public/examples/marketing/empty-content/1.html",
+        "tsx": "tsx/EmptyContentVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Heading clearly states that no results were found; alternative actions are meaningful links, not placeholder text."
+      ]
+    },
+    {
+      "id": "empty-content-1-dark",
+      "title": "No search results (Dark)",
+      "description": "No-search-results empty state adapted for dark marketing page surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/empty-content/1-dark.html",
+        "tsx": "tsx/EmptyContentVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Heading and action link text must meet WCAG AA contrast on dark empty state backgrounds."
+      ]
+    },
+    {
+      "id": "empty-content-2",
+      "title": "No search results (alternative)",
+      "description": "Alternative no-results layout with a different visual treatment or messaging style — for A/B testing empty state engagement.",
+      "source": {
+        "html": "../../../../public/examples/marketing/empty-content/2.html",
+        "tsx": "tsx/EmptyContentVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Alternative layout must still clearly communicate the empty state to screen readers via heading text."
+      ]
+    },
+    {
+      "id": "empty-content-2-dark",
+      "title": "No search results (alternative) (Dark)",
+      "description": "Alternative no-results layout adapted for dark marketing surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/empty-content/2-dark.html",
+        "tsx": "tsx/EmptyContentVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Alternative layout text and icons must meet WCAG AA contrast on dark backgrounds."
+      ]
+    },
+    {
+      "id": "empty-content-3",
+      "title": "Coming soon",
+      "description": "Coming-soon placeholder page with a countdown timer and optional email notification signup to capture leads before launch.",
+      "source": {
+        "html": "../../../../public/examples/marketing/empty-content/3.html",
+        "tsx": "tsx/EmptyContentVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Countdown timer uses <time> elements; email signup field must have a visible label; live countdown updates use aria-live='polite'."
+      ]
+    },
+    {
+      "id": "empty-content-3-dark",
+      "title": "Coming soon (Dark)",
+      "description": "Coming-soon page adapted for dark marketing surfaces with countdown timer and email capture visible on dark backgrounds.",
+      "source": {
+        "html": "../../../../public/examples/marketing/empty-content/3-dark.html",
+        "tsx": "tsx/EmptyContentVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Countdown numbers and email input must meet contrast requirements on dark page backgrounds."
+      ]
+    },
+    {
+      "id": "empty-content-4",
+      "title": "Related content",
+      "description": "Empty state that replaces missing results with a 'You might also like' grid of related articles, products, or categories to retain engagement.",
+      "source": {
+        "html": "../../../../public/examples/marketing/empty-content/4.html",
+        "tsx": "tsx/EmptyContentVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Section heading must announce that the original search had no results before presenting alternatives."
+      ]
+    },
+    {
+      "id": "empty-content-4-dark",
+      "title": "Related content (Dark)",
+      "description": "Related-content alternative grid adapted for dark marketing surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/empty-content/4-dark.html",
+        "tsx": "tsx/EmptyContentVariant4Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Related content links and images must meet contrast requirements on dark empty state backgrounds."
+      ]
+    },
+    {
+      "id": "empty-content-5",
+      "title": "No stock",
+      "description": "Out-of-stock product page placeholder with a message, notify-me email capture, and links to similar in-stock alternatives.",
+      "source": {
+        "html": "../../../../public/examples/marketing/empty-content/5.html",
+        "tsx": "tsx/EmptyContentVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Out-of-stock status must be communicated via heading text; notify-me form field requires a visible label."
+      ]
+    },
+    {
+      "id": "empty-content-5-dark",
+      "title": "No stock (Dark)",
+      "description": "Out-of-stock placeholder adapted for dark eCommerce marketing surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/empty-content/5-dark.html",
+        "tsx": "tsx/EmptyContentVariant5Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Out-of-stock heading and form field must meet contrast requirements on dark page backgrounds."
+      ]
+    }
+  ]
+}

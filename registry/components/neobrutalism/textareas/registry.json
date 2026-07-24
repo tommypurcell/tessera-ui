@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "name": "neobrutalism-textareas",
+  "title": "Textareas",
+  "description": "Neobrutalism-style textarea components built with Tailwind CSS. Featuring thick borders, hard shadows, and resizable layouts. Perfect for comments, messages, and long-form input with a retro, neobrutalist aesthetic.",
+  "category": "neobrutalism/forms",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "textarea",
+    "form",
+    "message",
+    "neobrutalism",
+    "comment",
+    "long-form"
+  ],
+  "useWhen": [
+    "Collecting a comment, message, description, or other multi-line text with a bold visual treatment.",
+    "Pairing long-form input with supporting actions such as attachment or submit controls."
+  ],
+  "avoidWhen": [
+    "Collecting a single-line value — use an input.",
+    "Building rich-text editing with formatting controls."
+  ],
+  "dependencies": [
+    "@tailwindcss/forms"
+  ],
+  "responsiveBehavior": "Textareas fill their container and remain resizable without causing page overflow. Embedded actions stack or move below the field on narrow screens.",
+  "accessibility": [
+    "Use a visible label, and connect character limits or help text through aria-describedby.",
+    "Do not convey validation state using color alone."
+  ],
+  "compatibleWith": [
+    "neobrutalism-buttons",
+    "neobrutalism-inputs",
+    "neobrutalism-checkboxes"
+  ],
+  "variants": [
+    {
+      "id": "textareas-1",
+      "title": "Base",
+      "description": "Base long-form input with thick border, hard shadow, and strong focus state.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/textareas/1.html",
+        "tsx": "tsx/TextareasVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use a visible label, and connect character limits or help text through aria-describedby."
+      ]
+    },
+    {
+      "id": "textareas-1-dark",
+      "title": "Base (Dark)",
+      "description": "Base long-form input with thick border, hard shadow, and strong focus state. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/textareas/1-dark.html",
+        "tsx": "tsx/TextareasVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use a visible label, and connect character limits or help text through aria-describedby."
+      ]
+    },
+    {
+      "id": "textareas-2",
+      "title": "Actions inside",
+      "description": "Multi-line field with supporting actions positioned inside the bordered input surface.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/textareas/2.html",
+        "tsx": "tsx/TextareasVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use a visible label, and connect character limits or help text through aria-describedby."
+      ]
+    },
+    {
+      "id": "textareas-2-dark",
+      "title": "Actions inside (Dark)",
+      "description": "Multi-line field with supporting actions positioned inside the bordered input surface. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/textareas/2-dark.html",
+        "tsx": "tsx/TextareasVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use a visible label, and connect character limits or help text through aria-describedby."
+      ]
+    },
+    {
+      "id": "textareas-3",
+      "title": "Actions outside",
+      "description": "Multi-line field with actions placed below the field for clearer touch targets and responsive wrapping.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/textareas/3.html",
+        "tsx": "tsx/TextareasVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use a visible label, and connect character limits or help text through aria-describedby."
+      ]
+    },
+    {
+      "id": "textareas-3-dark",
+      "title": "Actions outside (Dark)",
+      "description": "Multi-line field with actions placed below the field for clearer touch targets and responsive wrapping. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/textareas/3-dark.html",
+        "tsx": "tsx/TextareasVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use a visible label, and connect character limits or help text through aria-describedby."
+      ]
+    }
+  ]
+}

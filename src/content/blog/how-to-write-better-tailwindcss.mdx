@@ -1,0 +1,77 @@
+---
+title: How Component Metadata Helps Coding Agents Choose Better UI
+description: Give coding agents component metadata that explains intent, dependencies, and accessibility constraints before they generate UI.
+slug: how-component-metadata-helps-coding-agents
+pubDate: 2026-07-23
+updatedDate: 2026-07-23
+terms:
+  - component metadata
+  - coding agents
+  - ai ui components
+---
+
+A component name alone rarely gives a coding agent enough context to make a
+good choice. “Card” might mean a product card, a dashboard metric, a checkout
+summary, or a marketing testimonial.
+
+Metadata turns a component catalog into something an agent can search and
+reason about before it writes new markup.
+
+## Describe Intent, Not Just Appearance
+
+Start with the job the component does. A good description explains the context
+and constraints, not only the visual treatment.
+
+```json
+{
+  "name": "empty-state-with-action",
+  "title": "Empty state with primary action",
+  "useWhen": ["a list has no content", "the user can take a next step"],
+  "avoidWhen": ["an operation is still loading"],
+  "related": ["loaders", "buttons"]
+}
+```
+
+That record helps an agent distinguish an [empty state](/components/application/empty-states)
+from a [loader](/components/application/loaders) without guessing from a
+thumbnail.
+
+## Include Dependencies and Constraints
+
+Components often carry requirements that are invisible in a preview. Record
+them where the catalog can expose them:
+
+```json
+{
+  "name": "file-upload-dropzone",
+  "dependencies": ["@tailwindcss/forms"],
+  "responsive": "Stacks controls below the medium breakpoint.",
+  "accessibility": [
+    "Keeps the file input reachable by keyboard.",
+    "Provides a visible label and upload status."
+  ]
+}
+```
+
+This gives a coding agent facts it can preserve while adapting a
+[file uploader](/components/application/file-uploaders) to a product.
+
+## Keep the Vocabulary Consistent
+
+Use the same terms across the catalog. If “destructive action” appears in a
+dialog’s metadata, use that phrase in related buttons, confirmation patterns,
+and documentation.
+
+Consistent language improves both natural-language search and human review. It
+also makes it easier to link related patterns such as
+[modals](/components/application/modals), [toasts](/components/application/toasts),
+and [button groups](/components/application/button-groups).
+
+## Treat Metadata as Product Documentation
+
+Metadata should be reviewed whenever the component changes. If the component
+adds a dependency, changes keyboard behavior, or becomes inappropriate for a
+particular use case, update the record at the same time.
+
+The goal is not to make a catalog verbose. It is to make the preferred UI
+choice obvious enough that reuse wins over recreation.

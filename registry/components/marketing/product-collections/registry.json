@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "name": "marketing-product-collections",
+  "title": "Product Collections",
+  "description": "Product collection components built with Tailwind CSS. These responsive, customizable layouts are ideal for displaying product groups, categories, and featured items in eCommerce and marketing websites. Optimized for SEO and user experience.",
+  "category": "marketing/ecommerce",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "product",
+    "collection",
+    "catalog",
+    "filter",
+    "ecommerce",
+    "grid"
+  ],
+  "useWhen": [
+    "Presenting a category, featured collection, or search result set with multiple product cards.",
+    "Allowing shoppers to narrow a product catalog by a small, understandable set of filters."
+  ],
+  "avoidWhen": [
+    "Showing only one product — use a product detail layout.",
+    "Filtering requires many dependent facets, saved searches, or complex query building."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Product grids drop columns on narrow screens. Side filters become a drawer or disclosure, while dropdown filters remain close to the result count and collection title.",
+  "accessibility": [
+    "Use a heading for the collection name and announce result-count changes after filtering.",
+    "Filter controls need labels, keyboard operation, and a visible applied-filter state.",
+    "Do not trap keyboard focus inside a mobile filter drawer."
+  ],
+  "compatibleWith": [
+    "marketing-product-cards",
+    "marketing-carts",
+    "application-filters"
+  ],
+  "variants": [
+    {
+      "id": "product-collections-1",
+      "title": "Base",
+      "description": "Default product collection heading and responsive product-grid layout.",
+      "source": {
+        "html": "../../../../public/examples/marketing/product-collections/1.html",
+        "tsx": "tsx/ProductCollectionsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use a heading for the collection name and announce result-count changes after filtering."
+      ]
+    },
+    {
+      "id": "product-collections-2",
+      "title": "Base with centered title",
+      "description": "Centered collection introduction paired with a responsive product grid.",
+      "source": {
+        "html": "../../../../public/examples/marketing/product-collections/2.html",
+        "tsx": "tsx/ProductCollectionsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use a heading for the collection name and announce result-count changes after filtering."
+      ]
+    },
+    {
+      "id": "product-collections-3",
+      "title": "Filtering (Dropdown)",
+      "description": "Product collection header with compact dropdown filters for narrowing a catalog without a persistent sidebar.",
+      "source": {
+        "html": "../../../../public/examples/marketing/product-collections/3.html",
+        "tsx": "tsx/ProductCollectionsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "collapsed",
+        "expanded"
+      ],
+      "accessibility": [
+        "Use a heading for the collection name and announce result-count changes after filtering."
+      ]
+    },
+    {
+      "id": "product-collections-4",
+      "title": "Filtering (Side)",
+      "description": "Product collection with a persistent filter sidebar that should collapse into a mobile disclosure.",
+      "source": {
+        "html": "../../../../public/examples/marketing/product-collections/4.html",
+        "tsx": "tsx/ProductCollectionsVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "collapsed",
+        "expanded"
+      ],
+      "accessibility": [
+        "Use a heading for the collection name and announce result-count changes after filtering."
+      ]
+    }
+  ]
+}

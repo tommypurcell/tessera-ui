@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "name": "application-tabs",
+  "title": "Tabs",
+  "description": "Horizontal and vertical tab navigation components for switching between distinct content panels within the same page context, with base, icon, underline, pill, and vertical layout variants.",
+  "category": "application/navigation",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["tabs", "navigation", "panels", "sections", "segmented", "switch"],
+  "useWhen": [
+    "Switching between two or more related content views that share the same page context, such as Overview and Settings.",
+    "Content sections are mutually exclusive — only one panel is visible at a time.",
+    "The number of tabs is between two and six; more than six tabs is better served by a dropdown or sidebar."
+  ],
+  "avoidWhen": [
+    "The content under each tab is long enough that users would benefit from seeing multiple sections simultaneously — use a page with anchor links instead.",
+    "Tab labels are too long to fit horizontally on mobile — use a vertical tab layout or a select-based switcher.",
+    "The tabs represent sequential steps in a process — use a stepper component instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Horizontal tab bars scroll horizontally on narrow viewports. Pill and underline variants maintain single-row layout. Vertical tabs remain in a side-by-side layout but may need to collapse to a dropdown on mobile.",
+  "accessibility": [
+    "Use role='tablist', role='tab', and role='tabpanel' with aria-selected and aria-controls attributes to implement the ARIA Tabs pattern.",
+    "Arrow keys should move focus between tabs within the tablist; Tab key should move focus into the active panel.",
+    "Each tab panel must have an id matching the aria-controls value of its corresponding tab button."
+  ],
+  "compatibleWith": ["application-filters", "application-tables", "application-side-menu"],
+  "variants": [
+    {
+      "id": "tabs-1",
+      "title": "Base",
+      "description": "Standard horizontal tabs with a filled active indicator and plain text labels — the default choice for content panel switching.",
+      "source": {
+        "html": "../../../../public/examples/application/tabs/1.html",
+        "tsx": "tsx/TabsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Active tab uses aria-selected='true'; inactive tabs use aria-selected='false'; focus moves with arrow keys."
+      ]
+    },
+    {
+      "id": "tabs-1-dark",
+      "title": "Base (Dark)",
+      "description": "Standard horizontal tabs adapted for dark application surfaces with dark tab bar background and light active indicator.",
+      "source": {
+        "html": "../../../../public/examples/application/tabs/1-dark.html",
+        "tsx": "tsx/TabsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Active tab and inactive tab label colors must meet WCAG AA contrast on dark tab bar backgrounds."
+      ]
+    },
+    {
+      "id": "tabs-2",
+      "title": "With icons",
+      "description": "Horizontal tabs with an icon alongside each label for quicker visual identification of content sections.",
+      "source": {
+        "html": "../../../../public/examples/application/tabs/2.html",
+        "tsx": "tsx/TabsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Icons are decorative when text labels are present; set aria-hidden='true' on icon elements."
+      ]
+    },
+    {
+      "id": "tabs-2-dark",
+      "title": "With icons (Dark)",
+      "description": "Icon-labeled horizontal tabs adapted for dark surfaces, maintaining icon and label legibility on dark backgrounds.",
+      "source": {
+        "html": "../../../../public/examples/application/tabs/2-dark.html",
+        "tsx": "tsx/TabsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Icon fill and label text must meet contrast requirements against dark tab backgrounds."
+      ]
+    },
+    {
+      "id": "tabs-3",
+      "title": "Vertical",
+      "description": "Vertical tab list alongside a content panel, suited for settings pages or forms where many sections would overflow a horizontal row.",
+      "source": {
+        "html": "../../../../public/examples/application/tabs/3.html",
+        "tsx": "tsx/TabsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Vertical tab lists use aria-orientation='vertical' on the tablist; up/down arrow keys navigate between tabs."
+      ]
+    },
+    {
+      "id": "tabs-3-dark",
+      "title": "Vertical (Dark)",
+      "description": "Vertical tab layout adapted for dark application surfaces, keeping the side panel and content area legible on dark backgrounds.",
+      "source": {
+        "html": "../../../../public/examples/application/tabs/3-dark.html",
+        "tsx": "tsx/TabsVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Active tab highlight and tab label colors must meet WCAG AA contrast on dark sidebar backgrounds."
+      ]
+    },
+    {
+      "id": "tabs-4",
+      "title": "Underline",
+      "description": "Minimal underline-style tabs where the active indicator is a bottom border rather than a filled background — a lighter visual treatment for content-heavy pages.",
+      "source": {
+        "html": "../../../../public/examples/application/tabs/4.html",
+        "tsx": "tsx/TabsVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Underline active indicator must be distinguishable without color alone — pair it with a color shift in the label text."
+      ]
+    },
+    {
+      "id": "tabs-4-dark",
+      "title": "Underline (Dark)",
+      "description": "Underline-style tabs adapted for dark surfaces, with the active underline visible against dark backgrounds.",
+      "source": {
+        "html": "../../../../public/examples/application/tabs/4-dark.html",
+        "tsx": "tsx/TabsVariant4Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Underline color and active label text must meet contrast requirements on dark tab bars."
+      ]
+    },
+    {
+      "id": "tabs-5",
+      "title": "Pills",
+      "description": "Pill-shaped tab buttons with rounded backgrounds on the active item — a softer style often used in filter bars, content type switchers, or marketing pages.",
+      "source": {
+        "html": "../../../../public/examples/application/tabs/5.html",
+        "tsx": "tsx/TabsVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Pill tabs follow the same ARIA tablist pattern; active pill background must contrast with both active and inactive label text."
+      ]
+    },
+    {
+      "id": "tabs-5-dark",
+      "title": "Pills (Dark)",
+      "description": "Pill-style tabs adapted for dark surfaces with the active pill background visible against dark tab bar backgrounds.",
+      "source": {
+        "html": "../../../../public/examples/application/tabs/5-dark.html",
+        "tsx": "tsx/TabsVariant5Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Active pill background and label colors must meet WCAG AA contrast on dark application surfaces."
+      ]
+    }
+  ]
+}

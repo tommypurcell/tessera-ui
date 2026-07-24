@@ -1,0 +1,16 @@
+import type { HTMLAttributes, ReactNode } from 'react'
+
+export type LaptopMockupProps = HTMLAttributes<HTMLElement> & { children?: ReactNode }
+
+export function LaptopMockup({ children, className, ...props }: LaptopMockupProps) {
+  return (
+    <section aria-label="Desktop product preview" className={`relative grid min-h-[510px] w-full place-items-center overflow-hidden bg-[radial-gradient(circle_at_50%_42%,#fff_0_18%,#eef2fb_60%,#e4eaf6_100%)] ${className ?? ''}`} {...props}>
+      <div aria-hidden="true" className="absolute top-[52px] h-[330px] w-[620px] rounded-full bg-[radial-gradient(ellipse,rgba(94,116,255,.18),rgba(94,116,255,0)_68%)] blur-[10px]" />
+      <div className="relative z-10 w-[min(78%,710px)] rounded-[20px_20px_10px_10px] border-2 border-[#202938] bg-[linear-gradient(145deg,#59677d,#202938_16%,#141b27_80%,#3f4b60)] p-3 pb-[13px] shadow-[0_28px_35px_rgba(29,39,57,.26),inset_0_1px_1px_rgba(255,255,255,.38)]">
+        <div className="relative aspect-[16/10] overflow-hidden rounded-[9px_9px_3px_3px] border border-[#0d1320] bg-[#101a2d] shadow-[inset_0_1px_0_rgba(255,255,255,.08)]"><i aria-label="Front camera" className="absolute top-[5px] left-1/2 z-30 size-[5px] -translate-x-1/2 rounded-full border border-[#43516a] bg-[#101b2e]" />
+          {children ?? <div className="absolute inset-0 bg-[linear-gradient(135deg,#17233c_0%,#263b79_49%,#7169c9_100%)] p-[29px_27px_25px]"><div className="absolute top-[13px] left-[18px] size-[7px] rounded-full bg-[#fd7b73] shadow-[12px_0_#f9c85b,24px_0_#67c98b]" /><aside className="absolute top-[43px] bottom-[25px] left-[27px] w-[120px] rounded-xl border border-white/15 bg-slate-950/35 p-[13px]"><span className="text-[9px] font-extrabold tracking-[.12em] text-indigo-100 uppercase">Workspace</span><div className="mt-[13px] h-[7px] rounded-full bg-indigo-100/30" /><div className="mt-[13px] h-[7px] w-[70%] rounded-full bg-indigo-100/30" /><div className="mt-[13px] h-[7px] w-[84%] rounded-full bg-indigo-100/30" /></aside><article className="absolute top-[43px] right-[27px] bottom-[25px] left-[165px] rounded-xl border border-white/20 bg-white/95 p-5 shadow-[0_16px_25px_rgba(9,15,34,.14)]"><span className="text-[9px] font-extrabold tracking-[.12em] text-slate-500 uppercase">Weekly momentum</span><h2 className="mt-2 mb-[18px] w-3/4 text-[clamp(15px,2.2vw,23px)] leading-none font-bold tracking-[-.055em] text-slate-900">Where the work is moving.</h2><div aria-label="Weekly progress chart" className="flex h-[48%] items-end gap-1.5 border-t border-slate-200 pt-3.5">{[34, 61, 45, 82, 67, 100].map((height) => <i key={height} style={{ height: `${height}%` }} className="flex-1 rounded-t-[4px] bg-[linear-gradient(#7791ff,#3f5cff)]" />)}</div></article></div>}
+        </div><div aria-hidden="true" className="absolute top-full left-1/2 z-20 h-[38px] w-[calc(100%+58px)] -translate-x-1/2 rounded-[2px_2px_15px_15px] border border-[#354158] bg-[linear-gradient(#748198,#4a566b_16%,#303a4e_90%)] shadow-[0_13px_15px_rgba(31,41,55,.22)]"><i className="absolute top-1.5 left-1/2 h-[17px] w-[155px] -translate-x-1/2 rounded-b-[7px] border border-slate-900/50 bg-[linear-gradient(#5e6c82,#4b566a)]" /></div>
+      </div>
+    </section>
+  )
+}

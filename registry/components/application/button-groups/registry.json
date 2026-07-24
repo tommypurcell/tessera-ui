@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "name": "application-button-groups",
+  "title": "Button Groups",
+  "description": "Clusters of related action buttons presented as a single visual unit for toolbars, segmented controls, and view toggles.",
+  "category": "application/controls",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["button-group", "toolbar", "segmented-control", "toggle", "actions"],
+  "useWhen": [
+    "Two to five closely related actions belong together and should feel like a single control.",
+    "Offering mutually exclusive view or filter options such as List / Grid / Map.",
+    "Building toolbars where grouped icon buttons need to appear as a contiguous control strip."
+  ],
+  "avoidWhen": [
+    "Actions are unrelated — use separate buttons with spacing instead.",
+    "There are more than five options — use a select or dropdown to avoid a crowded toolbar.",
+    "The options represent navigation destinations rather than actions on the current view."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Groups stack vertically or collapse to icon-only on small viewports. Ensure each button remains easily tappable at mobile sizes.",
+  "accessibility": [
+    "Wrap mutually exclusive toggle groups in a <div role=\"group\"> with an aria-label that names the group.",
+    "The active button in a toggle group should use aria-pressed=\"true\" or aria-selected=\"true\".",
+    "Icon-only buttons must carry an aria-label describing the specific action."
+  ],
+  "compatibleWith": ["application-tabs", "application-filters", "application-tables"],
+  "variants": [
+    {
+      "id": "button-groups-1",
+      "title": "Base",
+      "description": "Three bordered buttons joined into a single strip for a set of related primary actions.",
+      "source": {
+        "html": "../../../../public/examples/application/button-groups/1.html",
+        "tsx": "tsx/ButtonGroupsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "hover", "active"],
+      "accessibility": [
+        "Group needs aria-label or aria-labelledby on the wrapper to name the set of actions."
+      ]
+    },
+    {
+      "id": "button-groups-1-dark",
+      "title": "Base (Dark)",
+      "description": "Bordered related-action button strip adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/button-groups/1-dark.html",
+        "tsx": "tsx/ButtonGroupsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "hover", "active"],
+      "accessibility": [
+        "Dark border and text colors maintain readable contrast."
+      ]
+    },
+    {
+      "id": "button-groups-2",
+      "title": "Icons",
+      "description": "Icon-only button strip for compact toolbar controls where text labels would consume too much space.",
+      "source": {
+        "html": "../../../../public/examples/application/button-groups/2.html",
+        "tsx": "tsx/ButtonGroupsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "hover", "active"],
+      "accessibility": [
+        "Each icon button must have an aria-label describing the specific action it triggers."
+      ]
+    },
+    {
+      "id": "button-groups-2-dark",
+      "title": "Icons (Dark)",
+      "description": "Icon-only toolbar strip adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/button-groups/2-dark.html",
+        "tsx": "tsx/ButtonGroupsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "hover", "active"],
+      "accessibility": [
+        "Each icon button must have an aria-label; icon contrast on dark backgrounds must meet WCAG AA."
+      ]
+    },
+    {
+      "id": "button-groups-3",
+      "title": "Main and secondary",
+      "description": "A visually heavier primary button paired with lighter secondary actions in a contiguous group to communicate hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/application/button-groups/3.html",
+        "tsx": "tsx/ButtonGroupsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "Visual weight difference is supplementary — use correct button types for semantic meaning."
+      ]
+    },
+    {
+      "id": "button-groups-3-dark",
+      "title": "Main and secondary (Dark)",
+      "description": "Primary and secondary button hierarchy group adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/button-groups/3-dark.html",
+        "tsx": "tsx/ButtonGroupsVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "Dark button colors must preserve sufficient contrast between primary and secondary states."
+      ]
+    },
+    {
+      "id": "button-groups-4",
+      "title": "Layouts",
+      "description": "Multiple button group arrangements — horizontal and vertical — shown side by side as a layout reference.",
+      "source": {
+        "html": "../../../../public/examples/application/button-groups/4.html",
+        "tsx": "tsx/ButtonGroupsVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Each group needs its own aria-label to distinguish it from sibling groups."
+      ]
+    },
+    {
+      "id": "button-groups-4-dark",
+      "title": "Layouts (Dark)",
+      "description": "Horizontal and vertical button group layout reference adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/button-groups/4-dark.html",
+        "tsx": "tsx/ButtonGroupsVariant4Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Each group needs its own aria-label to distinguish it from sibling groups."
+      ]
+    },
+    {
+      "id": "button-groups-5",
+      "title": "Layouts without space",
+      "description": "Tightly connected button groups with no gap between items, creating a flush segmented-control appearance.",
+      "source": {
+        "html": "../../../../public/examples/application/button-groups/5.html",
+        "tsx": "tsx/ButtonGroupsVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Shared borders are decorative; individual button focus rings must remain clearly visible."
+      ]
+    },
+    {
+      "id": "button-groups-5-dark",
+      "title": "Layouts without space (Dark)",
+      "description": "Flush segmented button groups adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/button-groups/5-dark.html",
+        "tsx": "tsx/ButtonGroupsVariant5Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Individual button focus rings must remain clearly visible against dark backgrounds."
+      ]
+    }
+  ]
+}

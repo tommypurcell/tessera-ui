@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root { color-scheme: light; }
+      * { box-sizing: border-box; }
+      body { margin: 0; min-height: 256px; display: grid; place-items: center; overflow: hidden; background: #f8fafc; color: #0f172a; font-family: Arial, Helvetica, sans-serif; }
+      .ribbon { position: relative; width: min(100%, 960px); overflow: hidden; border-top: 1px solid #dbe3ee; border-bottom: 1px solid #dbe3ee; background: #fff; }
+      .ribbon::before, .ribbon::after { content: ''; position: absolute; z-index: 1; top: 0; bottom: 0; width: 88px; pointer-events: none; }
+      .ribbon::before { left: 0; background: linear-gradient(90deg, #fff 12%, transparent); }
+      .ribbon::after { right: 0; background: linear-gradient(270deg, #fff 12%, transparent); }
+      .track { display: flex; width: max-content; animation: glide 28s linear infinite; }
+      .ribbon:hover .track, .ribbon:focus-within .track { animation-play-state: paused; }
+      .items { display: flex; align-items: center; gap: 44px; padding: 20px 22px; white-space: nowrap; }
+      .item { display: inline-flex; align-items: center; gap: 10px; color: #475569; font-size: 13px; font-weight: 600; letter-spacing: .01em; }
+      .dot { width: 7px; height: 7px; border-radius: 999px; background: #2563eb; box-shadow: 0 0 0 4px #eff6ff; }
+      .item strong { color: #0f172a; font-weight: 700; }
+      .item a { color: inherit; text-decoration: none; }
+      .item a:focus-visible { outline: 2px solid #2563eb; outline-offset: 5px; border-radius: 3px; }
+      @keyframes glide { to { transform: translateX(-50%); } }
+      @media (prefers-reduced-motion: reduce) { body { overflow: auto; } .ribbon { overflow: visible; } .track { width: auto; animation: none; } .items[aria-hidden='true'] { display: none; } .items { flex-wrap: wrap; justify-content: center; white-space: normal; } .ribbon::before, .ribbon::after { display: none; } }
+    </style>
+  </head>
+  <body>
+    <section class="ribbon" aria-label="Product signals">
+      <div class="track">
+        <div class="items">
+          <span class="item"><span class="dot"></span><strong>94% faster</strong> component discovery</span>
+          <a class="item" href="#"><span class="dot"></span><strong>Zero guesswork</strong> installation notes</a>
+          <span class="item"><span class="dot"></span><strong>Built for teams</strong> that ship weekly</span>
+          <a class="item" href="#"><span class="dot"></span><strong>One registry</strong> for every surface</a>
+        </div>
+        <div class="items" aria-hidden="true">
+          <span class="item"><span class="dot"></span><strong>94% faster</strong> component discovery</span>
+          <span class="item"><span class="dot"></span><strong>Zero guesswork</strong> installation notes</span>
+          <span class="item"><span class="dot"></span><strong>Built for teams</strong> that ship weekly</span>
+          <span class="item"><span class="dot"></span><strong>One registry</strong> for every surface</span>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

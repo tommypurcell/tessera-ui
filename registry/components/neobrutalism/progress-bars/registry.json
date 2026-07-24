@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "name": "neobrutalism-progress-bars",
+  "title": "Progress Bars",
+  "description": "Neobrutalism-style progress bar components built with Tailwind CSS. Featuring thick borders, hard shadows, and bold fill patterns. Perfect for loading states, completion tracking, and status indicators with a retro flair.",
+  "category": "neobrutalism/feedback",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "progress",
+    "loading",
+    "status",
+    "neobrutalism",
+    "completion",
+    "indicator"
+  ],
+  "useWhen": [
+    "Showing measurable completion, upload progress, or task advancement in a high-contrast interface.",
+    "Pairing a percentage or status label with a visual progress indicator."
+  ],
+  "avoidWhen": [
+    "The process has no known completion amount — use an indeterminate loader.",
+    "Showing an unrelated status message with no progress value."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Progress tracks fill available width while labels remain adjacent or stack below at narrow widths. Patterned fills remain visible without relying on color alone.",
+  "accessibility": [
+    "Use a native progress element or role=\"progressbar\" with aria-valuenow, aria-valuemin, and aria-valuemax.",
+    "Expose a readable progress value or status text."
+  ],
+  "compatibleWith": [
+    "neobrutalism-alerts",
+    "application-loaders",
+    "application-steps"
+  ],
+  "variants": [
+    {
+      "id": "progress-bars-1",
+      "title": "Base",
+      "description": "Base thick-bordered progress track for a known completion value.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/progress-bars/1.html",
+        "tsx": "tsx/ProgressBarsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use a native progress element or role=\"progressbar\" with aria-valuenow, aria-valuemin, and aria-valuemax."
+      ]
+    },
+    {
+      "id": "progress-bars-1-dark",
+      "title": "Base (Dark)",
+      "description": "Base thick-bordered progress track for a known completion value. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/progress-bars/1-dark.html",
+        "tsx": "tsx/ProgressBarsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use a native progress element or role=\"progressbar\" with aria-valuenow, aria-valuemin, and aria-valuemax."
+      ]
+    },
+    {
+      "id": "progress-bars-2",
+      "title": "Striped",
+      "description": "Progress indicator with a patterned fill that adds a second visual cue beyond color.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/progress-bars/2.html",
+        "tsx": "tsx/ProgressBarsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use a native progress element or role=\"progressbar\" with aria-valuenow, aria-valuemin, and aria-valuemax."
+      ]
+    },
+    {
+      "id": "progress-bars-2-dark",
+      "title": "Striped (Dark)",
+      "description": "Progress indicator with a patterned fill that adds a second visual cue beyond color. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/progress-bars/2-dark.html",
+        "tsx": "tsx/ProgressBarsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use a native progress element or role=\"progressbar\" with aria-valuenow, aria-valuemin, and aria-valuemax."
+      ]
+    },
+    {
+      "id": "progress-bars-3",
+      "title": "Status",
+      "description": "Labeled progress bar that pairs completion fill with explicit status information.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/progress-bars/3.html",
+        "tsx": "tsx/ProgressBarsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use a native progress element or role=\"progressbar\" with aria-valuenow, aria-valuemin, and aria-valuemax."
+      ]
+    },
+    {
+      "id": "progress-bars-3-dark",
+      "title": "Status (Dark)",
+      "description": "Labeled progress bar that pairs completion fill with explicit status information. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/progress-bars/3-dark.html",
+        "tsx": "tsx/ProgressBarsVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use a native progress element or role=\"progressbar\" with aria-valuenow, aria-valuemin, and aria-valuemax."
+      ]
+    }
+  ]
+}

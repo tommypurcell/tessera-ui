@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "name": "application-stats",
+  "title": "Stats",
+  "description": "KPI and metric cards displaying a key value, label, and optional growth indicator for dashboard and analytics summary rows.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["stat", "metric", "kpi", "dashboard", "analytics", "growth-indicator"],
+  "useWhen": [
+    "Summarizing key performance indicators at the top of a dashboard or analytics page.",
+    "Showing a primary metric value alongside a delta or trend to communicate whether it is improving.",
+    "Displaying a row of four to six comparable metrics in a uniform grid layout."
+  ],
+  "avoidWhen": [
+    "The value changes frequently in real time — a stat card without live updates can mislead users.",
+    "Detailed breakdown of the metric is needed on the same view — use a table or chart instead.",
+    "The page already has too many stat cards — cluster similar KPIs or hide secondary ones behind a toggle."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Stat grids collapse from four columns to two on tablet and a single column on mobile. Each card maintains its padding and typography at all sizes.",
+  "accessibility": [
+    "Use semantic heading levels inside stat cards to establish hierarchy without relying on visual size alone.",
+    "Growth indicators that use color (green up / red down) must include an accessible text label or icon label.",
+    "Decorative trend icons should carry aria-hidden='true'; the trend text label carries the meaning."
+  ],
+  "compatibleWith": ["application-charts", "application-tables", "application-badges"],
+  "variants": [
+    {
+      "id": "stats-1",
+      "title": "Title, value, from value and themed growth stat",
+      "description": "Stat card showing a headline value, a 'from' previous-period value, and a color-coded growth badge.",
+      "source": {
+        "html": "../../../../public/examples/application/stats/1.html",
+        "tsx": "tsx/StatsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Growth badge color is supplementary; the delta value text communicates the change to screen readers."
+      ]
+    },
+    {
+      "id": "stats-1-dark",
+      "title": "Title, value, from value and themed growth stat (Dark)",
+      "description": "Stat card with previous-value and color-coded growth badge adapted for dark dashboard surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/stats/1-dark.html",
+        "tsx": "tsx/StatsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Value, label, and growth badge colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    },
+    {
+      "id": "stats-2",
+      "title": "Title, value, icon and themed growth stat",
+      "description": "Stat card with a category icon beside the title, a headline value, and a growth badge for quick visual identification.",
+      "source": {
+        "html": "../../../../public/examples/application/stats/2.html",
+        "tsx": "tsx/StatsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Category icon is decorative when the title already identifies the metric; aria-hidden='true' for the icon."
+      ]
+    },
+    {
+      "id": "stats-2-dark",
+      "title": "Title, value, icon and themed growth stat (Dark)",
+      "description": "Icon-and-growth stat card adapted for dark dashboard surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/stats/2-dark.html",
+        "tsx": "tsx/StatsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Icon, value, and growth badge colors must meet contrast requirements on dark backgrounds."
+      ]
+    },
+    {
+      "id": "stats-3",
+      "title": "Title, value and themed growth stat",
+      "description": "Minimal stat card with just a label, value, and growth badge — no icon — for the most compact layout.",
+      "source": {
+        "html": "../../../../public/examples/application/stats/3.html",
+        "tsx": "tsx/StatsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Growth badge must pair its color with a text label; value and label must be programmatically related."
+      ]
+    },
+    {
+      "id": "stats-3-dark",
+      "title": "Title, value and themed growth stat (Dark)",
+      "description": "Minimal label/value/growth stat card adapted for dark dashboard surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/stats/3-dark.html",
+        "tsx": "tsx/StatsVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Label, value, and growth badge colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    },
+    {
+      "id": "stats-4",
+      "title": "Title, value and icon",
+      "description": "Stat card with a headline value and a supporting icon but no growth indicator — for absolute metrics without trend context.",
+      "source": {
+        "html": "../../../../public/examples/application/stats/4.html",
+        "tsx": "tsx/StatsVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Icon is decorative; title and value text carry the semantic content for screen readers."
+      ]
+    },
+    {
+      "id": "stats-4-dark",
+      "title": "Title, value and icon (Dark)",
+      "description": "No-growth icon-and-value stat card adapted for dark dashboard surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/stats/4-dark.html",
+        "tsx": "tsx/StatsVariant4Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Icon and value text must meet contrast requirements on dark card backgrounds."
+      ]
+    },
+    {
+      "id": "stats-5",
+      "title": "Title, value and themed growth stat, stacked style",
+      "description": "Stacked stat card where the label, value, and growth badge are arranged vertically for a taller, more prominent layout.",
+      "source": {
+        "html": "../../../../public/examples/application/stats/5.html",
+        "tsx": "tsx/StatsVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Stacked layout does not change the semantic relationships between label, value, and badge."
+      ]
+    },
+    {
+      "id": "stats-5-dark",
+      "title": "Title, value and themed growth stat, stacked style (Dark)",
+      "description": "Stacked label/value/growth stat card adapted for dark dashboard surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/stats/5-dark.html",
+        "tsx": "tsx/StatsVariant5Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "All text and badge colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    },
+    {
+      "id": "stats-6",
+      "title": "Title, value, icon and themed growth stat, stacked style",
+      "description": "Full-featured stacked stat card combining a category icon, headline value, label, and growth badge in a vertical arrangement.",
+      "source": {
+        "html": "../../../../public/examples/application/stats/6.html",
+        "tsx": "tsx/StatsVariant6.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Icon is decorative; stacked layout still exposes label, value, and badge correctly to assistive technology."
+      ]
+    },
+    {
+      "id": "stats-6-dark",
+      "title": "Title, value, icon and themed growth stat, stacked style (Dark)",
+      "description": "Full-featured stacked stat card with icon and growth badge adapted for dark dashboard surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/stats/6-dark.html",
+        "tsx": "tsx/StatsVariant6Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Icon, value, label, and growth badge colors must all meet contrast requirements on dark backgrounds."
+      ]
+    }
+  ]
+}

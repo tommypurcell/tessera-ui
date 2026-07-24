@@ -1,0 +1,26 @@
+import type { HTMLAttributes } from 'react'
+
+export type ButtonsVariant1Props = HTMLAttributes<HTMLDivElement>
+
+/**
+ * Copy-and-own Tailwind component. Add application-specific state and event handlers where needed.
+ */
+export function ButtonsVariant1({ className, ...props }: ButtonsVariant1Props) {
+  return (
+    <div className={className} {...props}>
+      <a
+        className="inline-flex items-center justify-center rounded-full border border-indigo-600 bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700 focus-visible:ring-4 focus-visible:ring-indigo-200 focus-visible:outline-none"
+        href="#"
+      >
+        Get started
+      </a>
+
+      <a
+        className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition-colors hover:border-slate-400 hover:bg-slate-50 hover:text-slate-900 focus-visible:ring-4 focus-visible:ring-slate-200 focus-visible:outline-none"
+        href="#"
+      >
+        Learn more
+      </a>
+    </div>
+  )
+}

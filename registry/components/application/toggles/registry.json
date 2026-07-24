@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "name": "application-toggles",
+  "title": "Toggles",
+  "description": "On/off switch controls for binary settings and preferences, implemented as styled checkboxes with base, icon-adorned, material, and Apple-style visual variants.",
+  "category": "application/forms",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["toggle", "switch", "checkbox", "form", "settings", "preference", "binary"],
+  "useWhen": [
+    "Enabling or disabling a binary setting that takes effect immediately without a save button, such as notifications or dark mode.",
+    "A settings page lists multiple independently togglable features that users can turn on or off.",
+    "The on/off metaphor communicates the action better than a checkbox label like 'Yes/No'."
+  ],
+  "avoidWhen": [
+    "The setting only takes effect after a form is submitted — use a checkbox inside a form instead.",
+    "Multiple related options can be selected together — use a checkbox group.",
+    "The control represents a non-binary state (three or more states) — use radio buttons or a select."
+  ],
+  "dependencies": ["@tailwindcss/forms"],
+  "responsiveBehavior": "Toggle switches maintain their size across viewports. Touch targets should be at least 44×44px; the label area can extend the hit target on mobile.",
+  "accessibility": [
+    "Use a native <input type='checkbox'> with role='switch' to convey the on/off semantics to screen readers.",
+    "Each toggle must have an associated visible <label> — do not rely on placeholder text or tooltip alone.",
+    "The checked state must be communicated via the checked attribute, not color alone."
+  ],
+  "compatibleWith": ["application-checkboxes", "application-radio-groups", "application-inputs"],
+  "variants": [
+    {
+      "id": "toggles-1",
+      "title": "Base",
+      "description": "Standard pill-shaped toggle switch using a styled checkbox, the default for settings pages and preference lists.",
+      "source": {
+        "html": "../../../../public/examples/application/toggles/1.html",
+        "tsx": "tsx/TogglesVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "checked"],
+      "accessibility": [
+        "Requires a linked <label>; use role='switch' with aria-checked for accurate screen reader announcement."
+      ]
+    },
+    {
+      "id": "toggles-1-dark",
+      "title": "Base (Dark)",
+      "description": "Standard toggle switch adapted for dark application surfaces with dark track and light thumb.",
+      "source": {
+        "html": "../../../../public/examples/application/toggles/1-dark.html",
+        "tsx": "tsx/TogglesVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "checked"],
+      "accessibility": [
+        "Toggle track and thumb colors must meet contrast requirements in both on and off states on dark backgrounds."
+      ]
+    },
+    {
+      "id": "toggles-2",
+      "title": "Base with icon",
+      "description": "Toggle switch with a small icon inside the thumb (such as a sun/moon or check/cross) to reinforce the on/off state beyond color.",
+      "source": {
+        "html": "../../../../public/examples/application/toggles/2.html",
+        "tsx": "tsx/TogglesVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "checked"],
+      "accessibility": [
+        "Icon inside the thumb is decorative when the label describes the setting; set aria-hidden='true' on the icon."
+      ]
+    },
+    {
+      "id": "toggles-2-dark",
+      "title": "Base with icon (Dark)",
+      "description": "Icon-adorned toggle adapted for dark surfaces, with thumb icon visible against the dark track on both on and off states.",
+      "source": {
+        "html": "../../../../public/examples/application/toggles/2-dark.html",
+        "tsx": "tsx/TogglesVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "checked"],
+      "accessibility": [
+        "Thumb icon and track colors must meet contrast requirements in both checked and unchecked states on dark backgrounds."
+      ]
+    },
+    {
+      "id": "toggles-3",
+      "title": "Material",
+      "description": "Material Design-style toggle with a circular thumb that extends slightly beyond the pill track — a familiar pattern for Android-native UI aesthetics.",
+      "source": {
+        "html": "../../../../public/examples/application/toggles/3.html",
+        "tsx": "tsx/TogglesVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "checked"],
+      "accessibility": [
+        "Material styling does not change the underlying checkbox semantics; role='switch' and aria-checked still required."
+      ]
+    },
+    {
+      "id": "toggles-3-dark",
+      "title": "Material (Dark)",
+      "description": "Material Design toggle adapted for dark surfaces, with the elevated thumb and track visible against dark backgrounds.",
+      "source": {
+        "html": "../../../../public/examples/application/toggles/3-dark.html",
+        "tsx": "tsx/TogglesVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "checked"],
+      "accessibility": [
+        "Thumb elevation shadow must be visible on dark backgrounds; track color must contrast sufficiently."
+      ]
+    },
+    {
+      "id": "toggles-4",
+      "title": "Apple",
+      "description": "iOS/macOS-style toggle with a pill-shaped track and large circular thumb — most recognizable to users accustomed to Apple platform settings.",
+      "source": {
+        "html": "../../../../public/examples/application/toggles/4.html",
+        "tsx": "tsx/TogglesVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "checked"],
+      "accessibility": [
+        "Apple-style visual treatment is purely aesthetic; accessibility semantics remain identical to the base toggle."
+      ]
+    },
+    {
+      "id": "toggles-4-dark",
+      "title": "Apple (Dark)",
+      "description": "iOS/macOS-style toggle adapted for dark surfaces with the green active track and white thumb visible on dark backgrounds.",
+      "source": {
+        "html": "../../../../public/examples/application/toggles/4-dark.html",
+        "tsx": "tsx/TogglesVariant4Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "checked"],
+      "accessibility": [
+        "Active track green and inactive track grey must meet contrast requirements against dark application backgrounds."
+      ]
+    }
+  ]
+}

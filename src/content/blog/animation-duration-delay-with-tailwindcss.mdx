@@ -1,0 +1,74 @@
+---
+title: Why AI Coding Agents Generate Inconsistent UI
+description: AI-generated interfaces become inconsistent when agents cannot find trusted components, metadata, and project conventions.
+slug: why-ai-coding-agents-generate-inconsistent-ui
+pubDate: 2026-07-23
+updatedDate: 2026-07-23
+terms:
+  - ai generated ui
+  - coding agents
+  - component metadata
+---
+
+Coding agents are fast at producing markup. The hard part is getting them to
+make the same UI decision every time.
+
+Without a trusted component catalog, an agent sees “add a modal” as a request to
+write a new modal. The next request may produce a different dialog, spacing
+scale, button treatment, and focus strategy.
+
+## The Missing Context Is Usually Small
+
+Agents do not need a huge design document to avoid most inconsistency. They need
+an obvious answer to a few questions:
+
+- Which component should I use?
+- When is it appropriate?
+- What dependencies does it require?
+- What accessibility behavior is already handled?
+
+This [modal component collection](/components/application/modals) is more
+useful to an agent when its variants have names and descriptions than when it
+is only a gallery of screenshots.
+
+## Give Components Structured Metadata
+
+Keep component metadata close to its source. A small record can capture the
+information an agent needs before it generates code:
+
+```json
+{
+  "name": "confirm-dialog",
+  "category": "application",
+  "useWhen": ["confirming a destructive action", "requiring an explicit choice"],
+  "avoidWhen": ["showing non-blocking status"],
+  "accessibility": ["moves focus into the dialog", "returns focus when closed"],
+  "related": ["toasts", "buttons"]
+}
+```
+
+The metadata does not replace human judgment. It gives the agent a constrained,
+inspectable starting point.
+
+## Reuse Before Generating
+
+Make “search the catalog first” a project convention. A simple workflow is:
+
+```txt
+1. Search existing components by task and constraint.
+2. Reuse the closest documented component.
+3. Adapt its content and data, not its visual system.
+4. Create a new primitive only when the catalog has a genuine gap.
+```
+
+This keeps the design system coherent while still allowing product-specific
+work. Existing [button groups](/components/application/button-groups),
+[tables](/components/application/tables), and [empty states](/components/application/empty-states)
+become the defaults instead of fresh inventions.
+
+## Make the Preferred Path Easier
+
+The best component library is not merely a folder of code. It is easy to
+search, explains what each item does, and gives an agent enough information to
+choose safely. When reuse is easier than recreation, the generated interface
+starts to look like one product.

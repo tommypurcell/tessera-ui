@@ -1,0 +1,75 @@
+---
+title: How Agents Should Retrieve UI Component Source Safely
+description: Give coding agents trusted component source through manifests, dependency checks, and reviewable installation steps.
+slug: how-agents-should-retrieve-ui-component-source-safely
+pubDate: 2026-07-23
+updatedDate: 2026-07-23
+terms:
+  - agent component source
+  - secure component registry
+  - ui component installation
+---
+
+Giving a coding agent access to component source should not mean allowing it to
+copy arbitrary code from an unreviewed URL. A useful registry makes the source,
+dependencies, and expected changes clear before anything is written into a
+project.
+
+## Use a Trusted Component Manifest
+
+The registry should return a specific item rather than an unbounded search
+result from the web.
+
+```json
+{
+  "name": "confirm-dialog",
+  "version": "1.2.0",
+  "source": "registry/components/confirm-dialog.tsx",
+  "dependencies": ["@radix-ui/react-dialog"],
+  "files": ["confirm-dialog.tsx", "use-confirm-dialog.ts"],
+  "checksum": "sha256:..."
+}
+```
+
+This makes the retrieval request auditable. The agent knows which files it is
+allowed to add and which dependencies need review.
+
+## Resolve Dependencies Before Writing Files
+
+An agent should inspect the component’s dependency graph before installation.
+For a [modal](/components/application/modals), that might include a focus
+management primitive or an icon package. For a [data table](/components/application/tables),
+it might include a table utility and pagination controls.
+
+```txt
+1. Read the registry item.
+2. Compare required dependencies with the target project.
+3. Show the files and package changes.
+4. Write the source only after the plan is accepted.
+5. Run type, build, and accessibility checks.
+```
+
+This protects the project from surprising configuration changes and gives a
+reviewer a concise record of what the agent did.
+
+## Keep Installation Scoped
+
+A component installer should not overwrite global styles, rewrite unrelated
+configuration, or silently replace an existing component. Prefer explicit
+targets and fail when a file collision needs a human decision.
+
+```ts
+if (targetFileExists && !request.overwrite) {
+  throw new Error('Component target already exists. Review the diff before replacing it.')
+}
+```
+
+The goal is not to make installation frictionless at any cost. It is to make
+reuse predictable enough that an agent can move quickly without hiding risk.
+
+## Validate the Installed Pattern
+
+After retrieval, check that the component still matches the product. Confirm
+its labels, focus behavior, breakpoints, and dependencies. A trusted source is
+a starting point; it is not proof that the component is appropriate for every
+screen.

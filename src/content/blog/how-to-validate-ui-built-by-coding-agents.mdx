@@ -1,0 +1,63 @@
+---
+title: How to Validate UI Built by Coding Agents
+description: Validate agent-generated UI by checking component reuse, accessibility, responsive behavior, and design-system compatibility.
+slug: how-to-validate-ui-built-by-coding-agents
+pubDate: 2026-07-23
+updatedDate: 2026-07-23
+terms:
+  - validate ai generated ui
+  - coding agent ui
+  - ui quality
+---
+
+An interface can compile, look acceptable in one screenshot, and still be the
+wrong component for the task. Validation gives coding agents a way to check
+their work against the component system before it reaches review.
+
+## Check Reuse Before Appearance
+
+Ask whether an existing component already solves the problem. A new notification
+banner may be unnecessary if the catalog already has an appropriate
+[toast](/components/application/toasts) or [alert](/components/neobrutalism/alerts).
+
+```txt
+Does an existing component match the user task?
+Were its documented dependencies preserved?
+Did the implementation add an unnecessary new primitive?
+```
+
+This catches inconsistency before a visual comparison even begins.
+
+## Validate Accessibility Behavior
+
+Automated checks are valuable, but they are not the whole review. Verify the
+interaction that matters for the component:
+
+```txt
+Modal: focus moves into the dialog and returns after close.
+Menu: keyboard users can reach every action.
+Form: fields have labels and errors have clear text.
+Table: headers communicate the meaning of each column.
+```
+
+Use existing [modal](/components/application/modals),
+[form](/components/application/inputs), and [table](/components/application/tables)
+patterns as the baseline instead of asking an agent to invent these details.
+
+## Test Responsive States
+
+An agent should check the breakpoints where layout changes, not only the
+desktop result. A compact navigation, a dense table, or a card grid can require
+different structure on smaller screens.
+
+```txt
+1. Check the narrowest supported width.
+2. Check the component's documented layout transition.
+3. Check the intended desktop layout.
+```
+
+## Keep a Reviewable Record
+
+Store the component selected, metadata consulted, and checks performed with the
+change. This gives reviewers a short explanation of why the agent chose that
+pattern and makes future corrections easier to turn into reusable rules.

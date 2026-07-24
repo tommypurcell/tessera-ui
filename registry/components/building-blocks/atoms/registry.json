@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "name": "atom-library",
+  "title": "Atom Library",
+  "description": "Named Tailwind-first atom exports for signals, media, inputs, loading states, and layout composition.",
+  "category": "building-blocks",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["atoms", "primitives", "tailwind"],
+  "useWhen": ["You are composing a larger control from small visual and semantic pieces."],
+  "avoidWhen": ["You need a complete domain component such as a dialog, table, menu, or card."],
+  "dependencies": ["No external runtime dependency."],
+  "responsiveBehavior": "Atoms preserve their intrinsic size while composition wrappers respond to available width.",
+  "accessibility": [
+    "Uses native controls where interaction is required.",
+    "Decorative atoms are hidden from assistive technology and interactive atoms expose labels or states."
+  ],
+  "compatibleWith": ["buttons", "forms", "cards", "toolbars"],
+  "variants": [
+    {
+      "id": "signals",
+      "title": "Signals",
+      "description": "Badges, tags, keycaps, dots, indicators, and small status markers.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/atoms/1.html",
+        "tsx": "tsx/Atoms.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "active"],
+      "accessibility": ["Do not rely on color alone for status."]
+    },
+    {
+      "id": "media",
+      "title": "Media",
+      "description": "Avatars, image fallbacks, icon containers, thumbnails, swatches, and aspect frames.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/atoms/2.html",
+        "tsx": "tsx/Atoms.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "fallback"],
+      "accessibility": ["Provide meaningful alternative text for informative images."]
+    },
+    {
+      "id": "inputs",
+      "title": "Inputs",
+      "description": "Native fields and input adornments for assembling accessible forms.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/atoms/3.html",
+        "tsx": "tsx/Atoms.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "focus", "invalid"],
+      "accessibility": [
+        "Keep native labels, focus, and validation relationships in the consuming form."
+      ]
+    },
+    {
+      "id": "loading",
+      "title": "Loading",
+      "description": "Spinners, progress pieces, skeletons, and activity pulses for transient states.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/atoms/4.html",
+        "tsx": "tsx/Atoms.tsx"
+      },
+      "appearance": "light",
+      "states": ["loading", "progress"],
+      "accessibility": ["Pair visual loading states with an accessible status announcement."]
+    },
+    {
+      "id": "layout",
+      "title": "Layout",
+      "description": "Separators, spacing, surfaces, and small composition wrappers for larger components.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/atoms/5.html",
+        "tsx": "tsx/Atoms.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "scroll"],
+      "accessibility": ["Preserve semantic landmarks in the consuming composition."]
+    }
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "name": "neobrutalism-buttons",
+  "title": "Buttons",
+  "description": "Neobrutalism-style button components built with Tailwind CSS. Featuring thick borders, hard shadows, and interactive hover states. Perfect for calls-to-action, forms, and navigation with a bold, retro design.",
+  "category": "neobrutalism/controls",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "button",
+    "action",
+    "cta",
+    "neobrutalism",
+    "retro",
+    "interaction"
+  ],
+  "useWhen": [
+    "Offering a clear primary or secondary action within a high-contrast neobrutalist interface.",
+    "Making tactile pressed states part of the visual interaction language."
+  ],
+  "avoidWhen": [
+    "Presenting a navigation link to another document.",
+    "Showing too many visually dominant actions in one group."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Buttons retain generous tap targets and can wrap in action groups on small screens. Pressed transforms must not shift surrounding layout.",
+  "accessibility": [
+    "Use semantic button elements for actions and visible focus states.",
+    "Icon-only buttons require an accessible name."
+  ],
+  "compatibleWith": [
+    "neobrutalism-cards",
+    "neobrutalism-inputs",
+    "neobrutalism-alerts"
+  ],
+  "variants": [
+    {
+      "id": "buttons-1",
+      "title": "Base",
+      "description": "Default bold action button with thick border and hard shadow.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/buttons/1.html",
+        "tsx": "tsx/ButtonsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use semantic button elements for actions and visible focus states."
+      ]
+    },
+    {
+      "id": "buttons-1-dark",
+      "title": "Base (Dark)",
+      "description": "Default bold action button with thick border and hard shadow. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/buttons/1-dark.html",
+        "tsx": "tsx/ButtonsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use semantic button elements for actions and visible focus states."
+      ]
+    },
+    {
+      "id": "buttons-2",
+      "title": "Pressed",
+      "description": "Button with a translated pressed state and reduced hard shadow for tactile feedback.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/buttons/2.html",
+        "tsx": "tsx/ButtonsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use semantic button elements for actions and visible focus states."
+      ]
+    },
+    {
+      "id": "buttons-2-dark",
+      "title": "Pressed (Dark)",
+      "description": "Button with a translated pressed state and reduced hard shadow for tactile feedback. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/buttons/2-dark.html",
+        "tsx": "tsx/ButtonsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use semantic button elements for actions and visible focus states."
+      ]
+    },
+    {
+      "id": "buttons-3",
+      "title": "Pressed with inset",
+      "description": "Pressed button with an inset hard-shadow state that simulates a physical control being pushed.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/buttons/3.html",
+        "tsx": "tsx/ButtonsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use semantic button elements for actions and visible focus states."
+      ]
+    },
+    {
+      "id": "buttons-3-dark",
+      "title": "Pressed with inset (Dark)",
+      "description": "Pressed button with an inset hard-shadow state that simulates a physical control being pushed. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/buttons/3-dark.html",
+        "tsx": "tsx/ButtonsVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use semantic button elements for actions and visible focus states."
+      ]
+    },
+    {
+      "id": "buttons-4",
+      "title": "Underlined",
+      "description": "Text-like neobrutalist action with an underline treatment for lower visual weight.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/buttons/4.html",
+        "tsx": "tsx/ButtonsVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use semantic button elements for actions and visible focus states."
+      ]
+    },
+    {
+      "id": "buttons-4-dark",
+      "title": "Underlined (Dark)",
+      "description": "Text-like neobrutalist action with an underline treatment for lower visual weight. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/buttons/4-dark.html",
+        "tsx": "tsx/ButtonsVariant4Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use semantic button elements for actions and visible focus states."
+      ]
+    },
+    {
+      "id": "buttons-5",
+      "title": "Double border",
+      "description": "High-emphasis action with a double-border neobrutalist treatment.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/buttons/5.html",
+        "tsx": "tsx/ButtonsVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use semantic button elements for actions and visible focus states."
+      ]
+    },
+    {
+      "id": "buttons-5-dark",
+      "title": "Double border (Dark)",
+      "description": "High-emphasis action with a double-border neobrutalist treatment. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/buttons/5-dark.html",
+        "tsx": "tsx/ButtonsVariant5Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use semantic button elements for actions and visible focus states."
+      ]
+    }
+  ]
+}

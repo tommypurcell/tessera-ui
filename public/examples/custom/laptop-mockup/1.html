@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root { color-scheme: light; } * { box-sizing: border-box; }
+      body { min-height: 510px; margin: 0; display: grid; place-items: center; overflow: hidden; background: #f4f6fb; color: #182033; font-family: Arial, Helvetica, sans-serif; }
+      .scene { position: relative; width: min(100%, 980px); height: 510px; overflow: hidden; display: grid; place-items: center; background: radial-gradient(circle at 50% 42%, #fff 0 18%, #eef2fb 60%, #e4eaf6 100%); }
+      .glow { position: absolute; top: 52px; width: 620px; height: 330px; border-radius: 50%; background: radial-gradient(ellipse, rgba(94, 116, 255, .18), rgba(94, 116, 255, 0) 68%); filter: blur(10px); }
+      .laptop { position: relative; z-index: 1; width: min(78%, 710px); padding: 12px 12px 13px; border: 2px solid #202938; border-radius: 20px 20px 10px 10px; background: linear-gradient(145deg, #59677d, #202938 16%, #141b27 80%, #3f4b60); box-shadow: 0 28px 35px rgba(29, 39, 57, .26), inset 0 1px 1px rgba(255,255,255,.38); }
+      .screen { position: relative; overflow: hidden; aspect-ratio: 16 / 10; border: 1px solid #0d1320; border-radius: 9px 9px 3px 3px; background: #101a2d; box-shadow: inset 0 1px 0 rgba(255,255,255,.08); }
+      .camera { position: absolute; z-index: 5; top: 5px; left: 50%; width: 5px; height: 5px; transform: translateX(-50%); border: 1px solid #43516a; border-radius: 50%; background: #101b2e; }
+      .window { position: absolute; inset: 0; padding: 29px 27px 25px; background: linear-gradient(135deg, #17233c 0%, #263b79 49%, #7169c9 100%); }
+      .window::before { content: ''; position: absolute; top: 13px; left: 18px; width: 7px; height: 7px; border-radius: 50%; background: #fd7b73; box-shadow: 12px 0 #f9c85b, 24px 0 #67c98b; }
+      .side { position: absolute; top: 43px; left: 27px; width: 120px; bottom: 25px; padding: 13px; border: 1px solid rgba(255,255,255,.16); border-radius: 12px; background: rgba(11, 20, 42, .34); } .side small { color: #bac8f6; font-size: 9px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; } .nav { height: 7px; margin-top: 13px; border-radius: 99px; background: rgba(218,229,255,.29); } .nav:nth-child(3) { width: 70%; } .nav:nth-child(4) { width: 84%; } .nav:nth-child(5) { width: 52%; }
+      .content { position: absolute; top: 43px; right: 27px; bottom: 25px; left: 165px; padding: 20px; border: 1px solid rgba(255,255,255,.2); border-radius: 12px; background: rgba(255,255,255,.95); box-shadow: 0 16px 25px rgba(9,15,34,.14); } .content small { color: #71809a; font-size: 9px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; } .content h1 { width: 75%; margin: 8px 0 18px; font-size: clamp(15px, 2.2vw, 23px); line-height: 1; letter-spacing: -.055em; } .chart { display: flex; align-items: end; gap: 6px; height: 48%; margin-top: auto; padding-top: 14px; border-top: 1px solid #e5eaf2; } .bar { flex: 1; border-radius: 4px 4px 2px 2px; background: linear-gradient(#7791ff, #3f5cff); } .bar:nth-child(1) { height: 34%; }.bar:nth-child(2) { height: 61%; }.bar:nth-child(3) { height: 45%; }.bar:nth-child(4) { height: 82%; }.bar:nth-child(5) { height: 67%; }.bar:nth-child(6) { height: 100%; }
+      .deck { position: absolute; z-index: 2; top: calc(100% - 1px); left: 50%; width: calc(100% + 58px); height: 38px; transform: translateX(-50%); border: 1px solid #354158; border-radius: 2px 2px 15px 15px; background: linear-gradient(#748198, #4a566b 16%, #303a4e 90%); box-shadow: 0 13px 15px rgba(31, 41, 55, .22); }
+      .deck::before { content: ''; position: absolute; top: 6px; left: 50%; width: 155px; height: 17px; transform: translateX(-50%); border: 1px solid rgba(20,28,42,.45); border-radius: 0 0 7px 7px; background: linear-gradient(#5e6c82, #4b566a); } .deck::after { content: ''; position: absolute; right: 0; bottom: -7px; left: 0; height: 7px; border-radius: 0 0 14px 14px; background: #263044; }
+      @media (max-width: 560px) { .laptop { width: 88%; } .side { left: 13px; width: 76px; padding: 9px; } .content { right: 13px; left: 100px; padding: 13px; } .window { padding: 29px 13px 18px; } .deck { height: 30px; } }
+    </style>
+  </head>
+  <body>
+    <section class="scene" aria-label="Desktop product preview"><div class="glow" aria-hidden="true"></div><div class="laptop"><div class="screen"><i class="camera" aria-label="Front camera"></i><div class="window"><aside class="side"><small>Workspace</small><i class="nav"></i><i class="nav"></i><i class="nav"></i><i class="nav"></i></aside><article class="content"><small>Weekly momentum</small><h1>Where the work is moving.</h1><div class="chart" aria-label="Weekly progress chart"><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar"></i></div></article></div></div><div class="deck" aria-hidden="true"></div></div></section>
+  </body>
+</html>

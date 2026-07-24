@@ -1,0 +1,72 @@
+---
+title: Tessera UI FAQs
+description: Answers to common questions about using structured UI components with coding agents and across projects.
+slug: faqs
+pubDate: 2026-07-23
+updatedDate: 2026-07-23
+terms:
+  - ui components for coding agents
+  - component registry
+  - component metadata
+---
+
+## What is an agent UI component library?
+
+It is a component catalog designed to help both people and coding agents find,
+understand, and reuse UI patterns. The component source matters, but so do the
+description, dependencies, constraints, and examples around it.
+
+## Why is code alone not enough for an agent?
+
+Code can show how a component is assembled, but it does not always explain when
+to use it or what behavior must be preserved. Metadata helps an agent choose an
+[empty state](/components/application/empty-states) instead of a loader, or a
+[modal](/components/application/modals) instead of a toast.
+
+## Can I use these components without an AI coding agent?
+
+Yes. The catalog is useful for any team that wants documented, copyable UI
+patterns. Agent-readable metadata is an additional way to make the same
+components easier to discover and reuse.
+
+## Does this replace a design system?
+
+No. A component catalog can carry design-system rules into day-to-day product
+work, but it does not replace decisions about brand, product behavior, or
+governance.
+
+## How should an agent choose a component?
+
+Search by the user task, review the component’s examples and constraints, then
+reuse the closest documented pattern. Create a new component only when the
+catalog has a real gap.
+
+## Why do agents recreate components that already exist?
+
+Usually because the existing component is difficult to find, poorly named, or
+missing the context that explains when it applies. Searchable metadata makes
+reuse the easier default.
+
+## Can components be shared between projects?
+
+Yes. Stable primitives can be distributed through shared packages, while
+product-specific layouts often work better as copy-and-own source. The right
+model depends on how much local adaptation the component needs.
+
+## What should metadata include?
+
+Useful metadata includes a precise title, description, use cases, situations to
+avoid, dependencies, responsive behavior, accessibility notes, and related
+components.
+
+## How should component source be installed safely?
+
+Installation should make the files, dependencies, and configuration changes
+clear before modifying a project. A predictable registry or CLI is preferable
+to opaque code generation.
+
+## What should be checked after an agent adds UI?
+
+Check that it reused the right component, preserved accessibility behavior,
+works at relevant breakpoints, and did not introduce an incompatible visual
+pattern.

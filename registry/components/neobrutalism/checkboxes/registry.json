@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "name": "neobrutalism-checkboxes",
+  "title": "Checkboxes",
+  "description": "Neobrutalism-style checkbox components built with Tailwind CSS. Featuring thick borders, hard shadows, and custom check marks. Perfect for forms, filters, and settings requiring a bold, retro interactive element.",
+  "category": "neobrutalism/forms",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "checkbox",
+    "form",
+    "selection",
+    "neobrutalism",
+    "filter",
+    "settings"
+  ],
+  "useWhen": [
+    "Allowing independent selections in a form, filter, or settings interface with a bold visual treatment.",
+    "Presenting a compact list of options that can be checked in any combination."
+  ],
+  "avoidWhen": [
+    "Choices are mutually exclusive — use radio buttons.",
+    "The choice has more than two or three distinct states."
+  ],
+  "dependencies": [
+    "@tailwindcss/forms"
+  ],
+  "responsiveBehavior": "Checkbox rows retain a generous target area and wrap labels beneath controls when needed. Grouped choices stack vertically on narrow screens.",
+  "accessibility": [
+    "Use native checkbox inputs and associate each with a visible label.",
+    "Wrap related choices in a fieldset with a legend."
+  ],
+  "compatibleWith": [
+    "neobrutalism-inputs",
+    "neobrutalism-buttons",
+    "application-filters"
+  ],
+  "variants": [
+    {
+      "id": "checkboxes-1",
+      "title": "Base",
+      "description": "Single high-contrast checkbox with a custom thick-border check state.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/checkboxes/1.html",
+        "tsx": "tsx/CheckboxesVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use native checkbox inputs and associate each with a visible label."
+      ]
+    },
+    {
+      "id": "checkboxes-1-dark",
+      "title": "Base (Dark)",
+      "description": "Single high-contrast checkbox with a custom thick-border check state. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/checkboxes/1-dark.html",
+        "tsx": "tsx/CheckboxesVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use native checkbox inputs and associate each with a visible label."
+      ]
+    },
+    {
+      "id": "checkboxes-2",
+      "title": "Base with description",
+      "description": "Checkbox row with supporting copy explaining the consequence of the selected setting.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/checkboxes/2.html",
+        "tsx": "tsx/CheckboxesVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use native checkbox inputs and associate each with a visible label."
+      ]
+    },
+    {
+      "id": "checkboxes-2-dark",
+      "title": "Base with description (Dark)",
+      "description": "Checkbox row with supporting copy explaining the consequence of the selected setting. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/checkboxes/2-dark.html",
+        "tsx": "tsx/CheckboxesVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use native checkbox inputs and associate each with a visible label."
+      ]
+    },
+    {
+      "id": "checkboxes-3",
+      "title": "Grouped",
+      "description": "Set of independent neobrutalist checkbox choices grouped under a shared field label.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/checkboxes/3.html",
+        "tsx": "tsx/CheckboxesVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use native checkbox inputs and associate each with a visible label."
+      ]
+    },
+    {
+      "id": "checkboxes-3-dark",
+      "title": "Grouped (Dark)",
+      "description": "Set of independent neobrutalist checkbox choices grouped under a shared field label. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/checkboxes/3-dark.html",
+        "tsx": "tsx/CheckboxesVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Use native checkbox inputs and associate each with a visible label."
+      ]
+    }
+  ]
+}

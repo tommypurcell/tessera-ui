@@ -1,0 +1,82 @@
+---
+title: How to Reuse UI Components Across Multiple Codebases
+description: A practical approach to sharing UI components across projects without forcing every product into the same release cycle.
+slug: how-to-reuse-ui-components-across-codebases
+pubDate: 2026-07-23
+updatedDate: 2026-07-23
+terms:
+  - reusable components
+  - shared ui components
+  - component registry
+---
+
+Sharing UI code across projects is valuable only when the sharing model matches
+the way teams work. A component that needs frequent local adaptation should not
+be governed the same way as a stable icon or design token.
+
+## Separate Foundations From Product Layouts
+
+Start by sorting components into two groups.
+
+**Foundations** are stable pieces that benefit from one shared implementation:
+
+- design tokens
+- icons
+- formatting utilities
+- accessible low-level primitives
+
+**Product layouts** are components that usually need local content and data:
+
+- dashboards
+- checkout flows
+- account navigation
+- pricing sections
+
+For example, a [table](/components/application/tables) may share visual
+conventions across products while each project owns its columns, data loading,
+and actions.
+
+## Give Every Shared Component a Clear Boundary
+
+Before sharing a component, answer three questions:
+
+```txt
+What can consuming projects configure?
+What behavior is intentionally fixed?
+Who owns accessibility and breaking changes?
+```
+
+If those answers are unclear, publish a documented example instead of a rigid
+shared abstraction. Copy-and-own distribution is often healthier for layout
+components because consumers can adapt the source without waiting on a central
+release.
+
+## Use a Small Catalog Before a Large Platform
+
+Pick a few components that recur in more than one product. Document their use
+cases, dependencies, and limits. A small catalog of trustworthy components is
+more useful than hundreds of loosely maintained exports.
+
+```txt
+components/
+  application/
+    empty-states/
+    side-menu/
+    tables/
+  marketing/
+    cards/
+    pricing/
+```
+
+The [side menu collection](/components/application/side-menu) and
+[marketing card collection](/components/marketing/cards) are examples of
+patterns worth documenting before attempting to distribute them everywhere.
+
+## Review Reuse With Real Projects
+
+The best signal is whether a second project can use the component without a
+fork full of exceptions. If it cannot, either expose the right configuration or
+let the second project own a local version.
+
+Reusable UI is not about minimizing files. It is about making repeated product
+decisions consistent without making ordinary changes expensive.

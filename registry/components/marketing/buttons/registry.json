@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "name": "marketing-buttons",
+  "title": "Buttons",
+  "description": "Marketing-focused button styles for landing pages and promotional sites, including solid, bordered, icon-adorned, icon-bubble CTA, and quiet text/underline variants optimized for conversion-oriented contexts.",
+  "category": "marketing/controls",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["button", "cta", "action", "link", "marketing", "conversion"],
+  "useWhen": [
+    "Building CTAs for landing pages, hero sections, or promotional banners where visual impact matters.",
+    "Pairing a primary solid button with a secondary bordered or text button to establish action hierarchy.",
+    "Using icon-adorned buttons to reinforce the action (download arrow, forward arrow) in hero sections."
+  ],
+  "avoidWhen": [
+    "Building form submission buttons inside application forms — use application button styles instead.",
+    "The action is a navigation link within body text — use an inline <a> link rather than a button element.",
+    "More than two buttons appear side-by-side at the same visual weight — establish hierarchy with solid + ghost pairing."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Button groups stack vertically on small screens. Pill-shaped buttons maintain their border-radius at all widths. Icon-bubble CTA buttons reduce their icon bubble size on mobile.",
+  "accessibility": [
+    "Use <button> for actions and <a> for navigation — do not interchange them.",
+    "Icon-only buttons must have an aria-label describing the action.",
+    "Ensure button text and background meet WCAG AA contrast in all states (default, hover, focus, disabled)."
+  ],
+  "compatibleWith": ["marketing-banners", "marketing-ctas", "marketing-headers"],
+  "variants": [
+    {
+      "id": "buttons-1",
+      "title": "Solid and bordered",
+      "description": "Paired solid primary and outlined secondary pill buttons — the standard two-button CTA combination for landing page hero sections.",
+      "source": {
+        "html": "../../../../public/examples/marketing/buttons/1.html",
+        "tsx": "tsx/ButtonsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "hover", "focus"],
+      "accessibility": [
+        "Primary and secondary buttons must both have descriptive labels; focus ring must be visible on both."
+      ]
+    },
+    {
+      "id": "buttons-1-dark",
+      "title": "Solid and bordered (Dark)",
+      "description": "Solid-and-bordered button pair adapted for dark landing page surfaces with inverted colors.",
+      "source": {
+        "html": "../../../../public/examples/marketing/buttons/1-dark.html",
+        "tsx": "tsx/ButtonsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "hover", "focus"],
+      "accessibility": [
+        "Button text and background must meet WCAG AA contrast in both solid and bordered variants on dark backgrounds."
+      ]
+    },
+    {
+      "id": "buttons-2",
+      "title": "Solid and bordered with icon",
+      "description": "CTA button pair with a leading or trailing icon reinforcing the action — download arrow, chevron, or app-store logo alongside the label.",
+      "source": {
+        "html": "../../../../public/examples/marketing/buttons/2.html",
+        "tsx": "tsx/ButtonsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "Icons inside labeled buttons are decorative; set aria-hidden='true' on icon elements."
+      ]
+    },
+    {
+      "id": "buttons-2-dark",
+      "title": "Solid and bordered with icon (Dark)",
+      "description": "Icon-adorned CTA button pair adapted for dark marketing surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/buttons/2-dark.html",
+        "tsx": "tsx/ButtonsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "Icon and label colors must meet contrast requirements on dark button backgrounds."
+      ]
+    },
+    {
+      "id": "buttons-3",
+      "title": "Icon only, solid and bordered",
+      "description": "Compact circular icon-only buttons for toolbar actions, social links, or floating action buttons in marketing UI.",
+      "source": {
+        "html": "../../../../public/examples/marketing/buttons/3.html",
+        "tsx": "tsx/ButtonsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "Icon-only buttons require an aria-label describing the action since there is no visible text label."
+      ]
+    },
+    {
+      "id": "buttons-3-dark",
+      "title": "Icon only, solid and bordered (Dark)",
+      "description": "Circular icon-only buttons adapted for dark marketing surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/buttons/3-dark.html",
+        "tsx": "tsx/ButtonsVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "Icon fill must meet contrast requirements against both solid and bordered button backgrounds on dark surfaces."
+      ]
+    },
+    {
+      "id": "buttons-4",
+      "title": "CTA with icon bubble",
+      "description": "High-impact CTA button with a framed icon bubble on one side — a distinctive pattern used in SaaS hero sections and product launch pages.",
+      "source": {
+        "html": "../../../../public/examples/marketing/buttons/4.html",
+        "tsx": "tsx/ButtonsVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "Icon bubble is decorative when the button label describes the action; icon element should be aria-hidden."
+      ]
+    },
+    {
+      "id": "buttons-4-dark",
+      "title": "CTA with icon bubble (Dark)",
+      "description": "Icon-bubble CTA button adapted for dark hero sections and promotional blocks.",
+      "source": {
+        "html": "../../../../public/examples/marketing/buttons/4-dark.html",
+        "tsx": "tsx/ButtonsVariant4Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "Icon bubble and label text must meet WCAG AA contrast on dark button backgrounds."
+      ]
+    },
+    {
+      "id": "buttons-5",
+      "title": "Quiet text and underline buttons",
+      "description": "Lightweight text-only and underline-style buttons for secondary actions, 'Learn more' links, and de-emphasized CTAs within content sections.",
+      "source": {
+        "html": "../../../../public/examples/marketing/buttons/5.html",
+        "tsx": "tsx/ButtonsVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "Underline distinguishes these from plain body text; ensure focus state is clearly visible on quiet buttons."
+      ]
+    },
+    {
+      "id": "buttons-5-dark",
+      "title": "Quiet text and underline buttons (Dark)",
+      "description": "Quiet text and underline CTA buttons adapted for dark marketing surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/buttons/5-dark.html",
+        "tsx": "tsx/ButtonsVariant5Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "Quiet button text and underline color must meet contrast requirements against dark page backgrounds."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+---
+title: How to Install UI Components with an npx Command
+description: Learn the workflow behind installing copy-and-own UI components with an npx command and a component registry.
+slug: how-to-install-ui-components-with-npx
+pubDate: 2026-07-23
+updatedDate: 2026-07-23
+terms:
+  - npx ui components
+  - component registry
+  - shadcn cli
+---
+
+An `npx` installation command is useful when a team wants the convenience of a
+package manager without hiding UI source code inside a dependency.
+
+The command resolves a component from a registry, writes the files into the
+application, and records any dependencies the component needs. After that, the
+application owns the code.
+
+## Start With an Inspectable Registry Item
+
+Every installable component needs a stable name and a list of source files.
+
+```json
+{
+  "name": "dashboard-sidebar",
+  "type": "registry:ui",
+  "title": "Dashboard sidebar",
+  "files": [
+    {
+      "path": "components/dashboard-sidebar.tsx",
+      "type": "registry:ui"
+    }
+  ]
+}
+```
+
+The registry should also explain dependencies and setup steps. A user should be
+able to inspect what will be installed before adding it to a project.
+
+## Install the Component
+
+With a shadcn-compatible registry, a project can add a named item through the
+CLI:
+
+```shell
+npx shadcn@latest add @acme/dashboard-sidebar
+```
+
+The exact namespace and command depend on how the registry is published. The
+[shadcn registry documentation](https://ui.shadcn.com/docs/registry) covers
+registry URLs, namespaces, and the current CLI workflow.
+
+## Keep Installation Focused
+
+An installation command should add only the files and dependencies needed by
+the chosen component. It should not silently replace global styles, rewrite
+unrelated configuration, or require a framework migration.
+
+For a component such as a [responsive side menu](/components/application/side-menu),
+document the expected data shape and responsive behavior alongside the source.
+That gives the installer a useful starting point while leaving product decisions
+in the consuming project.
+
+## Test in a Blank Project
+
+Before publishing a registry item, test it in a fresh project:
+
+```shell
+npx create-next-app@latest registry-smoke-test
+cd registry-smoke-test
+npx shadcn@latest add @acme/dashboard-sidebar
+```
+
+Check the resulting files, dependency changes, keyboard behavior, and build
+output. A copy-and-own workflow earns trust when installation is predictable
+and the installed source is easy to understand.

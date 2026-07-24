@@ -1,0 +1,95 @@
+---
+title: How to Build a Custom shadcn Registry
+description: Create a small, maintainable shadcn-compatible registry for distributing reusable UI components across projects.
+slug: how-to-build-a-custom-shadcn-registry
+pubDate: 2026-07-23
+updatedDate: 2026-07-23
+terms:
+  - shadcn registry
+  - component registry
+  - reusable components
+---
+
+A component registry is useful when the same UI patterns need to live in more
+than one project. It gives every component a name, description, dependency list,
+and source files that an installation tool can resolve.
+
+This is different from publishing a traditional package. A registry can copy the
+source into the consuming project, so the team owns and adapts the code after
+installation.
+
+## Start With One Useful Component
+
+Begin with a component that already has clear reuse value. A responsive
+[application sidebar](/components/application/side-menu) or a
+[file uploader](/components/application/file-uploaders) are good candidates
+because they usually need project-specific data and behavior.
+
+Create a root `registry.json` file with one item:
+
+```json
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "acme-ui",
+  "homepage": "https://components.example.com",
+  "items": [
+    {
+      "name": "app-sidebar",
+      "type": "registry:ui",
+      "title": "Application sidebar",
+      "description": "A responsive navigation sidebar for product interfaces.",
+      "files": [
+        {
+          "path": "components/app-sidebar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}
+```
+
+Keep the first registry deliberately small. A component that has unclear
+ownership, undocumented dependencies, or hard-coded project assumptions is not
+ready to distribute yet.
+
+## Record Dependencies Explicitly
+
+If an item needs another registry item or an npm dependency, declare it. That
+turns installation into a repeatable operation instead of a checklist hidden in
+a README.
+
+```json
+{
+  "name": "account-menu",
+  "type": "registry:ui",
+  "registryDependencies": ["button"],
+  "dependencies": ["lucide-react"],
+  "files": [
+    {
+      "path": "components/account-menu.tsx",
+      "type": "registry:ui"
+    }
+  ]
+}
+```
+
+## Make Metadata Useful
+
+The title and description are not filler. They help people—and eventually
+coding tools—choose the right component before reading the files. Describe the
+layout, intended context, and important constraints in plain language.
+
+For example, “responsive navigation sidebar for authenticated applications” is
+more useful than “sidebar component.”
+
+## Validate Before Publishing
+
+Use the official schema, then build or serve the registry in the format your
+installation workflow expects. Test installation in a blank project before
+asking another team to rely on it.
+
+The [shadcn registry documentation](https://ui.shadcn.com/docs/registry/getting-started)
+explains the current schema and publishing options. Treat the registry as a
+product surface: every item should have source files, dependencies, and
+documentation that match what gets installed.

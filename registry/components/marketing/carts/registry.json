@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "name": "marketing-carts",
+  "title": "Carts",
+  "description": "Shopping cart UI components for eCommerce checkout flows, including a popup mini-cart overlay, a popup with quantity and coupon actions, and a full-page cart layout.",
+  "category": "marketing/ecommerce",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["cart", "checkout", "ecommerce", "shopping", "order", "basket"],
+  "useWhen": [
+    "Showing a mini-cart preview that slides in when a user adds an item, without leaving the current page.",
+    "Building a full cart page where users review items, adjust quantities, apply coupon codes, and proceed to checkout.",
+    "Providing a cart summary in a side panel during a multi-step checkout flow."
+  ],
+  "avoidWhen": [
+    "The store has only digital single-purchase products — a direct checkout page is simpler than a cart flow.",
+    "Quantity editing is not supported — use a simpler order summary instead.",
+    "The cart is shown inside a modal on mobile — a full-page cart layout works better on narrow viewports."
+  ],
+  "dependencies": ["@tailwindcss/forms"],
+  "responsiveBehavior": "Popup cart overlays appear as a fixed side drawer on desktop and a full-screen sheet on mobile. Full-page carts restack their item list and order summary to a single column on mobile.",
+  "accessibility": [
+    "Popup cart panels should use role='dialog' with aria-label='Shopping cart' and trap focus while open.",
+    "Quantity increment/decrement buttons must have aria-label='Increase quantity' / 'Decrease quantity'.",
+    "Product images in cart must have alt text describing the product."
+  ],
+  "compatibleWith": ["marketing-product-cards", "marketing-product-collections", "marketing-ctas"],
+  "variants": [
+    {
+      "id": "carts-1",
+      "title": "Popup",
+      "description": "Minimal popup mini-cart showing cart items with image, name, price, and a checkout CTA — slides in from the right without leaving the page.",
+      "source": {
+        "html": "../../../../public/examples/marketing/carts/1.html",
+        "tsx": "tsx/CartsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Panel uses role='dialog'; focus is trapped while open; Escape key closes the panel."
+      ]
+    },
+    {
+      "id": "carts-1-dark",
+      "title": "Popup (Dark)",
+      "description": "Minimal popup mini-cart adapted for dark eCommerce surfaces with dark panel background.",
+      "source": {
+        "html": "../../../../public/examples/marketing/carts/1-dark.html",
+        "tsx": "tsx/CartsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Product name, price, and close button must meet WCAG AA contrast on the dark cart panel background."
+      ]
+    },
+    {
+      "id": "carts-2",
+      "title": "Popup with actions",
+      "description": "Popup mini-cart with quantity adjustment controls and a remove-item action per line item — for carts where users commonly edit before checking out.",
+      "source": {
+        "html": "../../../../public/examples/marketing/carts/2.html",
+        "tsx": "tsx/CartsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Quantity inputs must have aria-label; remove buttons must identify which product they remove via aria-label."
+      ]
+    },
+    {
+      "id": "carts-2-dark",
+      "title": "Popup with actions (Dark)",
+      "description": "Action-equipped popup mini-cart adapted for dark eCommerce surfaces.",
+      "source": {
+        "html": "../../../../public/examples/marketing/carts/2-dark.html",
+        "tsx": "tsx/CartsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Action button icons and input fields must meet contrast requirements on dark cart panel backgrounds."
+      ]
+    },
+    {
+      "id": "carts-3",
+      "title": "Page",
+      "description": "Full-page cart layout with a line-item list on the left and an order summary with coupon code field and checkout CTA on the right.",
+      "source": {
+        "html": "../../../../public/examples/marketing/carts/3.html",
+        "tsx": "tsx/CartsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Form fields for coupon code must have visible labels; order total must be announced when the page updates after quantity changes."
+      ]
+    },
+    {
+      "id": "carts-3-dark",
+      "title": "Page (Dark)",
+      "description": "Full-page cart layout adapted for dark eCommerce surfaces with dark background cart items and order summary.",
+      "source": {
+        "html": "../../../../public/examples/marketing/carts/3-dark.html",
+        "tsx": "tsx/CartsVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "All form fields, product details, and order summary text must meet WCAG AA contrast on dark page backgrounds."
+      ]
+    }
+  ]
+}

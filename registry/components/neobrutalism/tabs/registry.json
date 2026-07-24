@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "name": "neobrutalism-tabs",
+  "title": "Tabs",
+  "description": "Brutalist tab components for Tailwind CSS. Bold, minimalist tabbed navigation with stark borders, high contrast, and raw typography. Stripped-down tabs UI for no-nonsense content organization.",
+  "category": "neobrutalism/navigation",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "tabs",
+    "navigation",
+    "panels",
+    "neobrutalism",
+    "content",
+    "switcher"
+  ],
+  "useWhen": [
+    "Switching between a small number of peer content panels with a bold visual navigation style.",
+    "Keeping related sections in the same page context without a full navigation change."
+  ],
+  "avoidWhen": [
+    "There are more than six labels or labels do not fit on mobile.",
+    "The user must complete panels in a required sequence."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Horizontal tab rows scroll or wrap intentionally on small screens; vertical tabs become stacked when there is insufficient inline space.",
+  "accessibility": [
+    "Implement the tablist, tab, and tabpanel roles with aria-selected and aria-controls.",
+    "Arrow keys move focus between tabs; active focus remains highly visible."
+  ],
+  "compatibleWith": [
+    "neobrutalism-cards",
+    "neobrutalism-buttons",
+    "application-tabs"
+  ],
+  "variants": [
+    {
+      "id": "tabs-1",
+      "title": "Base",
+      "description": "Default hard-bordered tab row for switching between peer content panels.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/tabs/1.html",
+        "tsx": "tsx/TabsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Implement the tablist, tab, and tabpanel roles with aria-selected and aria-controls."
+      ]
+    },
+    {
+      "id": "tabs-1-dark",
+      "title": "Base (Dark)",
+      "description": "Default hard-bordered tab row for switching between peer content panels. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/tabs/1-dark.html",
+        "tsx": "tsx/TabsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Implement the tablist, tab, and tabpanel roles with aria-selected and aria-controls."
+      ]
+    },
+    {
+      "id": "tabs-2",
+      "title": "Contained",
+      "description": "Tab row contained inside a bold bordered panel with a shared visual frame.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/tabs/2.html",
+        "tsx": "tsx/TabsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Implement the tablist, tab, and tabpanel roles with aria-selected and aria-controls."
+      ]
+    },
+    {
+      "id": "tabs-2-dark",
+      "title": "Contained (Dark)",
+      "description": "Tab row contained inside a bold bordered panel with a shared visual frame. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/tabs/2-dark.html",
+        "tsx": "tsx/TabsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Implement the tablist, tab, and tabpanel roles with aria-selected and aria-controls."
+      ]
+    },
+    {
+      "id": "tabs-3",
+      "title": "Pills",
+      "description": "Rounded, high-contrast tab controls that distinguish the selected panel with a filled treatment.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/tabs/3.html",
+        "tsx": "tsx/TabsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Implement the tablist, tab, and tabpanel roles with aria-selected and aria-controls."
+      ]
+    },
+    {
+      "id": "tabs-3-dark",
+      "title": "Pills (Dark)",
+      "description": "Rounded, high-contrast tab controls that distinguish the selected panel with a filled treatment. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/tabs/3-dark.html",
+        "tsx": "tsx/TabsVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Implement the tablist, tab, and tabpanel roles with aria-selected and aria-controls."
+      ]
+    },
+    {
+      "id": "tabs-4",
+      "title": "Vertical",
+      "description": "Vertical neobrutalist tab navigation for layouts with persistent left-side section controls.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/tabs/4.html",
+        "tsx": "tsx/TabsVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Implement the tablist, tab, and tabpanel roles with aria-selected and aria-controls."
+      ]
+    },
+    {
+      "id": "tabs-4-dark",
+      "title": "Vertical (Dark)",
+      "description": "Vertical neobrutalist tab navigation for layouts with persistent left-side section controls. Adapted for dark surfaces while preserving the same information hierarchy.",
+      "source": {
+        "html": "../../../../public/examples/neobrutalism/tabs/4-dark.html",
+        "tsx": "tsx/TabsVariant4Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Implement the tablist, tab, and tabpanel roles with aria-selected and aria-controls."
+      ]
+    }
+  ]
+}

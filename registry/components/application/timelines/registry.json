@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "name": "application-timelines",
+  "title": "Timelines",
+  "description": "Chronological event list components for displaying activity feeds, project histories, audit logs, and company milestones in vertical and horizontal layouts.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["timeline", "history", "activity", "events", "audit", "feed", "milestones"],
+  "useWhen": [
+    "Showing a chronological log of events such as an order history, audit trail, or project activity feed.",
+    "Communicating a company's history or product roadmap where time ordering is the primary organizing principle.",
+    "Displaying onboarding progress or a sequence of completed and pending milestones."
+  ],
+  "avoidWhen": [
+    "Events do not have a natural time ordering — use a list or table instead.",
+    "The number of events is very large and users need to filter or search — pair with pagination or virtualized list.",
+    "A step-by-step wizard flow is needed — use a stepper component that shows completion state more explicitly."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Vertical timelines remain in a single-column layout at all widths. Horizontal timelines collapse to vertical on small viewports to prevent overflow. Middle-line vertical variants center the connector at wide widths but may left-align on mobile.",
+  "accessibility": [
+    "Use a <ol> or <ul> list element for the timeline items so screen readers announce the count and list structure.",
+    "Time values should use the <time datetime='...'>  element with a machine-readable datetime attribute.",
+    "Decorative connector lines and dots must have aria-hidden='true' so they are not announced."
+  ],
+  "compatibleWith": ["application-badges", "application-avatars", "application-steps"],
+  "variants": [
+    {
+      "id": "timelines-1",
+      "title": "Vertical",
+      "description": "Standard left-aligned vertical timeline with a connector line and event dots, suitable for activity feeds and audit logs.",
+      "source": {
+        "html": "../../../../public/examples/application/timelines/1.html",
+        "tsx": "tsx/TimelinesVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Timeline uses a list element; connector line is aria-hidden; time values use <time datetime>."
+      ]
+    },
+    {
+      "id": "timelines-1-dark",
+      "title": "Vertical (Dark)",
+      "description": "Left-aligned vertical timeline adapted for dark application surfaces such as dark dashboards or audit logs.",
+      "source": {
+        "html": "../../../../public/examples/application/timelines/1-dark.html",
+        "tsx": "tsx/TimelinesVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Event text, timestamps, and connector dot colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    },
+    {
+      "id": "timelines-2",
+      "title": "Vertical with middle line",
+      "description": "Vertical timeline with alternating left/right event placement around a centered connector line — ideal for roadmaps, company histories, and milestone displays.",
+      "source": {
+        "html": "../../../../public/examples/application/timelines/2.html",
+        "tsx": "tsx/TimelinesVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Alternating layout is visual only; DOM order must follow chronological sequence for screen reader users."
+      ]
+    },
+    {
+      "id": "timelines-2-dark",
+      "title": "Vertical with middle line (Dark)",
+      "description": "Centered-connector alternating timeline adapted for dark surfaces, keeping both left and right event cards legible.",
+      "source": {
+        "html": "../../../../public/examples/application/timelines/2-dark.html",
+        "tsx": "tsx/TimelinesVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Event card backgrounds and text on dark surfaces must maintain WCAG AA contrast on both sides of the center line."
+      ]
+    },
+    {
+      "id": "timelines-3",
+      "title": "Horizontal",
+      "description": "Left-to-right horizontal timeline showing events along a horizontal track — best for product roadmaps, release histories, or onboarding phase summaries.",
+      "source": {
+        "html": "../../../../public/examples/application/timelines/3.html",
+        "tsx": "tsx/TimelinesVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Horizontal timeline wraps in an overflow container; DOM order follows left-to-right chronological sequence."
+      ]
+    },
+    {
+      "id": "timelines-3-dark",
+      "title": "Horizontal (Dark)",
+      "description": "Horizontal timeline adapted for dark surfaces, with track, dots, and event labels legible on dark backgrounds.",
+      "source": {
+        "html": "../../../../public/examples/application/timelines/3-dark.html",
+        "tsx": "tsx/TimelinesVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Horizontal track color and event label text must meet contrast requirements against dark page backgrounds."
+      ]
+    }
+  ]
+}

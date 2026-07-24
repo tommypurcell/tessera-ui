@@ -1,0 +1,40 @@
+import type { HTMLAttributes } from 'react'
+
+export type TextareasVariant3Props = HTMLAttributes<HTMLDivElement>
+
+/**
+ * Copy-and-own Tailwind component. Add application-specific state and event handlers where needed.
+ */
+export function TextareasVariant3({ className, ...props }: TextareasVariant3Props) {
+  return (
+    <div className={className} {...props}>
+      <div>
+        <label htmlFor="Notes">
+          <span className="text-sm font-medium text-gray-700"> Notes </span>
+
+          <textarea
+            id="Notes"
+            className="mt-0.5 w-full resize-none rounded border-gray-300 shadow-sm sm:text-sm"
+            rows={4}
+          ></textarea>
+        </label>
+
+        <div className="mt-1.5 flex items-center justify-end gap-2">
+          <button
+            type="button"
+            className="rounded border border-transparent px-3 py-1.5 text-sm font-medium text-gray-700 transition-colors hover:text-gray-900"
+          >
+            Clear
+          </button>
+
+          <button
+            type="button"
+            className="rounded border border-gray-300 px-3 py-1.5 text-sm font-medium text-gray-900 shadow-sm transition-colors hover:bg-gray-100"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}

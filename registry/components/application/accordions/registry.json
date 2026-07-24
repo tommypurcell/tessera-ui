@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "name": "accordions",
+  "title": "Accordions",
+  "description": "Native disclosure components for grouping optional or secondary information in application interfaces.",
+  "category": "application/disclosure",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["accordion", "disclosure", "faq", "collapsible", "details"],
+  "useWhen": [
+    "Users need to scan multiple short topics before expanding the detail they need.",
+    "The page can keep secondary explanations collapsed without hiding required actions."
+  ],
+  "avoidWhen": [
+    "Users must compare the full content of every section at the same time.",
+    "Critical instructions or validation errors must remain visible."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Each disclosure remains full width and keyboard accessible at every viewport. The compact variant reduces visual density without changing the tap target structure.",
+  "accessibility": [
+    "Uses native details and summary elements so keyboard users can toggle each section without custom JavaScript.",
+    "Keep each summary label specific enough to describe the content that becomes visible.",
+    "Do not place interactive controls inside a summary element."
+  ],
+  "compatibleWith": ["faq-section", "settings-page", "side-menu"],
+  "variants": [
+    {
+      "id": "base",
+      "title": "Base",
+      "description": "Bordered FAQ-style disclosure rows with a chevron that rotates when the native details element opens.",
+      "source": {
+        "html": "../../../../public/examples/application/accordions/1.html",
+        "tsx": "tsx/AccordionBase.tsx"
+      },
+      "appearance": "light",
+      "states": ["collapsed", "expanded", "hover"],
+      "accessibility": [
+        "Native summary receives keyboard focus.",
+        "Chevron is decorative and hidden from assistive technology."
+      ]
+    },
+    {
+      "id": "base-dark",
+      "title": "Base (Dark)",
+      "description": "The base disclosure rows with Tailwind dark-mode color utilities for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/accordions/1-dark.html",
+        "tsx": "tsx/AccordionBaseDark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["collapsed", "expanded", "hover"],
+      "accessibility": [
+        "Native summary receives keyboard focus.",
+        "Dark foreground and border colors preserve readable contrast."
+      ]
+    },
+    {
+      "id": "category-icons",
+      "title": "Base with Category Icons",
+      "description": "Disclosure rows with an identifying icon for each content category and a trailing open-state indicator.",
+      "source": {
+        "html": "../../../../public/examples/application/accordions/2.html",
+        "tsx": "tsx/AccordionWithCategoryIcons.tsx"
+      },
+      "appearance": "light",
+      "states": ["collapsed", "expanded", "hover"],
+      "accessibility": [
+        "Category icons are decorative when the summary text already identifies the topic.",
+        "Native summary receives keyboard focus."
+      ]
+    },
+    {
+      "id": "category-icons-dark",
+      "title": "Base with Category Icons (Dark)",
+      "description": "The category-icon disclosure layout with dark-mode Tailwind utilities for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/accordions/2-dark.html",
+        "tsx": "tsx/AccordionWithCategoryIconsDark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["collapsed", "expanded", "hover"],
+      "accessibility": [
+        "Category icons are decorative when the summary text already identifies the topic.",
+        "Dark foreground and border colors preserve readable contrast."
+      ]
+    },
+    {
+      "id": "dividers",
+      "title": "Base with Dividers",
+      "description": "A minimal accordion that uses horizontal dividers rather than individual card borders.",
+      "source": {
+        "html": "../../../../public/examples/application/accordions/3.html",
+        "tsx": "tsx/AccordionWithDividers.tsx"
+      },
+      "appearance": "light",
+      "states": ["collapsed", "expanded", "hover"],
+      "accessibility": [
+        "Native summary receives keyboard focus.",
+        "Divider styling does not communicate the open state by itself."
+      ]
+    },
+    {
+      "id": "dividers-dark",
+      "title": "Base with Dividers (Dark)",
+      "description": "The divider-based accordion with dark-mode Tailwind utilities for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/accordions/3-dark.html",
+        "tsx": "tsx/AccordionWithDividersDark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["collapsed", "expanded", "hover"],
+      "accessibility": [
+        "Native summary receives keyboard focus.",
+        "Dark dividers retain visual separation without relying on color for state."
+      ]
+    },
+    {
+      "id": "nested",
+      "title": "Base Nested",
+      "description": "A hierarchical accordion for a parent topic with related nested disclosures beneath it.",
+      "source": {
+        "html": "../../../../public/examples/application/accordions/4.html",
+        "tsx": "tsx/AccordionNested.tsx"
+      },
+      "appearance": "light",
+      "states": ["collapsed", "expanded", "nested-collapsed", "nested-expanded"],
+      "accessibility": [
+        "Nested summaries retain their own native disclosure semantics.",
+        "Use nesting sparingly so keyboard navigation and information hierarchy remain understandable."
+      ]
+    },
+    {
+      "id": "nested-dark",
+      "title": "Base Nested (Dark)",
+      "description": "The hierarchical nested disclosure layout with dark-mode Tailwind utilities.",
+      "source": {
+        "html": "../../../../public/examples/application/accordions/4-dark.html",
+        "tsx": "tsx/AccordionNestedDark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["collapsed", "expanded", "nested-collapsed", "nested-expanded"],
+      "accessibility": [
+        "Nested summaries retain their own native disclosure semantics.",
+        "Use nesting sparingly so keyboard navigation and information hierarchy remain understandable."
+      ]
+    },
+    {
+      "id": "compact",
+      "title": "Base Compact",
+      "description": "A lower-density accordion for constrained settings panels and short supporting content.",
+      "source": {
+        "html": "../../../../public/examples/application/accordions/5.html",
+        "tsx": "tsx/AccordionCompact.tsx"
+      },
+      "appearance": "light",
+      "states": ["collapsed", "expanded", "hover"],
+      "accessibility": [
+        "Native summary receives keyboard focus.",
+        "Keep the compact summary height comfortably usable for pointer and touch input."
+      ]
+    },
+    {
+      "id": "compact-dark",
+      "title": "Base Compact (Dark)",
+      "description": "The compact disclosure layout with dark-mode Tailwind utilities for dense dark interfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/accordions/5-dark.html",
+        "tsx": "tsx/AccordionCompactDark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["collapsed", "expanded", "hover"],
+      "accessibility": [
+        "Native summary receives keyboard focus.",
+        "Dark foreground and border colors preserve readable contrast."
+      ]
+    }
+  ]
+}

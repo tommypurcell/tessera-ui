@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "name": "application-textareas",
+  "title": "Textareas",
+  "description": "Multi-line text input components for free-form user input in forms, with base, action-inside, and action-outside variants for comment boxes, message composers, and feedback fields.",
+  "category": "application/forms",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["textarea", "form", "input", "multiline", "comment", "message", "feedback"],
+  "useWhen": [
+    "Accepting multi-line free-form text such as comments, messages, descriptions, or feedback.",
+    "The expected input is longer than a single line — product descriptions, support ticket details, or bio fields.",
+    "An action button (submit, attach, emoji) is embedded inside or directly below the text input area."
+  ],
+  "avoidWhen": [
+    "A single line of text is sufficient — use a standard text <input> instead.",
+    "The field expects structured data like a date, number, or selection — use the appropriate specialized input.",
+    "Rich text formatting is required — use a rich text editor instead of a plain textarea."
+  ],
+  "dependencies": ["@tailwindcss/forms"],
+  "responsiveBehavior": "Textareas fill their container width. Height is set with rows attribute or a min-height class; auto-resize on input is a JavaScript enhancement not included by default.",
+  "accessibility": [
+    "Every textarea must have an associated <label> linked by for/id or wrapped around the element.",
+    "Provide a character count or remaining-characters indicator when there is a maximum length.",
+    "Error states must be communicated via aria-describedby pointing to an error message element, not color alone."
+  ],
+  "compatibleWith": ["application-inputs", "application-buttons", "application-file-uploaders"],
+  "variants": [
+    {
+      "id": "textareas-1",
+      "title": "Base",
+      "description": "Standard multi-line textarea with a visible label and placeholder — the default for comment boxes, description fields, and feedback forms.",
+      "source": {
+        "html": "../../../../public/examples/application/textareas/1.html",
+        "tsx": "tsx/TextareasVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "focus"],
+      "accessibility": [
+        "Requires a linked <label>; placeholder text is not a substitute for the label."
+      ]
+    },
+    {
+      "id": "textareas-1-dark",
+      "title": "Base (Dark)",
+      "description": "Standard textarea adapted for dark application surfaces with dark input background and light label and placeholder.",
+      "source": {
+        "html": "../../../../public/examples/application/textareas/1-dark.html",
+        "tsx": "tsx/TextareasVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "focus"],
+      "accessibility": [
+        "Placeholder text and input text colors must meet WCAG AA contrast on dark textarea backgrounds."
+      ]
+    },
+    {
+      "id": "textareas-2",
+      "title": "Actions inside",
+      "description": "Textarea with action buttons (such as submit or attach) positioned inside the input area at the bottom edge — used for chat composers and inline reply forms.",
+      "source": {
+        "html": "../../../../public/examples/application/textareas/2.html",
+        "tsx": "tsx/TextareasVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "focus"],
+      "accessibility": [
+        "Action buttons inside the textarea must be focusable and reachable by keyboard in document order after the textarea."
+      ]
+    },
+    {
+      "id": "textareas-2-dark",
+      "title": "Actions inside (Dark)",
+      "description": "In-field action button textarea adapted for dark surfaces, with action button colors legible on dark input backgrounds.",
+      "source": {
+        "html": "../../../../public/examples/application/textareas/2-dark.html",
+        "tsx": "tsx/TextareasVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "focus"],
+      "accessibility": [
+        "Action button icons inside the dark textarea must meet contrast requirements against the dark input background."
+      ]
+    },
+    {
+      "id": "textareas-3",
+      "title": "Actions outside",
+      "description": "Textarea with action buttons positioned below or beside the field — a toolbar-below layout for post composers, note editors, or support ticket forms.",
+      "source": {
+        "html": "../../../../public/examples/application/textareas/3.html",
+        "tsx": "tsx/TextareasVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "focus"],
+      "accessibility": [
+        "Buttons below the textarea are in natural DOM order and are keyboard-accessible without special ARIA."
+      ]
+    },
+    {
+      "id": "textareas-3-dark",
+      "title": "Actions outside (Dark)",
+      "description": "External action button textarea adapted for dark surfaces, keeping the action toolbar legible below or beside the dark input.",
+      "source": {
+        "html": "../../../../public/examples/application/textareas/3-dark.html",
+        "tsx": "tsx/TextareasVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "focus"],
+      "accessibility": [
+        "Action button text and icon colors in the external toolbar must meet contrast requirements on dark backgrounds."
+      ]
+    }
+  ]
+}

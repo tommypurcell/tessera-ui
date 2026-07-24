@@ -1,0 +1,63 @@
+---
+title: Why Coding Agents Keep Rebuilding Existing Components
+description: Coding agents recreate UI when existing components are hard to find, poorly described, or disconnected from project conventions.
+slug: why-coding-agents-keep-rebuilding-existing-components
+pubDate: 2026-07-23
+updatedDate: 2026-07-23
+terms:
+  - coding agents
+  - reusable ui components
+  - component discovery
+---
+
+Coding agents rebuild existing components for the same reason people do: the
+existing option is difficult to discover or does not explain whether it fits the
+job.
+
+A folder full of component files is not enough. The agent needs a searchable
+catalog with names, constraints, dependencies, and examples.
+
+## The Usual Failure Mode
+
+An agent receives a request such as “add a filter bar to the dashboard.” It
+searches the local code, finds no obvious match, and writes new controls.
+
+The project may already have [filter components](/components/application/filters),
+[select menus](/components/application/selects), and [range inputs](/components/application/range-inputs).
+Without a description of those patterns, the agent cannot safely choose one.
+
+## Make Discovery the First Step
+
+Set a simple project convention before asking an agent to implement UI:
+
+```txt
+1. Search the component catalog by task.
+2. Review the component's examples and constraints.
+3. Reuse the closest pattern.
+4. Create a new component only when no documented option fits.
+```
+
+This does not prevent new work. It makes the decision to create something new
+intentional.
+
+## Index Intent, Not Just File Names
+
+Search should include more than the component name. Useful fields include:
+
+```json
+{
+  "terms": ["filters", "faceted search", "dashboard controls"],
+  "useWhen": ["narrowing a data set"],
+  "related": ["tables", "pagination", "selects"]
+}
+```
+
+That vocabulary lets “filter a customer table” lead to the existing
+[table](/components/application/tables) and filter patterns.
+
+## Reuse Must Be Easier Than Recreation
+
+The strongest component library is not the largest. It is the one that makes
+the correct component easy to find, easy to understand, and easy to adapt.
+When a trusted option is available in the agent’s workflow, duplicate UI stops
+being the path of least resistance.
