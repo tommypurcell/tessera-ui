@@ -1,0 +1,4 @@
+interface:
+  display_name: "Tessera UI"
+  short_description: "Find and install editable Tessera components"
+  default_prompt: "Use $tessera-ui to find and install the best matching editable UI component."

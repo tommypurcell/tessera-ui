@@ -61,6 +61,10 @@ npx tessera-ui@latest add application-buttons --skip-deps
 
 The CLI detects npm, pnpm, Yarn, or Bun from the target project lockfile when a component declares package dependencies.
 
+## Agent skill
+
+An agent-ready workflow for safe, non-interactive component discovery and installation is included at [`skills/tessera-ui/SKILL.md`](./skills/tessera-ui/SKILL.md). It ships in the npm package alongside the CLI.
+
 ## Local development
 
 ```sh

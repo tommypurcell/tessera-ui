@@ -31,7 +31,8 @@
   "files": [
     "NOTICE",
     "bin/",
-    "public/registry/"
+    "public/registry/",
+    "skills/"
   ],
   "bin": {
     "tessera-ui": "bin/tessera-ui.js"

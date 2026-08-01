@@ -4,9 +4,14 @@ import path from 'node:path'
 
 const registryRoot = path.join(process.cwd(), 'public', 'registry')
 const indexPath = path.join(registryRoot, 'registry.json')
+const skillPath = path.join(process.cwd(), 'skills', 'tessera-ui', 'SKILL.md')
 
 if (!fs.existsSync(indexPath)) {
   throw new Error('Generated registry index is missing.')
+}
+
+if (!fs.existsSync(skillPath)) {
+  throw new Error('Agent skill is missing.')
 }
 
 const index = JSON.parse(fs.readFileSync(indexPath, 'utf8'))
