@@ -34,7 +34,7 @@
     "public/registry/"
   ],
   "bin": {
-    "tessera-ui": "./bin/tessera-ui.js"
+    "tessera-ui": "bin/tessera-ui.js"
   },
   "scripts": {
     "dev": "next dev",
