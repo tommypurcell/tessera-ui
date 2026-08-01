@@ -4,8 +4,8 @@ minimumReleaseAge: 1440
 peerDependencyRules:
   allowedVersions:
     '@tailwindcss/typography>tailwindcss': '^4'
-allowBuilds:
-  '@parcel/watcher': true
-  esbuild: true
-  sharp: true
-  workerd: true
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - esbuild
+  - sharp
+  - workerd
