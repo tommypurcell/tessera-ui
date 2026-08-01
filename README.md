@@ -72,9 +72,9 @@ Use `pnpm release:check` before publishing. The site is statically exported to `
 
 ## Attribution
 
-Tessera UI was built from [HyperUI](https://github.com/markmead/hyperui) as its starting point. HyperUI's original component catalog is licensed under the MIT License and is copyright Mark Mead.
+Tessera UI started from HyperUI. Mark Mead holds the copyright to HyperUI's original component catalog and released it under the MIT License.
 
-Tessera extends that foundation with a Next.js catalog, structured component metadata, React and TypeScript variants, agent-facing registry artifacts, validation and packaging tools, and a copy-and-own CLI. See [NOTICE](./NOTICE) for full attribution.
+Tessera extends that foundation with a Next.js catalog, structured component metadata, React and TypeScript variants, agent-facing registry artifacts, validation and packaging tools, and a copy-and-own CLI. See NOTICE for full attribution.
 
 ## License
 
