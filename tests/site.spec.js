@@ -4,8 +4,11 @@ test.describe('Next.js site', () => {
   test('renders catalog pages with component previews', async ({ page }) => {
     await page.goto('/components/application/accordions')
     await expect(page).toHaveTitle('Free Tailwind CSS Accordions | Tessera UI')
-    const previewFrame = page.locator('iframe[src="/examples/application/accordions/1.html"]')
+    const previewFrame = page.locator('iframe[title="Base"]')
     await expect(previewFrame).toBeVisible()
+    await expect(previewFrame.contentFrame().locator('body')).toContainText(
+      'What are the basic features?',
+    )
     await expect
       .poll(async () =>
         Number.parseFloat(await previewFrame.evaluate((frame) => getComputedStyle(frame).height)),
@@ -122,7 +125,7 @@ test('links to the marketing collection and renders the signal marquee', async (
   )
   await page.goto('/components/marketing/marquee')
   await expect(page.getByRole('heading', { name: 'Signal ribbon' })).toBeVisible()
-  await expect(page.locator('iframe[src="/examples/marketing/marquee/1.html"]')).toBeVisible()
+  await expect(page.locator('iframe[title="Signal ribbon"]')).toBeVisible()
 })
 
 test('renders original custom button variants', async ({ page }) => {
@@ -132,7 +135,7 @@ test('renders original custom button variants', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Primary actions' })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Secondary actions' })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Icon actions' })).toBeVisible()
-  await expect(page.locator('iframe[src="/examples/application/buttons/1.html"]')).toBeVisible()
+  await expect(page.locator('iframe[title="Primary actions"]')).toBeVisible()
 })
 
 test('renders the original transcript ribbon', async ({ page }) => {
@@ -141,7 +144,7 @@ test('renders the original transcript ribbon', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Transcript Ribbon' })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Conversation flow' })).toBeVisible()
   await expect(
-    page.locator('iframe[src="/examples/marketing/transcript-ribbon/1.html"]'),
+    page.locator('iframe[title="Conversation flow"]'),
   ).toBeVisible()
 })
 
@@ -150,7 +153,7 @@ test('renders the original phone mockup', async ({ page }) => {
 
   await expect(page.getByRole('heading', { name: 'Phone Mockup' })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Studio phone' })).toBeVisible()
-  await expect(page.locator('iframe[src="/examples/marketing/phone-mockup/1.html"]')).toBeVisible()
+  await expect(page.locator('iframe[title="Studio phone"]')).toBeVisible()
 })
 
 test('renders the original laptop mockup', async ({ page }) => {
@@ -158,7 +161,7 @@ test('renders the original laptop mockup', async ({ page }) => {
 
   await expect(page.getByRole('heading', { name: 'Laptop Mockup' })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Studio laptop' })).toBeVisible()
-  await expect(page.locator('iframe[src="/examples/marketing/laptop-mockup/1.html"]')).toBeVisible()
+  await expect(page.locator('iframe[title="Studio laptop"]')).toBeVisible()
 })
 
 test('links to Building Blocks and renders its Tailwind-first primitives', async ({ page }) => {
@@ -170,19 +173,30 @@ test('links to Building Blocks and renders its Tailwind-first primitives', async
   await page.getByRole('link', { name: 'Dots', exact: true }).click()
   await expect(page.getByRole('heading', { name: 'Color dot' })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Status dot' })).toBeVisible()
-  await expect(page.locator('iframe[src="/examples/building-blocks/dots/1.html"]')).toBeVisible()
+  await expect(page.locator('iframe[title="Color dot"]')).toBeVisible()
 })
 
 test('renders the action building blocks', async ({ page }) => {
   await page.goto('/components/building-blocks/actions')
   await expect(page.getByRole('heading', { name: 'Button', exact: true })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Drag Handle' })).toBeVisible()
-  await expect(page.locator('iframe[src="/examples/building-blocks/actions/1.html"]')).toBeVisible()
+  await expect(page.locator('iframe[title="Button"]')).toBeVisible()
 })
 
 test('renders the atom library building blocks', async ({ page }) => {
   await page.goto('/components/building-blocks/atoms')
   await expect(page.getByRole('heading', { name: 'Signals', exact: true })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Inputs', exact: true })).toBeVisible()
-  await expect(page.locator('iframe[src="/examples/building-blocks/atoms/1.html"]')).toBeVisible()
+  await expect(page.locator('iframe[title="Signals"]')).toBeVisible()
+})
+
+test('renders neobrutalism select previews without a nested 404 page', async ({ page }) => {
+  await page.goto('/components/neobrutalism/selects')
+
+  const previewFrame = page.locator('iframe[title="Base"]')
+  await expect(previewFrame).toBeVisible()
+  await expect(previewFrame.contentFrame().getByLabel('Headliner')).toBeVisible()
+  await expect(previewFrame.contentFrame().getByRole('heading', { name: 'Page not found' })).toHaveCount(
+    0,
+  )
 })

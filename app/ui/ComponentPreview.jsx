@@ -67,7 +67,6 @@ export default function ComponentPreview({
   component,
   markup,
   tsxMarkup,
-  category,
   slug,
   themeVisibility,
 }) {
@@ -78,7 +77,6 @@ export default function ComponentPreview({
   const [previewHeight, setPreviewHeight] = useState(320)
   const [editableHtml, setEditableHtml] = useState(markup)
   const iframeReference = useRef(null)
-  const src = `/examples/${category}/${slug}/${component.index}${component.dark ? '-dark' : ''}.html`
   const componentName = toPascalCase(`${slug}-${component.index}${component.dark ? '-dark' : ''}`)
 
   const formattedCode = useMemo(() => {
@@ -191,8 +189,7 @@ export default function ComponentPreview({
       {isPreviewVisible ? (
         <iframe
           ref={iframeReference}
-          src={editableHtml === markup ? src : undefined}
-          srcDoc={editableHtml === markup ? undefined : editableHtml}
+          srcDoc={editableHtml}
           title={component.title}
           loading={component.index === 1 && !component.dark ? 'eager' : 'lazy'}
           onLoad={resizePreviewFrame}
