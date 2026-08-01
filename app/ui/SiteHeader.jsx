@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Menu, Search, X } from 'lucide-react'
+import { Check, Copy, Menu, MoreVertical, Search, X } from 'lucide-react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import ThemeToggle from './ThemeToggle'
@@ -42,6 +42,7 @@ function getResults(items, query) {
 export default function SiteHeader({ searchItems }) {
   const [open, setOpen] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [skillCopied, setSkillCopied] = useState(false)
   const [query, setQuery] = useState('')
   const dialog = useRef(null)
   const input = useRef(null)
@@ -73,6 +74,20 @@ export default function SiteHeader({ searchItems }) {
     if (results[0]) {
       setOpen(false)
       router.push(results[0].href)
+    }
+  }
+
+  async function copySkill() {
+    try {
+      const response = await fetch('/SKILL.md')
+      if (!response.ok) {
+        throw new Error('Could not load SKILL.md')
+      }
+      await navigator.clipboard.writeText(await response.text())
+      setSkillCopied(true)
+      window.setTimeout(() => setSkillCopied(false), 1600)
+    } catch {
+      setSkillCopied(false)
     }
   }
 
@@ -114,6 +129,31 @@ export default function SiteHeader({ searchItems }) {
           ))}
         </nav>
         <div className="ml-auto flex items-center gap-2">
+          <div className="hidden h-10 items-center overflow-hidden rounded-full border border-gray-300 bg-white text-gray-700 shadow-sm transition hover:border-gray-400 hover:bg-gray-50 sm:flex">
+            <button
+              type="button"
+              onClick={copySkill}
+              aria-label="Copy SKILL.md"
+              className="inline-flex h-full items-center gap-2 px-4 text-sm font-semibold"
+            >
+              {skillCopied ? (
+                <Check className="size-[1.125rem] text-green-700" aria-hidden="true" />
+              ) : (
+                <Copy className="size-[1.125rem]" aria-hidden="true" />
+              )}
+              <span aria-live="polite">{skillCopied ? 'Copied' : 'SKILL.md'}</span>
+            </button>
+            <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
+            <a
+              href="/SKILL.md"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open SKILL.md"
+              className="inline-flex h-full items-center px-3 hover:bg-gray-100"
+            >
+              <MoreVertical className="size-[1.125rem]" aria-hidden="true" />
+            </a>
+          </div>
           <ThemeToggle />
           <button type="button" onClick={() => setOpen(true)} className="inline-flex items-center gap-2 rounded-md border border-gray-200 bg-white px-3 py-2 text-sm text-gray-600 hover:bg-gray-50" aria-label="Open search">
             <Search className="size-4" /> <span>Search</span><span className="hidden items-center gap-1 sm:inline-flex"><Keycap>⌘</Keycap><Keycap>K</Keycap></span>

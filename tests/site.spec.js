@@ -1,6 +1,24 @@
 import { expect, test } from '@playwright/test'
 
 test.describe('Next.js site', () => {
+  test('copies the agent skill from the navigation', async ({ page, context }) => {
+    await context.grantPermissions(['clipboard-read', 'clipboard-write'])
+    await page.goto('/')
+
+    const copySkill = page.getByRole('button', { name: 'Copy SKILL.md' })
+    await expect(copySkill).toBeVisible()
+    await copySkill.click()
+    await expect(copySkill).toContainText('Copied')
+    await expect
+      .poll(() => page.evaluate(() => navigator.clipboard.readText()))
+      .toContain('name: tessera-ui')
+
+    await expect(page.getByRole('link', { name: 'Open SKILL.md' })).toHaveAttribute(
+      'href',
+      '/SKILL.md',
+    )
+  })
+
   test('renders catalog pages with component previews', async ({ page }) => {
     await page.goto('/components/application/accordions')
     await expect(page).toHaveTitle('Free Tailwind CSS Accordions | Tessera UI')
