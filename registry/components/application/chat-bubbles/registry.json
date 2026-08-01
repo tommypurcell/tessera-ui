@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "name": "application-chat-bubbles",
+  "title": "Chat Bubbles",
+  "description": "Five distinct, original conversation layouts for direct messages, support threads, team chat, and system activity feeds, each built as a customizable component you can plug your own messages into.",
+  "category": "application/chat-bubbles",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "chat-bubbles",
+    "chat",
+    "message",
+    "conversation",
+    "bubble",
+    "sms",
+    "dm"
+  ],
+  "useWhen": [
+    "Five distinct, original conversation layouts for direct messages, support threads, team chat, and system activity feeds, each built as a customizable component you can plug your own messages into."
+  ],
+  "avoidWhen": [
+    "Avoid chat bubbles when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Chat Bubbles uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Provide meaningful alternative text for informative images and empty alt text for decorative images.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "chat-bubbles-1",
+      "title": "Minimal cards",
+      "description": "Squared, bordered message cards with no rounded pills — a quiet, business-like tone",
+      "source": {
+        "html": "../../../../public/examples/application/chat-bubbles/1.html",
+        "tsx": "tsx/ChatBubblesVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "chat-bubbles-1-dark",
+      "title": "Minimal cards (Dark)",
+      "description": "Squared, bordered message cards with no rounded pills — a quiet, business-like tone",
+      "source": {
+        "html": "../../../../public/examples/application/chat-bubbles/1-dark.html",
+        "tsx": "tsx/ChatBubblesVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "chat-bubbles-2",
+      "title": "Support thread",
+      "description": "Boxed conversation card with avatar, name, and divided rows, styled like a help-desk widget",
+      "source": {
+        "html": "../../../../public/examples/application/chat-bubbles/2.html",
+        "tsx": "tsx/ChatBubblesVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "chat-bubbles-2-dark",
+      "title": "Support thread (Dark)",
+      "description": "Boxed conversation card with avatar, name, and divided rows, styled like a help-desk widget",
+      "source": {
+        "html": "../../../../public/examples/application/chat-bubbles/2-dark.html",
+        "tsx": "tsx/ChatBubblesVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "chat-bubbles-3",
+      "title": "Team chat",
+      "description": "Colorful initials avatars, names, and timestamps on a dark chat pane, styled like Slack or Discord",
+      "source": {
+        "html": "../../../../public/examples/application/chat-bubbles/3.html",
+        "tsx": "tsx/ChatBubblesVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "chat-bubbles-3-dark",
+      "title": "Team chat (Dark)",
+      "description": "Colorful initials avatars, names, and timestamps on a dark chat pane, styled like Slack or Discord",
+      "source": {
+        "html": "../../../../public/examples/application/chat-bubbles/3-dark.html",
+        "tsx": "tsx/ChatBubblesVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "chat-bubbles-4",
+      "title": "System status feed",
+      "description": "Icon-led, semantic colored rows for success, warning, error, and info system messages",
+      "source": {
+        "html": "../../../../public/examples/application/chat-bubbles/4.html",
+        "tsx": "tsx/ChatBubblesVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "chat-bubbles-4-dark",
+      "title": "System status feed (Dark)",
+      "description": "Icon-led, semantic colored rows for success, warning, error, and info system messages",
+      "source": {
+        "html": "../../../../public/examples/application/chat-bubbles/4-dark.html",
+        "tsx": "tsx/ChatBubblesVariant4Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "chat-bubbles-5",
+      "title": "SMS thread",
+      "description": "Smartphone-style messaging thread with timestamp dividers, tailed bubbles, and a delivery receipt",
+      "source": {
+        "html": "../../../../public/examples/application/chat-bubbles/5.html",
+        "tsx": "tsx/ChatBubblesVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "chat-bubbles-5-dark",
+      "title": "SMS thread (Dark)",
+      "description": "Smartphone-style messaging thread with timestamp dividers, tailed bubbles, and a delivery receipt",
+      "source": {
+        "html": "../../../../public/examples/application/chat-bubbles/5-dark.html",
+        "tsx": "tsx/ChatBubblesVariant5Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

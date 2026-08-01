@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "name": "building-blocks-surfaces",
+  "title": "Surfaces",
+  "description": "Foundational Tailwind containers for inset, elevated, tinted, dashed, and toolbar-style surfaces.",
+  "category": "building-blocks/surfaces",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "building-blocks",
+    "surfaces",
+    "surface",
+    "panel",
+    "container",
+    "shell",
+    "card",
+    "atom",
+    "tailwind"
+  ],
+  "useWhen": [
+    "Foundational Tailwind containers for inset, elevated, tinted, dashed, and toolbar-style surfaces."
+  ],
+  "avoidWhen": [
+    "Avoid surfaces when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Surfaces uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "surfaces-1",
+      "title": "Inset surface",
+      "description": "Inset surface Foundational Tailwind containers for inset, elevated, tinted, dashed, and toolbar-style surfaces.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/surfaces/1.html",
+        "tsx": "tsx/SurfacesVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "surfaces-2",
+      "title": "Elevated surface",
+      "description": "Elevated surface Foundational Tailwind containers for inset, elevated, tinted, dashed, and toolbar-style surfaces.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/surfaces/2.html",
+        "tsx": "tsx/SurfacesVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "surfaces-3",
+      "title": "Tinted surface",
+      "description": "Tinted surface Foundational Tailwind containers for inset, elevated, tinted, dashed, and toolbar-style surfaces.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/surfaces/3.html",
+        "tsx": "tsx/SurfacesVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "surfaces-4",
+      "title": "Dashed surface",
+      "description": "Dashed surface Foundational Tailwind containers for inset, elevated, tinted, dashed, and toolbar-style surfaces.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/surfaces/4.html",
+        "tsx": "tsx/SurfacesVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "surfaces-5",
+      "title": "Toolbar surface",
+      "description": "Toolbar surface Foundational Tailwind containers for inset, elevated, tinted, dashed, and toolbar-style surfaces.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/surfaces/5.html",
+        "tsx": "tsx/SurfacesVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

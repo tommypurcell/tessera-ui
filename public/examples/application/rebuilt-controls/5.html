@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="/component.css" />
+  </head>
+  <body>
+    <div class="w-full max-w-xs">
+      <label class="mb-1.5 block text-sm font-medium text-slate-700" for="combobox-example">
+        Assign to team
+      </label>
+      <div class="relative">
+        <input
+          id="combobox-example"
+          type="text"
+          role="combobox"
+          aria-expanded="true"
+          aria-controls="combobox-listbox"
+          value="Design"
+          class="w-full rounded-lg border border-slate-300 py-2 pl-3 pr-9 text-sm text-slate-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+        />
+        <span class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-slate-400">
+          ▾
+        </span>
+        <ul
+          id="combobox-listbox"
+          role="listbox"
+          class="absolute z-10 mt-1 w-full overflow-hidden rounded-lg border border-slate-200 bg-white text-sm shadow-lg"
+        >
+          <li
+            role="option"
+            aria-selected="true"
+            class="flex items-center justify-between bg-blue-50 px-3 py-2 text-blue-700"
+          >
+            Design
+            <span aria-hidden="true">✓</span>
+          </li>
+          <li role="option" aria-selected="false" class="cursor-pointer px-3 py-2 text-slate-700 hover:bg-slate-50">
+            Engineering
+          </li>
+          <li role="option" aria-selected="false" class="cursor-pointer px-3 py-2 text-slate-700 hover:bg-slate-50">
+            Marketing
+          </li>
+          <li role="option" aria-selected="false" class="cursor-pointer px-3 py-2 text-slate-700 hover:bg-slate-50">
+            Support
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

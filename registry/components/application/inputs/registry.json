@@ -2,140 +2,162 @@
   "schemaVersion": 1,
   "name": "application-inputs",
   "title": "Inputs",
-  "description": "Text input fields for forms, search bars, and data entry — with variants for icons, inline buttons, and animated floating labels.",
-  "category": "application/forms",
-  "frameworks": ["html", "react"],
+  "description": "Form input components with responsive text fields, search boxes, and form controls. Customizable input elements with various styles including icons and floating labels.",
+  "category": "application/inputs",
+  "frameworks": [
+    "html",
+    "react"
+  ],
   "styling": "tailwind",
-  "tags": ["input", "text-field", "form", "search", "floating-label"],
+  "tags": [
+    "application",
+    "inputs",
+    "filter",
+    "form"
+  ],
   "useWhen": [
-    "Collecting short free-text or search query input from users within a form or toolbar.",
-    "Adding an inline search input to a table header or filter bar.",
-    "Building form fields that need a supporting icon or integrated action button."
+    "Form input components with responsive text fields, search boxes, and form controls. Customizable input elements with various styles including icons and floating labels."
   ],
   "avoidWhen": [
-    "Users need to enter multiple lines of text — use a textarea instead.",
-    "The input requires structured selection from a fixed set of options — use a select or combobox.",
-    "The value must match a specific format and should guide the user — consider a masked input or specialized date/number input."
+    "Avoid inputs when a simpler pattern communicates the same content or action."
   ],
-  "dependencies": ["@tailwindcss/forms"],
-  "responsiveBehavior": "Inputs stretch to fill their container width at all viewport sizes. Stacked label-and-input pairs reflow gracefully in narrow containers.",
+  "dependencies": [
+    "@tailwindcss/forms"
+  ],
+  "responsiveBehavior": "Inputs uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
   "accessibility": [
-    "Every input must have an associated <label> linked via for/id or as a wrapping element.",
-    "Placeholder text is not a substitute for a label — placeholders disappear on focus and are not reliably announced.",
-    "Error messages must be associated with the input via aria-describedby so they are read aloud."
+    "Associate each form field with a visible or programmatic label before production use.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
   ],
-  "compatibleWith": ["application-filters", "application-modals", "application-textareas"],
+  "compatibleWith": [],
   "variants": [
     {
       "id": "inputs-1",
       "title": "Base",
-      "description": "Standard bordered text input with an above label — the default building block for form fields.",
+      "description": "Standard text input with label and border styling",
       "source": {
         "html": "../../../../public/examples/application/inputs/1.html",
         "tsx": "tsx/InputsVariant1.tsx"
       },
       "appearance": "light",
-      "states": ["default", "focus", "filled"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Label must be visually associated with the input; placeholder text is not a replacement for a label."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "inputs-1-dark",
       "title": "Base (Dark)",
-      "description": "Standard bordered text input with label adapted for dark application surfaces.",
+      "description": "Standard text input with label and border styling",
       "source": {
         "html": "../../../../public/examples/application/inputs/1-dark.html",
         "tsx": "tsx/InputsVariant1Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default", "focus", "filled"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Dark input border and text must maintain WCAG AA contrast in all states."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "inputs-2",
       "title": "Base with icon",
-      "description": "Text input with a decorative or functional icon inside the field on the right, useful for search or type-hint indicators.",
+      "description": "Input field with an icon positioned on the right side",
       "source": {
         "html": "../../../../public/examples/application/inputs/2.html",
         "tsx": "tsx/InputsVariant2.tsx"
       },
       "appearance": "light",
-      "states": ["default", "focus"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Decorative icons inside inputs must have aria-hidden=\"true\"; functional icons need an accessible label."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "inputs-2-dark",
       "title": "Base with icon (Dark)",
-      "description": "Icon-adorned text input adapted for dark application surfaces.",
+      "description": "Input field with an icon positioned on the right side",
       "source": {
         "html": "../../../../public/examples/application/inputs/2-dark.html",
         "tsx": "tsx/InputsVariant2Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default", "focus"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Icon color must contrast with the dark input background and not obscure the text cursor."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "inputs-3",
       "title": "Base with button",
-      "description": "Search input with an inline action button attached to the trailing edge — common for search bars and coupon fields.",
+      "description": "Search input with an integrated action button",
       "source": {
         "html": "../../../../public/examples/application/inputs/3.html",
         "tsx": "tsx/InputsVariant3.tsx"
       },
       "appearance": "light",
-      "states": ["default", "focus"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "The button must have a descriptive label; pressing Enter in the input should also trigger the action."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "inputs-3-dark",
       "title": "Base with button (Dark)",
-      "description": "Inline-action search input adapted for dark application surfaces.",
+      "description": "Search input with an integrated action button",
       "source": {
         "html": "../../../../public/examples/application/inputs/3-dark.html",
         "tsx": "tsx/InputsVariant3Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default", "focus"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Button color contrast and focus ring must meet WCAG AA requirements on dark backgrounds."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "inputs-4",
       "title": "Floating label",
-      "description": "Input where the placeholder label animates upward on focus to sit above the field, preserving space when empty.",
+      "description": "Input with animated label that floats above on focus",
       "source": {
         "html": "../../../../public/examples/application/inputs/4.html",
         "tsx": "tsx/InputsVariant4.tsx"
       },
       "appearance": "light",
-      "states": ["default", "focus", "filled"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Floating label must remain programmatically associated with the input at all states, not just the floated position."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "inputs-4-dark",
       "title": "Floating label (Dark)",
-      "description": "Animated floating-label input adapted for dark application surfaces.",
+      "description": "Input with animated label that floats above on focus",
       "source": {
         "html": "../../../../public/examples/application/inputs/4-dark.html",
         "tsx": "tsx/InputsVariant4Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default", "focus", "filled"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Label text must contrast with the dark background in both its resting and floated positions."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     }
   ]

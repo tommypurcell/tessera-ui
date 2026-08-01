@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "name": "marketing-product-gallery-cards",
+  "title": "Product Gallery Cards",
+  "description": "Original product cards that pair a hover image gallery with title, price, and description, in three levels of detail.",
+  "category": "marketing/product-gallery-cards",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "marketing",
+    "product-gallery-cards",
+    "product card",
+    "gallery",
+    "ecommerce",
+    "price",
+    "rating"
+  ],
+  "useWhen": [
+    "Original product cards that pair a hover image gallery with title, price, and description, in three levels of detail."
+  ],
+  "avoidWhen": [
+    "Avoid product gallery cards when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Product Gallery Cards uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Provide meaningful alternative text for informative images and empty alt text for decorative images.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "product-gallery-cards-1",
+      "title": "Minimal",
+      "description": "Hover gallery with a title and price row beneath it",
+      "source": {
+        "html": "../../../../public/examples/marketing/product-gallery-cards/1.html",
+        "tsx": "tsx/ProductGalleryCardsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "product-gallery-cards-1-dark",
+      "title": "Minimal (Dark)",
+      "description": "Hover gallery with a title and price row beneath it",
+      "source": {
+        "html": "../../../../public/examples/marketing/product-gallery-cards/1-dark.html",
+        "tsx": "tsx/ProductGalleryCardsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "product-gallery-cards-2",
+      "title": "With tag",
+      "description": "Hover gallery with a small overlay badge and a title, price, and description",
+      "source": {
+        "html": "../../../../public/examples/marketing/product-gallery-cards/2.html",
+        "tsx": "tsx/ProductGalleryCardsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "product-gallery-cards-2-dark",
+      "title": "With tag (Dark)",
+      "description": "Hover gallery with a small overlay badge and a title, price, and description",
+      "source": {
+        "html": "../../../../public/examples/marketing/product-gallery-cards/2-dark.html",
+        "tsx": "tsx/ProductGalleryCardsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "product-gallery-cards-3",
+      "title": "With rating",
+      "description": "Hover gallery with a star rating, price, and an add-to-bag action",
+      "source": {
+        "html": "../../../../public/examples/marketing/product-gallery-cards/3.html",
+        "tsx": "tsx/ProductGalleryCardsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "product-gallery-cards-3-dark",
+      "title": "With rating (Dark)",
+      "description": "Hover gallery with a star rating, price, and an add-to-bag action",
+      "source": {
+        "html": "../../../../public/examples/marketing/product-gallery-cards/3-dark.html",
+        "tsx": "tsx/ProductGalleryCardsVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    }
+  ]
+}

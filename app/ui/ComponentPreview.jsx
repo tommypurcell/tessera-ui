@@ -63,7 +63,14 @@ ${indentMarkup(jsxMarkup)}
 }`
 }
 
-export default function ComponentPreview({ component, markup, tsxMarkup, category, slug, themeVisibility }) {
+export default function ComponentPreview({
+  component,
+  markup,
+  tsxMarkup,
+  category,
+  slug,
+  themeVisibility,
+}) {
   const [previewWidth, setPreviewWidth] = useState('100%')
   const [isPreviewVisible, setIsPreviewVisible] = useState(true)
   const [selectedCodeFormat, setSelectedCodeFormat] = useState('html')
@@ -234,21 +241,22 @@ export default function ComponentPreview({ component, markup, tsxMarkup, categor
           {selectedCodeFormat === 'html' ? (
             <textarea
               id={`${component.id}-code-panel`}
+              role="tabpanel"
               aria-labelledby={`${component.id}-${selectedCodeFormat}-tab`}
               value={formattedCode}
               onChange={(event) => setEditableHtml(event.target.value)}
               spellCheck="false"
-              className="block h-96 w-full resize-y bg-gray-950 p-5 font-mono text-sm leading-6 text-gray-100 outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-400"
+              className="block h-96 w-full resize-y bg-gray-950 p-5 font-mono text-sm leading-6 text-gray-100 outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-inset"
             />
           ) : (
-          <pre
-            id={`${component.id}-code-panel`}
-            role="tabpanel"
-            aria-labelledby={`${component.id}-${selectedCodeFormat}-tab`}
-            className="max-h-[36rem] overflow-auto bg-gray-950 p-5 text-sm leading-6 text-gray-100"
-          >
-            <code>{formattedCode}</code>
-          </pre>
+            <pre
+              id={`${component.id}-code-panel`}
+              role="tabpanel"
+              aria-labelledby={`${component.id}-${selectedCodeFormat}-tab`}
+              className="max-h-[36rem] overflow-auto bg-gray-950 p-5 text-sm leading-6 text-gray-100"
+            >
+              <code>{formattedCode}</code>
+            </pre>
           )}
         </div>
       )}

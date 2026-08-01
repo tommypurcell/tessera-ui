@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+    <style>
+      .cycle-gallery { position: relative; aspect-ratio: 1 / 1; overflow: hidden; }
+      .cycle-gallery img { position: absolute; inset: 0; height: 100%; width: 100%; object-fit: cover; opacity: 0; }
+      .cycle-gallery img:first-child { opacity: 1; }
+      .cycle-gallery:hover img { animation: cycle-fade 3s steps(1, end) infinite; }
+      .cycle-gallery:hover img:nth-child(1) { animation-delay: 0s; }
+      .cycle-gallery:hover img:nth-child(2) { animation-delay: 1s; }
+      @keyframes cycle-fade {
+        0%, 48% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .cycle-gallery:hover img { animation: none; }
+      }
+    </style>
+  </head>
+  <body class="mx-auto max-w-60 bg-gray-950 p-6">
+    <div class="max-w-60 overflow-hidden rounded-xl border border-gray-800 shadow-sm">
+      <figure class="cycle-gallery">
+        <img alt="Sage green t-shirt, worn" src="https://images.unsplash.com/photo-1523381140794-a1eef18a37c7?auto=format&fit=crop&q=80&w=400" />
+        <img alt="Sage green t-shirts on a rack" src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&q=80&w=400" />
+      </figure>
+      <div class="bg-gray-900 p-4">
+        <div class="flex items-baseline justify-between gap-2">
+          <h2 class="text-sm font-semibold text-gray-100">Sage Cotton Tee</h2>
+          <span class="text-sm font-medium text-gray-400">$28</span>
+        </div>
+        <p class="mt-1 text-sm text-gray-400">Heavyweight cotton with a relaxed, garment-dyed finish.</p>
+      </div>
+    </div>
+  </body>
+</html>

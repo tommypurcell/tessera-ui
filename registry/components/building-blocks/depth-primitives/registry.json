@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "name": "building-blocks-depth-primitives",
+  "title": "Depth Primitives",
+  "description": "Layered Tailwind blocks for elevated cards, inset surfaces, and overlap markers.",
+  "category": "building-blocks/depth-primitives",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "building-blocks",
+    "depth-primitives",
+    "depth",
+    "elevation",
+    "shadow",
+    "inset",
+    "overlap",
+    "layer",
+    "atom",
+    "tailwind"
+  ],
+  "useWhen": [
+    "Layered Tailwind blocks for elevated cards, inset surfaces, and overlap markers."
+  ],
+  "avoidWhen": [
+    "Avoid depth primitives when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Depth Primitives uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "depth-primitives-1",
+      "title": "Elevated card base",
+      "description": "Elevated card base Layered Tailwind blocks for elevated cards, inset surfaces, and overlap markers.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/depth-primitives/1.html",
+        "tsx": "tsx/DepthPrimitivesVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "depth-primitives-2",
+      "title": "Inset surface",
+      "description": "Inset surface Layered Tailwind blocks for elevated cards, inset surfaces, and overlap markers.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/depth-primitives/2.html",
+        "tsx": "tsx/DepthPrimitivesVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "depth-primitives-3",
+      "title": "Overlap badge",
+      "description": "Overlap badge Layered Tailwind blocks for elevated cards, inset surfaces, and overlap markers.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/depth-primitives/3.html",
+        "tsx": "tsx/DepthPrimitivesVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

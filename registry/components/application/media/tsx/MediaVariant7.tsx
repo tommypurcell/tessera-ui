@@ -9,21 +9,21 @@ export function MediaVariant7({ className, ...props }: MediaVariant7Props) {
   return (
     <div className={className} {...props}>
       <div className="flex flex-row-reverse items-end gap-4">
-        <img
-          alt=""
-          src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?auto=format&fit=crop&q=80&w=1160"
-          className="size-20 rounded object-cover"
-        />
-
-        <div>
-          <h3 className="font-medium text-gray-900 sm:text-lg">Title goes here</h3>
-
-          <p className="mt-0.5 text-gray-700">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptas distinctio
-            nesciunt quas non animi.
-          </p>
-        </div>
-      </div>
+            <img
+              alt=""
+              src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?auto=format&fit=crop&q=80&w=1160"
+              className="size-20 rounded object-cover"
+            />
+      
+            <div>
+              <h3 className="font-medium text-gray-900 sm:text-lg">Title goes here</h3>
+      
+              <p className="mt-0.5 text-gray-700">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates voluptas distinctio
+                nesciunt quas non animi.
+              </p>
+            </div>
+          </div>
     </div>
   )
 }

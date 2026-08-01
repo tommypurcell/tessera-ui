@@ -1,28 +1,81 @@
 # Tessera UI
 
-An open-source collection of Tailwind CSS components for product interfaces, marketing sites, and application workflows.
+A copy-and-own Tailwind CSS component registry for product interfaces, marketing sites, and application workflows. Tessera installs editable component source directly into your project, similar to shadcn/ui.
 
-Built with Next.js and React. All active UI routes and components are JSX.
+## Quick start
 
-## Use the components
+Initialize a project:
 
-1. Browse the catalog.
-2. Copy the markup for a component.
-3. Adapt it in your Tailwind CSS project.
+```sh
+npx tessera-ui@latest init
+```
 
-## Component authoring
+Search and inspect the registry:
 
-New registry React components use Tailwind utilities as their primary styling API. Use custom CSS only when a utility cannot express the requirement, such as isolated preview documents or a genuinely custom animation. Keep building blocks small and composable so they can be assembled into larger product components.
+```sh
+npx tessera-ui@latest search "pricing table"
+npx tessera-ui@latest info marketing-pricing
+```
 
-## Run locally
+Install a component:
 
-```shell
+```sh
+npx tessera-ui@latest add application-buttons
+```
+
+When a collection has multiple options, select one interactively or pass it explicitly:
+
+```sh
+npx tessera-ui@latest add application-buttons --variant buttons-1
+```
+
+The command previews every file and dependency before writing. Installed source is placed in `components/ui` by default and belongs to your project—you can edit it directly.
+
+## Configuration
+
+`init` creates `tessera-ui.json`:
+
+```json
+{
+  "schemaVersion": 1,
+  "componentDirectory": "components/ui",
+  "typescript": true,
+  "tailwind": true,
+  "aliases": {
+    "components": "@/components"
+  }
+}
+```
+
+Set `registryUrl` to use a deployed Tessera registry. You can also pass `--registry-url` or set `TESSERA_UI_REGISTRY_URL`. Without a remote URL, the CLI uses its verified packaged registry so installation also works offline.
+
+Useful installation flags:
+
+```sh
+npx tessera-ui@latest add application-buttons --dry-run
+npx tessera-ui@latest add application-buttons --format html
+npx tessera-ui@latest add application-buttons --directory src/components/ui
+npx tessera-ui@latest add application-buttons --overwrite
+npx tessera-ui@latest add application-buttons --skip-deps
+```
+
+The CLI detects npm, pnpm, Yarn, or Bun from the target project lockfile when a component declares package dependencies.
+
+## Local development
+
+```sh
 pnpm install
 pnpm dev
 ```
 
-The app runs at [http://localhost:3000](http://localhost:3000). Use `pnpm build` to create the static export in `out/`.
+Use `pnpm release:check` before publishing. The site is statically exported to `out/`.
+
+## Attribution
+
+Tessera UI was built from [HyperUI](https://github.com/markmead/hyperui) as its starting point. HyperUI's original component catalog is licensed under the MIT License and is copyright Mark Mead.
+
+Tessera extends that foundation with a Next.js catalog, structured component metadata, React and TypeScript variants, agent-facing registry artifacts, validation and packaging tools, and a copy-and-own CLI. See [NOTICE](./NOTICE) for full attribution.
 
 ## License
 
-This project is available under the MIT License. See [LICENSE](./LICENSE).
+Available under the [MIT License](./LICENSE).

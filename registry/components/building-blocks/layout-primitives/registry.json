@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "name": "building-blocks-layout-primitives",
+  "title": "Layout Primitives",
+  "description": "Structural Tailwind layout blocks for vertical stacks, readable containers, and inline clusters.",
+  "category": "building-blocks/layout-primitives",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "building-blocks",
+    "layout-primitives",
+    "layout",
+    "spacing",
+    "stack",
+    "container",
+    "cluster",
+    "atom",
+    "tailwind"
+  ],
+  "useWhen": [
+    "Structural Tailwind layout blocks for vertical stacks, readable containers, and inline clusters."
+  ],
+  "avoidWhen": [
+    "Avoid layout primitives when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Layout Primitives uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "layout-primitives-1",
+      "title": "Section stack",
+      "description": "Section stack Structural Tailwind layout blocks for vertical stacks, readable containers, and inline clusters.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/layout-primitives/1.html",
+        "tsx": "tsx/LayoutPrimitivesVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "layout-primitives-2",
+      "title": "Content container",
+      "description": "Content container Structural Tailwind layout blocks for vertical stacks, readable containers, and inline clusters.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/layout-primitives/2.html",
+        "tsx": "tsx/LayoutPrimitivesVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "layout-primitives-3",
+      "title": "Inline cluster",
+      "description": "Inline cluster Structural Tailwind layout blocks for vertical stacks, readable containers, and inline clusters.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/layout-primitives/3.html",
+        "tsx": "tsx/LayoutPrimitivesVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

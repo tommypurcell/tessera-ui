@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "name": "building-blocks-finishing-touches",
+  "title": "Finishing Touches",
+  "description": "Polished Tailwind finishing blocks for accent callouts, decorated empty states, and compact toolbar surfaces.",
+  "category": "building-blocks/finishing-touches",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "building-blocks",
+    "finishing-touches",
+    "polish",
+    "accent",
+    "empty state",
+    "toolbar",
+    "detail",
+    "atom",
+    "tailwind"
+  ],
+  "useWhen": [
+    "Polished Tailwind finishing blocks for accent callouts, decorated empty states, and compact toolbar surfaces."
+  ],
+  "avoidWhen": [
+    "Avoid finishing touches when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Finishing Touches uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "finishing-touches-1",
+      "title": "Accent border block",
+      "description": "Accent border block Polished Tailwind finishing blocks for accent callouts, decorated empty states, and compact toolbar surfaces.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/finishing-touches/1.html",
+        "tsx": "tsx/FinishingTouchesVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "finishing-touches-2",
+      "title": "Decorated empty state",
+      "description": "Decorated empty state Polished Tailwind finishing blocks for accent callouts, decorated empty states, and compact toolbar surfaces.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/finishing-touches/2.html",
+        "tsx": "tsx/FinishingTouchesVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "finishing-touches-3",
+      "title": "Toolbar surface",
+      "description": "Toolbar surface Polished Tailwind finishing blocks for accent callouts, decorated empty states, and compact toolbar surfaces.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/finishing-touches/3.html",
+        "tsx": "tsx/FinishingTouchesVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

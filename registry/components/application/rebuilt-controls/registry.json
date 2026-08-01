@@ -4,22 +4,38 @@
   "title": "Rebuilt Controls",
   "description": "Custom-built application controls for navigation, selection, dates, overlays, and loading interactions.",
   "category": "application",
-  "frameworks": ["html", "react"],
+  "frameworks": [
+    "html",
+    "react"
+  ],
   "styling": "tailwind",
-  "tags": ["controls", "forms", "navigation", "custom-built", "tailwind"],
+  "tags": [
+    "controls",
+    "forms",
+    "navigation",
+    "custom-built",
+    "tailwind"
+  ],
   "useWhen": [
     "You need a focused application control that can be composed into a larger workflow."
   ],
   "avoidWhen": [
     "You need a complete page or domain-specific state machine rather than a reusable control."
   ],
-  "dependencies": ["No external runtime dependency."],
+  "dependencies": [
+    "No external runtime dependency."
+  ],
   "responsiveBehavior": "Controls use intrinsic sizing by default and become full-width when their parent supplies a width constraint.",
   "accessibility": [
     "Native form semantics and keyboard focus are preserved.",
     "Interactive states are communicated with labels, roles, and visible focus styling."
   ],
-  "compatibleWith": ["forms", "sidebars", "dialogs", "toolbars"],
+  "compatibleWith": [
+    "forms",
+    "sidebars",
+    "dialogs",
+    "toolbars"
+  ],
   "variants": [
     {
       "id": "command-menu",
@@ -30,7 +46,12 @@
         "tsx": "tsx/RebuiltControls.tsx"
       },
       "appearance": "light",
-      "states": ["default", "open", "focus", "loading"],
+      "states": [
+        "default",
+        "open",
+        "focus",
+        "loading"
+      ],
       "accessibility": [
         "Use a labelled trigger and keep the active option discoverable to assistive technology."
       ]
@@ -40,35 +61,53 @@
       "title": "Multi-select",
       "description": "A tokenized select control for choosing several values without losing the current selection context.",
       "source": {
-        "html": "../../../../public/examples/application/rebuilt-controls/1.html",
+        "html": "../../../../public/examples/application/rebuilt-controls/2.html",
         "tsx": "tsx/RebuiltControls.tsx"
       },
       "appearance": "light",
-      "states": ["default", "expanded", "disabled"],
-      "accessibility": ["Expose selected values as removable tokens with individual labels."]
+      "states": [
+        "default",
+        "expanded",
+        "disabled"
+      ],
+      "accessibility": [
+        "Expose selected values as removable tokens with individual labels."
+      ]
     },
     {
       "id": "otp-input",
       "title": "OTP input",
       "description": "A grouped one-character code input with a clear focus treatment and predictable slot sizing.",
       "source": {
-        "html": "../../../../public/examples/application/rebuilt-controls/1.html",
+        "html": "../../../../public/examples/application/rebuilt-controls/3.html",
         "tsx": "tsx/RebuiltControls.tsx"
       },
       "appearance": "light",
-      "states": ["empty", "focused", "filled", "invalid"],
-      "accessibility": ["Support paste and announce the group label and invalid state."]
+      "states": [
+        "empty",
+        "focused",
+        "filled",
+        "invalid"
+      ],
+      "accessibility": [
+        "Support paste and announce the group label and invalid state."
+      ]
     },
     {
       "id": "drag-and-drop-upload",
       "title": "Drag-and-drop upload",
       "description": "A keyboard-accessible file drop surface that also exposes a native file picker fallback.",
       "source": {
-        "html": "../../../../public/examples/application/rebuilt-controls/1.html",
+        "html": "../../../../public/examples/application/rebuilt-controls/4.html",
         "tsx": "tsx/RebuiltControls.tsx"
       },
       "appearance": "light",
-      "states": ["empty", "dragging", "uploading", "error"],
+      "states": [
+        "empty",
+        "dragging",
+        "uploading",
+        "error"
+      ],
       "accessibility": [
         "Keep a labelled file input available and describe accepted file types outside the drop zone."
       ]
@@ -78,11 +117,15 @@
       "title": "Combobox",
       "description": "A text field with a filtered option list for fast keyboard and pointer selection.",
       "source": {
-        "html": "../../../../public/examples/application/rebuilt-controls/1.html",
+        "html": "../../../../public/examples/application/rebuilt-controls/5.html",
         "tsx": "tsx/RebuiltControls.tsx"
       },
       "appearance": "light",
-      "states": ["default", "expanded", "no-results"],
+      "states": [
+        "default",
+        "expanded",
+        "no-results"
+      ],
       "accessibility": [
         "Expose the input, popup, active option, and expanded state with combobox semantics."
       ]
@@ -92,23 +135,33 @@
       "title": "Calendar",
       "description": "A compact month grid with clear weekday context and a visible selected date.",
       "source": {
-        "html": "../../../../public/examples/application/rebuilt-controls/1.html",
+        "html": "../../../../public/examples/application/rebuilt-controls/6.html",
         "tsx": "tsx/RebuiltControls.tsx"
       },
       "appearance": "light",
-      "states": ["default", "selected", "today"],
-      "accessibility": ["Use a labelled grid and support arrow-key movement between dates."]
+      "states": [
+        "default",
+        "selected",
+        "today"
+      ],
+      "accessibility": [
+        "Use a labelled grid and support arrow-key movement between dates."
+      ]
     },
     {
       "id": "date-field",
       "title": "Date field",
       "description": "A segmented date field that keeps the format visible while preserving a comfortable input target.",
       "source": {
-        "html": "../../../../public/examples/application/rebuilt-controls/1.html",
+        "html": "../../../../public/examples/application/rebuilt-controls/7.html",
         "tsx": "tsx/RebuiltControls.tsx"
       },
       "appearance": "light",
-      "states": ["empty", "filled", "invalid"],
+      "states": [
+        "empty",
+        "filled",
+        "invalid"
+      ],
       "accessibility": [
         "Provide an explicit format hint and associate validation text with the field."
       ]
@@ -118,47 +171,69 @@
       "title": "Resizable panels",
       "description": "A two-panel layout with a keyboard-focusable divider for precise desktop resizing.",
       "source": {
-        "html": "../../../../public/examples/application/rebuilt-controls/1.html",
+        "html": "../../../../public/examples/application/rebuilt-controls/8.html",
         "tsx": "tsx/RebuiltControls.tsx"
       },
       "appearance": "light",
-      "states": ["default", "dragging", "focused"],
-      "accessibility": ["Expose the divider as a separator with a value and keyboard adjustment."]
+      "states": [
+        "default",
+        "dragging",
+        "focused"
+      ],
+      "accessibility": [
+        "Expose the divider as a separator with a value and keyboard adjustment."
+      ]
     },
     {
       "id": "dashboard-sidebar",
       "title": "Dashboard sidebar",
       "description": "A compact application navigation rail with a clear active destination and responsive collapse affordance.",
       "source": {
-        "html": "../../../../public/examples/application/rebuilt-controls/1.html",
+        "html": "../../../../public/examples/application/rebuilt-controls/9.html",
         "tsx": "tsx/RebuiltControls.tsx"
       },
       "appearance": "light",
-      "states": ["default", "active", "collapsed"],
-      "accessibility": ["Use a navigation landmark and a labelled collapse button."]
+      "states": [
+        "default",
+        "active",
+        "collapsed"
+      ],
+      "accessibility": [
+        "Use a navigation landmark and a labelled collapse button."
+      ]
     },
     {
       "id": "sidebar",
       "title": "Sidebar",
       "description": "A general-purpose navigation surface with grouped links and an intentionally quiet visual hierarchy.",
       "source": {
-        "html": "../../../../public/examples/application/rebuilt-controls/1.html",
+        "html": "../../../../public/examples/application/rebuilt-controls/10.html",
         "tsx": "tsx/RebuiltControls.tsx"
       },
       "appearance": "light",
-      "states": ["default", "active", "mobile"],
-      "accessibility": ["Keep navigation links keyboard reachable and identify the current page."]
+      "states": [
+        "default",
+        "active",
+        "mobile"
+      ],
+      "accessibility": [
+        "Keep navigation links keyboard reachable and identify the current page."
+      ]
     },
     {
       "id": "command-palette",
       "title": "Command palette",
       "description": "A global shortcut-driven command surface with grouped actions and a dismissible overlay.",
       "source": {
-        "html": "../../../../public/examples/application/rebuilt-controls/1.html",
+        "html": "../../../../public/examples/application/rebuilt-controls/11.html",
         "tsx": "tsx/RebuiltControls.tsx"
       },
       "appearance": "light",
-      "states": ["closed", "open", "loading"],
+      "states": [
+        "closed",
+        "open",
+        "loading"
+      ],
       "accessibility": [
         "Move focus into the palette when opened and return it to the trigger when closed."
       ]
@@ -168,23 +243,33 @@
       "title": "Date picker",
       "description": "A date trigger paired with a calendar popover for choosing a single date in context.",
       "source": {
-        "html": "../../../../public/examples/application/rebuilt-controls/1.html",
+        "html": "../../../../public/examples/application/rebuilt-controls/12.html",
         "tsx": "tsx/RebuiltControls.tsx"
       },
       "appearance": "light",
-      "states": ["empty", "open", "selected"],
-      "accessibility": ["Connect the trigger and calendar with a visible label and expanded state."]
+      "states": [
+        "empty",
+        "open",
+        "selected"
+      ],
+      "accessibility": [
+        "Connect the trigger and calendar with a visible label and expanded state."
+      ]
     },
     {
       "id": "date-input",
       "title": "Date input",
       "description": "A direct date input with an optional calendar affordance and readable validation treatment.",
       "source": {
-        "html": "../../../../public/examples/application/rebuilt-controls/1.html",
+        "html": "../../../../public/examples/application/rebuilt-controls/13.html",
         "tsx": "tsx/RebuiltControls.tsx"
       },
       "appearance": "light",
-      "states": ["default", "focus", "invalid"],
+      "states": [
+        "default",
+        "focus",
+        "invalid"
+      ],
       "accessibility": [
         "Use a native date input when browser support meets the product requirement."
       ]
@@ -194,11 +279,15 @@
       "title": "Dropdown",
       "description": "A lightweight anchored menu for a short list of contextual actions.",
       "source": {
-        "html": "../../../../public/examples/application/rebuilt-controls/1.html",
+        "html": "../../../../public/examples/application/rebuilt-controls/14.html",
         "tsx": "tsx/RebuiltControls.tsx"
       },
       "appearance": "light",
-      "states": ["closed", "open", "focused"],
+      "states": [
+        "closed",
+        "open",
+        "focused"
+      ],
       "accessibility": [
         "Use menu semantics only for action lists and keep escape dismissal available."
       ]
@@ -208,11 +297,15 @@
       "title": "Drawer",
       "description": "A slide-in surface for secondary navigation or focused mobile workflows.",
       "source": {
-        "html": "../../../../public/examples/application/rebuilt-controls/1.html",
+        "html": "../../../../public/examples/application/rebuilt-controls/15.html",
         "tsx": "tsx/RebuiltControls.tsx"
       },
       "appearance": "light",
-      "states": ["closed", "open", "loading"],
+      "states": [
+        "closed",
+        "open",
+        "loading"
+      ],
       "accessibility": [
         "Label the drawer, trap focus while open, and provide an explicit close action."
       ]
@@ -222,11 +315,15 @@
       "title": "Modal",
       "description": "A focused dialog surface for decisions that need a clear interruption and explicit dismissal.",
       "source": {
-        "html": "../../../../public/examples/application/rebuilt-controls/1.html",
+        "html": "../../../../public/examples/application/rebuilt-controls/16.html",
         "tsx": "tsx/RebuiltControls.tsx"
       },
       "appearance": "light",
-      "states": ["closed", "open", "busy"],
+      "states": [
+        "closed",
+        "open",
+        "busy"
+      ],
       "accessibility": [
         "Use dialog semantics, a labelled heading, focus management, and escape dismissal."
       ]
@@ -236,11 +333,15 @@
       "title": "Tooltip",
       "description": "A short contextual hint that appears near an anchor without replacing the accessible label.",
       "source": {
-        "html": "../../../../public/examples/application/rebuilt-controls/1.html",
+        "html": "../../../../public/examples/application/rebuilt-controls/17.html",
         "tsx": "tsx/RebuiltControls.tsx"
       },
       "appearance": "light",
-      "states": ["hidden", "visible", "focus"],
+      "states": [
+        "hidden",
+        "visible",
+        "focus"
+      ],
       "accessibility": [
         "Do not put essential information only in a tooltip; make it available on keyboard focus too."
       ]

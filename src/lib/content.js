@@ -12,8 +12,15 @@ const collections = [
   'neobrutalism',
   'templates',
   'building-blocks',
-  'custom',
 ]
+
+export const collectionTitles = {
+  application: 'Product UI',
+  marketing: 'Marketing',
+  neobrutalism: 'Neobrutalism',
+  templates: 'Templates',
+  'building-blocks': 'Building Blocks',
+}
 
 function readDirectory(directory) {
   return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {

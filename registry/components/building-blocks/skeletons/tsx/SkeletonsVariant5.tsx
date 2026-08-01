@@ -8,7 +8,7 @@ export type SkeletonsVariant5Props = HTMLAttributes<HTMLDivElement>
 export function SkeletonsVariant5({ className, ...props }: SkeletonsVariant5Props) {
   return (
     <div className={className} {...props}>
-      <span className="h-10 w-24 animate-pulse rounded-md bg-slate-200"></span>
+      <span className="skeleton-shimmer h-10 w-24 rounded-md bg-slate-200"></span>
     </div>
   )
 }

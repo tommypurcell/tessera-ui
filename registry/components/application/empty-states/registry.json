@@ -2,168 +2,192 @@
   "schemaVersion": 1,
   "name": "application-empty-states",
   "title": "Empty States",
-  "description": "Task-oriented placeholder screens shown when a view has no content yet, guiding users toward a first meaningful action.",
-  "category": "application/feedback",
-  "frameworks": ["html", "react"],
+  "description": "Empty state components for Tailwind CSS. Task-oriented UI patterns for workspaces and dashboards with clear primary actions, helping users create, import, or populate content in their applications.",
+  "category": "application/empty-states",
+  "frameworks": [
+    "html",
+    "react"
+  ],
   "styling": "tailwind",
-  "tags": ["empty-state", "placeholder", "onboarding", "zero-state", "cta", "no-content"],
+  "tags": [
+    "application",
+    "empty-states",
+    "placeholder",
+    "cta"
+  ],
   "useWhen": [
-    "A list, table, or workspace has no items yet and users need guidance on how to add their first one.",
-    "A search or filter returns zero results and users need a clear explanation and recovery path.",
-    "Onboarding users to a feature by showing what the space will look like once populated."
+    "Empty state components for Tailwind CSS. Task-oriented UI patterns for workspaces and dashboards with clear primary actions, helping users create, import, or populate content in their applications."
   ],
   "avoidWhen": [
-    "Content is loading — use a skeleton or spinner instead, not an empty state.",
-    "A required error or system failure occurred — use an error page or alert, not an empty state.",
-    "The empty condition is temporary and will resolve automatically without user action."
+    "Avoid empty states when a simpler pattern communicates the same content or action."
   ],
   "dependencies": [],
-  "responsiveBehavior": "Empty state panels center within their container at all viewport sizes. Illustration and text stack vertically; buttons remain full-width on mobile.",
+  "responsiveBehavior": "Empty States uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
   "accessibility": [
-    "Heading text within the empty state should use an appropriate heading level that fits the document outline.",
-    "CTA buttons must have clear, descriptive labels that explain what will happen — avoid generic 'Click here'.",
-    "File upload drop zones must be keyboard operable with a fallback button trigger."
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Associate each form field with a visible or programmatic label before production use.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment."
   ],
-  "compatibleWith": ["application-tables", "application-grids", "application-filters"],
+  "compatibleWith": [],
   "variants": [
     {
       "id": "empty-states-1",
       "title": "Create first item",
-      "description": "Centered empty state prompting users to create their first record with an icon, headline, and primary CTA button.",
+      "description": "Create first item Empty state components for Tailwind CSS. Task-oriented UI patterns for workspaces and dashboards with clear primary actions, helping users create, import, or populate content in their applications.",
       "source": {
         "html": "../../../../public/examples/application/empty-states/1.html",
         "tsx": "tsx/EmptyStatesVariant1.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "CTA button label should specify what will be created, e.g. 'Create your first project'."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "empty-states-1-dark",
       "title": "Create first item (Dark)",
-      "description": "Create-first-item empty state adapted for dark application surfaces.",
+      "description": "Create first item Empty state components for Tailwind CSS. Task-oriented UI patterns for workspaces and dashboards with clear primary actions, helping users create, import, or populate content in their applications.",
       "source": {
         "html": "../../../../public/examples/application/empty-states/1-dark.html",
         "tsx": "tsx/EmptyStatesVariant1Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Icon, heading, and button colors must maintain WCAG AA contrast on dark backgrounds."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "empty-states-2",
       "title": "Import or create",
-      "description": "Empty state offering two parallel paths — importing existing data or creating from scratch — with equal visual weight.",
+      "description": "Import or create Empty state components for Tailwind CSS. Task-oriented UI patterns for workspaces and dashboards with clear primary actions, helping users create, import, or populate content in their applications.",
       "source": {
         "html": "../../../../public/examples/application/empty-states/2.html",
         "tsx": "tsx/EmptyStatesVariant2.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Both action paths should be reachable by keyboard; label each button to distinguish the two actions clearly."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "empty-states-2-dark",
       "title": "Import or create (Dark)",
-      "description": "Dual-path import-or-create empty state adapted for dark application surfaces.",
+      "description": "Import or create Empty state components for Tailwind CSS. Task-oriented UI patterns for workspaces and dashboards with clear primary actions, helping users create, import, or populate content in their applications.",
       "source": {
         "html": "../../../../public/examples/application/empty-states/2-dark.html",
         "tsx": "tsx/EmptyStatesVariant2Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Both action buttons must meet contrast requirements on dark backgrounds."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "empty-states-3",
       "title": "Upload data",
-      "description": "Empty state with a drag-and-drop file upload zone as the primary call to action for data-ingestion flows.",
+      "description": "Upload data Empty state components for Tailwind CSS. Task-oriented UI patterns for workspaces and dashboards with clear primary actions, helping users create, import, or populate content in their applications.",
       "source": {
         "html": "../../../../public/examples/application/empty-states/3.html",
         "tsx": "tsx/EmptyStatesVariant3.tsx"
       },
       "appearance": "light",
-      "states": ["default", "drag-over"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Drop zone must include a keyboard-accessible button fallback so non-mouse users can trigger the file picker."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "empty-states-3-dark",
       "title": "Upload data (Dark)",
-      "description": "File upload drop-zone empty state adapted for dark application surfaces.",
+      "description": "Upload data Empty state components for Tailwind CSS. Task-oriented UI patterns for workspaces and dashboards with clear primary actions, helping users create, import, or populate content in their applications.",
       "source": {
         "html": "../../../../public/examples/application/empty-states/3-dark.html",
         "tsx": "tsx/EmptyStatesVariant3Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default", "drag-over"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Dark drop zone border and label colors must remain visible in both default and drag-over states."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "empty-states-4",
       "title": "Get started",
-      "description": "Onboarding-oriented empty state with feature highlights or steps to guide new users into the product.",
+      "description": "Get started Empty state components for Tailwind CSS. Task-oriented UI patterns for workspaces and dashboards with clear primary actions, helping users create, import, or populate content in their applications.",
       "source": {
         "html": "../../../../public/examples/application/empty-states/4.html",
         "tsx": "tsx/EmptyStatesVariant4.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Onboarding content should follow a logical reading order so screen reader users get the same flow."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "empty-states-4-dark",
       "title": "Get started (Dark)",
-      "description": "Onboarding-oriented get-started empty state adapted for dark application surfaces.",
+      "description": "Get started Empty state components for Tailwind CSS. Task-oriented UI patterns for workspaces and dashboards with clear primary actions, helping users create, import, or populate content in their applications.",
       "source": {
         "html": "../../../../public/examples/application/empty-states/4-dark.html",
         "tsx": "tsx/EmptyStatesVariant4Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Step icons and label text must meet contrast requirements on dark backgrounds."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "empty-states-5",
       "title": "No results found",
-      "description": "Post-search or post-filter empty state explaining that the current query matched nothing, with a way to clear or adjust filters.",
+      "description": "No results found Empty state components for Tailwind CSS. Task-oriented UI patterns for workspaces and dashboards with clear primary actions, helping users create, import, or populate content in their applications.",
       "source": {
         "html": "../../../../public/examples/application/empty-states/5.html",
         "tsx": "tsx/EmptyStatesVariant5.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Announce the empty result state to screen readers with a live region update when the list empties after filtering."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "empty-states-5-dark",
       "title": "No results found (Dark)",
-      "description": "No-results-found empty state adapted for dark application surfaces.",
+      "description": "No results found Empty state components for Tailwind CSS. Task-oriented UI patterns for workspaces and dashboards with clear primary actions, helping users create, import, or populate content in their applications.",
       "source": {
         "html": "../../../../public/examples/application/empty-states/5-dark.html",
         "tsx": "tsx/EmptyStatesVariant5Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Icon and text colors must maintain WCAG AA contrast on dark backgrounds."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     }
   ]

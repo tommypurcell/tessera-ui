@@ -1,1 +1,69 @@
-{"schemaVersion":1,"name":"icon-frames","title":"Icon Frames","description":"Small Tailwind icon containers that give icons contrast and a compact visual home.","category":"building-blocks","frameworks":["html","react"],"styling":"tailwind","tags":["icon","frame","tile"],"useWhen":["An icon needs a small visual container before it becomes part of a larger component."],"avoidWhen":["The icon alone is a clickable control and requires button semantics."],"dependencies":["No external runtime dependency."],"responsiveBehavior":"Frames retain their fixed visual size and do not introduce layout behavior.","accessibility":["Treat decorative icon frames as hidden from assistive technology.","Use a semantic button around a frame when it triggers an action."],"compatibleWith":["buttons","feature-cards","command-menus"],"variants":[{"id":"soft-icon","title":"Soft icon","description":"A gentle tinted icon frame for a feature, category, or low-emphasis utility marker.","source":{"html":"../../../../public/examples/building-blocks/icon-frames/1.html","tsx":"tsx/IconFrames.tsx"},"appearance":"light","states":["default"],"accessibility":["The surrounding component supplies the accessible label."]},{"id":"outline-icon","title":"Outline icon","description":"A neutral outlined icon frame that works against light surfaces without demanding attention.","source":{"html":"../../../../public/examples/building-blocks/icon-frames/2.html","tsx":"tsx/IconFrames.tsx"},"appearance":"light","states":["default"],"accessibility":["The surrounding component supplies the accessible label."]}]}
+{
+  "schemaVersion": 1,
+  "name": "building-blocks-icon-frames",
+  "title": "Icon Frames",
+  "description": "Small Tailwind icon containers that give icons the right amount of contrast and touchable presence.",
+  "category": "building-blocks/icon-frames",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "building-blocks",
+    "icon-frames",
+    "icon",
+    "tile",
+    "frame",
+    "atom",
+    "tailwind"
+  ],
+  "useWhen": [
+    "Small Tailwind icon containers that give icons the right amount of contrast and touchable presence."
+  ],
+  "avoidWhen": [
+    "Avoid icon frames when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Icon Frames uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "icon-frames-1",
+      "title": "Soft icon",
+      "description": "Soft icon Small Tailwind icon containers that give icons the right amount of contrast and touchable presence.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/icon-frames/1.html",
+        "tsx": "tsx/IconFramesVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "icon-frames-2",
+      "title": "Outline icon",
+      "description": "Outline icon Small Tailwind icon containers that give icons the right amount of contrast and touchable presence.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/icon-frames/2.html",
+        "tsx": "tsx/IconFramesVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

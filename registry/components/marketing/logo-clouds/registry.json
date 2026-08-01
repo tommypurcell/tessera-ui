@@ -2,84 +2,128 @@
   "schemaVersion": 1,
   "name": "marketing-logo-clouds",
   "title": "Logo Clouds",
-  "description": "Client, partner, and integration logo showcase sections for marketing landing pages, displaying brand logos in horizontal rows, titled rows, and grid layouts to build credibility and social proof.",
-  "category": "marketing/social-proof",
-  "frameworks": ["html", "react"],
+  "description": "Explore a curated collection of logo cloud components built with Tailwind CSS. Display client, partner, and brand logos with modern, responsive layouts perfect for marketing websites.",
+  "category": "marketing/logo-clouds",
+  "frameworks": [
+    "html",
+    "react"
+  ],
   "styling": "tailwind",
-  "tags": ["logo-cloud", "social-proof", "clients", "partners", "brands", "trust", "marketing"],
+  "tags": [
+    "marketing",
+    "logo-clouds",
+    "brand",
+    "social"
+  ],
   "useWhen": [
-    "Building credibility below the hero section by showing recognizable client or partner logos.",
-    "Showcasing integrations or supported platforms on a product or API landing page.",
-    "Demonstrating enterprise trust signals on a pricing or solutions page."
+    "Explore a curated collection of logo cloud components built with Tailwind CSS. Display client, partner, and brand logos with modern, responsive layouts perfect for marketing websites."
   ],
   "avoidWhen": [
-    "Logos are not permitted for display by the referenced companies — always verify usage rights.",
-    "The logos are too small or visually inconsistent to read at display size — use text names instead.",
-    "The section would contain fewer than three logos — a single logo is better placed in a testimonial."
+    "Avoid logo clouds when a simpler pattern communicates the same content or action."
   ],
   "dependencies": [],
-  "responsiveBehavior": "Logo rows reduce column count on mobile, wrapping to additional rows or scrolling horizontally. Grid layouts collapse from six columns on desktop to three on mobile.",
+  "responsiveBehavior": "Logo Clouds uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
   "accessibility": [
-    "Each logo image must have alt text naming the company, e.g. alt='Acme Corp' — do not use empty alt for logos that identify real companies.",
-    "If logos link to partner pages, each <a> must have aria-label describing the destination.",
-    "Decorative styling (grayscale filter, opacity) should not reduce logos below WCAG contrast thresholds."
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
   ],
-  "compatibleWith": ["marketing-banners", "marketing-feature-grids", "marketing-sections"],
+  "compatibleWith": [],
   "variants": [
     {
       "id": "logo-clouds-1",
       "title": "Base",
-      "description": "Horizontal row of client or partner logos with no heading — the minimal logo cloud for placement between hero and feature sections.",
+      "description": "Base Explore a curated collection of logo cloud components built with Tailwind CSS. Display client, partner, and brand logos with modern, responsive layouts perfect for marketing websites.",
       "source": {
         "html": "../../../../public/examples/marketing/logo-clouds/1.html",
         "tsx": "tsx/LogoCloudsVariant1.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Each logo <img> has alt text naming the company; logos displayed at consistent visual weight."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "logo-clouds-2",
       "title": "Base with title",
-      "description": "Logo row with a centered headline such as 'Trusted by 500+ companies' to provide context before the logos.",
+      "description": "Base with title Explore a curated collection of logo cloud components built with Tailwind CSS. Display client, partner, and brand logos with modern, responsive layouts perfect for marketing websites.",
       "source": {
         "html": "../../../../public/examples/marketing/logo-clouds/2.html",
         "tsx": "tsx/LogoCloudsVariant2.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Section heading introduces the logo cloud; each logo img has a company-name alt."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "logo-clouds-3",
       "title": "Base with title left aligned",
-      "description": "Logo cloud with a left-aligned headline and logos in a row — for sections where left alignment matches surrounding content.",
+      "description": "Base with title left aligned Explore a curated collection of logo cloud components built with Tailwind CSS. Display client, partner, and brand logos with modern, responsive layouts perfect for marketing websites.",
       "source": {
         "html": "../../../../public/examples/marketing/logo-clouds/3.html",
         "tsx": "tsx/LogoCloudsVariant3.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Left-aligned heading introduces the logos; logos remain in a responsive row at smaller screens."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "logo-clouds-4",
       "title": "Grid",
-      "description": "Grid of logos in a bordered card layout — for integration showcases or partner directories where logos should be equally weighted and scannably arranged.",
+      "description": "Grid Explore a curated collection of logo cloud components built with Tailwind CSS. Display client, partner, and brand logos with modern, responsive layouts perfect for marketing websites.",
       "source": {
         "html": "../../../../public/examples/marketing/logo-clouds/4.html",
         "tsx": "tsx/LogoCloudsVariant4.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Grid logos each have company-name alt; grid collapses to fewer columns on narrow viewports."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "logo-clouds-5",
+      "title": "Text wordmarks",
+      "description": "Original wordmark-style logos with an eyebrow label, for when real customer logos are not yet available",
+      "source": {
+        "html": "../../../../public/examples/marketing/logo-clouds/5.html",
+        "tsx": "tsx/LogoCloudsVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "logo-clouds-5-dark",
+      "title": "Text wordmarks (Dark)",
+      "description": "Original wordmark-style logos with an eyebrow label, for when real customer logos are not yet available",
+      "source": {
+        "html": "../../../../public/examples/marketing/logo-clouds/5-dark.html",
+        "tsx": "tsx/LogoCloudsVariant5Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     }
   ]

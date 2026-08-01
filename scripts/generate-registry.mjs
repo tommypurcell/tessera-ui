@@ -5,6 +5,22 @@ import { getCollection, getCollectionNames } from '../src/lib/content.js'
 
 const registryRoot = path.join(process.cwd(), 'registry', 'components')
 const examplesRoot = path.join(process.cwd(), 'public', 'examples')
+const selectedCategories = process.argv.slice(2)
+
+function getSelectedCategories() {
+  if (selectedCategories.length === 0) {
+    return getCollectionNames()
+  }
+
+  const validCategories = getCollectionNames()
+  const invalidCategories = selectedCategories.filter((category) => !validCategories.includes(category))
+
+  if (invalidCategories.length > 0) {
+    throw new Error(`Unknown categories: ${invalidCategories.join(', ')}`)
+  }
+
+  return selectedCategories
+}
 
 function toPascalCase(value) {
   return value
@@ -209,8 +225,9 @@ function buildRegistryEntry(category, componentData) {
 }
 
 let createdCount = 0
+const categories = getSelectedCategories()
 
-for (const category of getCollectionNames()) {
+for (const category of categories) {
   for (const componentData of getCollection(category)) {
     if (buildRegistryEntry(category, componentData)) {
       createdCount += 1
@@ -218,4 +235,4 @@ for (const category of getCollectionNames()) {
   }
 }
 
-console.log(`Created ${createdCount} registry entries.`)
+console.log(`Created ${createdCount} registry entries across ${categories.length} categories.`)

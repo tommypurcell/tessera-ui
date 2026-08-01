@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "name": "building-blocks-selection-controls",
+  "title": "Selection Controls",
+  "description": "Small Tailwind selection atoms for checks, radios, switches, choice chips, and row-level selection affordances.",
+  "category": "building-blocks/selection-controls",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "building-blocks",
+    "selection-controls",
+    "selection",
+    "checkbox",
+    "radio",
+    "switch",
+    "chip",
+    "choice",
+    "atom",
+    "tailwind"
+  ],
+  "useWhen": [
+    "Small Tailwind selection atoms for checks, radios, switches, choice chips, and row-level selection affordances."
+  ],
+  "avoidWhen": [
+    "Avoid selection controls when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Selection Controls uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Associate each form field with a visible or programmatic label before production use.",
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "selection-controls-1",
+      "title": "Checkbox box",
+      "description": "Checkbox box Small Tailwind selection atoms for checks, radios, switches, choice chips, and row-level selection affordances.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/selection-controls/1.html",
+        "tsx": "tsx/SelectionControlsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "selection-controls-2",
+      "title": "Radio dot",
+      "description": "Radio dot Small Tailwind selection atoms for checks, radios, switches, choice chips, and row-level selection affordances.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/selection-controls/2.html",
+        "tsx": "tsx/SelectionControlsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "selection-controls-3",
+      "title": "Switch track",
+      "description": "Switch track Small Tailwind selection atoms for checks, radios, switches, choice chips, and row-level selection affordances.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/selection-controls/3.html",
+        "tsx": "tsx/SelectionControlsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "selection-controls-4",
+      "title": "Choice chip",
+      "description": "Choice chip Small Tailwind selection atoms for checks, radios, switches, choice chips, and row-level selection affordances.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/selection-controls/4.html",
+        "tsx": "tsx/SelectionControlsVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "selection-controls-5",
+      "title": "Selectable row",
+      "description": "Selectable row Small Tailwind selection atoms for checks, radios, switches, choice chips, and row-level selection affordances.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/selection-controls/5.html",
+        "tsx": "tsx/SelectionControlsVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    }
+  ]
+}

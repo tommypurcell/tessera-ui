@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+    <style>
+      .slide-gallery { position: relative; aspect-ratio: 1 / 1; overflow: hidden; }
+      .slide-gallery .track { display: flex; height: 100%; width: 300%; transition: transform 0.5s ease; }
+      .slide-gallery:hover .track { animation: slide-cycle 4.5s steps(3, end) infinite; }
+      .slide-gallery img { height: 100%; width: 33.333%; object-fit: cover; }
+      @keyframes slide-cycle {
+        0%, 26% { transform: translateX(0); }
+        33%, 59% { transform: translateX(-33.333%); }
+        66%, 92% { transform: translateX(-66.666%); }
+        100% { transform: translateX(0); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .slide-gallery:hover .track { animation: none; }
+      }
+    </style>
+  </head>
+  <body class="mx-auto max-w-60 p-6">
+    <figure class="slide-gallery rounded-xl border border-gray-200">
+      <div class="track">
+        <img alt="Black leather jacket on a hanger" src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&q=80&w=400" />
+        <img alt="Rust bomber jacket on a hanger" src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&q=80&w=400" />
+        <img alt="Olive utility jacket, worn outdoors" src="https://images.unsplash.com/photo-1544022613-e87ca75a784a?auto=format&fit=crop&q=80&w=400" />
+      </div>
+    </figure>
+  </body>
+</html>

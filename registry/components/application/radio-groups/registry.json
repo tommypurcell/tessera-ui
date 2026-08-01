@@ -2,98 +2,115 @@
   "schemaVersion": 1,
   "name": "application-radio-groups",
   "title": "Radio Groups",
-  "description": "Mutually exclusive option selectors for forms and settings where exactly one choice must be active at a time.",
-  "category": "application/forms",
-  "frameworks": ["html", "react"],
+  "description": "Radio group input components for forms, settings, and user preferences in web applications with responsive, customizable designs.",
+  "category": "application/radio-groups",
+  "frameworks": [
+    "html",
+    "react"
+  ],
   "styling": "tailwind",
-  "tags": ["radio", "radio-group", "form", "single-select", "settings", "options"],
+  "tags": [
+    "application",
+    "radio-groups",
+    "form",
+    "group",
+    "radio"
+  ],
   "useWhen": [
-    "Users must choose exactly one option from a small, fixed set (2–6 options).",
-    "The available choices benefit from being visible simultaneously so users can compare them.",
-    "Setting a single user preference such as plan tier, notification frequency, or payment method."
+    "Radio group input components for forms, settings, and user preferences in web applications with responsive, customizable designs."
   ],
   "avoidWhen": [
-    "Users may select zero or more options — use checkboxes instead.",
-    "There are more than six options — a select dropdown reduces visual clutter.",
-    "Options are binary and represent a system state that takes effect immediately — use a toggle switch."
+    "Avoid radio groups when a simpler pattern communicates the same content or action."
   ],
-  "dependencies": ["@tailwindcss/forms"],
-  "responsiveBehavior": "Vertical radio lists stack at all viewport sizes. Horizontal groups wrap when they exceed the container width on narrow screens.",
+  "dependencies": [
+    "@tailwindcss/forms"
+  ],
+  "responsiveBehavior": "Radio Groups uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
   "accessibility": [
-    "Group radio inputs in a <fieldset> with a <legend> that names the question being answered.",
-    "Each radio input must have an associated <label> linked by for/id or as a wrapper.",
-    "Arrow keys must cycle between options within the group; Tab moves focus in and out of the group."
+    "Associate each form field with a visible or programmatic label before production use.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
   ],
-  "compatibleWith": ["application-checkboxes", "application-toggles", "application-selects"],
+  "compatibleWith": [],
   "variants": [
     {
       "id": "radio-groups-1",
       "title": "Base",
-      "description": "Vertical list of labelled radio buttons for selecting a single option in a form or settings panel.",
+      "description": "Base Radio group input components for forms, settings, and user preferences in web applications with responsive, customizable designs.",
       "source": {
         "html": "../../../../public/examples/application/radio-groups/1.html",
         "tsx": "tsx/RadioGroupsVariant1.tsx"
       },
       "appearance": "light",
-      "states": ["unselected", "selected", "focus"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Group in <fieldset>/<legend>; each input needs a linked <label>; arrow keys cycle options."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "radio-groups-1-dark",
       "title": "Base (Dark)",
-      "description": "Vertical labelled radio list adapted for dark application surfaces.",
+      "description": "Base Radio group input components for forms, settings, and user preferences in web applications with responsive, customizable designs.",
       "source": {
         "html": "../../../../public/examples/application/radio-groups/1-dark.html",
         "tsx": "tsx/RadioGroupsVariant1Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["unselected", "selected", "focus"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Dark radio indicator and label text must meet WCAG AA contrast requirements."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "radio-groups-2",
       "title": "Base with input",
-      "description": "Radio list where the last option includes an attached text input for an 'Other' or custom free-text answer.",
+      "description": "Base with input Radio group input components for forms, settings, and user preferences in web applications with responsive, customizable designs.",
       "source": {
         "html": "../../../../public/examples/application/radio-groups/2.html",
         "tsx": "tsx/RadioGroupsVariant2.tsx"
       },
       "appearance": "light",
-      "states": ["unselected", "selected", "focus"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "The free-text input must be activated only when its associated radio is selected; it needs a linked label."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "radio-groups-2-dark",
       "title": "Base with input (Dark)",
-      "description": "Radio list with free-text 'Other' input adapted for dark application surfaces.",
+      "description": "Base with input Radio group input components for forms, settings, and user preferences in web applications with responsive, customizable designs.",
       "source": {
         "html": "../../../../public/examples/application/radio-groups/2-dark.html",
         "tsx": "tsx/RadioGroupsVariant2Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["unselected", "selected", "focus"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Dark input and radio colors must meet contrast requirements in both active and inactive states."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "radio-groups-3",
       "title": "Color variant",
-      "description": "Radio buttons styled as color swatches for selecting a color or theme option, using circular color samples instead of text labels.",
+      "description": "Color variant Radio group input components for forms, settings, and user preferences in web applications with responsive, customizable designs.",
       "source": {
         "html": "../../../../public/examples/application/radio-groups/3.html",
         "tsx": "tsx/RadioGroupsVariant3.tsx"
       },
       "appearance": "light",
-      "states": ["unselected", "selected", "focus"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Each color swatch must have an accessible label (e.g., aria-label='Blue') since the color itself is not text."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     }
   ]

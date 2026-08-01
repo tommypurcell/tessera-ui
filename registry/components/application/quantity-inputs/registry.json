@@ -2,140 +2,163 @@
   "schemaVersion": 1,
   "name": "application-quantity-inputs",
   "title": "Quantity Inputs",
-  "description": "Stepper controls for incrementing and decrementing a numeric quantity, designed for cart, order, and inventory contexts.",
-  "category": "application/forms",
-  "frameworks": ["html", "react"],
+  "description": "Quantity input components for number inputs, ideal for ecommerce, order forms, and shopping carts.",
+  "category": "application/quantity-inputs",
+  "frameworks": [
+    "html",
+    "react"
+  ],
   "styling": "tailwind",
-  "tags": ["quantity", "stepper", "number-input", "cart", "ecommerce", "form"],
+  "tags": [
+    "application",
+    "quantity-inputs",
+    "ecommerce",
+    "quantity",
+    "form"
+  ],
   "useWhen": [
-    "Users need to select a numeric quantity such as item count in a shopping cart or order form.",
-    "A number field benefits from explicit increment and decrement buttons for touch usability.",
-    "The value range is small and discrete, such as 1–99 for an order quantity."
+    "Quantity input components for number inputs, ideal for ecommerce, order forms, and shopping carts."
   ],
   "avoidWhen": [
-    "The range is very wide (e.g., 0–10,000) — a plain number input or slider is better suited.",
-    "Precision decimal values are required — the stepper pattern is designed for integers.",
-    "The quantity is not user-editable — display the value as text instead."
+    "Avoid quantity inputs when a simpler pattern communicates the same content or action."
   ],
-  "dependencies": ["@tailwindcss/forms"],
-  "responsiveBehavior": "Stepper controls remain their natural size. Ensure plus and minus buttons meet the 44×44px minimum tap target size on touch devices.",
+  "dependencies": [
+    "@tailwindcss/forms"
+  ],
+  "responsiveBehavior": "Quantity Inputs uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
   "accessibility": [
-    "The number input must have a linked label; plus and minus buttons need descriptive aria-labels.",
-    "Announce the current value to screen readers when it changes via aria-live or by keeping focus on the input.",
-    "Disable the minus button when the minimum value is reached; disable plus at the maximum."
+    "Associate each form field with a visible or programmatic label before production use.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
   ],
-  "compatibleWith": ["marketing-carts", "marketing-product-cards", "application-inputs"],
+  "compatibleWith": [],
   "variants": [
     {
       "id": "quantity-inputs-1",
       "title": "Base with plus and minus buttons",
-      "description": "Bordered number input flanked by separate minus and plus buttons with native browser spin controls visible.",
+      "description": "Base with plus and minus buttons Quantity input components for number inputs, ideal for ecommerce, order forms, and shopping carts.",
       "source": {
         "html": "../../../../public/examples/application/quantity-inputs/1.html",
         "tsx": "tsx/QuantityInputsVariant1.tsx"
       },
       "appearance": "light",
-      "states": ["default", "min-disabled", "max-disabled"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Input needs a linked label; plus/minus buttons need aria-labels; announce value changes."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "quantity-inputs-1-dark",
       "title": "Base with plus and minus buttons (Dark)",
-      "description": "Plus/minus bordered stepper with native spin controls adapted for dark application surfaces.",
+      "description": "Base with plus and minus buttons Quantity input components for number inputs, ideal for ecommerce, order forms, and shopping carts.",
       "source": {
         "html": "../../../../public/examples/application/quantity-inputs/1-dark.html",
         "tsx": "tsx/QuantityInputsVariant1Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Dark input border and button colors must meet WCAG AA contrast requirements."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "quantity-inputs-2",
       "title": "Base with plus and minus buttons, no spinners in the input",
-      "description": "Stepper with the native browser number-input spin arrows hidden for a cleaner visual style.",
+      "description": "Base with plus and minus buttons, no spinners in the input Quantity input components for number inputs, ideal for ecommerce, order forms, and shopping carts.",
       "source": {
         "html": "../../../../public/examples/application/quantity-inputs/2.html",
         "tsx": "tsx/QuantityInputsVariant2.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Without native spinners, plus/minus buttons are the sole increment path and must be keyboard-accessible."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "quantity-inputs-2-dark",
-      "title": "Base with plus and minus buttons, no spinners (Dark)",
-      "description": "Clean stepper with hidden native spin arrows adapted for dark application surfaces.",
+      "title": "Base with plus and minus buttons, no spinners in the input (Dark)",
+      "description": "Base with plus and minus buttons, no spinners in the input Quantity input components for number inputs, ideal for ecommerce, order forms, and shopping carts.",
       "source": {
         "html": "../../../../public/examples/application/quantity-inputs/2-dark.html",
         "tsx": "tsx/QuantityInputsVariant2Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Button and input colors must maintain contrast; native spinners remain hidden."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "quantity-inputs-3",
-      "title": "Base with plus and minus buttons, no spinners and text centered",
-      "description": "Stepper with hidden spin arrows and the value text centered in the input for a symmetrical appearance.",
+      "title": "Base with plus and minus buttons, no spinners in the input and text centered",
+      "description": "Base with plus and minus buttons, no spinners in the input and text centered Quantity input components for number inputs, ideal for ecommerce, order forms, and shopping carts.",
       "source": {
         "html": "../../../../public/examples/application/quantity-inputs/3.html",
         "tsx": "tsx/QuantityInputsVariant3.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Centered text is decorative; functional requirements are the same as the no-spinner variant."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "quantity-inputs-3-dark",
-      "title": "Base with plus and minus buttons, no spinners and text centered (Dark)",
-      "description": "Centered-value stepper with hidden spin arrows adapted for dark application surfaces.",
+      "title": "Base with plus and minus buttons, no spinners in the input and text centered (Dark)",
+      "description": "Base with plus and minus buttons, no spinners in the input and text centered Quantity input components for number inputs, ideal for ecommerce, order forms, and shopping carts.",
       "source": {
         "html": "../../../../public/examples/application/quantity-inputs/3-dark.html",
         "tsx": "tsx/QuantityInputsVariant3Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Centered input text and button colors must meet WCAG AA contrast on dark backgrounds."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "quantity-inputs-4",
       "title": "Bordered with plus and minus buttons",
-      "description": "Pill-bordered stepper where the minus button, input, and plus button share a single continuous border.",
+      "description": "Bordered with plus and minus buttons Quantity input components for number inputs, ideal for ecommerce, order forms, and shopping carts.",
       "source": {
         "html": "../../../../public/examples/application/quantity-inputs/4.html",
         "tsx": "tsx/QuantityInputsVariant4.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Shared border is decorative; each button still needs its own aria-label and focus ring."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "quantity-inputs-4-dark",
       "title": "Bordered with plus and minus buttons (Dark)",
-      "description": "Pill-bordered continuous stepper adapted for dark application surfaces.",
+      "description": "Bordered with plus and minus buttons Quantity input components for number inputs, ideal for ecommerce, order forms, and shopping carts.",
       "source": {
         "html": "../../../../public/examples/application/quantity-inputs/4-dark.html",
         "tsx": "tsx/QuantityInputsVariant4Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Continuous border, input text, and button icons must meet contrast on dark backgrounds."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     }
   ]

@@ -2,168 +2,191 @@
   "schemaVersion": 1,
   "name": "application-grids",
   "title": "Grids",
-  "description": "Column and row layout templates for arranging dashboard panels, cards, and content blocks in responsive multi-column grids.",
-  "category": "application/layout",
-  "frameworks": ["html", "react"],
+  "description": "Responsive grid layouts and grid systems for web applications with customizable columns and rows. Flexible grid components for dashboards, admin panels, and content organization.",
+  "category": "application/grids",
+  "frameworks": [
+    "html",
+    "react"
+  ],
   "styling": "tailwind",
-  "tags": ["grid", "layout", "columns", "dashboard", "panel", "responsive"],
+  "tags": [
+    "application",
+    "grids",
+    "layout"
+  ],
   "useWhen": [
-    "Arranging stat cards, chart panels, or content blocks side by side on medium and wide viewports.",
-    "Building a dashboard shell that adapts from single column on mobile to two or four columns on desktop.",
-    "Combining panels of different widths in the same row using span-based column assignments."
+    "Responsive grid layouts and grid systems for web applications with customizable columns and rows. Flexible grid components for dashboards, admin panels, and content organization."
   ],
   "avoidWhen": [
-    "Content order must change significantly between viewports — flexbox with reordering may be more appropriate.",
-    "Individual cells have complex content relationships — use a dedicated table component instead.",
-    "Only one column is ever needed — a simple stack of blocks does not require a grid wrapper."
+    "Avoid grids when a simpler pattern communicates the same content or action."
   ],
   "dependencies": [],
-  "responsiveBehavior": "All grid variants collapse to a single column on small viewports and expand to their defined column count at md: and above.",
+  "responsiveBehavior": "Grids uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
   "accessibility": [
-    "Grid containers are layout wrappers — use semantic elements inside cells (headings, articles, sections).",
-    "Reading order in the source matches the visual order so screen reader users navigate logically.",
-    "Do not use grid gaps or visual position alone to imply grouping — use semantic structure."
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
   ],
-  "compatibleWith": ["application-stats", "application-charts", "application-tables"],
+  "compatibleWith": [],
   "variants": [
     {
       "id": "grids-1",
       "title": "1x1",
-      "description": "Two equal-width columns side by side — the most common two-panel layout for dashboards.",
+      "description": "1x1 Responsive grid layouts and grid systems for web applications with customizable columns and rows. Flexible grid components for dashboards, admin panels, and content organization.",
       "source": {
         "html": "../../../../public/examples/application/grids/1.html",
         "tsx": "tsx/GridsVariant1.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Column order in source must match intended reading order for screen reader users."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "grids-2",
       "title": "1x2",
-      "description": "A narrow left column and a wider double-width right column for a main-content-plus-sidebar arrangement.",
+      "description": "1x2 Responsive grid layouts and grid systems for web applications with customizable columns and rows. Flexible grid components for dashboards, admin panels, and content organization.",
       "source": {
         "html": "../../../../public/examples/application/grids/2.html",
         "tsx": "tsx/GridsVariant2.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Ensure the narrower column is not a decorative sidebar that skips important context in source order."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "grids-3",
       "title": "2x1",
-      "description": "A wider double-width left column and a narrower right column for a main-content-plus-sidebar arrangement.",
+      "description": "2x1 Responsive grid layouts and grid systems for web applications with customizable columns and rows. Flexible grid components for dashboards, admin panels, and content organization.",
       "source": {
         "html": "../../../../public/examples/application/grids/3.html",
         "tsx": "tsx/GridsVariant3.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Main content in the wider column should appear first in source order."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "grids-4",
       "title": "1x1x1",
-      "description": "Three equal-width columns for displaying three panels at the same visual weight.",
+      "description": "1x1x1 Responsive grid layouts and grid systems for web applications with customizable columns and rows. Flexible grid components for dashboards, admin panels, and content organization.",
       "source": {
         "html": "../../../../public/examples/application/grids/4.html",
         "tsx": "tsx/GridsVariant4.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "On narrow viewports, ensure column content stacks in a logical reading order."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "grids-5",
       "title": "1x1x1x1",
-      "description": "Four equal-width columns for stat cards or thumbnail grids on medium and large viewports.",
+      "description": "1x1x1x1 Responsive grid layouts and grid systems for web applications with customizable columns and rows. Flexible grid components for dashboards, admin panels, and content organization.",
       "source": {
         "html": "../../../../public/examples/application/grids/5.html",
         "tsx": "tsx/GridsVariant5.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "On mobile, the four-column grid collapses to a single column — verify content reads correctly."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "grids-6",
       "title": "1x1x2",
-      "description": "Three-column grid with two narrow cells and one double-width cell for highlighting a primary panel.",
+      "description": "1x1x2 Responsive grid layouts and grid systems for web applications with customizable columns and rows. Flexible grid components for dashboards, admin panels, and content organization.",
       "source": {
         "html": "../../../../public/examples/application/grids/6.html",
         "tsx": "tsx/GridsVariant6.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "The spanning column should not place critical content that breaks the source reading order."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "grids-7",
       "title": "2x1x1",
-      "description": "Three-column grid with a double-width leading cell and two narrower cells for a featured-plus-secondary layout.",
+      "description": "2x1x1 Responsive grid layouts and grid systems for web applications with customizable columns and rows. Flexible grid components for dashboards, admin panels, and content organization.",
       "source": {
         "html": "../../../../public/examples/application/grids/7.html",
         "tsx": "tsx/GridsVariant7.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "The featured cell appears first in source order, matching its visual prominence."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "grids-8",
       "title": "1x2x1",
-      "description": "Three-column grid with a wide center cell flanked by two narrower side panels.",
+      "description": "1x2x1 Responsive grid layouts and grid systems for web applications with customizable columns and rows. Flexible grid components for dashboards, admin panels, and content organization.",
       "source": {
         "html": "../../../../public/examples/application/grids/8.html",
         "tsx": "tsx/GridsVariant8.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Left panel appears first in source; ensure screen reader users encounter panels in a logical order."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "grids-9",
       "title": "Sidebar left",
-      "description": "A fixed-width left sidebar column beside a flexible main content area for application shell layouts.",
+      "description": "Sidebar left Responsive grid layouts and grid systems for web applications with customizable columns and rows. Flexible grid components for dashboards, admin panels, and content organization.",
       "source": {
         "html": "../../../../public/examples/application/grids/9.html",
         "tsx": "tsx/GridsVariant9.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Sidebar navigation should come first in source order and be wrapped in a <nav> landmark."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "grids-10",
       "title": "Sidebar right",
-      "description": "A flexible main content area beside a fixed-width right sidebar, for dashboards with supplementary info panels.",
+      "description": "Sidebar right Responsive grid layouts and grid systems for web applications with customizable columns and rows. Flexible grid components for dashboards, admin panels, and content organization.",
       "source": {
         "html": "../../../../public/examples/application/grids/10.html",
         "tsx": "tsx/GridsVariant10.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Main content should appear before the sidebar in source order for optimal screen reader flow."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     }
   ]

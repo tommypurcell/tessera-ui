@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="/component.css" />
+    <style>
+      @keyframes beam {
+        0%,
+        100% {
+          transform: translateX(-100%);
+        }
+        50% {
+          transform: translateX(400%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div aria-hidden="true" class="relative h-px w-full overflow-hidden bg-slate-200 dark:bg-slate-800">
+      <span
+        class="absolute inset-y-0 left-0 w-1/4 bg-blue-500 motion-safe:animate-[beam_2.2s_ease-in-out_infinite]"
+      ></span>
+    </div>
+  </body>
+</html>

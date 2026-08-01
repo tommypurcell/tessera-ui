@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "name": "building-blocks-media-primitives",
+  "title": "Media Primitives",
+  "description": "Predictable Tailwind media blocks for framed previews, avatar image slots, and image overlay captions.",
+  "category": "building-blocks/media-primitives",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "building-blocks",
+    "media-primitives",
+    "media",
+    "image",
+    "avatar",
+    "frame",
+    "overlay",
+    "preview",
+    "atom",
+    "tailwind"
+  ],
+  "useWhen": [
+    "Predictable Tailwind media blocks for framed previews, avatar image slots, and image overlay captions."
+  ],
+  "avoidWhen": [
+    "Avoid media primitives when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Media Primitives uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "media-primitives-1",
+      "title": "Media frame",
+      "description": "Media frame Predictable Tailwind media blocks for framed previews, avatar image slots, and image overlay captions.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/media-primitives/1.html",
+        "tsx": "tsx/MediaPrimitivesVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "media-primitives-2",
+      "title": "Avatar image slot",
+      "description": "Avatar image slot Predictable Tailwind media blocks for framed previews, avatar image slots, and image overlay captions.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/media-primitives/2.html",
+        "tsx": "tsx/MediaPrimitivesVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "media-primitives-3",
+      "title": "Overlay caption",
+      "description": "Overlay caption Predictable Tailwind media blocks for framed previews, avatar image slots, and image overlay captions.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/media-primitives/3.html",
+        "tsx": "tsx/MediaPrimitivesVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

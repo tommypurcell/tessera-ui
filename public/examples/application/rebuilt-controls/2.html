@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="/component.css" />
+  </head>
+  <body>
+    <div class="w-full max-w-sm rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+      <label class="mb-2 block text-sm font-medium text-slate-700">Assignees</label>
+      <div
+        class="flex min-h-11 flex-wrap items-center gap-1.5 rounded-lg border border-slate-300 p-2"
+      >
+        <span
+          class="flex items-center gap-1 rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700"
+        >
+          Priya Shah
+          <button type="button" aria-label="Remove Priya Shah" class="text-blue-500 hover:text-blue-700">
+            ×
+          </button>
+        </span>
+        <span
+          class="flex items-center gap-1 rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700"
+        >
+          Owen Marsh
+          <button type="button" aria-label="Remove Owen Marsh" class="text-blue-500 hover:text-blue-700">
+            ×
+          </button>
+        </span>
+        <span
+          class="flex items-center gap-1 rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700"
+        >
+          Dana Reyes
+          <button type="button" aria-label="Remove Dana Reyes" class="text-blue-500 hover:text-blue-700">
+            ×
+          </button>
+        </span>
+        <input
+          type="text"
+          placeholder="Add person…"
+          aria-label="Search people"
+          class="min-w-24 flex-1 border-none p-1 text-sm outline-none"
+        />
+      </div>
+      <ul class="mt-1 max-h-40 overflow-auto rounded-lg border border-slate-200 text-sm" role="listbox">
+        <li
+          role="option"
+          aria-selected="false"
+          class="flex cursor-pointer items-center justify-between px-3 py-2 text-slate-700 hover:bg-slate-50"
+        >
+          Marcus Webb
+        </li>
+        <li
+          role="option"
+          aria-selected="false"
+          class="flex cursor-pointer items-center justify-between px-3 py-2 text-slate-700 hover:bg-slate-50"
+        >
+          Lena Ferro
+        </li>
+        <li
+          role="option"
+          aria-selected="true"
+          class="flex cursor-pointer items-center justify-between bg-blue-50 px-3 py-2 text-blue-700"
+        >
+          Priya Shah
+          <span aria-hidden="true">✓</span>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

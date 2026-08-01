@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "name": "building-blocks-field-adornments",
+  "title": "Field Adornments",
+  "description": "Tiny Tailwind field primitives for labels, leading icons, trailing meta, helper rows, and counters around native inputs.",
+  "category": "building-blocks/field-adornments",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "building-blocks",
+    "field-adornments",
+    "field",
+    "form",
+    "label",
+    "helper",
+    "counter",
+    "input",
+    "adornment",
+    "atom",
+    "tailwind"
+  ],
+  "useWhen": [
+    "Tiny Tailwind field primitives for labels, leading icons, trailing meta, helper rows, and counters around native inputs."
+  ],
+  "avoidWhen": [
+    "Avoid field adornments when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Field Adornments uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "field-adornments-1",
+      "title": "Field label",
+      "description": "Field label Tiny Tailwind field primitives for labels, leading icons, trailing meta, helper rows, and counters around native inputs.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/field-adornments/1.html",
+        "tsx": "tsx/FieldAdornmentsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "field-adornments-2",
+      "title": "Leading icon",
+      "description": "Leading icon Tiny Tailwind field primitives for labels, leading icons, trailing meta, helper rows, and counters around native inputs.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/field-adornments/2.html",
+        "tsx": "tsx/FieldAdornmentsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "field-adornments-3",
+      "title": "Trailing meta",
+      "description": "Trailing meta Tiny Tailwind field primitives for labels, leading icons, trailing meta, helper rows, and counters around native inputs.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/field-adornments/3.html",
+        "tsx": "tsx/FieldAdornmentsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "field-adornments-4",
+      "title": "Helper row",
+      "description": "Helper row Tiny Tailwind field primitives for labels, leading icons, trailing meta, helper rows, and counters around native inputs.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/field-adornments/4.html",
+        "tsx": "tsx/FieldAdornmentsVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "field-adornments-5",
+      "title": "Character counter",
+      "description": "Character counter Tiny Tailwind field primitives for labels, leading icons, trailing meta, helper rows, and counters around native inputs.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/field-adornments/5.html",
+        "tsx": "tsx/FieldAdornmentsVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

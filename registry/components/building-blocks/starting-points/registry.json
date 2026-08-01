@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "name": "building-blocks-starting-points",
+  "title": "Starting Points",
+  "description": "Minimal Tailwind feature-starting blocks for a functional header, task row, and first empty work surface.",
+  "category": "building-blocks/starting-points",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "building-blocks",
+    "starting-points",
+    "feature",
+    "task",
+    "starter",
+    "empty state",
+    "header",
+    "atom",
+    "tailwind"
+  ],
+  "useWhen": [
+    "Minimal Tailwind feature-starting blocks for a functional header, task row, and first empty work surface."
+  ],
+  "avoidWhen": [
+    "Avoid starting points when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Starting Points uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Associate each form field with a visible or programmatic label before production use.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "starting-points-1",
+      "title": "Feature header",
+      "description": "Feature header Minimal Tailwind feature-starting blocks for a functional header, task row, and first empty work surface.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/starting-points/1.html",
+        "tsx": "tsx/StartingPointsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "starting-points-2",
+      "title": "Task input row",
+      "description": "Task input row Minimal Tailwind feature-starting blocks for a functional header, task row, and first empty work surface.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/starting-points/2.html",
+        "tsx": "tsx/StartingPointsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "starting-points-3",
+      "title": "Empty work surface",
+      "description": "Empty work surface Minimal Tailwind feature-starting blocks for a functional header, task row, and first empty work surface.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/starting-points/3.html",
+        "tsx": "tsx/StartingPointsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../preview.css" />
+  </head>
+  <body>
+    <div class="grid w-64 gap-2">
+      <div class="flex items-baseline justify-between">
+        <span class="text-sm font-medium text-slate-900">Storage</span>
+        <span class="text-xs text-slate-500">64%</span>
+      </div>
+      <div
+        role="progressbar"
+        aria-label="Storage used"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow="64"
+        class="h-2 overflow-hidden rounded-full bg-slate-200"
+      >
+        <span class="block h-full w-[64%] rounded-full bg-amber-500"></span>
+      </div>
+    </div>
+  </body>
+</html>

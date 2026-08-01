@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "name": "transcript-ribbon",
+  "title": "Transcript Ribbon",
+  "description": "An original animated transcript treatment for turning a voice-led idea into a focused hero moment.",
+  "category": "marketing",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["transcript", "voice", "motion", "hero"],
+  "useWhen": ["You want to introduce a voice, transcription, or thought-capture product with restrained movement."],
+  "avoidWhen": ["The message is long, highly detailed, or must be compared line by line without motion."],
+  "dependencies": ["No external runtime dependency."],
+  "responsiveBehavior": "The composition stays centered on narrow surfaces, while the ribbon continues past the viewport edge to preserve its sense of flow.",
+  "accessibility": ["Pauses its animated content on hover and keyboard focus.", "Uses a stable visual composition when reduced motion is requested."],
+  "compatibleWith": ["hero-sections", "voice-inputs", "product-announcements"],
+  "variants": [
+    {
+      "id": "conversation-flow",
+      "title": "Conversation flow",
+      "description": "A flowing transcript ribbon with a softly animated voice indicator and a calm editorial headline.",
+      "source": { "html": "../../../../public/examples/marketing/transcript-ribbon/1.html", "tsx": "tsx/TranscriptRibbon.tsx" },
+      "appearance": "light",
+      "states": ["running", "paused", "reduced motion"],
+      "accessibility": ["Pause animation on hover and focus.", "Keep the core message legible without relying on animation."]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "name": "building-blocks-hierarchy-patterns",
+  "title": "Hierarchy Patterns",
+  "description": "Focused Tailwind hierarchy blocks for title stacks, label-value lines, and active navigation emphasis.",
+  "category": "building-blocks/hierarchy-patterns",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "building-blocks",
+    "hierarchy-patterns",
+    "hierarchy",
+    "title",
+    "value",
+    "label",
+    "navigation",
+    "emphasis",
+    "atom",
+    "tailwind"
+  ],
+  "useWhen": [
+    "Focused Tailwind hierarchy blocks for title stacks, label-value lines, and active navigation emphasis."
+  ],
+  "avoidWhen": [
+    "Avoid hierarchy patterns when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Hierarchy Patterns uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "hierarchy-patterns-1",
+      "title": "Eyebrow title stack",
+      "description": "Eyebrow title stack Focused Tailwind hierarchy blocks for title stacks, label-value lines, and active navigation emphasis.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/hierarchy-patterns/1.html",
+        "tsx": "tsx/HierarchyPatternsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "hierarchy-patterns-2",
+      "title": "Label value line",
+      "description": "Label value line Focused Tailwind hierarchy blocks for title stacks, label-value lines, and active navigation emphasis.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/hierarchy-patterns/2.html",
+        "tsx": "tsx/HierarchyPatternsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "hierarchy-patterns-3",
+      "title": "Active nav row",
+      "description": "Active nav row Focused Tailwind hierarchy blocks for title stacks, label-value lines, and active navigation emphasis.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/hierarchy-patterns/3.html",
+        "tsx": "tsx/HierarchyPatternsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

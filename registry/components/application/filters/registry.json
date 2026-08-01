@@ -2,84 +2,108 @@
   "schemaVersion": 1,
   "name": "application-filters",
   "title": "Filters",
-  "description": "Collapsible sidebar filter panels for narrowing lists and search results by category, attribute, or range.",
-  "category": "application/forms",
-  "frameworks": ["html", "react"],
+  "description": "Responsive filter components for sorting, searching, and refining content in ecommerce, dashboards, data tables, and search interfaces.",
+  "category": "application/filters",
+  "frameworks": [
+    "html",
+    "react"
+  ],
   "styling": "tailwind",
-  "tags": ["filter", "search", "sort", "facet", "sidebar", "refine"],
+  "tags": [
+    "application",
+    "filters",
+    "form",
+    "input",
+    "search",
+    "sort"
+  ],
   "useWhen": [
-    "A list, table, or product grid has multiple facets users need to narrow simultaneously.",
-    "Building a search results page with category, price range, or attribute refinements.",
-    "Adding a side panel to a dashboard that lets users control which data appears in view."
+    "Responsive filter components for sorting, searching, and refining content in ecommerce, dashboards, data tables, and search interfaces."
   ],
   "avoidWhen": [
-    "There is only one filter dimension — use a single select or toggle instead.",
-    "The filtered list updates in real time and filter state needs to be persistent across navigation — consider URL-based filter state.",
-    "Mobile screen space is too constrained — consider a modal or bottom sheet filter drawer instead of a sidebar."
+    "Avoid filters when a simpler pattern communicates the same content or action."
   ],
-  "dependencies": ["@tailwindcss/forms"],
-  "responsiveBehavior": "Filter panels collapse to a hidden drawer or modal on small viewports. Use a filter toggle button to show/hide on mobile.",
+  "dependencies": [
+    "@tailwindcss/forms"
+  ],
+  "responsiveBehavior": "Filters uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
   "accessibility": [
-    "Native <details> and <summary> elements provide keyboard-accessible collapsible sections without JavaScript.",
-    "Each filter input must have an associated visible label.",
-    "Announce the updated result count to screen readers via an aria-live region after filters are applied."
+    "Native details and summary elements provide keyboard-accessible disclosure behavior.",
+    "Associate each form field with a visible or programmatic label before production use.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment."
   ],
-  "compatibleWith": ["application-tables", "application-grids", "application-checkboxes"],
+  "compatibleWith": [],
   "variants": [
     {
       "id": "filters-1",
       "title": "Dropdown",
-      "description": "Single collapsible filter section using a native disclosure element, suitable for one prominent filter category.",
+      "description": "Dropdown Responsive filter components for sorting, searching, and refining content in ecommerce, dashboards, data tables, and search interfaces.",
       "source": {
         "html": "../../../../public/examples/application/filters/1.html",
         "tsx": "tsx/FiltersVariant1.tsx"
       },
       "appearance": "light",
-      "states": ["collapsed", "expanded"],
+      "states": [
+        "collapsed",
+        "expanded"
+      ],
       "accessibility": [
-        "Native <details>/<summary> provides keyboard toggle without custom ARIA; filter inputs need linked labels."
+        "Native details and summary elements provide keyboard-accessible disclosure behavior.",
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "filters-1-dark",
       "title": "Dropdown (Dark)",
-      "description": "Single collapsible filter section adapted for dark application surfaces.",
+      "description": "Dropdown Responsive filter components for sorting, searching, and refining content in ecommerce, dashboards, data tables, and search interfaces.",
       "source": {
         "html": "../../../../public/examples/application/filters/1-dark.html",
         "tsx": "tsx/FiltersVariant1Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["collapsed", "expanded"],
+      "states": [
+        "collapsed",
+        "expanded"
+      ],
       "accessibility": [
-        "Dark summary and input colors must maintain WCAG AA contrast in both open and closed states."
+        "Native details and summary elements provide keyboard-accessible disclosure behavior.",
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "filters-2",
       "title": "Accordion",
-      "description": "Multi-section filter panel where each category is independently collapsible, suitable for faceted search sidebars.",
+      "description": "Accordion Responsive filter components for sorting, searching, and refining content in ecommerce, dashboards, data tables, and search interfaces.",
       "source": {
         "html": "../../../../public/examples/application/filters/2.html",
         "tsx": "tsx/FiltersVariant2.tsx"
       },
       "appearance": "light",
-      "states": ["collapsed", "expanded"],
+      "states": [
+        "collapsed",
+        "expanded"
+      ],
       "accessibility": [
-        "Each <details>/<summary> pair independently manages its open state; group filters in a <fieldset> per category."
+        "Native details and summary elements provide keyboard-accessible disclosure behavior.",
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "filters-2-dark",
       "title": "Accordion (Dark)",
-      "description": "Multi-section collapsible filter panel adapted for dark application surfaces.",
+      "description": "Accordion Responsive filter components for sorting, searching, and refining content in ecommerce, dashboards, data tables, and search interfaces.",
       "source": {
         "html": "../../../../public/examples/application/filters/2-dark.html",
         "tsx": "tsx/FiltersVariant2Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["collapsed", "expanded"],
+      "states": [
+        "collapsed",
+        "expanded"
+      ],
       "accessibility": [
-        "Dark section header and input colors must maintain readable contrast in expanded and collapsed states."
+        "Native details and summary elements provide keyboard-accessible disclosure behavior.",
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     }
   ]

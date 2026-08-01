@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "name": "signal-marquee",
+  "title": "Signal Marquee",
+  "description": "An original, pauseable signal ribbon for concise product proof and supporting navigation.",
+  "category": "marketing",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["marquee", "motion", "announcement"],
+  "useWhen": ["You need a calm, compact stream of product signals or supporting proof."],
+  "avoidWhen": ["Critical information must remain stationary or users need to compare every item at once."],
+  "dependencies": ["No external runtime dependency."],
+  "responsiveBehavior": "The ribbon stays in one horizontal line at wide sizes and wraps into a static, readable list when reduced motion is requested.",
+  "accessibility": ["Pauses on hover and keyboard focus.", "Shows the complete content without animation when reduced motion is requested."],
+  "compatibleWith": ["announcements", "logo-clouds", "feature-grids"],
+  "variants": [
+    {
+      "id": "signal-ribbon",
+      "title": "Signal ribbon",
+      "description": "A clean continuous ribbon with concise product signals, edge fades, and pause behavior.",
+      "source": { "html": "../../../../public/examples/marketing/marquee/1.html", "tsx": "tsx/SignalMarquee.tsx" },
+      "appearance": "light",
+      "states": ["running", "paused", "reduced motion"],
+      "accessibility": ["Pause animation on hover and focus.", "Do not rely on movement to convey essential content."]
+    }
+  ]
+}

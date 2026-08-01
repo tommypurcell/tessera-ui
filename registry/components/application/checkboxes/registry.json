@@ -2,112 +2,131 @@
   "schemaVersion": 1,
   "name": "application-checkboxes",
   "title": "Checkboxes",
-  "description": "Styled checkbox inputs for selecting one or more options in forms, settings panels, and filter lists.",
-  "category": "application/forms",
-  "frameworks": ["html", "react"],
+  "description": "Checkbox input components with styled checkboxes, labels, descriptions, and responsive designs for forms, settings, and user interfaces.",
+  "category": "application/checkboxes",
+  "frameworks": [
+    "html",
+    "react"
+  ],
   "styling": "tailwind",
-  "tags": ["checkbox", "form", "input", "filter", "multi-select", "settings"],
+  "tags": [
+    "application",
+    "checkboxes",
+    "filter",
+    "form",
+    "input"
+  ],
   "useWhen": [
-    "Users can select zero or more independent options from a list.",
-    "Building filter panels where multiple categories can be active simultaneously.",
-    "Presenting a list of settings that each have a binary on/off state."
+    "Checkbox input components with styled checkboxes, labels, descriptions, and responsive designs for forms, settings, and user interfaces."
   ],
   "avoidWhen": [
-    "Only one option can be selected at a time — use radio buttons instead.",
-    "The toggle represents an immediate system state change — use a toggle switch instead.",
-    "There are more than ten options — consider a multi-select dropdown to save space."
+    "Avoid checkboxes when a simpler pattern communicates the same content or action."
   ],
-  "dependencies": ["@tailwindcss/forms"],
-  "responsiveBehavior": "Checkboxes remain their natural size; surrounding layout reflows at small viewports. Ensure the tap target area extends beyond the checkbox element itself.",
+  "dependencies": [
+    "@tailwindcss/forms"
+  ],
+  "responsiveBehavior": "Checkboxes uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
   "accessibility": [
-    "Each checkbox must have an associated <label> element linked via for/id or wrapping.",
-    "Group related checkboxes in a <fieldset> with a <legend> that names the group.",
-    "Do not rely on color alone to indicate the checked state — the browser-native checkmark provides the signal."
+    "Associate each form field with a visible or programmatic label before production use.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
   ],
-  "compatibleWith": ["application-filters", "application-radio-groups", "application-toggles"],
+  "compatibleWith": [],
   "variants": [
     {
       "id": "checkboxes-1",
       "title": "Base",
-      "description": "Simple labelled checkbox list for selecting multiple independent options in a settings or filter context.",
+      "description": "Base Checkbox input components with styled checkboxes, labels, descriptions, and responsive designs for forms, settings, and user interfaces.",
       "source": {
         "html": "../../../../public/examples/application/checkboxes/1.html",
         "tsx": "tsx/CheckboxesVariant1.tsx"
       },
       "appearance": "light",
-      "states": ["unchecked", "checked", "focus"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Each checkbox requires a linked <label>; group the list in a <fieldset> with a <legend>."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "checkboxes-1-dark",
       "title": "Base (Dark)",
-      "description": "Simple labelled checkbox list adapted for dark application surfaces.",
+      "description": "Base Checkbox input components with styled checkboxes, labels, descriptions, and responsive designs for forms, settings, and user interfaces.",
       "source": {
         "html": "../../../../public/examples/application/checkboxes/1-dark.html",
         "tsx": "tsx/CheckboxesVariant1Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["unchecked", "checked", "focus"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Dark label text and checkbox border colors must meet WCAG AA contrast requirements."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "checkboxes-2",
       "title": "Described",
-      "description": "Checkbox list where each option includes a label and a supporting description line for additional context.",
+      "description": "Described Checkbox input components with styled checkboxes, labels, descriptions, and responsive designs for forms, settings, and user interfaces.",
       "source": {
         "html": "../../../../public/examples/application/checkboxes/2.html",
         "tsx": "tsx/CheckboxesVariant2.tsx"
       },
       "appearance": "light",
-      "states": ["unchecked", "checked", "focus"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Description text should be associated with the checkbox via aria-describedby."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "checkboxes-2-dark",
       "title": "Described (Dark)",
-      "description": "Checkbox list with per-option description lines adapted for dark application surfaces.",
+      "description": "Described Checkbox input components with styled checkboxes, labels, descriptions, and responsive designs for forms, settings, and user interfaces.",
       "source": {
         "html": "../../../../public/examples/application/checkboxes/2-dark.html",
         "tsx": "tsx/CheckboxesVariant2Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["unchecked", "checked", "focus"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Description text color must maintain sufficient contrast against dark backgrounds."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "checkboxes-3",
       "title": "Described with divide",
-      "description": "Described checkbox list with horizontal dividers between options to improve scannability in longer lists.",
+      "description": "Described with divide Checkbox input components with styled checkboxes, labels, descriptions, and responsive designs for forms, settings, and user interfaces.",
       "source": {
         "html": "../../../../public/examples/application/checkboxes/3.html",
         "tsx": "tsx/CheckboxesVariant3.tsx"
       },
       "appearance": "light",
-      "states": ["unchecked", "checked", "focus"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Dividers are decorative and must not interrupt the logical reading order of the list."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "checkboxes-3-dark",
       "title": "Described with divide (Dark)",
-      "description": "Divider-separated described checkbox list adapted for dark application surfaces.",
+      "description": "Described with divide Checkbox input components with styled checkboxes, labels, descriptions, and responsive designs for forms, settings, and user interfaces.",
       "source": {
         "html": "../../../../public/examples/application/checkboxes/3-dark.html",
         "tsx": "tsx/CheckboxesVariant3Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["unchecked", "checked", "focus"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Dark divider colors must provide sufficient visual separation without obscuring focus indicators."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     }
   ]

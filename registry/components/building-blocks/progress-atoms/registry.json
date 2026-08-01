@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "name": "building-blocks-progress-atoms",
+  "title": "Progress Atoms",
+  "description": "Small Tailwind progress primitives for tracks, segments, steps, status meters, and completion cues.",
+  "category": "building-blocks/progress-atoms",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "building-blocks",
+    "progress-atoms",
+    "progress",
+    "meter",
+    "step",
+    "loading",
+    "status",
+    "atom",
+    "tailwind"
+  ],
+  "useWhen": [
+    "Small Tailwind progress primitives for tracks, segments, steps, status meters, and completion cues."
+  ],
+  "avoidWhen": [
+    "Avoid progress atoms when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Progress Atoms uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "progress-atoms-1",
+      "title": "Progress track",
+      "description": "Progress track Small Tailwind progress primitives for tracks, segments, steps, status meters, and completion cues.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/progress-atoms/1.html",
+        "tsx": "tsx/ProgressAtomsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "progress-atoms-2",
+      "title": "Segmented progress",
+      "description": "Segmented progress Small Tailwind progress primitives for tracks, segments, steps, status meters, and completion cues.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/progress-atoms/2.html",
+        "tsx": "tsx/ProgressAtomsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "progress-atoms-3",
+      "title": "Step dot",
+      "description": "Step dot Small Tailwind progress primitives for tracks, segments, steps, status meters, and completion cues.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/progress-atoms/3.html",
+        "tsx": "tsx/ProgressAtomsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "progress-atoms-4",
+      "title": "Step pair",
+      "description": "Step pair Small Tailwind progress primitives for tracks, segments, steps, status meters, and completion cues.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/progress-atoms/4.html",
+        "tsx": "tsx/ProgressAtomsVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "progress-atoms-5",
+      "title": "Meter row",
+      "description": "Meter row Small Tailwind progress primitives for tracks, segments, steps, status meters, and completion cues.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/progress-atoms/5.html",
+        "tsx": "tsx/ProgressAtomsVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

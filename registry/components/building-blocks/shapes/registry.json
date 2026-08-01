@@ -1,1 +1,133 @@
-{"schemaVersion":1,"name":"shapes","title":"Shapes","description":"Basic Tailwind circle and pill atoms for icons, avatars, tags, and compact controls.","category":"building-blocks","frameworks":["html","react"],"styling":"tailwind","tags":["circle","pill","shape"],"useWhen":["You need a neutral visual container before adding content or interaction."],"avoidWhen":["A semantic, interactive control such as a button is needed."],"dependencies":["No external runtime dependency."],"responsiveBehavior":"Shapes preserve their compact intrinsic dimensions at every viewport.","accessibility":["Use decorative shapes with aria-hidden when they carry no information.","Add an accessible name when a shape becomes interactive."],"compatibleWith":["icons","avatars","buttons"],"variants":[{"id":"circle","title":"Circle","description":"A neutral circular container for initials, icons, or a single compact visual marker.","source":{"html":"../../../../public/examples/building-blocks/shapes/1.html","tsx":"tsx/Shapes.tsx"},"appearance":"light","states":["default"],"accessibility":["Provide text alternatives when the contained content is meaningful."]},{"id":"pill","title":"Pill","description":"A small rounded container for a short label, count, or compact supporting value.","source":{"html":"../../../../public/examples/building-blocks/shapes/2.html","tsx":"tsx/Shapes.tsx"},"appearance":"light","states":["default"],"accessibility":["Keep the text inside the pill visible and meaningful."]}]}
+{
+  "schemaVersion": 1,
+  "name": "building-blocks-shapes",
+  "title": "Shapes",
+  "description": "Basic Tailwind circle and pill atoms for icons, avatars, tags, and compact controls.",
+  "category": "building-blocks/shapes",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "building-blocks",
+    "shapes",
+    "circle",
+    "pill",
+    "shape",
+    "atom",
+    "tailwind"
+  ],
+  "useWhen": [
+    "Basic Tailwind circle and pill atoms for icons, avatars, tags, and compact controls."
+  ],
+  "avoidWhen": [
+    "Avoid shapes when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Shapes uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "shapes-1",
+      "title": "Circle",
+      "description": "Circle Basic Tailwind circle and pill atoms for icons, avatars, tags, and compact controls.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/shapes/1.html",
+        "tsx": "tsx/ShapesVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "shapes-2",
+      "title": "Pill",
+      "description": "Pill Basic Tailwind circle and pill atoms for icons, avatars, tags, and compact controls.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/shapes/2.html",
+        "tsx": "tsx/ShapesVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "shapes-3",
+      "title": "Square",
+      "description": "Square Basic Tailwind circle and pill atoms for icons, avatars, tags, and compact controls.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/shapes/3.html",
+        "tsx": "tsx/ShapesVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "shapes-4",
+      "title": "Ring",
+      "description": "Ring Basic Tailwind circle and pill atoms for icons, avatars, tags, and compact controls.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/shapes/4.html",
+        "tsx": "tsx/ShapesVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "shapes-5",
+      "title": "Soft square",
+      "description": "Soft square Basic Tailwind circle and pill atoms for icons, avatars, tags, and compact controls.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/shapes/5.html",
+        "tsx": "tsx/ShapesVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "shapes-6",
+      "title": "Diamond",
+      "description": "Diamond Basic Tailwind circle and pill atoms for icons, avatars, tags, and compact controls.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/shapes/6.html",
+        "tsx": "tsx/ShapesVariant6.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

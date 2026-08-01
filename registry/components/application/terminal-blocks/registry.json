@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "name": "application-terminal-blocks",
+  "title": "Terminal Blocks",
+  "description": "Original terminal and code-output blocks for install commands, test runs, and deploy scripts, in three levels of detail.",
+  "category": "application/terminal-blocks",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "terminal-blocks",
+    "terminal",
+    "code block",
+    "cli",
+    "command",
+    "console"
+  ],
+  "useWhen": [
+    "Original terminal and code-output blocks for install commands, test runs, and deploy scripts, in three levels of detail."
+  ],
+  "avoidWhen": [
+    "Avoid terminal blocks when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Terminal Blocks uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "terminal-blocks-1",
+      "title": "Single command",
+      "description": "A single prompt and command line, for install or quick-start instructions",
+      "source": {
+        "html": "../../../../public/examples/application/terminal-blocks/1.html",
+        "tsx": "tsx/TerminalBlocksVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "terminal-blocks-1-dark",
+      "title": "Single command (Dark)",
+      "description": "A single prompt and command line, for install or quick-start instructions",
+      "source": {
+        "html": "../../../../public/examples/application/terminal-blocks/1-dark.html",
+        "tsx": "tsx/TerminalBlocksVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "terminal-blocks-2",
+      "title": "Command with output",
+      "description": "A command followed by colored pass and fail output lines",
+      "source": {
+        "html": "../../../../public/examples/application/terminal-blocks/2.html",
+        "tsx": "tsx/TerminalBlocksVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "terminal-blocks-2-dark",
+      "title": "Command with output (Dark)",
+      "description": "A command followed by colored pass and fail output lines",
+      "source": {
+        "html": "../../../../public/examples/application/terminal-blocks/2-dark.html",
+        "tsx": "tsx/TerminalBlocksVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "terminal-blocks-3",
+      "title": "Windowed terminal",
+      "description": "A titled terminal window with traffic-light controls and a filename tab",
+      "source": {
+        "html": "../../../../public/examples/application/terminal-blocks/3.html",
+        "tsx": "tsx/TerminalBlocksVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "terminal-blocks-3-dark",
+      "title": "Windowed terminal (Dark)",
+      "description": "A titled terminal window with traffic-light controls and a filename tab",
+      "source": {
+        "html": "../../../../public/examples/application/terminal-blocks/3-dark.html",
+        "tsx": "tsx/TerminalBlocksVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

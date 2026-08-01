@@ -2,196 +2,224 @@
   "schemaVersion": 1,
   "name": "application-dividers",
   "title": "Dividers",
-  "description": "Horizontal rule elements for visually separating sections of content, available in solid, gradient, and aligned label styles.",
-  "category": "application/layout",
-  "frameworks": ["html", "react"],
+  "description": "Responsive layout divider components with basic, gradient, and aligned styles for separating content sections in web applications and UI designs.",
+  "category": "application/dividers",
+  "frameworks": [
+    "html",
+    "react"
+  ],
   "styling": "tailwind",
-  "tags": ["divider", "separator", "horizontal-rule", "layout", "section"],
+  "tags": [
+    "application",
+    "dividers",
+    "layout",
+    "separator"
+  ],
   "useWhen": [
-    "Separating distinct content sections within a panel, form, or settings page.",
-    "Adding visual breathing room between a title label and the content beneath it.",
-    "Creating a subtle visual hierarchy break without using a heading or card boundary."
+    "Responsive layout divider components with basic, gradient, and aligned styles for separating content sections in web applications and UI designs."
   ],
   "avoidWhen": [
-    "The layout already uses cards, borders, or spacing to communicate section boundaries.",
-    "The divider would appear between items in a list — use list-item borders instead.",
-    "There are so many dividers on the page that they create visual noise rather than clarity."
+    "Avoid dividers when a simpler pattern communicates the same content or action."
   ],
   "dependencies": [],
-  "responsiveBehavior": "Dividers stretch full width of their container at all viewport sizes. Label-aligned variants maintain text alignment regardless of container width.",
+  "responsiveBehavior": "Dividers uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
   "accessibility": [
-    "Use the semantic <hr> element so screen readers can announce a thematic break between content sections.",
-    "Decorative dividers that carry no meaning should be hidden from assistive technology with role=\"presentation\" or aria-hidden=\"true\".",
-    "Do not use dividers as the sole method of grouping content — provide semantic structure with headings or sections."
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
   ],
-  "compatibleWith": ["application-checkboxes", "application-radio-groups", "application-details-list"],
+  "compatibleWith": [],
   "variants": [
     {
       "id": "dividers-1",
       "title": "Base",
-      "description": "A simple solid horizontal rule using a single border color for clean content separation.",
+      "description": "Base Responsive layout divider components with basic, gradient, and aligned styles for separating content sections in web applications and UI designs.",
       "source": {
         "html": "../../../../public/examples/application/dividers/1.html",
         "tsx": "tsx/DividersVariant1.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Use <hr> for semantic thematic breaks; add aria-hidden=\"true\" for purely decorative use."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "dividers-1-dark",
       "title": "Base (Dark)",
-      "description": "Solid horizontal rule adapted for dark application surfaces.",
+      "description": "Base Responsive layout divider components with basic, gradient, and aligned styles for separating content sections in web applications and UI designs.",
       "source": {
         "html": "../../../../public/examples/application/dividers/1-dark.html",
         "tsx": "tsx/DividersVariant1Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Dark divider color must provide sufficient contrast against dark backgrounds to remain visible."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "dividers-2",
       "title": "Gradient",
-      "description": "A centre-fading gradient rule that softens the visual weight of the divider and works well on wide layouts.",
+      "description": "Gradient Responsive layout divider components with basic, gradient, and aligned styles for separating content sections in web applications and UI designs.",
       "source": {
         "html": "../../../../public/examples/application/dividers/2.html",
         "tsx": "tsx/DividersVariant2.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Gradient dividers are inherently decorative and should include aria-hidden=\"true\"."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "dividers-2-dark",
       "title": "Gradient (Dark)",
-      "description": "Centre-fading gradient rule adapted for dark application surfaces.",
+      "description": "Gradient Responsive layout divider components with basic, gradient, and aligned styles for separating content sections in web applications and UI designs.",
       "source": {
         "html": "../../../../public/examples/application/dividers/2-dark.html",
         "tsx": "tsx/DividersVariant2Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Gradient dividers are decorative and should include aria-hidden=\"true\"."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "dividers-3",
       "title": "Left align",
-      "description": "A section label aligned to the left of a horizontal rule, for titling groups within a settings form or panel.",
+      "description": "Left align Responsive layout divider components with basic, gradient, and aligned styles for separating content sections in web applications and UI designs.",
       "source": {
         "html": "../../../../public/examples/application/dividers/3.html",
         "tsx": "tsx/DividersVariant3.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "If the label functions as a section heading, use a heading element inside the divider rather than plain text."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "dividers-3-dark",
       "title": "Left align (Dark)",
-      "description": "Left-aligned label divider adapted for dark application surfaces.",
+      "description": "Left align Responsive layout divider components with basic, gradient, and aligned styles for separating content sections in web applications and UI designs.",
       "source": {
         "html": "../../../../public/examples/application/dividers/3-dark.html",
         "tsx": "tsx/DividersVariant3Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Dark label text must maintain WCAG AA contrast against the dark background."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "dividers-4",
       "title": "Left align gradient",
-      "description": "A left-aligned section label on a gradient rule that fades to the right for a lighter visual treatment.",
+      "description": "Left align gradient Responsive layout divider components with basic, gradient, and aligned styles for separating content sections in web applications and UI designs.",
       "source": {
         "html": "../../../../public/examples/application/dividers/4.html",
         "tsx": "tsx/DividersVariant4.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Gradient portion is decorative; label text carries the semantic meaning."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "dividers-4-dark",
       "title": "Left align gradient (Dark)",
-      "description": "Left-aligned label on a gradient rule adapted for dark application surfaces.",
+      "description": "Left align gradient Responsive layout divider components with basic, gradient, and aligned styles for separating content sections in web applications and UI designs.",
       "source": {
         "html": "../../../../public/examples/application/dividers/4-dark.html",
         "tsx": "tsx/DividersVariant4Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Label text must maintain readable contrast; gradient portion remains aria-hidden."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "dividers-5",
       "title": "Right align",
-      "description": "A section label aligned to the right of a horizontal rule, used to right-anchor labels in forms or panels.",
+      "description": "Right align Responsive layout divider components with basic, gradient, and aligned styles for separating content sections in web applications and UI designs.",
       "source": {
         "html": "../../../../public/examples/application/dividers/5.html",
         "tsx": "tsx/DividersVariant5.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Right-aligned labels can disorient screen reader users in left-to-right layouts — prefer left alignment for primary headings."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "dividers-5-dark",
       "title": "Right align (Dark)",
-      "description": "Right-aligned label divider adapted for dark application surfaces.",
+      "description": "Right align Responsive layout divider components with basic, gradient, and aligned styles for separating content sections in web applications and UI designs.",
       "source": {
         "html": "../../../../public/examples/application/dividers/5-dark.html",
         "tsx": "tsx/DividersVariant5Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Dark label text must maintain WCAG AA contrast against the dark background."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "dividers-6",
       "title": "Right align gradient",
-      "description": "A right-aligned section label on a gradient rule that fades to the left for a lighter visual treatment.",
+      "description": "Right align gradient Responsive layout divider components with basic, gradient, and aligned styles for separating content sections in web applications and UI designs.",
       "source": {
         "html": "../../../../public/examples/application/dividers/6.html",
         "tsx": "tsx/DividersVariant6.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Gradient portion is decorative; label text carries the semantic meaning."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "dividers-6-dark",
       "title": "Right align gradient (Dark)",
-      "description": "Right-aligned label on a gradient rule adapted for dark application surfaces.",
+      "description": "Right align gradient Responsive layout divider components with basic, gradient, and aligned styles for separating content sections in web applications and UI designs.",
       "source": {
         "html": "../../../../public/examples/application/dividers/6-dark.html",
         "tsx": "tsx/DividersVariant6Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Label text must maintain readable contrast; gradient portion remains aria-hidden."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     }
   ]

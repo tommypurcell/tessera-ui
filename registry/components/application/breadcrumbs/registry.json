@@ -2,168 +2,192 @@
   "schemaVersion": 1,
   "name": "application-breadcrumbs",
   "title": "Breadcrumbs",
-  "description": "Landmark navigation trails showing a user's path through a site hierarchy and allowing them to step back to any parent level.",
-  "category": "application/navigation",
-  "frameworks": ["html", "react"],
+  "description": "Responsive breadcrumb navigation components for tracking location within websites and applications. Perfect for ecommerce, dashboards, and multi-level navigation with customizable dividers and icons.",
+  "category": "application/breadcrumbs",
+  "frameworks": [
+    "html",
+    "react"
+  ],
   "styling": "tailwind",
-  "tags": ["breadcrumb", "navigation", "wayfinding", "hierarchy", "trail"],
+  "tags": [
+    "application",
+    "breadcrumbs",
+    "link",
+    "navigation"
+  ],
   "useWhen": [
-    "Content lives more than one level deep and users frequently need to step back up the hierarchy.",
-    "Supplementing a sidebar or top-nav on category, record, or settings drill-down pages.",
-    "E-commerce product pages, admin record detail views, and documentation nested sections."
+    "Responsive breadcrumb navigation components for tracking location within websites and applications. Perfect for ecommerce, dashboards, and multi-level navigation with customizable dividers and icons."
   ],
   "avoidWhen": [
-    "The site is flat and pages have no meaningful parent–child relationship.",
-    "A single back button already satisfies the navigation need.",
-    "The breadcrumb would repeat labels already visible in the primary navigation."
+    "Avoid breadcrumbs when a simpler pattern communicates the same content or action."
   ],
   "dependencies": [],
-  "responsiveBehavior": "Breadcrumbs truncate or collapse intermediate items on small viewports. The current page label and at least one parent should remain visible at all widths.",
+  "responsiveBehavior": "Breadcrumbs uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
   "accessibility": [
-    "Wrap in a <nav> element with aria-label=\"Breadcrumb\" so screen readers identify the landmark.",
-    "Mark the current page item with aria-current=\"page\" and do not make it a link.",
-    "Divider characters must be hidden from assistive technology with aria-hidden=\"true\"."
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
   ],
-  "compatibleWith": ["application-side-menu", "application-tabs", "application-vertical-menu"],
+  "compatibleWith": [],
   "variants": [
     {
       "id": "breadcrumbs-1",
       "title": "Base",
-      "description": "Text links separated by chevron dividers — the simplest breadcrumb pattern for multi-level hierarchies.",
+      "description": "Base Responsive breadcrumb navigation components for tracking location within websites and applications. Perfect for ecommerce, dashboards, and multi-level navigation with customizable dividers and icons.",
       "source": {
         "html": "../../../../public/examples/application/breadcrumbs/1.html",
         "tsx": "tsx/BreadcrumbsVariant1.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Wrap in <nav aria-label=\"Breadcrumb\"> and add aria-current=\"page\" to the last item."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "breadcrumbs-1-dark",
       "title": "Base (Dark)",
-      "description": "Chevron-divided text breadcrumbs adapted for dark application surfaces.",
+      "description": "Base Responsive breadcrumb navigation components for tracking location within websites and applications. Perfect for ecommerce, dashboards, and multi-level navigation with customizable dividers and icons.",
       "source": {
         "html": "../../../../public/examples/application/breadcrumbs/1-dark.html",
         "tsx": "tsx/BreadcrumbsVariant1Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Dark link and divider colors maintain readable contrast on dark backgrounds."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "breadcrumbs-2",
       "title": "Base with home icon",
-      "description": "Breadcrumbs replacing the top-level text label with a recognizable home icon for cleaner root navigation.",
+      "description": "Base with home icon Responsive breadcrumb navigation components for tracking location within websites and applications. Perfect for ecommerce, dashboards, and multi-level navigation with customizable dividers and icons.",
       "source": {
         "html": "../../../../public/examples/application/breadcrumbs/2.html",
         "tsx": "tsx/BreadcrumbsVariant2.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Home icon link must have an aria-label or visually-hidden text for screen readers."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "breadcrumbs-2-dark",
       "title": "Base with home icon (Dark)",
-      "description": "Home-icon-prefixed breadcrumbs adapted for dark application surfaces.",
+      "description": "Base with home icon Responsive breadcrumb navigation components for tracking location within websites and applications. Perfect for ecommerce, dashboards, and multi-level navigation with customizable dividers and icons.",
       "source": {
         "html": "../../../../public/examples/application/breadcrumbs/2-dark.html",
         "tsx": "tsx/BreadcrumbsVariant2Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Home icon link must have an aria-label or visually-hidden text for screen readers."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "breadcrumbs-3",
       "title": "Slash divider",
-      "description": "Breadcrumbs using a slash separator, a common convention in file-path and URL-style hierarchies.",
+      "description": "Slash divider Responsive breadcrumb navigation components for tracking location within websites and applications. Perfect for ecommerce, dashboards, and multi-level navigation with customizable dividers and icons.",
       "source": {
         "html": "../../../../public/examples/application/breadcrumbs/3.html",
         "tsx": "tsx/BreadcrumbsVariant3.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Slash dividers must carry aria-hidden=\"true\" to avoid being read aloud."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "breadcrumbs-3-dark",
       "title": "Slash divider (Dark)",
-      "description": "Slash-separated breadcrumbs adapted for dark application surfaces.",
+      "description": "Slash divider Responsive breadcrumb navigation components for tracking location within websites and applications. Perfect for ecommerce, dashboards, and multi-level navigation with customizable dividers and icons.",
       "source": {
         "html": "../../../../public/examples/application/breadcrumbs/3-dark.html",
         "tsx": "tsx/BreadcrumbsVariant3Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Slash dividers must carry aria-hidden=\"true\" to avoid being read aloud."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "breadcrumbs-4",
       "title": "Slash divider with home icon",
-      "description": "Combines a home icon root with slash dividers between subsequent levels for a compact, file-path style trail.",
+      "description": "Slash divider with home icon Responsive breadcrumb navigation components for tracking location within websites and applications. Perfect for ecommerce, dashboards, and multi-level navigation with customizable dividers and icons.",
       "source": {
         "html": "../../../../public/examples/application/breadcrumbs/4.html",
         "tsx": "tsx/BreadcrumbsVariant4.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Home icon link needs an aria-label; slash dividers use aria-hidden."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "breadcrumbs-4-dark",
       "title": "Slash divider with home icon (Dark)",
-      "description": "Home-icon-root slash breadcrumbs adapted for dark application surfaces.",
+      "description": "Slash divider with home icon Responsive breadcrumb navigation components for tracking location within websites and applications. Perfect for ecommerce, dashboards, and multi-level navigation with customizable dividers and icons.",
       "source": {
         "html": "../../../../public/examples/application/breadcrumbs/4-dark.html",
         "tsx": "tsx/BreadcrumbsVariant4Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Home icon link needs an aria-label; slash dividers use aria-hidden."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "breadcrumbs-5",
       "title": "Grouped with chevron divider",
-      "description": "Breadcrumbs enclosed in a pill-shaped container, visually grouping the trail as a distinct navigational unit.",
+      "description": "Grouped with chevron divider Responsive breadcrumb navigation components for tracking location within websites and applications. Perfect for ecommerce, dashboards, and multi-level navigation with customizable dividers and icons.",
       "source": {
         "html": "../../../../public/examples/application/breadcrumbs/5.html",
         "tsx": "tsx/BreadcrumbsVariant5.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "The pill container is decorative; landmark semantics come from the inner <nav> element."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "breadcrumbs-5-dark",
       "title": "Grouped with chevron divider (Dark)",
-      "description": "Pill-contained chevron breadcrumbs adapted for dark application surfaces.",
+      "description": "Grouped with chevron divider Responsive breadcrumb navigation components for tracking location within websites and applications. Perfect for ecommerce, dashboards, and multi-level navigation with customizable dividers and icons.",
       "source": {
         "html": "../../../../public/examples/application/breadcrumbs/5-dark.html",
         "tsx": "tsx/BreadcrumbsVariant5Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "The pill container is decorative; landmark semantics come from the inner <nav> element."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     }
   ]

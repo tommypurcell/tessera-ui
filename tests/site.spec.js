@@ -6,21 +6,36 @@ test.describe('Next.js site', () => {
     await expect(page).toHaveTitle('Free Tailwind CSS Accordions | Tessera UI')
     const previewFrame = page.locator('iframe[src="/examples/application/accordions/1.html"]')
     await expect(previewFrame).toBeVisible()
-    await expect(previewFrame).toHaveCSS('height', /^(2[5-9]\d|[3-9]\d{2,})px$/)
+    await expect
+      .poll(async () =>
+        Number.parseFloat(await previewFrame.evaluate((frame) => getComputedStyle(frame).height)),
+      )
+      .toBeGreaterThanOrEqual(250)
   })
 
   test('renders full blog content in the document', async ({ page }) => {
-    await page.goto('/blog/what-makes-a-ui-component-agent-readable')
-    await expect(page.getByRole('heading', { name: 'What Makes a UI Component Agent-Readable?' })).toBeVisible()
-    await expect(page.getByText('Code is necessary, but code alone is a poor interface for a coding agent.')).toBeVisible()
+    await page.goto('/blog/how-agents-should-retrieve-ui-component-source-safely')
+    await expect(
+      page.getByRole('heading', { name: 'How Agents Should Retrieve UI Component Source Safely' }),
+    ).toBeVisible()
+    await expect(
+      page.getByText(
+        'Giving a coding agent access to component source should not mean allowing it to',
+      ),
+    ).toBeVisible()
   })
 
-  test('offers HTML, JSX, and TSX code formats without changing the source preview', async ({ page }) => {
+  test('offers HTML, JSX, and TSX code formats without changing the source preview', async ({
+    page,
+  }) => {
     await page.goto('/components/application/accordions')
     await page.getByRole('button', { name: 'Toggle preview and code' }).first().click()
 
     const codeFormatTabs = page.getByRole('tablist', { name: 'Code format' }).first()
-    await expect(codeFormatTabs.getByRole('tab', { name: 'HTML' })).toHaveAttribute('aria-selected', 'true')
+    await expect(codeFormatTabs.getByRole('tab', { name: 'HTML' })).toHaveAttribute(
+      'aria-selected',
+      'true',
+    )
     await expect(page.getByRole('tabpanel').first()).toContainText('class=')
 
     await codeFormatTabs.getByRole('tab', { name: 'JSX' }).click()
@@ -30,12 +45,14 @@ test.describe('Next.js site', () => {
     await expect(page.getByRole('tabpanel').first()).toContainText('export type AccordionBaseProps')
   })
 
-test('uses a registry TSX source for components beyond accordions', async ({ page }) => {
+  test('uses a registry TSX source for components beyond accordions', async ({ page }) => {
     await page.goto('/components/application/modals')
     await page.getByRole('button', { name: 'Toggle preview and code' }).first().click()
     await page.getByRole('tab', { name: 'TSX' }).first().click()
 
-    await expect(page.getByRole('tabpanel').first()).toContainText('export type ModalsVariant1Props')
+    await expect(page.getByRole('tabpanel').first()).toContainText(
+      'export type ModalsVariant1Props',
+    )
   })
 
   test('opens search with Command+K and searches on Enter', async ({ page }) => {
@@ -48,7 +65,7 @@ test('uses a registry TSX source for components beyond accordions', async ({ pag
     const viewport = page.viewportSize()
     expect(dialogBox).not.toBeNull()
     expect(viewport).not.toBeNull()
-    expect(Math.abs((dialogBox.x + dialogBox.width / 2) - viewport.width / 2)).toBeLessThan(2)
+    expect(Math.abs(dialogBox.x + dialogBox.width / 2 - viewport.width / 2)).toBeLessThan(2)
     const input = dialog.getByPlaceholder('Search components and articles')
     await expect(input).toBeFocused()
     await input.fill('pie')
@@ -72,7 +89,9 @@ test('switches the site to persistent dark mode', async ({ page }) => {
 
   await expect(page.locator('html')).toHaveClass(/dark/)
   await expect(page.getByRole('button', { name: 'Switch to light mode' })).toBeVisible()
-  await expect.poll(() => page.evaluate(() => localStorage.getItem('tessera-ui-theme'))).toBe('dark')
+  await expect
+    .poll(() => page.evaluate(() => localStorage.getItem('tessera-ui-theme')))
+    .toBe('dark')
 })
 
 test('uses authored dark component variants when dark mode is active', async ({ page }) => {
@@ -81,60 +100,74 @@ test('uses authored dark component variants when dark mode is active', async ({ 
 
   await page.getByRole('button', { name: 'Switch to dark mode' }).click()
 
-  await expect(page.getByRole('heading', { name: 'Base (Dark)', exact: true }).first()).toBeVisible()
+  await expect(
+    page.getByRole('heading', { name: 'Base (Dark)', exact: true }).first(),
+  ).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Base', exact: true }).first()).toBeHidden()
 })
 
-test('links to the custom collection and renders the signal marquee', async ({ page }) => {
+test('links to the marketing collection and renders the signal marquee', async ({ page }) => {
   await page.goto('/')
-  await page.getByRole('link', { name: 'Custom Made Components' }).click()
-  await expect(page.getByRole('heading', { name: 'Custom Made Components' }).first()).toBeVisible()
+  await page.getByRole('button', { name: 'Components' }).click()
+  await expect(page.getByRole('link', { name: /^Marketing / })).toHaveAttribute(
+    'href',
+    '/components/marketing/',
+  )
+  await page.goto('/components/marketing')
+  await expect(page.getByRole('heading', { name: 'Marketing', exact: true }).first()).toBeVisible()
 
-  await page.getByRole('link', { name: 'Signal Marquee' }).click()
+  await expect(page.getByRole('link', { name: 'Signal Marquee', exact: true })).toHaveAttribute(
+    'href',
+    '/components/marketing/marquee/',
+  )
+  await page.goto('/components/marketing/marquee')
   await expect(page.getByRole('heading', { name: 'Signal ribbon' })).toBeVisible()
-  await expect(page.locator('iframe[src="/examples/custom/marquee/1.html"]')).toBeVisible()
+  await expect(page.locator('iframe[src="/examples/marketing/marquee/1.html"]')).toBeVisible()
 })
 
 test('renders original custom button variants', async ({ page }) => {
-  await page.goto('/components/custom/buttons')
+  await page.goto('/components/application/buttons')
 
   await expect(page.getByRole('heading', { name: 'Buttons' }).first()).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Primary actions' })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Secondary actions' })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Icon actions' })).toBeVisible()
-  await expect(page.locator('iframe[src="/examples/custom/buttons/1.html"]')).toBeVisible()
+  await expect(page.locator('iframe[src="/examples/application/buttons/1.html"]')).toBeVisible()
 })
 
 test('renders the original transcript ribbon', async ({ page }) => {
-  await page.goto('/components/custom/transcript-ribbon')
+  await page.goto('/components/marketing/transcript-ribbon')
 
   await expect(page.getByRole('heading', { name: 'Transcript Ribbon' })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Conversation flow' })).toBeVisible()
-  await expect(page.locator('iframe[src="/examples/custom/transcript-ribbon/1.html"]')).toBeVisible()
+  await expect(
+    page.locator('iframe[src="/examples/marketing/transcript-ribbon/1.html"]'),
+  ).toBeVisible()
 })
 
 test('renders the original phone mockup', async ({ page }) => {
-  await page.goto('/components/custom/phone-mockup')
+  await page.goto('/components/marketing/phone-mockup')
 
   await expect(page.getByRole('heading', { name: 'Phone Mockup' })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Studio phone' })).toBeVisible()
-  await expect(page.locator('iframe[src="/examples/custom/phone-mockup/1.html"]')).toBeVisible()
+  await expect(page.locator('iframe[src="/examples/marketing/phone-mockup/1.html"]')).toBeVisible()
 })
 
 test('renders the original laptop mockup', async ({ page }) => {
-  await page.goto('/components/custom/laptop-mockup')
+  await page.goto('/components/marketing/laptop-mockup')
 
   await expect(page.getByRole('heading', { name: 'Laptop Mockup' })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Studio laptop' })).toBeVisible()
-  await expect(page.locator('iframe[src="/examples/custom/laptop-mockup/1.html"]')).toBeVisible()
+  await expect(page.locator('iframe[src="/examples/marketing/laptop-mockup/1.html"]')).toBeVisible()
 })
 
 test('links to Building Blocks and renders its Tailwind-first primitives', async ({ page }) => {
   await page.goto('/')
-  await page.getByRole('link', { name: 'Building Blocks' }).click()
+  await page.getByRole('button', { name: 'Components' }).click()
+  await page.getByRole('link', { name: /^Building Blocks / }).click()
   await expect(page.getByRole('heading', { name: 'Building Blocks' }).first()).toBeVisible()
 
-  await page.getByRole('link', { name: 'Dots' }).click()
+  await page.getByRole('link', { name: 'Dots', exact: true }).click()
   await expect(page.getByRole('heading', { name: 'Color dot' })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Status dot' })).toBeVisible()
   await expect(page.locator('iframe[src="/examples/building-blocks/dots/1.html"]')).toBeVisible()
@@ -149,7 +182,7 @@ test('renders the action building blocks', async ({ page }) => {
 
 test('renders the atom library building blocks', async ({ page }) => {
   await page.goto('/components/building-blocks/atoms')
-  await expect(page.getByRole('heading', { name: 'Signals' })).toBeVisible()
-  await expect(page.getByRole('heading', { name: 'Inputs' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'Signals', exact: true })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'Inputs', exact: true })).toBeVisible()
   await expect(page.locator('iframe[src="/examples/building-blocks/atoms/1.html"]')).toBeVisible()
 })

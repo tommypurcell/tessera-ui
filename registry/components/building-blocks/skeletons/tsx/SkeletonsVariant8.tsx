@@ -11,11 +11,11 @@ export function SkeletonsVariant8({ className, ...props }: SkeletonsVariant8Prop
       <div role="status" aria-busy="true" className="flex w-64 items-center gap-3">
             <span
               aria-hidden="true"
-              className="size-10 shrink-0 animate-pulse rounded-full bg-slate-200"
+              className="skeleton-shimmer size-10 shrink-0 rounded-full bg-slate-200"
             ></span>
             <span className="grid flex-1 gap-2" aria-hidden="true">
-              <span className="h-3 w-full animate-pulse rounded-full bg-slate-200"></span>
-              <span className="h-3 w-2/3 animate-pulse rounded-full bg-slate-200"></span>
+              <span className="skeleton-shimmer h-3 w-full rounded-full bg-slate-200"></span>
+              <span className="skeleton-shimmer h-3 w-2/3 rounded-full bg-slate-200"></span>
             </span>
             <span className="sr-only">Loading</span>
           </div>

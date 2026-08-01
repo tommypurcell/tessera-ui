@@ -7,6 +7,15 @@ import { componentRegistrySchema } from '../src/lib/registry-schema.js'
 const projectRoot = process.cwd()
 const registryRoot = path.join(projectRoot, 'registry', 'components')
 const outputRoot = path.join(projectRoot, 'public', 'registry')
+const selectedCategories = process.argv.slice(2)
+
+function getSelectedCategories() {
+  if (selectedCategories.length === 0) {
+    return null
+  }
+
+  return new Set(selectedCategories)
+}
 
 function findRegistryFiles(directoryPath) {
   return fs.readdirSync(directoryPath, { withFileTypes: true }).flatMap((entry) => {
@@ -206,8 +215,37 @@ function buildInstructionFiles(manifests) {
   fs.writeFileSync(path.join(projectRoot, 'public', 'agent-instructions.md'), `${fullInstructions}\n`)
 }
 
-fs.rmSync(outputRoot, { recursive: true, force: true })
-const manifests = findRegistryFiles(registryRoot).map((registryFilePath) => {
+const categoryFilter = getSelectedCategories()
+const registryFiles = findRegistryFiles(registryRoot).filter((registryFilePath) => {
+  if (!categoryFilter) {
+    return true
+  }
+
+  const relativeSegments = path.relative(registryRoot, registryFilePath).split(path.sep)
+  return categoryFilter.has(relativeSegments[0])
+})
+
+// Validate every input before replacing the last complete generated registry.
+for (const registryFilePath of registryFiles) {
+  const registryDirectory = path.dirname(registryFilePath)
+  const parsedRegistry = componentRegistrySchema.parse(
+    JSON.parse(fs.readFileSync(registryFilePath, 'utf8')),
+  )
+  for (const variant of parsedRegistry.variants) {
+    for (const sourcePath of Object.values(variant.source)) {
+      const absoluteSourcePath = path.resolve(registryDirectory, sourcePath)
+      if (!fs.existsSync(absoluteSourcePath)) {
+        throw new Error(`Missing source file for ${parsedRegistry.name}: ${sourcePath}`)
+      }
+    }
+  }
+}
+
+if (!categoryFilter) {
+  fs.rmSync(outputRoot, { recursive: true, force: true })
+}
+
+const manifests = registryFiles.map((registryFilePath) => {
   const registryDirectory = path.dirname(registryFilePath)
   const parsedRegistry = componentRegistrySchema.parse(JSON.parse(fs.readFileSync(registryFilePath, 'utf8')))
   const manifest = toManifest(parsedRegistry, registryDirectory)
@@ -217,5 +255,9 @@ const manifests = findRegistryFiles(registryRoot).map((registryFilePath) => {
 })
 
 writeJson(path.join(outputRoot, 'schema', 'component-v1.json'), componentSchema())
-buildInstructionFiles(manifests)
+
+if (!categoryFilter) {
+  buildInstructionFiles(manifests)
+}
+
 console.log(`Built ${manifests.length} agent registry manifests.`)

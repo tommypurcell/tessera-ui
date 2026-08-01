@@ -1,1 +1,165 @@
-{"schemaVersion":1,"name":"skeletons","title":"Skeletons","description":"Minimal Tailwind loading placeholders for text and circular content.","category":"building-blocks","frameworks":["html","react"],"styling":"tailwind","tags":["skeleton","loading","placeholder"],"useWhen":["Content will arrive shortly and reserving its space prevents layout shift."],"avoidWhen":["The wait is long enough to need meaningful progress or error feedback."],"dependencies":["No external runtime dependency."],"responsiveBehavior":"Placeholders flex only when the consumer supplies a width override.","accessibility":["Skeletons are hidden from assistive technology because they are not content.","Pair loading UI with an accessible loading announcement where needed."],"compatibleWith":["cards","lists","profiles"],"variants":[{"id":"text-line","title":"Text line","description":"A short rounded line for reserving the place of a sentence, label, or metadata value.","source":{"html":"../../../../public/examples/building-blocks/skeletons/1.html","tsx":"tsx/Skeletons.tsx"},"appearance":"light","states":["loading"],"accessibility":["Hide the placeholder itself from assistive technology."]},{"id":"circle-placeholder","title":"Circle placeholder","description":"A circular placeholder for an avatar, icon, or compact graphic while its content loads.","source":{"html":"../../../../public/examples/building-blocks/skeletons/2.html","tsx":"tsx/Skeletons.tsx"},"appearance":"light","states":["loading"],"accessibility":["Hide the placeholder itself from assistive technology."]}]}
+{
+  "schemaVersion": 1,
+  "name": "building-blocks-skeletons",
+  "title": "Skeletons",
+  "description": "Minimal Tailwind loading placeholders for text and circular content.",
+  "category": "building-blocks/skeletons",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "building-blocks",
+    "skeletons",
+    "skeleton",
+    "loading",
+    "placeholder",
+    "atom",
+    "tailwind"
+  ],
+  "useWhen": [
+    "Minimal Tailwind loading placeholders for text and circular content."
+  ],
+  "avoidWhen": [
+    "Avoid skeletons when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Skeletons uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "skeletons-1",
+      "title": "Text line",
+      "description": "Text line Minimal Tailwind loading placeholders for text and circular content.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/skeletons/1.html",
+        "tsx": "tsx/SkeletonsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "skeletons-2",
+      "title": "Circle placeholder",
+      "description": "Circle placeholder Minimal Tailwind loading placeholders for text and circular content.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/skeletons/2.html",
+        "tsx": "tsx/SkeletonsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "skeletons-3",
+      "title": "Block placeholder",
+      "description": "Block placeholder Minimal Tailwind loading placeholders for text and circular content.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/skeletons/3.html",
+        "tsx": "tsx/SkeletonsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "skeletons-4",
+      "title": "Media placeholder",
+      "description": "Media placeholder Minimal Tailwind loading placeholders for text and circular content.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/skeletons/4.html",
+        "tsx": "tsx/SkeletonsVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "skeletons-5",
+      "title": "Button placeholder",
+      "description": "Button placeholder Minimal Tailwind loading placeholders for text and circular content.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/skeletons/5.html",
+        "tsx": "tsx/SkeletonsVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "skeletons-6",
+      "title": "Input placeholder",
+      "description": "Input placeholder Minimal Tailwind loading placeholders for text and circular content.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/skeletons/6.html",
+        "tsx": "tsx/SkeletonsVariant6.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "skeletons-7",
+      "title": "Card placeholder",
+      "description": "Card placeholder Minimal Tailwind loading placeholders for text and circular content.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/skeletons/7.html",
+        "tsx": "tsx/SkeletonsVariant7.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "skeletons-8",
+      "title": "Loading state",
+      "description": "Loading state Minimal Tailwind loading placeholders for text and circular content.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/skeletons/8.html",
+        "tsx": "tsx/SkeletonsVariant8.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

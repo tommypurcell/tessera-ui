@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "name": "building-blocks-typography-primitives",
+  "title": "Typography Primitives",
+  "description": "Readable Tailwind text blocks for eyebrows, metric values, and helper paragraphs.",
+  "category": "building-blocks/typography-primitives",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "building-blocks",
+    "typography-primitives",
+    "typography",
+    "text",
+    "metric",
+    "helper",
+    "eyebrow",
+    "readability",
+    "atom",
+    "tailwind"
+  ],
+  "useWhen": [
+    "Readable Tailwind text blocks for eyebrows, metric values, and helper paragraphs."
+  ],
+  "avoidWhen": [
+    "Avoid typography primitives when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Typography Primitives uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "typography-primitives-1",
+      "title": "Eyebrow text",
+      "description": "Eyebrow text Readable Tailwind text blocks for eyebrows, metric values, and helper paragraphs.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/typography-primitives/1.html",
+        "tsx": "tsx/TypographyPrimitivesVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "typography-primitives-2",
+      "title": "Metric text",
+      "description": "Metric text Readable Tailwind text blocks for eyebrows, metric values, and helper paragraphs.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/typography-primitives/2.html",
+        "tsx": "tsx/TypographyPrimitivesVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "typography-primitives-3",
+      "title": "Helper paragraph",
+      "description": "Helper paragraph Readable Tailwind text blocks for eyebrows, metric values, and helper paragraphs.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/typography-primitives/3.html",
+        "tsx": "tsx/TypographyPrimitivesVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

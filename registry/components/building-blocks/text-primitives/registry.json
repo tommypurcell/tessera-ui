@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "name": "building-blocks-text-primitives",
+  "title": "Text Primitives",
+  "description": "Small Tailwind text atoms for labels, headings, helper copy, metrics, and concise value lines.",
+  "category": "building-blocks/text-primitives",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "building-blocks",
+    "text-primitives",
+    "text",
+    "heading",
+    "label",
+    "metric",
+    "helper",
+    "atom",
+    "tailwind"
+  ],
+  "useWhen": [
+    "Small Tailwind text atoms for labels, headings, helper copy, metrics, and concise value lines."
+  ],
+  "avoidWhen": [
+    "Avoid text primitives when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Text Primitives uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "text-primitives-1",
+      "title": "Eyebrow",
+      "description": "Eyebrow Small Tailwind text atoms for labels, headings, helper copy, metrics, and concise value lines.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/text-primitives/1.html",
+        "tsx": "tsx/TextPrimitivesVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "text-primitives-2",
+      "title": "Section title",
+      "description": "Section title Small Tailwind text atoms for labels, headings, helper copy, metrics, and concise value lines.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/text-primitives/2.html",
+        "tsx": "tsx/TextPrimitivesVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "text-primitives-3",
+      "title": "Helper text",
+      "description": "Helper text Small Tailwind text atoms for labels, headings, helper copy, metrics, and concise value lines.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/text-primitives/3.html",
+        "tsx": "tsx/TextPrimitivesVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "text-primitives-4",
+      "title": "Metric value",
+      "description": "Metric value Small Tailwind text atoms for labels, headings, helper copy, metrics, and concise value lines.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/text-primitives/4.html",
+        "tsx": "tsx/TextPrimitivesVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "text-primitives-5",
+      "title": "Value sentence",
+      "description": "Value sentence Small Tailwind text atoms for labels, headings, helper copy, metrics, and concise value lines.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/text-primitives/5.html",
+        "tsx": "tsx/TextPrimitivesVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

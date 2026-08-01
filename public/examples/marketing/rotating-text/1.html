@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+    <style>
+      .word-rotate { position: relative; display: inline-grid; }
+      .word-rotate span { grid-area: 1 / 1; align-self: center; opacity: 0; animation: word-cycle 6s ease-in-out infinite; }
+      .word-rotate span:nth-child(1) { animation-delay: 0s; }
+      .word-rotate span:nth-child(2) { animation-delay: 2s; }
+      .word-rotate span:nth-child(3) { animation-delay: 4s; }
+      @keyframes word-cycle {
+        0% { opacity: 0; transform: translateY(6px); }
+        6% { opacity: 1; transform: translateY(0); }
+        28% { opacity: 1; transform: translateY(0); }
+        33.333% { opacity: 0; transform: translateY(-6px); }
+        100% { opacity: 0; transform: translateY(-6px); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .word-rotate span { animation: none; opacity: 1; position: static; }
+        .word-rotate span:not(:first-child) { display: none; }
+      }
+    </style>
+  </head>
+  <body class="flex min-h-40 items-center justify-center p-6">
+    <p class="max-w-md text-center text-2xl font-semibold text-gray-950">
+      Built for
+      <span class="word-rotate align-middle">
+        <span class="rounded-md bg-teal-100 px-2 py-0.5 text-teal-800">designers</span>
+        <span class="rounded-md bg-orange-100 px-2 py-0.5 text-orange-800">developers</span>
+        <span class="rounded-md bg-blue-100 px-2 py-0.5 text-blue-800">managers</span>
+      </span>
+    </p>
+  </body>
+</html>

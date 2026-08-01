@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="/component.css" />
+    <style>
+      @keyframes marquee {
+        to {
+          transform: translateX(-50%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="overflow-hidden rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300"
+    >
+      <div class="whitespace-nowrap motion-safe:animate-[marquee_18s_linear_infinite]">
+        Clear signals · Calm motion · Better focus
+        <span aria-hidden="true"> · Clear signals · Calm motion · Better focus</span>
+      </div>
+    </div>
+  </body>
+</html>
+    </div>
+  </body>
+</html>

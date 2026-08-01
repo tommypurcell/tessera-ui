@@ -8,7 +8,7 @@ export type SkeletonsVariant2Props = HTMLAttributes<HTMLDivElement>
 export function SkeletonsVariant2({ className, ...props }: SkeletonsVariant2Props) {
   return (
     <div className={className} {...props}>
-      <div aria-hidden="true" className="size-10 animate-pulse rounded-full bg-slate-200"></div>
+      <div aria-hidden="true" className="skeleton-shimmer size-10 rounded-full bg-slate-200"></div>
     </div>
   )
 }

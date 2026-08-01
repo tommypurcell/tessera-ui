@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "name": "custom-laptop-mockup",
+  "title": "Laptop Mockup",
+  "description": "An original laptop frame for presenting desktop product screens with a dimensional display, keyboard deck, and replaceable screen content.",
+  "category": "marketing/laptop-mockup",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "custom",
+    "laptop-mockup",
+    "laptop",
+    "desktop",
+    "device",
+    "product preview"
+  ],
+  "useWhen": [
+    "An original laptop frame for presenting desktop product screens with a dimensional display, keyboard deck, and replaceable screen content."
+  ],
+  "avoidWhen": [
+    "Avoid laptop mockup when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Laptop Mockup uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "laptop-mockup-1",
+      "title": "Studio laptop",
+      "description": "Studio laptop An original laptop frame for presenting desktop product screens with a dimensional display, keyboard deck, and replaceable screen content.",
+      "source": {
+        "html": "../../../../public/examples/marketing/laptop-mockup/1.html",
+        "tsx": "tsx/LaptopMockupVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

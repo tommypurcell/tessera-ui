@@ -2,6 +2,11 @@
 dist/
 out/
 .next/
+.astro/
+
+# local review captures and package smoke-test archives
+/*.png
+/tessera-ui-*.tgz
 
 # generated types
 *.tsbuildinfo

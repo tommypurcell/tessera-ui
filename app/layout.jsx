@@ -2,12 +2,26 @@ import './globals.css'
 
 import { getSearchItems } from '../src/lib/content'
 import { SITE_DESCRIPTION, SITE_TITLE } from '../src/constants/seo'
+import { siteUrl } from '../src/lib/site'
 import SiteFooter from './ui/SiteFooter'
 import SiteHeader from './ui/SiteHeader'
 
 export const metadata = {
+  metadataBase: new URL(siteUrl),
   title: { default: SITE_TITLE, template: `%s | ${SITE_TITLE}` },
   description: SITE_DESCRIPTION,
+  icons: { icon: '/favicon.svg' },
+  openGraph: {
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: [{ url: '/og.jpg', width: 1200, height: 630, alt: 'Tessera UI' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: ['/og.jpg'],
+  },
 }
 
 export default function RootLayout({ children }) {

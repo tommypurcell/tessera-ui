@@ -2,169 +2,192 @@
   "schemaVersion": 1,
   "name": "application-badges",
   "title": "Badges",
-  "description": "Small inline labels for communicating status, counts, categories, and metadata in application interfaces.",
+  "description": "Responsive badge and tag components with base badges, icon badges, dismissible badges, and themed variations for notifications, statuses, and labels in web applications and dashboards.",
   "category": "application/badges",
-  "frameworks": ["html", "react"],
+  "frameworks": [
+    "html",
+    "react"
+  ],
   "styling": "tailwind",
-  "tags": ["badge", "tag", "label", "status", "pill", "notification"],
+  "tags": [
+    "application",
+    "badges",
+    "alert",
+    "status"
+  ],
   "useWhen": [
-    "Annotating items with a status, category, or count that does not require its own element.",
-    "Displaying notification counts or activity indicators on navigation items.",
-    "Labeling table rows or list items with a discrete state such as active, pending, or archived."
+    "Responsive badge and tag components with base badges, icon badges, dismissible badges, and themed variations for notifications, statuses, and labels in web applications and dashboards."
   ],
   "avoidWhen": [
-    "The label is the primary content rather than metadata attached to something else.",
-    "More than three or four badges appear in a cluster — use a tag input or filter bar instead.",
-    "The badge communicates an error or warning that requires user action — use an alert instead."
+    "Avoid badges when a simpler pattern communicates the same content or action."
   ],
   "dependencies": [],
-  "responsiveBehavior": "Badges are inline and scale with surrounding text. Ensure sufficient tap target size when badges are interactive on touch devices.",
+  "responsiveBehavior": "Badges uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
   "accessibility": [
-    "Do not rely on color alone to convey status — pair each color with a visible text label.",
-    "Icon-only badges must include a visually-hidden text label or aria-label for screen readers.",
-    "Dismiss buttons need an accessible label that names what is being removed."
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
   ],
-  "compatibleWith": ["application-tables", "application-stats", "application-filters"],
+  "compatibleWith": [],
   "variants": [
     {
       "id": "badges-1",
       "title": "Base",
-      "description": "Pill-shaped badges in solid and outlined styles for neutral category labels and counts.",
+      "description": "Simple pill-shaped badges with solid and outlined variants",
       "source": {
         "html": "../../../../public/examples/application/badges/1.html",
         "tsx": "tsx/BadgesVariant1.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Text label is always visible; color is supplementary."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "badges-1-dark",
       "title": "Base (Dark)",
-      "description": "Pill-shaped solid and outlined badges adapted for dark application surfaces.",
+      "description": "Simple pill-shaped badges with solid and outlined variants",
       "source": {
         "html": "../../../../public/examples/application/badges/1-dark.html",
         "tsx": "tsx/BadgesVariant1Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Dark foreground and border colors maintain WCAG AA contrast."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "badges-2",
       "title": "Base with icon",
-      "description": "Pill badges with a small leading icon for adding visual context to a category or status label.",
+      "description": "Badges with icons positioned on the left side",
       "source": {
         "html": "../../../../public/examples/application/badges/2.html",
         "tsx": "tsx/BadgesVariant2.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Icons are decorative when the text label already communicates the meaning."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "badges-2-dark",
       "title": "Base with icon (Dark)",
-      "description": "Icon-prefixed pill badges adapted for dark application surfaces.",
+      "description": "Badges with icons positioned on the left side",
       "source": {
         "html": "../../../../public/examples/application/badges/2-dark.html",
         "tsx": "tsx/BadgesVariant2Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Icons are decorative when the text label already communicates the meaning."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "badges-3",
       "title": "Base with dismiss",
-      "description": "Removable tag-style badges with a close button, suitable for applied filters and selected categories.",
+      "description": "Removable badges with close button for tags and filters",
       "source": {
         "html": "../../../../public/examples/application/badges/3.html",
         "tsx": "tsx/BadgesVariant3.tsx"
       },
       "appearance": "light",
-      "states": ["default", "hover"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Dismiss button must have an aria-label that identifies the tag being removed.",
-        "Focus returns to a logical position in the document after dismissal."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "badges-3-dark",
       "title": "Base with dismiss (Dark)",
-      "description": "Removable tag badges with a close button adapted for dark application surfaces.",
+      "description": "Removable badges with close button for tags and filters",
       "source": {
         "html": "../../../../public/examples/application/badges/3-dark.html",
         "tsx": "tsx/BadgesVariant3Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default", "hover"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Dismiss button must have an aria-label that identifies the tag being removed."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "badges-4",
       "title": "Icon only",
-      "description": "Compact circular badges showing only an icon, for space-constrained notification indicators.",
+      "description": "Compact icon-only badges without text labels",
       "source": {
         "html": "../../../../public/examples/application/badges/4.html",
         "tsx": "tsx/BadgesVariant4.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Requires aria-label or visually-hidden text to describe the badge to screen reader users."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "badges-4-dark",
       "title": "Icon only (Dark)",
-      "description": "Compact circular icon-only badges adapted for dark application surfaces.",
+      "description": "Compact icon-only badges without text labels",
       "source": {
         "html": "../../../../public/examples/application/badges/4-dark.html",
         "tsx": "tsx/BadgesVariant4Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Requires aria-label or visually-hidden text to describe the badge to screen reader users."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "badges-5",
       "title": "Themed with icon",
-      "description": "Semantic color badges — green for success, yellow for warning, red for error — each with a matching icon.",
+      "description": "Status badges with semantic colors for success, warning, and error states",
       "source": {
         "html": "../../../../public/examples/application/badges/5.html",
         "tsx": "tsx/BadgesVariant5.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Color conveys semantic meaning; always pair with a text label so colorblind users are not excluded."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "badges-5-dark",
       "title": "Themed with icon (Dark)",
-      "description": "Semantic success, warning, and error badges with matching icons adapted for dark surfaces.",
+      "description": "Status badges with semantic colors for success, warning, and error states",
       "source": {
         "html": "../../../../public/examples/application/badges/5-dark.html",
         "tsx": "tsx/BadgesVariant5Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Color conveys semantic meaning; always pair with a text label so colorblind users are not excluded."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     }
   ]

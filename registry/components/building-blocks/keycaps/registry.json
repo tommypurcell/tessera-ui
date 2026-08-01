@@ -1,1 +1,133 @@
-{"schemaVersion":1,"name":"keycaps","title":"Keycaps","description":"Compact Tailwind keyboard-key atoms for documenting shortcuts and command hints.","category":"building-blocks","frameworks":["html","react"],"styling":"tailwind","tags":["keycap","shortcut","keyboard"],"useWhen":["A keyboard action is useful context for an available command or shortcut."],"avoidWhen":["The key is not a real, supported interaction in the product."],"dependencies":["No external runtime dependency."],"responsiveBehavior":"Keycaps retain their compact intrinsic size and flow with their surrounding text.","accessibility":["Uses semantic kbd elements for individual keys.","Keep shortcut text understandable without relying on symbols alone."],"compatibleWith":["command-menus","tooltips","buttons"],"variants":[{"id":"keycap","title":"Keycap","description":"A single keyboard key with the slight depth and monospace treatment users recognize.","source":{"html":"../../../../public/examples/building-blocks/keycaps/1.html","tsx":"tsx/Keycaps.tsx"},"appearance":"light","states":["default"],"accessibility":["Uses a semantic keyboard-input element."]},{"id":"shortcut","title":"Shortcut","description":"A compact inline group for combining several keycaps into one documented keyboard command.","source":{"html":"../../../../public/examples/building-blocks/keycaps/2.html","tsx":"tsx/Keycaps.tsx"},"appearance":"light","states":["default"],"accessibility":["Use readable text or an aria-label for symbol-only shortcuts."]}]}
+{
+  "schemaVersion": 1,
+  "name": "building-blocks-keycaps",
+  "title": "Keycaps",
+  "description": "Compact Tailwind keyboard-key atoms for documenting shortcuts and command hints.",
+  "category": "building-blocks/keycaps",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "building-blocks",
+    "keycaps",
+    "keycap",
+    "shortcut",
+    "keyboard",
+    "atom",
+    "tailwind"
+  ],
+  "useWhen": [
+    "Compact Tailwind keyboard-key atoms for documenting shortcuts and command hints."
+  ],
+  "avoidWhen": [
+    "Avoid keycaps when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Keycaps uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "keycaps-1",
+      "title": "Keycap",
+      "description": "Keycap Compact Tailwind keyboard-key atoms for documenting shortcuts and command hints.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/keycaps/1.html",
+        "tsx": "tsx/KeycapsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "keycaps-2",
+      "title": "Shortcut",
+      "description": "Shortcut Compact Tailwind keyboard-key atoms for documenting shortcuts and command hints.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/keycaps/2.html",
+        "tsx": "tsx/KeycapsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "keycaps-3",
+      "title": "Command key",
+      "description": "Command key Compact Tailwind keyboard-key atoms for documenting shortcuts and command hints.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/keycaps/3.html",
+        "tsx": "tsx/KeycapsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "keycaps-4",
+      "title": "Enter key",
+      "description": "Enter key Compact Tailwind keyboard-key atoms for documenting shortcuts and command hints.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/keycaps/4.html",
+        "tsx": "tsx/KeycapsVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "keycaps-5",
+      "title": "Escape key",
+      "description": "Escape key Compact Tailwind keyboard-key atoms for documenting shortcuts and command hints.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/keycaps/5.html",
+        "tsx": "tsx/KeycapsVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "keycaps-6",
+      "title": "Arrow keys",
+      "description": "Arrow keys Compact Tailwind keyboard-key atoms for documenting shortcuts and command hints.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/keycaps/6.html",
+        "tsx": "tsx/KeycapsVariant6.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

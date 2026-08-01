@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "name": "marketing-hover-galleries",
+  "title": "Hover Galleries",
+  "description": "Original image galleries that cycle through several photos on hover, in three distinct transition styles.",
+  "category": "marketing/hover-galleries",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "marketing",
+    "hover-galleries",
+    "gallery",
+    "hover",
+    "product photo",
+    "carousel",
+    "image swap"
+  ],
+  "useWhen": [
+    "Original image galleries that cycle through several photos on hover, in three distinct transition styles."
+  ],
+  "avoidWhen": [
+    "Avoid hover galleries when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Hover Galleries uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Provide meaningful alternative text for informative images and empty alt text for decorative images.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "hover-galleries-1",
+      "title": "Crossfade cycle",
+      "description": "Images fade into one another in sequence while hovered",
+      "source": {
+        "html": "../../../../public/examples/marketing/hover-galleries/1.html",
+        "tsx": "tsx/HoverGalleriesVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "hover-galleries-1-dark",
+      "title": "Crossfade cycle (Dark)",
+      "description": "Images fade into one another in sequence while hovered",
+      "source": {
+        "html": "../../../../public/examples/marketing/hover-galleries/1-dark.html",
+        "tsx": "tsx/HoverGalleriesVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "hover-galleries-2",
+      "title": "Slide cycle",
+      "description": "Images slide past one another horizontally in a filmstrip track",
+      "source": {
+        "html": "../../../../public/examples/marketing/hover-galleries/2.html",
+        "tsx": "tsx/HoverGalleriesVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "hover-galleries-2-dark",
+      "title": "Slide cycle (Dark)",
+      "description": "Images slide past one another horizontally in a filmstrip track",
+      "source": {
+        "html": "../../../../public/examples/marketing/hover-galleries/2-dark.html",
+        "tsx": "tsx/HoverGalleriesVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "hover-galleries-3",
+      "title": "Zoom-reveal cycle",
+      "description": "Images fade and scale in together for a more premium reveal",
+      "source": {
+        "html": "../../../../public/examples/marketing/hover-galleries/3.html",
+        "tsx": "tsx/HoverGalleriesVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "hover-galleries-3-dark",
+      "title": "Zoom-reveal cycle (Dark)",
+      "description": "Images fade and scale in together for a more premium reveal",
+      "source": {
+        "html": "../../../../public/examples/marketing/hover-galleries/3-dark.html",
+        "tsx": "tsx/HoverGalleriesVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    }
+  ]
+}

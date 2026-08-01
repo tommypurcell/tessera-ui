@@ -2,84 +2,96 @@
   "schemaVersion": 1,
   "name": "application-file-uploaders",
   "title": "File Uploaders",
-  "description": "File input components supporting drag-and-drop zones and button-triggered file pickers for uploading documents, images, and data files.",
-  "category": "application/forms",
-  "frameworks": ["html", "react"],
+  "description": "File uploader components with drag-and-drop, previews, and progress indicators for web applications.",
+  "category": "application/file-uploaders",
+  "frameworks": [
+    "html",
+    "react"
+  ],
   "styling": "tailwind",
-  "tags": ["file-upload", "drag-and-drop", "form", "input", "attachment"],
+  "tags": [
+    "application",
+    "file-uploaders",
+    "form",
+    "input"
+  ],
   "useWhen": [
-    "Users need to attach one or more files to a form submission, record, or workspace.",
-    "Building image upload flows for profile photos, document imports, or media libraries.",
-    "Offering a drag-and-drop surface as a primary or secondary upload path alongside a button."
+    "File uploader components with drag-and-drop, previews, and progress indicators for web applications."
   ],
   "avoidWhen": [
-    "The file is generated or selected from an existing resource — use a file picker or select instead.",
-    "Upload size limits are very small — communicate constraints clearly and validate client-side before showing the uploader.",
-    "The platform is mobile-only and drag-and-drop is impractical — default to a button-only variant."
+    "Avoid file uploaders when a simpler pattern communicates the same content or action."
   ],
   "dependencies": [],
-  "responsiveBehavior": "Drop zones remain full-width and accessible at all viewport sizes. On touch devices, the drag affordance is supplementary and the button trigger is the primary path.",
+  "responsiveBehavior": "File Uploaders uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
   "accessibility": [
-    "Drop zone must include a visible button that opens the native file picker for keyboard and touch users.",
-    "Announce file selection status and upload progress via an aria-live region.",
-    "Error messages for rejected file types or size limits must be associated with the input programmatically."
+    "Associate each form field with a visible or programmatic label before production use.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
   ],
-  "compatibleWith": ["application-empty-states", "application-modals", "application-progress-bars"],
+  "compatibleWith": [],
   "variants": [
     {
       "id": "file-uploaders-1",
       "title": "Base",
-      "description": "Drag-and-drop upload zone with a dashed border, icon, and helper text indicating accepted file types.",
+      "description": "Base File uploader components with drag-and-drop, previews, and progress indicators for web applications.",
       "source": {
         "html": "../../../../public/examples/application/file-uploaders/1.html",
         "tsx": "tsx/FileUploadersVariant1.tsx"
       },
       "appearance": "light",
-      "states": ["default", "drag-over"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Drop zone includes a keyboard-accessible button fallback to open the native file picker."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "file-uploaders-1-dark",
       "title": "Base (Dark)",
-      "description": "Drag-and-drop upload zone adapted for dark application surfaces.",
+      "description": "Base File uploader components with drag-and-drop, previews, and progress indicators for web applications.",
       "source": {
         "html": "../../../../public/examples/application/file-uploaders/1-dark.html",
         "tsx": "tsx/FileUploadersVariant1Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default", "drag-over"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Dark border and text colors must remain visible in both default and drag-over states."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "file-uploaders-2",
       "title": "Base with button",
-      "description": "Upload area combining a drag-and-drop zone with a prominent browse button for users who prefer a direct file picker.",
+      "description": "Base with button File uploader components with drag-and-drop, previews, and progress indicators for web applications.",
       "source": {
         "html": "../../../../public/examples/application/file-uploaders/2.html",
         "tsx": "tsx/FileUploadersVariant2.tsx"
       },
       "appearance": "light",
-      "states": ["default", "drag-over"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Button provides a fully keyboard-accessible path to upload; the drag zone is a progressive enhancement."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     },
     {
       "id": "file-uploaders-2-dark",
       "title": "Base with button (Dark)",
-      "description": "Combined drag-and-drop zone with browse button adapted for dark application surfaces.",
+      "description": "Base with button File uploader components with drag-and-drop, previews, and progress indicators for web applications.",
       "source": {
         "html": "../../../../public/examples/application/file-uploaders/2-dark.html",
         "tsx": "tsx/FileUploadersVariant2Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default", "drag-over"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Button and zone colors must meet WCAG AA contrast requirements on dark backgrounds."
+        "Associate each form field with a visible or programmatic label before production use."
       ]
     }
   ]

@@ -1,112 +1,149 @@
 {
   "schemaVersion": 1,
-  "name": "action-atoms",
+  "name": "building-blocks-actions",
   "title": "Actions",
-  "description": "Small Tailwind-first action atoms for buttons, toggles, grouping, and reorder affordances.",
-  "category": "building-blocks",
-  "frameworks": ["html", "react"],
+  "description": "Tiny Tailwind-first action atoms that can be composed into buttons, controls, and toolbars.",
+  "category": "building-blocks/actions",
+  "frameworks": [
+    "html",
+    "react"
+  ],
   "styling": "tailwind",
-  "tags": ["button", "action", "tailwind"],
+  "tags": [
+    "building-blocks",
+    "actions",
+    "button",
+    "action",
+    "toggle",
+    "drag handle",
+    "atom",
+    "tailwind"
+  ],
   "useWhen": [
-    "You need a small semantic action that will become part of a larger control or toolbar."
+    "Tiny Tailwind-first action atoms that can be composed into buttons, controls, and toolbars."
   ],
-  "avoidWhen": ["The interaction requires a complete menu, dialog, or multi-step state machine."],
-  "dependencies": ["No external runtime dependency."],
-  "responsiveBehavior": "Action atoms preserve touch-friendly hit areas and wrap only when composed by a parent.",
+  "avoidWhen": [
+    "Avoid actions when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Actions uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
   "accessibility": [
-    "Uses native button and anchor semantics.",
-    "Provides visible focus styles and accessible labels for icon-only actions."
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
   ],
-  "compatibleWith": ["toolbars", "menus", "forms"],
+  "compatibleWith": [],
   "variants": [
     {
-      "id": "button",
+      "id": "actions-1",
       "title": "Button",
-      "description": "A compact primary button with native semantics, focus treatment, and disabled styling.",
+      "description": "Button Tiny Tailwind-first action atoms that can be composed into buttons, controls, and toolbars.",
       "source": {
         "html": "../../../../public/examples/building-blocks/actions/1.html",
-        "tsx": "tsx/Actions.tsx"
+        "tsx": "tsx/ActionsVariant1.tsx"
       },
       "appearance": "light",
-      "states": ["default", "disabled"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Use a visible action label.",
-        "Keep disabled actions out of keyboard interaction."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
-      "id": "icon-button",
+      "id": "actions-2",
       "title": "Icon Button",
-      "description": "A square icon action with a minimum hit area and a required accessible name.",
+      "description": "Icon Button Tiny Tailwind-first action atoms that can be composed into buttons, controls, and toolbars.",
       "source": {
         "html": "../../../../public/examples/building-blocks/actions/2.html",
-        "tsx": "tsx/Actions.tsx"
+        "tsx": "tsx/ActionsVariant2.tsx"
       },
       "appearance": "light",
-      "states": ["default", "hover"],
-      "accessibility": ["Provide an aria-label.", "Keep the focus ring visible."]
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
     },
     {
-      "id": "link-button",
+      "id": "actions-3",
       "title": "Link Button",
-      "description": "A link styled as a lightweight action for navigation rather than mutation.",
+      "description": "Link Button Tiny Tailwind-first action atoms that can be composed into buttons, controls, and toolbars.",
       "source": {
         "html": "../../../../public/examples/building-blocks/actions/3.html",
-        "tsx": "tsx/Actions.tsx"
+        "tsx": "tsx/ActionsVariant3.tsx"
       },
       "appearance": "light",
-      "states": ["default", "hover"],
-      "accessibility": ["Use an anchor when the action changes location."]
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
     },
     {
-      "id": "close-button",
+      "id": "actions-4",
       "title": "Close Button",
-      "description": "A quiet icon-only close action with an explicit accessible name.",
+      "description": "Close Button Tiny Tailwind-first action atoms that can be composed into buttons, controls, and toolbars.",
       "source": {
         "html": "../../../../public/examples/building-blocks/actions/4.html",
-        "tsx": "tsx/Actions.tsx"
+        "tsx": "tsx/ActionsVariant4.tsx"
       },
       "appearance": "light",
-      "states": ["default", "hover"],
-      "accessibility": ["Expose the action as Close to assistive technology."]
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
     },
     {
-      "id": "toggle-button",
+      "id": "actions-5",
       "title": "Toggle Button",
-      "description": "A two-state button that exposes its pressed state to assistive technology.",
+      "description": "Toggle Button Tiny Tailwind-first action atoms that can be composed into buttons, controls, and toolbars.",
       "source": {
         "html": "../../../../public/examples/building-blocks/actions/5.html",
-        "tsx": "tsx/Actions.tsx"
+        "tsx": "tsx/ActionsVariant5.tsx"
       },
       "appearance": "light",
-      "states": ["pressed", "unpressed"],
-      "accessibility": ["Use aria-pressed for the state."]
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
     },
     {
-      "id": "button-group",
+      "id": "actions-6",
       "title": "Button Group",
-      "description": "A semantic group that keeps adjacent actions visually connected.",
+      "description": "Button Group Tiny Tailwind-first action atoms that can be composed into buttons, controls, and toolbars.",
       "source": {
         "html": "../../../../public/examples/building-blocks/actions/6.html",
-        "tsx": "tsx/Actions.tsx"
+        "tsx": "tsx/ActionsVariant6.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
-      "accessibility": ["Use the group role only for a meaningful related set."]
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
     },
     {
-      "id": "drag-handle",
+      "id": "actions-7",
       "title": "Drag Handle",
-      "description": "A focused reorder affordance with a grab cursor and a clear accessible label.",
+      "description": "Drag Handle Tiny Tailwind-first action atoms that can be composed into buttons, controls, and toolbars.",
       "source": {
         "html": "../../../../public/examples/building-blocks/actions/7.html",
-        "tsx": "tsx/Actions.tsx"
+        "tsx": "tsx/ActionsVariant7.tsx"
       },
       "appearance": "light",
-      "states": ["idle", "dragging"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Provide a label explaining the reorder action.",
-        "Pair with keyboard reorder controls in a complete component."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     }
   ]

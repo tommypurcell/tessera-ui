@@ -2,140 +2,159 @@
   "schemaVersion": 1,
   "name": "application-details-list",
   "title": "Details Lists",
-  "description": "Structured key–value pair displays for presenting record details, account information, and configuration summaries.",
-  "category": "application/data-display",
-  "frameworks": ["html", "react"],
+  "description": "Responsive details list components for displaying structured data with striped rows, borders, and dark mode support for web applications and dashboards.",
+  "category": "application/details-list",
+  "frameworks": [
+    "html",
+    "react"
+  ],
   "styling": "tailwind",
-  "tags": ["details-list", "key-value", "record", "data", "summary", "description-list"],
+  "tags": [
+    "application",
+    "details-list",
+    "data"
+  ],
   "useWhen": [
-    "Displaying the properties of a single record such as a user profile, order detail, or settings summary.",
-    "Showing metadata alongside a main content area — dates, authors, statuses, and identifiers.",
-    "Rendering structured form output or confirmation screens after submission."
+    "Responsive details list components for displaying structured data with striped rows, borders, and dark mode support for web applications and dashboards."
   ],
   "avoidWhen": [
-    "Displaying many records at once — use a table instead.",
-    "All values are numeric and benefit from column alignment — a table with numeric columns is clearer.",
-    "The data changes frequently and benefits from real-time updates — consider a stat or live feed component."
+    "Avoid details lists when a simpler pattern communicates the same content or action."
   ],
   "dependencies": [],
-  "responsiveBehavior": "Label and value columns stack vertically on small viewports and sit side-by-side on medium and wider screens.",
+  "responsiveBehavior": "Details Lists uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
   "accessibility": [
-    "Use <dl>, <dt>, and <dd> elements for semantic key–value structure that screen readers announce correctly.",
-    "Ensure sufficient color contrast between label text, value text, and background in both light and dark themes.",
-    "Do not rely on row background color alone to communicate grouping — use dividers or borders as well."
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
   ],
-  "compatibleWith": ["application-tables", "application-stats", "application-badges"],
+  "compatibleWith": [],
   "variants": [
     {
       "id": "details-list-1",
       "title": "Base",
-      "description": "Plain key–value list with subtle row separators for clean record detail displays.",
+      "description": "Base Responsive details list components for displaying structured data with striped rows, borders, and dark mode support for web applications and dashboards.",
       "source": {
         "html": "../../../../public/examples/application/details-list/1.html",
         "tsx": "tsx/DetailsListVariant1.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Use <dl>/<dt>/<dd> markup for correct screen-reader announcement of key–value pairs."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "details-list-1-dark",
       "title": "Base (Dark)",
-      "description": "Plain key–value list adapted for dark application surfaces.",
+      "description": "Base Responsive details list components for displaying structured data with striped rows, borders, and dark mode support for web applications and dashboards.",
       "source": {
         "html": "../../../../public/examples/application/details-list/1-dark.html",
         "tsx": "tsx/DetailsListVariant1Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Label and value text colors must maintain WCAG AA contrast on dark backgrounds."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "details-list-2",
       "title": "Striped",
-      "description": "Key–value list with alternating row backgrounds to aid scannability in longer detail panels.",
+      "description": "Striped Responsive details list components for displaying structured data with striped rows, borders, and dark mode support for web applications and dashboards.",
       "source": {
         "html": "../../../../public/examples/application/details-list/2.html",
         "tsx": "tsx/DetailsListVariant2.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Row stripe color is supplementary — do not use it as the only way to group related rows."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "details-list-2-dark",
       "title": "Striped (Dark)",
-      "description": "Alternating-row key–value list adapted for dark application surfaces.",
+      "description": "Striped Responsive details list components for displaying structured data with striped rows, borders, and dark mode support for web applications and dashboards.",
       "source": {
         "html": "../../../../public/examples/application/details-list/2-dark.html",
         "tsx": "tsx/DetailsListVariant2Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Dark stripe backgrounds must contrast sufficiently with both label and value text."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "details-list-3",
       "title": "Bordered",
-      "description": "Key–value list enclosed in a visible outer border and with inner row borders for a structured card-like appearance.",
+      "description": "Bordered Responsive details list components for displaying structured data with striped rows, borders, and dark mode support for web applications and dashboards.",
       "source": {
         "html": "../../../../public/examples/application/details-list/3.html",
         "tsx": "tsx/DetailsListVariant3.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Borders are decorative; semantic structure still relies on <dl>/<dt>/<dd> elements."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "details-list-3-dark",
       "title": "Bordered (Dark)",
-      "description": "Bordered key–value card adapted for dark application surfaces.",
+      "description": "Bordered Responsive details list components for displaying structured data with striped rows, borders, and dark mode support for web applications and dashboards.",
       "source": {
         "html": "../../../../public/examples/application/details-list/3-dark.html",
         "tsx": "tsx/DetailsListVariant3Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Dark border colors must provide clear visual separation without dominating the content."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "details-list-4",
       "title": "Striped and bordered",
-      "description": "Key–value list combining alternating row stripes with an outer border for maximum structural clarity.",
+      "description": "Striped and bordered Responsive details list components for displaying structured data with striped rows, borders, and dark mode support for web applications and dashboards.",
       "source": {
         "html": "../../../../public/examples/application/details-list/4.html",
         "tsx": "tsx/DetailsListVariant4.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Stripes and borders are supplementary visual aids; semantic structure is provided by <dl>/<dt>/<dd>."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "details-list-4-dark",
       "title": "Striped and bordered (Dark)",
-      "description": "Striped-and-bordered key–value list adapted for dark application surfaces.",
+      "description": "Striped and bordered Responsive details list components for displaying structured data with striped rows, borders, and dark mode support for web applications and dashboards.",
       "source": {
         "html": "../../../../public/examples/application/details-list/4-dark.html",
         "tsx": "tsx/DetailsListVariant4Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Both stripe and border colors must remain readable against dark surface backgrounds."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     }
   ]

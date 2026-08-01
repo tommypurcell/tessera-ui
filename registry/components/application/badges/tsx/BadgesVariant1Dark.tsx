@@ -8,13 +8,17 @@ export type BadgesVariant1DarkProps = HTMLAttributes<HTMLDivElement>
 export function BadgesVariant1Dark({ className, ...props }: BadgesVariant1DarkProps) {
   return (
     <div className={className} {...props}>
-      <span className="rounded-full bg-purple-100 px-2.5 py-0.5 text-sm whitespace-nowrap text-purple-700 dark:bg-purple-700 dark:text-purple-100">
-        Live
-      </span>
-
-      <span className="rounded-full border border-purple-500 px-2.5 py-0.5 text-sm whitespace-nowrap text-purple-700 dark:text-purple-100">
-        Live
-      </span>
+      <span
+            className="rounded-full bg-purple-100 px-2.5 py-0.5 text-sm whitespace-nowrap text-purple-700 dark:bg-purple-700 dark:text-purple-100"
+          >
+            Live
+          </span>
+      
+          <span
+            className="rounded-full border border-purple-500 px-2.5 py-0.5 text-sm whitespace-nowrap text-purple-700 dark:text-purple-100"
+          >
+            Live
+          </span>
     </div>
   )
 }

@@ -4,10 +4,32 @@
   "description": "Searchable Tailwind CSS component registry with structured metadata for humans and coding agents.",
   "type": "module",
   "license": "MIT",
+  "author": "Tommy Purcell",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tommypurcell/tessera-ui.git"
+  },
+  "homepage": "https://github.com/tommypurcell/tessera-ui#readme",
+  "bugs": {
+    "url": "https://github.com/tommypurcell/tessera-ui/issues"
+  },
+  "keywords": [
+    "tailwindcss",
+    "react",
+    "components",
+    "component-registry",
+    "copy-and-own",
+    "cli"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "packageManager": "pnpm@10.15.1",
   "engines": {
     "node": ">=18"
   },
   "files": [
+    "NOTICE",
     "bin/",
     "public/registry/"
   ],
@@ -16,11 +38,12 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "pnpm registry:build && pnpm registry:validate && next build",
+    "build": "pnpm registry:validate && pnpm registry:build && next build",
     "start": "next start",
     "check": "eslint .",
     "test": "playwright test --project=chromium",
     "test:all": "playwright test",
+    "test:cli": "node --test tests/cli.test.js",
     "lint": "eslint .",
     "format": "prettier --write . --ignore-path .prettierignore",
     "css:blog": "npx @tailwindcss/cli -i ./src/styles/blog.css -o ./public/blog.css -m",
@@ -29,13 +52,13 @@
     "registry:generate": "node scripts/generate-registry.mjs",
     "registry:validate": "node scripts/validate-registry.mjs",
     "registry:build": "node scripts/build-agent-registry.mjs",
+    "package:verify": "node scripts/verify-package.mjs",
+    "prepack": "node scripts/validate-registry.mjs && node scripts/build-agent-registry.mjs && node scripts/verify-package.mjs",
+    "release:check": "pnpm check && pnpm registry:validate && pnpm registry:build && pnpm package:verify && next build && pnpm test:cli && pnpm test",
     "tessera-ui": "node bin/tessera-ui.js"
   },
-  "dependencies": {
-    "@gsap/react": "^2.1.2",
-    "gsap": "^3.15.0"
-  },
   "devDependencies": {
+    "@gsap/react": "^2.1.2",
     "@eslint/js": "^10.0.1",
     "@playwright/test": "^1.61.1",
     "@tailwindcss/cli": "^4.3.3",
@@ -47,6 +70,7 @@
     "@types/react-dom": "^19.2.0",
     "eslint": "^10.7.0",
     "globals": "^17.7.0",
+    "gsap": "^3.15.0",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.468.0",
     "next": "^16.1.0",

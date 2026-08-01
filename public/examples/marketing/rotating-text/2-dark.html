@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+    <style>
+      .fade-rotate { position: relative; display: inline-grid; }
+      .fade-rotate span { grid-area: 1 / 1; align-self: center; opacity: 0; animation: fade-cycle 6s ease-in-out infinite; }
+      .fade-rotate span:nth-child(1) { animation-delay: 0s; }
+      .fade-rotate span:nth-child(2) { animation-delay: 2s; }
+      .fade-rotate span:nth-child(3) { animation-delay: 4s; }
+      @keyframes fade-cycle {
+        0% { opacity: 0; }
+        6% { opacity: 1; }
+        28% { opacity: 1; }
+        33.333% { opacity: 0; }
+        100% { opacity: 0; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .fade-rotate span { animation: none; opacity: 1; position: static; }
+        .fade-rotate span:not(:first-child) { display: none; }
+      }
+    </style>
+  </head>
+  <body class="flex min-h-40 items-center justify-center bg-gray-950 p-6">
+    <p class="max-w-md text-center text-2xl font-semibold text-gray-100">
+      Ship faster with
+      <span class="fade-rotate align-middle text-blue-400">
+        <span>automation</span>
+        <span>confidence</span>
+        <span>clarity</span>
+      </span>
+    </p>
+  </body>
+</html>

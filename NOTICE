@@ -1,0 +1,20 @@
+Tessera UI
+Copyright (c) 2026 Tommy Purcell
+
+Tessera UI is a derivative work built from HyperUI as its starting point.
+
+HyperUI
+Copyright (c) Mark Mead
+https://github.com/markmead/hyperui
+
+The HyperUI source used by this project is licensed under the MIT License. The
+original copyright notice and permission text are preserved in the repository's
+LICENSE file.
+
+Tessera UI adds and modifies substantial functionality, including a Next.js
+catalog application, structured component metadata, React and TypeScript source
+variants, agent-facing registry artifacts, validation and packaging tools, and
+a copy-and-own command-line installer.
+
+Third-party package dependencies and externally hosted example images remain
+subject to their respective licenses and terms.

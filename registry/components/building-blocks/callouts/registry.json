@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "name": "building-blocks-callouts",
+  "title": "Callouts",
+  "description": "Icon-led tinted callout boxes for notes, tips, and warnings inside documentation and long-form content.",
+  "category": "building-blocks/callouts",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "building-blocks",
+    "callouts",
+    "callout",
+    "note",
+    "tip",
+    "warning",
+    "alert",
+    "admonition",
+    "docs",
+    "atom",
+    "tailwind"
+  ],
+  "useWhen": [
+    "Icon-led tinted callout boxes for notes, tips, and warnings inside documentation and long-form content."
+  ],
+  "avoidWhen": [
+    "Avoid callouts when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Callouts uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "callouts-1",
+      "title": "Note callout",
+      "description": "Note callout Icon-led tinted callout boxes for notes, tips, and warnings inside documentation and long-form content.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/callouts/1.html",
+        "tsx": "tsx/CalloutsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "callouts-2",
+      "title": "Tip callout",
+      "description": "Tip callout Icon-led tinted callout boxes for notes, tips, and warnings inside documentation and long-form content.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/callouts/2.html",
+        "tsx": "tsx/CalloutsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "callouts-3",
+      "title": "Warning callout",
+      "description": "Warning callout Icon-led tinted callout boxes for notes, tips, and warnings inside documentation and long-form content.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/callouts/3.html",
+        "tsx": "tsx/CalloutsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

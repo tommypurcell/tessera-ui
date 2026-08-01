@@ -4,6 +4,15 @@ import path from 'node:path'
 import { componentRegistrySchema } from '../src/lib/registry-schema.js'
 
 const registryRoot = path.join(process.cwd(), 'registry', 'components')
+const selectedCategories = process.argv.slice(2)
+
+function getSelectedCategories() {
+  if (selectedCategories.length === 0) {
+    return null
+  }
+
+  return new Set(selectedCategories)
+}
 
 function findRegistryFiles(directoryPath) {
   return fs.readdirSync(directoryPath, { withFileTypes: true }).flatMap((directoryEntry) => {
@@ -40,6 +49,14 @@ function validateRegistryFile(registryFilePath) {
   }
 }
 
-const registryFiles = findRegistryFiles(registryRoot)
+const categoryFilter = getSelectedCategories()
+const registryFiles = findRegistryFiles(registryRoot).filter((registryFilePath) => {
+  if (!categoryFilter) {
+    return true
+  }
+
+  const relativeSegments = path.relative(registryRoot, registryFilePath).split(path.sep)
+  return categoryFilter.has(relativeSegments[0])
+})
 registryFiles.forEach(validateRegistryFile)
 console.log(`Validated ${registryFiles.length} registry entries.`)

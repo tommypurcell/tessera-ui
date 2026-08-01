@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "name": "building-blocks-navigation-atoms",
+  "title": "Navigation Atoms",
+  "description": "Compact Tailwind navigation primitives for breadcrumb links, tab triggers, pager dots, menu rows, and side-nav entries.",
+  "category": "building-blocks/navigation-atoms",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "building-blocks",
+    "navigation-atoms",
+    "navigation",
+    "tab",
+    "breadcrumb",
+    "menu",
+    "sidebar",
+    "pager",
+    "atom",
+    "tailwind"
+  ],
+  "useWhen": [
+    "Compact Tailwind navigation primitives for breadcrumb links, tab triggers, pager dots, menu rows, and side-nav entries."
+  ],
+  "avoidWhen": [
+    "Avoid navigation atoms when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Navigation Atoms uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "navigation-atoms-1",
+      "title": "Breadcrumb link",
+      "description": "Breadcrumb link Compact Tailwind navigation primitives for breadcrumb links, tab triggers, pager dots, menu rows, and side-nav entries.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/navigation-atoms/1.html",
+        "tsx": "tsx/NavigationAtomsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "navigation-atoms-2",
+      "title": "Tab trigger",
+      "description": "Tab trigger Compact Tailwind navigation primitives for breadcrumb links, tab triggers, pager dots, menu rows, and side-nav entries.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/navigation-atoms/2.html",
+        "tsx": "tsx/NavigationAtomsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "navigation-atoms-3",
+      "title": "Pager dot",
+      "description": "Pager dot Compact Tailwind navigation primitives for breadcrumb links, tab triggers, pager dots, menu rows, and side-nav entries.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/navigation-atoms/3.html",
+        "tsx": "tsx/NavigationAtomsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "navigation-atoms-4",
+      "title": "Menu row",
+      "description": "Menu row Compact Tailwind navigation primitives for breadcrumb links, tab triggers, pager dots, menu rows, and side-nav entries.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/navigation-atoms/4.html",
+        "tsx": "tsx/NavigationAtomsVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "navigation-atoms-5",
+      "title": "Side-nav row",
+      "description": "Side-nav row Compact Tailwind navigation primitives for breadcrumb links, tab triggers, pager dots, menu rows, and side-nav entries.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/navigation-atoms/5.html",
+        "tsx": "tsx/NavigationAtomsVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "name": "marketing-rotating-text",
+  "title": "Rotating Text",
+  "description": "Original animated headline text that cycles through a list of words in place, in three distinct motion styles.",
+  "category": "marketing/rotating-text",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "marketing",
+    "rotating-text",
+    "rotate",
+    "cycle",
+    "animated text",
+    "headline",
+    "typewriter"
+  ],
+  "useWhen": [
+    "Original animated headline text that cycles through a list of words in place, in three distinct motion styles."
+  ],
+  "avoidWhen": [
+    "Avoid rotating text when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Rotating Text uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "rotating-text-1",
+      "title": "Color-block cycle",
+      "description": "Each rotating word gets its own colored pill background",
+      "source": {
+        "html": "../../../../public/examples/marketing/rotating-text/1.html",
+        "tsx": "tsx/RotatingTextVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "rotating-text-1-dark",
+      "title": "Color-block cycle (Dark)",
+      "description": "Each rotating word gets its own colored pill background",
+      "source": {
+        "html": "../../../../public/examples/marketing/rotating-text/1-dark.html",
+        "tsx": "tsx/RotatingTextVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "rotating-text-2",
+      "title": "Fade cycle",
+      "description": "A plain crossfade between rotating words with no background treatment",
+      "source": {
+        "html": "../../../../public/examples/marketing/rotating-text/2.html",
+        "tsx": "tsx/RotatingTextVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "rotating-text-2-dark",
+      "title": "Fade cycle (Dark)",
+      "description": "A plain crossfade between rotating words with no background treatment",
+      "source": {
+        "html": "../../../../public/examples/marketing/rotating-text/2-dark.html",
+        "tsx": "tsx/RotatingTextVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "rotating-text-3",
+      "title": "Slide cycle",
+      "description": "An odometer-style vertical slide between rotating words",
+      "source": {
+        "html": "../../../../public/examples/marketing/rotating-text/3.html",
+        "tsx": "tsx/RotatingTextVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "rotating-text-3-dark",
+      "title": "Slide cycle (Dark)",
+      "description": "An odometer-style vertical slide between rotating words",
+      "source": {
+        "html": "../../../../public/examples/marketing/rotating-text/3-dark.html",
+        "tsx": "tsx/RotatingTextVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

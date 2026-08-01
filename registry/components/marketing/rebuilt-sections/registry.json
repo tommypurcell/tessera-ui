@@ -22,6 +22,76 @@
   "compatibleWith": ["hero sections", "forms", "cards", "footers"],
   "variants": [
     {
+      "id": "agent-workspace-hero",
+      "title": "Agent Workspace hero",
+      "description": "A product-facing hero section with a strong headline, supporting copy, two clear actions, and a visual plan surface that explains the registry-first workflow.",
+      "source": {
+        "html": "../../../../public/examples/marketing/rebuilt-sections/1.html",
+        "tsx": "tsx/AgentWorkspaceHero.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Keep the heading structure intact and ensure both call-to-action links have descriptive labels."
+      ]
+    },
+    {
+      "id": "agent-workspace-trust-strip",
+      "title": "Agent Workspace trust strip",
+      "description": "A proof-oriented section with three concise trust cards that explain the value of a registry-first UI workflow without relying on fake logo content.",
+      "source": {
+        "html": "../../../../public/examples/marketing/rebuilt-sections/1.html",
+        "tsx": "tsx/AgentWorkspaceTrustStrip.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Maintain a clear section heading and preserve readable contrast for all supporting copy."
+      ]
+    },
+    {
+      "id": "agent-workspace-workflow",
+      "title": "Agent Workspace workflow",
+      "description": "A darker three-step workflow section that explains how agents move from registry search to composition to reusable refinement.",
+      "source": {
+        "html": "../../../../public/examples/marketing/rebuilt-sections/1.html",
+        "tsx": "tsx/AgentWorkspaceWorkflow.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Preserve a meaningful section heading and keep step labels visible as text, not color alone."
+      ]
+    },
+    {
+      "id": "agent-workspace-pricing",
+      "title": "Agent Workspace pricing",
+      "description": "A cleaner three-plan pricing section with one emphasized recommended plan and simpler benefit groups for SaaS evaluation.",
+      "source": {
+        "html": "../../../../public/examples/marketing/rebuilt-sections/1.html",
+        "tsx": "tsx/AgentWorkspacePricing.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Plan differences remain visible in text and structure, not color alone."
+      ]
+    },
+    {
+      "id": "agent-workspace-closing-cta",
+      "title": "Agent Workspace closing CTA",
+      "description": "A restrained end-of-page call to action that leads visitors back into the component library without competing with the global site footer.",
+      "source": {
+        "html": "../../../../public/examples/marketing/rebuilt-sections/1.html",
+        "tsx": "tsx/AgentWorkspaceClosingCta.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Use descriptive link labels and keep the section heading meaningful in the page outline."
+      ]
+    },
+    {
       "id": "navigation",
       "title": "Navigation",
       "description": "A restrained marketing navigation with one clear primary action and a compact responsive rhythm.",

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+    <style>
+      .slide-rotate { position: relative; display: inline-block; height: 1.2em; line-height: 1.2; overflow: hidden; vertical-align: bottom; text-align: left; }
+      .slide-rotate .track { display: block; animation: slide-cycle 6s ease-in-out infinite; }
+      .slide-rotate .track span { display: block; height: 1.2em; line-height: 1.2; }
+      @keyframes slide-cycle {
+        0% { transform: translateY(0); }
+        28% { transform: translateY(0); }
+        33.333% { transform: translateY(-1.2em); }
+        61.333% { transform: translateY(-1.2em); }
+        66.666% { transform: translateY(-2.4em); }
+        94.666% { transform: translateY(-2.4em); }
+        100% { transform: translateY(-3.6em); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .slide-rotate .track { animation: none; }
+      }
+    </style>
+  </head>
+  <body class="flex min-h-40 items-center justify-center bg-gray-950 p-6">
+    <p class="max-w-md text-center text-2xl font-semibold text-gray-100">
+      The platform for modern
+      <span class="slide-rotate font-bold text-violet-400">
+        <span class="track">
+          <span>agencies.</span>
+          <span>startups.</span>
+          <span>teams.</span>
+          <span aria-hidden="true">agencies.</span>
+        </span>
+      </span>
+    </p>
+  </body>
+</html>

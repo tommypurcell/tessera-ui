@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="/component.css" />
+  </head>
+  <body>
+    <div class="w-full max-w-xs">
+      <button
+        type="button"
+        aria-haspopup="true"
+        aria-expanded="true"
+        class="flex w-full items-center justify-between rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700"
+      >
+        Sort by: Newest
+        <span aria-hidden="true">▾</span>
+      </button>
+      <ul role="menu" class="mt-1 w-48 overflow-hidden rounded-lg border border-slate-200 bg-white text-sm shadow-lg">
+        <li role="menuitem" class="flex items-center justify-between bg-blue-50 px-3 py-2 text-blue-700">
+          Newest
+          <span aria-hidden="true">✓</span>
+        </li>
+        <li role="menuitem" class="cursor-pointer px-3 py-2 text-slate-700 hover:bg-slate-50">Oldest</li>
+        <li role="menuitem" class="cursor-pointer px-3 py-2 text-slate-700 hover:bg-slate-50">Most active</li>
+        <li role="separator" class="my-1 border-t border-slate-100"></li>
+        <li role="menuitem" class="cursor-pointer px-3 py-2 text-slate-700 hover:bg-slate-50">Alphabetical</li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "name": "building-blocks-color-signals",
+  "title": "Color Signals",
+  "description": "Intentional Tailwind color blocks for semantic badges, tinted surfaces, and status dots with labels.",
+  "category": "building-blocks/color-signals",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "building-blocks",
+    "color-signals",
+    "color",
+    "status",
+    "badge",
+    "tint",
+    "signal",
+    "semantic",
+    "atom",
+    "tailwind"
+  ],
+  "useWhen": [
+    "Intentional Tailwind color blocks for semantic badges, tinted surfaces, and status dots with labels."
+  ],
+  "avoidWhen": [
+    "Avoid color signals when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Color Signals uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "color-signals-1",
+      "title": "Semantic badge",
+      "description": "Semantic badge Intentional Tailwind color blocks for semantic badges, tinted surfaces, and status dots with labels.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/color-signals/1.html",
+        "tsx": "tsx/ColorSignalsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "color-signals-2",
+      "title": "Tinted surface",
+      "description": "Tinted surface Intentional Tailwind color blocks for semantic badges, tinted surfaces, and status dots with labels.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/color-signals/2.html",
+        "tsx": "tsx/ColorSignalsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "color-signals-3",
+      "title": "Status dot with text",
+      "description": "Status dot with text Intentional Tailwind color blocks for semantic badges, tinted surfaces, and status dots with labels.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/color-signals/3.html",
+        "tsx": "tsx/ColorSignalsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

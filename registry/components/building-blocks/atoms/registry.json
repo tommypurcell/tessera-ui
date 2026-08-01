@@ -1,83 +1,118 @@
 {
   "schemaVersion": 1,
-  "name": "atom-library",
+  "name": "building-blocks-atoms",
   "title": "Atom Library",
-  "description": "Named Tailwind-first atom exports for signals, media, inputs, loading states, and layout composition.",
-  "category": "building-blocks",
-  "frameworks": ["html", "react"],
-  "styling": "tailwind",
-  "tags": ["atoms", "primitives", "tailwind"],
-  "useWhen": ["You are composing a larger control from small visual and semantic pieces."],
-  "avoidWhen": ["You need a complete domain component such as a dialog, table, menu, or card."],
-  "dependencies": ["No external runtime dependency."],
-  "responsiveBehavior": "Atoms preserve their intrinsic size while composition wrappers respond to available width.",
-  "accessibility": [
-    "Uses native controls where interaction is required.",
-    "Decorative atoms are hidden from assistive technology and interactive atoms expose labels or states."
+  "description": "The remaining tiny Tailwind primitives for signals, media, inputs, loading states, and layout composition.",
+  "category": "building-blocks/atoms",
+  "frameworks": [
+    "html",
+    "react"
   ],
-  "compatibleWith": ["buttons", "forms", "cards", "toolbars"],
+  "styling": "tailwind",
+  "tags": [
+    "building-blocks",
+    "atoms",
+    "atom",
+    "primitive",
+    "tailwind",
+    "input",
+    "layout",
+    "loading"
+  ],
+  "useWhen": [
+    "The remaining tiny Tailwind primitives for signals, media, inputs, loading states, and layout composition."
+  ],
+  "avoidWhen": [
+    "Avoid atom library when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Atom Library uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Associate each form field with a visible or programmatic label before production use.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment."
+  ],
+  "compatibleWith": [],
   "variants": [
     {
-      "id": "signals",
+      "id": "atoms-1",
       "title": "Signals",
-      "description": "Badges, tags, keycaps, dots, indicators, and small status markers.",
+      "description": "Signals The remaining tiny Tailwind primitives for signals, media, inputs, loading states, and layout composition.",
       "source": {
         "html": "../../../../public/examples/building-blocks/atoms/1.html",
-        "tsx": "tsx/Atoms.tsx"
+        "tsx": "tsx/AtomsVariant1.tsx"
       },
       "appearance": "light",
-      "states": ["default", "active"],
-      "accessibility": ["Do not rely on color alone for status."]
-    },
-    {
-      "id": "media",
-      "title": "Media",
-      "description": "Avatars, image fallbacks, icon containers, thumbnails, swatches, and aspect frames.",
-      "source": {
-        "html": "../../../../public/examples/building-blocks/atoms/2.html",
-        "tsx": "tsx/Atoms.tsx"
-      },
-      "appearance": "light",
-      "states": ["default", "fallback"],
-      "accessibility": ["Provide meaningful alternative text for informative images."]
-    },
-    {
-      "id": "inputs",
-      "title": "Inputs",
-      "description": "Native fields and input adornments for assembling accessible forms.",
-      "source": {
-        "html": "../../../../public/examples/building-blocks/atoms/3.html",
-        "tsx": "tsx/Atoms.tsx"
-      },
-      "appearance": "light",
-      "states": ["default", "focus", "invalid"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Keep native labels, focus, and validation relationships in the consuming form."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
-      "id": "loading",
-      "title": "Loading",
-      "description": "Spinners, progress pieces, skeletons, and activity pulses for transient states.",
+      "id": "atoms-2",
+      "title": "Media",
+      "description": "Media The remaining tiny Tailwind primitives for signals, media, inputs, loading states, and layout composition.",
       "source": {
-        "html": "../../../../public/examples/building-blocks/atoms/4.html",
-        "tsx": "tsx/Atoms.tsx"
+        "html": "../../../../public/examples/building-blocks/atoms/2.html",
+        "tsx": "tsx/AtomsVariant2.tsx"
       },
       "appearance": "light",
-      "states": ["loading", "progress"],
-      "accessibility": ["Pair visual loading states with an accessible status announcement."]
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
     },
     {
-      "id": "layout",
-      "title": "Layout",
-      "description": "Separators, spacing, surfaces, and small composition wrappers for larger components.",
+      "id": "atoms-3",
+      "title": "Inputs",
+      "description": "Inputs The remaining tiny Tailwind primitives for signals, media, inputs, loading states, and layout composition.",
       "source": {
-        "html": "../../../../public/examples/building-blocks/atoms/5.html",
-        "tsx": "tsx/Atoms.tsx"
+        "html": "../../../../public/examples/building-blocks/atoms/3.html",
+        "tsx": "tsx/AtomsVariant3.tsx"
       },
       "appearance": "light",
-      "states": ["default", "scroll"],
-      "accessibility": ["Preserve semantic landmarks in the consuming composition."]
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "atoms-4",
+      "title": "Loading",
+      "description": "Loading The remaining tiny Tailwind primitives for signals, media, inputs, loading states, and layout composition.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/atoms/4.html",
+        "tsx": "tsx/AtomsVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "atoms-5",
+      "title": "Layout",
+      "description": "Layout The remaining tiny Tailwind primitives for signals, media, inputs, loading states, and layout composition.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/atoms/5.html",
+        "tsx": "tsx/AtomsVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
     }
   ]
 }

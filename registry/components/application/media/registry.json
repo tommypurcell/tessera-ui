@@ -2,140 +2,160 @@
   "schemaVersion": 1,
   "name": "application-media",
   "title": "Media",
-  "description": "Avatar-and-text layout patterns combining a thumbnail image with adjacent text content in various alignment configurations.",
-  "category": "application/data-display",
-  "frameworks": ["html", "react"],
+  "description": "Responsive media and avatar components for user profiles, image galleries, and content cards with flexible alignment and layouts.",
+  "category": "application/media",
+  "frameworks": [
+    "html",
+    "react"
+  ],
   "styling": "tailwind",
-  "tags": ["media", "avatar", "image", "layout", "user-profile", "card"],
+  "tags": [
+    "application",
+    "media",
+    "avatar",
+    "image"
+  ],
   "useWhen": [
-    "Displaying a user avatar alongside a name, bio, or supporting text in a compact layout.",
-    "Building comment threads, activity feeds, or notification lists where each item has an avatar.",
-    "Combining a small thumbnail image with text metadata in a list or card component."
+    "Responsive media and avatar components for user profiles, image galleries, and content cards with flexible alignment and layouts."
   ],
   "avoidWhen": [
-    "The image is the primary content rather than a supporting thumbnail — use a dedicated image or gallery component.",
-    "Multiple images need to appear in a grid — use a grid or gallery layout instead.",
-    "The text content is long-form — a media object is designed for short metadata, not paragraphs."
+    "Avoid media when a simpler pattern communicates the same content or action."
   ],
   "dependencies": [],
-  "responsiveBehavior": "Media layouts stack the image above the text on very narrow viewports and return to the side-by-side arrangement on small screens and above.",
+  "responsiveBehavior": "Media uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
   "accessibility": [
-    "Avatar images must have meaningful alt text when they identify a person, or alt=\"\" when decorative.",
-    "Do not use image position (left/right alignment) as the sole way to communicate meaning.",
-    "Ensure text beside the avatar has sufficient contrast and is not clipped at any zoom level."
+    "Provide meaningful alternative text for informative images and empty alt text for decorative images.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
   ],
-  "compatibleWith": ["application-tables", "application-stats", "application-timelines"],
+  "compatibleWith": [],
   "variants": [
     {
       "id": "media-1",
       "title": "Left align top",
-      "description": "Image on the left, text top-aligned beside it — the classic media object for list rows and activity feeds.",
+      "description": "Left align top Responsive media and avatar components for user profiles, image galleries, and content cards with flexible alignment and layouts.",
       "source": {
         "html": "../../../../public/examples/application/media/1.html",
         "tsx": "tsx/MediaVariant1.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Avatar alt text should identify the person unless the name is already visible in the adjacent text."
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
       ]
     },
     {
       "id": "media-2",
       "title": "Left align center",
-      "description": "Image on the left, text vertically centered beside it — use when the image and text block are similar heights.",
+      "description": "Left align center Responsive media and avatar components for user profiles, image galleries, and content cards with flexible alignment and layouts.",
       "source": {
         "html": "../../../../public/examples/application/media/2.html",
         "tsx": "tsx/MediaVariant2.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Vertical alignment is decorative and carries no semantic meaning."
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
       ]
     },
     {
       "id": "media-3",
       "title": "Left align bottom",
-      "description": "Image on the left, text bottom-aligned — suitable when the text block is shorter than the image.",
+      "description": "Left align bottom Responsive media and avatar components for user profiles, image galleries, and content cards with flexible alignment and layouts.",
       "source": {
         "html": "../../../../public/examples/application/media/3.html",
         "tsx": "tsx/MediaVariant3.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Bottom alignment is decorative; ensure source reading order still makes logical sense."
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
       ]
     },
     {
       "id": "media-4",
       "title": "Left align stretch",
-      "description": "Image on the left, text area stretched to match the image height — creates a uniform block appearance.",
+      "description": "Left align stretch Responsive media and avatar components for user profiles, image galleries, and content cards with flexible alignment and layouts.",
       "source": {
         "html": "../../../../public/examples/application/media/4.html",
         "tsx": "tsx/MediaVariant4.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Stretch alignment is visual only; source order and semantic structure are unaffected."
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
       ]
     },
     {
       "id": "media-5",
       "title": "Right align top",
-      "description": "Image on the right, text top-aligned on the left — mirrors the standard media object for right-to-left emphasis.",
+      "description": "Right align top Responsive media and avatar components for user profiles, image galleries, and content cards with flexible alignment and layouts.",
       "source": {
         "html": "../../../../public/examples/application/media/5.html",
         "tsx": "tsx/MediaVariant5.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Ensure source order reflects the logical reading order regardless of visual alignment."
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
       ]
     },
     {
       "id": "media-6",
       "title": "Right align center",
-      "description": "Image on the right, text vertically centered on the left — for a balanced look when heights are similar.",
+      "description": "Right align center Responsive media and avatar components for user profiles, image galleries, and content cards with flexible alignment and layouts.",
       "source": {
         "html": "../../../../public/examples/application/media/6.html",
         "tsx": "tsx/MediaVariant6.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Vertical alignment is purely visual and does not affect screen reader reading order."
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
       ]
     },
     {
       "id": "media-7",
       "title": "Right align bottom",
-      "description": "Image on the right, text bottom-aligned on the left — use when the text block is shorter than the image.",
+      "description": "Right align bottom Responsive media and avatar components for user profiles, image galleries, and content cards with flexible alignment and layouts.",
       "source": {
         "html": "../../../../public/examples/application/media/7.html",
         "tsx": "tsx/MediaVariant7.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Bottom alignment is decorative; source reading order must still be logical."
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
       ]
     },
     {
       "id": "media-8",
       "title": "Right align stretch",
-      "description": "Image on the right, text area stretched to match the image height — mirrors the left stretch for right-image layouts.",
+      "description": "Right align stretch Responsive media and avatar components for user profiles, image galleries, and content cards with flexible alignment and layouts.",
       "source": {
         "html": "../../../../public/examples/application/media/8.html",
         "tsx": "tsx/MediaVariant8.tsx"
       },
       "appearance": "light",
-      "states": ["default"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Stretch alignment is purely visual; semantic structure and reading order are unaffected."
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
       ]
     }
   ]

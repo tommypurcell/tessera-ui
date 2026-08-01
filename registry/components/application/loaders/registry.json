@@ -2,224 +2,255 @@
   "schemaVersion": 1,
   "name": "application-loaders",
   "title": "Loaders",
-  "description": "Loading indicators — spinners, dot animations, and inline progress bars — for communicating async operation states.",
-  "category": "application/feedback",
-  "frameworks": ["html", "react"],
+  "description": "Loading and progress indicator components for web applications. Includes spinners, progress bars, and animated loaders for data fetching states in dashboards, forms, and content-heavy applications.",
+  "category": "application/loaders",
+  "frameworks": [
+    "html",
+    "react"
+  ],
   "styling": "tailwind",
-  "tags": ["loader", "spinner", "loading", "progress", "animation", "skeleton"],
+  "tags": [
+    "application",
+    "loaders",
+    "progress"
+  ],
   "useWhen": [
-    "An async operation (data fetch, form submit, file upload) is in progress and the user must wait.",
-    "Replacing a button label with an inline spinner while a form submission is processing.",
-    "Filling a content area while data loads to prevent a flash of empty state."
+    "Loading and progress indicator components for web applications. Includes spinners, progress bars, and animated loaders for data fetching states in dashboards, forms, and content-heavy applications."
   ],
   "avoidWhen": [
-    "The operation completes in under 300ms — showing a loader then removing it immediately causes visual flicker.",
-    "Precise numeric progress is available — use a progress bar with a percentage rather than a generic spinner.",
-    "The entire page is loading — use a skeleton screen instead of a centered spinner over blank content."
+    "Avoid loaders when a simpler pattern communicates the same content or action."
   ],
   "dependencies": [],
-  "responsiveBehavior": "Loaders are inline or overlay elements that adapt to their container size. Ensure overlay spinners are centered within their bounded region at all viewport sizes.",
+  "responsiveBehavior": "Loaders uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
   "accessibility": [
-    "Loading regions must include role=\"status\" and aria-live=\"polite\" so screen readers announce the loading state.",
-    "Spinners are purely visual — provide a visually-hidden text label such as 'Loading…' for screen reader users.",
-    "When loading completes, announce the result (e.g., 'Data loaded' or the count of results) via the live region."
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
   ],
-  "compatibleWith": ["application-progress-bars", "application-modals", "application-tables"],
+  "compatibleWith": [],
   "variants": [
     {
       "id": "loaders-1",
       "title": "Spinner",
-      "description": "Minimal circular spinning indicator for full-section or page-level loading states.",
+      "description": "Circular spinning loader for general loading states",
       "source": {
         "html": "../../../../public/examples/application/loaders/1.html",
         "tsx": "tsx/LoadersVariant1.tsx"
       },
       "appearance": "light",
-      "states": ["loading"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Add role=\"status\" with a visually-hidden 'Loading…' text label inside the spinner element."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "loaders-1-dark",
       "title": "Spinner (Dark)",
-      "description": "Circular spinner adapted for dark application surfaces.",
+      "description": "Circular spinning loader for general loading states",
       "source": {
         "html": "../../../../public/examples/application/loaders/1-dark.html",
         "tsx": "tsx/LoadersVariant1Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["loading"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Spinner track and fill colors must maintain visibility against dark backgrounds."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "loaders-2",
       "title": "Spinner with text",
-      "description": "Centered spinner with a visible loading message below it, for section-level waits where a text label aids comprehension.",
+      "description": "Centered spinner with loading message displayed below",
       "source": {
         "html": "../../../../public/examples/application/loaders/2.html",
         "tsx": "tsx/LoadersVariant2.tsx"
       },
       "appearance": "light",
-      "states": ["loading"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Wrap in a role=\"status\" container; the visible text already describes the state to screen readers."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "loaders-2-dark",
       "title": "Spinner with text (Dark)",
-      "description": "Centered spinner with visible loading message adapted for dark application surfaces.",
+      "description": "Centered spinner with loading message displayed below",
       "source": {
         "html": "../../../../public/examples/application/loaders/2-dark.html",
         "tsx": "tsx/LoadersVariant2Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["loading"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Dark spinner and label text must meet contrast requirements on dark backgrounds."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "loaders-3",
       "title": "Spinner inline",
-      "description": "Compact horizontal spinner-and-text pair for embedding inside a button or inline within a sentence.",
+      "description": "Compact spinner with text aligned horizontally",
       "source": {
         "html": "../../../../public/examples/application/loaders/3.html",
         "tsx": "tsx/LoadersVariant3.tsx"
       },
       "appearance": "light",
-      "states": ["loading"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "When replacing a button label, keep the button disabled and announce 'Loading…' via aria-label."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "loaders-3-dark",
       "title": "Spinner inline (Dark)",
-      "description": "Compact horizontal spinner-and-text adapted for dark application surfaces.",
+      "description": "Compact spinner with text aligned horizontally",
       "source": {
         "html": "../../../../public/examples/application/loaders/3-dark.html",
         "tsx": "tsx/LoadersVariant3Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["loading"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Inline spinner must remain legible against dark button or text backgrounds."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "loaders-4",
       "title": "Progress bar",
-      "description": "Horizontal bar that fills left-to-right to show determinate loading progress as a percentage.",
+      "description": "Horizontal bar indicator showing loading progress",
       "source": {
         "html": "../../../../public/examples/application/loaders/4.html",
         "tsx": "tsx/LoadersVariant4.tsx"
       },
       "appearance": "light",
-      "states": ["loading"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Use a <progress> element with a value and max attribute for native accessible progress semantics."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "loaders-4-dark",
       "title": "Progress bar (Dark)",
-      "description": "Horizontal progress bar adapted for dark application surfaces.",
+      "description": "Horizontal bar indicator showing loading progress",
       "source": {
         "html": "../../../../public/examples/application/loaders/4-dark.html",
         "tsx": "tsx/LoadersVariant4Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["loading"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Bar fill and track colors must provide sufficient contrast on dark backgrounds."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "loaders-5",
       "title": "Dots pulse",
-      "description": "Three dots that fade in and out sequentially to create a pulsing loading rhythm, suitable for chat-style await states.",
+      "description": "Three animated dots with sequential pulse effect",
       "source": {
         "html": "../../../../public/examples/application/loaders/5.html",
         "tsx": "tsx/LoadersVariant5.tsx"
       },
       "appearance": "light",
-      "states": ["loading"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Animated dots are decorative; a visually-hidden 'Loading…' label inside a role=\"status\" container is required."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "loaders-5-dark",
       "title": "Dots pulse (Dark)",
-      "description": "Sequential-pulse dot animation adapted for dark application surfaces.",
+      "description": "Three animated dots with sequential pulse effect",
       "source": {
         "html": "../../../../public/examples/application/loaders/5-dark.html",
         "tsx": "tsx/LoadersVariant5Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["loading"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Dot fill colors must contrast with dark backgrounds; visually-hidden label still required."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "loaders-6",
       "title": "Dots ping",
-      "description": "Three dots that expand outward with a ripple ping effect, for a more dynamic loading indicator.",
+      "description": "Three animated dots with expanding ping effect",
       "source": {
         "html": "../../../../public/examples/application/loaders/6.html",
         "tsx": "tsx/LoadersVariant6.tsx"
       },
       "appearance": "light",
-      "states": ["loading"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Animated dots are decorative; use a role=\"status\" wrapper with a visually-hidden text label."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "loaders-6-dark",
       "title": "Dots ping (Dark)",
-      "description": "Expanding-ripple dot animation adapted for dark application surfaces.",
+      "description": "Three animated dots with expanding ping effect",
       "source": {
         "html": "../../../../public/examples/application/loaders/6-dark.html",
         "tsx": "tsx/LoadersVariant6Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["loading"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Ripple colors must be visible against dark backgrounds; visually-hidden label still required."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "loaders-7",
       "title": "Dots bounce",
-      "description": "Three dots that bounce up and down in staggered sequence, for a playful loading indicator in lighter interfaces.",
+      "description": "Three animated dots with bouncing effect",
       "source": {
         "html": "../../../../public/examples/application/loaders/7.html",
         "tsx": "tsx/LoadersVariant7.tsx"
       },
       "appearance": "light",
-      "states": ["loading"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Animated dots are decorative; use a role=\"status\" wrapper with a visually-hidden text label."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     },
     {
       "id": "loaders-7-dark",
       "title": "Dots bounce (Dark)",
-      "description": "Staggered-bounce dot animation adapted for dark application surfaces.",
+      "description": "Three animated dots with bouncing effect",
       "source": {
         "html": "../../../../public/examples/application/loaders/7-dark.html",
         "tsx": "tsx/LoadersVariant7Dark.tsx"
       },
       "appearance": "dark",
-      "states": ["loading"],
+      "states": [
+        "default"
+      ],
       "accessibility": [
-        "Dot fill colors must contrast with dark backgrounds; visually-hidden label still required."
+        "Keep semantic HTML structure and visible text labels when adapting this component."
       ]
     }
   ]

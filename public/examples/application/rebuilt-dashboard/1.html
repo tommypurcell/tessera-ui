@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="/component.css" />
+  </head>
+  <body class="bg-slate-100 p-4 text-slate-950 sm:p-8">
+    <main class="mx-auto grid max-w-6xl gap-5 lg:grid-cols-[220px_minmax(0,1fr)]">
+      <nav aria-label="Operations" class="rounded-3xl bg-slate-950 p-5 text-white shadow-xl">
+        <div class="flex items-center gap-3 border-b border-slate-800 pb-5">
+          <span
+            class="grid size-9 place-items-center rounded-xl bg-sky-400 font-bold text-slate-950"
+            >T</span
+          >
+          <div>
+            <p class="font-semibold">Transit Ops</p>
+            <p class="text-xs text-slate-400">Control center</p>
+          </div>
+        </div>
+        <ul class="mt-5 grid gap-1 text-sm">
+          <li>
+            <a
+              class="block rounded-xl bg-white px-3 py-2.5 font-semibold text-slate-950"
+              href="#overview"
+              aria-current="page"
+              >Overview</a
+            >
+          </li>
+          <li>
+            <a
+              class="block rounded-xl px-3 py-2.5 text-slate-300 hover:bg-slate-900"
+              href="#network"
+              >Network</a
+            >
+          </li>
+          <li>
+            <a
+              class="block rounded-xl px-3 py-2.5 text-slate-300 hover:bg-slate-900"
+              href="#capacity"
+              >Capacity</a
+            >
+          </li>
+          <li>
+            <a
+              class="block rounded-xl px-3 py-2.5 text-slate-300 hover:bg-slate-900"
+              href="#exceptions"
+              >Exceptions</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <section id="overview" class="grid gap-5">
+        <header class="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+          <div>
+            <p class="text-xs font-semibold tracking-[0.18em] text-sky-700 uppercase">
+              Operations dashboard
+            </p>
+            <h1 class="mt-2 text-3xl font-semibold tracking-tight">
+              Keep the network on schedule.
+            </h1>
+            <p class="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
+              The morning shift is ahead on throughput. East-region exceptions need attention before
+              the afternoon cutoff.
+            </p>
+          </div>
+          <button
+            type="button"
+            class="rounded-xl bg-slate-950 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-slate-800 focus:ring-4 focus:ring-sky-200 focus:outline-none"
+          >
+            Review exceptions
+          </button>
+        </header>
+
+        <section aria-labelledby="metrics-title" class="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+          <h2 id="metrics-title" class="sr-only">Current metrics</h2>
+          <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <p class="text-sm text-slate-500">Orders routed</p>
+            <p class="mt-2 text-2xl font-semibold">12,480</p>
+            <p class="mt-3 text-xs font-semibold text-emerald-700">8.2% ahead</p>
+          </article>
+          <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <p class="text-sm text-slate-500">Late departures</p>
+            <p class="mt-2 text-2xl font-semibold">14</p>
+            <p class="mt-3 text-xs font-semibold text-emerald-700">Below target</p>
+          </article>
+          <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <p class="text-sm text-slate-500">Warehouse backlog</p>
+            <p class="mt-2 text-2xl font-semibold">218</p>
+            <p class="mt-3 text-xs font-semibold text-amber-700">Watch east region</p>
+          </article>
+          <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <p class="text-sm text-slate-500">Open incidents</p>
+            <p class="mt-2 text-2xl font-semibold">5</p>
+            <p class="mt-3 text-xs font-semibold text-rose-700">2 need escalation</p>
+          </article>
+        </section>
+
+        <div class="grid gap-5 xl:grid-cols-[minmax(0,1.2fr)_minmax(280px,.8fr)]">
+          <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-xs font-semibold tracking-wider text-slate-500 uppercase">
+                  Throughput
+                </p>
+                <h2 class="mt-1 text-lg font-semibold">Processed by hub</h2>
+              </div>
+              <span
+                class="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700"
+                >Stable</span
+              >
+            </div>
+            <div
+              class="mt-8 flex h-48 items-end gap-3"
+              aria-label="Weekly throughput: Monday 68%, Tuesday 76%, Wednesday 72%, Thursday 81%, Friday 88%, Saturday 84%, Sunday 92%"
+            >
+              <div class="h-[68%] flex-1 rounded-t-lg bg-slate-200"></div>
+              <div class="h-[76%] flex-1 rounded-t-lg bg-slate-200"></div>
+              <div class="h-[72%] flex-1 rounded-t-lg bg-slate-200"></div>
+              <div class="h-[81%] flex-1 rounded-t-lg bg-slate-300"></div>
+              <div class="h-[88%] flex-1 rounded-t-lg bg-sky-400"></div>
+              <div class="h-[84%] flex-1 rounded-t-lg bg-sky-500"></div>
+              <div class="h-[92%] flex-1 rounded-t-lg bg-sky-600"></div>
+            </div>
+          </article>
+          <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <p class="text-xs font-semibold tracking-wider text-slate-500 uppercase">
+              Priority queue
+            </p>
+            <h2 class="mt-1 text-lg font-semibold">Exceptions to clear</h2>
+            <ul class="mt-5 divide-y divide-slate-100 text-sm">
+              <li class="flex justify-between gap-4 py-3">
+                <span>East hub capacity</span
+                ><span class="font-semibold text-rose-700">Critical</span>
+              </li>
+              <li class="flex justify-between gap-4 py-3">
+                <span>Carrier reserve</span><span class="font-semibold text-amber-700">Watch</span>
+              </li>
+              <li class="flex justify-between gap-4 py-3">
+                <span>Dock scheduling</span
+                ><span class="font-semibold text-emerald-700">On track</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

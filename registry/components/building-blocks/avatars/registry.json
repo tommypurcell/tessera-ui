@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "name": "building-blocks-avatars",
+  "title": "Avatars",
+  "description": "Compact Tailwind identity atoms for initials, presence, stacked participants, and square media placeholders.",
+  "category": "building-blocks/avatars",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "building-blocks",
+    "avatars",
+    "avatar",
+    "identity",
+    "people",
+    "presence",
+    "stack",
+    "atom",
+    "tailwind"
+  ],
+  "useWhen": [
+    "Compact Tailwind identity atoms for initials, presence, stacked participants, and square media placeholders."
+  ],
+  "avoidWhen": [
+    "Avoid avatars when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Avatars uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "avatars-1",
+      "title": "Initial avatar",
+      "description": "Initial avatar Compact Tailwind identity atoms for initials, presence, stacked participants, and square media placeholders.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/avatars/1.html",
+        "tsx": "tsx/AvatarsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "avatars-2",
+      "title": "Soft avatar",
+      "description": "Soft avatar Compact Tailwind identity atoms for initials, presence, stacked participants, and square media placeholders.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/avatars/2.html",
+        "tsx": "tsx/AvatarsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "avatars-3",
+      "title": "Presence avatar",
+      "description": "Presence avatar Compact Tailwind identity atoms for initials, presence, stacked participants, and square media placeholders.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/avatars/3.html",
+        "tsx": "tsx/AvatarsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "avatars-4",
+      "title": "Avatar stack",
+      "description": "Avatar stack Compact Tailwind identity atoms for initials, presence, stacked participants, and square media placeholders.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/avatars/4.html",
+        "tsx": "tsx/AvatarsVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "avatars-5",
+      "title": "Square avatar",
+      "description": "Square avatar Compact Tailwind identity atoms for initials, presence, stacked participants, and square media placeholders.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/avatars/5.html",
+        "tsx": "tsx/AvatarsVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

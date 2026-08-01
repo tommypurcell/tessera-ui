@@ -1,1 +1,70 @@
-{"schemaVersion":1,"name":"dots","title":"Dots","description":"Tiny Tailwind circles for color, status, selection, and presence signals.","category":"building-blocks","frameworks":["html","react"],"styling":"tailwind","tags":["dot","status","color"],"useWhen":["A compact visual signal is more useful than a full badge or text label."],"avoidWhen":["The state requires an explanation that cannot be conveyed by a label nearby."],"dependencies":["No external runtime dependency."],"responsiveBehavior":"Dots retain a fixed visual size across viewports.","accessibility":["ColorDot is decorative and hidden from assistive technology.","StatusDot includes a readable status label alongside its color."],"compatibleWith":["avatars","buttons","lists"],"variants":[{"id":"color-dot","title":"Color dot","description":"A decorative colored circle for palettes, selection cues, and compact visual accents.","source":{"html":"../../../../public/examples/building-blocks/dots/1.html","tsx":"tsx/Dots.tsx"},"appearance":"light","states":["default"],"accessibility":["Hide decorative dots from assistive technology."]},{"id":"status-dot","title":"Status dot","description":"A colored status signal that pairs the visual dot with a readable text label.","source":{"html":"../../../../public/examples/building-blocks/dots/2.html","tsx":"tsx/Dots.tsx"},"appearance":"light","states":["available","busy"],"accessibility":["Never use color as the only status signal."]}]}
+{
+  "schemaVersion": 1,
+  "name": "building-blocks-dots",
+  "title": "Dots",
+  "description": "Tiny Tailwind circles for carrying color, status, selection, and presence without creating a full badge.",
+  "category": "building-blocks/dots",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "building-blocks",
+    "dots",
+    "dot",
+    "color",
+    "status",
+    "indicator",
+    "atom",
+    "tailwind"
+  ],
+  "useWhen": [
+    "Tiny Tailwind circles for carrying color, status, selection, and presence without creating a full badge."
+  ],
+  "avoidWhen": [
+    "Avoid dots when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Dots uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "dots-1",
+      "title": "Color dot",
+      "description": "Color dot Tiny Tailwind circles for carrying color, status, selection, and presence without creating a full badge.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/dots/1.html",
+        "tsx": "tsx/DotsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "dots-2",
+      "title": "Status dot",
+      "description": "Status dot Tiny Tailwind circles for carrying color, status, selection, and presence without creating a full badge.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/dots/2.html",
+        "tsx": "tsx/DotsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

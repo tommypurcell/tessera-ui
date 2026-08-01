@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "name": "building-blocks-system-shells",
+  "title": "System Shells",
+  "description": "System-level Tailwind composition blocks for paired content, shared state wrappers, and density-aware shells.",
+  "category": "building-blocks/system-shells",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "building-blocks",
+    "system-shells",
+    "system",
+    "state",
+    "density",
+    "shell",
+    "pair",
+    "wrapper",
+    "atom",
+    "tailwind"
+  ],
+  "useWhen": [
+    "System-level Tailwind composition blocks for paired content, shared state wrappers, and density-aware shells."
+  ],
+  "avoidWhen": [
+    "Avoid system shells when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "System Shells uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "system-shells-1",
+      "title": "Primitive pair",
+      "description": "Primitive pair System-level Tailwind composition blocks for paired content, shared state wrappers, and density-aware shells.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/system-shells/1.html",
+        "tsx": "tsx/SystemShellsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "system-shells-2",
+      "title": "State wrapper",
+      "description": "State wrapper System-level Tailwind composition blocks for paired content, shared state wrappers, and density-aware shells.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/system-shells/2.html",
+        "tsx": "tsx/SystemShellsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "system-shells-3",
+      "title": "Density shell",
+      "description": "Density shell System-level Tailwind composition blocks for paired content, shared state wrappers, and density-aware shells.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/system-shells/3.html",
+        "tsx": "tsx/SystemShellsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

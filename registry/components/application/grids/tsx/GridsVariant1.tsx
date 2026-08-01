@@ -9,9 +9,9 @@ export function GridsVariant1({ className, ...props }: GridsVariant1Props) {
   return (
     <div className={className} {...props}>
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8">
-        <div className="h-32 rounded bg-gray-300"></div>
-        <div className="h-32 rounded bg-gray-300"></div>
-      </div>
+            <div className="h-32 rounded bg-gray-300"></div>
+            <div className="h-32 rounded bg-gray-300"></div>
+          </div>
     </div>
   )
 }

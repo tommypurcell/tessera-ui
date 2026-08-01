@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "name": "custom-phone-mockup",
+  "title": "Phone Mockup",
+  "description": "An original device frame for presenting mobile product screens with a refined shell, ambient wallpaper, and clear content area.",
+  "category": "marketing/phone-mockup",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "custom",
+    "phone-mockup",
+    "phone",
+    "mobile",
+    "device",
+    "product preview"
+  ],
+  "useWhen": [
+    "An original device frame for presenting mobile product screens with a refined shell, ambient wallpaper, and clear content area."
+  ],
+  "avoidWhen": [
+    "Avoid phone mockup when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Phone Mockup uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "phone-mockup-1",
+      "title": "Studio phone",
+      "description": "Studio phone An original device frame for presenting mobile product screens with a refined shell, ambient wallpaper, and clear content area.",
+      "source": {
+        "html": "../../../../public/examples/marketing/phone-mockup/1.html",
+        "tsx": "tsx/PhoneMockupVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

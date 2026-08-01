@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="/component.css" />
+  </head>
+  <body>
+    <div class="w-full max-w-xs">
+      <label class="mb-1.5 block text-sm font-medium text-slate-700">Expiration date</label>
+      <div
+        class="flex w-fit items-center gap-1 rounded-lg border border-slate-300 px-3 py-2 focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-100"
+      >
+        <input
+          type="text"
+          inputmode="numeric"
+          maxlength="2"
+          value="03"
+          aria-label="Month"
+          class="w-6 border-none p-0 text-center text-sm text-slate-900 outline-none"
+        />
+        <span class="text-slate-300">/</span>
+        <input
+          type="text"
+          inputmode="numeric"
+          maxlength="2"
+          value="14"
+          aria-label="Day"
+          class="w-6 border-none p-0 text-center text-sm text-slate-900 outline-none"
+        />
+        <span class="text-slate-300">/</span>
+        <input
+          type="text"
+          inputmode="numeric"
+          maxlength="4"
+          value="2026"
+          aria-label="Year"
+          class="w-11 border-none p-0 text-center text-sm text-slate-900 outline-none"
+        />
+      </div>
+      <p class="mt-1.5 text-xs text-slate-500">Format: MM/DD/YYYY</p>
+    </div>
+  </body>
+</html>

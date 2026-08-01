@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "name": "rebuilt-dashboard",
+  "title": "Rebuilt Dashboard",
+  "description": "Custom-built dashboard surfaces for operations, analytics, and execution workflows inside application interfaces.",
+  "category": "application",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["dashboard", "operations", "application", "analytics", "workflow", "custom-built"],
+  "useWhen": [
+    "You need a coherent dashboard example built from saved application components rather than one-off page markup.",
+    "A product surface needs a shell, summary metrics, workflow visibility, and execution detail on one screen.",
+    "A dashboard needs meaningful in-app navigation where each workspace view shows distinct operational content."
+  ],
+  "avoidWhen": [
+    "The interface is primarily a marketing page or landing page.",
+    "You need a highly interactive application with domain logic, drag-and-drop, or live data behavior."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Sections collapse from multi-column desktop layouts to stacked mobile layouts while preserving sidebar, hierarchy, and readable table overflow.",
+  "accessibility": [
+    "Use navigation and landmark structure so the shell remains traversable by assistive technology.",
+    "Do not rely on color alone for status and priority information.",
+    "Tables preserve native semantics and summary cards keep visible labels."
+  ],
+  "compatibleWith": [
+    "application-dashboard-sidebar",
+    "application-stats",
+    "application-tables",
+    "application-rebuilt-data",
+    "application-rebuilt-controls"
+  ],
+  "variants": [
+    {
+      "id": "ops-dashboard-workspace",
+      "title": "Ops dashboard workspace",
+      "description": "An interactive operations workspace with meaningful left-rail navigation that switches between overview, network, capacity, exceptions, and incident-room views.",
+      "source": {
+        "html": "../../../../public/examples/application/rebuilt-dashboard/1.html",
+        "tsx": "tsx/OpsDashboardWorkspace.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "tabbed views"],
+      "accessibility": [
+        "Use button-based navigation with visible active state and preserve descriptive headings for each workspace view."
+      ]
+    },
+    {
+      "id": "ops-dashboard-shell",
+      "title": "Ops dashboard shell",
+      "description": "A dashboard shell with a left navigation rail, top utility bar, and page-level summary header for a compact operations workspace.",
+      "source": {
+        "html": "../../../../public/examples/application/rebuilt-dashboard/1.html",
+        "tsx": "tsx/OpsDashboardShell.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Keep the sidebar in a nav landmark and preserve a visible current-page indication."
+      ]
+    },
+    {
+      "id": "ops-dashboard-kpis",
+      "title": "Ops dashboard KPI row",
+      "description": "A compact four-card KPI row with readable trend context and restrained emphasis for fast scanning.",
+      "source": {
+        "html": "../../../../public/examples/application/rebuilt-dashboard/1.html",
+        "tsx": "tsx/OpsDashboardKpis.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Metric labels and deltas stay explicit so card color is supplementary rather than required."
+      ]
+    },
+    {
+      "id": "ops-dashboard-insights",
+      "title": "Ops dashboard insights",
+      "description": "A chart-focused dashboard section pairing a bar-style throughput comparison with a donut-style exception breakdown and explicit legends.",
+      "source": {
+        "html": "../../../../public/examples/application/rebuilt-dashboard/1.html",
+        "tsx": "tsx/OpsDashboardInsights.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Chart colors are always paired with labels, values, and supporting explanatory text."
+      ]
+    },
+    {
+      "id": "ops-dashboard-workflow",
+      "title": "Ops dashboard workflow section",
+      "description": "A two-column workflow section combining pipeline visibility and bottleneck status for an operations dashboard.",
+      "source": {
+        "html": "../../../../public/examples/application/rebuilt-dashboard/1.html",
+        "tsx": "tsx/OpsDashboardWorkflow.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Keep section headings visible and pair progress visuals with text labels and values."
+      ]
+    },
+    {
+      "id": "ops-dashboard-execution",
+      "title": "Ops dashboard execution section",
+      "description": "A lower dashboard section pairing a readable task table with a compact incident and handoff panel.",
+      "source": {
+        "html": "../../../../public/examples/application/rebuilt-dashboard/1.html",
+        "tsx": "tsx/OpsDashboardExecution.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Preserve native table semantics and make alert severity readable without color dependence."
+      ]
+    }
+  ]
+}

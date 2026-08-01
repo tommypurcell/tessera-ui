@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "name": "building-blocks-status-primitives",
+  "title": "Status Primitives",
+  "description": "Small Tailwind status atoms for inline labels, health pills, emphasis rows, signal tiles, and compact stat pairs.",
+  "category": "building-blocks/status-primitives",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "building-blocks",
+    "status-primitives",
+    "status",
+    "health",
+    "label",
+    "stat",
+    "signal",
+    "inline",
+    "atom",
+    "tailwind"
+  ],
+  "useWhen": [
+    "Small Tailwind status atoms for inline labels, health pills, emphasis rows, signal tiles, and compact stat pairs."
+  ],
+  "avoidWhen": [
+    "Avoid status primitives when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Status Primitives uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "status-primitives-1",
+      "title": "Inline status",
+      "description": "Inline status Small Tailwind status atoms for inline labels, health pills, emphasis rows, signal tiles, and compact stat pairs.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/status-primitives/1.html",
+        "tsx": "tsx/StatusPrimitivesVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "status-primitives-2",
+      "title": "Health pill",
+      "description": "Health pill Small Tailwind status atoms for inline labels, health pills, emphasis rows, signal tiles, and compact stat pairs.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/status-primitives/2.html",
+        "tsx": "tsx/StatusPrimitivesVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "status-primitives-3",
+      "title": "Emphasis row",
+      "description": "Emphasis row Small Tailwind status atoms for inline labels, health pills, emphasis rows, signal tiles, and compact stat pairs.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/status-primitives/3.html",
+        "tsx": "tsx/StatusPrimitivesVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "status-primitives-4",
+      "title": "Signal tile",
+      "description": "Signal tile Small Tailwind status atoms for inline labels, health pills, emphasis rows, signal tiles, and compact stat pairs.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/status-primitives/4.html",
+        "tsx": "tsx/StatusPrimitivesVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "status-primitives-5",
+      "title": "Stat pair",
+      "description": "Stat pair Small Tailwind status atoms for inline labels, health pills, emphasis rows, signal tiles, and compact stat pairs.",
+      "source": {
+        "html": "../../../../public/examples/building-blocks/status-primitives/5.html",
+        "tsx": "tsx/StatusPrimitivesVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}
