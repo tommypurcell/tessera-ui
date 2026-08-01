@@ -58,6 +58,11 @@ npx tessera-ui@latest info marketing-pricing --json
 Choose the closest existing component. If the request is ambiguous, present the strongest few
 matches and ask the user only when the choice would materially change the result.
 
+When visual comparison would improve the choice, read
+`https://www.tessera-ui.com/screenshots/manifest.json`, match `componentId` and `variantId`, and
+inspect the listed screenshot URL. Treat screenshots as optional supporting evidence after text
+discovery, not as a requirement for installing a known component.
+
 ## Plan before writing
 
 Choose `tsx` for React TypeScript projects and `html` for plain HTML projects. Pass the exact

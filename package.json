@@ -39,7 +39,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "pnpm registry:validate && pnpm registry:build && next build",
+    "build": "pnpm registry:validate && pnpm registry:build && pnpm screenshots:verify && next build",
     "start": "next start",
     "check": "eslint .",
     "test": "playwright test --project=chromium",
@@ -53,9 +53,11 @@
     "registry:generate": "node scripts/generate-registry.mjs",
     "registry:validate": "node scripts/validate-registry.mjs",
     "registry:build": "node scripts/build-agent-registry.mjs",
+    "screenshots:generate": "node scripts/capture-component-screenshots.mjs",
+    "screenshots:verify": "node scripts/verify-component-screenshots.mjs",
     "package:verify": "node scripts/verify-package.mjs",
     "prepack": "node scripts/validate-registry.mjs && node scripts/build-agent-registry.mjs && node scripts/verify-package.mjs",
-    "release:check": "pnpm check && pnpm registry:validate && pnpm registry:build && pnpm package:verify && next build && pnpm test:cli && pnpm test",
+    "release:check": "pnpm check && pnpm registry:validate && pnpm registry:build && pnpm screenshots:verify && pnpm package:verify && next build && pnpm test:cli && pnpm test",
     "tessera-ui": "node bin/tessera-ui.js"
   },
   "devDependencies": {

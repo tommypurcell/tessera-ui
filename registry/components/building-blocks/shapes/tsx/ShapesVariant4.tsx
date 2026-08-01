@@ -8,7 +8,7 @@ export type ShapesVariant4Props = HTMLAttributes<HTMLDivElement>
 export function ShapesVariant4({ className, ...props }: ShapesVariant4Props) {
   return (
     <div className={className} {...props}>
-      <span className="size-10 rounded-full border-4 border-blue-200"></span>
+      <span className="inline-block size-10 rounded-full border-4 border-blue-200"></span>
     </div>
   )
 }

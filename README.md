@@ -65,6 +65,17 @@ The CLI detects npm, pnpm, Yarn, or Bun from the target project lockfile when a 
 
 An agent-ready workflow for safe, non-interactive component discovery and installation is included at [`skills/tessera-ui/SKILL.md`](./skills/tessera-ui/SKILL.md). It ships in the npm package alongside the CLI.
 
+## Visual previews
+
+Every installable variant has a generated desktop screenshot. Agents can discover them through [`/screenshots/manifest.json`](https://www.tessera-ui.com/screenshots/manifest.json), then request the matching screenshot URL only when visual comparison is useful.
+
+Regenerate and verify previews locally:
+
+```sh
+pnpm screenshots:generate
+pnpm screenshots:verify
+```
+
 ## Local development
 
 ```sh
