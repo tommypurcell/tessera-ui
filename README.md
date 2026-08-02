@@ -15,6 +15,7 @@ Search and inspect the registry:
 ```sh
 npx tessera-ui@latest search "pricing table"
 npx tessera-ui@latest info marketing-pricing
+npx tessera-ui@latest preview marketing-pricing --variant pricing-2
 ```
 
 Install a component:
@@ -67,7 +68,7 @@ An agent-ready workflow for safe, non-interactive component discovery and instal
 
 ## Visual previews
 
-Every installable variant has a generated desktop screenshot. Agents can discover them through [`/screenshots/manifest.json`](https://www.tessera-ui.com/screenshots/manifest.json), then request the matching screenshot URL only when visual comparison is useful.
+Every installable variant has a generated desktop screenshot. `search` returns a representative preview, while `info`, `preview`, `plan`, and `add` return the exact URL for the selected variant. JSON output exposes the same URLs for agents. The complete index remains available at [`/screenshots/manifest.json`](https://www.tessera-ui.com/screenshots/manifest.json).
 
 Regenerate and verify previews locally:
 

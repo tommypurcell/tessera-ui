@@ -1,6 +1,6 @@
 {
   "name": "tessera-ui",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Searchable Tailwind CSS component registry with structured metadata for humans and coding agents.",
   "type": "module",
   "license": "MIT",
@@ -56,7 +56,7 @@
     "screenshots:generate": "node scripts/capture-component-screenshots.mjs",
     "screenshots:verify": "node scripts/verify-component-screenshots.mjs",
     "package:verify": "node scripts/verify-package.mjs",
-    "prepack": "node scripts/validate-registry.mjs && node scripts/build-agent-registry.mjs && node scripts/verify-package.mjs",
+    "prepack": "node scripts/validate-registry.mjs && node scripts/build-agent-registry.mjs && node scripts/verify-component-screenshots.mjs && node scripts/verify-package.mjs",
     "release:check": "pnpm check && pnpm registry:validate && pnpm registry:build && pnpm screenshots:verify && pnpm package:verify && next build && pnpm test:cli && pnpm test",
     "tessera-ui": "node bin/tessera-ui.js"
   },

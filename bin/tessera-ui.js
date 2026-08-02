@@ -11,6 +11,21 @@ import { fileURLToPath } from 'node:url'
 const packageRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const packageJson = JSON.parse(fs.readFileSync(path.join(packageRoot, 'package.json'), 'utf8'))
 const configFilename = 'tessera-ui.json'
+const publicSiteUrl = 'https://www.tessera-ui.com'
+
+function screenshotUrl(componentId, variantId) {
+  return `${publicSiteUrl}/screenshots/components/${componentId}/${variantId}.jpg`
+}
+
+function componentWithScreenshots(component) {
+  return {
+    ...component,
+    variants: component.variants.map((variant) => ({
+      ...variant,
+      screenshotUrl: variant.screenshotUrl ?? screenshotUrl(component.id, variant.id),
+    })),
+  }
+}
 
 function fail(message) {
   console.error(`tessera-ui: ${message}`)
@@ -279,6 +294,9 @@ async function commandSearch(client, query, options) {
   results.forEach((component, indexPosition) => {
     console.log(`${indexPosition + 1}. ${component.id}`)
     console.log(`   ${component.summary}`)
+    if (component.screenshotUrl) {
+      console.log(`   Preview: ${component.screenshotUrl}`)
+    }
     console.log(`   Install: npx tessera-ui@latest add ${component.id}`)
   })
 }
@@ -287,7 +305,7 @@ async function commandInfo(client, id, options) {
   if (!id) {
     throw new Error('provide a component id.')
   }
-  const component = await client.component(id)
+  const component = componentWithScreenshots(await client.component(id))
   if (options.json) {
     return console.log(JSON.stringify(component, null, 2))
   }
@@ -298,15 +316,35 @@ async function commandInfo(client, id, options) {
     `\nAvoid when:\n${component.intent.doNotUseFor.map((item) => `- ${item}`).join('\n')}`,
   )
   console.log(
-    `\nVariants:\n${component.variants.map((variant) => `- ${variant.id}: ${variant.summary}`).join('\n')}`,
+    `\nVariants:\n${component.variants
+      .map((variant) => `- ${variant.id}: ${variant.summary}\n  Preview: ${variant.screenshotUrl}`)
+      .join('\n')}`,
   )
+}
+
+async function commandPreview(client, id, options) {
+  if (!id) {
+    throw new Error('provide a component id.')
+  }
+  const component = componentWithScreenshots(await client.component(id))
+  const variant = await chooseVariant(component, options.variant)
+  if (options.json) {
+    return console.log(
+      JSON.stringify(
+        { component: component.id, variant: variant.id, screenshotUrl: variant.screenshotUrl },
+        null,
+        2,
+      ),
+    )
+  }
+  console.log(variant.screenshotUrl)
 }
 
 async function buildInstallPlan(client, id, options) {
   if (!id) {
     throw new Error('provide a component id.')
   }
-  const component = await client.component(id)
+  const component = componentWithScreenshots(await client.component(id))
   const variant = await chooseVariant(component, options.variant)
   const { cwd, config } = projectContext(options)
   const format =
@@ -333,6 +371,7 @@ async function buildInstallPlan(client, id, options) {
 
 function printPlan(plan) {
   console.log(`Install plan for ${plan.component.id}/${plan.variant.id}`)
+  console.log(`Preview: ${plan.variant.screenshotUrl}`)
   plan.files.forEach(({ sourceFile, destination }) =>
     console.log(`Copy: ${sourceFile.path} → ${destination}`),
   )
@@ -347,6 +386,7 @@ async function commandPlan(client, id, options) {
         {
           component: plan.component.id,
           variant: plan.variant.id,
+          screenshotUrl: plan.variant.screenshotUrl,
           files: plan.files.map(({ sourceFile, destination }) => ({
             source: sourceFile,
             destination,
@@ -415,6 +455,7 @@ Commands:
   list                 List available components
   search <query>       Search components by intent
   info <id>            Inspect a component and its variants
+  preview <id>         Get the screenshot for a component variant
   plan <id>            Preview files and dependencies
   add <id>             Download component source into your project
   validate <id>        Check that a selected component is installed
@@ -458,6 +499,8 @@ try {
       await commandSearch(client, id, options)
     } else if (command === 'info') {
       await commandInfo(client, id, options)
+    } else if (command === 'preview') {
+      await commandPreview(client, id, options)
     } else if (command === 'plan') {
       await commandPlan(client, id, options)
     } else if (command === 'add') {

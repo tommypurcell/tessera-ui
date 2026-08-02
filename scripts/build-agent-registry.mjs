@@ -8,6 +8,7 @@ const projectRoot = process.cwd()
 const registryRoot = path.join(projectRoot, 'registry', 'components')
 const outputRoot = path.join(projectRoot, 'public', 'registry')
 const selectedCategories = process.argv.slice(2)
+const publicSiteUrl = 'https://www.tessera-ui.com'
 
 function getSelectedCategories() {
   if (selectedCategories.length === 0) {
@@ -41,6 +42,10 @@ function publicUrl(relativePath) {
   return `/${relativePath.split(path.sep).join('/')}`
 }
 
+function screenshotUrl(componentName, variantId) {
+  return `${publicSiteUrl}/screenshots/components/${componentName}/${variantId}.jpg`
+}
+
 function buildSourceArtifact(registryDirectory, componentName, variant) {
   const files = []
 
@@ -72,6 +77,7 @@ function toManifest(registryEntry, registryDirectory) {
     appearance: variant.appearance,
     states: variant.states,
     accessibility: variant.accessibility,
+    screenshotUrl: screenshotUrl(registryEntry.name, variant.id),
     files: buildSourceArtifact(registryDirectory, registryEntry.name, variant),
   }))
   const files = variantFiles.flatMap((variant) =>
@@ -157,14 +163,17 @@ function componentSchema() {
 }
 
 function buildInstructionFiles(manifests) {
-  const index = manifests.map(({ id, title, summary, category, intent, installation }) => ({
-    id,
-    title,
-    summary,
-    category,
-    useFor: intent.useFor,
-    installCommand: installation.command,
-  }))
+  const index = manifests.map(
+    ({ id, title, summary, category, intent, installation, variants }) => ({
+      id,
+      title,
+      summary,
+      category,
+      useFor: intent.useFor,
+      installCommand: installation.command,
+      screenshotUrl: variants[0]?.screenshotUrl,
+    }),
+  )
   const shortInstructions = [
     '# Tessera UI',
     '',
@@ -228,9 +237,7 @@ const registryFiles = findRegistryFiles(registryRoot).filter((registryFilePath) 
 // Validate every input before replacing the last complete generated registry.
 for (const registryFilePath of registryFiles) {
   const registryDirectory = path.dirname(registryFilePath)
-  const parsedRegistry = componentRegistrySchema.parse(
-    JSON.parse(fs.readFileSync(registryFilePath, 'utf8')),
-  )
+  const parsedRegistry = componentRegistrySchema.parse(JSON.parse(fs.readFileSync(registryFilePath, 'utf8')))
   for (const variant of parsedRegistry.variants) {
     for (const sourcePath of Object.values(variant.source)) {
       const absoluteSourcePath = path.resolve(registryDirectory, sourcePath)
@@ -247,7 +254,9 @@ if (!categoryFilter) {
 
 const manifests = registryFiles.map((registryFilePath) => {
   const registryDirectory = path.dirname(registryFilePath)
-  const parsedRegistry = componentRegistrySchema.parse(JSON.parse(fs.readFileSync(registryFilePath, 'utf8')))
+  const parsedRegistry = componentRegistrySchema.parse(
+    JSON.parse(fs.readFileSync(registryFilePath, 'utf8')),
+  )
   const manifest = toManifest(parsedRegistry, registryDirectory)
   writeJson(path.join(outputRoot, 'components', `${manifest.id}.json`), manifest)
   writeJson(path.join(outputRoot, `${manifest.id}.json`), manifest)

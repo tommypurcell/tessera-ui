@@ -58,10 +58,12 @@ npx tessera-ui@latest info marketing-pricing --json
 Choose the closest existing component. If the request is ambiguous, present the strongest few
 matches and ask the user only when the choice would materially change the result.
 
-When visual comparison would improve the choice, read
-`https://www.tessera-ui.com/screenshots/manifest.json`, match `componentId` and `variantId`, and
-inspect the listed screenshot URL. Treat screenshots as optional supporting evidence after text
-discovery, not as a requirement for installing a known component.
+The CLI returns screenshot URLs during discovery: `search --json` includes a representative
+preview, while `info --json` includes the exact URL for every variant. To retrieve one directly,
+run `npx tessera-ui@latest preview <component-id> --variant <variant-id> --json`. Treat screenshots
+as optional supporting evidence after text discovery, not as a substitute for reading the
+component description and requirements. The complete screenshot index is also available at
+`https://www.tessera-ui.com/screenshots/manifest.json`.
 
 ## Plan before writing
 

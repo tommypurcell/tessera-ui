@@ -74,6 +74,10 @@ test('downloads and verifies a component from a hosted registry', async (context
   )
 
   assert.match(result.stdout, /The component source is yours to edit/)
+  assert.match(
+    result.stdout,
+    /Preview: https:\/\/www\.tessera-ui\.com\/screenshots\/components\/application-buttons\/buttons-2\.jpg/,
+  )
   assert.equal(fs.existsSync(path.join(cwd, 'components', 'ui', 'buttons-2.tsx')), true)
 })
 
@@ -85,6 +89,42 @@ test('supports machine-readable discovery and version output', async () => {
     results.some((component) => component.id === 'application-buttons'),
     true,
   )
+  assert.match(
+    results.find((component) => component.id === 'application-buttons').screenshotUrl,
+    /\/screenshots\/components\/application-buttons\/buttons-1\.jpg$/,
+  )
+
+  const info = await cli(['info', 'application-buttons', '--json', '--registry', registryRoot], cwd)
+  const component = JSON.parse(info.stdout)
+  assert.equal(
+    component.variants.every((variant) => variant.screenshotUrl.startsWith('https://')),
+    true,
+  )
+
+  const preview = await cli(
+    [
+      'preview',
+      'application-buttons',
+      '--variant',
+      'buttons-2',
+      '--json',
+      '--registry',
+      registryRoot,
+    ],
+    cwd,
+  )
+  assert.deepEqual(JSON.parse(preview.stdout), {
+    component: 'application-buttons',
+    variant: 'buttons-2',
+    screenshotUrl:
+      'https://www.tessera-ui.com/screenshots/components/application-buttons/buttons-2.jpg',
+  })
+
+  const plan = await cli(
+    ['plan', 'application-buttons', '--variant', 'buttons-1', '--json', '--registry', registryRoot],
+    cwd,
+  )
+  assert.match(JSON.parse(plan.stdout).screenshotUrl, /application-buttons\/buttons-1\.jpg$/)
 
   const version = await cli(['--version'], cwd)
   assert.match(version.stdout, /^\d+\.\d+\.\d+\n$/)
