@@ -1,13 +1,40 @@
-import type { HTMLAttributes } from 'react'
+import type { HTMLAttributes, ReactNode } from 'react'
 
-export type SideMenuVariant1DarkProps = HTMLAttributes<HTMLDivElement>
+export type TesseraComponentState = 'default' | 'loading' | 'empty' | 'error'
+
+export type SideMenuVariant1DarkProps = Omit<HTMLAttributes<HTMLDivElement>, 'children'> & {
+  /** Replaces the component's default content while preserving its outer container. */
+  children?: ReactNode
+  /** Transforms the default content without copying the component's internal markup. */
+  renderContent?: (defaultContent: ReactNode) => ReactNode
+  /** Renders immediately before the main content. */
+  before?: ReactNode
+  /** Renders immediately after the main content. */
+  after?: ReactNode
+  /** Selects an application state. The default state preserves the original component UI. */
+  state?: TesseraComponentState
+  loadingContent?: ReactNode
+  emptyContent?: ReactNode
+  errorContent?: ReactNode
+}
 
 /**
  * Native details and summary elements preserve keyboard and disclosure behavior.
  */
-export function SideMenuVariant1Dark({ className, ...props }: SideMenuVariant1DarkProps) {
-  return (
-    <div className={className} {...props}>
+export function SideMenuVariant1Dark({
+  className,
+  children,
+  renderContent,
+  before,
+  after,
+  state = 'default',
+  loadingContent,
+  emptyContent,
+  errorContent,
+  ...props
+}: SideMenuVariant1DarkProps) {
+  const defaultContent = (
+    <>
       <div className="flex h-screen flex-col justify-between border-e border-gray-100 bg-white dark:border-gray-800 dark:bg-gray-900">
         <div className="p-4">
           <span className="grid h-12 w-32 place-content-center rounded-lg bg-gray-100 text-sm text-gray-500 dark:bg-gray-800 dark:text-gray-400">
@@ -158,6 +185,25 @@ export function SideMenuVariant1Dark({ className, ...props }: SideMenuVariant1Da
           </a>
         </div>
       </div>
+    </>
+  )
+  const content =
+    children ??
+    (state === 'loading'
+      ? (loadingContent ?? <span role="status">Loading…</span>)
+      : state === 'empty'
+        ? (emptyContent ?? <span>No content available.</span>)
+        : state === 'error'
+          ? (errorContent ?? <span role="alert">Something went wrong.</span>)
+          : renderContent
+            ? renderContent(defaultContent)
+            : defaultContent)
+
+  return (
+    <div className={className} aria-busy={state === 'loading' || undefined} {...props}>
+      {before}
+      {content}
+      {after}
     </div>
   )
 }

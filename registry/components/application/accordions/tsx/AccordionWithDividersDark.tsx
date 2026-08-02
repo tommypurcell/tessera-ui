@@ -1,13 +1,40 @@
-import type { HTMLAttributes } from 'react'
+import type { HTMLAttributes, ReactNode } from 'react'
 
-export type AccordionWithDividersDarkProps = HTMLAttributes<HTMLDivElement>
+export type TesseraComponentState = 'default' | 'loading' | 'empty' | 'error'
+
+export type AccordionWithDividersDarkProps = Omit<HTMLAttributes<HTMLDivElement>, 'children'> & {
+  /** Replaces the component's default content while preserving its outer container. */
+  children?: ReactNode
+  /** Transforms the default content without copying the component's internal markup. */
+  renderContent?: (defaultContent: ReactNode) => ReactNode
+  /** Renders immediately before the main content. */
+  before?: ReactNode
+  /** Renders immediately after the main content. */
+  after?: ReactNode
+  /** Selects an application state. The default state preserves the original component UI. */
+  state?: TesseraComponentState
+  loadingContent?: ReactNode
+  emptyContent?: ReactNode
+  errorContent?: ReactNode
+}
 
 /**
  * Native disclosure accordion. The browser manages keyboard and open-state behavior.
  */
-export function AccordionWithDividersDark({ className, ...props }: AccordionWithDividersDarkProps) {
-  return (
-    <div className={className} {...props}>
+export function AccordionWithDividersDark({
+  className,
+  children,
+  renderContent,
+  before,
+  after,
+  state = 'default',
+  loadingContent,
+  emptyContent,
+  errorContent,
+  ...props
+}: AccordionWithDividersDarkProps) {
+  const defaultContent = (
+    <>
       <div className="-mx-4 -my-2 space-y-0 divide-y divide-gray-200 dark:divide-gray-700">
         <details className="group px-4 py-3 [&_summary::-webkit-details-marker]:hidden">
           <summary className="flex cursor-pointer items-center justify-between gap-4 font-medium text-gray-900 hover:text-gray-700 dark:text-white dark:hover:text-gray-200">
@@ -102,6 +129,25 @@ export function AccordionWithDividersDark({ className, ...props }: AccordionWith
           </div>
         </details>
       </div>
+    </>
+  )
+  const content =
+    children ??
+    (state === 'loading'
+      ? (loadingContent ?? <span role="status">Loading…</span>)
+      : state === 'empty'
+        ? (emptyContent ?? <span>No content available.</span>)
+        : state === 'error'
+          ? (errorContent ?? <span role="alert">Something went wrong.</span>)
+          : renderContent
+            ? renderContent(defaultContent)
+            : defaultContent)
+
+  return (
+    <div className={className} aria-busy={state === 'loading' || undefined} {...props}>
+      {before}
+      {content}
+      {after}
     </div>
   )
 }

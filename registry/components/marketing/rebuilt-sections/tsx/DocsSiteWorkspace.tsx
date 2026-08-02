@@ -1,9 +1,25 @@
 'use client'
 
-import { Fragment, useMemo, useState, type HTMLAttributes } from 'react'
+import { Fragment, useMemo, useState, type HTMLAttributes, type ReactNode } from 'react'
 import { Callout, type CalloutTone } from '../../../building-blocks/callouts/tsx/Callout'
 
-export type DocsSiteWorkspaceProps = HTMLAttributes<HTMLDivElement>
+export type TesseraComponentState = 'default' | 'loading' | 'empty' | 'error'
+
+export type DocsSiteWorkspaceProps = Omit<HTMLAttributes<HTMLDivElement>, 'children'> & {
+  /** Replaces the component's default content while preserving its outer container. */
+  children?: ReactNode
+  /** Transforms the default content without copying the component's internal markup. */
+  renderContent?: (defaultContent: ReactNode) => ReactNode
+  /** Renders immediately before the main content. */
+  before?: ReactNode
+  /** Renders immediately after the main content. */
+  after?: ReactNode
+  /** Selects an application state. The default state preserves the original component UI. */
+  state?: TesseraComponentState
+  loadingContent?: ReactNode
+  emptyContent?: ReactNode
+  errorContent?: ReactNode
+}
 
 function InlineText({ text }: { text: string }) {
   const parts = text.split(/(`[^`]+`)/g)
@@ -417,7 +433,18 @@ function TerminalBlock({ prompt, output }: { prompt: string; output?: string[] }
   )
 }
 
-export function DocsSiteWorkspace({ className, ...props }: DocsSiteWorkspaceProps) {
+export function DocsSiteWorkspace({
+  className,
+  children,
+  renderContent,
+  before,
+  after,
+  state = 'default',
+  loadingContent,
+  emptyContent,
+  errorContent,
+  ...props
+}: DocsSiteWorkspaceProps) {
   const [activePage, setActivePage] = useState<DocPage>('introduction')
   const [activeSection, setActiveSection] = useState<string | null>(pageContent.introduction.sections[0]?.id ?? null)
   const [isNavOpen, setIsNavOpen] = useState(false)
@@ -494,8 +521,8 @@ export function DocsSiteWorkspace({ className, ...props }: DocsSiteWorkspaceProp
     )
   }
 
-  return (
-    <div className={className} {...props}>
+  const defaultContent = (
+    <>
       <div className="border-b border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950">
         <div className="mx-auto flex h-16 max-w-7xl items-center gap-6 px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2">
@@ -718,6 +745,25 @@ export function DocsSiteWorkspace({ className, ...props }: DocsSiteWorkspaceProp
           </div>
         </div>
       </section>
+    </>
+  )
+  const content =
+    children ??
+    (state === 'loading'
+      ? (loadingContent ?? <span role="status">Loading…</span>)
+      : state === 'empty'
+        ? (emptyContent ?? <span>No content available.</span>)
+        : state === 'error'
+          ? (errorContent ?? <span role="alert">Something went wrong.</span>)
+          : renderContent
+            ? renderContent(defaultContent)
+            : defaultContent)
+
+  return (
+    <div className={className} aria-busy={state === 'loading' || undefined} {...props}>
+      {before}
+      {content}
+      {after}
     </div>
   )
 }

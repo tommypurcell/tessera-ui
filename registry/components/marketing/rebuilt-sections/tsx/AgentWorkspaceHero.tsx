@@ -1,13 +1,40 @@
-import type { HTMLAttributes } from 'react'
+import type { HTMLAttributes, ReactNode } from 'react'
 
-export type AgentWorkspaceHeroProps = HTMLAttributes<HTMLDivElement>
+export type TesseraComponentState = 'default' | 'loading' | 'empty' | 'error'
+
+export type AgentWorkspaceHeroProps = Omit<HTMLAttributes<HTMLDivElement>, 'children'> & {
+  /** Replaces the component's default content while preserving its outer container. */
+  children?: ReactNode
+  /** Transforms the default content without copying the component's internal markup. */
+  renderContent?: (defaultContent: ReactNode) => ReactNode
+  /** Renders immediately before the main content. */
+  before?: ReactNode
+  /** Renders immediately after the main content. */
+  after?: ReactNode
+  /** Selects an application state. The default state preserves the original component UI. */
+  state?: TesseraComponentState
+  loadingContent?: ReactNode
+  emptyContent?: ReactNode
+  errorContent?: ReactNode
+}
 
 /**
  * Copy-and-own Tailwind component. Add application-specific state and event handlers where needed.
  */
-export function AgentWorkspaceHero({ className, ...props }: AgentWorkspaceHeroProps) {
-  return (
-    <div className={className} {...props}>
+export function AgentWorkspaceHero({
+  className,
+  children,
+  renderContent,
+  before,
+  after,
+  state = 'default',
+  loadingContent,
+  emptyContent,
+  errorContent,
+  ...props
+}: AgentWorkspaceHeroProps) {
+  const defaultContent = (
+    <>
       <section className="border-b border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950">
         <div className="mx-auto grid max-w-7xl gap-14 px-4 py-16 sm:px-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,.95fr)] lg:px-8 lg:py-24">
           <div className="max-w-2xl">
@@ -180,6 +207,25 @@ export function AgentWorkspaceHero({ className, ...props }: AgentWorkspaceHeroPr
           </div>
         </div>
       </section>
+    </>
+  )
+  const content =
+    children ??
+    (state === 'loading'
+      ? (loadingContent ?? <span role="status">Loading…</span>)
+      : state === 'empty'
+        ? (emptyContent ?? <span>No content available.</span>)
+        : state === 'error'
+          ? (errorContent ?? <span role="alert">Something went wrong.</span>)
+          : renderContent
+            ? renderContent(defaultContent)
+            : defaultContent)
+
+  return (
+    <div className={className} aria-busy={state === 'loading' || undefined} {...props}>
+      {before}
+      {content}
+      {after}
     </div>
   )
 }

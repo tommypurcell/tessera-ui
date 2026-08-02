@@ -10,6 +10,117 @@ const outputRoot = path.join(projectRoot, 'public', 'registry')
 const selectedCategories = process.argv.slice(2)
 const publicSiteUrl = 'https://www.tessera-ui.com'
 
+const universalProps = [
+  {
+    name: 'className',
+    type: 'string',
+    required: false,
+    default: 'undefined',
+    description: 'Adds classes to the outer container.',
+    example: '"my-component"',
+  },
+  {
+    name: 'children',
+    type: 'ReactNode',
+    required: false,
+    default: 'original component content',
+    description: 'Replaces the default content while preserving the outer container.',
+    example: '<CustomContent />',
+  },
+  {
+    name: 'renderContent',
+    type: '(defaultContent: ReactNode) => ReactNode',
+    required: false,
+    default: 'undefined',
+    description: 'Transforms or wraps the original content without copying its internal markup.',
+    example: '(content) => <section>{content}</section>',
+  },
+  {
+    name: 'before',
+    type: 'ReactNode',
+    required: false,
+    default: 'undefined',
+    description: 'Renders immediately before the main content.',
+    example: '<Announcement />',
+  },
+  {
+    name: 'after',
+    type: 'ReactNode',
+    required: false,
+    default: 'undefined',
+    description: 'Renders immediately after the main content.',
+    example: '<FooterNote />',
+  },
+  {
+    name: 'state',
+    type: "'default' | 'loading' | 'empty' | 'error'",
+    required: false,
+    default: "'default'",
+    description: 'Selects an explicit application state.',
+    example: '"loading"',
+  },
+  {
+    name: 'loadingContent',
+    type: 'ReactNode',
+    required: false,
+    default: 'accessible loading message',
+    description: 'Overrides the content shown in the loading state.',
+    example: '<Spinner />',
+  },
+  {
+    name: 'emptyContent',
+    type: 'ReactNode',
+    required: false,
+    default: 'empty-state message',
+    description: 'Overrides the content shown in the empty state.',
+    example: '<EmptyState />',
+  },
+  {
+    name: 'errorContent',
+    type: 'ReactNode',
+    required: false,
+    default: 'accessible error message',
+    description: 'Overrides the content shown in the error state.',
+    example: '<ErrorState />',
+  },
+]
+
+const knownSemanticProps = [
+  ['messages', 'ChatMessage[]', 'default conversation', 'Conversation messages to render.', 'messages'],
+  ['items', 'NavigationItem[]', 'none', 'Navigation items to render.', 'items'],
+  ['signals', 'Signal[]', 'default signals', 'Signals displayed by the marquee.', 'signals'],
+  ['message', 'string', 'default message', 'Primary transcript message.', 'message'],
+  [
+    'supportingMessage',
+    'string',
+    'default supporting message',
+    'Secondary transcript message.',
+    'supportingMessage',
+  ],
+  ['brand', 'ReactNode', '"Workspace"', 'Brand content displayed above navigation.', '"Acme"'],
+  [
+    'searchLabel',
+    'string',
+    '"Search navigation"',
+    'Accessible label for the navigation search field.',
+    '"Search projects"',
+  ],
+  [
+    'searchPlaceholder',
+    'string',
+    '"Search"',
+    'Placeholder shown in the navigation search field.',
+    '"Find a project"',
+  ],
+  [
+    'navigationLabel',
+    'string',
+    '"Primary navigation"',
+    'Accessible label for the navigation region.',
+    '"Workspace navigation"',
+  ],
+]
+
 function getSelectedCategories() {
   if (selectedCategories.length === 0) {
     return null
@@ -46,6 +157,52 @@ function screenshotUrl(componentName, variantId) {
   return `${publicSiteUrl}/screenshots/components/${componentName}/${variantId}.jpg`
 }
 
+function inferVariantProps(registryDirectory, variant) {
+  const source = fs.readFileSync(path.resolve(registryDirectory, variant.source.tsx), 'utf8')
+
+  if (source.includes("export type TesseraComponentState = 'default'")) {
+    return universalProps
+  }
+
+  const props = []
+
+  if (source.includes('className')) {
+    props.push(universalProps[0])
+  }
+  if (/\bchildren\??\s*[=:]/.test(source)) {
+    props.push({
+      ...universalProps[1],
+      description: 'Supplies or replaces the component content supported by this variant.',
+    })
+  }
+
+  for (const [name, type, defaultValue, description, example] of knownSemanticProps) {
+    if (new RegExp(`\\b${name}\\??\\s*[:},]`).test(source)) {
+      props.push({
+        name,
+        type,
+        required: name === 'items' && !source.includes('items?'),
+        default: defaultValue,
+        description,
+        example,
+      })
+    }
+  }
+
+  if (source.includes('HTMLAttributes<')) {
+    props.push({
+      name: 'htmlAttributes',
+      type: 'HTMLAttributes<HTMLElement>',
+      required: false,
+      default: 'undefined',
+      description: 'Standard attributes and event handlers accepted by the rendered root element.',
+      example: '{ "aria-label": "Example" }',
+    })
+  }
+
+  return props
+}
+
 function buildSourceArtifact(registryDirectory, componentName, variant) {
   const files = []
 
@@ -70,20 +227,41 @@ function buildSourceArtifact(registryDirectory, componentName, variant) {
 }
 
 function toManifest(registryEntry, registryDirectory) {
-  const variantFiles = registryEntry.variants.map((variant) => ({
-    id: variant.id,
-    title: variant.title,
-    summary: variant.description,
-    appearance: variant.appearance,
-    states: variant.states,
-    accessibility: variant.accessibility,
-    screenshotUrl: screenshotUrl(registryEntry.name, variant.id),
-    files: buildSourceArtifact(registryDirectory, registryEntry.name, variant),
-  }))
+  const variantFiles = registryEntry.variants.map((variant) => {
+    const props = inferVariantProps(registryDirectory, variant)
+    const supportsApplicationStates = props.some((prop) => prop.name === 'state')
+
+    return {
+      id: variant.id,
+      title: variant.title,
+      summary: variant.description,
+      appearance: variant.appearance,
+      states: supportsApplicationStates
+        ? [...new Set([...variant.states, 'loading', 'empty', 'error'])]
+        : variant.states,
+      accessibility: variant.accessibility,
+      props,
+      screenshotUrl: screenshotUrl(registryEntry.name, variant.id),
+      files: buildSourceArtifact(registryDirectory, registryEntry.name, variant),
+    }
+  })
   const files = variantFiles.flatMap((variant) =>
     variant.files.map((file) => ({ ...file, variant: variant.id })),
   )
   const states = [...new Set(variantFiles.flatMap((variant) => variant.states))]
+  const collectionProps = new Map()
+
+  for (const variant of variantFiles) {
+    for (const prop of variant.props) {
+      const existing = collectionProps.get(prop.name)
+
+      if (existing) {
+        existing.variants.push(variant.id)
+      } else {
+        collectionProps.set(prop.name, { ...prop, variants: [variant.id] })
+      }
+    }
+  }
 
   return {
     $schema: '/registry/schema/component-v1.json',
@@ -102,8 +280,8 @@ function toManifest(registryEntry, registryDirectory) {
       clientComponent: registryEntry.frameworks.includes('react'),
     },
     inputs: {
-      props: [],
-      note: 'This collection currently preserves source variants. Prop contracts are added as each source becomes a reviewed React component.',
+      props: [...collectionProps.values()],
+      note: 'Each prop lists the variants that support it. Omitting optional props preserves the original component UI.',
     },
     behavior: {
       states,
@@ -146,15 +324,53 @@ function componentSchema() {
     $id: '/registry/schema/component-v1.json',
     title: 'Tessera UI Component Manifest',
     type: 'object',
-    required: ['id', 'version', 'summary', 'intent', 'requirements', 'dependencies', 'variants', 'files', 'installation', 'validation'],
+    required: [
+      'id',
+      'version',
+      'summary',
+      'intent',
+      'requirements',
+      'inputs',
+      'dependencies',
+      'variants',
+      'files',
+      'installation',
+      'validation',
+    ],
     properties: {
       id: { type: 'string', pattern: '^[a-z0-9-]+$' },
       version: { type: 'string' },
       summary: { type: 'string' },
       intent: { type: 'object', required: ['useFor', 'doNotUseFor'] },
       requirements: { type: 'object', required: ['frameworks', 'styling'] },
+      inputs: {
+        type: 'object',
+        required: ['props', 'note'],
+        properties: {
+          props: {
+            type: 'array',
+            items: {
+              type: 'object',
+              required: [
+                'name',
+                'type',
+                'required',
+                'default',
+                'description',
+                'example',
+                'variants',
+              ],
+            },
+          },
+          note: { type: 'string' },
+        },
+      },
       dependencies: { type: 'object', required: ['npm', 'components', 'conflicts'] },
-      variants: { type: 'array', minItems: 1 },
+      variants: {
+        type: 'array',
+        minItems: 1,
+        items: { type: 'object', required: ['id', 'props', 'files'] },
+      },
       files: { type: 'array', minItems: 1 },
       installation: { type: 'object', required: ['command', 'steps'] },
       validation: { type: 'object', required: ['command', 'checks'] },

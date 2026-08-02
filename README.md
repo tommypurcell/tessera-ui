@@ -32,6 +32,12 @@ npx tessera-ui@latest add application-buttons --variant buttons-1
 
 The command previews every file and dependency before writing. Installed source is placed in `components/ui` by default and belongs to your project—you can edit it directly.
 
+## React props and states
+
+Run `info <component-id> --json` to inspect the exact props supported by each variant. Prop metadata includes the TypeScript type, whether it is required, its default, a description, and an example.
+
+Generated React variants preserve their original UI when rendered without props. They also accept `children`, `renderContent`, `before`, and `after` for composition, plus explicit `loading`, `empty`, and `error` states with replaceable state content. Components that already model structured data—such as chat bubbles, navigation, marquees, and transcript ribbons—retain their specialized props.
+
 ## Configuration
 
 `init` creates `tessera-ui.json`:

@@ -55,6 +55,11 @@ intended and discouraged use cases and available variants:
 npx tessera-ui@latest info marketing-pricing --json
 ```
 
+Read each variant's `props` before installing it. Every prop includes its TypeScript type,
+required status, default, description, and example. Generated variants support content slots and
+explicit `default`, `loading`, `empty`, and `error` states; specialized variants expose their own
+data props. Omitting optional props preserves the original component UI.
+
 Choose the closest existing component. If the request is ambiguous, present the strongest few
 matches and ask the user only when the choice would materially change the result.
 
@@ -110,8 +115,8 @@ npx tessera-ui@latest validate application-buttons \
 Then:
 
 1. Inspect the installed source and resulting dependency changes.
-2. Adapt imports, content, behavior, and styling to the surrounding project without treating the
-   copied file as an immutable package.
+2. Prefer the documented props for content and behavior changes. Edit the copied source when the
+   required customization is intentionally outside that API.
 3. Run the project's relevant formatter, lint, typecheck, tests, and build.
 4. Report the installed path, variant, dependencies, verification results, and any remaining
    integration work.

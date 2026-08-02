@@ -1,13 +1,40 @@
-import type { HTMLAttributes } from 'react'
+import type { HTMLAttributes, ReactNode } from 'react'
 
-export type AccordionsVariant3DarkProps = HTMLAttributes<HTMLDivElement>
+export type TesseraComponentState = 'default' | 'loading' | 'empty' | 'error'
+
+export type AccordionsVariant3DarkProps = Omit<HTMLAttributes<HTMLDivElement>, 'children'> & {
+  /** Replaces the component's default content while preserving its outer container. */
+  children?: ReactNode
+  /** Transforms the default content without copying the component's internal markup. */
+  renderContent?: (defaultContent: ReactNode) => ReactNode
+  /** Renders immediately before the main content. */
+  before?: ReactNode
+  /** Renders immediately after the main content. */
+  after?: ReactNode
+  /** Selects an application state. The default state preserves the original component UI. */
+  state?: TesseraComponentState
+  loadingContent?: ReactNode
+  emptyContent?: ReactNode
+  errorContent?: ReactNode
+}
 
 /**
  * Native details and summary elements preserve keyboard and disclosure behavior.
  */
-export function AccordionsVariant3Dark({ className, ...props }: AccordionsVariant3DarkProps) {
-  return (
-    <div className={className} {...props}>
+export function AccordionsVariant3Dark({
+  className,
+  children,
+  renderContent,
+  before,
+  after,
+  state = 'default',
+  loadingContent,
+  emptyContent,
+  errorContent,
+  ...props
+}: AccordionsVariant3DarkProps) {
+  const defaultContent = (
+    <>
       <div className="divide-y-2 divide-black border-2 border-black shadow-[4px_4px_0_0] shadow-black dark:divide-white dark:border-white dark:shadow-white">
         <details className="group [&_summary::-webkit-details-marker]:hidden">
           <summary className="flex cursor-pointer items-center justify-between gap-4 bg-white px-4 py-3 font-medium text-gray-900 hover:bg-yellow-200 focus:bg-yellow-200 focus:outline-0 dark:bg-gray-900 dark:text-white dark:hover:bg-yellow-700 dark:focus:bg-yellow-700">
@@ -102,6 +129,25 @@ export function AccordionsVariant3Dark({ className, ...props }: AccordionsVarian
           </div>
         </details>
       </div>
+    </>
+  )
+  const content =
+    children ??
+    (state === 'loading'
+      ? (loadingContent ?? <span role="status">Loading…</span>)
+      : state === 'empty'
+        ? (emptyContent ?? <span>No content available.</span>)
+        : state === 'error'
+          ? (errorContent ?? <span role="alert">Something went wrong.</span>)
+          : renderContent
+            ? renderContent(defaultContent)
+            : defaultContent)
+
+  return (
+    <div className={className} aria-busy={state === 'loading' || undefined} {...props}>
+      {before}
+      {content}
+      {after}
     </div>
   )
 }

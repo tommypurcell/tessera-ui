@@ -1,20 +1,45 @@
-type NavigationItem = { label: string; href: string; active?: boolean }
+import type { HTMLAttributes, ReactNode } from 'react'
 
-export function DashboardSidebar({ items }: { items: NavigationItem[] }) {
+export type NavigationItem = { label: string; href: string; active?: boolean }
+
+export type DashboardSidebarProps = Omit<HTMLAttributes<HTMLElement>, 'children'> & {
+  items: NavigationItem[]
+  brand?: ReactNode
+  searchLabel?: string
+  searchPlaceholder?: string
+  navigationLabel?: string
+}
+
+export function DashboardSidebar({
+  items,
+  brand = 'Workspace',
+  searchLabel = 'Search navigation',
+  searchPlaceholder = 'Search',
+  navigationLabel = 'Primary navigation',
+  className,
+  ...props
+}: DashboardSidebarProps) {
   return (
-    <aside className="w-64 border-r border-slate-200 bg-slate-50 p-4">
+    <aside
+      className={
+        className
+          ? `w-64 border-r border-slate-200 bg-slate-50 p-4 ${className}`
+          : 'w-64 border-r border-slate-200 bg-slate-50 p-4'
+      }
+      {...props}
+    >
       <a href="#main-content" className="text-sm font-semibold text-slate-950">
-        Workspace
+        {brand}
       </a>
       <label className="sr-only" htmlFor="sidebar-search">
-        Search navigation
+        {searchLabel}
       </label>
       <input
         id="sidebar-search"
         className="mt-5 w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm"
-        placeholder="Search"
+        placeholder={searchPlaceholder}
       />
-      <nav className="mt-5 space-y-1" aria-label="Primary navigation">
+      <nav className="mt-5 space-y-1" aria-label={navigationLabel}>
         {items.map((item) => (
           <a
             key={item.href}

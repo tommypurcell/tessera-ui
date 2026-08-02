@@ -100,6 +100,22 @@ test('supports machine-readable discovery and version output', async () => {
     component.variants.every((variant) => variant.screenshotUrl.startsWith('https://')),
     true,
   )
+  assert.equal(component.variants.every((variant) => variant.props.length > 0), true)
+  assert.equal(
+    component.variants.every((variant) =>
+      variant.props.every(
+        (prop) =>
+          typeof prop.name === 'string' &&
+          typeof prop.type === 'string' &&
+          typeof prop.required === 'boolean' &&
+          typeof prop.default === 'string' &&
+          typeof prop.description === 'string' &&
+          typeof prop.example === 'string',
+      ),
+    ),
+    true,
+  )
+  assert.equal(component.inputs.props.some((prop) => prop.name === 'state'), true)
 
   const preview = await cli(
     [
