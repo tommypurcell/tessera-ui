@@ -11,6 +11,7 @@ import { fileURLToPath } from 'node:url'
 import { scanProject } from '../scripts/theme/scan.mjs'
 import { findDesignDoc, importDesignDoc } from '../scripts/theme/import-design.mjs'
 import { renderThemeCss } from '../scripts/theme/eject.mjs'
+import { applyThemeToDirectory } from '../scripts/theme/apply.mjs'
 import { mergeTokens, pruneTokens, flattenTokens } from '../scripts/theme/tokens.mjs'
 
 const packageRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
@@ -345,6 +346,11 @@ async function commandPreview(client, id, options) {
     )
   }
   console.log(variant.screenshotUrl)
+  console.log(
+    'To view it: download the image and open it, e.g. ' +
+      `\`curl -sL ${variant.screenshotUrl} -o preview.jpg\` then read preview.jpg. ` +
+      'A raw image URL is not viewable inline; fetch the bytes first.',
+  )
 }
 
 async function buildInstallPlan(client, id, options) {
@@ -614,6 +620,30 @@ function themeEject(options) {
   console.log(`Wrote ${rel}. Import it in your global stylesheet: @import './${rel}';`)
 }
 
+function themeApply(options) {
+  const { cwd, config } = projectContext(options)
+  if (!config?.theme) {
+    throw new Error('no active theme to apply. Confirm one with `tessera-ui theme confirm` first.')
+  }
+  const componentDirectory = options.directory ?? config.componentDirectory ?? 'components/ui'
+  const result = applyThemeToDirectory(cwd, componentDirectory, config.theme.tokens)
+  if (options.json) {
+    return console.log(JSON.stringify(result, null, 2))
+  }
+  if (!result.total) {
+    console.log(
+      `No themeable classes found in ${componentDirectory}. Components may already be themed or use no palette classes.`,
+    )
+    return
+  }
+  console.log(`Applied theme variables to ${result.files.length} file(s) in ${componentDirectory}:`)
+  result.files.forEach((file) => console.log(`  ${file.path} (${file.changes} change(s))`))
+  console.log(
+    '\nInstalled components now read your brand via CSS variables. Ensure theme.css is imported ' +
+      '(run `tessera-ui theme eject`).',
+  )
+}
+
 function commandTheme(subcommand, arg, options) {
   switch (subcommand) {
     case undefined:
@@ -627,9 +657,11 @@ function commandTheme(subcommand, arg, options) {
       return themeShow(options)
     case 'eject':
       return themeEject(options)
+    case 'apply':
+      return themeApply(options)
     default:
       throw new Error(
-        `unknown theme subcommand '${subcommand}'. Use scan|import|confirm|show|eject.`,
+        `unknown theme subcommand '${subcommand}'. Use scan|import|confirm|show|eject|apply.`,
       )
   }
 }
@@ -666,6 +698,7 @@ Commands:
                          confirm  Promote the proposed theme into tessera-ui.json
                          show     Print the active/proposed theme
                          eject    Write theme.css (@theme + :root vars) into the project
+                         apply    Rewrite installed components to read your theme's CSS vars
 
 Options:
   --variant <id>       Select a component variant

@@ -107,6 +107,12 @@ npx tessera-ui@latest theme eject      # write theme.css (@theme + :root vars)
 
 Import the generated `theme.css` in your global stylesheet (`@import './theme.css';`). After a theme is confirmed, `add` refreshes `theme.css` automatically; if an unconfirmed proposal exists, `add` reminds you to run `theme confirm`.
 
+Freshly installed components ship literal palette classes (e.g. `bg-indigo-600`), so run `theme apply` to rewrite the installed files to read your theme variables (with the original value kept as a fallback). It only touches files already copied into your project and is idempotent:
+
+```sh
+npx tessera-ui@latest theme apply
+```
+
 Confirming a theme upgrades `tessera-ui.json` to `schemaVersion: 2` with a `theme` block; v1 configs are still read.
 
 ## Agent skill
