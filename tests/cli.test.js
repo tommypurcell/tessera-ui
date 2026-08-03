@@ -295,13 +295,67 @@ test('theme apply rewrites installed components to read CSS variables', async ()
     }),
   )
 
+  // Default apply variabilizes radius and font, but NOT color (color is opt-in).
   await cli(['theme', 'apply', '--cwd', cwd], cwd)
-  const updated = fs.readFileSync(path.join(componentDir, 'cta.tsx'), 'utf8')
-  assert.match(updated, /bg-\[var\(--color-brand,#4f46e5\)\]/)
+  let updated = fs.readFileSync(path.join(componentDir, 'cta.tsx'), 'utf8')
   assert.match(updated, /rounded-\[var\(--radius,0\.5rem\)\]/)
   // Tailwind arbitrary values require underscores in place of spaces.
   assert.match(updated, /font-\[var\(--font-sans,Inter,_system-ui,_sans-serif\)\]/)
+  assert.match(updated, /\bbg-indigo-600\b/, 'color is not touched without --colors')
+
+  // Opt-in color branding rewrites the requested color.
+  await cli(['theme', 'apply', '--cwd', cwd, '--colors', 'indigo'], cwd)
+  updated = fs.readFileSync(path.join(componentDir, 'cta.tsx'), 'utf8')
+  assert.match(updated, /bg-\[var\(--color-brand,#4f46e5\)\]/)
   assert.doesNotMatch(updated, /\bbg-indigo-600\b/)
+})
+
+test('theme apply --dry-run reports changes without writing', async () => {
+  const cwd = fs.mkdtempSync(path.join(os.tmpdir(), 'tessera-ui-theme-dryrun-'))
+  const componentDir = path.join(cwd, 'components', 'ui')
+  fs.mkdirSync(componentDir, { recursive: true })
+  const file = path.join(componentDir, 'cta.tsx')
+  const before = `export const Cta = () => <button className="rounded-lg bg-rose-600">Go</button>\n`
+  fs.writeFileSync(file, before)
+  fs.writeFileSync(
+    path.join(cwd, 'tessera-ui.json'),
+    JSON.stringify({
+      schemaVersion: 2,
+      componentDirectory: 'components/ui',
+      theme: {
+        source: 'scan',
+        tokens: { colors: { brand: '#0d9488' }, radius: { DEFAULT: '0.75rem' } },
+      },
+    }),
+  )
+  const result = await cli(['theme', 'apply', '--cwd', cwd, '--dry-run'], cwd)
+  assert.match(result.stdout, /no files written/i)
+  assert.equal(fs.readFileSync(file, 'utf8'), before, 'dry-run must not modify the file')
+})
+
+test('theme apply --json reports category counts and does not overstate color changes', async () => {
+  const cwd = fs.mkdtempSync(path.join(os.tmpdir(), 'tessera-ui-theme-cat-'))
+  const componentDir = path.join(cwd, 'components', 'ui')
+  fs.mkdirSync(componentDir, { recursive: true })
+  fs.writeFileSync(
+    path.join(componentDir, 'cta.tsx'),
+    `export const Cta = () => <button className="rounded-lg bg-rose-600">Go</button>\n`,
+  )
+  fs.writeFileSync(
+    path.join(cwd, 'tessera-ui.json'),
+    JSON.stringify({
+      schemaVersion: 2,
+      componentDirectory: 'components/ui',
+      theme: {
+        source: 'scan',
+        tokens: { colors: { brand: '#0d9488' }, radius: { DEFAULT: '0.75rem' } },
+      },
+    }),
+  )
+  const result = await cli(['theme', 'apply', '--cwd', cwd, '--json'], cwd)
+  const report = JSON.parse(result.stdout)
+  assert.equal(report.byCategory.radius, 1)
+  assert.equal(report.byCategory.color, 0, 'color not rewritten by default')
 })
 
 test('theme scan does not invent values on an empty project', async () => {

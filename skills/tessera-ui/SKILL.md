@@ -99,16 +99,26 @@ automatically; if an unconfirmed proposal is present, `add` reminds you to run `
 
 Registry components ship with literal palette classes (e.g. `bg-indigo-600`), so a freshly
 installed component does not read the theme variables until you rewrite it. After installing
-components, run `theme apply` to rewrite the **installed** files so their brand/radius/font classes
-read the CSS variables (with the original value kept as a fallback):
+components, run `theme apply` to rewrite the **installed** files so their classes read the CSS
+variables (with the original value kept as a fallback). It only edits files already copied into the
+project, never the registry, and is idempotent.
 
 ```sh
-npx tessera-ui@latest theme apply --json     # rewrites files in the component directory
+npx tessera-ui@latest theme apply --dry-run  # preview exactly what would change, writes nothing
+npx tessera-ui@latest theme apply            # rewrite radius + font utilities
 ```
 
-This only edits files already copied into the project, never the registry, and is idempotent.
-After `theme apply` plus an imported `theme.css`, installed components inherit the brand instead of
-showing their default palette.
+By default `apply` variabilizes **radius and font only**. Color is **opt-in** — remapping every
+palette color to the brand would recolor semantic colors (a green success state, a red error), so
+you must name the colors to brand. The command reports what it changed per category and, when no
+color was rewritten, says so explicitly rather than claiming the brand was applied.
+
+```sh
+npx tessera-ui@latest theme apply --colors indigo,blue   # brand only these hues
+npx tessera-ui@latest theme apply --all-colors           # brand every palette color (review the diff)
+```
+
+After `theme apply` plus an imported `theme.css`, installed components inherit the brand.
 
 Skip this step only when the user explicitly wants the neutral defaults, or the project has no
 discernible design system yet.

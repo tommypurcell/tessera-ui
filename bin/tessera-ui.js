@@ -643,22 +643,58 @@ function themeApply(options) {
     throw new Error('no active theme to apply. Confirm one with `tessera-ui theme confirm` first.')
   }
   const componentDirectory = options.directory ?? config.componentDirectory ?? 'components/ui'
-  const result = applyThemeToDirectory(cwd, componentDirectory, config.theme.tokens)
+  const colors =
+    typeof options.colors === 'string'
+      ? options.colors
+          .split(',')
+          .map((value) => value.trim())
+          .filter(Boolean)
+      : undefined
+  const result = applyThemeToDirectory(cwd, componentDirectory, config.theme.tokens, {
+    dryRun: Boolean(options['dry-run']),
+    colors,
+    allColors: Boolean(options['all-colors']),
+  })
   if (options.json) {
     return console.log(JSON.stringify(result, null, 2))
   }
+  const verb = result.dryRun ? 'Would apply' : 'Applied'
   if (!result.total) {
     console.log(
-      `No themeable classes found in ${componentDirectory}. Components may already be themed or use no palette classes.`,
+      `No themeable classes found in ${componentDirectory}. Components may already be themed, or ` +
+        'use classes outside what apply rewrites.',
     )
     return
   }
-  console.log(`Applied theme variables to ${result.files.length} file(s) in ${componentDirectory}:`)
-  result.files.forEach((file) => console.log(`  ${file.path} (${file.changes} change(s))`))
   console.log(
-    '\nInstalled components now read your brand via CSS variables. Ensure theme.css is imported ' +
-      '(run `tessera-ui theme eject`).',
+    `${verb} theme variables to ${result.files.length} file(s) in ${componentDirectory}` +
+      `${result.dryRun ? ' (dry run — no files written)' : ''}:`,
   )
+  result.files.forEach((file) => console.log(`  ${file.path} (${file.changes} change(s))`))
+  // Report honestly, per category — only claim brand recoloring if colors were actually rewritten.
+  const { color, radius, font } = result.byCategory
+  const parts = []
+  if (radius) {
+    parts.push(`${radius} radius`)
+  }
+  if (font) {
+    parts.push(`${font} font`)
+  }
+  if (color) {
+    parts.push(`${color} color`)
+  }
+  console.log(`\nRewrote: ${parts.join(', ')}.`)
+  if (!color) {
+    console.log(
+      'Note: color classes were NOT changed. `apply` variabilizes radius and font by default; ' +
+        'color is opt-in because remapping every palette color would recolor semantic colors ' +
+        '(success/error). To brand specific colors, pass e.g. `--colors indigo,blue` or ' +
+        '`--all-colors` (review the diff).',
+    )
+  }
+  if (!result.dryRun) {
+    console.log('Ensure theme.css is imported (run `tessera-ui theme eject`).')
+  }
 }
 
 function commandTheme(subcommand, arg, options) {
@@ -729,6 +765,9 @@ Options:
   --package-manager    Select npm, pnpm, yarn, or bun
   --out <path>         theme eject: output path (default theme.css)
   --no-link            theme eject: do not auto-import theme.css into the global stylesheet
+  --dry-run            theme apply: show what would change without writing files
+  --colors <list>      theme apply: comma-separated colors to brand (e.g. indigo,blue,rose-600)
+  --all-colors         theme apply: variabilize every known palette color (review the diff)
   --force-scan         theme scan: scan even when a design.md is present
   --json               Print machine-readable output where supported
   --version            Print the installed CLI version`)

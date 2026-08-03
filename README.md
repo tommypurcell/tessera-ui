@@ -107,10 +107,12 @@ npx tessera-ui@latest theme eject      # write theme.css (@theme + :root vars)
 
 `theme eject` also auto-imports the generated `theme.css` into your global stylesheet (the file that loads Tailwind), inserting `@import './theme.css';` after the Tailwind import — idempotent, and skips a file that already imports it. Pass `--no-link` to wire it yourself. Without this import the variables never load. After a theme is confirmed, `add` refreshes `theme.css` automatically; if an unconfirmed proposal exists, `add` reminds you to run `theme confirm`.
 
-Freshly installed components ship literal palette classes (e.g. `bg-indigo-600`), so run `theme apply` to rewrite the installed files to read your theme variables (with the original value kept as a fallback). It only touches files already copied into your project and is idempotent:
+Freshly installed components ship literal palette classes (e.g. `bg-indigo-600`), so run `theme apply` to rewrite the installed files to read your theme variables (original value kept as a fallback). It only touches files already copied into your project and is idempotent. By default it variabilizes **radius and font**; color is opt-in (naming colors avoids recoloring semantic success/error styles). Use `--dry-run` to preview:
 
 ```sh
-npx tessera-ui@latest theme apply
+npx tessera-ui@latest theme apply --dry-run        # preview, writes nothing
+npx tessera-ui@latest theme apply                  # radius + font
+npx tessera-ui@latest theme apply --colors indigo  # also brand the indigo utilities
 ```
 
 Confirming a theme upgrades `tessera-ui.json` to `schemaVersion: 2` with a `theme` block; v1 configs are still read.
