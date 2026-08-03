@@ -228,6 +228,39 @@ test('theme treats a design.md as authoritative and skips the review file', asyn
   assert.equal(fs.existsSync(path.join(cwd, 'tessera-theme.proposed.json')), false)
 })
 
+test('theme apply rewrites installed components to read CSS variables', async () => {
+  const cwd = fs.mkdtempSync(path.join(os.tmpdir(), 'tessera-ui-theme-apply-'))
+  const componentDir = path.join(cwd, 'components', 'ui')
+  fs.mkdirSync(componentDir, { recursive: true })
+  fs.writeFileSync(
+    path.join(componentDir, 'cta.tsx'),
+    `export const Cta = () => <button className="rounded-lg bg-indigo-600 font-sans">Go</button>\n`,
+  )
+  fs.writeFileSync(
+    path.join(cwd, 'tessera-ui.json'),
+    JSON.stringify({
+      schemaVersion: 2,
+      componentDirectory: 'components/ui',
+      theme: {
+        source: 'scan',
+        tokens: {
+          colors: { brand: '#0d9488' },
+          radius: { DEFAULT: '0.75rem' },
+          fontFamily: { sans: 'Inter, system-ui, sans-serif' },
+        },
+      },
+    }),
+  )
+
+  await cli(['theme', 'apply', '--cwd', cwd], cwd)
+  const updated = fs.readFileSync(path.join(componentDir, 'cta.tsx'), 'utf8')
+  assert.match(updated, /bg-\[var\(--color-brand,#4f46e5\)\]/)
+  assert.match(updated, /rounded-\[var\(--radius,0\.5rem\)\]/)
+  // Tailwind arbitrary values require underscores in place of spaces.
+  assert.match(updated, /font-\[var\(--font-sans,Inter,_system-ui,_sans-serif\)\]/)
+  assert.doesNotMatch(updated, /\bbg-indigo-600\b/)
+})
+
 test('theme scan does not invent values on an empty project', async () => {
   const cwd = fs.mkdtempSync(path.join(os.tmpdir(), 'tessera-ui-theme-empty-'))
   const scan = await cli(['theme', 'scan', '--cwd', cwd, '--json'], cwd)

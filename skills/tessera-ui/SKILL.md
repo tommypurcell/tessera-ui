@@ -94,6 +94,19 @@ Have the project import the generated `theme.css` in its global stylesheet
 (`@import './theme.css';`). Once a theme is confirmed, `add` refreshes `theme.css` automatically;
 if an unconfirmed proposal is present, `add` reminds you to run `theme confirm`.
 
+Registry components ship with literal palette classes (e.g. `bg-indigo-600`), so a freshly
+installed component does not read the theme variables until you rewrite it. After installing
+components, run `theme apply` to rewrite the **installed** files so their brand/radius/font classes
+read the CSS variables (with the original value kept as a fallback):
+
+```sh
+npx tessera-ui@latest theme apply --json     # rewrites files in the component directory
+```
+
+This only edits files already copied into the project, never the registry, and is idempotent.
+After `theme apply` plus an imported `theme.css`, installed components inherit the brand instead of
+showing their default palette.
+
 Skip this step only when the user explicitly wants the neutral defaults, or the project has no
 discernible design system yet.
 
@@ -122,10 +135,19 @@ matches and ask the user only when the choice would materially change the result
 
 The CLI returns screenshot URLs during discovery: `search --json` includes a representative
 preview, while `info --json` includes the exact URL for every variant. To retrieve one directly,
-run `npx tessera-ui@latest preview <component-id> --variant <variant-id> --json`. Treat screenshots
-as optional supporting evidence after text discovery, not as a substitute for reading the
-component description and requirements. The complete screenshot index is also available at
-`https://www.tessera-ui.com/screenshots/manifest.json`.
+run `npx tessera-ui@latest preview <component-id> --variant <variant-id> --json`.
+
+The CLI returns a URL, not image bytes — a raw image URL is not viewable inline. To actually see a
+variant, download the image and then open the downloaded file:
+
+```sh
+curl -sL "<screenshotUrl>" -o preview.jpg
+# then open/read preview.jpg to view the pixels
+```
+
+Treat screenshots as optional supporting evidence after text discovery, not as a substitute for
+reading the component description and requirements. The complete screenshot index is also available
+at `https://www.tessera-ui.com/screenshots/manifest.json`.
 
 ## Plan before writing
 
