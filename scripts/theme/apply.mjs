@@ -62,31 +62,36 @@ function collectComponentFiles(dir, found = []) {
   return found
 }
 
+const COLOR_PREFIXES = ['bg', 'text', 'border', 'ring', 'fill', 'stroke', 'from', 'to', 'via']
+
 /**
  * Build the list of literal→var-backed class rewrites implied by a theme's tokens.
- * Only tokens present in the theme produce rewrites, so an unthemed group is left untouched.
+ * Each rewrite carries a `category` (color|radius|font) so callers can report accurately what
+ * changed rather than claiming everything was rebranded.
+ *
+ * Color rewriting is deliberately conservative and opt-in: mapping every palette color to the
+ * brand variable would recolor semantic colors (a green success badge, a red error) as the brand.
+ * By default only radius and font are variabilized. Pass `options.colors` — a list of literal
+ * color roots to treat as brand, e.g. ['indigo', 'rose-600'] — to also variabilize those, or
+ * `options.allColors` to map every known palette shade (aggressive; use with review).
  */
-export function buildRewrites(tokens) {
+export function buildRewrites(tokens, options = {}) {
   const flat = flattenTokens(tokens)
   const rewrites = []
 
-  if (flat['colors.brand']) {
-    // Any `{prefix}-{brandShade}` for the palette colors becomes brand-var-backed.
-    for (const [shadeKey, hex] of Object.entries(PALETTE_HEX)) {
-      for (const prefix of [
-        'bg',
-        'text',
-        'border',
-        'ring',
-        'fill',
-        'stroke',
-        'from',
-        'to',
-        'via',
-      ]) {
+  if (flat['colors.brand'] && (options.allColors || (options.colors && options.colors.length))) {
+    const brand = flat['colors.brand']
+    const wanted = options.allColors
+      ? Object.keys(PALETTE_HEX)
+      : normalizeColorTargets(options.colors)
+    // Also cover opacity modifiers like `bg-rose-600/10`.
+    for (const shadeKey of wanted) {
+      const hex = PALETTE_HEX[shadeKey] ?? brand
+      for (const prefix of COLOR_PREFIXES) {
         rewrites.push({
-          pattern: new RegExp(`\\b${prefix}-${shadeKey}\\b`, 'g'),
-          replacement: `${prefix}-[var(--color-brand,${hex})]`,
+          category: 'color',
+          pattern: new RegExp(`\\b${prefix}-${shadeKey}(/\\d{1,3})?\\b`, 'g'),
+          replacement: (_match, opacity = '') => `${prefix}-[var(--color-brand,${hex})]${opacity}`,
         })
       }
     }
@@ -95,11 +100,13 @@ export function buildRewrites(tokens) {
   if (flat['radius.DEFAULT']) {
     for (const [key, rem] of Object.entries(RADIUS_REM)) {
       rewrites.push({
+        category: 'radius',
         pattern: new RegExp(`\\brounded-${key}\\b`, 'g'),
         replacement: `rounded-[var(--radius,${rem})]`,
       })
     }
     rewrites.push({
+      category: 'radius',
       pattern: /\brounded\b(?!-)/g,
       replacement: `rounded-[var(--radius,0.25rem)]`,
     })
@@ -107,6 +114,7 @@ export function buildRewrites(tokens) {
 
   if (flat['fontFamily.sans']) {
     rewrites.push({
+      category: 'font',
       pattern: /\bfont-sans\b/g,
       replacement: `font-[var(--font-sans,${flat['fontFamily.sans'].replace(/\s+/g, '_')})]`,
     })
@@ -115,33 +123,59 @@ export function buildRewrites(tokens) {
   return rewrites
 }
 
+// Expand a user color target like "indigo" into all known shades of that hue, or pass through
+// an explicit "indigo-600".
+function normalizeColorTargets(colors) {
+  const targets = []
+  for (const raw of colors) {
+    const color = String(raw).trim()
+    if (PALETTE_HEX[color]) {
+      targets.push(color)
+    } else {
+      // A bare hue name: include every shade we know for it.
+      const shades = Object.keys(PALETTE_HEX).filter((key) => key.startsWith(`${color}-`))
+      targets.push(...shades)
+    }
+  }
+  return targets
+}
+
 /**
  * Apply theme rewrites to the component files in `componentDirectory`.
- * @returns {{files: {path:string, changes:number}[], total:number}}
+ *
+ * @param {object} [options]
+ * @param {boolean} [options.dryRun]   compute changes without writing any files
+ * @param {string[]} [options.colors]  literal color roots to treat as brand (e.g. ['indigo'])
+ * @param {boolean} [options.allColors] variabilize every known palette color (aggressive)
+ * @returns {{files: {path:string, changes:number}[], total:number, byCategory:{color:number,radius:number,font:number}, dryRun:boolean}}
  */
-export function applyThemeToDirectory(cwd, componentDirectory, tokens) {
-  const rewrites = buildRewrites(tokens)
+export function applyThemeToDirectory(cwd, componentDirectory, tokens, options = {}) {
+  const rewrites = buildRewrites(tokens, options)
   const root = path.resolve(cwd, componentDirectory)
   if (!fs.existsSync(root)) {
     throw new Error(`component directory not found: ${componentDirectory}`)
   }
   const files = []
+  const byCategory = { color: 0, radius: 0, font: 0 }
   let total = 0
   for (const file of collectComponentFiles(root)) {
     const original = fs.readFileSync(file, 'utf8')
     let updated = original
     let changes = 0
-    for (const { pattern, replacement } of rewrites) {
-      updated = updated.replace(pattern, () => {
+    for (const { pattern, replacement, category } of rewrites) {
+      updated = updated.replace(pattern, (...args) => {
         changes += 1
-        return replacement
+        byCategory[category] += 1
+        return typeof replacement === 'function' ? replacement(...args) : replacement
       })
     }
     if (changes > 0 && updated !== original) {
-      fs.writeFileSync(file, updated)
+      if (!options.dryRun) {
+        fs.writeFileSync(file, updated)
+      }
       files.push({ path: path.relative(cwd, file), changes })
       total += changes
     }
   }
-  return { files, total }
+  return { files, total, byCategory, dryRun: Boolean(options.dryRun) }
 }
