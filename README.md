@@ -68,6 +68,47 @@ npx tessera-ui@latest add application-buttons --skip-deps
 
 The CLI detects npm, pnpm, Yarn, or Bun from the target project lockfile when a component declares package dependencies.
 
+## Match your brand (theming)
+
+Tessera can learn your site's design tokens (colors, radius, fonts, shadows) and apply them to installed components through a CSS-variable layer — the copied component source is never rewritten, so components stay yours to edit and simply inherit your brand.
+
+There are two ways to supply your design.
+
+**1. You already have a `design.md` (or `design.json`).** It's treated as authoritative:
+
+```sh
+npx tessera-ui@latest theme scan       # auto-detects design.md and imports it
+npx tessera-ui@latest theme import ./docs/design.md
+```
+
+A `design.md` can carry tokens as a fenced ` ```json ` block, a fenced ` ```css ` block of custom properties, or a simple table:
+
+```md
+| Token       | Value                        |
+| ----------- | ---------------------------- |
+| Brand color | #4f46e5                      |
+| Radius      | 0.5rem                       |
+| Font        | Inter, system-ui, sans-serif |
+```
+
+**2. Let the CLI scan your codebase.** It reads (in priority order) your Tailwind config, Tailwind v4 `@theme` / `:root` CSS variables, class-usage frequency, and font imports. It never invents values — every proposed token cites its evidence, and anything ambiguous becomes a question for review:
+
+```sh
+npx tessera-ui@latest theme scan       # writes tessera-theme.proposed.json
+```
+
+The proposal is written for **your agent to confirm or correct** before it's trusted. Have the agent review/edit `tessera-theme.proposed.json` (resolving the `_review.questions`), then:
+
+```sh
+npx tessera-ui@latest theme confirm    # promotes the proposal into tessera-ui.json
+npx tessera-ui@latest theme show       # print the active/proposed theme
+npx tessera-ui@latest theme eject      # write theme.css (@theme + :root vars)
+```
+
+Import the generated `theme.css` in your global stylesheet (`@import './theme.css';`). After a theme is confirmed, `add` refreshes `theme.css` automatically; if an unconfirmed proposal exists, `add` reminds you to run `theme confirm`.
+
+Confirming a theme upgrades `tessera-ui.json` to `schemaVersion: 2` with a `theme` block; v1 configs are still read.
+
 ## Agent skill
 
 An agent-ready workflow for safe, non-interactive component discovery and installation is included at [`skills/tessera-ui/SKILL.md`](./skills/tessera-ui/SKILL.md). It ships in the npm package alongside the CLI.

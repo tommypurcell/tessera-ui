@@ -49,6 +49,17 @@ Dark variants can be generated using the browser-based dark mode generator tool 
 2. Create the corresponding HTML file(s) in `public/examples/{category}/{slug}/`.
 3. If dark mode is supported, add `dark: true` to the frontmatter entry and provide a `{n}-dark.html` file.
 
+### Theme system (CLI)
+
+The `tessera-ui theme` command learns a project's design tokens and applies them to installed components via a CSS-variable layer (no component-source rewriting). Code lives in `scripts/theme/`:
+
+- `scan.mjs` — infers tokens from Tailwind config, v4 `@theme`/`:root` CSS, class-usage frequency, and font imports. Never invents values; ambiguity becomes a `questions[]` entry.
+- `import-design.mjs` — parses an authoritative `design.md`/`design.json` (json/css fenced blocks + label tables).
+- `tokens.mjs` — shared token vocabulary + `cssVariableMap` (the canonical `--color-brand`, `--radius`, `--font-sans`, … that themeable components read with fallbacks).
+- `eject.mjs` — renders confirmed tokens into `theme.css` (`@theme` + `:root`).
+
+Flow: `theme scan` writes `tessera-theme.proposed.json` (agent review) → `theme confirm` promotes it into `tessera-ui.json` (bumps to `schemaVersion: 2`, adds a `theme` block) → `theme eject` writes `theme.css`. A present `design.md` is authoritative and imported directly, skipping the review file. Tests are in `tests/cli.test.js` (`pnpm test:cli`).
+
 ## PR Title Format
 
 ```
