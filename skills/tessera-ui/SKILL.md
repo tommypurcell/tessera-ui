@@ -15,6 +15,9 @@ project.
 - Inspect the worktree before writing. Preserve unrelated and existing changes.
 - Prefer `npx tessera-ui@latest`; do not add `tessera-ui` as a runtime dependency.
 - Use JSON output for discovery and planning when parsing results programmatically.
+- Match the project's design before installing (see "Match the project's design"). Installed
+  components ship neutral defaults; without a confirmed theme they will not match the user's
+  colors, radius, or fonts, and you will end up hand-editing the source to fit.
 - Select an explicit variant in non-interactive sessions.
 - Preview the exact destinations and dependencies before installation.
 - Do not use `--overwrite` unless the user explicitly wants an existing file replaced and the
@@ -39,6 +42,60 @@ npx tessera-ui@latest init --directory src/components/ui
 
 Never replace an existing `tessera-ui.json` automatically. Read it and honor its
 `componentDirectory`, `typescript`, and registry settings.
+
+## Match the project's design
+
+`init` only records where to put files and whether the project uses TypeScript and Tailwind. It
+does **not** read the project's colors, spacing, typography, or existing components. Installed
+components therefore ship neutral defaults. Do this step before installing so components inherit
+the user's brand instead of forcing you to rewrite their source afterward.
+
+Tessera applies a project's design through a CSS-variable layer: components read canonical
+variables (`--color-brand`, `--color-brand-fg`, `--color-surface`, `--radius`, `--font-sans`,
+`--font-mono`, `--shadow`) with fallbacks, so theming never rewrites the copied source. `eject`
+writes those variables into a `theme.css` the project imports once.
+
+There are two ways to supply the design; check for an existing design document first.
+
+**If the project already documents its design** (`design.md`, `design.json`, or `docs/design.md`),
+it is authoritative — import it directly, no review needed:
+
+```sh
+npx tessera-ui@latest theme scan --json      # auto-detects and imports a design doc if present
+# or point at it explicitly:
+npx tessera-ui@latest theme import ./docs/design.md --json
+```
+
+A `design.md` may carry tokens as a fenced `json` block, a fenced `css` block of custom
+properties, or a simple `| Label | Value |` table.
+
+**Otherwise, scan the codebase.** The scanner reads, in priority order, the Tailwind config,
+Tailwind v4 `@theme` / `:root` CSS variables, class-usage frequency, and font imports. It never
+invents values: every proposed token cites its evidence, and anything ambiguous (e.g. two close
+brand-color candidates, or a missing font) becomes an entry under `_review.questions`.
+
+```sh
+npx tessera-ui@latest theme scan --json      # writes tessera-theme.proposed.json
+```
+
+Scanning does not apply anything on its own — it writes `tessera-theme.proposed.json` for review.
+This is the confirmation step: read `_review.confidence`, `_review.evidence`, and
+`_review.questions`, correct any token values, resolve the questions, and — when the user's input
+is needed to resolve an ambiguous or missing token — ask the user before confirming. Then promote
+it:
+
+```sh
+npx tessera-ui@latest theme confirm --json   # writes the theme into tessera-ui.json (schemaVersion 2)
+npx tessera-ui@latest theme show --json      # inspect the active/proposed theme at any time
+npx tessera-ui@latest theme eject            # write theme.css (@theme + :root variables)
+```
+
+Have the project import the generated `theme.css` in its global stylesheet
+(`@import './theme.css';`). Once a theme is confirmed, `add` refreshes `theme.css` automatically;
+if an unconfirmed proposal is present, `add` reminds you to run `theme confirm`.
+
+Skip this step only when the user explicitly wants the neutral defaults, or the project has no
+discernible design system yet.
 
 ## Discover the exact component
 
@@ -123,6 +180,11 @@ Then:
 
 ## Troubleshoot
 
+- If `theme scan` reports no sources or few tokens, the project has little to infer from: set the
+  missing tokens by editing `tessera-theme.proposed.json` (or ask the user) before `theme confirm`,
+  or have the user provide a `design.md`.
+- If `theme confirm` reports no proposal, run `theme scan` first; if `theme eject` reports no active
+  theme, run `theme confirm` first.
 - If the CLI requires a variant, rerun `info <component-id> --json` and pass one returned variant
   with `--variant`.
 - If a destination exists, preserve it and report the conflict. Use `--overwrite` only with clear

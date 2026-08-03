@@ -8,9 +8,16 @@ import readline from 'node:readline/promises'
 import { spawnSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
 
+import { scanProject } from '../scripts/theme/scan.mjs'
+import { findDesignDoc, importDesignDoc } from '../scripts/theme/import-design.mjs'
+import { renderThemeCss } from '../scripts/theme/eject.mjs'
+import { mergeTokens, pruneTokens, flattenTokens } from '../scripts/theme/tokens.mjs'
+
 const packageRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const packageJson = JSON.parse(fs.readFileSync(path.join(packageRoot, 'package.json'), 'utf8'))
 const configFilename = 'tessera-ui.json'
+const proposedThemeFilename = 'tessera-theme.proposed.json'
+const themeCssFilename = 'theme.css'
 const publicSiteUrl = 'https://www.tessera-ui.com'
 
 function screenshotUrl(componentId, variantId) {
@@ -431,6 +438,200 @@ async function commandAdd(client, id, options) {
   }
   installDependencies(plan.cwd, plan.dependencies, options)
   console.log(`Done. The component source is yours to edit.`)
+  applyThemeAfterAdd(plan.cwd, options)
+}
+
+// After installing a component, keep the CSS-var theme layer in sync (or nudge if a scan is
+// waiting to be confirmed). Components read the canonical vars with fallbacks, so this is
+// additive: without a theme they still render the library defaults.
+function applyThemeAfterAdd(cwd, options) {
+  const configPath = path.join(cwd, configFilename)
+  const config = fs.existsSync(configPath) ? readJson(configPath) : null
+  if (config?.theme) {
+    const rel = ejectThemeCss(cwd, config.theme, options)
+    console.log(`Refreshed ${rel} with your brand tokens.`)
+  } else if (fs.existsSync(path.join(cwd, proposedThemeFilename))) {
+    console.log(
+      `Note: unconfirmed theme in ${proposedThemeFilename}. Run \`tessera-ui theme confirm\` to apply your brand.`,
+    )
+  }
+}
+
+// --- Theme commands -----------------------------------------------------------------------
+
+function writeJsonFile(filePath, data) {
+  fs.writeFileSync(filePath, `${JSON.stringify(data, null, 2)}\n`)
+}
+
+function updateConfigTheme(cwd, configPath, config, theme) {
+  const next = { ...(config ?? {}), schemaVersion: 2, theme }
+  writeJsonFile(configPath, next)
+  return path.relative(cwd, configPath)
+}
+
+function themeScan(subcommand, options) {
+  const { cwd, configPath, config } = projectContext(options)
+  const designPath = findDesignDoc(cwd)
+
+  // A design doc is authoritative: import straight to the config, no review file.
+  if (designPath && !options['force-scan']) {
+    const imported = importDesignDoc(designPath)
+    const tokens = pruneTokens(imported.tokens)
+    if (!Object.keys(tokens).length) {
+      throw new Error(`found ${imported.source} but could not parse any tokens from it.`)
+    }
+    const theme = { source: imported.source, confirmedAt: new Date().toISOString(), tokens }
+    const rel = updateConfigTheme(cwd, configPath, config, theme)
+    if (options.json) {
+      return console.log(JSON.stringify({ imported: imported.source, theme }, null, 2))
+    }
+    console.log(`Imported design tokens from ${imported.source} → ${rel}`)
+    console.log('Run `tessera-ui theme eject` to write theme.css into your project.')
+    return
+  }
+
+  const result = scanProject(cwd)
+  const tokens = pruneTokens(result.tokens)
+  const proposed = {
+    tokens,
+    _review: {
+      generatedAt: new Date().toISOString(),
+      confidence: result.confidence,
+      evidence: result.evidence,
+      questions: result.questions,
+      sources: result.sources,
+      instructions:
+        'Review and edit token values, resolve the questions above, then run `tessera-ui theme confirm`.',
+    },
+  }
+  const proposedPath = path.join(cwd, proposedThemeFilename)
+  writeJsonFile(proposedPath, proposed)
+
+  if (options.json) {
+    return console.log(JSON.stringify(proposed, null, 2))
+  }
+
+  console.log(`Scanned ${cwd}`)
+  console.log(`Sources: ${result.sources.join(', ') || 'none (no config/CSS found)'}`)
+  console.log(`\nProposed tokens (${Object.keys(flattenTokens(tokens)).length}):`)
+  for (const [key, value] of Object.entries(flattenTokens(tokens))) {
+    const conf = result.confidence[key]
+    console.log(`  ${key} = ${value}${conf ? `  (confidence ${conf})` : ''}`)
+  }
+  if (result.questions.length) {
+    console.log('\nQuestions for review:')
+    result.questions.forEach((question) => console.log(`  - ${question}`))
+  }
+  console.log(`\nWrote ${path.relative(cwd, proposedPath)}.`)
+  console.log('Have your agent review/edit it, then run `tessera-ui theme confirm`.')
+}
+
+function themeImport(filePathArg, options) {
+  const { cwd, configPath, config } = projectContext(options)
+  const target = filePathArg
+    ? path.resolve(cwd, filePathArg)
+    : (findDesignDoc(cwd) ?? throwMissingDesign())
+  const imported = importDesignDoc(target)
+  if (!imported) {
+    throw new Error(`design document not found: ${filePathArg ?? '(auto)'}`)
+  }
+  const tokens = pruneTokens(imported.tokens)
+  if (!Object.keys(tokens).length) {
+    throw new Error(`could not parse any tokens from ${imported.source}.`)
+  }
+  const theme = { source: imported.source, confirmedAt: new Date().toISOString(), tokens }
+  const rel = updateConfigTheme(cwd, configPath, config, theme)
+  if (options.json) {
+    return console.log(JSON.stringify(theme, null, 2))
+  }
+  console.log(
+    `Imported ${Object.keys(flattenTokens(tokens)).length} tokens from ${imported.source} → ${rel}`,
+  )
+}
+
+function throwMissingDesign() {
+  throw new Error('no design.md/design.json found; pass a path: tessera-ui theme import <file>')
+}
+
+function themeConfirm(options) {
+  const { cwd, configPath, config } = projectContext(options)
+  const proposedPath = path.join(cwd, proposedThemeFilename)
+  if (!fs.existsSync(proposedPath)) {
+    throw new Error(`no ${proposedThemeFilename} found. Run \`tessera-ui theme scan\` first.`)
+  }
+  const proposed = readJson(proposedPath)
+  const tokens = pruneTokens(mergeTokens(proposed.tokens))
+  if (!Object.keys(tokens).length) {
+    throw new Error('the proposed theme has no tokens; edit it before confirming.')
+  }
+  const theme = { source: 'scan', confirmedAt: new Date().toISOString(), tokens }
+  const rel = updateConfigTheme(cwd, configPath, config, theme)
+  fs.rmSync(proposedPath)
+  if (options.json) {
+    return console.log(JSON.stringify(theme, null, 2))
+  }
+  console.log(`Confirmed theme → ${rel} (removed ${proposedThemeFilename}).`)
+  console.log('Run `tessera-ui theme eject` to write theme.css into your project.')
+}
+
+function themeShow(options) {
+  const { cwd, config } = projectContext(options)
+  const proposedPath = path.join(cwd, proposedThemeFilename)
+  const active = config?.theme ?? null
+  const proposed = fs.existsSync(proposedPath) ? readJson(proposedPath) : null
+  if (options.json) {
+    return console.log(JSON.stringify({ active, proposed }, null, 2))
+  }
+  if (active) {
+    console.log(`Active theme (source: ${active.source}, confirmed ${active.confirmedAt}):`)
+    for (const [key, value] of Object.entries(flattenTokens(active.tokens))) {
+      console.log(`  ${key} = ${value}`)
+    }
+  } else {
+    console.log('No active theme. Run `tessera-ui theme scan` (or `import`) then `confirm`.')
+  }
+  if (proposed) {
+    console.log(
+      `\nUnconfirmed proposal in ${proposedThemeFilename}. Run \`tessera-ui theme confirm\`.`,
+    )
+  }
+}
+
+function ejectThemeCss(cwd, theme, options) {
+  const outPath = path.resolve(cwd, options.out ?? themeCssFilename)
+  const css = renderThemeCss(theme.tokens)
+  fs.mkdirSync(path.dirname(outPath), { recursive: true })
+  fs.writeFileSync(outPath, css)
+  return path.relative(cwd, outPath)
+}
+
+function themeEject(options) {
+  const { cwd, config } = projectContext(options)
+  if (!config?.theme) {
+    throw new Error('no active theme to eject. Confirm one with `tessera-ui theme confirm` first.')
+  }
+  const rel = ejectThemeCss(cwd, config.theme, options)
+  console.log(`Wrote ${rel}. Import it in your global stylesheet: @import './${rel}';`)
+}
+
+function commandTheme(subcommand, arg, options) {
+  switch (subcommand) {
+    case undefined:
+    case 'scan':
+      return themeScan(subcommand, options)
+    case 'import':
+      return themeImport(arg, options)
+    case 'confirm':
+      return themeConfirm(options)
+    case 'show':
+      return themeShow(options)
+    case 'eject':
+      return themeEject(options)
+    default:
+      throw new Error(
+        `unknown theme subcommand '${subcommand}'. Use scan|import|confirm|show|eject.`,
+      )
+  }
 }
 
 async function commandValidate(client, id, options) {
@@ -459,6 +660,12 @@ Commands:
   plan <id>            Preview files and dependencies
   add <id>             Download component source into your project
   validate <id>        Check that a selected component is installed
+  theme <subcommand>   Scan/import your design tokens and apply them to components
+                         scan     Scan the project → tessera-theme.proposed.json for agent review
+                         import   Import tokens from a design.md/design.json (authoritative)
+                         confirm  Promote the proposed theme into tessera-ui.json
+                         show     Print the active/proposed theme
+                         eject    Write theme.css (@theme + :root vars) into the project
 
 Options:
   --variant <id>       Select a component variant
@@ -470,6 +677,8 @@ Options:
   --overwrite          Replace existing component files
   --skip-deps          Do not install npm dependencies
   --package-manager    Select npm, pnpm, yarn, or bun
+  --out <path>         theme eject: output path (default theme.css)
+  --force-scan         theme scan: scan even when a design.md is present
   --json               Print machine-readable output where supported
   --version            Print the installed CLI version`)
 }
@@ -484,6 +693,8 @@ try {
     help()
   } else if (command === 'init') {
     commandInit(options)
+  } else if (command === 'theme') {
+    commandTheme(positionals[1], positionals[2], options)
   } else {
     const client = registryClient(options)
     if (command === 'list') {
