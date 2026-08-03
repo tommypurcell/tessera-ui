@@ -4,6 +4,9 @@
 // block (so Tailwind generates utilities) and a `:root` block (so raw var() references and
 // non-Tailwind CSS resolve). Only tokens that map to a canonical variable are emitted.
 
+import fs from 'node:fs'
+import path from 'node:path'
+
 import { cssVariableMap, flattenTokens } from './tokens.mjs'
 
 /**
@@ -28,4 +31,75 @@ ${body}
 ${body}
 }
 `
+}
+
+// Candidate global stylesheets, in the order projects most commonly keep their Tailwind entry.
+const GLOBAL_STYLESHEET_CANDIDATES = [
+  'app/globals.css',
+  'src/app/globals.css',
+  'styles/globals.css',
+  'src/styles/globals.css',
+  'src/styles/index.css',
+  'src/index.css',
+  'src/app.css',
+  'src/App.css',
+  'app.css',
+  'globals.css',
+  'index.css',
+]
+
+/** Find the project's global stylesheet, preferring one that already loads Tailwind. */
+export function findGlobalStylesheet(cwd) {
+  const existing = GLOBAL_STYLESHEET_CANDIDATES.map((rel) => path.join(cwd, rel)).filter((file) =>
+    fs.existsSync(file),
+  )
+  if (!existing.length) {
+    return null
+  }
+  // Prefer a stylesheet that references Tailwind (@import "tailwindcss" or @tailwind).
+  const withTailwind = existing.find((file) =>
+    /@import\s+["']tailwindcss|@tailwind\b/.test(fs.readFileSync(file, 'utf8')),
+  )
+  return withTailwind ?? existing[0]
+}
+
+/**
+ * Ensure the global stylesheet imports the generated theme.css.
+ * Idempotent: does nothing if an import of the same file is already present.
+ * @returns {{status:'added'|'present'|'not-found', stylesheet?:string, importLine?:string}}
+ */
+export function linkThemeCss(cwd, themeCssPath) {
+  const stylesheet = findGlobalStylesheet(cwd)
+  if (!stylesheet) {
+    // No stylesheet to anchor a relative path to; suggest a plain same-dir import.
+    return { status: 'not-found', importLine: `@import './${path.basename(themeCssPath)}';` }
+  }
+  let relImport = path
+    .relative(path.dirname(stylesheet), path.resolve(cwd, themeCssPath))
+    .split(path.sep)
+    .join('/')
+  // Same-directory imports need an explicit `./`; `../` paths already have their prefix.
+  if (!relImport.startsWith('.')) {
+    relImport = `./${relImport}`
+  }
+  const importLine = `@import '${relImport}';`
+  const source = fs.readFileSync(stylesheet, 'utf8')
+  // Already importing theme.css (any relative path ending in the same basename)?
+  const basename = path.basename(themeCssPath)
+  const alreadyImported = new RegExp(
+    `@import\\s+["'][^"']*${basename.replace(/\./g, '\\.')}["']`,
+  ).test(source)
+  if (alreadyImported) {
+    return { status: 'present', stylesheet: path.relative(cwd, stylesheet), importLine }
+  }
+  // Insert after the Tailwind import if present, else at the very top.
+  const tailwindImport = source.match(/^.*@import\s+["']tailwindcss["'].*$/m)
+  let updated
+  if (tailwindImport) {
+    updated = source.replace(tailwindImport[0], `${tailwindImport[0]}\n${importLine}`)
+  } else {
+    updated = `${importLine}\n${source}`
+  }
+  fs.writeFileSync(stylesheet, updated)
+  return { status: 'added', stylesheet: path.relative(cwd, stylesheet), importLine }
 }

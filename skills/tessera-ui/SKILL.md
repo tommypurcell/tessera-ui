@@ -90,9 +90,12 @@ npx tessera-ui@latest theme show --json      # inspect the active/proposed theme
 npx tessera-ui@latest theme eject            # write theme.css (@theme + :root variables)
 ```
 
-Have the project import the generated `theme.css` in its global stylesheet
-(`@import './theme.css';`). Once a theme is confirmed, `add` refreshes `theme.css` automatically;
-if an unconfirmed proposal is present, `add` reminds you to run `theme confirm`.
+`theme eject` also auto-imports the generated `theme.css` into the project's global stylesheet
+(the file that loads Tailwind, e.g. `app/globals.css`), inserting `@import './theme.css';` right
+after the Tailwind import. This is idempotent and skips a stylesheet that already imports it; pass
+`--no-link` to skip it and wire the import yourself. Without this import the variables never load
+and nothing renders differently. Once a theme is confirmed, `add` refreshes `theme.css`
+automatically; if an unconfirmed proposal is present, `add` reminds you to run `theme confirm`.
 
 Registry components ship with literal palette classes (e.g. `bg-indigo-600`), so a freshly
 installed component does not read the theme variables until you rewrite it. After installing

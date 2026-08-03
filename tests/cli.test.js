@@ -228,6 +228,49 @@ test('theme treats a design.md as authoritative and skips the review file', asyn
   assert.equal(fs.existsSync(path.join(cwd, 'tessera-theme.proposed.json')), false)
 })
 
+test('theme eject auto-imports theme.css into the global stylesheet, idempotently', async () => {
+  const cwd = fs.mkdtempSync(path.join(os.tmpdir(), 'tessera-ui-theme-link-'))
+  fs.mkdirSync(path.join(cwd, 'app'))
+  fs.writeFileSync(
+    path.join(cwd, 'app', 'globals.css'),
+    '@import "tailwindcss";\n\nbody { margin: 0; }\n',
+  )
+  fs.writeFileSync(
+    path.join(cwd, 'tessera-ui.json'),
+    JSON.stringify({
+      schemaVersion: 2,
+      componentDirectory: 'components/ui',
+      theme: { source: 'scan', tokens: { colors: { brand: '#f87171' } } },
+    }),
+  )
+
+  await cli(['theme', 'eject', '--cwd', cwd], cwd)
+  const globals = fs.readFileSync(path.join(cwd, 'app', 'globals.css'), 'utf8')
+  assert.match(globals, /@import '\.\.\/theme\.css';/)
+  // Import goes right after the Tailwind import.
+  assert.match(globals, /@import "tailwindcss";\n@import '\.\.\/theme\.css';/)
+
+  // Idempotent: a second eject must not add a duplicate import.
+  await cli(['theme', 'eject', '--cwd', cwd], cwd)
+  const after = fs.readFileSync(path.join(cwd, 'app', 'globals.css'), 'utf8')
+  assert.equal(after.match(/theme\.css/g).length, 1)
+})
+
+test('theme eject --no-link leaves the stylesheet untouched', async () => {
+  const cwd = fs.mkdtempSync(path.join(os.tmpdir(), 'tessera-ui-theme-nolink-'))
+  fs.writeFileSync(path.join(cwd, 'globals.css'), '@import "tailwindcss";\n')
+  fs.writeFileSync(
+    path.join(cwd, 'tessera-ui.json'),
+    JSON.stringify({
+      schemaVersion: 2,
+      componentDirectory: 'components/ui',
+      theme: { source: 'scan', tokens: { colors: { brand: '#f87171' } } },
+    }),
+  )
+  await cli(['theme', 'eject', '--cwd', cwd, '--no-link'], cwd)
+  assert.doesNotMatch(fs.readFileSync(path.join(cwd, 'globals.css'), 'utf8'), /theme\.css/)
+})
+
 test('theme apply rewrites installed components to read CSS variables', async () => {
   const cwd = fs.mkdtempSync(path.join(os.tmpdir(), 'tessera-ui-theme-apply-'))
   const componentDir = path.join(cwd, 'components', 'ui')

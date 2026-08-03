@@ -10,7 +10,7 @@ import { fileURLToPath } from 'node:url'
 
 import { scanProject } from '../scripts/theme/scan.mjs'
 import { findDesignDoc, importDesignDoc } from '../scripts/theme/import-design.mjs'
-import { renderThemeCss } from '../scripts/theme/eject.mjs'
+import { renderThemeCss, linkThemeCss } from '../scripts/theme/eject.mjs'
 import { applyThemeToDirectory } from '../scripts/theme/apply.mjs'
 import { mergeTokens, pruneTokens, flattenTokens } from '../scripts/theme/tokens.mjs'
 
@@ -617,7 +617,24 @@ function themeEject(options) {
     throw new Error('no active theme to eject. Confirm one with `tessera-ui theme confirm` first.')
   }
   const rel = ejectThemeCss(cwd, config.theme, options)
-  console.log(`Wrote ${rel}. Import it in your global stylesheet: @import './${rel}';`)
+  console.log(`Wrote ${rel}.`)
+
+  // Wire it into the app: without an import, the variables never load and nothing renders
+  // differently. Auto-insert the import unless the user opted out with --no-link.
+  if (options.link === false || options['no-link']) {
+    console.log(`Import it in your global stylesheet: @import './${rel}';`)
+    return
+  }
+  const link = linkThemeCss(cwd, options.out ?? themeCssFilename)
+  if (link.status === 'added') {
+    console.log(`Linked it into ${link.stylesheet} (added \`${link.importLine}\`).`)
+  } else if (link.status === 'present') {
+    console.log(`${link.stylesheet} already imports it.`)
+  } else {
+    console.log(
+      `Could not find a global stylesheet to import it. Add \`${link.importLine}\` to your Tailwind entry CSS manually.`,
+    )
+  }
 }
 
 function themeApply(options) {
@@ -711,6 +728,7 @@ Options:
   --skip-deps          Do not install npm dependencies
   --package-manager    Select npm, pnpm, yarn, or bun
   --out <path>         theme eject: output path (default theme.css)
+  --no-link            theme eject: do not auto-import theme.css into the global stylesheet
   --force-scan         theme scan: scan even when a design.md is present
   --json               Print machine-readable output where supported
   --version            Print the installed CLI version`)
