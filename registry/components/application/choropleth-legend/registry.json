@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-choropleth-legend",
+  "title": "Choropleth Legend",
+  "description": "Map value legend in continuous gradient or stepped-bucket form, pairing a single-hue light-to-dark ramp with range labels.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["map", "legend", "choropleth", "gradient", "chart", "geo"],
+  "useWhen": [
+    "A choropleth (color-filled region) map needs a legend explaining what its color scale means.",
+    "The underlying data is a single magnitude measure (density, rate, count) mapped to one sequential hue.",
+    "Regions are colored either by a continuous scale (use the gradient variant) or by fixed tiers (use the stepped variant)."
+  ],
+  "avoidWhen": [
+    "The map encodes categories, not magnitude — use a categorical legend with distinct hues instead of a single-hue ramp.",
+    "The value can be negative or has a meaningful zero midpoint — use a diverging two-hue ramp instead of this sequential one.",
+    "There's no map/chart to label — this is a legend component, not a chart itself."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The legend is a fixed-width block (16rem gradient, 18rem stepped) that fills its container up to that cap at all breakpoints.",
+  "accessibility": [
+    "Value range labels are always visible text, never conveyed by color position alone.",
+    "Color swatches in the stepped variant are aria-hidden since the range labels beneath them carry the same information as text.",
+    "Uses a single sequential hue (light-to-dark) rather than a rainbow scale, keeping the mapping perceptually ordered and colorblind-safer."
+  ],
+  "compatibleWith": ["application-map-marker-popup", "application-charts", "application-usage-meter"],
+  "variants": [
+    {
+      "id": "choropleth-legend-1",
+      "title": "Gradient legend",
+      "description": "Continuous light-to-dark blue gradient bar with min/max value labels for smoothly varying map data.",
+      "source": {
+        "html": "../../../../public/examples/application/choropleth-legend/1.html",
+        "tsx": "tsx/ChoroplethLegendVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Min and max labels give the scale concrete meaning beyond just 'light to dark'."
+      ]
+    },
+    {
+      "id": "choropleth-legend-1-dark",
+      "title": "Gradient legend (Dark)",
+      "description": "Gradient choropleth legend adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/choropleth-legend/1-dark.html",
+        "tsx": "tsx/ChoroplethLegendVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Gradient endpoints are lightened relative to the light variant so the ramp stays perceptible against a dark surface."
+      ]
+    },
+    {
+      "id": "choropleth-legend-2",
+      "title": "Stepped legend",
+      "description": "Four discrete color-bucket swatches with range labels beneath each, for maps that tier regions instead of using a continuous scale.",
+      "source": {
+        "html": "../../../../public/examples/application/choropleth-legend/2.html",
+        "tsx": "tsx/ChoroplethLegendVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Each bucket's range label sits directly beneath its swatch, keeping the color-to-value mapping unambiguous."
+      ]
+    },
+    {
+      "id": "choropleth-legend-2-dark",
+      "title": "Stepped legend (Dark)",
+      "description": "Stepped choropleth legend adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/choropleth-legend/2-dark.html",
+        "tsx": "tsx/ChoroplethLegendVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Swatch colors must remain perceptually ordered and distinguishable on dark surfaces."
+      ]
+    }
+  ]
+}
