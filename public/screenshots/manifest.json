@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 736,
+  "screenshotCount": 742,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -1258,6 +1258,26 @@
       "height": 400
     },
     {
+      "componentId": "application-form-row",
+      "variantId": "form-row-1",
+      "appearance": "light",
+      "sourcePath": "files/application-form-row/form-row-1.html",
+      "sourceSha256": "4d29ec7c859aa5b3b5e2a904c90b9a73b69d5ceaca379be141197ad983b39db4",
+      "url": "/screenshots/components/application-form-row/form-row-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-form-row",
+      "variantId": "form-row-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-form-row/form-row-1-dark.html",
+      "sourceSha256": "7ae4fce841320e02000302d8c111a9e09ed9ace6e0a26b1a0ccd822ba1a36063",
+      "url": "/screenshots/components/application-form-row/form-row-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
       "componentId": "application-grids",
       "variantId": "grids-1",
       "appearance": "light",
@@ -2188,6 +2208,26 @@
       "height": 400
     },
     {
+      "componentId": "application-stat-tile",
+      "variantId": "stat-tile-1",
+      "appearance": "light",
+      "sourcePath": "files/application-stat-tile/stat-tile-1.html",
+      "sourceSha256": "0602affc483c480e784db6a2d150d41247a97b8aa6fac8a2ecace8cd64b1ffee",
+      "url": "/screenshots/components/application-stat-tile/stat-tile-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-stat-tile",
+      "variantId": "stat-tile-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-stat-tile/stat-tile-1-dark.html",
+      "sourceSha256": "6bfbe4ebd2f9e51a5d3f12dd0399e1189f3c5780e0d9698401c86f3d5de418e0",
+      "url": "/screenshots/components/application-stat-tile/stat-tile-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
       "componentId": "application-stats",
       "variantId": "stats-1",
       "appearance": "light",
@@ -2985,6 +3025,26 @@
       "sourceSha256": "9d25ecf7a961613ebb7ca37ad69acb016eda68a87de66ae132e77f6ec2468c66",
       "url": "/screenshots/components/application-toggles/toggles-4-dark.jpg",
       "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-toolbar",
+      "variantId": "toolbar-1",
+      "appearance": "light",
+      "sourcePath": "files/application-toolbar/toolbar-1.html",
+      "sourceSha256": "db23db4d713d162d172f690a2372e694cecb58a2677d89d558628a2318960112",
+      "url": "/screenshots/components/application-toolbar/toolbar-1.jpg",
+      "width": 720,
+      "height": 400
+    },
+    {
+      "componentId": "application-toolbar",
+      "variantId": "toolbar-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-toolbar/toolbar-1-dark.html",
+      "sourceSha256": "2973f4ccfbd0e971c55a1800f5265276564f699355c8411feb46cbeaa7d2e342",
+      "url": "/screenshots/components/application-toolbar/toolbar-1-dark.jpg",
+      "width": 720,
       "height": 400
     },
     {

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-stat-tile",
+  "title": "Stat Tile",
+  "description": "Single KPI tile with a typed label/value/delta prop contract for building your own dashboard stat grids without hand-editing markup.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["stat", "kpi", "metric", "dashboard", "primitive", "tile"],
+  "useWhen": [
+    "Composing a custom grid of KPI tiles where each tile's label, value, and trend come from real data.",
+    "You need a single reusable stat primitive instead of copying and re-editing a pre-built multi-card layout.",
+    "Building an admin or analytics dashboard summary row from a list of metrics."
+  ],
+  "avoidWhen": [
+    "You want a ready-made multi-card layout out of the box — use application-stats instead.",
+    "The value changes frequently in real time — a static tile without live updates can mislead users.",
+    "Detailed breakdown of the metric is needed on the same view — use a table or chart instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The tile is a single block with intrinsic sizing; place it in your own responsive grid (e.g. a CSS grid or flex wrap) to control column count at each breakpoint.",
+  "accessibility": [
+    "The label and value are read in document order, so screen readers announce them together as one stat.",
+    "Growth direction uses both an icon and a visually hidden text label (Increase/Decrease/No change), not color alone.",
+    "Decorative icons carry aria-hidden='true'; the delta text label carries the meaning for assistive technology."
+  ],
+  "compatibleWith": ["application-stats", "application-charts", "application-badges"],
+  "variants": [
+    {
+      "id": "stat-tile-1",
+      "title": "Stat tile",
+      "description": "Single KPI tile taking label, value, an optional delta object, and an optional icon slot as typed props.",
+      "source": {
+        "html": "../../../../public/examples/application/stat-tile/1.html",
+        "tsx": "tsx/StatTileVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Growth badge color is supplementary; the visually hidden direction word and delta text communicate the change to screen readers."
+      ]
+    },
+    {
+      "id": "stat-tile-1-dark",
+      "title": "Stat tile (Dark)",
+      "description": "Single KPI tile with label/value/delta/icon props adapted for dark dashboard surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/stat-tile/1-dark.html",
+        "tsx": "tsx/StatTileVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Value, label, and growth badge colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

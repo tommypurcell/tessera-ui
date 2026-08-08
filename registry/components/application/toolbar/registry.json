@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-toolbar",
+  "title": "Toolbar",
+  "description": "Page or section header row with a title, optional description, and a set of typed action buttons for common admin and dashboard headers.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["toolbar", "header", "actions", "dashboard", "primitive", "layout"],
+  "useWhen": [
+    "Heading a page or section that needs one or more primary actions, such as Invite, Export, or Create.",
+    "Establishing a consistent title/description/actions row across list, table, or settings pages.",
+    "Replacing a hand-rolled flex row of a heading and buttons with a typed, reusable primitive."
+  ],
+  "avoidWhen": [
+    "The page needs breadcrumbs or multi-level navigation — use a dedicated navigation component instead.",
+    "There are more than two or three actions — collapse extras into a menu instead of a long button row.",
+    "The heading has no actions at all — a plain heading element is simpler."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The title and actions stack vertically on narrow screens and align into a single row at the sm breakpoint and above; the action row wraps if it does not fit on one line.",
+  "accessibility": [
+    "The title renders as a real heading element so the toolbar contributes to the page's heading structure.",
+    "Each action is a real button element with visible text, not an icon-only control without a label."
+  ],
+  "compatibleWith": ["application-tables", "application-breadcrumbs", "application-dropdown"],
+  "variants": [
+    {
+      "id": "toolbar-1",
+      "title": "Toolbar",
+      "description": "Title, optional description, and a row of typed actions rendered as real buttons with click handlers.",
+      "source": {
+        "html": "../../../../public/examples/application/toolbar/1.html",
+        "tsx": "tsx/ToolbarVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Primary and secondary actions are visually distinct through contrast, not color alone."
+      ]
+    },
+    {
+      "id": "toolbar-1-dark",
+      "title": "Toolbar (Dark)",
+      "description": "Title, description, and action row adapted for dark dashboard surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/toolbar/1-dark.html",
+        "tsx": "tsx/ToolbarVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Title, description, and button text must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

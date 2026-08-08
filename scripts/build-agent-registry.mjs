@@ -119,7 +119,97 @@ const knownSemanticProps = [
     'Accessible label for the navigation region.',
     '"Workspace navigation"',
   ],
+  ['label', 'string', 'none', 'Primary label text for the stat.', '"Active users"', 'application-stat-tile'],
+  ['value', 'string | number', 'none', 'The value to display.', '"8,412"', 'application-stat-tile'],
+  ['label', 'string', 'none', 'Label text shown above the field.', '"Email address"', 'application-form-row'],
+  [
+    'delta',
+    "{ value: string; direction: 'up' | 'down' | 'flat' }",
+    'undefined',
+    'Optional trend indicator shown alongside the value.',
+    '{ value: "12.4%", direction: "up" }',
+    'application-stat-tile',
+  ],
+  ['icon', 'ReactNode', 'undefined', 'Optional icon rendered above the value.', '<TrendIcon />'],
+  ['title', 'string', 'none', 'Heading text for the toolbar or section.', '"Team members"', 'application-toolbar'],
+  [
+    'description',
+    'string',
+    'undefined',
+    'Supporting text shown under the title.',
+    '"Manage workspace access."',
+    'application-toolbar',
+  ],
+  [
+    'actions',
+    "{ text: string; onClick?: () => void; variant?: 'primary' | 'secondary'; disabled?: boolean }[]",
+    '[]',
+    'Action buttons rendered on the toolbar.',
+    '[{ "text": "Invite member", "variant": "primary" }]',
+    'application-toolbar',
+  ],
+  [
+    'htmlFor',
+    'string',
+    'auto-generated id',
+    'Associates the label with a specific control id.',
+    '"email"',
+    'application-form-row',
+  ],
+  [
+    'helpText',
+    'string',
+    'undefined',
+    'Supporting text shown under the control.',
+    '"As it appears on your ID."',
+    'application-form-row',
+  ],
+  [
+    'error',
+    'string',
+    'undefined',
+    'Error message shown under the control; also sets aria-invalid.',
+    '"Enter a valid email address."',
+    'application-form-row',
+  ],
+  [
+    'required',
+    'boolean',
+    'false',
+    'Shows a required-field indicator next to the label.',
+    'true',
+    'application-form-row',
+  ],
+  [
+    'value',
+    'File[]',
+    'undefined',
+    'Selected files. Pass this to run the uploader as a controlled component.',
+    '[]',
+    'application-file-uploaders',
+  ],
+  [
+    'onChange',
+    '(files: File[]) => void',
+    'undefined',
+    'Called with the full updated file list whenever files are picked or dropped.',
+    '(files) => setFiles(files)',
+    'application-file-uploaders',
+  ],
+  [
+    'multiple',
+    'boolean',
+    'true',
+    'Allows more than one file to be selected at a time.',
+    'false',
+    'application-file-uploaders',
+  ],
 ]
+
+// Keyed by `name` (applies everywhere that name isn't scoped) or `name:componentName` (applies
+// only to that component) — compound keys let the same prop name be required on one component
+// and optional on another, e.g. `value` is required on stat-tile but optional on file-uploaders.
+const requiredSemanticProps = new Set(['label', 'title', 'value:application-stat-tile'])
 
 function getSelectedCategories() {
   if (selectedCategories.length === 0) {
@@ -157,7 +247,7 @@ function screenshotUrl(componentName, variantId) {
   return `${publicSiteUrl}/screenshots/components/${componentName}/${variantId}.jpg`
 }
 
-function inferVariantProps(registryDirectory, variant) {
+function inferVariantProps(registryDirectory, componentName, variant) {
   const source = fs.readFileSync(path.resolve(registryDirectory, variant.source.tsx), 'utf8')
 
   if (source.includes("export type TesseraComponentState = 'default'")) {
@@ -176,12 +266,22 @@ function inferVariantProps(registryDirectory, variant) {
     })
   }
 
-  for (const [name, type, defaultValue, description, example] of knownSemanticProps) {
+  for (const [name, type, defaultValue, description, example, onlyForComponent] of knownSemanticProps) {
+    // Some names (label, value, ...) mean different things on different components — scope the
+    // entry to a specific component so unrelated components don't inherit the wrong type/docs.
+    if (onlyForComponent && onlyForComponent !== componentName) {
+      continue
+    }
     if (new RegExp(`\\b${name}\\??\\s*[:},]`).test(source)) {
+      const isMarkedOptional = new RegExp(`\\b${name}\\?\\s*:`).test(source)
+      const isRequiredByDefault =
+        name === 'items' ||
+        requiredSemanticProps.has(name) ||
+        requiredSemanticProps.has(`${name}:${componentName}`)
       props.push({
         name,
         type,
-        required: name === 'items' && !source.includes('items?'),
+        required: isRequiredByDefault && !isMarkedOptional,
         default: defaultValue,
         description,
         example,
@@ -228,7 +328,7 @@ function buildSourceArtifact(registryDirectory, componentName, variant) {
 
 function toManifest(registryEntry, registryDirectory) {
   const variantFiles = registryEntry.variants.map((variant) => {
-    const props = inferVariantProps(registryDirectory, variant)
+    const props = inferVariantProps(registryDirectory, registryEntry.name, variant)
     const supportsApplicationStates = props.some((prop) => prop.name === 'state')
 
     return {

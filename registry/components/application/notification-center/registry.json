@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-notification-center",
+  "title": "Notification Center",
+  "description": "Bell-triggered dropdown panel listing grouped notifications with read/unread state, timestamps, and a mark-all-read action.",
+  "category": "application/overlays",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["notification", "notifications", "dropdown", "panel", "bell", "activity", "inbox"],
+  "useWhen": [
+    "Surfacing a list of grouped, time-ordered notifications from a bell icon in an app header.",
+    "Users need to see unread state at a glance and clear it in bulk with mark-all-read.",
+    "Notifications persist and are revisited, unlike single toasts which are ephemeral."
+  ],
+  "avoidWhen": [
+    "The message is a one-time, transient confirmation — use a toast instead.",
+    "You need a full-page notification history with filtering and search — link out to a dedicated page from the 'View all' action instead.",
+    "There is only ever one active notification at a time — a single badge or inline alert is simpler."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The panel is a fixed 20rem (w-80) width anchored to the right edge of its trigger; on narrow viewports, constrain or reposition it within your own header layout.",
+  "accessibility": [
+    "The trigger button carries aria-haspopup=\"dialog\", aria-expanded, and an aria-label announcing the unread count.",
+    "The panel uses role=\"dialog\" with an aria-label so screen readers announce it as a distinct region.",
+    "Unread items are distinguished by more than color alone: an explicit dot plus full, non-truncated text contrast."
+  ],
+  "compatibleWith": ["application-toasts", "application-popover", "application-dropdown", "application-avatar"],
+  "variants": [
+    {
+      "id": "notification-center-1",
+      "title": "Notification Center",
+      "description": "Bell trigger with unread dot, grouped Today/Earlier sections, per-item read state, and mark-all-read and view-all actions.",
+      "source": {
+        "html": "../../../../public/examples/application/notification-center/1.html",
+        "tsx": "tsx/NotificationCenterVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "open"],
+      "accessibility": [
+        "Each notification is a focusable link so keyboard users can tab through and activate items."
+      ]
+    },
+    {
+      "id": "notification-center-1-dark",
+      "title": "Notification Center (Dark)",
+      "description": "Bell-triggered notification dropdown adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/notification-center/1-dark.html",
+        "tsx": "tsx/NotificationCenterVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "open"],
+      "accessibility": [
+        "Unread indicator and text colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

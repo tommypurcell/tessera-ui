@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex min-h-96 items-start justify-end p-6">
+    <div class="relative inline-block">
+      <button
+        type="button"
+        aria-expanded="true"
+        aria-haspopup="dialog"
+        aria-label="Notifications, 3 unread"
+        class="relative inline-flex size-9 items-center justify-center rounded-full text-gray-500 hover:bg-gray-100 hover:text-gray-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2"
+      >
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
+        </svg>
+        <span aria-hidden="true" class="absolute right-1.5 top-1.5 size-2 rounded-full bg-red-500 ring-2 ring-white"></span>
+      </button>
+
+      <div
+        role="dialog"
+        aria-label="Notifications"
+        class="absolute right-0 top-full z-10 mt-2 w-80 overflow-hidden rounded-lg border border-gray-200 bg-white shadow-lg shadow-gray-900/5"
+      >
+        <div class="flex items-center justify-between border-b border-gray-200 px-4 py-3">
+          <h3 class="text-sm font-semibold text-gray-900">Notifications</h3>
+          <button type="button" class="text-xs font-medium text-gray-500 hover:text-gray-900 hover:underline">
+            Mark all as read
+          </button>
+        </div>
+
+        <div class="max-h-96 overflow-y-auto">
+          <div class="px-4 pt-3 pb-1.5 text-xs font-medium text-gray-500">Today</div>
+
+          <ul role="list" class="divide-y divide-gray-100">
+            <li>
+              <a href="#" class="flex gap-3 px-4 py-3 hover:bg-gray-50">
+                <span aria-hidden="true" class="mt-1.5 size-1.5 shrink-0 rounded-full bg-blue-600"></span>
+                <span class="min-w-0 flex-1">
+                  <span class="block text-sm text-gray-900">
+                    <span class="font-medium">Priya Shah</span> commented on your PR
+                  </span>
+                  <span class="mt-0.5 block text-xs text-gray-500">"Looks good, one nit on naming"</span>
+                  <span class="mt-1 block text-xs text-gray-400">2m ago</span>
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="flex gap-3 px-4 py-3 hover:bg-gray-50">
+                <span aria-hidden="true" class="mt-1.5 size-1.5 shrink-0 rounded-full bg-blue-600"></span>
+                <span class="min-w-0 flex-1">
+                  <span class="block text-sm text-gray-900">
+                    <span class="font-medium">Deploy pipeline</span> failed on staging
+                  </span>
+                  <span class="mt-0.5 block text-xs text-gray-500">Build #482 — 3 tests failing</span>
+                  <span class="mt-1 block text-xs text-gray-400">41m ago</span>
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="flex gap-3 px-4 py-3 hover:bg-gray-50">
+                <span aria-hidden="true" class="mt-1.5 size-1.5 shrink-0 rounded-full bg-blue-600"></span>
+                <span class="min-w-0 flex-1">
+                  <span class="block text-sm text-gray-900">
+                    <span class="font-medium">Marcus Lin</span> assigned you a task
+                  </span>
+                  <span class="mt-0.5 block text-xs text-gray-500">"Write release notes for v2.4"</span>
+                  <span class="mt-1 block text-xs text-gray-400">3h ago</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="px-4 pt-3 pb-1.5 text-xs font-medium text-gray-500">Earlier</div>
+
+          <ul role="list" class="divide-y divide-gray-100">
+            <li>
+              <a href="#" class="flex gap-3 px-4 py-3 opacity-70 hover:bg-gray-50 hover:opacity-100">
+                <span aria-hidden="true" class="mt-1.5 size-1.5 shrink-0 rounded-full"></span>
+                <span class="min-w-0 flex-1">
+                  <span class="block text-sm text-gray-700">
+                    <span class="font-medium text-gray-900">Ana Torres</span> invited you to Design Systems
+                  </span>
+                  <span class="mt-1 block text-xs text-gray-400">Yesterday</span>
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="flex gap-3 px-4 py-3 opacity-70 hover:bg-gray-50 hover:opacity-100">
+                <span aria-hidden="true" class="mt-1.5 size-1.5 shrink-0 rounded-full"></span>
+                <span class="min-w-0 flex-1">
+                  <span class="block text-sm text-gray-700">Weekly usage report is ready</span>
+                  <span class="mt-1 block text-xs text-gray-400">2 days ago</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="border-t border-gray-200 px-4 py-2.5 text-center">
+          <a href="#" class="text-xs font-medium text-gray-600 hover:text-gray-900 hover:underline">
+            View all notifications
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
