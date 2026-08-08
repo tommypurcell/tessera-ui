@@ -484,7 +484,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-8) Package Status Timeline — 4-scan Portland-to-Austin shipment history, latest scan highlighted (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [x] (builder-3) Delivery Slot Picker — radio-card list w/ price, description, Free/Fastest badges, disabled fully-booked state, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 - [x] (builder-1) Inventory Level Row — 2 variants (detail row + multi-SKU list), reorder-threshold marker + warning badge, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #16).
-- [~] (builder-3) Fleet Status Grid — vehicle tiles with active/idle/maintenance status and driver; distinct from health-check-grid.
+- [x] (builder-3) Fleet Status Grid — responsive vehicle tile grid, active/idle/maintenance status pills, driver assignment, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 
 <!-- Theme: HR / recruiting -->
 - [ ] Candidate Pipeline Stage — applicant cards in a hiring-stage column with count; distinct from deal-pipeline-stage.
@@ -523,7 +523,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: Music -->
 - [ ] Now Playing Bar — bottom player with art, title, scrubber, and transport controls; distinct from audio-player.
-- [~] (builder-7) Track List Row — number, title, artist, duration, and play-on-hover; distinct from media-object-row.
+- [x] (builder-7) Track List Row — 4-track list w/ index→play-icon hover swap, playing-state highlight, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
 - [ ] Equalizer Sliders — vertical band-gain sliders with dB labels; distinct from range-inputs.
 - [ ] Album Grid Card — cover art with hover play overlay and title/artist; distinct from dish-card.
 - [ ] Queue List — reorderable up-next tracks with drag handles and remove; distinct from lesson-playlist.
@@ -532,7 +532,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [~] (builder-5) Wallet Connect Button — connect/connected state with address truncation and balance; distinct from social-login-buttons.
 - [ ] Token Balance Row — token icon, symbol, balance, and USD value with change %; distinct from transaction-row.
 - [ ] Price Ticker Strip — scrolling asset prices with up/down flash coloring; distinct from live-counter-tile.
-- [ ] Gas Fee Selector — slow/avg/fast fee option cards with time and cost; distinct from delivery-slot-picker.
+- [~] (builder-6) Gas Fee Selector — slow/avg/fast fee option cards with time and cost; distinct from delivery-slot-picker.
 - [ ] NFT Card — artwork, name, collection, price, and bid button; distinct from product-card.
 - [ ] Transaction Confirm Sheet — pending-tx summary with from/to, amount, fee, and confirm; distinct from checkout-order-summary.
 
