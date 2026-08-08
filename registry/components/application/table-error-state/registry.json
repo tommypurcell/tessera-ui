@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "name": "application-table-error-state",
+  "title": "Table Error State",
+  "description": "In-table failure row: a normal table with a final row whose cell spans every column, showing a failure icon, reason, and a retry button in place of the remaining data.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["table", "error", "retry", "loading", "data-display"],
+  "useWhen": [
+    "A table successfully loaded some rows but failed to load the rest (e.g. pagination or streaming failure) and needs an inline recovery affordance.",
+    "You want the error to read as part of the table's row structure rather than replacing the whole table or page.",
+    "Distinct from a generic Retry Error State, which fills an entire page or panel, rather than appearing as one row within an otherwise normal table."
+  ],
+  "avoidWhen": [
+    "The entire table failed to load, with zero rows shown — a full-panel Retry Error State is more appropriate.",
+    "The table has no natural column structure to span — this pattern relies on colSpan across real columns."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The error cell's colSpan always matches the live column count, so it continues to span the full table width if columns are added or removed.",
+  "accessibility": [
+    "The failure icon is aria-hidden since the adjacent text conveys the same information.",
+    "Error title and message are both real text (not icon-only), and the Retry button has a clear text label rather than relying on an icon."
+  ],
+  "compatibleWith": ["application-table-loading-skeleton"],
+  "variants": [
+    {
+      "id": "table-error-state-1",
+      "title": "Table Error State",
+      "description": "A table with two successfully loaded rows followed by a spanning error row showing a timeout message and a Retry button.",
+      "source": {
+        "html": "../../../../public/examples/application/table-error-state/1.html",
+        "tsx": "tsx/TableErrorStateVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Error icon is aria-hidden; title, message, and Retry button are all real text."
+      ]
+    },
+    {
+      "id": "table-error-state-1-dark",
+      "title": "Table Error State (Dark)",
+      "description": "The same table error row adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/table-error-state/1-dark.html",
+        "tsx": "tsx/TableErrorStateVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Icon and text contrast remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}
