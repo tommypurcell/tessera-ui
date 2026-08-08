@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex min-h-72 items-center justify-center bg-gray-50 p-6">
+    <div class="w-full max-w-sm space-y-3">
+      <div>
+        <label for="addr2-street" class="mb-1.5 flex items-center gap-1.5 text-sm font-medium text-gray-700">
+          Street address
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-3.5 text-emerald-600">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75 6 14.25l7.5-7.5" />
+          </svg>
+        </label>
+        <input type="text" id="addr2-street" value="128 Market St" class="h-10 w-full rounded-md border border-gray-300 bg-gray-50 px-3 text-sm text-gray-900 shadow-sm focus:border-gray-900 focus:bg-white focus:outline-none focus:ring-1 focus:ring-gray-900" />
+      </div>
+
+      <div>
+        <label for="addr2-unit" class="mb-1.5 block text-sm font-medium text-gray-700">Apt / suite <span class="font-normal text-gray-400">(optional)</span></label>
+        <input type="text" id="addr2-unit" placeholder="Apt 4B" class="h-10 w-full rounded-md border border-gray-300 px-3 text-sm text-gray-900 shadow-sm focus:border-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-900" />
+      </div>
+
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label for="addr2-city" class="mb-1.5 block text-sm font-medium text-gray-700">City</label>
+          <input type="text" id="addr2-city" value="San Francisco" class="h-10 w-full rounded-md border border-gray-300 bg-gray-50 px-3 text-sm text-gray-900 shadow-sm focus:border-gray-900 focus:bg-white focus:outline-none focus:ring-1 focus:ring-gray-900" />
+        </div>
+        <div>
+          <label for="addr2-state" class="mb-1.5 block text-sm font-medium text-gray-700">State</label>
+          <input type="text" id="addr2-state" value="CA" class="h-10 w-full rounded-md border border-gray-300 bg-gray-50 px-3 text-sm text-gray-900 shadow-sm focus:border-gray-900 focus:bg-white focus:outline-none focus:ring-1 focus:ring-gray-900" />
+        </div>
+      </div>
+
+      <div class="w-1/2 pr-1.5">
+        <label for="addr2-zip" class="mb-1.5 block text-sm font-medium text-gray-700">ZIP code</label>
+        <input type="text" id="addr2-zip" value="94105" class="h-10 w-full rounded-md border border-gray-300 bg-gray-50 px-3 text-sm text-gray-900 shadow-sm focus:border-gray-900 focus:bg-white focus:outline-none focus:ring-1 focus:ring-gray-900" />
+      </div>
+
+      <p class="flex items-center gap-1.5 text-xs text-gray-500">
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3.5 text-emerald-600">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75 6 14.25l7.5-7.5" />
+        </svg>
+        Filled from address lookup — edit any field if needed.
+      </p>
+    </div>
+  </body>
+</html>

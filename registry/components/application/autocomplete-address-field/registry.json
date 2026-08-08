@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "name": "application-autocomplete-address-field",
+  "title": "Autocomplete Address Field",
+  "description": "A single street-address input with a live suggestion dropdown, plus the structured street/city/state/ZIP fill-out state after a suggestion is chosen.",
+  "category": "application/autocomplete-address-field",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "autocomplete-address-field",
+    "address",
+    "autocomplete",
+    "lookup",
+    "geocoding",
+    "form"
+  ],
+  "useWhen": [
+    "Collecting a mailing or billing address where typeahead suggestions from a geocoding API reduce typos and typing effort.",
+    "The form ultimately needs structured street/city/state/ZIP fields, pre-filled from a selected suggestion but still user-editable."
+  ],
+  "avoidWhen": [
+    "The list of options is small and closed (not an open-ended address lookup) — use `Combobox` instead.",
+    "You only need free-text address entry with no lookup or structured breakdown — a plain `Textarea` is simpler."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The suggestion dropdown matches the input's full width and stacks below it; the structured fill-out fields wrap city/state into a two-column row that can collapse to one column on narrow viewports.",
+  "accessibility": [
+    "The input uses role=\"combobox\" with aria-expanded, aria-controls, and aria-autocomplete=\"list\" to describe its relationship to the suggestion list.",
+    "The suggestion list uses role=\"listbox\"/role=\"option\" with aria-selected marking the highlighted suggestion.",
+    "After autofill, a checkmark plus visible helper text (\"Filled from address lookup — edit any field if needed\") communicates the field is editable, not locked."
+  ],
+  "compatibleWith": ["application-inputs", "application-form-row", "application-combobox"],
+  "variants": [
+    {
+      "id": "autocomplete-address-field-1",
+      "title": "Suggestion dropdown",
+      "description": "A street-address input mid-search with an open suggestion list; each option shows the street line and a secondary city/state/ZIP line.",
+      "source": {
+        "html": "../../../../public/examples/application/autocomplete-address-field/1.html",
+        "tsx": "tsx/AutocompleteAddressFieldVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "open"],
+      "accessibility": [
+        "role=\"combobox\" on the input and role=\"listbox\"/role=\"option\" on the suggestions form a standard ARIA autocomplete pattern."
+      ]
+    },
+    {
+      "id": "autocomplete-address-field-1-dark",
+      "title": "Suggestion dropdown (Dark)",
+      "description": "Suggestion dropdown adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/autocomplete-address-field/1-dark.html",
+        "tsx": "tsx/AutocompleteAddressFieldVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "open"],
+      "accessibility": [
+        "Suggestion text and the selected-row highlight meet WCAG AA contrast against the dark dropdown background."
+      ]
+    },
+    {
+      "id": "autocomplete-address-field-2",
+      "title": "Structured fill-out",
+      "description": "The resulting structured form after a suggestion is chosen: street, optional unit, city, state, and ZIP, each still editable.",
+      "source": {
+        "html": "../../../../public/examples/application/autocomplete-address-field/2.html",
+        "tsx": "tsx/AutocompleteAddressFieldVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "filled"],
+      "accessibility": [
+        "A visible checkmark plus footer text states the fields were auto-filled and remain editable, not just an icon."
+      ]
+    },
+    {
+      "id": "autocomplete-address-field-2-dark",
+      "title": "Structured fill-out (Dark)",
+      "description": "Structured fill-out fields adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/autocomplete-address-field/2-dark.html",
+        "tsx": "tsx/AutocompleteAddressFieldVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "filled"],
+      "accessibility": [
+        "Field borders, autofilled background tint, and the confirmation checkmark meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
