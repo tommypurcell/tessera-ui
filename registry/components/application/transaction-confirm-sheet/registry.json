@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-transaction-confirm-sheet",
+  "title": "Transaction Confirm Sheet",
+  "description": "Pending-transaction confirmation dialog with amount, from/to addresses, network fee, and total, driven by a typed amount/address/fee prop contract.",
+  "category": "application/overlays",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["transaction", "web3", "crypto", "confirm", "dialog"],
+  "useWhen": [
+    "Confirming a blockchain or crypto transaction before it's signed and broadcast.",
+    "Users need to double-check the from/to addresses, amount, and fee before an irreversible action.",
+    "A single focused confirmation step is preferable to a multi-page checkout flow."
+  ],
+  "avoidWhen": [
+    "The transaction involves purchasable line items rather than a single asset transfer — use the Checkout Order Summary instead.",
+    "No fee or address confirmation is needed — a simpler Dialog suffices.",
+    "Multiple assets or a batch of transfers need confirming at once — extend this pattern with a line-item list rather than a single amount."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The sheet is a fixed-width card meant to sit centered over a full-screen scrim; the address rows truncate long values with an ellipsis pattern supplied by your own address-formatting logic.",
+  "accessibility": [
+    "The dialog uses role='dialog' with aria-modal='true' and is labelled by its heading id.",
+    "Addresses render in a monospace <code> element so character-level review (an important security practice) is easier for sighted users.",
+    "Cancel and Confirm are both full-width, clearly labeled buttons rather than icon-only actions, avoiding ambiguity about which is primary."
+  ],
+  "compatibleWith": ["application-dialog", "application-gas-fee-selector"],
+  "variants": [
+    {
+      "id": "transaction-confirm-sheet-1",
+      "title": "Transaction Confirm Sheet",
+      "description": "Confirmation dialog with a large amount display, fiat equivalent, from/to address rows, network fee, a computed total, and cancel/confirm actions.",
+      "source": {
+        "html": "../../../../public/examples/application/transaction-confirm-sheet/1.html",
+        "tsx": "tsx/TransactionConfirmSheetVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Addresses are rendered in monospace so users can visually compare characters before confirming, an important anti-phishing practice."
+      ]
+    },
+    {
+      "id": "transaction-confirm-sheet-1-dark",
+      "title": "Transaction Confirm Sheet (Dark)",
+      "description": "Transaction confirmation sheet adapted for dark surfaces with the same amount, address, fee, and total structure.",
+      "source": {
+        "html": "../../../../public/examples/application/transaction-confirm-sheet/1-dark.html",
+        "tsx": "tsx/TransactionConfirmSheetVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Amount, address, and total text must meet WCAG AA contrast against the dark card background."
+      ]
+    }
+  ]
+}
