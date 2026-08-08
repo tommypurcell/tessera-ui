@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 856,
+  "screenshotCount": 860,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -8566,6 +8566,46 @@
       "url": "/screenshots/components/application-compact-data-table/compact-data-table-1-dark.jpg",
       "width": 600,
       "height": 271
+    },
+    {
+      "componentId": "application-drag-handle-row",
+      "variantId": "drag-handle-row-1",
+      "appearance": "light",
+      "sourcePath": "files/application-drag-handle-row/drag-handle-row-1.html",
+      "sourceSha256": "eb4d87989545abf9f50ee68fe2e2771b65d54c6f8437e3fb8aa1e6b1889d17af",
+      "url": "/screenshots/components/application-drag-handle-row/drag-handle-row-1.jpg",
+      "width": 600,
+      "height": 228
+    },
+    {
+      "componentId": "application-drag-handle-row",
+      "variantId": "drag-handle-row-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-drag-handle-row/drag-handle-row-1-dark.html",
+      "sourceSha256": "ba53afd7d321292d2b1bd27a69fac86c3fd433c70c04cd879a2503e339a16426",
+      "url": "/screenshots/components/application-drag-handle-row/drag-handle-row-1-dark.jpg",
+      "width": 600,
+      "height": 228
+    },
+    {
+      "componentId": "application-drag-handle-row",
+      "variantId": "drag-handle-row-2",
+      "appearance": "light",
+      "sourcePath": "files/application-drag-handle-row/drag-handle-row-2.html",
+      "sourceSha256": "c8b6d6eda0a8f9cd2d6153e87dc508f5952994b783e311c5fbaa361e5e8cee34",
+      "url": "/screenshots/components/application-drag-handle-row/drag-handle-row-2.jpg",
+      "width": 600,
+      "height": 286
+    },
+    {
+      "componentId": "application-drag-handle-row",
+      "variantId": "drag-handle-row-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-drag-handle-row/drag-handle-row-2-dark.html",
+      "sourceSha256": "ecc15f21eb9c3f84c3a4b4c38e53f9d981763a1901a8d7ceb162617eb046aad6",
+      "url": "/screenshots/components/application-drag-handle-row/drag-handle-row-2-dark.jpg",
+      "width": 600,
+      "height": 286
     }
   ]
 }

@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-drag-handle-row",
+  "title": "Drag Handle Row",
+  "description": "Generic reorderable list row with a grip drag handle and a drop-indicator line showing the target position, plus an actively-dragging state with a lifted, shadowed row.",
+  "category": "application/drag-handle-row",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["application", "drag-and-drop", "reorder", "list", "drag-handle", "sortable"],
+  "useWhen": [
+    "Letting users manually reorder a list of items such as tasks, steps, or settings.",
+    "The reorder affordance should be an explicit grip handle rather than dragging the whole row.",
+    "Showing a clear drop-indicator line and a lifted, shadowed row during an active drag."
+  ],
+  "avoidWhen": [
+    "The list represents media tracks in a player queue — use application-queue-list, which pairs a now-playing row with drag-to-reorder up-next tracks.",
+    "Reordering happens via up/down buttons or numeric input rather than drag-and-drop.",
+    "The list has only one or two items — reordering affordance adds no value at that size."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Rows and the drag handle target a comfortable touch size; the drop indicator spans the row's inline width at any container size.",
+  "accessibility": [
+    "Each drag handle button has an aria-label naming the item it reorders, since the grip icon alone conveys no accessible name.",
+    "The drop-indicator line is aria-hidden since its meaning is conveyed by the surrounding row content during a drag.",
+    "Provide a keyboard-operable reorder fallback (e.g., move up/down actions) when adapting this pattern, since pointer-only drag excludes keyboard users."
+  ],
+  "compatibleWith": ["application-queue-list"],
+  "variants": [
+    {
+      "id": "drag-handle-row-1",
+      "title": "Reorderable list",
+      "description": "Generic reorderable list with grip drag handles and a drop-indicator line at the target position.",
+      "source": {
+        "html": "../../../../public/examples/application/drag-handle-row/1.html",
+        "tsx": "tsx/DragHandleRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Each drag handle carries an aria-label naming the row it reorders."
+      ]
+    },
+    {
+      "id": "drag-handle-row-1-dark",
+      "title": "Reorderable list (Dark)",
+      "description": "Reorderable list row adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/drag-handle-row/1-dark.html",
+        "tsx": "tsx/DragHandleRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Drop indicator and handle contrast meet WCAG AA on the dark row background."
+      ]
+    },
+    {
+      "id": "drag-handle-row-2",
+      "title": "Dragging state",
+      "description": "Actively-dragging state with a dimmed source row, a drop-indicator line, and a lifted, shadowed row following the pointer.",
+      "source": {
+        "html": "../../../../public/examples/application/drag-handle-row/2.html",
+        "tsx": "tsx/DragHandleRowVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["dragging"],
+      "accessibility": [
+        "Helper text below the list states in words what the drop indicator communicates visually."
+      ]
+    },
+    {
+      "id": "drag-handle-row-2-dark",
+      "title": "Dragging state (Dark)",
+      "description": "Actively-dragging reorderable list state adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/drag-handle-row/2-dark.html",
+        "tsx": "tsx/DragHandleRowVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["dragging"],
+      "accessibility": [
+        "Lifted-row shadow and dimmed source row remain distinguishable against the dark background."
+      ]
+    }
+  ]
+}
