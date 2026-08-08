@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-md flex-col gap-8 p-6">
+    <!-- Single grouped OTP field -->
+    <fieldset class="flex flex-col gap-3">
+      <legend class="text-sm font-medium text-gray-700">Verification code</legend>
+      <p class="text-xs text-gray-500">Enter the 6-digit code we sent to your phone.</p>
+      <div class="flex items-center gap-2" role="group" aria-label="One-time code">
+        <input inputmode="numeric" maxlength="1" value="4" aria-label="Digit 1" class="h-12 w-11 rounded-lg border border-gray-300 bg-white text-center text-lg font-semibold text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/30 focus:outline-none" />
+        <input inputmode="numeric" maxlength="1" value="8" aria-label="Digit 2" class="h-12 w-11 rounded-lg border border-gray-300 bg-white text-center text-lg font-semibold text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/30 focus:outline-none" />
+        <input inputmode="numeric" maxlength="1" value="2" aria-label="Digit 3" class="h-12 w-11 rounded-lg border border-gray-300 bg-white text-center text-lg font-semibold text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/30 focus:outline-none" />
+        <span aria-hidden="true" class="px-1 text-lg text-gray-300">–</span>
+        <input inputmode="numeric" maxlength="1" value="1" aria-label="Digit 4" class="h-12 w-11 rounded-lg border-2 border-indigo-500 bg-white text-center text-lg font-semibold text-gray-900 shadow-sm ring-2 ring-indigo-500/30 focus:outline-none" />
+        <input inputmode="numeric" maxlength="1" value="" aria-label="Digit 5" class="h-12 w-11 rounded-lg border border-gray-300 bg-white text-center text-lg font-semibold text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/30 focus:outline-none" />
+        <input inputmode="numeric" maxlength="1" value="" aria-label="Digit 6" class="h-12 w-11 rounded-lg border border-gray-300 bg-white text-center text-lg font-semibold text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/30 focus:outline-none" />
+      </div>
+    </fieldset>
+
+    <!-- Error state -->
+    <fieldset class="flex flex-col gap-3">
+      <legend class="text-sm font-medium text-gray-700">Confirm code</legend>
+      <div class="flex items-center gap-2" role="group" aria-label="One-time code, invalid">
+        <input inputmode="numeric" maxlength="1" value="0" aria-invalid="true" aria-label="Digit 1" class="h-12 w-11 rounded-lg border border-red-400 bg-white text-center text-lg font-semibold text-red-700 shadow-sm focus:border-red-500 focus:ring-2 focus:ring-red-500/30 focus:outline-none" />
+        <input inputmode="numeric" maxlength="1" value="0" aria-invalid="true" aria-label="Digit 2" class="h-12 w-11 rounded-lg border border-red-400 bg-white text-center text-lg font-semibold text-red-700 shadow-sm focus:border-red-500 focus:ring-2 focus:ring-red-500/30 focus:outline-none" />
+        <input inputmode="numeric" maxlength="1" value="0" aria-invalid="true" aria-label="Digit 3" class="h-12 w-11 rounded-lg border border-red-400 bg-white text-center text-lg font-semibold text-red-700 shadow-sm focus:border-red-500 focus:ring-2 focus:ring-red-500/30 focus:outline-none" />
+        <input inputmode="numeric" maxlength="1" value="0" aria-invalid="true" aria-label="Digit 4" class="h-12 w-11 rounded-lg border border-red-400 bg-white text-center text-lg font-semibold text-red-700 shadow-sm focus:border-red-500 focus:ring-2 focus:ring-red-500/30 focus:outline-none" />
+      </div>
+      <p role="alert" class="text-xs text-red-600">That code is incorrect. Please try again.</p>
+    </fieldset>
+  </body>
+</html>
