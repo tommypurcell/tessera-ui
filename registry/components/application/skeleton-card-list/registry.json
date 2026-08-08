@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "name": "application-skeleton-card-list",
+  "title": "Skeleton Card List",
+  "description": "Content-shaped shimmer placeholders composed into a card grid or list-row layout, matching the eventual content's structure rather than a single generic loading primitive.",
+  "category": "application/feedback",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["application", "skeleton", "loading", "placeholder", "grid"],
+  "useWhen": [
+    "Loading a card grid or list where the final layout is known in advance, so the placeholder can match its shape and reduce perceived layout shift.",
+    "The load is expected to take long enough that a static spinner would feel less informative than a content-shaped placeholder."
+  ],
+  "avoidWhen": [
+    "The content shape is unknown or highly variable — a single generic spinner communicates 'loading' without implying a layout that might not match.",
+    "The load is near-instant — skipping straight to content avoids an unnecessary flash of placeholder state.",
+    "Existing content is being refreshed in place — use a loading overlay instead, so the user keeps their prior context."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The card grid variant uses a fixed 3-column grid matched to its container in the example; adjust the grid-cols utility to the real content's responsive breakpoints. The list-row variant is a single-column flex stack that works at any width.",
+  "accessibility": [
+    "The container carries role=\"status\" with an aria-label summarizing what's loading, plus a visually hidden sr-only text node, so screen readers announce the loading state once rather than reading each shimmer block.",
+    "Placeholder blocks themselves have no semantic content and are not individually announced — the single status label on the container is sufficient."
+  ],
+  "compatibleWith": ["application-loaders", "application-loading-overlay", "application-empty-states"],
+  "variants": [
+    {
+      "id": "skeleton-card-list-1",
+      "title": "Card grid",
+      "description": "Three-card grid with an image placeholder, title line, and meta line per card",
+      "source": {
+        "html": "../../../../public/examples/application/skeleton-card-list/1.html",
+        "tsx": "tsx/SkeletonCardListVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["loading"],
+      "accessibility": ["role=\"status\" plus aria-label announces the loading state once for the whole grid."]
+    },
+    {
+      "id": "skeleton-card-list-1-dark",
+      "title": "Card grid (Dark)",
+      "description": "Three-card grid with an image placeholder, title line, and meta line per card",
+      "source": {
+        "html": "../../../../public/examples/application/skeleton-card-list/1-dark.html",
+        "tsx": "tsx/SkeletonCardListVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["loading"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    },
+    {
+      "id": "skeleton-card-list-2",
+      "title": "List rows",
+      "description": "Three list rows with an avatar circle and two text lines each, for a contact list or activity feed loading state",
+      "source": {
+        "html": "../../../../public/examples/application/skeleton-card-list/2.html",
+        "tsx": "tsx/SkeletonCardListVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["loading"],
+      "accessibility": ["role=\"status\" plus aria-label announces the loading state once for the whole list."]
+    },
+    {
+      "id": "skeleton-card-list-2-dark",
+      "title": "List rows (Dark)",
+      "description": "Three list rows with an avatar circle and two text lines each, for a contact list or activity feed loading state",
+      "source": {
+        "html": "../../../../public/examples/application/skeleton-card-list/2-dark.html",
+        "tsx": "tsx/SkeletonCardListVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["loading"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    }
+  ]
+}
