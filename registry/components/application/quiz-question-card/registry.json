@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-quiz-question-card",
+  "title": "Quiz Question Card",
+  "description": "Quiz question card with selectable answer options and a correct/incorrect reveal — correctness is determined by comparing the real selected option against the correct option id, not hand-styled per option.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["quiz", "question", "education", "assessment"],
+  "useWhen": [
+    "Presenting a single-choice quiz or assessment question with immediate right/wrong feedback.",
+    "You want the correct answer highlighted and the user's own wrong answer distinctly marked, both computed from real ids.",
+    "Options should lock (become non-interactive) once the answer is submitted."
+  ],
+  "avoidWhen": [
+    "You need multi-select (checkbox) questions — extend the state model before reusing this single-select markup.",
+    "Answers shouldn't be revealed immediately (e.g. a timed exam) — gate the reveal behind a separate results screen instead.",
+    "You need free-text or code-based answers — this component is built for fixed multiple-choice options only."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Options stack in a single column that reflows naturally to any container width; long option text wraps within its button.",
+  "accessibility": [
+    "Before submission, options form a real role='radiogroup' of role='radio' buttons; after reveal, the role is dropped since options are no longer interactive.",
+    "Correct and incorrect states are marked with both color and explicit text (\"✓ Correct\", \"✕ Your answer\"), not color alone.",
+    "The Submit button is disabled until an option is selected, and all options become disabled after reveal to prevent changing the answer."
+  ],
+  "compatibleWith": ["application-radio-groups", "application-toggle-card-group", "application-badges"],
+  "variants": [
+    {
+      "id": "quiz-question-card-1",
+      "title": "Quiz question card",
+      "description": "HTTP status code question shown in its revealed state, with the correct option highlighted green and the user's wrong answer highlighted red, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/quiz-question-card/1.html",
+        "tsx": "tsx/QuizQuestionCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["unanswered", "selected", "revealed-correct", "revealed-incorrect"],
+      "accessibility": [
+        "Only the correct option and the user's selected option carry extra labeling; unselected wrong options stay visually neutral."
+      ]
+    },
+    {
+      "id": "quiz-question-card-1-dark",
+      "title": "Quiz question card (Dark)",
+      "description": "The same revealed-state question, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/quiz-question-card/1-dark.html",
+        "tsx": "tsx/QuizQuestionCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["unanswered", "selected", "revealed-correct", "revealed-incorrect"],
+      "accessibility": [
+        "Correct/incorrect option colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
