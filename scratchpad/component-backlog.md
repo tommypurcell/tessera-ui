@@ -610,21 +610,21 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: Banking -->
 - [x] (builder-7) Account Balance Card — masked balance with show/hide, account number, and quick actions; distinct from token-balance-row. Light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #26).
-- [~] (builder-7) Transfer Form — from/to account selectors, amount, and schedule; distinct from currency-converter.
+- [x] (builder-7) Transfer Form — from/to account selectors, amount, and schedule; distinct from currency-converter. Light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #26).
 - [x] (builder-8) Statement Row — bank-statement table w/ computed cumulative running-balance column (4 transactions, starting $2,450 to $4,122.05), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [x] (builder-2) Card Freeze Toggle — bank-card visual with grayscale+Frozen overlay driven by the same toggle state as the switch and status text (caught+fixed a has-checked CSS bug where checkbox was a sibling not descendant of the card, switched to JS-driven classList); light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
-- [ ] Spending Insights Bar — month category bars with over/under-average markers; distinct from budget-progress-bar.
+- [~] (builder-7) Spending Insights Bar — month category bars with over/under-average markers; distinct from budget-progress-bar.
 
 <!-- Theme: Telecom -->
 - [~] (builder-10) Data Usage Ring — GB used vs plan with days-left projection; distinct from api-rate-limit-meter.
-- [ ] Plan Comparison Row — talk/text/data columns with checkmarks and price; distinct from feature-comparison-matrix.
-- [~] (builder-8) Signal Strength Bars — animated bars with network-type label (5G/LTE); distinct from connection-status-pill.
-- [ ] Call Log Row — contact, direction icon, duration, and time with callback; distinct from match-history-row.
+- [~] (builder-8) Plan Comparison Row — talk/text/data columns with checkmarks and price; distinct from feature-comparison-matrix.
+- [x] (builder-8) Signal Strength Bars — 4-bar indicator w/ active count derived from real strength value, network-type label, 3 states shown (3/4, 4/4, weak 1/4), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
+- [~] (builder-2) Call Log Row — contact, direction icon, duration, and time with callback; distinct from match-history-row.
 
 <!-- Theme: Gov / civic -->
 - [ ] Form Field Wizard (gov) — long official form split into review-able sections with save-progress; distinct from stepper-wizard.
 - [ ] Status Application Tracker — submitted→under-review→decision government stepper with case number; distinct from claim-status-tracker.
-- [ ] Public Notice Card — dated official announcement with category badge and read-more; distinct from announcement-feed-item.
+- [x] (builder-5) Public Notice Card — dated official announcement with category badge and read-more; distinct from announcement-feed-item. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [ ] Ballot Option List — candidate/measure rows with select and info expander; distinct from poll-vote-card.
 
 <!-- Theme: Agriculture / IoT -->
