@@ -378,7 +378,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-1) Cohort Retention Grid — 2 variants (weekly triangular + compact monthly), color-intensity cells, real table headers, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #16).
 - [x] (builder-1) Metric Date Comparison — duplicate of existing `big-number-delta-tile` (large number, trend arrow, % change, "vs last period" comparison label); no new work needed here
 - [x] (builder-8) Segment Breakdown Bar — traffic-by-device stacked bar (Desktop 55/Mobile 38/Tablet 7%) w/ legend (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
-- [ ] Real-Time Visitors Map — live active-user count with a mini geo-dot map; absent from library.
+- [~] (builder-6) Real-Time Visitors Map — live active-user count with a mini geo-dot map; absent from library.
 - [x] (builder-3) Event Log Table — type-coded icon rows (success/info/error), expand toggle revealing formatted JSON payload, timestamp column, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 
 <!-- Theme: Dev tools -->
@@ -389,7 +389,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [ ] Terminal Command Palette — inline command runner with history and output pane; distinct from terminal-blocks and command.
 
 <!-- Theme: Scheduling -->
-- [~] (builder-3) Availability Grid — bookable time-slot grid with free/busy/selected states; distinct from event-calendar.
+- [x] (builder-3) Availability Grid — week-view time-slot grid, day/hour headers, free/busy/selected button states, legend, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 - [x] (builder-2) Booking Confirmation Card — success indicator + title, date/time/host dl w/ sr-only dt labels, Reschedule/Cancel actions, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components (PR #19)
 - [x] (builder-3) Recurring Rule Builder — interval+unit select, toggleable weekday pills, 3-way end-condition radios, plain-language summary, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 - [~] (builder-1) Timezone Overlap Bar — visual working-hours overlap across two zones; distinct from timezone picker.
@@ -404,17 +404,17 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 <!-- Theme: Finance / billing -->
 - [x] (builder-2) Transaction Row — 4 transactions (software/housing/income/groceries), category icon+color per row, signed amount computed from single numeric value, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components (PR #19)
 - [x] (builder-8) Budget Progress Bar — $5,420/$5,000 over-budget example w/ red state + $420 overspend label (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
-- [~] (builder-7) Currency Converter — dual amount fields with rate and swap button; distinct from currency-input.
-- [~] (builder-2) Subscription Tier Toggle — monthly/annual billing switch with savings badge; distinct from theme-toggle-switch.
+- [x] (builder-7) Currency Converter — dual amount fields w/ derived conversion, swap button, rate/freshness caption, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
+- [x] (builder-2) Subscription Tier Toggle — Monthly/Annual radiogroup toggle w/ Save 20% badge, price readout computed from real period state, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components (PR #19)
 - [ ] Spending Category Donut — expense breakdown donut with legend and total in center; distinct from donut-chart (finance framing).
 
 <!-- === WAVE 7 (deep-backlog refill, post-220) — new verticals, verified non-dupe against registry === -->
 
 <!-- Theme: Healthcare -->
-- [ ] Appointment Slot Card — provider + time + type card with book/reschedule; distinct from booking-confirmation (list slot).
+- [~] (builder-3) Appointment Slot Card — provider + time + type card with book/reschedule; distinct from booking-confirmation (list slot).
 - [~] (builder-8) Vitals Stat Row — labeled vital signs (HR/BP/SpO2) with normal-range coloring; distinct from stats.
 - [ ] Medication Schedule List — dose rows with time, quantity, and taken/skip toggle; absent from library.
-- [ ] Symptom Severity Slider — labeled 0–10 pain/severity scale with descriptors; distinct from range-inputs.
+- [~] (builder-7) Symptom Severity Slider — labeled 0–10 pain/severity scale with descriptors; distinct from range-inputs.
 - [ ] Care Timeline — patient-history events with clinician avatars and visit types; distinct from timelines (clinical framing).
 
 <!-- Theme: Education -->
