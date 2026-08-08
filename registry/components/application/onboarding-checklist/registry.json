@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-onboarding-checklist",
+  "title": "Onboarding Checklist",
+  "description": "Dismissible getting-started checklist components with progress indicators for driving activation in SaaS dashboards.",
+  "category": "application/onboarding-checklist",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "onboarding-checklist",
+    "activation",
+    "getting-started",
+    "progress",
+    "setup"
+  ],
+  "useWhen": [
+    "Dismissible getting-started checklist components with progress indicators for driving activation in SaaS dashboards."
+  ],
+  "avoidWhen": [
+    "Avoid onboarding checklist when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Onboarding Checklist uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "onboarding-checklist-1",
+      "title": "Progress ring with completed and remaining steps",
+      "description": "Progress ring with completed and remaining steps Dismissible getting-started checklist components with progress indicators for driving activation in SaaS dashboards.",
+      "source": {
+        "html": "../../../../public/examples/application/onboarding-checklist/1.html",
+        "tsx": "tsx/OnboardingChecklistVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "onboarding-checklist-1-dark",
+      "title": "Progress ring with completed and remaining steps (Dark)",
+      "description": "Progress ring with completed and remaining steps Dismissible getting-started checklist components with progress indicators for driving activation in SaaS dashboards.",
+      "source": {
+        "html": "../../../../public/examples/application/onboarding-checklist/1-dark.html",
+        "tsx": "tsx/OnboardingChecklistVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "onboarding-checklist-2",
+      "title": "Linear progress bar with completed and remaining steps",
+      "description": "Linear progress bar with completed and remaining steps Dismissible getting-started checklist components with progress indicators for driving activation in SaaS dashboards.",
+      "source": {
+        "html": "../../../../public/examples/application/onboarding-checklist/2.html",
+        "tsx": "tsx/OnboardingChecklistVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "onboarding-checklist-2-dark",
+      "title": "Linear progress bar with completed and remaining steps (Dark)",
+      "description": "Linear progress bar with completed and remaining steps Dismissible getting-started checklist components with progress indicators for driving activation in SaaS dashboards.",
+      "source": {
+        "html": "../../../../public/examples/application/onboarding-checklist/2-dark.html",
+        "tsx": "tsx/OnboardingChecklistVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

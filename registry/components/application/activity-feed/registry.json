@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-activity-feed",
+  "title": "Activity Feed",
+  "description": "Chronological activity feed components showing actor-driven events with timestamps for dashboards, admin panels, and project histories.",
+  "category": "application/activity-feed",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "activity-feed",
+    "feed",
+    "history",
+    "events",
+    "log"
+  ],
+  "useWhen": [
+    "Chronological activity feed components showing actor-driven events with timestamps for dashboards, admin panels, and project histories."
+  ],
+  "avoidWhen": [
+    "Avoid activity feed when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Activity Feed uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Provide meaningful alternative text for informative images and empty alt text for decorative images.",
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "activity-feed-1",
+      "title": "Avatar-led feed with actor names and actions",
+      "description": "Avatar-led feed with actor names and actions Chronological activity feed components showing actor-driven events with timestamps for dashboards, admin panels, and project histories.",
+      "source": {
+        "html": "../../../../public/examples/application/activity-feed/1.html",
+        "tsx": "tsx/ActivityFeedVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "activity-feed-1-dark",
+      "title": "Avatar-led feed with actor names and actions (Dark)",
+      "description": "Avatar-led feed with actor names and actions Chronological activity feed components showing actor-driven events with timestamps for dashboards, admin panels, and project histories.",
+      "source": {
+        "html": "../../../../public/examples/application/activity-feed/1-dark.html",
+        "tsx": "tsx/ActivityFeedVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "activity-feed-2",
+      "title": "Connected icon-badge feed grouped by event type",
+      "description": "Connected icon-badge feed grouped by event type Chronological activity feed components showing actor-driven events with timestamps for dashboards, admin panels, and project histories.",
+      "source": {
+        "html": "../../../../public/examples/application/activity-feed/2.html",
+        "tsx": "tsx/ActivityFeedVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "activity-feed-2-dark",
+      "title": "Connected icon-badge feed grouped by event type (Dark)",
+      "description": "Connected icon-badge feed grouped by event type Chronological activity feed components showing actor-driven events with timestamps for dashboards, admin panels, and project histories.",
+      "source": {
+        "html": "../../../../public/examples/application/activity-feed/2-dark.html",
+        "tsx": "tsx/ActivityFeedVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

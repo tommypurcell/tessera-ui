@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-toast-action-undo",
+  "title": "Toast Action Undo",
+  "description": "Snackbar-style toast components with a countdown indicator and inline Undo action for reversible operations.",
+  "category": "application/toast-action-undo",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "toast-action-undo",
+    "snackbar",
+    "undo",
+    "countdown",
+    "reversible"
+  ],
+  "useWhen": [
+    "Snackbar-style toast components with a countdown indicator and inline Undo action for reversible operations."
+  ],
+  "avoidWhen": [
+    "Avoid toast action undo when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Toast Action Undo uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "toast-action-undo-1",
+      "title": "Snackbar with countdown ring and Undo action",
+      "description": "Snackbar with countdown ring and Undo action Snackbar-style toast components with a countdown indicator and inline Undo action for reversible operations.",
+      "source": {
+        "html": "../../../../public/examples/application/toast-action-undo/1.html",
+        "tsx": "tsx/ToastActionUndoVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "toast-action-undo-1-dark",
+      "title": "Snackbar with countdown ring and Undo action (Dark)",
+      "description": "Snackbar with countdown ring and Undo action Snackbar-style toast components with a countdown indicator and inline Undo action for reversible operations.",
+      "source": {
+        "html": "../../../../public/examples/application/toast-action-undo/1-dark.html",
+        "tsx": "tsx/ToastActionUndoVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "toast-action-undo-2",
+      "title": "Snackbar with countdown progress bar and Undo action",
+      "description": "Snackbar with countdown progress bar and Undo action Snackbar-style toast components with a countdown indicator and inline Undo action for reversible operations.",
+      "source": {
+        "html": "../../../../public/examples/application/toast-action-undo/2.html",
+        "tsx": "tsx/ToastActionUndoVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "toast-action-undo-2-dark",
+      "title": "Snackbar with countdown progress bar and Undo action (Dark)",
+      "description": "Snackbar with countdown progress bar and Undo action Snackbar-style toast components with a countdown indicator and inline Undo action for reversible operations.",
+      "source": {
+        "html": "../../../../public/examples/application/toast-action-undo/2-dark.html",
+        "tsx": "tsx/ToastActionUndoVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

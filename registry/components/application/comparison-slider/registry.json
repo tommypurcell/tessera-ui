@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "name": "application-comparison-slider",
+  "title": "Comparison Slider",
+  "description": "Before/after image comparison slider components with a draggable handle for showcasing visual changes side by side.",
+  "category": "application/comparison-slider",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "comparison-slider",
+    "before after",
+    "image compare",
+    "reveal",
+    "handle"
+  ],
+  "useWhen": [
+    "Before/after image comparison slider components with a draggable handle for showcasing visual changes side by side."
+  ],
+  "avoidWhen": [
+    "Avoid comparison slider when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Comparison Slider uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Provide meaningful alternative text for informative images and empty alt text for decorative images.",
+    "Associate each form field with a visible or programmatic label before production use.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "comparison-slider-1",
+      "title": "Corner-labeled before/after reveal slider",
+      "description": "Corner-labeled before/after reveal slider Before/after image comparison slider components with a draggable handle for showcasing visual changes side by side.",
+      "source": {
+        "html": "../../../../public/examples/application/comparison-slider/1.html",
+        "tsx": "tsx/ComparisonSliderVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images.",
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "comparison-slider-1-dark",
+      "title": "Corner-labeled before/after reveal slider (Dark)",
+      "description": "Corner-labeled before/after reveal slider Before/after image comparison slider components with a draggable handle for showcasing visual changes side by side.",
+      "source": {
+        "html": "../../../../public/examples/application/comparison-slider/1-dark.html",
+        "tsx": "tsx/ComparisonSliderVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images.",
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "comparison-slider-2",
+      "title": "Captioned before/after reveal slider",
+      "description": "Captioned before/after reveal slider Before/after image comparison slider components with a draggable handle for showcasing visual changes side by side.",
+      "source": {
+        "html": "../../../../public/examples/application/comparison-slider/2.html",
+        "tsx": "tsx/ComparisonSliderVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images.",
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "comparison-slider-2-dark",
+      "title": "Captioned before/after reveal slider (Dark)",
+      "description": "Captioned before/after reveal slider Before/after image comparison slider components with a draggable handle for showcasing visual changes side by side.",
+      "source": {
+        "html": "../../../../public/examples/application/comparison-slider/2-dark.html",
+        "tsx": "tsx/ComparisonSliderVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images.",
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    }
+  ]
+}

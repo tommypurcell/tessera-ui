@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-floating-action-menu",
+  "title": "Floating Action Menu",
+  "description": "Floating action button components that expand into a stacked set of quick actions for common content-creation and sharing tasks.",
+  "category": "application/floating-action-menu",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "floating-action-menu",
+    "fab",
+    "speed dial",
+    "quick actions",
+    "toggle"
+  ],
+  "useWhen": [
+    "Floating action button components that expand into a stacked set of quick actions for common content-creation and sharing tasks."
+  ],
+  "avoidWhen": [
+    "Avoid floating action menu when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Floating Action Menu uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Associate each form field with a visible or programmatic label before production use.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "floating-action-menu-1",
+      "title": "Labeled stacked FAB menu",
+      "description": "Labeled stacked FAB menu Floating action button components that expand into a stacked set of quick actions for common content-creation and sharing tasks.",
+      "source": {
+        "html": "../../../../public/examples/application/floating-action-menu/1.html",
+        "tsx": "tsx/FloatingActionMenuVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "floating-action-menu-1-dark",
+      "title": "Labeled stacked FAB menu (Dark)",
+      "description": "Labeled stacked FAB menu Floating action button components that expand into a stacked set of quick actions for common content-creation and sharing tasks.",
+      "source": {
+        "html": "../../../../public/examples/application/floating-action-menu/1-dark.html",
+        "tsx": "tsx/FloatingActionMenuVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "floating-action-menu-2",
+      "title": "Icon-only stacked FAB menu",
+      "description": "Icon-only stacked FAB menu Floating action button components that expand into a stacked set of quick actions for common content-creation and sharing tasks.",
+      "source": {
+        "html": "../../../../public/examples/application/floating-action-menu/2.html",
+        "tsx": "tsx/FloatingActionMenuVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "floating-action-menu-2-dark",
+      "title": "Icon-only stacked FAB menu (Dark)",
+      "description": "Icon-only stacked FAB menu Floating action button components that expand into a stacked set of quick actions for common content-creation and sharing tasks.",
+      "source": {
+        "html": "../../../../public/examples/application/floating-action-menu/2-dark.html",
+        "tsx": "tsx/FloatingActionMenuVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    }
+  ]
+}

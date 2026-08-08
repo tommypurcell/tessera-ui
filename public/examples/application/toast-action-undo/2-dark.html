@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="relative flex min-h-52 max-w-sm items-end bg-gray-950 p-6">
+    <div role="status" aria-live="polite" class="w-full overflow-hidden rounded-lg border border-gray-700 bg-gray-800 text-white shadow-lg">
+      <div class="flex items-center justify-between gap-3 py-3 pr-3 pl-4">
+        <p class="min-w-0 flex-1 text-sm">
+          <span class="font-medium">3 messages deleted.</span>
+        </p>
+
+        <button
+          type="button"
+          class="shrink-0 rounded-md px-2.5 py-1 text-sm font-semibold text-blue-400 transition hover:bg-white/10 hover:text-blue-300"
+        >
+          Undo
+        </button>
+
+        <button
+          type="button"
+          aria-label="Dismiss"
+          class="shrink-0 rounded-md p-1 text-gray-400 transition hover:bg-white/10 hover:text-gray-200"
+        >
+          <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="h-1 w-full bg-white/10" role="progressbar" aria-label="Time remaining to undo" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+        <div class="h-full w-3/5 bg-blue-500"></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "name": "application-wishlist-heart-toggle",
+  "title": "Wishlist Heart Toggle",
+  "description": "Favorite/wishlist toggle button components with a saved-count badge for e-commerce product cards and detail pages.",
+  "category": "application/wishlist-heart-toggle",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "wishlist-heart-toggle",
+    "favorite",
+    "wishlist",
+    "save",
+    "heart"
+  ],
+  "useWhen": [
+    "Favorite/wishlist toggle button components with a saved-count badge for e-commerce product cards and detail pages."
+  ],
+  "avoidWhen": [
+    "Avoid wishlist heart toggle when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Wishlist Heart Toggle uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Associate each form field with a visible or programmatic label before production use.",
+    "Provide meaningful alternative text for informative images and empty alt text for decorative images.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "wishlist-heart-toggle-1",
+      "title": "Standalone heart toggle with saved-count badge",
+      "description": "Standalone heart toggle with saved-count badge Favorite/wishlist toggle button components with a saved-count badge for e-commerce product cards and detail pages.",
+      "source": {
+        "html": "../../../../public/examples/application/wishlist-heart-toggle/1.html",
+        "tsx": "tsx/WishlistHeartToggleVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "wishlist-heart-toggle-1-dark",
+      "title": "Standalone heart toggle with saved-count badge (Dark)",
+      "description": "Standalone heart toggle with saved-count badge Favorite/wishlist toggle button components with a saved-count badge for e-commerce product cards and detail pages.",
+      "source": {
+        "html": "../../../../public/examples/application/wishlist-heart-toggle/1-dark.html",
+        "tsx": "tsx/WishlistHeartToggleVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "wishlist-heart-toggle-2",
+      "title": "Heart toggle overlaid on a product card",
+      "description": "Heart toggle overlaid on a product card Favorite/wishlist toggle button components with a saved-count badge for e-commerce product cards and detail pages.",
+      "source": {
+        "html": "../../../../public/examples/application/wishlist-heart-toggle/2.html",
+        "tsx": "tsx/WishlistHeartToggleVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images.",
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "wishlist-heart-toggle-2-dark",
+      "title": "Heart toggle overlaid on a product card (Dark)",
+      "description": "Heart toggle overlaid on a product card Favorite/wishlist toggle button components with a saved-count badge for e-commerce product cards and detail pages.",
+      "source": {
+        "html": "../../../../public/examples/application/wishlist-heart-toggle/2-dark.html",
+        "tsx": "tsx/WishlistHeartToggleVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images.",
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    }
+  ]
+}
