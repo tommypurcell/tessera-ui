@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "name": "application-story-ring-row",
+  "title": "Story Ring Row",
+  "description": "A horizontal row of circular story avatars with a gradient ring for unseen stories, a muted ring for seen ones, and an add-story affordance, in a scrollable row and a compact preview cluster.",
+  "category": "application/social",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["application", "story", "social", "avatar", "feed"],
+  "useWhen": [
+    "Building an ephemeral-content feed (stories, status updates) where users need to see at a glance who has new content to view.",
+    "The list of contacts or contributors needs a compact, scrollable entry point into per-person detail views."
+  ],
+  "avoidWhen": [
+    "You need a static group of avatars with no seen/unseen distinction or interaction — use an avatar group instead.",
+    "The content behind each avatar isn't ephemeral or story-like — a persistent feed is better served by a list or grid, not a ring row."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The full row is a horizontally scrollable flex list (overflow-x-auto) so it degrades gracefully on narrow viewports without wrapping; the compact variant fits a fixed number of avatars plus an overflow count button.",
+  "accessibility": [
+    "Each story's alt text states both who it belongs to and whether it has been seen, since that distinction is otherwise conveyed only by the ring's gradient vs. muted color.",
+    "The add-story control is a real <button> with an aria-label, since it contains only an icon.",
+    "The overflow '+N' button in the compact variant carries an aria-label describing exactly how many additional stories it reveals."
+  ],
+  "compatibleWith": ["application-avatar", "application-avatar-group"],
+  "variants": [
+    {
+      "id": "story-ring-row-1",
+      "title": "Scrollable row",
+      "description": "Add-story button followed by unseen (gradient ring) and seen (muted ring) story avatars with name labels",
+      "source": {
+        "html": "../../../../public/examples/application/story-ring-row/1.html",
+        "tsx": "tsx/StoryRingRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["unseen", "seen"],
+      "accessibility": ["Alt text states both the person's name and seen/unseen status."]
+    },
+    {
+      "id": "story-ring-row-1-dark",
+      "title": "Scrollable row (Dark)",
+      "description": "Add-story button followed by unseen (gradient ring) and seen (muted ring) story avatars with name labels",
+      "source": {
+        "html": "../../../../public/examples/application/story-ring-row/1-dark.html",
+        "tsx": "tsx/StoryRingRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["unseen", "seen"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    },
+    {
+      "id": "story-ring-row-2",
+      "title": "Compact cluster",
+      "description": "Smaller unlabeled avatars with an overflow '+N' button, for a tighter header or sidebar context",
+      "source": {
+        "html": "../../../../public/examples/application/story-ring-row/2.html",
+        "tsx": "tsx/StoryRingRowVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["unseen", "seen"],
+      "accessibility": ["The overflow button's aria-label states exactly how many more stories it reveals."]
+    },
+    {
+      "id": "story-ring-row-2-dark",
+      "title": "Compact cluster (Dark)",
+      "description": "Smaller unlabeled avatars with an overflow '+N' button, for a tighter header or sidebar context",
+      "source": {
+        "html": "../../../../public/examples/application/story-ring-row/2-dark.html",
+        "tsx": "tsx/StoryRingRowVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["unseen", "seen"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    }
+  ]
+}
