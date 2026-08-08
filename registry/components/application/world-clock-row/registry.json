@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-world-clock-row",
+  "title": "World Clock Row",
+  "description": "List of timezone rows showing city, UTC offset, current time, and a sun/moon icon indicating day or night in that location.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["timezone", "clock", "world-clock", "time", "schedule"],
+  "useWhen": [
+    "Distributed teams need to see teammates' or offices' current local time at a glance.",
+    "Scheduling across timezones benefits from a quick day/night visual cue before picking a meeting time.",
+    "You want a compact list rather than a full calendar or scheduling grid."
+  ],
+  "avoidWhen": [
+    "Only a single timezone is relevant — a plain timestamp is simpler than a list.",
+    "You need to pick a meeting time across zones, not just view current times — pair this with a scheduling component instead of using it alone.",
+    "Precision to the second matters — this is a glanceable display, not a live-ticking clock; add your own interval-based update if seconds precision is required."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The list is a fixed max-w-sm block that fills its container's available width up to that cap at all breakpoints.",
+  "accessibility": [
+    "The sun/moon icon is aria-hidden since day/night state is supplementary to the always-visible time and offset text.",
+    "Times are rendered in a monospace font for alignment, but remain plain text readable by screen readers in natural reading order.",
+    "Each row groups city, offset, and time together so screen reader users hear them as one unit."
+  ],
+  "compatibleWith": ["application-avatar", "application-stat-tile", "application-time-picker"],
+  "variants": [
+    {
+      "id": "world-clock-row-1",
+      "title": "World clock row",
+      "description": "Four-city timezone list with UTC offsets, current times, and sun/moon day-night icons.",
+      "source": {
+        "html": "../../../../public/examples/application/world-clock-row/1.html",
+        "tsx": "tsx/WorldClockRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Day/night is also implied by the visible time and offset, so the icon is a reinforcing cue, not the only signal."
+      ]
+    },
+    {
+      "id": "world-clock-row-1-dark",
+      "title": "World clock row (Dark)",
+      "description": "World clock row adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/world-clock-row/1-dark.html",
+        "tsx": "tsx/WorldClockRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Icon and text colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
