@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-podcast-episode-row",
+  "title": "Podcast Episode Row",
+  "description": "Podcast episode list rows with cover art, title/publish date, formatted duration, a play button, and a download action — distinct from track-list-row, which is a music-playback list with playing-state highlighting rather than podcast episode metadata and a download action.",
+  "category": "application/media",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["podcast", "media", "audio", "episodes"],
+  "useWhen": [
+    "Listing podcast episodes with publish date and duration.",
+    "Listeners need both a play and a separate offline-download action per episode.",
+    "Duration should be formatted from real seconds rather than a hand-typed string."
+  ],
+  "avoidWhen": [
+    "You're showing a music playback queue with a currently-playing highlight — use track-list-row instead.",
+    "Episodes don't support offline download — omit the download button rather than disabling it.",
+    "You need full transport controls for active playback — use now-playing-bar instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Rows are full-width within their container; the episode title truncates first to preserve the art, play button, and download button.",
+  "accessibility": [
+    "Play and download buttons both have episode-specific aria-labels rather than generic 'Play'/'Download' text.",
+    "Duration is formatted from a real durationSeconds value via a shared helper, not hand-typed per episode.",
+    "Cover art is aria-hidden since the title text already identifies the episode."
+  ],
+  "compatibleWith": ["application-now-playing-bar", "application-track-list-row"],
+  "variants": [
+    {
+      "id": "podcast-episode-row-1",
+      "title": "Podcast episode row",
+      "description": "Two episodes with real formatted durations (42:15 and 38:47) and publish dates, each with play and download actions, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/podcast-episode-row/1.html",
+        "tsx": "tsx/PodcastEpisodeRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Duration text matches durationSeconds exactly via the shared formatDuration function."
+      ]
+    },
+    {
+      "id": "podcast-episode-row-1-dark",
+      "title": "Podcast episode row (Dark)",
+      "description": "The same two episodes, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/podcast-episode-row/1-dark.html",
+        "tsx": "tsx/PodcastEpisodeRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Button icon colors meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
