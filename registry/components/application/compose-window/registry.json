@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-compose-window",
+  "title": "Compose Window",
+  "description": "Floating, dockable email compose window with a title bar (minimize/close), To/Subject fields, a message body textarea, and a footer with Send and delete-draft actions.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["email", "compose", "mail", "message", "draft"],
+  "useWhen": [
+    "Building a Gmail-style docked compose window that floats above the main content and can be minimized or closed.",
+    "You need dedicated To/Subject header fields plus a full message body, not just a single reply textarea.",
+    "Distinct from Comment Composer, which is an inline reply box attached to a thread rather than a standalone floating window with its own To/Subject fields."
+  ],
+  "avoidWhen": [
+    "Replying inline within an existing comment or discussion thread — use Comment Composer instead.",
+    "The message has no separate subject/recipient concept (like a chat message) — a simple composer input is simpler."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The window keeps a fixed width and anchors to the bottom-right of its container; the body textarea is the only element that would scroll on overflow.",
+  "accessibility": [
+    "Minimize, close, and delete-draft icon-only buttons all carry aria-label since their content is an SVG glyph.",
+    "To/Subject inputs use real <label htmlFor> associations rather than placeholder-only labeling.",
+    "The body textarea carries an aria-label since it has no visible adjacent label."
+  ],
+  "compatibleWith": ["application-comment-composer", "application-toast-action-undo"],
+  "variants": [
+    {
+      "id": "compose-window-1",
+      "title": "Compose Window",
+      "description": "Docked compose window with a dark title bar, To/Subject fields, a pre-filled body, and Send/delete-draft footer actions.",
+      "source": {
+        "html": "../../../../public/examples/application/compose-window/1.html",
+        "tsx": "tsx/ComposeWindowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Minimize and close controls are keyboard-focusable buttons with descriptive aria-labels."
+      ]
+    },
+    {
+      "id": "compose-window-1-dark",
+      "title": "Compose Window (Dark)",
+      "description": "The same compose window adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/compose-window/1-dark.html",
+        "tsx": "tsx/ComposeWindowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Field and button contrast remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}
