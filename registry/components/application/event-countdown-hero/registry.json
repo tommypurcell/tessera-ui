@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-event-countdown-hero",
+  "title": "Event Countdown Hero",
+  "description": "Headline event countdown components with a live days/hours/minutes timer and an RSVP action, for launch and conference pages.",
+  "category": "application/event-countdown-hero",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "event-countdown-hero",
+    "event",
+    "launch",
+    "rsvp",
+    "countdown"
+  ],
+  "useWhen": [
+    "Headline event countdown components with a live days/hours/minutes timer and an RSVP action, for launch and conference pages."
+  ],
+  "avoidWhen": [
+    "Avoid event countdown hero when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Event Countdown Hero uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "event-countdown-hero-1",
+      "title": "Gradient hero with countdown tiles and RSVP",
+      "description": "Gradient hero with countdown tiles and RSVP Headline event countdown components with a live days/hours/minutes timer and an RSVP action, for launch and conference pages.",
+      "source": {
+        "html": "../../../../public/examples/application/event-countdown-hero/1.html",
+        "tsx": "tsx/EventCountdownHeroVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "event-countdown-hero-1-dark",
+      "title": "Gradient hero with countdown tiles and RSVP (Dark)",
+      "description": "Gradient hero with countdown tiles and RSVP Headline event countdown components with a live days/hours/minutes timer and an RSVP action, for launch and conference pages.",
+      "source": {
+        "html": "../../../../public/examples/application/event-countdown-hero/1-dark.html",
+        "tsx": "tsx/EventCountdownHeroVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "event-countdown-hero-2",
+      "title": "Compact inline event banner",
+      "description": "Compact inline event banner Headline event countdown components with a live days/hours/minutes timer and an RSVP action, for launch and conference pages.",
+      "source": {
+        "html": "../../../../public/examples/application/event-countdown-hero/2.html",
+        "tsx": "tsx/EventCountdownHeroVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "event-countdown-hero-2-dark",
+      "title": "Compact inline event banner (Dark)",
+      "description": "Compact inline event banner Headline event countdown components with a live days/hours/minutes timer and an RSVP action, for launch and conference pages.",
+      "source": {
+        "html": "../../../../public/examples/application/event-countdown-hero/2-dark.html",
+        "tsx": "tsx/EventCountdownHeroVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

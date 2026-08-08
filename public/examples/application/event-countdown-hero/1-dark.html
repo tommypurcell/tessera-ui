@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-md flex-col bg-gray-950 p-6">
+    <div class="overflow-hidden rounded-xl border border-indigo-500/30 bg-gradient-to-br from-indigo-900 to-blue-900 p-8 text-center text-white">
+      <p class="text-xs font-semibold tracking-wide text-indigo-300 uppercase">Save the date</p>
+      <h1 class="mt-1 text-2xl font-bold">Tessera Conf 2026</h1>
+      <p class="mt-1 text-sm text-indigo-200">March 14 · San Francisco, CA</p>
+
+      <div id="event-hero-1-dark" class="mt-6 grid grid-cols-4 gap-2">
+        <div class="flex flex-col items-center gap-1 rounded-lg bg-white/10 py-3">
+          <span class="js-days font-mono text-2xl font-bold tabular-nums">18</span>
+          <span class="text-[10px] font-medium tracking-wide text-indigo-200 uppercase">Days</span>
+        </div>
+        <div class="flex flex-col items-center gap-1 rounded-lg bg-white/10 py-3">
+          <span class="js-hours font-mono text-2xl font-bold tabular-nums">06</span>
+          <span class="text-[10px] font-medium tracking-wide text-indigo-200 uppercase">Hrs</span>
+        </div>
+        <div class="flex flex-col items-center gap-1 rounded-lg bg-white/10 py-3">
+          <span class="js-mins font-mono text-2xl font-bold tabular-nums">42</span>
+          <span class="text-[10px] font-medium tracking-wide text-indigo-200 uppercase">Min</span>
+        </div>
+        <div class="flex flex-col items-center gap-1 rounded-lg bg-white/10 py-3">
+          <span class="js-secs font-mono text-2xl font-bold tabular-nums">15</span>
+          <span class="text-[10px] font-medium tracking-wide text-indigo-200 uppercase">Sec</span>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        class="mt-6 w-full rounded-md bg-white px-4 py-2.5 text-sm font-semibold text-indigo-900 transition hover:bg-indigo-50"
+      >
+        RSVP now
+      </button>
+    </div>
+
+    <script>
+      ;(function () {
+        var root = document.getElementById('event-hero-1-dark')
+        var daysEl = root.querySelector('.js-days')
+        var hoursEl = root.querySelector('.js-hours')
+        var minsEl = root.querySelector('.js-mins')
+        var secsEl = root.querySelector('.js-secs')
+        var totalSeconds = 18 * 86400 + 6 * 3600 + 42 * 60 + 15
+
+        function tick() {
+          if (totalSeconds <= 0) return
+          totalSeconds -= 1
+          var days = Math.floor(totalSeconds / 86400)
+          var hours = Math.floor((totalSeconds % 86400) / 3600)
+          var mins = Math.floor((totalSeconds % 3600) / 60)
+          var secs = totalSeconds % 60
+          daysEl.textContent = String(days).padStart(2, '0')
+          hoursEl.textContent = String(hours).padStart(2, '0')
+          minsEl.textContent = String(mins).padStart(2, '0')
+          secsEl.textContent = String(secs).padStart(2, '0')
+        }
+
+        setInterval(tick, 1000)
+      })()
+    </script>
+  </body>
+</html>
