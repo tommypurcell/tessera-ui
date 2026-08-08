@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-rich-tooltip-chart",
+  "title": "Rich Tooltip Chart",
+  "description": "A line chart paired with a floating tooltip card that shows per-series color swatches, exact values, and a delta badge for the highlighted datapoint.",
+  "category": "application/rich-tooltip-chart",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "rich-tooltip-chart",
+    "chart",
+    "tooltip",
+    "line chart",
+    "datapoint",
+    "analytics"
+  ],
+  "useWhen": [
+    "A chart datapoint needs to communicate more than one series' value at once, with color-coded context.",
+    "Pairing a hover or focus interaction on a chart with a comparison to a prior period (a delta badge)."
+  ],
+  "avoidWhen": [
+    "The chart has a single series — a plain axis label or a minimal single-value tooltip is less visual noise.",
+    "You need the full chart primitive itself, not just the tooltip treatment — start from the existing `charts` component and layer this tooltip pattern on top."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The tooltip is a fixed-width card anchored by percentage position along the chart's width; reserve enough top margin above the chart for the card to render without clipping at any viewport width.",
+  "accessibility": [
+    "Each series in the tooltip pairs a color swatch with a text label so the mapping isn't color-only.",
+    "The delta indicator combines an arrow icon with signed percentage text, not color alone, to convey direction.",
+    "In a real implementation, the tooltip's content should also be exposed to screen readers via an accessible description tied to the focused/hovered point, not only shown visually on hover."
+  ],
+  "compatibleWith": ["application-charts", "application-popover"],
+  "variants": [
+    {
+      "id": "rich-tooltip-chart-1",
+      "title": "Multi-series tooltip",
+      "description": "A two-series line chart with a floating tooltip card anchored above the highlighted date, showing both series' values and a week-over-week delta.",
+      "source": {
+        "html": "../../../../public/examples/application/rich-tooltip-chart/1.html",
+        "tsx": "tsx/RichTooltipChartVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Series color swatches are paired with text labels ('Desktop', 'Mobile') both in the tooltip and the chart legend."
+      ]
+    },
+    {
+      "id": "rich-tooltip-chart-1-dark",
+      "title": "Multi-series tooltip (Dark)",
+      "description": "Multi-series tooltip chart adapted for dark surfaces, with series colors re-tuned for dark contrast.",
+      "source": {
+        "html": "../../../../public/examples/application/rich-tooltip-chart/1-dark.html",
+        "tsx": "tsx/RichTooltipChartVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Line colors, gridlines, and tooltip text all meet WCAG AA contrast against the dark card background."
+      ]
+    }
+  ]
+}
