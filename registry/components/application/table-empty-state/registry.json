@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-table-empty-state",
+  "title": "Table Empty State",
+  "description": "Full-width empty state embedded inside a real table (header row intact, a single spanning row underneath) with an illustration, message, and an add-first-row call to action.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["table", "empty-state", "onboarding"],
+  "useWhen": [
+    "A data table has zero rows and you want the empty state to appear inside the table's own structure, columns still visible.",
+    "You want a clear next action (\"New project\") directly where the first row would otherwise appear.",
+    "The table's column headers are worth keeping visible even with no data, so users still see the schema."
+  ],
+  "avoidWhen": [
+    "The empty state should replace the whole view, not sit inside a table — use `empty-states` for a full-page zero-data screen instead.",
+    "The table is loading, not empty — use `Table Loading Skeleton` so users don't mistake pending data for a genuinely empty table.",
+    "A fetch actually failed — use `Table Error State` with a retry action rather than presenting a failure as if there's simply no data."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Table wrapper scrolls horizontally on narrow viewports via its containing overflow rather than compressing columns; the spanning empty-state row stays centered and readable at any table width.",
+  "accessibility": [
+    "The empty-state content lives in a real <td colSpan> spanning every column, so screen readers reading the table still get a single, coherent cell rather than fragmented column-by-column content.",
+    "Column headers remain in the DOM and visible even with zero data rows, so the table's structure is still announced.",
+    "The illustration is aria-hidden since the adjacent heading and description already state the empty condition in text."
+  ],
+  "compatibleWith": ["application-table-loading-skeleton", "application-table-error-state", "application-empty-states"],
+  "variants": [
+    {
+      "id": "table-empty-state-1",
+      "title": "Table Empty State",
+      "description": "Name/Owner/Status/Last updated header with a spanning \"No projects yet\" panel and a New project CTA.",
+      "source": {
+        "html": "../../../../public/examples/application/table-empty-state/1.html",
+        "tsx": "tsx/TableEmptyStateVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["empty"],
+      "accessibility": [
+        "colSpan is driven by the actual column count, so it never under- or over-spans if columns are added or removed."
+      ]
+    },
+    {
+      "id": "table-empty-state-1-dark",
+      "title": "Table Empty State (Dark)",
+      "description": "Table empty state adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/table-empty-state/1-dark.html",
+        "tsx": "tsx/TableEmptyStateVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["empty"],
+      "accessibility": [
+        "Illustration and text colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}
