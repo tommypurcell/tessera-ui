@@ -15,13 +15,15 @@ project.
 - Inspect the worktree before writing. Preserve unrelated and existing changes.
 - Prefer `npx tessera-ui@latest`; do not add `tessera-ui` as a runtime dependency.
 - Use JSON output for discovery and planning when parsing results programmatically.
-- Match the project's design before installing (see "Match the project's design"). Installed
-  components ship neutral defaults; without a confirmed theme they will not match the user's
-  colors, radius, or fonts, and you will end up hand-editing the source to fit.
+- `add` scans and proposes a theme automatically on the first install in a project with no
+  configured theme (see "Match the project's design") — you do not need to run `theme scan`
+  yourself first. It still only takes effect once, though: review and confirm it (or let `add`
+  prompt for confirmation) so later installs inherit the right brand instead of guessing.
 - Select an explicit variant in non-interactive sessions.
 - Preview the exact destinations and dependencies before installation.
-- Do not use `--overwrite` unless the user explicitly wants an existing file replaced and the
-  current file has been reviewed or backed up.
+- When a destination file already exists and differs, `add` prints a diff and asks you to choose
+  per file — read the diff before choosing. Do not pass `--overwrite` to skip that review unless
+  the user explicitly wants the existing file replaced unconditionally.
 - Do not use `--skip-deps` unless dependencies are already satisfied or the user requests it.
 
 ## Initialize the project
@@ -47,8 +49,19 @@ Never replace an existing `tessera-ui.json` automatically. Read it and honor its
 
 `init` only records where to put files and whether the project uses TypeScript and Tailwind. It
 does **not** read the project's colors, spacing, typography, or existing components. Installed
-components therefore ship neutral defaults. Do this step before installing so components inherit
-the user's brand instead of forcing you to rewrite their source afterward.
+components therefore ship neutral defaults until a theme is confirmed.
+
+**`add` handles this automatically the first time.** When a project has no confirmed theme and no
+proposal already pending review, `add` scans the project (or imports a design doc, if one exists)
+before writing the component, shows the proposed tokens, and asks once whether to use them —
+`--yes` accepts the proposal non-interactively so agent sessions are not blocked. Declining leaves
+the reviewable proposal file in place and still installs the requested component; it does not
+block the install either way. After that first confirmation, every later `add` reuses the
+confirmed theme silently — no further prompts.
+
+Run the steps below yourself only when you want to review or correct the theme *before* the first
+`add` (e.g. the user already gave you brand colors, or you want to catch a wrong guess before it's
+proposed), or to redo theming later with `theme scan`/`import`/`confirm` directly.
 
 Tessera applies a project's design through a CSS-variable layer: components read canonical
 variables (`--color-brand`, `--color-brand-fg`, `--color-surface`, `--radius`, `--font-sans`,
@@ -94,8 +107,10 @@ npx tessera-ui@latest theme eject            # write theme.css (@theme + :root v
 (the file that loads Tailwind, e.g. `app/globals.css`), inserting `@import './theme.css';` right
 after the Tailwind import. This is idempotent and skips a stylesheet that already imports it; pass
 `--no-link` to skip it and wire the import yourself. Without this import the variables never load
-and nothing renders differently. Once a theme is confirmed, `add` refreshes `theme.css`
-automatically; if an unconfirmed proposal is present, `add` reminds you to run `theme confirm`.
+and nothing renders differently. `add`'s behavior depends on theme state: with a confirmed theme
+it refreshes `theme.css` automatically; with an unconfirmed proposal already pending (from a prior
+`theme scan` you haven't reviewed yet) it reminds you to run `theme confirm` rather than guessing;
+with neither, it runs the scan itself and asks (see above).
 
 Registry components ship with literal palette classes (e.g. `bg-indigo-600`), so a freshly
 installed component does not read the theme variables until you rewrite it. After installing
@@ -120,8 +135,10 @@ npx tessera-ui@latest theme apply --all-colors           # brand every palette c
 
 After `theme apply` plus an imported `theme.css`, installed components inherit the brand.
 
-Skip this step only when the user explicitly wants the neutral defaults, or the project has no
-discernible design system yet.
+Only skip theming intentionally (e.g. pass `--yes` through an install without reviewing the
+proposal, or answer "no" when `add` asks) when the user explicitly wants the neutral defaults, or
+the project has no discernible design system yet — otherwise let `add`'s automatic first-run scan
+handle it.
 
 ## Discover the exact component
 
@@ -147,16 +164,20 @@ Choose the closest existing component. If the request is ambiguous, present the 
 matches and ask the user only when the choice would materially change the result.
 
 The CLI returns screenshot URLs during discovery: `search --json` includes a representative
-preview, while `info --json` includes the exact URL for every variant. To retrieve one directly,
-run `npx tessera-ui@latest preview <component-id> --variant <variant-id> --json`.
+preview, while `info --json` includes the exact URL for every variant.
 
-The CLI returns a URL, not image bytes — a raw image URL is not viewable inline. To actually see a
-variant, download the image and then open the downloaded file:
+A raw image URL is not viewable inline on its own. If your environment can already open a remote
+image URL directly, just do that. Otherwise, fetch the bytes locally first — `preview` can do this
+for you with `--save`:
 
 ```sh
-curl -sL "<screenshotUrl>" -o preview.jpg
-# then open/read preview.jpg to view the pixels
+npx tessera-ui@latest preview <component-id> --variant <variant-id> --save --json
+# writes the screenshot to disk and reports it as "localPath" — open that file directly
 ```
+
+Pass `--save <path>` for a specific destination, or bare `--save` for a default filename in the
+current directory. Without `--save`, `preview` still prints the URL only; fetch it yourself (e.g.
+`curl -sL "<screenshotUrl>" -o preview.jpg`) before trying to view it.
 
 Treat screenshots as optional supporting evidence after text discovery, not as a substitute for
 reading the component description and requirements. The complete screenshot index is also available
@@ -190,9 +211,12 @@ npx tessera-ui@latest add application-buttons \
   --yes
 ```
 
-The CLI verifies the source checksum, refuses to replace existing files by default, writes the
-selected source into the project, and installs declared dependencies using npm, pnpm, Yarn, or
-Bun based on the target lockfile.
+The CLI verifies the source checksum, writes the selected source into the project, and installs
+declared dependencies using npm, pnpm, Yarn, or Bun based on the target lockfile. If a destination
+already has different content, it prints a diff instead of writing and — in a non-interactive
+session, or with `--yes` and no TTY — defaults to keeping the local file untouched rather than
+guessing; in an interactive session it asks you to choose (keep / overwrite / write alongside as
+`.new` / abort). `--overwrite` skips this entirely and always replaces the file.
 
 ## Validate and integrate
 
@@ -222,8 +246,12 @@ Then:
   theme, run `theme confirm` first.
 - If the CLI requires a variant, rerun `info <component-id> --json` and pass one returned variant
   with `--variant`.
-- If a destination exists, preserve it and report the conflict. Use `--overwrite` only with clear
-  authorization.
+- If a destination exists and differs, read the printed diff and choose deliberately — keep the
+  local file, overwrite it, or write the incoming source alongside as `.new` for manual merging.
+  Use `--overwrite` to skip the diff and always replace, only with clear authorization.
+- If `add` reports "No theme configured yet" and then asks to confirm proposed tokens, review what
+  it found before accepting; if it reports "No tokens detected yet", the scan found nothing to
+  confirm — the component still installs, and theming can be set up later with `theme scan`.
 - If the packaged registry is unavailable, reinstall the npm package or use an approved hosted
   registry through `--registry-url` or `TESSERA_UI_REGISTRY_URL`.
 - If dependency installation fails, keep the copied source, report the failed package-manager

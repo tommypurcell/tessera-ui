@@ -31,13 +31,48 @@ test('initializes a project and installs editable component source', async () =>
   assert.equal(fs.existsSync(destination), true)
   assert.match(fs.readFileSync(destination, 'utf8'), /export function ButtonsVariant1/)
 
-  await assert.rejects(
-    cli(
-      ['add', 'application-buttons', '--variant', 'buttons-1', '--yes', '--registry', registryRoot],
-      cwd,
-    ),
-    /already exists/,
+  // Re-running add on an existing, unmodified file is a silent no-op (nothing to reconcile).
+  const rerun = await cli(
+    ['add', 'application-buttons', '--variant', 'buttons-1', '--yes', '--registry', registryRoot],
+    cwd,
   )
+  assert.match(rerun.stdout, /already up to date/)
+})
+
+test('add on a conflicting file diffs and keeps the local copy by default (non-interactive)', async () => {
+  const cwd = fs.mkdtempSync(path.join(os.tmpdir(), 'tessera-ui-local-'))
+  await cli(['init'], cwd)
+  await cli(
+    ['add', 'application-buttons', '--variant', 'buttons-1', '--yes', '--registry', registryRoot],
+    cwd,
+  )
+  const destination = path.join(cwd, 'components', 'ui', 'buttons-1.tsx')
+  fs.writeFileSync(destination, '// locally edited\n')
+
+  // Non-interactive (no TTY) + --yes: defaults to keeping the local copy, does not throw.
+  const result = await cli(
+    ['add', 'application-buttons', '--variant', 'buttons-1', '--yes', '--registry', registryRoot],
+    cwd,
+  )
+  assert.match(result.stdout, /already exists and differs/)
+  assert.match(result.stdout, /Kept .*buttons-1\.tsx unchanged/)
+  assert.equal(fs.readFileSync(destination, 'utf8'), '// locally edited\n')
+
+  // --overwrite still means "always overwrite, skip the diff/prompt entirely".
+  await cli(
+    [
+      'add',
+      'application-buttons',
+      '--variant',
+      'buttons-1',
+      '--yes',
+      '--overwrite',
+      '--registry',
+      registryRoot,
+    ],
+    cwd,
+  )
+  assert.match(fs.readFileSync(destination, 'utf8'), /export function ButtonsVariant1/)
 })
 
 test('downloads and verifies a component from a hosted registry', async (context) => {
@@ -152,6 +187,36 @@ test('supports machine-readable discovery and version output', async () => {
   assert.match(version.stdout, /^\d+\.\d+\.\d+\n$/)
 })
 
+test('preview --save fetches the screenshot and reports a local path', async () => {
+  const cwd = fs.mkdtempSync(path.join(os.tmpdir(), 'tessera-ui-preview-save-'))
+  const saved = await cli(
+    [
+      'preview',
+      'application-buttons',
+      '--variant',
+      'buttons-1',
+      '--save',
+      '--json',
+      '--registry',
+      registryRoot,
+    ],
+    cwd,
+  )
+  const result = JSON.parse(saved.stdout)
+  assert.equal(result.component, 'application-buttons')
+  assert.equal(result.variant, 'buttons-1')
+  assert.equal(typeof result.localPath, 'string')
+  assert.equal(fs.existsSync(result.localPath), true)
+  assert.ok(fs.statSync(result.localPath).size > 1000)
+
+  const nonJson = await cli(
+    ['preview', 'application-buttons', '--variant', 'buttons-1', '--save', 'mine.jpg', '--registry', registryRoot],
+    cwd,
+  )
+  assert.match(nonJson.stdout, /Saved to .*mine\.jpg/)
+  assert.equal(fs.existsSync(path.join(cwd, 'mine.jpg')), true)
+})
+
 test('theme scan infers tokens from a tailwind config at high confidence', async () => {
   const cwd = fs.mkdtempSync(path.join(os.tmpdir(), 'tessera-ui-theme-config-'))
   fs.writeFileSync(
@@ -210,6 +275,52 @@ test('theme confirm promotes the proposal into config and eject renders @theme c
   const css = fs.readFileSync(path.join(cwd, 'theme.css'), 'utf8')
   assert.match(css, /@theme\s*\{[\s\S]*--color-brand: #4f46e5;/)
   assert.match(css, /--radius: 0\.5rem;/)
+})
+
+test('add scans and confirms a theme automatically on the first install, then skips on the next', async () => {
+  const cwd = fs.mkdtempSync(path.join(os.tmpdir(), 'tessera-ui-theme-onadd-'))
+  fs.writeFileSync(
+    path.join(cwd, 'tailwind.config.ts'),
+    `export default { theme: { extend: {
+      colors: { brand: { DEFAULT: '#0d9488' } },
+      borderRadius: { DEFAULT: '0.75rem' },
+      fontFamily: { sans: ['Inter', 'system-ui'] },
+    } } }\n`,
+  )
+  await cli(['init', '--cwd', cwd], cwd)
+
+  const first = await cli(
+    ['add', 'application-buttons', '--variant', 'buttons-1', '--yes', '--registry', registryRoot],
+    cwd,
+  )
+  assert.match(first.stdout, /No theme configured yet/)
+  assert.match(first.stdout, /Confirmed theme/)
+  assert.equal(fs.existsSync(path.join(cwd, 'tessera-theme.proposed.json')), false)
+
+  const config = JSON.parse(fs.readFileSync(path.join(cwd, 'tessera-ui.json'), 'utf8'))
+  assert.equal(config.theme.tokens.colors.brand, '#0d9488')
+  assert.equal(fs.existsSync(path.join(cwd, 'theme.css')), true)
+
+  // Second install: theme already confirmed, no scan/prompt — just a silent CSS refresh.
+  const second = await cli(
+    ['add', 'application-buttons', '--variant', 'buttons-2', '--yes', '--registry', registryRoot],
+    cwd,
+  )
+  assert.doesNotMatch(second.stdout, /No theme configured yet/)
+  assert.match(second.stdout, /Refreshed theme\.css/)
+})
+
+test('add on an empty project leaves an unconfirmed proposal instead of failing', async () => {
+  const cwd = fs.mkdtempSync(path.join(os.tmpdir(), 'tessera-ui-theme-empty-'))
+  await cli(['init', '--cwd', cwd], cwd)
+
+  const result = await cli(
+    ['add', 'application-buttons', '--variant', 'buttons-1', '--yes', '--registry', registryRoot],
+    cwd,
+  )
+  assert.match(result.stdout, /No tokens detected yet/)
+  assert.equal(fs.existsSync(path.join(cwd, 'components', 'ui', 'buttons-1.tsx')), true)
+  assert.equal(fs.existsSync(path.join(cwd, 'tessera-theme.proposed.json')), true)
 })
 
 test('theme treats a design.md as authoritative and skips the review file', async () => {

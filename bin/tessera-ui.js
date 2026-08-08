@@ -181,6 +181,59 @@ async function ask(question) {
   return /^y(es)?$/i.test(answer.trim())
 }
 
+// Prompts for one of a fixed set of single-letter choices, returning `fallback` when not a TTY
+// (non-interactive/agent runs must never block on a prompt) or when the answer doesn't match.
+async function askChoice(question, choices, fallback) {
+  if (!process.stdin.isTTY || !process.stdout.isTTY) {
+    return fallback
+  }
+  const terminal = readline.createInterface({ input: process.stdin, output: process.stdout })
+  const answer = (await terminal.question(question)).trim().toLowerCase()
+  terminal.close()
+  return choices.includes(answer) ? answer : fallback
+}
+
+// Minimal line-based diff (no dependency): longest common subsequence over lines, then walk
+// the LCS to emit `- `/`+ ` for removed/added lines and `  ` for unchanged context.
+function diffLines(oldText, newText) {
+  const oldLines = oldText.split('\n')
+  const newLines = newText.split('\n')
+  const oldLength = oldLines.length
+  const newLength = newLines.length
+  const lcs = Array.from({ length: oldLength + 1 }, () => new Array(newLength + 1).fill(0))
+  for (let i = oldLength - 1; i >= 0; i -= 1) {
+    for (let j = newLength - 1; j >= 0; j -= 1) {
+      lcs[i][j] =
+        oldLines[i] === newLines[j] ? lcs[i + 1][j + 1] + 1 : Math.max(lcs[i + 1][j], lcs[i][j + 1])
+    }
+  }
+  const out = []
+  let i = 0
+  let j = 0
+  while (i < oldLength && j < newLength) {
+    if (oldLines[i] === newLines[j]) {
+      out.push(`  ${oldLines[i]}`)
+      i += 1
+      j += 1
+    } else if (lcs[i + 1][j] >= lcs[i][j + 1]) {
+      out.push(`- ${oldLines[i]}`)
+      i += 1
+    } else {
+      out.push(`+ ${newLines[j]}`)
+      j += 1
+    }
+  }
+  while (i < oldLength) {
+    out.push(`- ${oldLines[i]}`)
+    i += 1
+  }
+  while (j < newLength) {
+    out.push(`+ ${newLines[j]}`)
+    j += 1
+  }
+  return out.join('\n')
+}
+
 async function chooseVariant(component, requestedVariant) {
   const selected = component.variants.find((item) => item.id === requestedVariant)
   if (requestedVariant && !selected) {
@@ -336,21 +389,43 @@ async function commandPreview(client, id, options) {
   }
   const component = componentWithScreenshots(await client.component(id))
   const variant = await chooseVariant(component, options.variant)
+
+  let localPath
+  if (options.save !== undefined) {
+    const { cwd } = projectContext(options)
+    const defaultName = `tessera-preview-${component.id}-${variant.id}.jpg`
+    const target = path.resolve(cwd, typeof options.save === 'string' ? options.save : defaultName)
+    const bytes = Buffer.from(await (await fetchResponse(variant.screenshotUrl)).arrayBuffer())
+    fs.mkdirSync(path.dirname(target), { recursive: true })
+    fs.writeFileSync(target, bytes)
+    localPath = target
+  }
+
   if (options.json) {
     return console.log(
       JSON.stringify(
-        { component: component.id, variant: variant.id, screenshotUrl: variant.screenshotUrl },
+        {
+          component: component.id,
+          variant: variant.id,
+          screenshotUrl: variant.screenshotUrl,
+          ...(localPath ? { localPath } : {}),
+        },
         null,
         2,
       ),
     )
   }
   console.log(variant.screenshotUrl)
-  console.log(
-    'To view it: download the image and open it, e.g. ' +
-      `\`curl -sL ${variant.screenshotUrl} -o preview.jpg\` then read preview.jpg. ` +
-      'A raw image URL is not viewable inline; fetch the bytes first.',
-  )
+  if (localPath) {
+    console.log(`Saved to ${localPath} — open that file directly to view it.`)
+  } else {
+    console.log(
+      'To view it: download the image and open it, e.g. ' +
+        `\`curl -sL ${variant.screenshotUrl} -o preview.jpg\` then read preview.jpg, ` +
+        'or re-run with --save to have this command fetch and save it for you. ' +
+        'A raw image URL is not viewable inline; fetch the bytes first.',
+    )
+  }
 }
 
 async function buildInstallPlan(client, id, options) {
@@ -423,11 +498,7 @@ async function commandAdd(client, id, options) {
   if (!options.yes && !(await ask('\nInstall this component? (y/N) '))) {
     return console.log('\nNo files were written. Re-run with --yes to skip confirmation.')
   }
-  for (const { destination } of plan.files) {
-    if (fs.existsSync(destination) && !options.overwrite) {
-      throw new Error(`${destination} already exists; use --overwrite to replace it.`)
-    }
-  }
+
   const downloaded = []
   for (const file of plan.files) {
     const content = await client.file(file.sourceFile.path)
@@ -437,30 +508,130 @@ async function commandAdd(client, id, options) {
     }
     downloaded.push({ ...file, content })
   }
-  for (const { destination, content } of downloaded) {
+
+  // Conflicts: `--overwrite` always wins (explicit intent, skip diff/prompt entirely).
+  // Otherwise show a diff and let the user choose per-file instead of hard-failing.
+  const toWrite = []
+  for (const file of downloaded) {
+    const { destination, content } = file
+    if (!fs.existsSync(destination) || options.overwrite) {
+      toWrite.push({ destination, content })
+      continue
+    }
+    const existing = fs.readFileSync(destination, 'utf8')
+    const incoming = content.toString('utf8')
+    if (existing === incoming) {
+      console.log(`\n${path.relative(plan.cwd, destination)} is already up to date.`)
+      continue
+    }
+    console.log(`\n${path.relative(plan.cwd, destination)} already exists and differs:\n`)
+    console.log(diffLines(existing, incoming))
+    const choice = options.yes
+      ? 'k'
+      : await askChoice(
+          '\nKeep yours (k) / overwrite (o) / write alongside as .new (n) / abort (a)? [k] ',
+          ['k', 'o', 'n', 'a'],
+          'k',
+        )
+    if (choice === 'a') {
+      return console.log('\nAborted. No files were written.')
+    }
+    if (choice === 'o') {
+      toWrite.push({ destination, content })
+    } else if (choice === 'n') {
+      const sideBySide = `${destination}.new`
+      toWrite.push({ destination: sideBySide, content })
+    } else {
+      console.log(`Kept ${path.relative(plan.cwd, destination)} unchanged.`)
+    }
+  }
+
+  for (const { destination, content } of toWrite) {
     fs.mkdirSync(path.dirname(destination), { recursive: true })
     fs.writeFileSync(destination, content)
     console.log(`Installed ${path.relative(plan.cwd, destination)}`)
   }
   installDependencies(plan.cwd, plan.dependencies, options)
   console.log(`Done. The component source is yours to edit.`)
-  applyThemeAfterAdd(plan.cwd, options)
+  await applyThemeAfterAdd(plan.cwd, options)
 }
 
-// After installing a component, keep the CSS-var theme layer in sync (or nudge if a scan is
-// waiting to be confirmed). Components read the canonical vars with fallbacks, so this is
-// additive: without a theme they still render the library defaults.
-function applyThemeAfterAdd(cwd, options) {
+// After installing a component, keep the CSS-var theme layer in sync. Components read the
+// canonical vars with fallbacks, so this is additive: without a theme they still render the
+// library defaults.
+//
+// Three cases:
+// - a confirmed theme already exists → just re-eject CSS (unchanged behavior).
+// - a scan is already pending review (from a prior `theme scan`) → don't auto-confirm someone
+//   else's unreviewed proposal, just nudge toward `theme confirm` (unchanged behavior).
+// - neither exists → this is the project's first `add`. Run the scan now, show the proposed
+//   tokens, and ask once. A design doc (if present) is imported directly with no prompt, same
+//   as `theme scan` today. `--yes` accepts the proposal non-interactively so agent runs are not
+//   blocked; declining leaves the proposal file in place without blocking the component install.
+async function applyThemeAfterAdd(cwd, options) {
   const configPath = path.join(cwd, configFilename)
   const config = fs.existsSync(configPath) ? readJson(configPath) : null
   if (config?.theme) {
     const rel = ejectThemeCss(cwd, config.theme, options)
     console.log(`Refreshed ${rel} with your brand tokens.`)
-  } else if (fs.existsSync(path.join(cwd, proposedThemeFilename))) {
+    return
+  }
+  if (fs.existsSync(path.join(cwd, proposedThemeFilename))) {
     console.log(
       `Note: unconfirmed theme in ${proposedThemeFilename}. Run \`tessera-ui theme confirm\` to apply your brand.`,
     )
+    return
   }
+
+  console.log('\nNo theme configured yet — scanning your project once so components match your brand.')
+  const scanResult = writeProposedTheme(cwd, configPath, config, options)
+
+  if (scanResult.theme) {
+    // Design doc found: already confirmed by writeProposedTheme, no prompt needed.
+    const rel = ejectThemeCss(cwd, scanResult.theme, options)
+    console.log(`Imported design tokens from ${scanResult.imported} and wrote ${rel}.`)
+    return
+  }
+
+  const { proposed, result } = scanResult
+  const tokens = proposed.tokens
+  console.log(`Sources: ${result.sources.join(', ') || 'none (no config/CSS found)'}`)
+  console.log(`Proposed tokens (${Object.keys(flattenTokens(tokens)).length}):`)
+  for (const [key, value] of Object.entries(flattenTokens(tokens))) {
+    const conf = result.confidence[key]
+    console.log(`  ${key} = ${value}${conf ? `  (confidence ${conf})` : ''}`)
+  }
+  if (result.questions.length) {
+    console.log('Questions for review:')
+    result.questions.forEach((question) => console.log(`  - ${question}`))
+  }
+
+  // Nothing to confirm — an empty/unrecognized project scan found zero tokens. Leave the
+  // proposal file (with its questions) for a human/agent to fill in later; don't block the
+  // component install and don't prompt for a confirmation that would just fail.
+  if (!Object.keys(flattenTokens(tokens)).length) {
+    console.log(
+      `\nNo tokens detected yet. Edit ${proposedThemeFilename} and run \`tessera-ui theme confirm\` when ready.`,
+    )
+    return
+  }
+
+  // Default-accept on plain Enter (prompt is phrased (Y/n)): only an explicit "n"/"no" declines.
+  // Non-TTY runs without --yes also decline — safe, since declining just leaves the reviewable
+  // proposal file in place rather than silently confirming an unreviewed theme.
+  const reply = options.yes
+    ? 'y'
+    : await askChoice('\nUse these as your theme? (Y/n) ', ['', 'y', 'yes', 'n', 'no'], 'n')
+  const accepted = reply !== 'n' && reply !== 'no'
+  if (!accepted) {
+    console.log(
+      `Left the proposal in ${proposedThemeFilename} — edit it and run \`tessera-ui theme confirm\` when ready.`,
+    )
+    return
+  }
+  const { theme, rel } = confirmProposedTheme(cwd, configPath, config)
+  const cssRel = ejectThemeCss(cwd, theme, options)
+  console.log(`Confirmed theme → ${rel} and wrote ${cssRel}. Future installs will use it automatically.`)
 }
 
 // --- Theme commands -----------------------------------------------------------------------
@@ -475,8 +646,10 @@ function updateConfigTheme(cwd, configPath, config, theme) {
   return path.relative(cwd, configPath)
 }
 
-function themeScan(subcommand, options) {
-  const { cwd, configPath, config } = projectContext(options)
+// Scans the project and writes a proposed theme file. Shared by `theme scan` and by `add`'s
+// implicit first-run scan. Returns null when a design doc was imported directly instead
+// (no proposal file — nothing to review, already confirmed).
+function writeProposedTheme(cwd, configPath, config, options) {
   const designPath = findDesignDoc(cwd)
 
   // A design doc is authoritative: import straight to the config, no review file.
@@ -488,12 +661,7 @@ function themeScan(subcommand, options) {
     }
     const theme = { source: imported.source, confirmedAt: new Date().toISOString(), tokens }
     const rel = updateConfigTheme(cwd, configPath, config, theme)
-    if (options.json) {
-      return console.log(JSON.stringify({ imported: imported.source, theme }, null, 2))
-    }
-    console.log(`Imported design tokens from ${imported.source} → ${rel}`)
-    console.log('Run `tessera-ui theme eject` to write theme.css into your project.')
-    return
+    return { imported: imported.source, theme, rel }
   }
 
   const result = scanProject(cwd)
@@ -512,6 +680,25 @@ function themeScan(subcommand, options) {
   }
   const proposedPath = path.join(cwd, proposedThemeFilename)
   writeJsonFile(proposedPath, proposed)
+  return { proposed, result, proposedPath }
+}
+
+function themeScan(subcommand, options) {
+  const { cwd, configPath, config } = projectContext(options)
+  const scanResult = writeProposedTheme(cwd, configPath, config, options)
+
+  if (scanResult.theme) {
+    // Design doc path: already confirmed, nothing to review.
+    if (options.json) {
+      return console.log(JSON.stringify({ imported: scanResult.imported, theme: scanResult.theme }, null, 2))
+    }
+    console.log(`Imported design tokens from ${scanResult.imported} → ${scanResult.rel}`)
+    console.log('Run `tessera-ui theme eject` to write theme.css into your project.')
+    return
+  }
+
+  const { proposed, result, proposedPath } = scanResult
+  const tokens = proposed.tokens
 
   if (options.json) {
     return console.log(JSON.stringify(proposed, null, 2))
@@ -559,8 +746,9 @@ function throwMissingDesign() {
   throw new Error('no design.md/design.json found; pass a path: tessera-ui theme import <file>')
 }
 
-function themeConfirm(options) {
-  const { cwd, configPath, config } = projectContext(options)
+// Confirms whatever proposal is currently on disk. Shared by `theme confirm` and by `add`'s
+// implicit first-run confirm prompt. Throws the same errors `theme confirm` always has.
+function confirmProposedTheme(cwd, configPath, config) {
   const proposedPath = path.join(cwd, proposedThemeFilename)
   if (!fs.existsSync(proposedPath)) {
     throw new Error(`no ${proposedThemeFilename} found. Run \`tessera-ui theme scan\` first.`)
@@ -573,6 +761,12 @@ function themeConfirm(options) {
   const theme = { source: 'scan', confirmedAt: new Date().toISOString(), tokens }
   const rel = updateConfigTheme(cwd, configPath, config, theme)
   fs.rmSync(proposedPath)
+  return { theme, rel }
+}
+
+function themeConfirm(options) {
+  const { cwd, configPath, config } = projectContext(options)
+  const { theme, rel } = confirmProposedTheme(cwd, configPath, config)
   if (options.json) {
     return console.log(JSON.stringify(theme, null, 2))
   }
