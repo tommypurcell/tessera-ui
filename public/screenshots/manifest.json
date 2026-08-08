@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 854,
+  "screenshotCount": 856,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -8546,6 +8546,26 @@
       "url": "/screenshots/components/application-work-order-card/work-order-card-2-dark.jpg",
       "width": 600,
       "height": 238
+    },
+    {
+      "componentId": "application-compact-data-table",
+      "variantId": "compact-data-table-1",
+      "appearance": "light",
+      "sourcePath": "files/application-compact-data-table/compact-data-table-1.html",
+      "sourceSha256": "9fbc29c2a7945ca905c0350d9135d4e761726528c8ead5426c9b21af287666b4",
+      "url": "/screenshots/components/application-compact-data-table/compact-data-table-1.jpg",
+      "width": 600,
+      "height": 271
+    },
+    {
+      "componentId": "application-compact-data-table",
+      "variantId": "compact-data-table-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-compact-data-table/compact-data-table-1-dark.html",
+      "sourceSha256": "c580b66f805fe642544bfb01f288b651ecf9b500b8a300f53e182df6b2af5d43",
+      "url": "/screenshots/components/application-compact-data-table/compact-data-table-1-dark.jpg",
+      "width": 600,
+      "height": 271
     }
   ]
 }
