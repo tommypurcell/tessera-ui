@@ -468,7 +468,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 <!-- Theme: Gaming -->
 - [x] (builder-10) Achievement Toast — 2 variants (legendary glow popup, compact rare XP pill), light+dark, registry+tsx generated, screenshots verified, pushed
 - [~] (builder-9) XP Progress Bar — level badge + XP fill to next level with overflow; distinct from progress-bars.
-- [~] (builder-7) Player Card — gamertag, rank tier, avatar, and quick stats; distinct from contact-card.
+- [x] (builder-7) Player Card — gradient header w/ avatar+gamertag+rank badge, 3-column quick stats, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
 - [x] (builder-5) Match History Row — colored border+text Win/Loss/Draw, mode/queue, monospace score, duration, relative time, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [x] (builder-6) Leaderboard Podium — 2 variants (3-tier podium with crown+avatars+medal colors, medal-icon ranked row list), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
 
@@ -482,23 +482,23 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 <!-- Theme: Logistics -->
 - [ ] Shipment Tracking Map — route line with origin/current/destination pins and ETA; distinct from map-marker-popup.
 - [ ] Package Status Timeline — scan events with location, timestamp, and status; distinct from order-status-tracker.
-- [~] (builder-3) Delivery Slot Picker — selectable delivery-window cards with pricing; distinct from availability-grid.
+- [x] (builder-3) Delivery Slot Picker — radio-card list w/ price, description, Free/Fastest badges, disabled fully-booked state, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 - [~] (builder-1) Inventory Level Row — SKU with in-stock bar, reorder threshold, and warning; distinct from usage-meter.
 - [ ] Fleet Status Grid — vehicle tiles with active/idle/maintenance status and driver; distinct from health-check-grid.
 
 <!-- Theme: HR / recruiting -->
 - [ ] Candidate Pipeline Stage — applicant cards in a hiring-stage column with count; distinct from deal-pipeline-stage.
 - [ ] Applicant Card — name, role applied, resume link, and rating stars; distinct from contact-card.
-- [ ] Interview Scorecard — competency rows with rating scale and notes; distinct from nps-rating-scale.
+- [~] (builder-5) Interview Scorecard — competency rows with rating scale and notes; distinct from nps-rating-scale.
 - [ ] Org Headcount Chart — department bar breakdown with open-roles overlay; distinct from org-chart.
-- [ ] PTO Balance Card — accrued/used/remaining leave with request button; distinct from plan-billing-card.
+- [~] (builder-2) PTO Balance Card — accrued/used/remaining leave with request button; distinct from plan-billing-card.
 
 <!-- Theme: Legal / compliance -->
 - [ ] Document Signature Block — signer rows with name, date, and signed/pending status; distinct from signature-pad.
 - [ ] Clause Accordion — numbered legal-clause sections with expand and anchor links; distinct from accordions.
-- [ ] Audit Trail Row — actor + action + before/after + timestamp compliance row; distinct from event-log-table.
+- [~] (builder-3) Audit Trail Row — actor + action + before/after + timestamp compliance row; distinct from event-log-table.
 - [ ] Consent Version Banner — updated-terms notice with view-changes and accept; distinct from consent-checklist.
-- [ ] Redaction Highlight — text block with toggleable redacted (blacked-out) spans; absent from library.
+- [~] (builder-6) Redaction Highlight — text block with toggleable redacted (blacked-out) spans; absent from library.
 
 <!-- Theme: Misc gaps -->
 - [ ] Rating Summary Header — big average + star row + total-reviews for a product header; distinct from rating-distribution.
