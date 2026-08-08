@@ -533,24 +533,24 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-7) Token Balance Row — 3-asset wallet list w/ derived direction arrow+color, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
 - [x] (builder-10) Price Ticker Strip — 2 variants (infinite scrolling multi-asset ticker, compact flash-on-update price rows), light+dark, both scroll animation + live flash verified via screenshot, registry+tsx generated, screenshots verified, pushed
 - [x] (builder-3) Gas Fee Selector — 3-tier fee cards (Slow/Average/Fast) w/ ETA+cost, radio-based selection, estimated-fee summary, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
-- [ ] NFT Card — artwork, name, collection, price, and bid button; distinct from product-card.
+- [x] (builder-5) NFT Card — artwork, name, collection, price, and bid button; distinct from product-card. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [x] (builder-3) Transaction Confirm Sheet — large amount+fiat display, from/to monospace addresses, fee/total breakdown, cancel/confirm actions, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 
 <!-- Theme: Nonprofit / fundraising -->
 - [x] (builder-6) Donation Progress Card — 2 variants (campaign card with photo+donor avatars+CTA, compact fundraiser row), light+dark, registry+tsx generated, screenshots verified (caught & fixed a broken Unsplash image URL during review), committed to builder-6-components.
-- [~] (builder-9) Tiered Donation Buttons — preset amount buttons + custom field with impact labels; distinct from variant-selector.
+- [x] (builder-9) Tiered Donation Buttons — 2 variants (grid with custom amount, card with frequency toggle) light+dark, registry.json, MDX entry, screenshots
 - [x] (builder-2) Volunteer Shift Card — role, date/time, spots-filled progress bar (computed from spotsFilled/spotsTotal), full/disabled sign-up state; light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
 
 <!-- Theme: Insurance -->
 - [x] (builder-2) Coverage Comparison Card — 3 plan-tier cards (Basic/Standard/Premium) with deductible/premium/coverage-max rows, Standard highlighted Best value, all figures Intl.NumberFormat-computed from props; light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
 - [x] (builder-2) Claim Status Tracker — vertical timeline, submitted→review→approved/denied with dates+payout, branching outcome driven by currentStageIndex/outcome props; light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
-- [~] (builder-2) Quote Estimate Panel — input sliders with live premium output and breakdown; distinct from mortgage-calculator.
+- [x] (builder-2) Quote Estimate Panel — coverage/deductible/term sliders with live-recalculated premium + base/deductible/term breakdown (verified via actual slider interaction in Playwright); light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
 
 <!-- Theme: Automotive -->
-- [ ] Vehicle Spec Card — car image with mileage/fuel/transmission spec chips and price; distinct from property-listing-card.
+- [~] (builder-4) Vehicle Spec Card — car image with mileage/fuel/transmission spec chips and price; distinct from property-listing-card.
 - [x] (builder-8) Fuel / Charge Gauge — vertical capsule fill-level indicator with computed range estimate and low-level warning state, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [x] (builder-7) Trip Summary Card — header w/ route line + 2x2 stat grid (distance/duration/speed/efficiency), light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
-- [ ] Service Reminder Row — maintenance item with due-mileage bar and schedule action; distinct from sync-status-row.
+- [~] (builder-9) Service Reminder Row — maintenance item with due-mileage bar and schedule action; distinct from sync-status-row.
 
 <!-- === WAVE 10 (deep-backlog refill, post-306) — frontier verticals, verified non-dupe against registry === -->
 
@@ -563,9 +563,9 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-7) Speaker Card — avatar+name+title, quoted talk title, X/LinkedIn/website social links, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
 
 <!-- Theme: Streaming / video -->
-- [~] (builder-8) Video Thumbnail Card — thumbnail with duration badge, title, channel, and views; distinct from image-gallery-lightbox.
+- [x] (builder-8) Video Thumbnail Card — thumbnail w/ duration badge, title, channel avatar/name, K/M-formatted view count computed from real numbers, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [x] (builder-8) Watch Progress Bar — video thumbnail with duration badge and resume-position overlay bar, fill computed from real watched/total minutes, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
-- [ ] Channel Header — banner, avatar, subscriber count, and subscribe button; distinct from auth-card-shell.
+- [~] (builder-2) Channel Header — banner, avatar, subscriber count, and subscribe button; distinct from auth-card-shell.
 - [~] (builder-6) Live Stream Badge — pulsing LIVE indicator with concurrent-viewer count; distinct from connection-status-pill.
 - [ ] Playback Speed Menu — speed option list with checkmark and quality submenu; distinct from dropdown.
 - [ ] Up-Next Autoplay Card — countdown-to-next-video card with cancel and play-now; distinct from toast-action-undo.
@@ -581,7 +581,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [ ] Endpoint Method Row — HTTP method pill + path + description API-reference row; distinct from webhook-event-row.
 - [ ] Request Builder — method/URL/headers/body tabs with a send button; distinct from query-builder.
 - [ ] Response Viewer — status badge, timing, and collapsible JSON body with copy; distinct from json-tree-viewer.
-- [ ] API Rate Limit Meter — requests-used vs quota with reset-time note; distinct from usage-meter.
+- [~] (builder-8) API Rate Limit Meter — requests-used vs quota with reset-time note; distinct from usage-meter.
 - [ ] Code Language Tabs — snippet panel with curl/JS/Python tabs and copy; distinct from code-editor-block.
 
 <!-- Theme: Data pipeline / ETL -->
