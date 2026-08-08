@@ -310,7 +310,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-3) Split View Layout — inbox-style master-detail shell, collapsible list pane, resize handle, active-item aria-current, detail content slot, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 - [x] (builder-10) Sticky Section Header — 2 variants (alphabetical contact list w/ sticky letter headers, settings list w/ sticky category headers), light+dark, sticky pinning verified via actual scroll test, registry+tsx generated, screenshots verified, pushed
 - [x] (builder-9) Masonry Grid — 2 variants (image gallery, card masonry) light+dark, registry.json, MDX entry, screenshots
-- [~] (builder-4) Sidebar Layout Shell — fixed sidebar + topbar + content app frame with collapse; distinct from dashboard-sidebar (full shell).
+- [x] (builder-4) Sidebar Layout Shell — fixed sidebar (nav+user footer) + topbar (breadcrumb/search/avatar) + scrollable content, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #17)
 - [x] (builder-6) Card Stack — 2 variants (photo profile deck with reject/accept, compact content-recommendation deck with skip/save), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
 - [x] (builder-3) Expandable Detail Row — order table w/ chevron toggle, colSpan detail panel with line items + emphasized total, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 
@@ -369,13 +369,13 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: CRM / people -->
 - [x] (builder-8) Contact Card — initials avatar + name/role/company + conditional call/email/message icon buttons (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
-- [ ] Deal Pipeline Stage — value-weighted column with deal cards and stage total; distinct from kanban (CRM semantics).
+- [~] (builder-6) Deal Pipeline Stage — value-weighted column with deal cards and stage total; distinct from kanban (CRM semantics).
 - [~] (builder-7) Lead Score Meter — 0–100 fit/intent score with segmented color bands; distinct from bullet-chart.
 - [x] (builder-1) Company Logo Row — duplicate of existing `marketing/logo-clouds` (5 variants: base, base+title, grid, text wordmarks); no new work needed here
 - [~] (builder-5) Person Hovercard — expanded profile popover with stats and social links; distinct from hover-card (person-rich).
 
 <!-- Theme: Analytics -->
-- [ ] Cohort Retention Grid — triangular week/day retention heatmap with % cells; distinct from heatmap-calendar.
+- [~] (builder-1) Cohort Retention Grid — triangular week/day retention heatmap with % cells; distinct from heatmap-calendar.
 - [x] (builder-1) Metric Date Comparison — duplicate of existing `big-number-delta-tile` (large number, trend arrow, % change, "vs last period" comparison label); no new work needed here
 - [x] (builder-8) Segment Breakdown Bar — traffic-by-device stacked bar (Desktop 55/Mobile 38/Tablet 7%) w/ legend (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [ ] Real-Time Visitors Map — live active-user count with a mini geo-dot map; absent from library.
@@ -396,7 +396,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: Forms (advanced) -->
 - [ ] Conditional Field Group — form section that shows/hides based on a controlling input; absent from library.
-- [~] (builder-8) Multi-File Attachment Row — attached-file chips with size, type icon, and remove; distinct from file-uploaders.
+- [x] (builder-8) Multi-File Attachment Row — 3 attached files (PDF/PNG/CSV) w/ computed sizes + remove buttons (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [~] (builder-10) OTP Resend Timer — code-entry footer with resend countdown and attempt counter; distinct from InputOTP.
 - [x] (builder-9) Consent Checklist — 2 variants (gated submit, select-all with required/optional badges) light+dark, registry.json, MDX entry, screenshots
 - [ ] Form Autosave Banner — sticky "changes saved / unsaved" bar with save/discard; distinct from save-status-indicator.
