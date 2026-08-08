@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-track-list-row",
+  "title": "Track List Row",
+  "description": "Music track list where each row shows its index (swapping to a play icon on hover), title, artist, and duration, with a highlighted currently-playing row.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["music", "track", "playlist", "media", "audio"],
+  "useWhen": [
+    "Displaying an album or playlist track listing where users click a row to start playback.",
+    "You want the track number to double as a play-on-hover affordance without adding a separate button column.",
+    "The currently playing track needs a distinct, persistent highlight, not just a hover state."
+  ],
+  "avoidWhen": [
+    "You need drag-to-reorder or multi-select — extend this pattern with your own selection/reorder logic; it's a display list on its own.",
+    "The rows represent generic media rather than playable tracks — use media-object-row for a non-playback context.",
+    "You need album art thumbnails per row — extend the row with a leading image slot rather than replacing this pattern."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The list is a fixed max-w-md block that fills its container's available width up to that cap at all breakpoints.",
+  "accessibility": [
+    "The playing row uses both color and a distinct 'now playing' bars icon in place of the track number, not color alone.",
+    "Track title and artist are always plain, selectable text, keeping the list readable and copyable by assistive tech.",
+    "Duration is right-aligned in a monospace font so times stay visually scannable down the column."
+  ],
+  "compatibleWith": ["application-media-object-row", "application-now-playing-bar", "application-equalizer-sliders"],
+  "variants": [
+    {
+      "id": "track-list-row-1",
+      "title": "Track list row",
+      "description": "Four-track list with the second track highlighted as currently playing (bars icon, blue text) and hover-revealed play icons on the others.",
+      "source": {
+        "html": "../../../../public/examples/application/track-list-row/1.html",
+        "tsx": "tsx/TrackListRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "playing", "hover"],
+      "accessibility": [
+        "Each row is a clickable list item; wire keyboard activation (Enter/Space) alongside the click handler in your own integration."
+      ]
+    },
+    {
+      "id": "track-list-row-1-dark",
+      "title": "Track list row (Dark)",
+      "description": "Track list row adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/track-list-row/1-dark.html",
+        "tsx": "tsx/TrackListRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "playing", "hover"],
+      "accessibility": [
+        "Playing-state highlight and text colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
