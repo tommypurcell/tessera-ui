@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex min-h-72 items-center justify-center bg-gray-950 p-6">
+    <div class="relative w-full max-w-2xl overflow-hidden rounded-lg bg-black shadow-lg ring-1 ring-white/10" style="aspect-ratio: 16 / 9">
+      <div class="absolute inset-0 bg-gradient-to-br from-gray-800 to-black"></div>
+
+      <button type="button" aria-label="Play" class="absolute left-1/2 top-1/2 flex size-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-gray-900 shadow-lg transition-transform hover:scale-105">
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="ml-1 size-7">
+          <path d="M8 5v14l11-7z" />
+        </svg>
+      </button>
+
+      <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent px-4 pb-3 pt-10">
+        <div class="group relative mb-2 h-1 w-full cursor-pointer rounded-full bg-white/20">
+          <div class="absolute inset-y-0 left-0 w-1/3 rounded-full bg-white/35"></div>
+          <div class="absolute inset-y-0 left-0 w-1/4 rounded-full bg-red-500"></div>
+          <div class="absolute left-1/4 top-1/2 size-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-red-500 shadow"></div>
+        </div>
+
+        <div class="flex items-center gap-3 text-white">
+          <button type="button" aria-label="Play" class="shrink-0">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </button>
+
+          <span class="shrink-0 font-mono text-xs tabular-nums">2:14 / 8:47</span>
+
+          <div class="flex items-center gap-1.5">
+            <button type="button" aria-label="Mute" class="shrink-0">
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" class="size-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25 4.5 10.5H3a.75.75 0 0 0-.75.75v1.5c0 .414.336.75.75.75h1.5l2.25 2.25V8.25Z" />
+              </svg>
+            </button>
+            <div class="h-1 w-14 rounded-full bg-white/20">
+              <div class="h-full w-2/3 rounded-full bg-white"></div>
+            </div>
+          </div>
+
+          <span class="ml-auto shrink-0"></span>
+
+          <button type="button" class="shrink-0 rounded px-1.5 py-0.5 text-xs font-medium hover:bg-white/10">1.0x</button>
+
+          <button type="button" aria-label="Fullscreen" class="shrink-0">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" class="size-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

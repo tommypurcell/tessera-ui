@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-video-player",
+  "title": "Video Player",
+  "description": "A custom video player chrome — poster frame, center play button, and a bottom controls bar with scrub, time, volume, playback speed, and fullscreen.",
+  "category": "application/video-player",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "video-player",
+    "video",
+    "player",
+    "controls",
+    "media",
+    "scrubber"
+  ],
+  "useWhen": [
+    "Embedding video with full custom playback chrome — scrub position, buffered range, time, volume, speed, and fullscreen — rather than the browser's native controls.",
+    "Brand consistency across the player matters, since native <video controls> styling can't be themed."
+  ],
+  "avoidWhen": [
+    "You only need to scrub a media timeline without full playback chrome around it — use `Timeline Scrubber` for that narrower case.",
+    "Native browser controls are acceptable — the plain <video controls> element is far less code to maintain."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The player keeps a 16:9 aspect-ratio container that scales with its parent width; the controls bar and scrub track stretch full-width at any size.",
+  "accessibility": [
+    "The center play button and the controls-bar play button both carry aria-label=\"Play\" since only an icon is shown.",
+    "Mute and fullscreen buttons carry aria-labels; the current time is shown as visible text (\"2:14 / 8:47\"), not solely conveyed by scrub position.",
+    "The scrub track's played/buffered regions are distinguished by both color and the draggable thumb position, not color alone."
+  ],
+  "compatibleWith": ["application-media", "application-timeline-scrubber"],
+  "variants": [
+    {
+      "id": "video-player-1",
+      "title": "Poster with controls bar",
+      "description": "A 16:9 poster frame with a centered play button and a bottom gradient controls bar: play, time, mute + volume, playback speed, and fullscreen.",
+      "source": {
+        "html": "../../../../public/examples/application/video-player/1.html",
+        "tsx": "tsx/VideoPlayerVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Icon-only buttons (play, mute, fullscreen) each carry a descriptive aria-label."
+      ]
+    },
+    {
+      "id": "video-player-1-dark",
+      "title": "Poster with controls bar (Dark)",
+      "description": "Video player adapted for a dark page context, with a subtle ring border for edge definition against a near-black surrounding background.",
+      "source": {
+        "html": "../../../../public/examples/application/video-player/1-dark.html",
+        "tsx": "tsx/VideoPlayerVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "The player's own chrome stays dark by convention regardless of page theme, since video controls are traditionally dark-on-video."
+      ]
+    }
+  ]
+}
