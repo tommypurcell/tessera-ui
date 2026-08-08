@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-matrix-question-grid",
+  "title": "Matrix Question Grid",
+  "description": "Survey matrix question: a table of statement rows against a shared response-scale column set (e.g. Strongly disagree through Strongly agree), each row an independent radio group.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["survey", "form", "likert", "rating", "matrix"],
+  "useWhen": [
+    "Collecting single-choice ratings for multiple statements against one shared scale in a survey or feedback form.",
+    "You want to render this as a compact table rather than repeating a full radio group per statement.",
+    "Distinct from Notification Preferences Grid, which pairs channels against event types with checkboxes for independent multi-select toggles, not a single-choice rating scale shared across statements."
+  ],
+  "avoidWhen": [
+    "Toggles are independent per cell (multi-select) rather than one choice per row — use Notification Preferences Grid instead.",
+    "There's only one statement to rate — a single rating scale is simpler than a full matrix."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The statement column keeps 40% width so scale labels stay aligned across rows; on very narrow viewports the table scrolls horizontally within its container rather than reflowing.",
+  "accessibility": [
+    "Every radio input carries an aria-label combining the row statement and column label, since the visible column header is shared across all rows rather than repeated per cell.",
+    "Each row's radios share a unique name attribute, giving native single-choice-per-row keyboard and screen reader behavior.",
+    "The table uses scope=\"col\"/scope=\"row\" so assistive tech announces the correct statement and scale label for any focused cell."
+  ],
+  "compatibleWith": ["application-notification-preferences-grid", "application-nps-rating-scale"],
+  "variants": [
+    {
+      "id": "matrix-question-grid-1",
+      "title": "Matrix Question Grid",
+      "description": "Three statements rated on a 5-point Strongly disagree to Strongly agree scale, each with a different pre-selected response.",
+      "source": {
+        "html": "../../../../public/examples/application/matrix-question-grid/1.html",
+        "tsx": "tsx/MatrixQuestionGridVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Each radio's aria-label states both the statement and the scale point it represents."
+      ]
+    },
+    {
+      "id": "matrix-question-grid-1-dark",
+      "title": "Matrix Question Grid (Dark)",
+      "description": "The same matrix question adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/matrix-question-grid/1-dark.html",
+        "tsx": "tsx/MatrixQuestionGridVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Radio and header text contrast remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}
