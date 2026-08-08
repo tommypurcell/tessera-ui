@@ -57,11 +57,11 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 ### builder-6
 - [x] (builder-6) Pagination
-- [~] (builder-6) Popover
+- [x] (builder-6) Popover
 - [x] (builder-6) Progress
 - [x] (builder-6) RadioGroup
-- [~] (builder-6) Resizable
-- [~] (builder-6) ScrollArea
+- [x] (builder-6) Resizable
+- [x] (builder-6) ScrollArea
 
 ### builder-7
 - [x] (builder-7) Select — already exists as `selects` (3 variants, light+dark, verified)
@@ -113,7 +113,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [ ] Tag Input — token/chip entry field with add-on-enter, backspace-to-remove, and autocomplete suggestions; essential for labels/recipients/filters.
 - [x] (builder-8) Segmented Control — iOS-style single-select pill toggle group for view/mode switching; distinct from tabs and button-groups in styling and intent.
 - [~] (builder-9) Metric Sparkline Card — KPI tile pairing a big number + delta with an inline sparkline trend; dashboard staple richer than existing `stat-tile`.
-- [~] (builder-10) Activity Feed — chronological event stream with actor avatars, action verbs, and relative timestamps; distinct from `timelines` (data-driven, not milestone-based).
+- [x] (builder-10) Activity Feed — 2 variants (avatar-led actor feed + connected icon-badge timeline), light+dark, registry+tsx generated, screenshots verified
 - [ ] Keyboard Shortcut Cheatsheet — modal grid of grouped ⌘/ctrl shortcuts with `kbd` chips; companion to command palette, boosts perceived polish.
 - [~] (builder-1) Split Button — primary action button fused with a dropdown caret for secondary actions; common toolbar pattern not covered by button-groups.
 - [ ] Data Filter Bar — horizontal bar of chip/dropdown filters with active-filter pills and a clear-all control; the applied layer above the existing `filters` primitives.
