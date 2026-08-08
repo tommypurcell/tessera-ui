@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-contact-card",
+  "title": "Contact Card",
+  "description": "Compact contact row with an avatar, name, role/company, and quick-action icon buttons (call/email/message) — each action only renders when its handler is provided, so the card never shows a dead button.",
+  "category": "application/media",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["contact", "crm", "people", "quick-actions"],
+  "useWhen": [
+    "Showing a person's identity plus one-tap contact actions in a CRM, directory, or team list.",
+    "Not every contact has every contact method — the call/email/message buttons should appear conditionally.",
+    "A compact single-row layout fits better than a full profile card."
+  ],
+  "avoidWhen": [
+    "You need a richer profile (bio, stats, social links) — use a dedicated person hovercard or profile page instead.",
+    "The row needs generic trailing content, not specifically call/email/message — use media-object-row instead.",
+    "Multiple contacts need to be laid out as a grid of larger cards — use the generic card component instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Name and role/company text truncate with ellipsis on narrow widths rather than wrapping, keeping the row a single fixed-height line.",
+  "accessibility": [
+    "Each icon button carries an aria-label naming both the action and the contact (e.g. \"Call Priya Shah\"), not just the icon alone.",
+    "Action buttons are conditionally rendered rather than disabled, so screen readers and keyboard users never encounter a non-functional control.",
+    "The avatar uses initials as a text fallback rather than requiring an image."
+  ],
+  "compatibleWith": ["application-avatar-group", "application-media-object-row", "application-team-members-list"],
+  "variants": [
+    {
+      "id": "contact-card-1",
+      "title": "Contact card",
+      "description": "Single contact row with initials avatar, name, role/company, and call/email/message icon buttons, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/contact-card/1.html",
+        "tsx": "tsx/ContactCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "All three quick-action buttons are shown here to illustrate the full set; omit the corresponding prop to hide any one of them."
+      ]
+    },
+    {
+      "id": "contact-card-1-dark",
+      "title": "Contact card (Dark)",
+      "description": "The same contact row, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/contact-card/1-dark.html",
+        "tsx": "tsx/ContactCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Avatar, text, and icon button colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
