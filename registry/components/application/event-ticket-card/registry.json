@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-event-ticket-card",
+  "title": "Event Ticket Card",
+  "description": "Event ticket card: a main stub with event name, date/time/venue, section, and ticket number, plus a perforated side stub holding a scannable QR code.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["ticket", "event", "qr-code", "entry", "pass"],
+  "useWhen": [
+    "Displaying a purchased event ticket (concert, sports, conference) with seat/section detail and an entry QR code.",
+    "You want the classic perforated-ticket visual metaphor (dashed divider + notch cutouts) to reinforce it's a real ticket.",
+    "Distinct from QR Code Card, which is a generic share/invite card with no seat/section metadata or ticket-stub layout."
+  ],
+  "avoidWhen": [
+    "The pass has no seat/section concept (e.g. a general digital pass or badge) — a simpler QR Code Card fits better.",
+    "You need a compact list row rather than a full card (e.g. an order history list) — this is a standalone display card, not a list-row primitive."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The card is a fixed two-part flex row (info + QR stub); the QR stub keeps a fixed width so the code stays a legible, consistent size regardless of the info section's content length.",
+  "accessibility": [
+    "The QR code has role=\"img\" with an aria-label describing its purpose, since the pattern itself conveys nothing to assistive technology.",
+    "Section and ticket number are both labeled with visible small-caps headers, not conveyed by position alone.",
+    "The perforation notches and dashed divider are purely decorative (aria-hidden) — they don't carry information beyond visually separating the stub."
+  ],
+  "compatibleWith": ["application-qr-code-card", "application-ticket-tier-selector"],
+  "variants": [
+    {
+      "id": "event-ticket-card-1",
+      "title": "Event Ticket Card",
+      "description": "A 'Night Signals Tour' concert ticket with date/venue, GA Floor section, ticket #8841, and a perforated QR stub reading 'Scan at entry'.",
+      "source": {
+        "html": "../../../../public/examples/application/event-ticket-card/1.html",
+        "tsx": "tsx/EventTicketCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The `qrCode` prop accepts a real QR-rendering component; the built-in placeholder pattern is illustrative for previewing layout."
+      ]
+    },
+    {
+      "id": "event-ticket-card-1-dark",
+      "title": "Event Ticket Card (Dark)",
+      "description": "The same ticket card adapted for dark surfaces; the QR tile itself stays white for scannability.",
+      "source": {
+        "html": "../../../../public/examples/application/event-ticket-card/1-dark.html",
+        "tsx": "tsx/EventTicketCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Card chrome and text adopt dark styling, but the QR module never inverts, matching real-world scanner contrast expectations."
+      ]
+    }
+  ]
+}
