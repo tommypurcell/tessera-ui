@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="p-6">
+    <div class="flex w-72 flex-col rounded-xl border border-gray-800 bg-gray-800/40 p-2.5">
+      <div class="flex items-center justify-between gap-2 px-1.5 py-1">
+        <div class="flex items-center gap-2">
+          <span aria-hidden="true" class="size-2 rounded-full bg-amber-400"></span>
+          <h3 class="text-sm font-semibold text-white">In progress</h3>
+        </div>
+        <span class="rounded-full bg-gray-700 px-2 py-0.5 text-xs font-medium text-gray-300">3</span>
+      </div>
+
+      <ul role="list" class="mt-1 flex flex-col gap-2">
+        <li
+          draggable="true"
+          class="cursor-grab rounded-lg border border-gray-700 bg-gray-900 p-3 shadow-sm active:cursor-grabbing"
+        >
+          <p class="text-sm font-medium text-white">Redesign onboarding flow</p>
+          <p class="mt-1 text-xs text-gray-400">Simplify the 4-step signup into 2 screens.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <span class="inline-flex items-center gap-1 rounded-full bg-purple-400/10 px-2 py-0.5 text-xs font-medium text-purple-300">
+              Design
+            </span>
+            <span class="flex size-6 items-center justify-center rounded-full bg-gray-100 text-[10px] font-medium text-gray-900">
+              AL
+            </span>
+          </div>
+        </li>
+
+        <li
+          draggable="true"
+          class="cursor-grab rounded-lg border border-gray-700 bg-gray-900 p-3 shadow-sm active:cursor-grabbing"
+        >
+          <p class="text-sm font-medium text-white">Fix pagination bug on mobile</p>
+          <div class="mt-3 flex items-center justify-between">
+            <span class="inline-flex items-center gap-1 rounded-full bg-red-400/10 px-2 py-0.5 text-xs font-medium text-red-300">
+              Bug
+            </span>
+            <span class="flex size-6 items-center justify-center rounded-full bg-blue-300 text-[10px] font-medium text-gray-900">
+              JK
+            </span>
+          </div>
+        </li>
+
+        <li
+          draggable="true"
+          class="cursor-grab rounded-lg border border-gray-700 bg-gray-900 p-3 shadow-sm active:cursor-grabbing"
+        >
+          <p class="text-sm font-medium text-white">Write Q3 release notes</p>
+          <p class="mt-1 text-xs text-gray-400">Cover the API changes and deprecations.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <span class="inline-flex items-center gap-1 rounded-full bg-blue-400/10 px-2 py-0.5 text-xs font-medium text-blue-300">
+              Docs
+            </span>
+            <span class="flex size-6 items-center justify-center rounded-full bg-emerald-300 text-[10px] font-medium text-gray-900">
+              TM
+            </span>
+          </div>
+        </li>
+      </ul>
+
+      <button
+        type="button"
+        class="mt-2 flex items-center gap-1.5 rounded-lg px-2 py-2 text-sm font-medium text-gray-400 hover:bg-gray-700 hover:text-gray-200"
+      >
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+        </svg>
+        Add card
+      </button>
+    </div>
+  </body>
+</html>

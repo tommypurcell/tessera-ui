@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-kanban-column",
+  "title": "Kanban Column",
+  "description": "Draggable card column for kanban boards, with a status header, count badge, tag/assignee-labeled cards, and an add-card affordance.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["kanban", "board", "column", "drag", "task", "card", "project-management"],
+  "useWhen": [
+    "Building a kanban or task board where work items move between status columns.",
+    "You need a compact card format showing a title, tag, and assignee without opening a detail view.",
+    "The column count of items needs to be visible at a glance alongside the status label."
+  ],
+  "avoidWhen": [
+    "The data is naturally tabular and benefits from sortable columns — use a data table instead.",
+    "There is no drag/reorder or status-grouping concept — a plain list or stat grid is simpler.",
+    "You need full board orchestration (persisted column state, cross-column drop handling) — this component is the column primitive; compose your own board state around it."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The column has a fixed 18rem (w-72) width designed to sit in a horizontally scrolling board row; stack columns vertically on narrow viewports if used standalone.",
+  "accessibility": [
+    "Cards are native draggable list items; keyboard-only reordering is not implemented and should be added via your own drag-and-drop library if required.",
+    "The count badge is supplementary to the visible column title, not a replacement for it.",
+    "Assignee initials rely on a tooltip or accessible name from your own avatar/user data in production use."
+  ],
+  "compatibleWith": ["application-badges", "application-avatar", "application-dropdown", "application-form-row"],
+  "variants": [
+    {
+      "id": "kanban-column-1",
+      "title": "Kanban Column",
+      "description": "Status header with colored dot and count badge, draggable cards with tag and assignee avatar, and an add-card button.",
+      "source": {
+        "html": "../../../../public/examples/application/kanban-column/1.html",
+        "tsx": "tsx/KanbanColumnVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "dragging"],
+      "accessibility": [
+        "Card tags use both color and text label so status is not conveyed by color alone."
+      ]
+    },
+    {
+      "id": "kanban-column-1-dark",
+      "title": "Kanban Column (Dark)",
+      "description": "Draggable kanban column adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/kanban-column/1-dark.html",
+        "tsx": "tsx/KanbanColumnVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "dragging"],
+      "accessibility": [
+        "Card and tag colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
