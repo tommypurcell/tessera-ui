@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "application-timezone-picker",
+  "title": "Timezone Picker",
+  "description": "Searchable timezone picker where each option shows the city, UTC offset, and current local time, filtered by real search state.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["timezone", "tz", "scheduling", "search"],
+  "useWhen": [
+    "Scheduling a meeting or event where the user needs to pick a timezone rather than a specific time.",
+    "Showing the current local time alongside each timezone option helps users disambiguate similarly-named or unfamiliar zones.",
+    "The timezone list is long enough that free-text search meaningfully speeds up finding one."
+  ],
+  "avoidWhen": [
+    "You need to pick a specific clock time, not a timezone — use a time input or `time-picker` instead.",
+    "The app only supports a single fixed timezone — there's nothing to pick.",
+    "You need raw IANA timezone identifiers rather than city-based labels — adapt the option data model, since this pattern's UX is built around recognizable city names."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Fixed-width popover-style panel with an internally scrolling list (max-height) so a long timezone list doesn't grow the panel unbounded.",
+  "accessibility": [
+    "The list has role=\"listbox\" with an aria-label describing it as Timezone, and each option is role=\"option\" with aria-selected reflecting the active choice.",
+    "The search field has an associated (visually hidden) label rather than relying on placeholder text alone.",
+    "An empty search result state renders visible text (\"No matching timezones\") rather than a silently empty list.",
+    "Each option's city name, offset, and current time are all real text, not encoded only in position or color."
+  ],
+  "compatibleWith": ["application-calendar", "application-combobox"],
+  "variants": [
+    {
+      "id": "timezone-picker-1",
+      "title": "Timezone Picker",
+      "description": "Search field and five timezone options with city, UTC offset, and current time, San Francisco selected.",
+      "source": {
+        "html": "../../../../public/examples/application/timezone-picker/1.html",
+        "tsx": "tsx/TimezonePickerVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "filtered", "selected", "no-results"],
+      "accessibility": [
+        "Typing filters the real timezone list by city name or offset text, not a static hardcoded subset."
+      ]
+    },
+    {
+      "id": "timezone-picker-1-dark",
+      "title": "Timezone Picker (Dark)",
+      "description": "Timezone picker adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/timezone-picker/1-dark.html",
+        "tsx": "tsx/TimezonePickerVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "filtered", "selected", "no-results"],
+      "accessibility": [
+        "Selected-row and hover backgrounds are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

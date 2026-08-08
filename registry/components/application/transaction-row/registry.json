@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-transaction-row",
+  "title": "Transaction Row",
+  "description": "Financial transaction list with a category icon, merchant, date/category meta, and a signed amount colored by credit vs. debit.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["finance", "transactions", "banking", "ledger"],
+  "useWhen": [
+    "Showing a list of financial transactions (purchases, payments, income) in a banking, expense-tracking, or billing context.",
+    "Each transaction benefits from a category icon for quick visual scanning alongside merchant and date.",
+    "Credit and debit amounts should be visually distinguished by sign and color, not just a plain number."
+  ],
+  "avoidWhen": [
+    "You need sortable/filterable columns (running balance, reference number) — use `tables` for that denser, spreadsheet-like case instead.",
+    "There's no category concept — drop the icon and simplify to a plain merchant/date/amount row.",
+    "Amounts are always the same sign (e.g. only expenses) — the credit/debit color distinction adds no information in that case."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Icon, merchant/meta, and amount sit in a single flex row with the middle column truncating; row height stays constant regardless of merchant name length.",
+  "accessibility": [
+    "The amount's sign (+ or -) and color together convey credit vs. debit — the sign alone remains legible without color for colorblind or grayscale contexts.",
+    "Category icons are decorative; the category name is present as text in the meta line, not conveyed by icon alone.",
+    "Merchant names truncate visually but remain the full string in the DOM, so screen readers announce the complete name."
+  ],
+  "compatibleWith": ["application-tables", "application-budget-progress-bar"],
+  "variants": [
+    {
+      "id": "transaction-row-1",
+      "title": "Transaction Row",
+      "description": "Four transactions spanning software, housing, income, and groceries categories, with signed amounts.",
+      "source": {
+        "html": "../../../../public/examples/application/transaction-row/1.html",
+        "tsx": "tsx/TransactionRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["debit", "credit"],
+      "accessibility": [
+        "The credit/debit color and sign are both computed from a single signed amount value, so they can never disagree."
+      ]
+    },
+    {
+      "id": "transaction-row-1-dark",
+      "title": "Transaction Row (Dark)",
+      "description": "Transaction row list adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/transaction-row/1-dark.html",
+        "tsx": "tsx/TransactionRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["debit", "credit"],
+      "accessibility": [
+        "Category icon background/text colors and the credit amount color are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

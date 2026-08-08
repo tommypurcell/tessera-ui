@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-xs p-6">
+    <div class="w-72 rounded-xl border border-gray-200 bg-white shadow-lg">
+      <div class="p-2">
+        <label for="tz-search" class="sr-only">Search timezones</label>
+        <input
+          id="tz-search"
+          type="text"
+          placeholder="Search city or timezone…"
+          class="w-full rounded-md border border-gray-300 px-3 py-1.5 text-sm text-gray-900 shadow-sm focus:border-gray-500 focus:outline-none"
+        />
+      </div>
+
+      <ul role="listbox" aria-label="Timezone" class="max-h-72 overflow-y-auto border-t border-gray-100 p-1">
+        <li>
+          <button type="button" role="option" aria-selected="true" class="flex w-full items-center justify-between gap-2 rounded-md bg-gray-100 px-2.5 py-2 text-left">
+            <span class="min-w-0">
+              <span class="block text-sm font-medium text-gray-900">San Francisco</span>
+              <span class="block text-xs text-gray-500">UTC-07:00</span>
+            </span>
+            <span class="shrink-0 text-sm font-medium text-gray-700">9:41 AM</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" role="option" aria-selected="false" class="flex w-full items-center justify-between gap-2 rounded-md px-2.5 py-2 text-left hover:bg-gray-50">
+            <span class="min-w-0">
+              <span class="block text-sm text-gray-900">New York</span>
+              <span class="block text-xs text-gray-500">UTC-04:00</span>
+            </span>
+            <span class="shrink-0 text-sm text-gray-500">12:41 PM</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" role="option" aria-selected="false" class="flex w-full items-center justify-between gap-2 rounded-md px-2.5 py-2 text-left hover:bg-gray-50">
+            <span class="min-w-0">
+              <span class="block text-sm text-gray-900">London</span>
+              <span class="block text-xs text-gray-500">UTC+01:00</span>
+            </span>
+            <span class="shrink-0 text-sm text-gray-500">5:41 PM</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" role="option" aria-selected="false" class="flex w-full items-center justify-between gap-2 rounded-md px-2.5 py-2 text-left hover:bg-gray-50">
+            <span class="min-w-0">
+              <span class="block text-sm text-gray-900">Berlin</span>
+              <span class="block text-xs text-gray-500">UTC+02:00</span>
+            </span>
+            <span class="shrink-0 text-sm text-gray-500">6:41 PM</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" role="option" aria-selected="false" class="flex w-full items-center justify-between gap-2 rounded-md px-2.5 py-2 text-left hover:bg-gray-50">
+            <span class="min-w-0">
+              <span class="block text-sm text-gray-900">Tokyo</span>
+              <span class="block text-xs text-gray-500">UTC+09:00</span>
+            </span>
+            <span class="shrink-0 text-sm text-gray-500">1:41 AM</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

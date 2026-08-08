@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "application-booking-confirmation-card",
+  "title": "Booking Confirmation Card",
+  "description": "Appointment confirmation card with a success indicator, title, date/time/host details, and Reschedule/Cancel actions.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["booking", "appointment", "scheduling", "confirmation"],
+  "useWhen": [
+    "Confirming a successfully booked appointment, meeting, or reservation to the person who scheduled it.",
+    "Users need a summary of what/when/who alongside the ability to change or cancel the booking without leaving the view.",
+    "You want a clear success signal (icon + text) distinct from a generic content card."
+  ],
+  "avoidWhen": [
+    "The booking isn't confirmed yet — use a form or `stepper-wizard` for the scheduling flow itself, not this post-confirmation summary.",
+    "Reschedule/cancel aren't available actions for this booking (e.g. past events) — drop the action row rather than showing inert buttons.",
+    "You need to show a list of many bookings at once — a `tables` or list layout scales better than repeating full cards."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Single-column card; the date/time/host rows stack naturally and the two actions split evenly across the card's width.",
+  "accessibility": [
+    "The success state is communicated by both an icon and the text \"Booking confirmed\", not the checkmark icon alone.",
+    "Date, time, and host details use a <dl> with visually hidden <dt> labels, giving each value a programmatic label for assistive tech even though it isn't shown visually.",
+    "Reschedule and Cancel are separate, clearly labeled buttons; Cancel's destructive intent is signaled via color, not solely by its position.",
+    "The host avatar is decorative (empty alt) since the host's name is present as adjacent text."
+  ],
+  "compatibleWith": ["application-order-status-tracker", "application-calendar", "application-avatar"],
+  "variants": [
+    {
+      "id": "booking-confirmation-card-1",
+      "title": "Booking Confirmation Card",
+      "description": "Confirmed 30-minute demo booking with date, time range, host, and Reschedule/Cancel actions.",
+      "source": {
+        "html": "../../../../public/examples/application/booking-confirmation-card/1.html",
+        "tsx": "tsx/BookingConfirmationCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Each detail row's label is programmatically available via a visually hidden <dt>, even where the icon conveys the same meaning visually."
+      ]
+    },
+    {
+      "id": "booking-confirmation-card-1-dark",
+      "title": "Booking Confirmation Card (Dark)",
+      "description": "Booking confirmation card adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/booking-confirmation-card/1-dark.html",
+        "tsx": "tsx/BookingConfirmationCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Success and cancel text colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

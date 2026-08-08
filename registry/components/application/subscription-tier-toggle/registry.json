@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-subscription-tier-toggle",
+  "title": "Subscription Tier Toggle",
+  "description": "Monthly/Annual billing period toggle with a savings badge on the Annual option and a price readout driven by real selection state.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["billing", "subscription", "pricing", "toggle"],
+  "useWhen": [
+    "Showing a pricing page or plan selector where users choose between monthly and annual billing.",
+    "Annual billing offers a discount worth surfacing directly on the toggle, not buried in fine print.",
+    "The displayed price should update immediately based on the selected billing period."
+  ],
+  "avoidWhen": [
+    "There's no price difference between periods — a plain `toggle-group` without the savings badge is simpler.",
+    "You need more than two billing period options (e.g. quarterly too) — extend this pattern or use a `segmented-control` with more segments.",
+    "This isn't a binary period choice at all — a generic `toggle-group` fits unrelated two-option toggles better."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Compact pill toggle that stays centered at any width; the price readout wraps to a new line on very narrow containers without breaking layout.",
+  "accessibility": [
+    "The toggle is a role=\"radiogroup\" with two role=\"radio\" options and aria-checked reflecting the selected period — mutually exclusive selection semantics, not two independent buttons.",
+    "The savings badge is visible text (\"Save 20%\"), not conveyed by color or icon alone.",
+    "The displayed price and \"billed annually\" qualifier update together from the same period state, so they never show an inconsistent combination."
+  ],
+  "compatibleWith": ["application-checkout-order-summary", "application-plan-and-billing-card"],
+  "variants": [
+    {
+      "id": "subscription-tier-toggle-1",
+      "title": "Subscription Tier Toggle",
+      "description": "Monthly/Annual toggle with Annual selected, a Save 20% badge, and a $16/month price readout.",
+      "source": {
+        "html": "../../../../public/examples/application/subscription-tier-toggle/1.html",
+        "tsx": "tsx/SubscriptionTierToggleVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["monthly", "annual"],
+      "accessibility": [
+        "Clicking Monthly or Annual updates real state, both the toggle's aria-checked and the displayed price together."
+      ]
+    },
+    {
+      "id": "subscription-tier-toggle-1-dark",
+      "title": "Subscription Tier Toggle (Dark)",
+      "description": "Subscription tier toggle adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/subscription-tier-toggle/1-dark.html",
+        "tsx": "tsx/SubscriptionTierToggleVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["monthly", "annual"],
+      "accessibility": [
+        "Selected-segment and savings badge colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}
