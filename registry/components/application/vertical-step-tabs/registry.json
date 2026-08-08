@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-vertical-step-tabs",
+  "title": "Vertical Step Tabs",
+  "description": "Left rail of numbered, freely-navigable tabs that swap the right-pane content — unlike a linear wizard, any step can be selected at any time.",
+  "category": "application/navigation",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["tabs", "settings", "navigation"],
+  "useWhen": [
+    "Building a settings or multi-section panel (Profile, Security, Notifications, Billing) where any section can be jumped to directly.",
+    "You want a numbered rail purely as a visual/organizational device, not to represent completion progress.",
+    "The content pane is wide enough to justify a persistent left rail rather than a horizontal tab strip."
+  ],
+  "avoidWhen": [
+    "You're building a linear, sequential onboarding flow where earlier steps must be completed before later ones unlock — use `step-progress-sidebar` for that completion-tracking case instead.",
+    "There are more than 5-6 sections — a long vertical rail is harder to scan than a searchable settings list.",
+    "The panel is narrow (mobile) — collapse to a horizontal scroller or a select instead of a fixed-width rail."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Rail width is fixed; on narrow viewports the two-pane layout should be swapped for a stacked or single-pane-at-a-time pattern rather than compressing the rail.",
+  "accessibility": [
+    "The rail uses role=tablist/role=tab with aria-orientation=vertical and aria-selected reflecting the active section.",
+    "The active tab is distinguished by a filled number badge, background, and ring — not the number color alone — so it reads correctly without color vision.",
+    "The content pane is a single role=tabpanel that swaps content on selection, keeping one landmark rather than mounting/unmounting multiple panels."
+  ],
+  "compatibleWith": ["application-step-progress-sidebar", "application-settings-nav-list"],
+  "variants": [
+    {
+      "id": "vertical-step-tabs-1",
+      "title": "Vertical Step Tabs",
+      "description": "Four numbered sections (Profile, Security, Notifications, Billing) with Profile active, showing a profile-edit panel.",
+      "source": {
+        "html": "../../../../public/examples/application/vertical-step-tabs/1.html",
+        "tsx": "tsx/VerticalStepTabsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Numbers are sequential labels for orientation, not step-completion indicators, so no checkmark/complete semantics are implied for earlier tabs."
+      ]
+    },
+    {
+      "id": "vertical-step-tabs-1-dark",
+      "title": "Vertical Step Tabs (Dark)",
+      "description": "Vertical step tabs adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/vertical-step-tabs/1-dark.html",
+        "tsx": "tsx/VerticalStepTabsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "The active tab's ring and background are tuned to remain distinguishable from inactive tabs against the dark rail surface."
+      ]
+    }
+  ]
+}
