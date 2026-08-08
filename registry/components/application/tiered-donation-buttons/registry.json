@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-tiered-donation-buttons",
+  "title": "Tiered Donation Buttons",
+  "description": "Preset donation-amount buttons paired with a real-world impact label per tier and a custom-amount field, distinct from application-variant-selector since each option carries a price and impact description rather than a product variant.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["donation", "nonprofit", "fundraising", "form", "primitive"],
+  "useWhen": [
+    "Letting a donor pick a preset amount with a concrete description of what it funds.",
+    "Offering a custom-amount field alongside preset tiers for donors who want to give a different amount.",
+    "Supporting both monthly and one-time giving with different tier sets per frequency."
+  ],
+  "avoidWhen": [
+    "The options represent a product variant (size, color) rather than a donation amount — use application-variant-selector instead.",
+    "No real impact data is available — omit the impact label rather than fabricating what an amount funds.",
+    "Only a single fixed donation amount is accepted — a plain button is simpler than a tier selector."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Variant 1's three-column tier grid collapses to fewer columns on very narrow screens if wrapped in a responsive grid class; Variant 2's stacked rows already fit narrow widths without changes.",
+  "accessibility": [
+    "Each tier group carries role='radiogroup' with role='radio' and aria-checked per option, since only one amount can be selected at a time.",
+    "The selected tier is distinguished by a border, background tint, and aria-checked together, not color alone.",
+    "The custom-amount field carries a real label and an inputMode of 'numeric' to bring up the right keyboard on mobile."
+  ],
+  "compatibleWith": ["application-variant-selector", "application-checkout-order-summary"],
+  "variants": [
+    {
+      "id": "tiered-donation-buttons-1",
+      "title": "Grid with custom amount",
+      "description": "Three-column preset amount grid with an impact label per tier and a custom-amount field beneath.",
+      "source": {
+        "html": "../../../../public/examples/application/tiered-donation-buttons/1.html",
+        "tsx": "tsx/TieredDonationButtonsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "The donate button's label states the exact amount that will be charged, not just 'Donate'."
+      ]
+    },
+    {
+      "id": "tiered-donation-buttons-1-dark",
+      "title": "Grid with custom amount (Dark)",
+      "description": "Preset amount grid with a custom-amount field, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/tiered-donation-buttons/1-dark.html",
+        "tsx": "tsx/TieredDonationButtonsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "Selected tier border and background contrast must meet WCAG AA on dark backgrounds."
+      ]
+    },
+    {
+      "id": "tiered-donation-buttons-2",
+      "title": "Card with frequency toggle",
+      "description": "Donation card with a monthly/one-time frequency toggle and stacked tier rows, each with a full-width impact description.",
+      "source": {
+        "html": "../../../../public/examples/application/tiered-donation-buttons/2.html",
+        "tsx": "tsx/TieredDonationButtonsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "The frequency toggle is a real radiogroup, not a visual-only pill, so its state is announced to assistive technology."
+      ]
+    },
+    {
+      "id": "tiered-donation-buttons-2-dark",
+      "title": "Card with frequency toggle (Dark)",
+      "description": "Donation card with a frequency toggle, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/tiered-donation-buttons/2-dark.html",
+        "tsx": "tsx/TieredDonationButtonsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "Frequency toggle and tier row contrast must meet WCAG AA on dark backgrounds."
+      ]
+    }
+  ]
+}

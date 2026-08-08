@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 834,
+  "screenshotCount": 838,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -3484,6 +3484,46 @@
       "sourcePath": "files/application-textareas/textareas-3-dark.html",
       "sourceSha256": "49804c9f8d1644770d83812976522c3b4f88d8ca3367495951b7e9d72b0c8f78",
       "url": "/screenshots/components/application-textareas/textareas-3-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-tiered-donation-buttons",
+      "variantId": "tiered-donation-buttons-1",
+      "appearance": "light",
+      "sourcePath": "files/application-tiered-donation-buttons/tiered-donation-buttons-1.html",
+      "sourceSha256": "5c6347013c7b61cde336a9316f8de8feb59846eea73a2361a46abe9d496ffc2d",
+      "url": "/screenshots/components/application-tiered-donation-buttons/tiered-donation-buttons-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-tiered-donation-buttons",
+      "variantId": "tiered-donation-buttons-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-tiered-donation-buttons/tiered-donation-buttons-1-dark.html",
+      "sourceSha256": "bae75d7578b9f8f0754819c1c57e2a141726a32fc3305898ab00e7bf56ef156b",
+      "url": "/screenshots/components/application-tiered-donation-buttons/tiered-donation-buttons-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-tiered-donation-buttons",
+      "variantId": "tiered-donation-buttons-2",
+      "appearance": "light",
+      "sourcePath": "files/application-tiered-donation-buttons/tiered-donation-buttons-2.html",
+      "sourceSha256": "6e5b27dc9b9041d07b4d93a0a6b697c8d1d7cef971790a2c189ca23f31a696c0",
+      "url": "/screenshots/components/application-tiered-donation-buttons/tiered-donation-buttons-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-tiered-donation-buttons",
+      "variantId": "tiered-donation-buttons-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-tiered-donation-buttons/tiered-donation-buttons-2-dark.html",
+      "sourceSha256": "b05e10b572afbfffd7f654d690dee9d772e2affc462e79d519da39737737307b",
+      "url": "/screenshots/components/application-tiered-donation-buttons/tiered-donation-buttons-2-dark.jpg",
       "width": 600,
       "height": 400
     },
