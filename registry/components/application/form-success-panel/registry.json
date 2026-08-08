@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "name": "application-form-success-panel",
+  "title": "Form Success Panel",
+  "description": "A post-submission confirmation panel with a success icon, message, and next-step actions, at full-page and compact card scale with an optional numbered next-steps list.",
+  "category": "application/feedback",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["application", "success", "confirmation", "form", "onboarding"],
+  "useWhen": [
+    "A form or multi-step flow has just completed successfully and the user needs confirmation plus a clear path forward.",
+    "Onboarding or setup has finished and you want to guide the user through a short list of next actions."
+  ],
+  "avoidWhen": [
+    "The confirmation is specifically for a passwordless/magic-link auth flow — use magic-link-sent-state instead, since it needs email-echo and resend-specific affordances this component doesn't have.",
+    "No further action is needed and the flow should auto-redirect — a full panel with buttons may be unnecessary ceremony."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The full-page variant centers its content with a constrained message width (max-w-sm); the compact card variant is a self-contained bordered block that fits inline within a page rather than taking over the whole viewport.",
+  "accessibility": [
+    "The full-page variant's heading is a real <h1> so the page has a correct document outline even though it replaces the normal route content.",
+    "The success icon is decorative (aria-hidden) in both variants — the heading and message independently convey the success state.",
+    "The numbered next-steps list uses a real ordered list (<ol>) so screen readers announce both the sequence and count of steps."
+  ],
+  "compatibleWith": ["application-magic-link-sent-state", "application-empty-states"],
+  "variants": [
+    {
+      "id": "form-success-panel-1",
+      "title": "Full page",
+      "description": "Centered full-page confirmation with an icon, heading, message, and primary/secondary next-step actions",
+      "source": {
+        "html": "../../../../public/examples/application/form-success-panel/1.html",
+        "tsx": "tsx/FormSuccessPanelVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["success"],
+      "accessibility": ["Uses a real <h1> for the confirmation heading."]
+    },
+    {
+      "id": "form-success-panel-1-dark",
+      "title": "Full page (Dark)",
+      "description": "Centered full-page confirmation with an icon, heading, message, and primary/secondary next-step actions",
+      "source": {
+        "html": "../../../../public/examples/application/form-success-panel/1-dark.html",
+        "tsx": "tsx/FormSuccessPanelVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["success"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    },
+    {
+      "id": "form-success-panel-2",
+      "title": "Compact card with next steps",
+      "description": "Bordered card with a numbered next-steps list and a primary CTA, for onboarding or setup completion",
+      "source": {
+        "html": "../../../../public/examples/application/form-success-panel/2.html",
+        "tsx": "tsx/FormSuccessPanelVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["success"],
+      "accessibility": ["The next-steps list is a real <ol> so screen readers announce sequence and count."]
+    },
+    {
+      "id": "form-success-panel-2-dark",
+      "title": "Compact card with next steps (Dark)",
+      "description": "Bordered card with a numbered next-steps list and a primary CTA, for onboarding or setup completion",
+      "source": {
+        "html": "../../../../public/examples/application/form-success-panel/2-dark.html",
+        "tsx": "tsx/FormSuccessPanelVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["success"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    }
+  ]
+}
