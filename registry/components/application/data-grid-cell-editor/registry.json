@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "name": "application-data-grid-cell-editor",
+  "title": "Data Grid Cell Editor",
+  "description": "A spreadsheet-style table with an inline-editable active cell, a dirty-cell highlight for unsaved edits, and a status footer for keyboard navigation hints.",
+  "category": "application/data-grid-cell-editor",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "data-grid-cell-editor",
+    "data grid",
+    "spreadsheet",
+    "cell editor",
+    "table",
+    "inline edit"
+  ],
+  "useWhen": [
+    "Users need to edit values directly inside table cells, spreadsheet-style, rather than through a separate form or modal.",
+    "Unsaved per-cell edits need a visible marker before the row or grid is saved.",
+    "Keyboard-first navigation between cells (arrow keys, Enter to edit) is a requirement."
+  ],
+  "avoidWhen": [
+    "The table is read-only or edits always happen in a row-level form — use the plain `tables` component instead.",
+    "You need sorting, filtering, or pagination as the primary interaction — reach for `DataTable` and add cell editing only if the grid also needs it."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The grid scrolls horizontally inside its own container below the width needed for all columns; keep the row-index column fixed-width so it doesn't compress.",
+  "accessibility": [
+    "The active cell's inline input is keyboard-reachable and submits or cancels via standard Enter/Escape conventions in a real implementation.",
+    "Dirty cells are marked with both a background tint and a dot indicator, not color alone, and the footer states the count of unsaved changes in text.",
+    "The active-cell ring uses a 2px outline with sufficient contrast against both the cell and page background."
+  ],
+  "compatibleWith": ["application-tables", "application-data-table"],
+  "variants": [
+    {
+      "id": "data-grid-cell-editor-1",
+      "title": "Editable grid",
+      "description": "A 4-row product grid with one cell in active edit mode (ringed input) and one cell showing a dirty/unsaved highlight.",
+      "source": {
+        "html": "../../../../public/examples/application/data-grid-cell-editor/1.html",
+        "tsx": "tsx/DataGridCellEditorVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "editing", "dirty"],
+      "accessibility": [
+        "The footer states the unsaved-change count and navigation hint as visible text, not solely as an icon."
+      ]
+    },
+    {
+      "id": "data-grid-cell-editor-1-dark",
+      "title": "Editable grid (Dark)",
+      "description": "Editable grid adapted for dark surfaces, with the dirty highlight and active-cell ring re-tuned for dark contrast.",
+      "source": {
+        "html": "../../../../public/examples/application/data-grid-cell-editor/1-dark.html",
+        "tsx": "tsx/DataGridCellEditorVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "editing", "dirty"],
+      "accessibility": [
+        "The active-cell ring and dirty-cell tint both meet WCAG AA contrast against the dark grid background."
+      ]
+    }
+  ]
+}

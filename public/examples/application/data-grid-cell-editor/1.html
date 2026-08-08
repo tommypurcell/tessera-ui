@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex min-h-64 items-center justify-center bg-gray-50 p-6">
+    <div class="w-full max-w-xl overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm">
+      <table class="w-full border-collapse text-sm">
+        <thead>
+          <tr class="bg-gray-50">
+            <th class="w-10 border-b border-r border-gray-200 px-2 py-2"></th>
+            <th class="border-b border-r border-gray-200 px-3 py-2 text-left font-medium text-gray-500">Product</th>
+            <th class="border-b border-r border-gray-200 px-3 py-2 text-right font-medium text-gray-500">Price</th>
+            <th class="border-b border-r border-gray-200 px-3 py-2 text-right font-medium text-gray-500">Qty</th>
+            <th class="border-b border-gray-200 px-3 py-2 text-right font-medium text-gray-500">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border-b border-r border-gray-200 px-2 py-2 text-center text-xs text-gray-400">1</td>
+            <td class="border-b border-r border-gray-200 px-3 py-2 text-gray-900">Standing desk</td>
+            <td class="relative border-b border-r border-gray-200 p-0">
+              <div class="absolute inset-0 rounded-[2px] ring-2 ring-gray-900">
+                <input
+                  type="text"
+                  value="349.00"
+                  class="h-full w-full border-0 bg-white px-3 py-2 text-right text-gray-900 focus:outline-none focus:ring-0"
+                />
+              </div>
+              <div class="invisible px-3 py-2 text-right">349.00</div>
+            </td>
+            <td class="border-b border-r border-gray-200 px-3 py-2 text-right text-gray-900">1</td>
+            <td class="border-b border-gray-200 px-3 py-2 text-right text-gray-900">$349.00</td>
+          </tr>
+          <tr>
+            <td class="border-b border-r border-gray-200 px-2 py-2 text-center text-xs text-gray-400">2</td>
+            <td class="border-b border-r border-gray-200 px-3 py-2 text-gray-900">Monitor arm</td>
+            <td class="relative border-b border-r border-gray-200 px-3 py-2 text-right">
+              <span class="rounded-[2px] bg-amber-50 px-1 -mx-1 text-gray-900">89.00</span>
+              <span class="absolute right-1 top-1 size-1.5 rounded-full bg-amber-500" title="Unsaved change"></span>
+            </td>
+            <td class="border-b border-r border-gray-200 px-3 py-2 text-right text-gray-900">2</td>
+            <td class="border-b border-gray-200 px-3 py-2 text-right text-gray-900">$178.00</td>
+          </tr>
+          <tr>
+            <td class="border-b border-r border-gray-200 px-2 py-2 text-center text-xs text-gray-400">3</td>
+            <td class="border-b border-r border-gray-200 px-3 py-2 text-gray-900">Keyboard tray</td>
+            <td class="border-b border-r border-gray-200 px-3 py-2 text-right text-gray-900">64.00</td>
+            <td class="border-b border-r border-gray-200 px-3 py-2 text-right text-gray-900">1</td>
+            <td class="border-b border-gray-200 px-3 py-2 text-right text-gray-900">$64.00</td>
+          </tr>
+          <tr>
+            <td class="px-2 py-2 text-center text-xs text-gray-400">4</td>
+            <td class="border-r border-gray-200 px-3 py-2 text-gray-900">Cable tray</td>
+            <td class="border-r border-gray-200 px-3 py-2 text-right text-gray-900">22.00</td>
+            <td class="border-r border-gray-200 px-3 py-2 text-right text-gray-900">3</td>
+            <td class="px-3 py-2 text-right text-gray-900">$66.00</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="flex items-center gap-1.5 border-t border-gray-200 bg-gray-50 px-3 py-1.5 text-xs text-gray-500">
+        <span class="size-1.5 rounded-full bg-amber-500"></span>
+        1 unsaved change
+        <span class="mx-1 text-gray-300">·</span>
+        Use arrow keys to navigate, Enter to edit
+      </div>
+    </div>
+  </body>
+</html>
