@@ -603,7 +603,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: POS / retail -->
 - [ ] POS Keypad — numeric amount pad with total display and quick-cash buttons; distinct from quantity-inputs.
-- [ ] Receipt Preview — itemized thermal-receipt layout with tax/total and footer; distinct from invoice-table.
+- [x] (builder-9) Receipt Preview — 2 variants (thermal receipt, digital receipt card) light+dark, registry.json, MDX entry, screenshots
 - [ ] Barcode Scan Row — scanned-item row with SKU, qty, price, and void; distinct from cart-line-item.
 - [x] (builder-8) Tip Selector — preset %-tip buttons w/ computed tip/total/per-person split (real math from bill×percent÷splitCount), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [~] (builder-8) Cash Drawer Summary — expected vs counted totals with variance highlight; distinct from comparison-stat-pair.
@@ -635,7 +635,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 <!-- Theme: Manufacturing -->
 - [ ] Production Line Status — station tiles with running/stopped/fault and throughput; distinct from health-check-grid.
 - [ ] OEE Gauge Trio — availability/performance/quality gauges with overall score; distinct from activity-ring-trio.
-- [ ] Work Order Card — order with part, quantity, due date, and stage progress; distinct from milestone-card.
+- [x] (builder-9) Work Order Card — 2 variants (detail card with stage-progress bar, compact list) light+dark, registry.json, MDX entry, screenshots
 
 <!-- Theme: Hospitality -->
 - [ ] Room Availability Grid — room-rows × date-columns booked/free calendar; distinct from availability-grid.
