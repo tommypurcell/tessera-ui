@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-redaction-highlight",
+  "title": "Redaction Highlight",
+  "description": "Text blocks and field rows with toggleable blacked-out redaction spans for sensitive data in reports, documents, and forms.",
+  "category": "application/redaction-highlight",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "redaction-highlight",
+    "redaction",
+    "privacy",
+    "sensitive",
+    "reveal"
+  ],
+  "useWhen": [
+    "Text blocks and field rows with toggleable blacked-out redaction spans for sensitive data in reports, documents, and forms."
+  ],
+  "avoidWhen": [
+    "Avoid redaction highlight when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Redaction Highlight uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "redaction-highlight-1",
+      "title": "Document paragraph",
+      "description": "Document paragraph Text blocks and field rows with toggleable blacked-out redaction spans for sensitive data in reports, documents, and forms.",
+      "source": {
+        "html": "../../../../public/examples/application/redaction-highlight/1.html",
+        "tsx": "tsx/RedactionHighlightVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "redaction-highlight-1-dark",
+      "title": "Document paragraph (Dark)",
+      "description": "Document paragraph Text blocks and field rows with toggleable blacked-out redaction spans for sensitive data in reports, documents, and forms.",
+      "source": {
+        "html": "../../../../public/examples/application/redaction-highlight/1-dark.html",
+        "tsx": "tsx/RedactionHighlightVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "redaction-highlight-2",
+      "title": "Field rows",
+      "description": "Field rows Text blocks and field rows with toggleable blacked-out redaction spans for sensitive data in reports, documents, and forms.",
+      "source": {
+        "html": "../../../../public/examples/application/redaction-highlight/2.html",
+        "tsx": "tsx/RedactionHighlightVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "redaction-highlight-2-dark",
+      "title": "Field rows (Dark)",
+      "description": "Field rows Text blocks and field rows with toggleable blacked-out redaction spans for sensitive data in reports, documents, and forms.",
+      "source": {
+        "html": "../../../../public/examples/application/redaction-highlight/2-dark.html",
+        "tsx": "tsx/RedactionHighlightVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}
