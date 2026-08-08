@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-property-listing-card",
+  "title": "Property Listing Card",
+  "description": "Real-estate listing card with a photo area, price, address, and a bed/bath/sqft spec row, plus a real toggleable save/heart action — distinct from the generic product-card, which doesn't model property-specific specs.",
+  "category": "application/media",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["real-estate", "listing", "property", "card"],
+  "useWhen": [
+    "Showing a real-estate listing in a search results grid or saved-listings page.",
+    "You need the bed/bath/sqft spec row as a first-class part of the card, not generic product attributes.",
+    "Users should be able to save/unsave a listing directly from the card without navigating away."
+  ],
+  "avoidWhen": [
+    "You're listing a non-real-estate product — use the generic product-card component instead.",
+    "You need a map-paired listing view — pair this card with map-listing-split instead of using it standalone.",
+    "The listing needs multiple photos in a gallery — extend the image area with a carousel."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The card is a fixed max-width block (20rem) intended for a responsive grid; the photo area keeps a 4:3 aspect ratio at any width.",
+  "accessibility": [
+    "The save button carries aria-pressed reflecting its real toggled state and an aria-label naming the specific address being saved or removed.",
+    "Saved state is conveyed by both a filled heart icon and a color change, not the fill alone.",
+    "Address text truncates with an ellipsis rather than overflowing the card at narrow widths."
+  ],
+  "compatibleWith": ["application-product-card", "application-map-marker-popup", "application-badges"],
+  "variants": [
+    {
+      "id": "property-listing-card-1",
+      "title": "Property listing card",
+      "description": "Listing card for a 3bd/2ba/1,840sqft home at $685,000, shown in the saved (filled heart) state, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/property-listing-card/1.html",
+        "tsx": "tsx/PropertyListingCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "saved"],
+      "accessibility": [
+        "The photo area is a gradient placeholder in this example; swap it for a real <img> with descriptive alt text in production use."
+      ]
+    },
+    {
+      "id": "property-listing-card-1-dark",
+      "title": "Property listing card (Dark)",
+      "description": "The same listing card, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/property-listing-card/1-dark.html",
+        "tsx": "tsx/PropertyListingCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "saved"],
+      "accessibility": [
+        "Price, address, spec, and save-button colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
