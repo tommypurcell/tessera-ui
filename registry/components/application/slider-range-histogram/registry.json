@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-slider-range-histogram",
+  "title": "Slider Range Histogram",
+  "description": "A dual-thumb range slider overlaid on a value-distribution histogram, so users can see where their selected range sits within the overall data spread.",
+  "category": "application/slider-range-histogram",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "slider-range-histogram",
+    "slider",
+    "histogram",
+    "range",
+    "filter",
+    "price range"
+  ],
+  "useWhen": [
+    "Filtering a dataset by a numeric range (price, date, rating count) where showing the underlying distribution helps users pick a meaningful range.",
+    "The bar heights communicate density — e.g. how many items fall in each bucket — alongside the selectable min/max bounds."
+  ],
+  "avoidWhen": [
+    "You just need a plain min/max range without distribution context — the existing `range-inputs` slider is lighter-weight.",
+    "The data has no natural bucketing (e.g. a handful of discrete options) — a segmented control or checkbox list communicates that better."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The histogram bars and track share the card's full width via flex-1 bars, so the whole control scales down proportionally on narrow viewports without changing bar count.",
+  "accessibility": [
+    "Each thumb is a real role=\"slider\" element with aria-label, aria-valuemin, aria-valuemax, and aria-valuenow so its position and meaning are announced.",
+    "Both thumbs are independently focusable via tabIndex=0 for keyboard range adjustment in a real implementation.",
+    "The selected range is also stated as visible text (\"$120 – $480\") next to the histogram, not conveyed by bar/track color alone."
+  ],
+  "compatibleWith": ["application-range-inputs", "application-charts"],
+  "variants": [
+    {
+      "id": "slider-range-histogram-1",
+      "title": "Price distribution",
+      "description": "A 28-bucket price histogram with a dual-thumb range slider selecting $120–$480, selected buckets highlighted to match the active range.",
+      "source": {
+        "html": "../../../../public/examples/application/slider-range-histogram/1.html",
+        "tsx": "tsx/SliderRangeHistogramVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Each thumb exposes its role, label, and numeric value range via ARIA slider attributes."
+      ]
+    },
+    {
+      "id": "slider-range-histogram-1-dark",
+      "title": "Price distribution (Dark)",
+      "description": "Price distribution histogram and range slider adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/slider-range-histogram/1-dark.html",
+        "tsx": "tsx/SliderRangeHistogramVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Highlighted bars, track fill, and thumbs all meet WCAG AA contrast against the dark card background."
+      ]
+    }
+  ]
+}
