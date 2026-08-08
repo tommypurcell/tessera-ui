@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "name": "application-mobile-list-section",
+  "title": "Mobile List Section",
+  "description": "An iOS-style inset grouped list with an uppercase section header, rounded card container, divided rows, and trailing chevrons or value text — single-section and multi-section stacked variants.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["application", "mobile", "settings", "ios", "list"],
+  "useWhen": [
+    "Building a settings or preferences screen with a native-feeling, iOS-style grouped list appearance.",
+    "Grouping several related navigation rows under a labeled section, with more than one section stacked on the same screen."
+  ],
+  "avoidWhen": [
+    "You need a persistent sidebar navigation structure rather than a scrollable grouped list — a settings nav list or side menu is a better fit for that layout.",
+    "Rows need complex controls (multi-field forms, embedded charts) rather than simple navigation/value display — a plain list or table serves that better."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The section header and rounded row group share consistent horizontal padding at any width; multiple sections stack vertically with generous gap so the grouping stays visually clear on any screen size.",
+  "accessibility": [
+    "Each row is a real <a> (or button, if it's an action rather than navigation), keyboard-focusable and operable without relying on touch.",
+    "The chevron icon is decorative (aria-hidden); the row's own text conveys that it navigates further, following standard mobile list conventions.",
+    "Destructive rows (e.g. Sign out) are distinguished by explicit red text, not position or icon alone."
+  ],
+  "compatibleWith": ["application-side-menu", "application-toggles"],
+  "variants": [
+    {
+      "id": "mobile-list-section-1",
+      "title": "Single section",
+      "description": "One grouped section (Account) with three rows, including a trailing value ('On') on the last row",
+      "source": {
+        "html": "../../../../public/examples/application/mobile-list-section/1.html",
+        "tsx": "tsx/MobileListSectionVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": ["Each row is a real, keyboard-focusable link."]
+    },
+    {
+      "id": "mobile-list-section-1-dark",
+      "title": "Single section (Dark)",
+      "description": "One grouped section (Account) with three rows, including a trailing value ('On') on the last row",
+      "source": {
+        "html": "../../../../public/examples/application/mobile-list-section/1-dark.html",
+        "tsx": "tsx/MobileListSectionVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    },
+    {
+      "id": "mobile-list-section-2",
+      "title": "Multiple sections",
+      "description": "Two stacked grouped sections (General, Support), the second including a destructive Sign out row",
+      "source": {
+        "html": "../../../../public/examples/application/mobile-list-section/2.html",
+        "tsx": "tsx/MobileListSectionVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": ["The destructive Sign out row uses explicit red text, not position or icon alone."]
+    },
+    {
+      "id": "mobile-list-section-2-dark",
+      "title": "Multiple sections (Dark)",
+      "description": "Two stacked grouped sections (General, Support), the second including a destructive Sign out row",
+      "source": {
+        "html": "../../../../public/examples/application/mobile-list-section/2-dark.html",
+        "tsx": "tsx/MobileListSectionVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    }
+  ]
+}
