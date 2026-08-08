@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 790,
+  "screenshotCount": 794,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -2525,6 +2525,46 @@
       "sourceSha256": "32162ac63f2993ccaaae924396526c631ab6a4da048b67276587926fb2e6e2c8",
       "url": "/screenshots/components/application-skip-links/skip-links-3.jpg",
       "width": 1200,
+      "height": 400
+    },
+    {
+      "componentId": "application-slug-input",
+      "variantId": "slug-input-1",
+      "appearance": "light",
+      "sourcePath": "files/application-slug-input/slug-input-1.html",
+      "sourceSha256": "da26770266d8181987b608a2e2fc4a813db9ed49a0b9ce3f2eb920eb28c38528",
+      "url": "/screenshots/components/application-slug-input/slug-input-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-slug-input",
+      "variantId": "slug-input-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-slug-input/slug-input-1-dark.html",
+      "sourceSha256": "ecb7e5aff5abab63f7a94b67086bf8551f758cb34b83cfde0c6e988c19f6c2dc",
+      "url": "/screenshots/components/application-slug-input/slug-input-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-slug-input",
+      "variantId": "slug-input-2",
+      "appearance": "light",
+      "sourcePath": "files/application-slug-input/slug-input-2.html",
+      "sourceSha256": "adfa033713849b48e741be1303aac3d8e7c9f769ce696ca3426599ec51f81667",
+      "url": "/screenshots/components/application-slug-input/slug-input-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-slug-input",
+      "variantId": "slug-input-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-slug-input/slug-input-2-dark.html",
+      "sourceSha256": "ce7c37e4a881d2dfacab6d9de05b3130e65e527deaa595ab7560a05cb4cb45f3",
+      "url": "/screenshots/components/application-slug-input/slug-input-2-dark.jpg",
+      "width": 600,
       "height": 400
     },
     {
