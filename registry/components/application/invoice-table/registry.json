@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-invoice-table",
+  "title": "Invoice Table",
+  "description": "Line-item invoice table with a status badge and a computed subtotal/tax/total footer — every dollar figure is derived from the real line items and tax rate, not hand-typed.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["invoice", "billing", "table", "finance", "line-items"],
+  "useWhen": [
+    "Displaying a billing invoice with individual line items and a computed total.",
+    "You need the subtotal, tax, and grand total to always match the underlying line items exactly.",
+    "A status badge (paid/pending/overdue) should be shown alongside the invoice."
+  ],
+  "avoidWhen": [
+    "You need generic sortable/filterable tabular data — use the plain tables component instead.",
+    "There's no financial total to compute — a details-list or plain table is simpler.",
+    "You need multi-currency or per-line tax rates — extend the computation before reusing this markup."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The table scrolls horizontally within its container on narrow viewports rather than collapsing columns, preserving the tabular alignment of quantities and amounts.",
+  "accessibility": [
+    "Column headers use scope='col' so screen readers announce which column a cell belongs to.",
+    "The status badge uses both background color and a text label (Paid/Pending/Overdue), not color alone.",
+    "Subtotal, tax, and total rows are in a real <tfoot> so assistive tech distinguishes them from line-item data rows."
+  ],
+  "compatibleWith": ["application-tables", "application-badges", "application-stat-tile"],
+  "variants": [
+    {
+      "id": "invoice-table-1",
+      "title": "Invoice table",
+      "description": "Three-item invoice (INV-2026-0142) with a Pending status badge and a computed $9,806.40 total including 8% tax, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/invoice-table/1.html",
+        "tsx": "tsx/InvoiceTableVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["paid", "pending", "overdue"],
+      "accessibility": [
+        "Amount and total columns are right-aligned for scannable numeric comparison."
+      ]
+    },
+    {
+      "id": "invoice-table-1-dark",
+      "title": "Invoice table (Dark)",
+      "description": "The same three-item invoice, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/invoice-table/1-dark.html",
+        "tsx": "tsx/InvoiceTableVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["paid", "pending", "overdue"],
+      "accessibility": [
+        "Table border, text, and status badge colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
