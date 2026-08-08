@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-logic-branch-row",
+  "title": "Logic Branch Row",
+  "description": "Survey-builder conditional-flow rule row: \"If [question] [operator] [value] then jump to [question]\" as chained dropdowns with a delete action and an Add rule control.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["survey", "logic", "conditional", "skip-logic", "form-builder"],
+  "useWhen": [
+    "Building a survey or form builder's skip-logic editor where a response determines which question to jump to next.",
+    "You need multiple independent if/then rules stacked in a list, each individually deletable.",
+    "Distinct from Conditional Field Group, which reveals or hides fields within the same form based on a checkbox, rather than defining a jump target to a different question entirely."
+  ],
+  "avoidWhen": [
+    "Fields should show/hide inline within the same form rather than branch to a different question — use Conditional Field Group instead.",
+    "There's only one fixed condition with no builder UI needed — a static conditional is simpler than an editable rule row."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The condition dropdowns wrap onto multiple lines on narrow viewports rather than shrinking below a readable width; the delete button stays pinned to the row's trailing edge via margin-left auto.",
+  "accessibility": [
+    "Each dropdown in the chain carries a distinct aria-label (question/operator/value/target) since their visible content alone doesn't convey their role in the sentence.",
+    "The delete button carries an aria-label naming its action, since its content is an icon only.",
+    "\"Add rule\" is a normal text-labeled button, keyboard-operable without relying on the plus icon for meaning."
+  ],
+  "compatibleWith": ["application-conditional-field-group", "application-question-type-palette"],
+  "variants": [
+    {
+      "id": "logic-branch-row-1",
+      "title": "Logic Branch Row",
+      "description": "Two skip-logic rules chaining question/operator/value/jump-target dropdowns, each deletable, with an Add rule control.",
+      "source": {
+        "html": "../../../../public/examples/application/logic-branch-row/1.html",
+        "tsx": "tsx/LogicBranchRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Each select in the if/then chain has a distinct aria-label clarifying its role."
+      ]
+    },
+    {
+      "id": "logic-branch-row-1-dark",
+      "title": "Logic Branch Row (Dark)",
+      "description": "The same rule rows adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/logic-branch-row/1-dark.html",
+        "tsx": "tsx/LogicBranchRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Dropdown and label contrast remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}
