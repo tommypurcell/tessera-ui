@@ -532,7 +532,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [~] (builder-5) Wallet Connect Button — connect/connected state with address truncation and balance; distinct from social-login-buttons.
 - [ ] Token Balance Row — token icon, symbol, balance, and USD value with change %; distinct from transaction-row.
 - [ ] Price Ticker Strip — scrolling asset prices with up/down flash coloring; distinct from live-counter-tile.
-- [~] (builder-6) Gas Fee Selector — slow/avg/fast fee option cards with time and cost; distinct from delivery-slot-picker.
+- [ ] Gas Fee Selector — slow/avg/fast fee option cards with time and cost; distinct from delivery-slot-picker.
 - [ ] NFT Card — artwork, name, collection, price, and bid button; distinct from product-card.
 - [ ] Transaction Confirm Sheet — pending-tx summary with from/to, amount, fee, and confirm; distinct from checkout-order-summary.
 
