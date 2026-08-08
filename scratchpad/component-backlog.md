@@ -509,7 +509,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 <!-- Theme: Restaurant / food -->
 - [x] (builder-1) Menu Item Row — 2 variants (detailed row + compact list), dietary tag badges, named add buttons, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #16).
 - [~] (builder-9) Dish Card — photo, name, price, rating, and quick-add; distinct from product-card (food framing).
-- [~] (builder-8) Order Cart Drawer — running food-order list with modifiers, subtotal, and checkout; distinct from checkout-order-summary.
+- [x] (builder-8) Order Cart Drawer — food-order list with quantity badges, per-item modifiers, computed subtotal (sum of qty×price), checkout button, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [x] (builder-3) Reservation Time Picker — party-size stepper, date trigger, wrapping time-chip grid (available/unavailable/selected), confirm action, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 - [x] (builder-2) Dietary Filter Chips — 5 chips (Vegan+Gluten-free selected in emerald/amber, Vegetarian/Spicy/Nut-free available), real independent multi-select aria-pressed state, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components (PR #20)
 - [x] (builder-6) Kitchen Order Ticket — 2 variants (active ticket with elapsed timer+item list+Bump action, bumped/completed state with strikethrough items), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
@@ -517,29 +517,29 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 <!-- Theme: Fitness -->
 - [~] (builder-1) Workout Set Row — exercise with sets×reps×weight inputs and done toggle; distinct from inline-add-row.
 - [~] (builder-10) Rep Counter Ring — circular count-up with target and rest-timer; distinct from countdown-ring-timer.
-- [ ] Heart Rate Zone Bar — colored HR zone distribution bar with current-zone marker; distinct from segment-breakdown-bar.
+- [~] (builder-8) Heart Rate Zone Bar — colored HR zone distribution bar with current-zone marker; distinct from segment-breakdown-bar.
 - [x] (builder-5) Streak Calendar — flame icon+streak count, 7-day active(check)/missed(dot)/today row, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
-- [~] (builder-2) Body Metrics Card — weight/BMI/body-fat with trend arrows; distinct from vitals-stat-row.
+- [x] (builder-2) Body Metrics Card — 3 metric cells (weight/BMI/body fat), trend arrow direction+color both computed from a real signed delta + per-metric increaseIsGood flag, light+dark, registry+tsx+MDX, screenshot verified (caught+fixed an internally-inconsistent arrow-direction bug pre-commit), committed to builder-2-components (PR #20)
 
 <!-- Theme: Music -->
 - [ ] Now Playing Bar — bottom player with art, title, scrubber, and transport controls; distinct from audio-player.
 - [x] (builder-7) Track List Row — 4-track list w/ index→play-icon hover swap, playing-state highlight, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
-- [ ] Equalizer Sliders — vertical band-gain sliders with dB labels; distinct from range-inputs.
+- [~] (builder-6) Equalizer Sliders — vertical band-gain sliders with dB labels; distinct from range-inputs.
 - [ ] Album Grid Card — cover art with hover play overlay and title/artist; distinct from dish-card.
 - [ ] Queue List — reorderable up-next tracks with drag handles and remove; distinct from lesson-playlist.
 
 <!-- Theme: Crypto / web3 -->
 - [~] (builder-5) Wallet Connect Button — connect/connected state with address truncation and balance; distinct from social-login-buttons.
-- [ ] Token Balance Row — token icon, symbol, balance, and USD value with change %; distinct from transaction-row.
+- [~] (builder-7) Token Balance Row — token icon, symbol, balance, and USD value with change %; distinct from transaction-row.
 - [ ] Price Ticker Strip — scrolling asset prices with up/down flash coloring; distinct from live-counter-tile.
-- [ ] Gas Fee Selector — slow/avg/fast fee option cards with time and cost; distinct from delivery-slot-picker.
+- [~] (builder-3) Gas Fee Selector — slow/avg/fast fee option cards with time and cost; distinct from delivery-slot-picker.
 - [ ] NFT Card — artwork, name, collection, price, and bid button; distinct from product-card.
 - [ ] Transaction Confirm Sheet — pending-tx summary with from/to, amount, fee, and confirm; distinct from checkout-order-summary.
 
 <!-- Theme: Nonprofit / fundraising -->
 - [x] (builder-6) Donation Progress Card — 2 variants (campaign card with photo+donor avatars+CTA, compact fundraiser row), light+dark, registry+tsx generated, screenshots verified (caught & fixed a broken Unsplash image URL during review), committed to builder-6-components.
 - [ ] Tiered Donation Buttons — preset amount buttons + custom field with impact labels; distinct from variant-selector.
-- [ ] Volunteer Shift Card — role, date/time, spots-filled bar, and sign-up; distinct from appointment-slot-card.
+- [~] (builder-2) Volunteer Shift Card — role, date/time, spots-filled bar, and sign-up; distinct from appointment-slot-card.
 
 <!-- Theme: Insurance -->
 - [ ] Coverage Comparison Card — plan tiers with deductible/premium/coverage rows; distinct from feature-comparison-matrix.
