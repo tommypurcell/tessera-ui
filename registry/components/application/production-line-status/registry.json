@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-production-line-status",
+  "title": "Production Line Status",
+  "description": "A manufacturing line overview with per-station tiles showing run state (running/fault/stopped), live throughput vs target, and a fault/below-target summary.",
+  "category": "application/production-line-status",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "production-line-status",
+    "manufacturing",
+    "production line",
+    "station status",
+    "throughput",
+    "fault"
+  ],
+  "useWhen": [
+    "Manufacturing or plant-floor dashboards need to show each station's run state alongside a quantitative throughput number and target comparison.",
+    "Operators need to spot faults and below-target stations at a glance across a fixed line of stations."
+  ],
+  "avoidWhen": [
+    "Monitoring uptime/status of software services rather than physical stations — `Health Check Grid`'s ping-dot service list fits that shape better.",
+    "Stations don't have a meaningful units/hour throughput metric — a simpler status badge list is enough."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Station tiles sit in a 3-column grid at the card's max width; each tile's content stacks vertically regardless of column count.",
+  "accessibility": [
+    "Each station's run state is stated as visible text (Running, Fault: sensor E-04, Stopped, Below target) in addition to the status dot color, so status is never conveyed by color alone.",
+    "The fault station's tile uses both a red border/background and red text, giving redundant, non-color-only signaling for colorblind users.",
+    "The footer summary restates the fault and below-target counts as text for quick scanning without reading every tile."
+  ],
+  "compatibleWith": ["application-health-check-grid", "application-fleet-status-grid"],
+  "variants": [
+    {
+      "id": "production-line-status-1",
+      "title": "Assembly line 4 stations",
+      "description": "A 6-station assembly line grid with a header throughput badge, per-station tiles showing running (with live-ping dot)/fault/below-target/stopped states, units-per-hour with target comparison, and a footer fault/below-target summary.",
+      "source": {
+        "html": "../../../../public/examples/application/production-line-status/1.html",
+        "tsx": "tsx/ProductionLineStatusVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["running", "fault", "below-target", "stopped"],
+      "accessibility": [
+        "Each station's state is stated as text; the fault tile uses both color and text to signal severity."
+      ]
+    },
+    {
+      "id": "production-line-status-1-dark",
+      "title": "Assembly line 4 stations (Dark)",
+      "description": "Production line status adapted for dark surfaces, including fault/warning tile backgrounds and status dot colors.",
+      "source": {
+        "html": "../../../../public/examples/application/production-line-status/1-dark.html",
+        "tsx": "tsx/ProductionLineStatusVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["running", "fault", "below-target", "stopped"],
+      "accessibility": [
+        "Station names, throughput numbers, and status text all meet WCAG AA contrast against the dark card background."
+      ]
+    }
+  ]
+}

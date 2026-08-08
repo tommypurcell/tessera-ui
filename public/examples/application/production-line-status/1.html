@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex min-h-96 items-center justify-center bg-gray-50 p-6">
+    <div class="w-full max-w-2xl rounded-lg border border-gray-200 bg-white shadow-sm">
+      <div class="flex items-center justify-between border-b border-gray-200 p-4">
+        <div>
+          <h2 class="text-sm font-semibold text-gray-900">Line 4 &mdash; Assembly</h2>
+          <p class="text-xs text-gray-500">6 stations &middot; shift ends 6:00 PM</p>
+        </div>
+        <span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-700">
+          <span class="size-1.5 rounded-full bg-emerald-500"></span>
+          82% throughput
+        </span>
+      </div>
+
+      <div class="grid grid-cols-3 gap-3 p-4">
+        <div class="rounded-lg border border-gray-200 bg-white p-3">
+          <div class="flex items-center justify-between">
+            <p class="text-xs font-medium text-gray-500">Station 1</p>
+            <span class="relative flex size-2">
+              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex size-2 rounded-full bg-emerald-500"></span>
+            </span>
+          </div>
+          <p class="mt-1 text-sm font-semibold text-gray-900">Weld cell</p>
+          <p class="mt-2 text-lg font-bold tabular-nums text-gray-900">124<span class="text-xs font-medium text-gray-400"> u/hr</span></p>
+          <p class="text-[11px] text-gray-500">Target 120 &middot; Running</p>
+        </div>
+
+        <div class="rounded-lg border border-gray-200 bg-white p-3">
+          <div class="flex items-center justify-between">
+            <p class="text-xs font-medium text-gray-500">Station 2</p>
+            <span class="relative flex size-2">
+              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex size-2 rounded-full bg-emerald-500"></span>
+            </span>
+          </div>
+          <p class="mt-1 text-sm font-semibold text-gray-900">Paint booth</p>
+          <p class="mt-2 text-lg font-bold tabular-nums text-gray-900">98<span class="text-xs font-medium text-gray-400"> u/hr</span></p>
+          <p class="text-[11px] text-gray-500">Target 100 &middot; Running</p>
+        </div>
+
+        <div class="rounded-lg border border-red-200 bg-red-50 p-3">
+          <div class="flex items-center justify-between">
+            <p class="text-xs font-medium text-red-700">Station 3</p>
+            <span class="size-2 rounded-full bg-red-500"></span>
+          </div>
+          <p class="mt-1 text-sm font-semibold text-gray-900">Torque check</p>
+          <p class="mt-2 text-lg font-bold tabular-nums text-gray-900">0<span class="text-xs font-medium text-gray-400"> u/hr</span></p>
+          <p class="text-[11px] font-medium text-red-700">Fault: sensor E-04</p>
+        </div>
+
+        <div class="rounded-lg border border-amber-200 bg-amber-50 p-3">
+          <div class="flex items-center justify-between">
+            <p class="text-xs font-medium text-amber-700">Station 4</p>
+            <span class="size-2 rounded-full bg-amber-500"></span>
+          </div>
+          <p class="mt-1 text-sm font-semibold text-gray-900">Trim fit</p>
+          <p class="mt-2 text-lg font-bold tabular-nums text-gray-900">61<span class="text-xs font-medium text-gray-400"> u/hr</span></p>
+          <p class="text-[11px] text-amber-700">Below target &middot; slow cycle</p>
+        </div>
+
+        <div class="rounded-lg border border-gray-200 bg-white p-3">
+          <div class="flex items-center justify-between">
+            <p class="text-xs font-medium text-gray-500">Station 5</p>
+            <span class="relative flex size-2">
+              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex size-2 rounded-full bg-emerald-500"></span>
+            </span>
+          </div>
+          <p class="mt-1 text-sm font-semibold text-gray-900">Final QA</p>
+          <p class="mt-2 text-lg font-bold tabular-nums text-gray-900">116<span class="text-xs font-medium text-gray-400"> u/hr</span></p>
+          <p class="text-[11px] text-gray-500">Target 110 &middot; Running</p>
+        </div>
+
+        <div class="rounded-lg border border-gray-200 bg-gray-50 p-3">
+          <div class="flex items-center justify-between">
+            <p class="text-xs font-medium text-gray-500">Station 6</p>
+            <span class="size-2 rounded-full bg-gray-400"></span>
+          </div>
+          <p class="mt-1 text-sm font-semibold text-gray-500">Packaging</p>
+          <p class="mt-2 text-lg font-bold tabular-nums text-gray-400">0<span class="text-xs font-medium text-gray-400"> u/hr</span></p>
+          <p class="text-[11px] text-gray-500">Stopped &middot; scheduled break</p>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between border-t border-gray-200 px-4 py-2.5">
+        <p class="text-xs text-gray-500"><span class="font-medium text-gray-900">1</span> fault &middot; <span class="font-medium text-gray-900">1</span> below target</p>
+        <button type="button" class="text-xs font-medium text-gray-600 hover:text-gray-900">View line detail</button>
+      </div>
+    </div>
+  </body>
+</html>
