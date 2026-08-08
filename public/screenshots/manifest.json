@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 842,
+  "screenshotCount": 846,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -1016,6 +1016,46 @@
       "url": "/screenshots/components/application-credit-card-form/credit-card-form-2-dark.jpg",
       "width": 600,
       "height": 502
+    },
+    {
+      "componentId": "application-data-quality-score",
+      "variantId": "data-quality-score-1",
+      "appearance": "light",
+      "sourcePath": "files/application-data-quality-score/data-quality-score-1.html",
+      "sourceSha256": "d90531d204d2495d2cc508685abcf7b0c7a9a1d35fb412059bf85d9104fe7b4d",
+      "url": "/screenshots/components/application-data-quality-score/data-quality-score-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-data-quality-score",
+      "variantId": "data-quality-score-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-data-quality-score/data-quality-score-1-dark.html",
+      "sourceSha256": "9bd8b9ca4b7b82e19178bffbcea22d3c7668b5861e985e3df86ecd1e614b4e3e",
+      "url": "/screenshots/components/application-data-quality-score/data-quality-score-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-data-quality-score",
+      "variantId": "data-quality-score-2",
+      "appearance": "light",
+      "sourcePath": "files/application-data-quality-score/data-quality-score-2.html",
+      "sourceSha256": "3d99b3872c7d01594f9e252e32d244496231b8a9844e4ba7a491485c02463acb",
+      "url": "/screenshots/components/application-data-quality-score/data-quality-score-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-data-quality-score",
+      "variantId": "data-quality-score-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-data-quality-score/data-quality-score-2-dark.html",
+      "sourceSha256": "f67df122045b00b9e585bd7b5f386ac2fcb517cf92ea027294d4ad98f1285023",
+      "url": "/screenshots/components/application-data-quality-score/data-quality-score-2-dark.jpg",
+      "width": 600,
+      "height": 400
     },
     {
       "componentId": "application-details-list",

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex justify-center bg-gray-950 p-6">
+    <div class="flex w-full max-w-md items-center gap-4 rounded-lg border border-amber-900 bg-amber-500/10 p-4">
+      <div class="relative flex size-14 shrink-0 items-center justify-center">
+        <svg viewBox="0 0 100 100" class="size-14 -rotate-90" role="img" aria-label="Data quality score: 61 out of 100">
+          <circle cx="50" cy="50" r="40" fill="none" stroke-width="12" class="stroke-amber-900" />
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+            fill="none"
+            stroke-width="12"
+            stroke-linecap="round"
+            class="stroke-amber-400"
+            stroke-dasharray="251.33"
+            stroke-dashoffset="98.02"
+          />
+        </svg>
+        <span class="absolute text-sm font-semibold text-amber-200">61</span>
+      </div>
+      <div class="min-w-0 flex-1">
+        <p class="text-sm font-medium text-amber-200">customers.csv needs attention</p>
+        <p class="mt-0.5 text-xs text-amber-400">11 passed &middot; 7 failed &middot; 18 total checks</p>
+      </div>
+      <button type="button" class="shrink-0 rounded-md border border-amber-800 bg-gray-900 px-3 py-1.5 text-xs font-medium text-amber-300 hover:bg-gray-800">
+        View report
+      </button>
+    </div>
+  </body>
+</html>
