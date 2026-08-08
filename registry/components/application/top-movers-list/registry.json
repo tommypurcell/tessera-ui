@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-top-movers-list",
+  "title": "Top Movers List",
+  "description": "List of gainers/losers with a symbol, name, current value, and a direction-colored percent-change indicator.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["finance", "stocks", "movers", "gainers", "losers", "list"],
+  "useWhen": [
+    "Showing a ranked or curated list of items with a value and a period-over-period percent change (stocks, crypto, products).",
+    "Direction (up vs down) is the key thing users scan for, so it needs both an arrow and a color, not just a number.",
+    "You want a compact row format rather than a full data table for a short list."
+  ],
+  "avoidWhen": [
+    "The list needs sorting, pagination, or many columns — use a data table instead.",
+    "Direction doesn't matter, only the raw magnitude — a plain stat list or leaderboard-list fits better.",
+    "You need to show trend over time, not just a single percent change — pair this with metric-sparkline-card or a chart."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The list is a fixed max-w-sm block that fills its container's available width up to that cap at all breakpoints.",
+  "accessibility": [
+    "Direction is conveyed by both an arrow icon and text color (emerald for gainers, red for losers), never color alone.",
+    "Values and percent changes are rendered as plain, readable text — no information is encoded purely in icon shape or color for screen reader users.",
+    "The list uses semantic role=\"list\"/\"listitem\" structure via <ul>/<li> for predictable navigation."
+  ],
+  "compatibleWith": ["application-leaderboard-list", "application-stat-tile", "application-metric-sparkline-card"],
+  "variants": [
+    {
+      "id": "top-movers-list-1",
+      "title": "Top movers list",
+      "description": "Four tickers with symbol, name, value, and a color-coded up/down percent-change indicator.",
+      "source": {
+        "html": "../../../../public/examples/application/top-movers-list/1.html",
+        "tsx": "tsx/TopMoversListVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Gains and losses both remain legible text at 4.5:1+ contrast, not just colored decoration."
+      ]
+    },
+    {
+      "id": "top-movers-list-1-dark",
+      "title": "Top movers list (Dark)",
+      "description": "Top movers list adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/top-movers-list/1-dark.html",
+        "tsx": "tsx/TopMoversListVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Emerald and red text must meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

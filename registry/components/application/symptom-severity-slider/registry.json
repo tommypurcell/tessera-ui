@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-symptom-severity-slider",
+  "title": "Symptom Severity Slider",
+  "description": "Native 0-10 range slider for self-reported pain/symptom severity, with a live numeric readout and a derived descriptor label (None/Mild/Moderate/Severe).",
+  "category": "application/forms",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["pain-scale", "severity", "slider", "healthcare", "form"],
+  "useWhen": [
+    "Collecting a self-reported severity or pain rating on the standard clinical 0-10 scale.",
+    "You want both a precise number and a qualitative descriptor (Mild/Moderate/Severe) to reduce ambiguity for the person reporting.",
+    "The color gradient from green to red helps convey escalating severity at a glance."
+  ],
+  "avoidWhen": [
+    "The scale isn't 0-10 or doesn't map to standard severity descriptors — use range-inputs directly with your own labeling.",
+    "You need discrete named options rather than a continuous slider — use radio-groups or a segmented control instead.",
+    "Color-coded severity could be misread as a diagnosis or clinical judgment rather than a patient-reported value — pair with clear copy clarifying it's self-reported."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The slider is a fixed max-w-sm block that fills its container's available width up to that cap at all breakpoints.",
+  "accessibility": [
+    "Built on a native <input type=\"range\">, which provides built-in keyboard support (arrow keys) without extra ARIA.",
+    "The current value and descriptor are always shown as visible text, not conveyed by thumb position or color alone.",
+    "Endpoint and midpoint labels (0 · None, 5 · Moderate, 10 · Worst) anchor the scale so its meaning doesn't depend on memorizing a legend."
+  ],
+  "compatibleWith": ["application-range-inputs", "application-form-row", "application-inputs"],
+  "variants": [
+    {
+      "id": "symptom-severity-slider-1",
+      "title": "Symptom severity slider",
+      "description": "Slider at value 6 showing 'Moderate' with an amber-colored readout and a green-to-red gradient track.",
+      "source": {
+        "html": "../../../../public/examples/application/symptom-severity-slider/1.html",
+        "tsx": "tsx/SymptomSeveritySliderVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The descriptor label color reinforces but never replaces the always-visible text label."
+      ]
+    },
+    {
+      "id": "symptom-severity-slider-1-dark",
+      "title": "Symptom severity slider (Dark)",
+      "description": "Symptom severity slider adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/symptom-severity-slider/1-dark.html",
+        "tsx": "tsx/SymptomSeveritySliderVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Track gradient and thumb colors must remain distinguishable on dark surfaces."
+      ]
+    }
+  ]
+}

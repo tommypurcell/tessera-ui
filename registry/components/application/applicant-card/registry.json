@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-applicant-card",
+  "title": "Applicant Card",
+  "description": "Hiring-pipeline applicant card with initials avatar, name, role applied for, a 5-star interviewer rating, a resume link, and a pipeline-stage badge.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["hiring", "recruiting", "applicant", "ats", "card"],
+  "useWhen": [
+    "An applicant tracking system needs a compact card summarizing a candidate within a pipeline stage column.",
+    "Interviewer ratings, resume access, and current stage all need to be visible without opening a full profile.",
+    "You want a consistent card shape to place inside stage columns (Applied, Interview, Offer) like candidate-pipeline-stage."
+  ],
+  "avoidWhen": [
+    "You need full candidate profile detail (work history, notes, scorecards) — link out to a detail view from this card instead of expanding it in place.",
+    "There's no rating yet (unreviewed candidates) — omit the star row or show an explicit 'Not yet rated' state rather than all-empty stars.",
+    "The context isn't hiring — use contact-card for general people records instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The card is a fixed max-w-sm block that fills its container's available width up to that cap at all breakpoints.",
+  "accessibility": [
+    "The star rating uses role=\"img\" with an aria-label stating the rating in words ('Rated 4 out of 5 stars'), since the visual stars alone convey nothing to screen readers.",
+    "The resume link is a real anchor with visible icon plus text, not an icon-only button.",
+    "The stage badge is plain text in a colored pill, not conveyed by color alone."
+  ],
+  "compatibleWith": ["application-candidate-pipeline-stage", "application-kanban-column", "application-contact-card"],
+  "variants": [
+    {
+      "id": "applicant-card-1",
+      "title": "Applicant card",
+      "description": "Marcus Kim applying for Senior Product Designer, rated 4 of 5 stars, with a resume link and an 'Interview' stage badge.",
+      "source": {
+        "html": "../../../../public/examples/application/applicant-card/1.html",
+        "tsx": "tsx/ApplicantCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Empty stars use a distinct light gray, not simply an opacity reduction, keeping filled vs. unfilled unambiguous."
+      ]
+    },
+    {
+      "id": "applicant-card-1-dark",
+      "title": "Applicant card (Dark)",
+      "description": "Applicant card adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/applicant-card/1-dark.html",
+        "tsx": "tsx/ApplicantCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Star, badge, and link colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

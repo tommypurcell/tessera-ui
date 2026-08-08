@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-lead-score-meter",
+  "title": "Lead Score Meter",
+  "description": "0-100 lead score gauge with three qualitative color bands (Cold/Warm/Hot) and a marker positioned at the current score, plus a derived status badge.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["lead-score", "gauge", "crm", "sales", "meter"],
+  "useWhen": [
+    "A CRM or sales tool needs to show a computed fit/intent score against qualitative thresholds, not just a raw number.",
+    "Users benefit from an at-a-glance temperature label (Cold/Warm/Hot) alongside the precise numeric score.",
+    "The scoring bands are fixed and known in advance, unlike a continuous unbounded metric."
+  ],
+  "avoidWhen": [
+    "The underlying value isn't bounded to a fixed 0-100 range — use a different chart form for open-ended metrics.",
+    "You need to compare a value against a single target/threshold rather than qualitative zones — use bullet-chart instead.",
+    "Precision matters more than the qualitative label — a plain stat-tile number may be clearer than a banded gauge."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The meter is a fixed w-72 block that fills its container's available width up to that cap at all breakpoints.",
+  "accessibility": [
+    "The numeric score is always shown as text alongside the visual gauge, not conveyed by marker position alone.",
+    "The status badge pairs a colored dot with a text label ('Hot lead — high fit and intent'), so temperature is never color-only.",
+    "Band labels (Cold/Warm/Hot) are always-visible text beneath the gauge, not tooltips or hover-only content."
+  ],
+  "compatibleWith": ["application-stat-tile", "application-usage-meter", "application-progress-bars"],
+  "variants": [
+    {
+      "id": "lead-score-meter-1",
+      "title": "Hot lead",
+      "description": "Score of 78 with the marker positioned in the Hot band and a matching status badge.",
+      "source": {
+        "html": "../../../../public/examples/application/lead-score-meter/1.html",
+        "tsx": "tsx/LeadScoreMeterVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["hot"],
+      "accessibility": [
+        "The marker's left offset is computed from the numeric score, keeping the visual and textual values in sync."
+      ]
+    },
+    {
+      "id": "lead-score-meter-1-dark",
+      "title": "Hot lead (Dark)",
+      "description": "Hot lead score state adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/lead-score-meter/1-dark.html",
+        "tsx": "tsx/LeadScoreMeterVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["hot"],
+      "accessibility": [
+        "Band and badge colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    },
+    {
+      "id": "lead-score-meter-2",
+      "title": "Cold lead",
+      "description": "Score of 22 with the marker in the Cold band and a matching neutral status badge.",
+      "source": {
+        "html": "../../../../public/examples/application/lead-score-meter/2.html",
+        "tsx": "tsx/LeadScoreMeterVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["cold"],
+      "accessibility": [
+        "Cold state uses neutral gray rather than a warning color, since a cold lead isn't itself an error condition."
+      ]
+    },
+    {
+      "id": "lead-score-meter-2-dark",
+      "title": "Cold lead (Dark)",
+      "description": "Cold lead score state adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/lead-score-meter/2-dark.html",
+        "tsx": "tsx/LeadScoreMeterVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["cold"],
+      "accessibility": [
+        "Neutral badge colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

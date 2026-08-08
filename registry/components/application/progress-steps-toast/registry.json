@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-progress-steps-toast",
+  "title": "Progress Steps Toast",
+  "description": "Long-running-task toast showing overall progress plus a per-step checklist with done, active (spinning), and pending states.",
+  "category": "application/feedback",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["progress", "toast", "steps", "deploy", "long-running-task", "checklist"],
+  "useWhen": [
+    "A background operation (deploy, import, export, migration) has multiple distinct sub-steps worth surfacing.",
+    "Users benefit from seeing which specific step is currently running, not just a single percentage.",
+    "The task takes long enough that a persistent toast is more appropriate than a blocking spinner."
+  ],
+  "avoidWhen": [
+    "The task is a single atomic operation with no meaningful sub-steps — use toast-stack's simple toast instead.",
+    "The task completes in under a second or two — a step-by-step toast adds more visual noise than value for near-instant operations.",
+    "You need many toasts stacked at once — pair this with toast-stack's positioning/queue logic rather than reinventing it here."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The toast is a fixed max-w-sm card intended for a corner-anchored position; it fills its container's available width up to that cap.",
+  "accessibility": [
+    "The whole toast uses role=\"status\" so screen readers announce step transitions without needing focus.",
+    "Each step's state is shown through a distinct icon (check, spinner, dot) plus text styling (line-through, bold, muted), not color alone.",
+    "The 'N of M' label gives a concrete, announced sense of progress alongside the visual bar."
+  ],
+  "compatibleWith": ["application-toast-stack", "application-progress-bars", "application-stepper-wizard"],
+  "variants": [
+    {
+      "id": "progress-steps-toast-1",
+      "title": "Progress steps toast",
+      "description": "Four-step deploy task with one completed (struck through), one active (spinning), and two pending steps, plus an overall progress bar.",
+      "source": {
+        "html": "../../../../public/examples/application/progress-steps-toast/1.html",
+        "tsx": "tsx/ProgressStepsToastVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["in-progress"],
+      "accessibility": [
+        "role=\"status\" ensures step completion is announced as the task progresses."
+      ]
+    },
+    {
+      "id": "progress-steps-toast-1-dark",
+      "title": "Progress steps toast (Dark)",
+      "description": "Progress steps toast adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/progress-steps-toast/1-dark.html",
+        "tsx": "tsx/ProgressStepsToastVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["in-progress"],
+      "accessibility": [
+        "Progress bar, icon, and text colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

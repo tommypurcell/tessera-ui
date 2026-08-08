@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-range-dual-input",
+  "title": "Range Dual Input",
+  "description": "Paired min/max number fields for filtering by a numeric range, with a built-in error state when the minimum exceeds the maximum.",
+  "category": "application/forms",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["range", "min-max", "filter", "number", "form"],
+  "useWhen": [
+    "Filtering a dataset by a numeric range such as price, quantity, or a date offset, where users type exact bounds.",
+    "A slider isn't precise enough and users need to enter exact numbers.",
+    "You want built-in validation that the minimum can't exceed the maximum."
+  ],
+  "avoidWhen": [
+    "A visual drag interaction is more useful than typed precision — use a dual-thumb slider instead.",
+    "Only one bound matters (e.g. 'at least X') — a single number input is simpler than a pair.",
+    "The range is over dates rather than plain numbers — use date-range-picker instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The pair of fields sits in a fixed max-w-xs row that fills its container's available width up to that cap at all breakpoints.",
+  "accessibility": [
+    "Each field has a visually hidden label distinguishing minimum from maximum for screen reader users.",
+    "aria-invalid and aria-describedby are set on both fields together when the range is invalid, pointing at a single shared alert message.",
+    "The error message uses role=\"alert\" so it's announced as soon as the invalid state appears."
+  ],
+  "compatibleWith": ["application-data-filter-bar", "application-currency-input", "application-form-row"],
+  "variants": [
+    {
+      "id": "range-dual-input-1",
+      "title": "Range dual input",
+      "description": "Valid min/max price range with a dollar-sign prefix on each field.",
+      "source": {
+        "html": "../../../../public/examples/application/range-dual-input/1.html",
+        "tsx": "tsx/RangeDualInputVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Both fields are reachable in a natural min-then-max tab order."
+      ]
+    },
+    {
+      "id": "range-dual-input-1-dark",
+      "title": "Range dual input (Dark)",
+      "description": "Range dual input adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/range-dual-input/1-dark.html",
+        "tsx": "tsx/RangeDualInputVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Field border and text colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    },
+    {
+      "id": "range-dual-input-2",
+      "title": "Invalid range",
+      "description": "Error state when the minimum value is not less than the maximum, with both fields ringed red and a shared alert message.",
+      "source": {
+        "html": "../../../../public/examples/application/range-dual-input/2.html",
+        "tsx": "tsx/RangeDualInputVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["error"],
+      "accessibility": [
+        "Both invalid fields share the same aria-describedby target so the single error message is announced once, not duplicated."
+      ]
+    },
+    {
+      "id": "range-dual-input-2-dark",
+      "title": "Invalid range (Dark)",
+      "description": "Invalid range error state adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/range-dual-input/2-dark.html",
+        "tsx": "tsx/RangeDualInputVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["error"],
+      "accessibility": [
+        "Error border and message colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

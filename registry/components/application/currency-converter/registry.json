@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-currency-converter",
+  "title": "Currency Converter",
+  "description": "Dual amount fields for currency conversion with a typed input, a derived read-only output, a swap button, and a rate/last-updated caption.",
+  "category": "application/forms",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["currency", "converter", "exchange-rate", "money", "form"],
+  "useWhen": [
+    "Users need to convert an amount between two currencies using a live or periodically updated exchange rate.",
+    "The interaction is genuinely bidirectional — swapping which currency is the source vs. target should feel natural.",
+    "You want to show the underlying rate and its freshness alongside the converted value for trust."
+  ],
+  "avoidWhen": [
+    "The rate is fixed and rarely changes — a simple computed display may be enough without dedicated swap/edit affordances.",
+    "You only need to display a price in one currency, not convert between two — use currency-input instead.",
+    "The conversion needs more than two currencies at once — this pattern is inherently a from/to pair; use a small table for multi-currency comparisons."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The converter is a fixed max-w-xs column that fills its container's available width up to that cap at all breakpoints.",
+  "accessibility": [
+    "The swap button has an explicit aria-label describing its action, not just an icon.",
+    "The read-only 'You receive' field uses the native readonly attribute so assistive tech announces it as non-editable, not just visually styled.",
+    "Both currency selects have visually hidden labels distinguishing 'From' and 'To' for screen reader users."
+  ],
+  "compatibleWith": ["application-currency-input", "application-form-row", "application-selects"],
+  "variants": [
+    {
+      "id": "currency-converter-1",
+      "title": "Currency converter",
+      "description": "500 USD converting to EUR at a live rate, with a swap button between the two fields and a rate/freshness caption.",
+      "source": {
+        "html": "../../../../public/examples/application/currency-converter/1.html",
+        "tsx": "tsx/CurrencyConverterVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The computed receive amount updates in the same readonly field rather than requiring users to re-find a result elsewhere on the page."
+      ]
+    },
+    {
+      "id": "currency-converter-1-dark",
+      "title": "Currency converter (Dark)",
+      "description": "Currency converter adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/currency-converter/1-dark.html",
+        "tsx": "tsx/CurrencyConverterVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Field, select, and caption colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

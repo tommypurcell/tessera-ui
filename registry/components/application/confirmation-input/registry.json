@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-confirmation-input",
+  "title": "Confirmation Input",
+  "description": "Destructive-action dialog that requires the user to type an exact phrase, such as a resource name, before the confirm button becomes enabled.",
+  "category": "application/overlays",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["confirmation", "destructive", "delete", "dialog", "alertdialog", "safety"],
+  "useWhen": [
+    "The action is irreversible and high-consequence, such as deleting a project, repository, or account.",
+    "You want a stronger safeguard than a single confirm click, without adding extra steps like email verification.",
+    "The item being deleted has a name or identifier the user already knows, which can double as the confirmation phrase."
+  ],
+  "avoidWhen": [
+    "The action is reversible or low-consequence — a standard AlertDialog with a single confirm click is enough friction.",
+    "The user won't reliably know the exact phrase to type (e.g. a long UUID) — offer a copy-to-clipboard affordance or a simpler checkbox confirmation instead.",
+    "The action needs multi-factor or server-side re-authentication — this component only gates the button locally, it isn't a security boundary."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The dialog is a fixed max-w-sm card that centers in its container at all viewport widths.",
+  "accessibility": [
+    "Uses role=\"alertdialog\" with aria-labelledby and aria-describedby so assistive tech announces the destructive context immediately.",
+    "The confirm button uses the native disabled attribute, not just a visual style, so it's unreachable by keyboard and unannounced as actionable until the phrase matches.",
+    "The input's aria-describedby always points at either the disabled-state hint or the confirmed-state message, kept in sync with the visual border color change."
+  ],
+  "compatibleWith": ["application-dialog", "application-modals", "application-inputs"],
+  "variants": [
+    {
+      "id": "confirmation-input-1",
+      "title": "Awaiting confirmation",
+      "description": "Dialog with an empty confirmation field and a disabled destructive confirm button.",
+      "source": {
+        "html": "../../../../public/examples/application/confirmation-input/1.html",
+        "tsx": "tsx/ConfirmationInputVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "disabled"],
+      "accessibility": [
+        "The confirm button is a real disabled button, not a styled-only state."
+      ]
+    },
+    {
+      "id": "confirmation-input-1-dark",
+      "title": "Awaiting confirmation (Dark)",
+      "description": "Confirmation dialog in its disabled state, adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/confirmation-input/1-dark.html",
+        "tsx": "tsx/ConfirmationInputVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "disabled"],
+      "accessibility": [
+        "Disabled button and input border colors must remain distinguishable on dark surfaces."
+      ]
+    },
+    {
+      "id": "confirmation-input-2",
+      "title": "Confirmed",
+      "description": "Same dialog once the typed value matches the required phrase: input border turns success-colored and the confirm button is enabled.",
+      "source": {
+        "html": "../../../../public/examples/application/confirmation-input/2.html",
+        "tsx": "tsx/ConfirmationInputVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["matched", "enabled"],
+      "accessibility": [
+        "The success message is programmatically linked via aria-describedby, not conveyed by border color alone."
+      ]
+    },
+    {
+      "id": "confirmation-input-2-dark",
+      "title": "Confirmed (Dark)",
+      "description": "Matched-phrase confirmed state adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/confirmation-input/2-dark.html",
+        "tsx": "tsx/ConfirmationInputVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["matched", "enabled"],
+      "accessibility": [
+        "Success-state border and text colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

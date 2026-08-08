@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-anchor-scroll-nav",
+  "title": "Anchor Scroll Nav",
+  "description": "Sticky in-page section list with a left indicator bar on the currently active heading, for scrollspy-style page navigation.",
+  "category": "application/navigation",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["scrollspy", "anchor", "toc", "table-of-contents", "navigation"],
+  "useWhen": [
+    "A long single-page document or article has multiple headings users may want to jump between.",
+    "You want the nav to reflect scroll position automatically, not just act as static jump links.",
+    "The page has enough vertical space for a persistent sidebar list, such as documentation layouts."
+  ],
+  "avoidWhen": [
+    "The page is short enough that scrolling to a section is trivial — a table of contents adds more noise than value.",
+    "Navigation should switch between separate views rather than scroll within one page — use tabs instead.",
+    "You need this on narrow/mobile viewports where a persistent sidebar doesn't fit — collapse it into a dropdown or drawer there instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The nav is a fixed w-48 column intended for a sidebar rail; hide or collapse it into a dropdown below your chosen mobile breakpoint.",
+  "accessibility": [
+    "The active section link carries aria-current=\"location\", the correct token for identifying an in-page current-location link.",
+    "The list uses semantic <nav> and <ul>/<li> so screen reader users can navigate it as a landmark and list.",
+    "Active state is shown with both a border color and font weight change, not color alone."
+  ],
+  "compatibleWith": ["application-tabs", "application-scroll-area", "application-breadcrumbs"],
+  "variants": [
+    {
+      "id": "anchor-scroll-nav-1",
+      "title": "Anchor scroll nav",
+      "description": "Five-item section list with a left border indicator on the active 'Overview' item.",
+      "source": {
+        "html": "../../../../public/examples/application/anchor-scroll-nav/1.html",
+        "tsx": "tsx/AnchorScrollNavVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "active"],
+      "accessibility": [
+        "aria-current=\"location\" is set only on the active item, updated as scroll position changes."
+      ]
+    },
+    {
+      "id": "anchor-scroll-nav-1-dark",
+      "title": "Anchor scroll nav (Dark)",
+      "description": "Anchor scroll nav adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/anchor-scroll-nav/1-dark.html",
+        "tsx": "tsx/AnchorScrollNavVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "active"],
+      "accessibility": [
+        "Active indicator and text colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

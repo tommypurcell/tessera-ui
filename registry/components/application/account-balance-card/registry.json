@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-account-balance-card",
+  "title": "Account Balance Card",
+  "description": "Bank account card with a maskable balance (show/hide toggle), the account's last-four digits, and a row of quick actions (Send, Deposit, Transfer).",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["banking", "finance", "balance", "account"],
+  "useWhen": [
+    "Showing a bank or checking/savings account balance in a personal finance or banking dashboard.",
+    "The balance is sensitive and the user should be able to mask it (e.g. shoulder-surfing in public) via a show/hide toggle.",
+    "You want quick primary actions (Send, Deposit, Transfer) directly attached to the account they affect."
+  ],
+  "avoidWhen": [
+    "You're showing a crypto/token balance, not a bank account — use `token-balance-row` for that unrelated context.",
+    "The balance never needs to be hidden — drop the show/hide toggle and just render the value.",
+    "There are more than three quick actions — use a menu or overflow rather than widening the grid."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Single-column card at a fixed max width; the three-action grid stays in a fixed 3-column layout, icons and labels wrapping rather than columns collapsing.",
+  "accessibility": [
+    "The show/hide button uses aria-label and aria-pressed reflecting the current masked state, not just an icon swap.",
+    "Masked balance renders as bullet characters rather than removing the element, so screen readers reading before a toggle interaction still get a stable structure.",
+    "Each quick action is a real <button> with a visible text label alongside its icon, not an icon-only control."
+  ],
+  "compatibleWith": ["application-token-balance-row", "application-currency-converter"],
+  "variants": [
+    {
+      "id": "account-balance-card-1",
+      "title": "Account Balance Card",
+      "description": "Everyday Checking balance with show/hide toggle, masked account digits, and Send/Deposit/Transfer quick actions.",
+      "source": {
+        "html": "../../../../public/examples/application/account-balance-card/1.html",
+        "tsx": "tsx/AccountBalanceCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Balance visibility toggle uses aria-pressed so assistive tech announces the current masked/visible state."
+      ]
+    },
+    {
+      "id": "account-balance-card-1-dark",
+      "title": "Account Balance Card (Dark)",
+      "description": "Account balance card adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/account-balance-card/1-dark.html",
+        "tsx": "tsx/AccountBalanceCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Text and border colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

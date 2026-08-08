@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-sm p-6">
+    <label for="painLevel" class="block">
+      <div class="flex items-baseline justify-between">
+        <span class="text-sm font-medium text-gray-900">Pain level</span>
+        <span class="text-sm font-semibold text-amber-600">6 · Moderate</span>
+      </div>
+
+      <input
+        type="range"
+        name="painLevel"
+        id="painLevel"
+        min="0"
+        max="10"
+        step="1"
+        value="6"
+        class="mt-3 h-2 w-full appearance-none rounded-full bg-gradient-to-r from-emerald-400 via-amber-400 to-red-500 [&::-webkit-slider-thumb]:size-5 [&::-webkit-slider-thumb]:cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-white [&::-webkit-slider-thumb]:bg-gray-900 [&::-webkit-slider-thumb]:shadow"
+      />
+
+      <div class="mt-1.5 flex justify-between text-xs text-gray-500">
+        <span>0 · None</span>
+        <span>5 · Moderate</span>
+        <span>10 · Worst</span>
+      </div>
+    </label>
+  </body>
+</html>

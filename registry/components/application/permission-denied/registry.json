@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-permission-denied",
+  "title": "Permission Denied State",
+  "description": "Locked panel explaining why access was denied, with a request-access action that transitions into a confirmed pending state.",
+  "category": "application/feedback",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["permission", "access-denied", "locked", "empty-state", "authorization"],
+  "useWhen": [
+    "A user navigates to a resource they lack the role or permission to view.",
+    "You want to explain the specific reason for denial (missing role, team membership) rather than a generic 403.",
+    "Self-service access requests are supported and the user can trigger one directly from this state."
+  ],
+  "avoidWhen": [
+    "The user isn't authenticated at all — redirect to a sign-in flow instead of showing a permission-denied panel.",
+    "There's simply no data yet (not a permission issue) — use empty-states instead, which doesn't imply the user did anything wrong.",
+    "Access requests aren't self-service in your product — drop the CTA and link to documentation or support instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The panel is a fixed max-w-sm card that centers itself in its container at all viewport widths.",
+  "accessibility": [
+    "The initial denied state uses role=\"alert\" so screen readers announce it as soon as it renders.",
+    "The pending state after requesting access uses role=\"status\" (not alert) since it's a confirmation, not an urgent interruption.",
+    "The disabled 'Request sent' button uses the native disabled attribute so it's correctly excluded from the tab order."
+  ],
+  "compatibleWith": ["application-empty-states", "application-alert", "application-toasts"],
+  "variants": [
+    {
+      "id": "permission-denied-1",
+      "title": "Permission denied",
+      "description": "Locked-icon panel with a specific denial reason and a Request access button.",
+      "source": {
+        "html": "../../../../public/examples/application/permission-denied/1.html",
+        "tsx": "tsx/PermissionDeniedVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "role=\"alert\" ensures the denial is announced without requiring the user to find and focus the panel."
+      ]
+    },
+    {
+      "id": "permission-denied-1-dark",
+      "title": "Permission denied (Dark)",
+      "description": "Permission denied panel adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/permission-denied/1-dark.html",
+        "tsx": "tsx/PermissionDeniedVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Icon, heading, and button colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    },
+    {
+      "id": "permission-denied-2",
+      "title": "Request sent",
+      "description": "Confirmation state after the user requests access: checkmark icon, confirmation copy, and a disabled 'Request sent' button.",
+      "source": {
+        "html": "../../../../public/examples/application/permission-denied/2.html",
+        "tsx": "tsx/PermissionDeniedVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["requested"],
+      "accessibility": [
+        "role=\"status\" announces the confirmation politely rather than interrupting like an alert."
+      ]
+    },
+    {
+      "id": "permission-denied-2-dark",
+      "title": "Request sent (Dark)",
+      "description": "Request-sent confirmation state adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/permission-denied/2-dark.html",
+        "tsx": "tsx/PermissionDeniedVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["requested"],
+      "accessibility": [
+        "Success icon and disabled-button colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

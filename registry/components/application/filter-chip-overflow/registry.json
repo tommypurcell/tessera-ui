@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-filter-chip-overflow",
+  "title": "Filter Chip Overflow",
+  "description": "Row of removable active-filter chips that collapses extras beyond a visible count into a '+N more' trigger opening a popover with the rest.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["filter", "chip", "overflow", "tags", "search"],
+  "useWhen": [
+    "Users can apply many filters at once and the chip row would otherwise wrap awkwardly or crowd the toolbar.",
+    "You want every applied filter individually removable, including ones tucked into overflow.",
+    "The container has a fixed or narrow width where the number of visible chips needs to be capped."
+  ],
+  "avoidWhen": [
+    "There are rarely more than 2-3 filters — just render all chips inline without an overflow trigger.",
+    "The filters need to stay in a fixed, unwrapping single row at all costs — this pattern intentionally wraps/collapses rather than truncating text.",
+    "You need the dropdown to add new filters, not just manage existing ones — pair this with data-filter-bar's 'Add filter' trigger instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The chip row wraps naturally; pair `visibleCount` with a container query or resize observer in your own code to adjust how many chips show before collapsing to overflow.",
+  "accessibility": [
+    "Each chip's remove button has a specific aria-label naming the filter it removes, not a generic 'Remove'.",
+    "The overflow trigger uses aria-haspopup=\"dialog\" and aria-expanded reflecting the popover's open state.",
+    "The overflow popover is a role=\"dialog\" region so its contents are grouped for assistive tech."
+  ],
+  "compatibleWith": ["application-data-filter-bar", "application-tag-filter-group", "application-popover"],
+  "variants": [
+    {
+      "id": "filter-chip-overflow-1",
+      "title": "Collapsed",
+      "description": "Three visible filter chips plus a '+3 more' trigger for the rest, each chip individually removable.",
+      "source": {
+        "html": "../../../../public/examples/application/filter-chip-overflow/1.html",
+        "tsx": "tsx/FilterChipOverflowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Remove buttons are reachable by keyboard independent of the chip's own click target."
+      ]
+    },
+    {
+      "id": "filter-chip-overflow-1-dark",
+      "title": "Collapsed (Dark)",
+      "description": "Collapsed filter chip row adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/filter-chip-overflow/1-dark.html",
+        "tsx": "tsx/FilterChipOverflowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Chip and remove-button colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    },
+    {
+      "id": "filter-chip-overflow-2",
+      "title": "Overflow open",
+      "description": "The '+3 more' trigger expanded, showing the remaining filters in a popover list, each also removable.",
+      "source": {
+        "html": "../../../../public/examples/application/filter-chip-overflow/2.html",
+        "tsx": "tsx/FilterChipOverflowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["open"],
+      "accessibility": [
+        "aria-expanded=\"true\" on the trigger is kept in sync with the popover's visible state."
+      ]
+    },
+    {
+      "id": "filter-chip-overflow-2-dark",
+      "title": "Overflow open (Dark)",
+      "description": "Open overflow popover state adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/filter-chip-overflow/2-dark.html",
+        "tsx": "tsx/FilterChipOverflowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["open"],
+      "accessibility": [
+        "Popover background and border colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-flight-route-card",
+  "title": "Flight Route Card",
+  "description": "Flight search result card showing airline, flight number, stop count, origin/destination codes and times with a duration line between them, and the fare.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["flight", "travel", "route", "search-result", "booking"],
+  "useWhen": [
+    "Displaying a single flight option in a search results list, showing the route at a glance.",
+    "Users need origin/destination airport codes, departure/arrival times, duration, and stop count together.",
+    "The card needs to scan quickly across many similar results, so layout consistency matters more than exhaustive detail."
+  ],
+  "avoidWhen": [
+    "You need full itinerary detail (seat class, baggage, layover airports) — this card is a compact summary; link out to a detail view for that.",
+    "The route has multiple legs that each need their own duration/stop breakdown — extend this pattern per-leg rather than cramming multiple segments into one card.",
+    "There's no fare to show — drop the price row rather than rendering an empty one."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The card is a fixed max-w-sm block that fills its container's available width up to that cap at all breakpoints.",
+  "accessibility": [
+    "Airport codes are paired with full city names in the footer row, so the route is understandable beyond three-letter codes alone.",
+    "The stop count badge uses both color and explicit text ('Nonstop'), never color alone to convey routing complexity.",
+    "Times include AM/PM and a '+1' suffix for next-day arrivals, avoiding ambiguity in a 12-hour format."
+  ],
+  "compatibleWith": ["application-booking-search-bar", "application-price-calendar", "application-card"],
+  "variants": [
+    {
+      "id": "flight-route-card-1",
+      "title": "Flight route card",
+      "description": "Nonstop SFO to NRT flight with airline, times, duration, route footer, and fare.",
+      "source": {
+        "html": "../../../../public/examples/application/flight-route-card/1.html",
+        "tsx": "tsx/FlightRouteCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The airline code badge is decorative shorthand; the full airline name is always present as adjacent text."
+      ]
+    },
+    {
+      "id": "flight-route-card-1-dark",
+      "title": "Flight route card (Dark)",
+      "description": "Flight route card adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/flight-route-card/1-dark.html",
+        "tsx": "tsx/FlightRouteCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Stop-count badge and divider colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

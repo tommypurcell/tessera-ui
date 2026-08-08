@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-action-sheet",
+  "title": "Action Sheet",
+  "description": "Mobile-style bottom action sheet: a grouped list of actions in one rounded card, plus a separated Cancel button, with support for a destructive action.",
+  "category": "application/overlays",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["action-sheet", "mobile", "menu", "bottom-sheet", "ios", "actions"],
+  "useWhen": [
+    "Offering a small set of contextual actions on an item (a photo, message, or file) in a mobile or touch-first layout.",
+    "You want the native iOS/Android action-sheet convention: one grouped card of actions plus a separated Cancel.",
+    "A destructive action (delete, remove) should be visually distinguished within the same list."
+  ],
+  "avoidWhen": [
+    "The layout is desktop-first with a mouse — use a dropdown or context menu instead of a bottom sheet.",
+    "There are more than about 5-6 actions — split into a fuller drawer or menu with scrolling and grouping.",
+    "The action list needs icons or descriptions per item — this pattern is intentionally text-only and compact; use command-menu-result-row instead for richer rows."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The sheet is a fixed max-w-sm column anchored to the bottom of its container by your own positioning; it fills available width up to that cap.",
+  "accessibility": [
+    "The action list uses role=\"dialog\" with an aria-label describing what the actions apply to.",
+    "The destructive action is marked with red text as a visual cue in addition to its position in the list, not as the only signal.",
+    "Cancel is a full-width, clearly separated button so it can't be confused with the actions above it."
+  ],
+  "compatibleWith": ["application-bottom-sheet-nav", "application-alert-dialog", "application-dropdown"],
+  "variants": [
+    {
+      "id": "action-sheet-1",
+      "title": "Action sheet",
+      "description": "Four grouped actions (including a destructive Delete) in a rounded card, with a separated Cancel button below.",
+      "source": {
+        "html": "../../../../public/examples/application/action-sheet/1.html",
+        "tsx": "tsx/ActionSheetVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Each action and Cancel are real full-width buttons, giving large touch targets."
+      ]
+    },
+    {
+      "id": "action-sheet-1-dark",
+      "title": "Action sheet (Dark)",
+      "description": "Action sheet adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/action-sheet/1-dark.html",
+        "tsx": "tsx/ActionSheetVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Destructive-action and divider colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

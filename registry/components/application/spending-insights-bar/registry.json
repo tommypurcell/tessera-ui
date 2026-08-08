@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-spending-insights-bar",
+  "title": "Spending Insights Bar",
+  "description": "Per-category spending bars with a tick marker at each category's historical average, colored by over/under status.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["banking", "finance", "spending", "chart", "insights"],
+  "useWhen": [
+    "Showing how this period's spending compares to a historical average across several categories at once.",
+    "You want the comparison legible from the bar alone (fill length + average tick) without requiring a tooltip or table.",
+    "Status (over/under/on average) should be readable through both color and position, not color alone."
+  ],
+  "avoidWhen": [
+    "You're tracking a single budget against its limit — use `budget-progress-bar` for that one-category, threshold-based case.",
+    "You have more than 5-6 categories — this stacks vertically and gets long; use a proper bar chart with scroll or pagination instead.",
+    "There's no meaningful historical average to compare against — a plain spend-by-category list is more honest than a fabricated marker."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Single-column card at a fixed max width; each category row's bar fills the available width, so the layout only changes via card width, not breakpoint-specific reflow.",
+  "accessibility": [
+    "Each bar carries role=img with an aria-label stating the category, spent amount, average, and the over/under relationship in words, not just visually via bar length.",
+    "Status is encoded by both fill color and the bar's length relative to its average tick, so colorblind users can still read over/under from position.",
+    "The average tick marker is aria-hidden since its meaning is already stated in the bar's aria-label; it is a visual supplement, not a separate a11y unit."
+  ],
+  "compatibleWith": ["application-budget-progress-bar", "application-account-balance-card"],
+  "variants": [
+    {
+      "id": "spending-insights-bar-1",
+      "title": "Spending Insights Bar",
+      "description": "Four spending categories (Groceries, Dining out, Transportation, Entertainment) each compared against a 6-month average.",
+      "source": {
+        "html": "../../../../public/examples/application/spending-insights-bar/1.html",
+        "tsx": "tsx/SpendingInsightsBarVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Over-average categories use red, under-average use emerald, and on-average uses neutral gray — a fixed three-way status mapping, not an arbitrary categorical palette."
+      ]
+    },
+    {
+      "id": "spending-insights-bar-1-dark",
+      "title": "Spending Insights Bar (Dark)",
+      "description": "Spending insights bar adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/spending-insights-bar/1-dark.html",
+        "tsx": "tsx/SpendingInsightsBarVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Status colors are lifted to their -400 step and the average tick to gray-400 to hold WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

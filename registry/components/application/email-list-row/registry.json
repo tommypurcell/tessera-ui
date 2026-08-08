@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-email-list-row",
+  "title": "Email List Row",
+  "description": "Inbox row with an unread dot, a toggleable star, sender/subject/snippet, a timestamp, and an attachment indicator.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["email", "inbox", "mail", "list", "row"],
+  "useWhen": [
+    "Building an email or messaging inbox list where each row needs read state, starring, and a content preview.",
+    "You want the attachment indicator visible in the list without opening the message.",
+    "The row should be a single large click/tap target linking to the full message."
+  ],
+  "avoidWhen": [
+    "The content isn't email-shaped (no sender/subject distinction) — use media-object-row for a more generic content row.",
+    "You need bulk selection checkboxes — extend this row with a leading checkbox slot rather than replacing the whole pattern.",
+    "There's no read/unread concept — drop the unread dot and treat all rows uniformly."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The row is a fixed max-w-md block that fills its container's available width up to that cap at all breakpoints, truncating long sender/subject/snippet text.",
+  "accessibility": [
+    "The star button uses aria-pressed to expose its toggled state and stops its click from triggering the row's own link navigation.",
+    "Read/unread state is shown through both a dot and font-weight changes on sender/subject text, not the dot alone.",
+    "The attachment icon is aria-hidden since it's a supplementary visual cue; attachment presence should also be discoverable inside the opened message."
+  ],
+  "compatibleWith": ["application-media-object-row", "application-mention-notification-row", "application-checkboxes"],
+  "variants": [
+    {
+      "id": "email-list-row-1",
+      "title": "Email list row",
+      "description": "Unread, starred message from Priya Shah with subject, snippet, timestamp, and an attachment indicator.",
+      "source": {
+        "html": "../../../../public/examples/application/email-list-row/1.html",
+        "tsx": "tsx/EmailListRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["unread", "starred"],
+      "accessibility": [
+        "Sender, subject, and snippet remain real selectable text even though visually truncated with an ellipsis."
+      ]
+    },
+    {
+      "id": "email-list-row-1-dark",
+      "title": "Email list row (Dark)",
+      "description": "Email list row adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/email-list-row/1-dark.html",
+        "tsx": "tsx/EmailListRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["unread", "starred"],
+      "accessibility": [
+        "Unread dot, star, and text colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

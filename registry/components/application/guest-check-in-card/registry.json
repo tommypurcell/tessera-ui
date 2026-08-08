@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-guest-check-in-card",
+  "title": "Guest Check-In Card",
+  "description": "Hotel guest check-in card with the guest's avatar, reservation id, room/check-in/check-out stats, and Check in / Check out actions.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["hospitality", "hotel", "reservation", "check-in"],
+  "useWhen": [
+    "Showing a hotel front-desk or self-service view of a single guest's reservation with room and stay dates.",
+    "Staff need immediate Check in / Check out actions attached to the reservation they affect.",
+    "You want a status pill (e.g. \"Arriving today\") that summarizes the reservation's current state at a glance."
+  ],
+  "avoidWhen": [
+    "You're confirming a generic appointment or meeting booking, not a hotel stay — use `booking-confirmation-card` for that unrelated context.",
+    "There's no room assignment yet — drop the Room stat rather than showing a placeholder value.",
+    "You need a list of many reservations — use a table or list row pattern instead of repeating this card."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Single-column card at a fixed max width; the three-stat row and the two-button action row each stay in fixed grids at any card width.",
+  "accessibility": [
+    "Room/Check-in/Check-out use a <dl> so each stat has a programmatic label, not just visual proximity to its heading.",
+    "Check in and Check out are distinct, clearly labeled buttons rather than a single ambiguous toggle, avoiding accidental state changes.",
+    "The status pill conveys state through text (\"Arriving today\") in addition to its background tint, not color alone."
+  ],
+  "compatibleWith": ["application-booking-confirmation-card", "application-approval-request-card"],
+  "variants": [
+    {
+      "id": "guest-check-in-card-1",
+      "title": "Guest Check-In Card",
+      "description": "Maria Gonzalez, reservation #48213, room 412, Aug 8–11, with an amber \"Arriving today\" status and Check in/Check out actions.",
+      "source": {
+        "html": "../../../../public/examples/application/guest-check-in-card/1.html",
+        "tsx": "tsx/GuestCheckInCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Check in and Check out are separate, explicitly labeled buttons so staff cannot mistake one action for the other."
+      ]
+    },
+    {
+      "id": "guest-check-in-card-1-dark",
+      "title": "Guest Check-In Card (Dark)",
+      "description": "Guest check-in card adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/guest-check-in-card/1-dark.html",
+        "tsx": "tsx/GuestCheckInCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Status pill and text colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-rating-summary-header",
+  "title": "Rating Summary Header",
+  "description": "Product/review header showing a large average score, a 5-star row with a proportionally clipped partial star for decimal averages, and a total-review count.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["rating", "reviews", "stars", "product", "summary"],
+  "useWhen": [
+    "A product or listing page needs a prominent, at-a-glance rating summary at the top of its reviews section.",
+    "The average is a decimal value (like 4.6) that benefits from an accurately fractional-filled star, not just rounding.",
+    "You want the total review count visible for credibility alongside the score."
+  ],
+  "avoidWhen": [
+    "You need the full distribution across each star level (5-star: 60%, 4-star: 25%, etc.) — use rating-distribution instead, which this component is intentionally distinct from.",
+    "There are no reviews yet — show an explicit 'No reviews yet' state rather than a zero-filled star row.",
+    "The rating isn't on a 5-star scale — adapt the star count or swap for a numeric-only display."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The header is an inline-sized flex row that wraps naturally at narrow widths, keeping the big number and star block together.",
+  "accessibility": [
+    "The star row uses role=\"img\" with an aria-label stating the precise decimal rating in words, since partial star fills convey nothing to screen readers.",
+    "The partial star is built from two overlaid, clip-pathed icons rather than a font trick, keeping the fill percentage visually accurate.",
+    "The total review count is always visible text, giving the average context rather than presenting it as an isolated number."
+  ],
+  "compatibleWith": ["application-rating-distribution", "application-product-card", "application-reviews"],
+  "variants": [
+    {
+      "id": "rating-summary-header-1",
+      "title": "Rating summary header",
+      "description": "4.6 average with 4 full stars, one 60%-filled partial star, and a 'Based on 1,842 reviews' caption.",
+      "source": {
+        "html": "../../../../public/examples/application/rating-summary-header/1.html",
+        "tsx": "tsx/RatingSummaryHeaderVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The visible '4.6' number and the aria-label both carry the same precise value, avoiding any rounding mismatch."
+      ]
+    },
+    {
+      "id": "rating-summary-header-1-dark",
+      "title": "Rating summary header (Dark)",
+      "description": "Rating summary header adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/rating-summary-header/1-dark.html",
+        "tsx": "tsx/RatingSummaryHeaderVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Empty-star and caption colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

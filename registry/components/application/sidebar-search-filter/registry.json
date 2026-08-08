@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-sidebar-search-filter",
+  "title": "Sidebar Search Filter",
+  "description": "Search input pinned above a nav list that live-filters items by label, highlighting the matched substring and showing a no-matches message when nothing matches.",
+  "category": "application/navigation",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["sidebar", "search", "filter", "navigation"],
+  "useWhen": [
+    "A sidebar or settings nav has enough items that scanning is slower than typing to find one.",
+    "You want immediate, client-side filtering as the user types, without a full page navigation or async request.",
+    "Highlighting the matched substring helps users confirm why an item matched."
+  ],
+  "avoidWhen": [
+    "The nav has only a handful of items — a search box adds friction rather than saving time.",
+    "Matching needs to search more than the visible label (e.g. page content, tags) — wire in a real search index and result list instead of simple label filtering.",
+    "You need fuzzy or ranked search — this component does plain case-insensitive substring matching only."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The filter input and list are a fixed w-56 column intended for a sidebar; both scale to their container's available width up to that cap.",
+  "accessibility": [
+    "The input has a visually hidden label describing its purpose, since the placeholder alone isn't a reliable accessible name.",
+    "The no-matches message uses role=\"status\" so it's announced as the result set changes to empty.",
+    "Matched text uses the semantic <mark> element rather than a styled <span>, so its significance is conveyed to assistive tech."
+  ],
+  "compatibleWith": ["application-side-menu", "application-dashboard-sidebar", "application-settings-nav-list"],
+  "variants": [
+    {
+      "id": "sidebar-search-filter-1",
+      "title": "Filtered results",
+      "description": "Search input with a query typed in, showing two matching nav items with the matched substring highlighted.",
+      "source": {
+        "html": "../../../../public/examples/application/sidebar-search-filter/1.html",
+        "tsx": "tsx/SidebarSearchFilterVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["filtered"],
+      "accessibility": [
+        "Highlighted substrings use <mark>, which is announced distinctly by screen readers that support it."
+      ]
+    },
+    {
+      "id": "sidebar-search-filter-1-dark",
+      "title": "Filtered results (Dark)",
+      "description": "Filtered sidebar search state adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/sidebar-search-filter/1-dark.html",
+        "tsx": "tsx/SidebarSearchFilterVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["filtered"],
+      "accessibility": [
+        "Highlight and text colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    },
+    {
+      "id": "sidebar-search-filter-2",
+      "title": "No matches",
+      "description": "Empty-result state shown when the typed query matches no nav items.",
+      "source": {
+        "html": "../../../../public/examples/application/sidebar-search-filter/2.html",
+        "tsx": "tsx/SidebarSearchFilterVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["empty"],
+      "accessibility": [
+        "role=\"status\" ensures the no-matches message is announced without requiring the user to look at the screen."
+      ]
+    },
+    {
+      "id": "sidebar-search-filter-2-dark",
+      "title": "No matches (Dark)",
+      "description": "No-matches state adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/sidebar-search-filter/2-dark.html",
+        "tsx": "tsx/SidebarSearchFilterVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["empty"],
+      "accessibility": [
+        "Message text color must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

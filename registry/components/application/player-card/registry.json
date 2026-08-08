@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-player-card",
+  "title": "Player Card",
+  "description": "Gaming profile card with a gradient header showing avatar, gamertag, and rank tier badge, plus a row of quick stats below.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["gaming", "player", "profile", "rank", "leaderboard"],
+  "useWhen": [
+    "A gaming app or leaderboard needs a compact player identity card with rank and quick stats.",
+    "You want a visually distinct gradient header to give the card game-like personality, separate from standard app chrome.",
+    "The stats shown are a fixed, small set (3 columns fits cleanly) rather than an open-ended list."
+  ],
+  "avoidWhen": [
+    "The context is a standard business app, not gaming — use contact-card or a plain profile header instead of the game-styled treatment.",
+    "You need more than 3-4 stats — extend the grid or link out to a full profile page rather than cramming more columns in.",
+    "Rank isn't tier-based (bronze/silver/diamond, etc.) — swap the badge for a plain numeric rank display."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The card is a fixed max-w-xs block that fills its container's available width up to that cap at all breakpoints.",
+  "accessibility": [
+    "The rank tier is shown as visible text with an icon, never conveyed by badge color alone.",
+    "Gamertag text truncates with an ellipsis rather than overflowing or wrapping unpredictably in the fixed-width header.",
+    "Stat values and labels are always paired as visible text, keeping numbers meaningful without extra context."
+  ],
+  "compatibleWith": ["application-leaderboard-list", "application-avatar", "application-badges"],
+  "variants": [
+    {
+      "id": "player-card-1",
+      "title": "Player card",
+      "description": "Gradient header with avatar, gamertag, and a 'Diamond III' rank badge, plus Wins/K:D/Level quick stats.",
+      "source": {
+        "html": "../../../../public/examples/application/player-card/1.html",
+        "tsx": "tsx/PlayerCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "White text on the gradient header maintains sufficient contrast against both ends of the violet-to-blue gradient."
+      ]
+    },
+    {
+      "id": "player-card-1-dark",
+      "title": "Player card (Dark)",
+      "description": "Player card adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/player-card/1-dark.html",
+        "tsx": "tsx/PlayerCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Stat row text and divider colors must meet WCAG AA contrast against the dark card body."
+      ]
+    }
+  ]
+}

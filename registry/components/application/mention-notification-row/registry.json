@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-mention-notification-row",
+  "title": "Mention Notification Row",
+  "description": "\"X mentioned you in Y\" notification row with an avatar, a quoted message snippet, a relative timestamp, and an unread dot, linking to the mention.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["mention", "notification", "collaboration", "chat"],
+  "useWhen": [
+    "Surfacing @-mention notifications in a chat, comments, or collaboration product.",
+    "You want the message context (channel/thread) and a snippet of the actual text, not just 'you were mentioned'.",
+    "Users need a one-click way to jump straight to the mention in its original context."
+  ],
+  "avoidWhen": [
+    "The notification isn't a mention with quotable text — use notification-center's generic row instead.",
+    "You need to show many notification types together with different icons/verbs — use activity-feed for a mixed stream.",
+    "There's no snippet available — omit the quoted line rather than rendering an empty one."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The row is a fixed max-w-md block that fills its container's available width up to that cap at all breakpoints.",
+  "accessibility": [
+    "The entire row is a single link, giving one large click/tap target rather than requiring precision on a small icon.",
+    "The unread indicator is a supplementary visual dot; read/unread state should also be reflected in list-level grouping or a badge count elsewhere in your UI.",
+    "The snippet is real quoted text, not an image, so it remains selectable and readable by screen readers."
+  ],
+  "compatibleWith": ["application-notification-center", "application-activity-feed", "application-avatar"],
+  "variants": [
+    {
+      "id": "mention-notification-row-1",
+      "title": "Mention notification row",
+      "description": "Avatar with unread dot, 'Ana Torres mentioned you in #design-review', a quoted snippet, and a relative timestamp.",
+      "source": {
+        "html": "../../../../public/examples/application/mention-notification-row/1.html",
+        "tsx": "tsx/MentionNotificationRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["unread"],
+      "accessibility": [
+        "The actor's name and the mentioning channel are both real text elements, not embedded in an image."
+      ]
+    },
+    {
+      "id": "mention-notification-row-1-dark",
+      "title": "Mention notification row (Dark)",
+      "description": "Mention notification row adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/mention-notification-row/1-dark.html",
+        "tsx": "tsx/MentionNotificationRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["unread"],
+      "accessibility": [
+        "Snippet background and unread-dot colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

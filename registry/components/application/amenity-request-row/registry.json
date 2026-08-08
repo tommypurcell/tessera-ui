@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-amenity-request-row",
+  "title": "Amenity Request Row",
+  "description": "Hotel amenity/service request list with an icon, room and request label, elapsed time, and a status pill (Pending, In progress, Complete, Cancelled).",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["hospitality", "hotel", "housekeeping", "requests"],
+  "useWhen": [
+    "Showing a hotel staff queue of guest service requests (towels, room service, late checkout, maintenance) with their current status.",
+    "You need a compact, scannable list rather than one detailed request at a time.",
+    "The four-state status vocabulary (Pending/In progress/Complete/Cancelled) matches your workflow as-is."
+  ],
+  "avoidWhen": [
+    "You're showing an internal access/permission approval, not a guest-facing service request — use `approval-request-card` for that unrelated context.",
+    "Your workflow needs different or additional states — extend the status map rather than force-fitting these four labels.",
+    "Only one request needs to be shown in detail — a single card reads better than a one-item list."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Single-column list at a fixed max width; each row stays a fixed icon–text–pill layout, with the label truncating before the pill ever wraps or shrinks.",
+  "accessibility": [
+    "Status is conveyed through both the pill's text label and its color, never color alone, so it reads correctly without color vision.",
+    "Each icon is aria-hidden since the adjacent text label already names the request type; the icon is a visual accelerator, not the sole label.",
+    "Rows are marked up as a <ul>/<li> list so assistive tech announces the item count and position, not a series of unrelated divs."
+  ],
+  "compatibleWith": ["application-guest-check-in-card", "application-approval-request-card"],
+  "variants": [
+    {
+      "id": "amenity-request-row-1",
+      "title": "Amenity Request Row",
+      "description": "Four requests (towels, room service, late checkout, maintenance) across Pending/In progress/Complete/Cancelled states.",
+      "source": {
+        "html": "../../../../public/examples/application/amenity-request-row/1.html",
+        "tsx": "tsx/AmenityRequestRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Each of the four statuses uses a distinct hue (amber/blue/emerald/red) reserved for that state only, never reused for a different meaning."
+      ]
+    },
+    {
+      "id": "amenity-request-row-1-dark",
+      "title": "Amenity Request Row (Dark)",
+      "description": "Amenity request row adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/amenity-request-row/1-dark.html",
+        "tsx": "tsx/AmenityRequestRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Status pills use low-opacity tinted backgrounds with their -400 text step to hold WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

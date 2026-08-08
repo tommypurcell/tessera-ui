@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-profile-stats-bar",
+  "title": "Profile Stats Bar",
+  "description": "Horizontal row of tappable profile stats (posts/followers/following), each a full-height button with a bold count and a muted label, divided by hairlines.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["profile", "social", "stats", "counts"],
+  "useWhen": [
+    "A social or community profile header needs to show a small fixed set of counts (posts, followers, following).",
+    "Each count should be tappable to navigate to its own list (a followers list, a posts grid).",
+    "You want equal-width, evenly divided cells rather than a free-form stat grid."
+  ],
+  "avoidWhen": [
+    "The counts aren't navigable — a plain stat-tile row communicates the same numbers with less implied interactivity.",
+    "There are more than 3-4 stats — this pattern is built for a short, fixed row; use a stat grid for more metrics.",
+    "The numbers need trend or comparison context (up/down from last period) — use stat-tile or metric-sparkline-card instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The bar is a fixed max-w-xs row whose cells flex evenly to fill the available width up to that cap at all breakpoints.",
+  "accessibility": [
+    "Each stat is a real <button>, giving keyboard focus and activation without added ARIA.",
+    "Large-count formatting (e.g. '12.4K') should be paired with a full unformatted value in a title attribute or accessible label if precision matters for assistive tech users.",
+    "Dividers use border color, not spacing alone, so cell boundaries remain visible for low-vision users."
+  ],
+  "compatibleWith": ["application-avatar", "application-stat-tile", "application-tabs"],
+  "variants": [
+    {
+      "id": "profile-stats-bar-1",
+      "title": "Profile stats bar",
+      "description": "Three-cell row (Posts, Followers, Following) with bold counts and muted labels, each cell a tappable button.",
+      "source": {
+        "html": "../../../../public/examples/application/profile-stats-bar/1.html",
+        "tsx": "tsx/ProfileStatsBarVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "Each cell has a distinct hover background so its tappable boundary is visually clear before activation."
+      ]
+    },
+    {
+      "id": "profile-stats-bar-1-dark",
+      "title": "Profile stats bar (Dark)",
+      "description": "Profile stats bar adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/profile-stats-bar/1-dark.html",
+        "tsx": "tsx/ProfileStatsBarVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "Divider and hover-state colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
