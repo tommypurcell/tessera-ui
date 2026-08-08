@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-md flex-col gap-8 p-6">
+    <!-- Step 1: scan + secret -->
+    <div class="rounded-xl border border-gray-800 bg-gray-900 p-5">
+      <div class="mb-4 flex items-center gap-2">
+        <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-indigo-500 text-[11px] font-semibold text-white">1</span>
+        <h3 class="text-sm font-semibold text-gray-100">Scan the QR code</h3>
+      </div>
+      <p class="mb-4 text-xs text-gray-400">Use an authenticator app like 1Password, Authy, or Google Authenticator.</p>
+
+      <div class="flex flex-col items-center gap-4">
+        <div class="flex h-36 w-36 items-center justify-center rounded-lg border border-gray-800 bg-gray-950" role="img" aria-label="QR code for authenticator app setup">
+          <svg class="h-24 w-24 text-gray-700" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5zm10-2h2v2h-2v-2zm4 0h2v2h-2v-2zm-4 4h2v2h-2v-2zm4 0h2v2h-2v-2zm-2 4h2v2h-2v-2z" />
+          </svg>
+        </div>
+
+        <div class="flex w-full items-center justify-between gap-2 rounded-md border border-gray-800 bg-gray-950 px-3 py-2">
+          <code class="truncate font-mono text-xs text-gray-400">JBSW Y3DP EHPK 3PXP</code>
+          <button type="button" class="shrink-0 text-xs font-medium text-indigo-400 hover:text-indigo-300">Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2: verification code -->
+    <div class="rounded-xl border border-gray-800 bg-gray-900 p-5">
+      <div class="mb-4 flex items-center gap-2">
+        <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-indigo-500 text-[11px] font-semibold text-white">2</span>
+        <h3 class="text-sm font-semibold text-gray-100">Enter the 6-digit code</h3>
+      </div>
+
+      <div class="flex items-center justify-center gap-2">
+        <input inputmode="numeric" maxlength="1" value="4" aria-label="Digit 1" class="h-11 w-10 rounded-lg border border-gray-700 bg-gray-950 text-center text-lg font-semibold text-white shadow-sm focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/40 focus:outline-none" />
+        <input inputmode="numeric" maxlength="1" value="1" aria-label="Digit 2" class="h-11 w-10 rounded-lg border border-gray-700 bg-gray-950 text-center text-lg font-semibold text-white shadow-sm focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/40 focus:outline-none" />
+        <input inputmode="numeric" maxlength="1" value="9" aria-label="Digit 3" class="h-11 w-10 rounded-lg border border-gray-700 bg-gray-950 text-center text-lg font-semibold text-white shadow-sm focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/40 focus:outline-none" />
+        <input inputmode="numeric" maxlength="1" value="" aria-label="Digit 4" class="h-11 w-10 rounded-lg border-2 border-indigo-400 bg-gray-950 text-center text-lg font-semibold text-white shadow-sm ring-2 ring-indigo-400/40 focus:outline-none" />
+        <input inputmode="numeric" maxlength="1" value="" aria-label="Digit 5" class="h-11 w-10 rounded-lg border border-gray-700 bg-gray-950 text-center text-lg font-semibold text-white shadow-sm focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/40 focus:outline-none" />
+        <input inputmode="numeric" maxlength="1" value="" aria-label="Digit 6" class="h-11 w-10 rounded-lg border border-gray-700 bg-gray-950 text-center text-lg font-semibold text-white shadow-sm focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/40 focus:outline-none" />
+      </div>
+
+      <button type="button" class="mt-5 w-full rounded-md bg-indigo-500 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-400">
+        Verify and enable
+      </button>
+    </div>
+
+    <!-- Step 3: recovery codes -->
+    <div class="rounded-xl border border-gray-800 bg-gray-900 p-5">
+      <div class="mb-1 flex items-center gap-2">
+        <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-[11px] font-semibold text-white">
+          <svg class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+          </svg>
+        </span>
+        <h3 class="text-sm font-semibold text-gray-100">Save your recovery codes</h3>
+      </div>
+      <p class="mb-4 text-xs text-gray-400">Store these somewhere safe. Each code can be used once if you lose access to your authenticator.</p>
+
+      <div class="grid grid-cols-2 gap-2 rounded-md border border-gray-800 bg-gray-950 p-3">
+        <code class="font-mono text-xs text-gray-300">7F2K-9QRT</code>
+        <code class="font-mono text-xs text-gray-300">3MXB-DE81</code>
+        <code class="font-mono text-xs text-gray-300">L4CN-772P</code>
+        <code class="font-mono text-xs text-gray-300">V9WA-K05H</code>
+        <code class="font-mono text-xs text-gray-300">Q1ZP-M63J</code>
+        <code class="font-mono text-xs text-gray-300">8YHF-2TRN</code>
+      </div>
+
+      <div class="mt-3 flex gap-2">
+        <button type="button" class="flex-1 rounded-md border border-gray-700 px-3 py-1.5 text-xs font-medium text-gray-200 shadow-sm hover:bg-gray-800">
+          Download
+        </button>
+        <button type="button" class="flex-1 rounded-md border border-gray-700 px-3 py-1.5 text-xs font-medium text-gray-200 shadow-sm hover:bg-gray-800">
+          Copy all
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

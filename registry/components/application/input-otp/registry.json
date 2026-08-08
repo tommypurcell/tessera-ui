@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "name": "application-input-otp",
+  "title": "Input OTP",
+  "description": "Segmented one-time-code field with auto-advance, backspace-to-previous navigation, and full-code paste distribution.",
+  "category": "application/input-otp",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "input-otp",
+    "otp",
+    "verification",
+    "code",
+    "pin",
+    "auth"
+  ],
+  "useWhen": [
+    "Segmented one-time-code field with auto-advance, backspace-to-previous navigation, and full-code paste distribution."
+  ],
+  "avoidWhen": [
+    "Avoid input otp when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Input OTP uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Associate each form field with a visible or programmatic label before production use.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "input-otp-1",
+      "title": "Input OTP",
+      "description": "Input OTP Segmented one-time-code field with auto-advance, backspace-to-previous navigation, and full-code paste distribution.",
+      "source": {
+        "html": "../../../../public/examples/application/input-otp/1.html",
+        "tsx": "tsx/InputOtpVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "input-otp-1-dark",
+      "title": "Input OTP (Dark)",
+      "description": "Input OTP Segmented one-time-code field with auto-advance, backspace-to-previous navigation, and full-code paste distribution.",
+      "source": {
+        "html": "../../../../public/examples/application/input-otp/1-dark.html",
+        "tsx": "tsx/InputOtpVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    }
+  ]
+}

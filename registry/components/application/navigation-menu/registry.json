@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "application-navigation-menu",
+  "title": "Navigation Menu",
+  "description": "Horizontal site navigation bar where a top-level item is either a plain link or a trigger that opens a mega-menu panel of grouped sub-links with descriptions.",
+  "category": "application/navigation",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["navigation", "nav", "mega-menu", "header", "site"],
+  "useWhen": [
+    "Building a top nav bar where one or more items need to reveal a panel of related sub-links, not just a flat list.",
+    "You want link descriptions visible in the dropdown, not just bare labels.",
+    "Marking the current page via aria-current for an active-state nav item."
+  ],
+  "avoidWhen": [
+    "The bar represents application commands (File, Edit, Save) rather than site sections — use Menubar instead.",
+    "Navigation is a vertical sidebar rather than a horizontal bar — use Side Menu or Vertical Menu instead.",
+    "You only need a single flat row of links with no dropdown panel — plain links in a nav element are simpler."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The bar is a centered single row; below the breakpoint where all items fit, collapse into a mobile menu trigger rather than wrapping or scrolling the bar.",
+  "accessibility": [
+    "The nav element carries aria-label so it's distinguishable from other landmark regions (e.g. a footer nav).",
+    "Menu triggers carry aria-haspopup and aria-expanded reflecting open state.",
+    "The current page link carries aria-current=\"page\".",
+    "The open panel closes on Escape or an outside click, returning the page to its prior focus state."
+  ],
+  "compatibleWith": ["application-menubar", "application-dropdown"],
+  "variants": [
+    {
+      "id": "navigation-menu-1",
+      "title": "Navigation Menu",
+      "description": "A four-item nav bar with the Products mega-menu open (four described sub-links in a 2-column grid), plus plain Pricing and Docs links and a current-page About link.",
+      "source": {
+        "html": "../../../../public/examples/application/navigation-menu/1.html",
+        "tsx": "tsx/NavigationMenuVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "open", "current"],
+      "accessibility": [
+        "The mega-menu panel groups related links with short descriptions so users understand each destination before navigating."
+      ]
+    },
+    {
+      "id": "navigation-menu-1-dark",
+      "title": "Navigation Menu (Dark)",
+      "description": "The same nav bar and mega-menu adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/navigation-menu/1-dark.html",
+        "tsx": "tsx/NavigationMenuVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "open", "current"],
+      "accessibility": [
+        "Active and current-page states remain visually distinct at dark-surface contrast."
+      ]
+    }
+  ]
+}

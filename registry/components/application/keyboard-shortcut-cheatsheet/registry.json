@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-keyboard-shortcut-cheatsheet",
+  "title": "Keyboard Shortcut Cheatsheet",
+  "description": "Modal dialog listing every keyboard shortcut grouped under headings (General, Editing, Navigation, View), conventionally opened with the \"?\" key.",
+  "category": "application/overlays",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["keyboard", "shortcut", "help", "modal", "reference"],
+  "useWhen": [
+    "Your application has enough keyboard shortcuts that they need a discoverable, grouped reference.",
+    "You want a conventional \"?\" trigger that power users already expect from apps like Linear, Superhuman, and GitHub.",
+    "Pairing with a Command Palette so users can discover shortcuts for actions they already found by search."
+  ],
+  "avoidWhen": [
+    "You only have two or three shortcuts — an inline Kbd hint next to each action is enough, a full modal is unnecessary.",
+    "The list needs to be searchable or filterable — this is a static reference grid, not a search UI."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The shortcut groups render in a 2-column grid at the dialog's max width; collapse to a single column on narrow viewports so labels and keys don't compress.",
+  "accessibility": [
+    "The dialog carries role=\"dialog\" and aria-modal=\"true\", with aria-labelledby pointing at the visible title.",
+    "Escape closes the dialog; clicking the backdrop also closes it, while clicking inside the panel does not.",
+    "Key glyphs use the native <kbd> element so assistive technology recognizes them as keyboard input.",
+    "Every shortcut pairs a text label with its keys so meaning never depends on the key glyph alone."
+  ],
+  "compatibleWith": ["application-kbd", "application-menubar"],
+  "variants": [
+    {
+      "id": "keyboard-shortcut-cheatsheet-1",
+      "title": "Keyboard Shortcut Cheatsheet",
+      "description": "A four-group shortcut reference (General, Editing, Navigation, View) in a 2-column grid, with a footer hint about the \"?\" trigger.",
+      "source": {
+        "html": "../../../../public/examples/application/keyboard-shortcut-cheatsheet/1.html",
+        "tsx": "tsx/KeyboardShortcutCheatsheetVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["open"],
+      "accessibility": [
+        "Focus should move into the dialog on open and return to the trigger on close in a full implementation."
+      ]
+    },
+    {
+      "id": "keyboard-shortcut-cheatsheet-1-dark",
+      "title": "Keyboard Shortcut Cheatsheet (Dark)",
+      "description": "The same four-group shortcut reference adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/keyboard-shortcut-cheatsheet/1-dark.html",
+        "tsx": "tsx/KeyboardShortcutCheatsheetVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["open"],
+      "accessibility": [
+        "Backdrop and panel contrast remain distinguishable against dark page content."
+      ]
+    }
+  ]
+}

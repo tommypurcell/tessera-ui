@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-command-menu-result-row",
+  "title": "Command Menu Result Row",
+  "description": "Reusable result-row primitive for command palettes, comboboxes, and search results: icon or avatar, title with meta text, and a trailing keyboard-shortcut hint or category badge.",
+  "category": "application/overlays",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["command", "combobox", "search", "listbox", "option", "primitive"],
+  "useWhen": [
+    "Rendering the individual result rows inside a Command Palette, combobox, or search dropdown.",
+    "You need a consistent row shape across mixed result types (actions, files, people) that differ only in icon and trailing hint.",
+    "The selected/highlighted row needs a distinct visual state for keyboard navigation."
+  ],
+  "avoidWhen": [
+    "The row is a standalone settings or list item outside a listbox — use the generic Item component instead.",
+    "Results don't need an icon, meta line, or trailing hint — a plain text option is simpler."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Each row is a single flex line; title and meta text truncate with an ellipsis rather than wrapping so row height stays constant while scrolling results.",
+  "accessibility": [
+    "Each row is role=\"option\" with aria-selected reflecting keyboard-highlighted state, meant to sit inside a role=\"listbox\" container.",
+    "Disabled rows carry aria-disabled and a real disabled button so they're skipped by keyboard interaction.",
+    "The trailing kbd hint uses the native <kbd> element; the category badge is plain text, not conveyed by color alone."
+  ],
+  "compatibleWith": ["application-command", "application-kbd", "application-item"],
+  "variants": [
+    {
+      "id": "command-menu-result-row-1",
+      "title": "Command Menu Result Row",
+      "description": "Four result rows in a listbox: a selected action with an Enter-key hint, a file result with a File badge, a person result with an avatar, and a disabled action explaining why.",
+      "source": {
+        "html": "../../../../public/examples/application/command-menu-result-row/1.html",
+        "tsx": "tsx/CommandMenuResultRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "selected", "disabled"],
+      "accessibility": [
+        "The selected row's aria-selected=\"true\" should stay in sync with arrow-key navigation in a full implementation."
+      ]
+    },
+    {
+      "id": "command-menu-result-row-1-dark",
+      "title": "Command Menu Result Row (Dark)",
+      "description": "The same four result rows adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/command-menu-result-row/1-dark.html",
+        "tsx": "tsx/CommandMenuResultRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "selected", "disabled"],
+      "accessibility": [
+        "Selected-row background and icon contrast remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}

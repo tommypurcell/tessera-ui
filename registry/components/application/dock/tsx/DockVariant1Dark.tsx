@@ -1,0 +1,121 @@
+import type { HTMLAttributes, ReactNode } from 'react'
+
+export type TesseraComponentState = 'default' | 'loading' | 'empty' | 'error'
+
+export type DockVariant1DarkProps = Omit<HTMLAttributes<HTMLDivElement>, 'children'> & {
+  /** Replaces the component's default content while preserving its outer container. */
+  children?: ReactNode
+  /** Transforms the default content without copying the component's internal markup. */
+  renderContent?: (defaultContent: ReactNode) => ReactNode
+  /** Renders immediately before the main content. */
+  before?: ReactNode
+  /** Renders immediately after the main content. */
+  after?: ReactNode
+  /** Selects an application state. The default state preserves the original component UI. */
+  state?: TesseraComponentState
+  loadingContent?: ReactNode
+  emptyContent?: ReactNode
+  errorContent?: ReactNode
+}
+
+/**
+ * Copy-and-own Tailwind component with content slots and explicit application states.
+ * Omitting the optional props preserves the original markup and visual design.
+ */
+export function DockVariant1Dark({
+  className,
+  children,
+  renderContent,
+  before,
+  after,
+  state = 'default',
+  loadingContent,
+  emptyContent,
+  errorContent,
+  ...props
+}: DockVariant1DarkProps) {
+  const defaultContent = (
+    <>
+      <nav aria-label="App dock" className="flex items-end gap-1 rounded-2xl border border-gray-700/60 bg-gray-900/70 p-2 shadow-lg backdrop-blur-md">
+            <a
+              href="#"
+              aria-label="Files"
+              className="group relative flex size-12 items-center justify-center rounded-xl bg-blue-500 text-white shadow-sm transition-all duration-150 hover:-translate-y-2 hover:shadow-md"
+            >
+              <svg className="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" />
+              </svg>
+              <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 rounded-md bg-gray-100 px-2 py-1 text-xs whitespace-nowrap text-gray-900 opacity-0 transition-opacity group-hover:opacity-100">Files</span>
+            </a>
+      
+            <a
+              href="#"
+              aria-label="Messages"
+              className="group relative flex size-12 items-center justify-center rounded-xl bg-green-500 text-white shadow-sm transition-all duration-150 hover:-translate-y-2 hover:shadow-md"
+            >
+              <svg className="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8-1.06 0-2.076-.163-3.02-.462L3 21l1.607-3.822C3.59 15.867 3 14.482 3 13c0-4.418 4.03-8 9-8s9 3.582 9 7z" />
+              </svg>
+              <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 rounded-md bg-gray-100 px-2 py-1 text-xs whitespace-nowrap text-gray-900 opacity-0 transition-opacity group-hover:opacity-100">Messages</span>
+            </a>
+      
+            <a
+              href="#"
+              aria-label="Calendar"
+              aria-current="page"
+              className="group relative flex size-12 -translate-y-2 items-center justify-center rounded-xl bg-red-500 text-white shadow-md transition-all duration-150 hover:-translate-y-3"
+            >
+              <svg className="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <span className="absolute -bottom-1.5 size-1 rounded-full bg-gray-100/80"></span>
+              <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 rounded-md bg-gray-100 px-2 py-1 text-xs whitespace-nowrap text-gray-900 opacity-0 transition-opacity group-hover:opacity-100">Calendar</span>
+            </a>
+      
+            <a
+              href="#"
+              aria-label="Settings"
+              className="group relative flex size-12 items-center justify-center rounded-xl bg-gray-600 text-white shadow-sm transition-all duration-150 hover:-translate-y-2 hover:shadow-md"
+            >
+              <svg className="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 rounded-md bg-gray-100 px-2 py-1 text-xs whitespace-nowrap text-gray-900 opacity-0 transition-opacity group-hover:opacity-100">Settings</span>
+            </a>
+      
+            <div className="mx-1 h-8 w-px self-center bg-gray-700"></div>
+      
+            <a
+              href="#"
+              aria-label="Trash"
+              className="group relative flex size-12 items-center justify-center rounded-xl bg-gray-700 text-gray-200 shadow-sm transition-all duration-150 hover:-translate-y-2 hover:shadow-md"
+            >
+              <svg className="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6M9 7V4a1 1 0 011-1h4a1 1 0 011 1v3M4 7h16" />
+              </svg>
+              <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 rounded-md bg-gray-100 px-2 py-1 text-xs whitespace-nowrap text-gray-900 opacity-0 transition-opacity group-hover:opacity-100">Trash</span>
+            </a>
+          </nav>
+    </>
+  )
+  const content =
+    children ??
+    (state === 'loading'
+      ? (loadingContent ?? <span role="status">Loading…</span>)
+      : state === 'empty'
+        ? (emptyContent ?? <span>No content available.</span>)
+        : state === 'error'
+          ? (errorContent ?? <span role="alert">Something went wrong.</span>)
+          : renderContent
+            ? renderContent(defaultContent)
+            : defaultContent)
+
+  return (
+    <div className={className} aria-busy={state === 'loading' || undefined} {...props}>
+      {before}
+      {content}
+      {after}
+    </div>
+  )
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-kbd",
+  "title": "Kbd",
+  "description": "Inline keyboard-shortcut hints and a shortcuts list panel, built on the native <kbd> element for a button trigger and an action/shortcut reference list.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["keyboard", "shortcut", "kbd", "help", "reference"],
+  "useWhen": [
+    "Showing a keyboard shortcut hint inline next to a button or menu item.",
+    "Building a shortcuts reference panel that pairs an action label with its key combination.",
+    "You want semantic <kbd> markup rather than styled <span> or <div> elements for key glyphs."
+  ],
+  "avoidWhen": [
+    "You only need a single bare key glyph with no surrounding layout — use the building-blocks Keycap primitive directly instead.",
+    "The shortcuts need to be searchable or filterable — pair this with a search input rather than extending it."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The shortcuts list is a single-column stack at all widths; the trigger button and its shortcut hint wrap together as one inline unit.",
+  "accessibility": [
+    "Key glyphs use the native <kbd> element so assistive technology recognizes them as keyboard input.",
+    "The shortcuts panel is a real list (<ul>/<li>) so screen readers announce the item count and position.",
+    "Symbol glyphs (⌘, ↑, ↓) are visual shorthand; pair with a text label in the same row so the shortcut is understandable without relying on the symbol alone."
+  ],
+  "compatibleWith": ["building-blocks-keycaps"],
+  "variants": [
+    {
+      "id": "kbd-1",
+      "title": "Kbd",
+      "description": "A trigger button with an inline ⌘S hint, and a four-row keyboard shortcuts list panel.",
+      "source": {
+        "html": "../../../../public/examples/application/kbd/1.html",
+        "tsx": "tsx/KbdVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Each row pairs a text label with its <kbd> keys so the shortcut is never conveyed by symbol alone."
+      ]
+    },
+    {
+      "id": "kbd-1-dark",
+      "title": "Kbd (Dark)",
+      "description": "The trigger button and shortcuts list adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/kbd/1-dark.html",
+        "tsx": "tsx/KbdVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Key glyph borders and shadows remain visible against the dark surface."
+      ]
+    }
+  ]
+}

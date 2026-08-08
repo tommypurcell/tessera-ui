@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-md flex-col gap-8 p-6">
+    <!-- Inline shortcut hint next to a button -->
+    <button
+      type="button"
+      class="flex w-fit items-center gap-2 rounded-md border border-gray-700 bg-gray-900 px-3 py-1.5 text-sm font-medium text-gray-200 shadow-sm hover:bg-gray-800"
+    >
+      Save
+      <span class="flex items-center gap-0.5">
+        <kbd class="inline-flex min-w-5 items-center justify-center rounded border border-gray-700 bg-gray-800 px-1.5 py-0.5 font-mono text-[11px] font-medium text-gray-300 shadow-[0_1px_0_#000]">⌘</kbd>
+        <kbd class="inline-flex min-w-5 items-center justify-center rounded border border-gray-700 bg-gray-800 px-1.5 py-0.5 font-mono text-[11px] font-medium text-gray-300 shadow-[0_1px_0_#000]">S</kbd>
+      </span>
+    </button>
+
+    <!-- Keyboard shortcuts list -->
+    <div class="rounded-lg border border-gray-800">
+      <div class="border-b border-gray-800 px-4 py-3">
+        <h3 class="text-sm font-semibold text-gray-100">Keyboard shortcuts</h3>
+      </div>
+      <ul class="divide-y divide-gray-800">
+        <li class="flex items-center justify-between px-4 py-2.5">
+          <span class="text-sm text-gray-300">Open command palette</span>
+          <span class="flex items-center gap-0.5">
+            <kbd class="inline-flex min-w-5 items-center justify-center rounded border border-gray-700 bg-gray-800 px-1.5 py-0.5 font-mono text-[11px] font-medium text-gray-300 shadow-[0_1px_0_#000]">⌘</kbd>
+            <kbd class="inline-flex min-w-5 items-center justify-center rounded border border-gray-700 bg-gray-800 px-1.5 py-0.5 font-mono text-[11px] font-medium text-gray-300 shadow-[0_1px_0_#000]">K</kbd>
+          </span>
+        </li>
+        <li class="flex items-center justify-between px-4 py-2.5">
+          <span class="text-sm text-gray-300">New item</span>
+          <span class="flex items-center gap-0.5">
+            <kbd class="inline-flex min-w-5 items-center justify-center rounded border border-gray-700 bg-gray-800 px-1.5 py-0.5 font-mono text-[11px] font-medium text-gray-300 shadow-[0_1px_0_#000]">⌘</kbd>
+            <kbd class="inline-flex min-w-5 items-center justify-center rounded border border-gray-700 bg-gray-800 px-1.5 py-0.5 font-mono text-[11px] font-medium text-gray-300 shadow-[0_1px_0_#000]">N</kbd>
+          </span>
+        </li>
+        <li class="flex items-center justify-between px-4 py-2.5">
+          <span class="text-sm text-gray-300">Close dialog</span>
+          <kbd class="inline-flex min-w-5 items-center justify-center rounded border border-gray-700 bg-gray-800 px-1.5 py-0.5 font-mono text-[11px] font-medium text-gray-300 shadow-[0_1px_0_#000]">Esc</kbd>
+        </li>
+        <li class="flex items-center justify-between px-4 py-2.5">
+          <span class="text-sm text-gray-300">Navigate results</span>
+          <span class="flex items-center gap-0.5">
+            <kbd class="inline-flex min-w-5 items-center justify-center rounded border border-gray-700 bg-gray-800 px-1.5 py-0.5 font-mono text-[11px] font-medium text-gray-300 shadow-[0_1px_0_#000]">↑</kbd>
+            <kbd class="inline-flex min-w-5 items-center justify-center rounded border border-gray-700 bg-gray-800 px-1.5 py-0.5 font-mono text-[11px] font-medium text-gray-300 shadow-[0_1px_0_#000]">↓</kbd>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

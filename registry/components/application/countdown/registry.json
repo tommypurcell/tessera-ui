@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-countdown",
+  "title": "Countdown",
+  "description": "Countdown timer components for sales, launches, and deadlines that count down to a fixed date or time in web applications.",
+  "category": "application/countdown",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "countdown",
+    "timer",
+    "clock",
+    "deadline",
+    "launch"
+  ],
+  "useWhen": [
+    "Countdown timer components for sales, launches, and deadlines that count down to a fixed date or time in web applications."
+  ],
+  "avoidWhen": [
+    "Avoid countdown when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Countdown uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "countdown-1",
+      "title": "Tiled days, hours, minutes, seconds countdown",
+      "description": "Tiled days, hours, minutes, seconds countdown Countdown timer components for sales, launches, and deadlines that count down to a fixed date or time in web applications.",
+      "source": {
+        "html": "../../../../public/examples/application/countdown/1.html",
+        "tsx": "tsx/CountdownVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "countdown-1-dark",
+      "title": "Tiled days, hours, minutes, seconds countdown (Dark)",
+      "description": "Tiled days, hours, minutes, seconds countdown Countdown timer components for sales, launches, and deadlines that count down to a fixed date or time in web applications.",
+      "source": {
+        "html": "../../../../public/examples/application/countdown/1-dark.html",
+        "tsx": "tsx/CountdownVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "countdown-2",
+      "title": "Compact inline countdown with call-to-action",
+      "description": "Compact inline countdown with call-to-action Countdown timer components for sales, launches, and deadlines that count down to a fixed date or time in web applications.",
+      "source": {
+        "html": "../../../../public/examples/application/countdown/2.html",
+        "tsx": "tsx/CountdownVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "countdown-2-dark",
+      "title": "Compact inline countdown with call-to-action (Dark)",
+      "description": "Compact inline countdown with call-to-action Countdown timer components for sales, launches, and deadlines that count down to a fixed date or time in web applications.",
+      "source": {
+        "html": "../../../../public/examples/application/countdown/2-dark.html",
+        "tsx": "tsx/CountdownVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}
