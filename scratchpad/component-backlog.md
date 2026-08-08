@@ -122,7 +122,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [ ] Command Menu Result Row — reusable list-item primitive with icon, label, meta, and trailing kbd hint; composes into palettes, comboboxes, and search results.
 - [ ] Multi-Select Combobox — searchable dropdown that returns multiple checked values rendered as inline chips; distinct from single Combobox and Tag Input.
 - [ ] Date Range Picker — dual-calendar range selector with preset shortcuts (Today, Last 7d, MTD); analytics staple beyond single DatePicker.
-- [ ] Color Picker — swatch grid + hue/alpha sliders + hex input popover; needed for theming/design tooling, absent from library.
+- [~] (builder-6) Color Picker — swatch grid + hue/alpha sliders + hex input popover; needed for theming/design tooling, absent from library.
 - [ ] Inline Edit Field — click-to-edit text that swaps to an input with save/cancel affordances; common for settings and table cells.
 - [x] (builder-6) Copy-to-Clipboard Field — read-only value box with a trailing copy button and "copied" confirmation; ubiquitous for API keys, invite links, IDs.
 - [ ] Bulk Action Bar — contextual toolbar that slides in when table rows are selected, showing count + batch actions; pairs with DataTable.
