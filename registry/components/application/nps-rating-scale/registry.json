@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-nps-rating-scale",
+  "title": "Rating Scale (NPS)",
+  "description": "0–10 Net Promoter Score rating row with real selectable state, colored by detractor (0–6), passive (7–8), or promoter (9–10) zone derived from the score itself.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["nps", "rating", "survey", "feedback", "form"],
+  "useWhen": [
+    "Running a Net Promoter Score survey (\"How likely are you to recommend us?\").",
+    "You want the detractor/passive/promoter zone coloring to update automatically from the selected score.",
+    "A single numeric 0–10 scale is the right input, not a star rating or emoji scale."
+  ],
+  "avoidWhen": [
+    "You need a qualitative 1–5 satisfaction scale — use rating-input-emoji instead.",
+    "You're collecting a star rating for a product/service, not likelihood-to-recommend — use the rating component instead.",
+    "You need to aggregate and display many responses — use rating-distribution instead of this single-response input."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The 11 buttons sit in a single row and shrink slightly on narrow viewports; wrap the row in a horizontal scroll container if space is very constrained.",
+  "accessibility": [
+    "The scale is a real fieldset/legend with role='radiogroup' and each score as role='radio' with aria-checked.",
+    "Zone color is supplementary — the selected score's number remains visible as white-on-color text.",
+    "End labels (\"Not at all likely\" / \"Extremely likely\") are always visible text, not implied by position alone."
+  ],
+  "compatibleWith": ["application-rating-distribution", "application-form-row", "application-toast-stack"],
+  "variants": [
+    {
+      "id": "nps-rating-scale-1",
+      "title": "Rating scale (NPS)",
+      "description": "0–10 NPS scale with score 9 selected, showing the green promoter-zone color, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/nps-rating-scale/1.html",
+        "tsx": "tsx/NpsRatingScaleVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "detractor", "passive", "promoter"],
+      "accessibility": [
+        "Selected-state color and the score number both change together, so the selection is never conveyed by color alone."
+      ]
+    },
+    {
+      "id": "nps-rating-scale-1-dark",
+      "title": "Rating scale (NPS) (Dark)",
+      "description": "The same 0–10 NPS scale with score 9 selected, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/nps-rating-scale/1-dark.html",
+        "tsx": "tsx/NpsRatingScaleVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "detractor", "passive", "promoter"],
+      "accessibility": [
+        "Zone colors must meet WCAG AA contrast against both the dark background and the white/dark selected text."
+      ]
+    }
+  ]
+}
