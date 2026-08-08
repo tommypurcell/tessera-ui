@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-md flex-col p-6">
+    <div class="rounded-xl border border-gray-200 bg-white">
+      <div class="border-b border-gray-200 px-5 py-4">
+        <h2 class="text-sm font-semibold text-gray-900">Interview scorecard</h2>
+        <p class="mt-0.5 text-xs text-gray-500">Priya Shah &middot; Senior Product Designer</p>
+      </div>
+
+      <div class="flex flex-col divide-y divide-gray-200">
+        <div class="px-5 py-3.5">
+          <div class="flex items-center justify-between">
+            <p class="text-sm font-medium text-gray-900">Communication</p>
+            <div class="flex items-center gap-1" role="radiogroup" aria-label="Communication rating">
+              <button type="button" class="h-6 w-6 rounded-full bg-indigo-600 text-xs font-semibold text-white">1</button>
+              <button type="button" class="h-6 w-6 rounded-full bg-indigo-600 text-xs font-semibold text-white">2</button>
+              <button type="button" class="h-6 w-6 rounded-full bg-indigo-600 text-xs font-semibold text-white">3</button>
+              <button type="button" class="h-6 w-6 rounded-full bg-indigo-600 text-xs font-semibold text-white">4</button>
+              <button type="button" class="h-6 w-6 rounded-full border border-gray-300 text-xs font-medium text-gray-400">5</button>
+            </div>
+          </div>
+          <p class="mt-1 text-xs text-gray-500">Clear, structured answers with good follow-up questions.</p>
+        </div>
+
+        <div class="px-5 py-3.5">
+          <div class="flex items-center justify-between">
+            <p class="text-sm font-medium text-gray-900">System design</p>
+            <div class="flex items-center gap-1" role="radiogroup" aria-label="System design rating">
+              <button type="button" class="h-6 w-6 rounded-full bg-indigo-600 text-xs font-semibold text-white">1</button>
+              <button type="button" class="h-6 w-6 rounded-full bg-indigo-600 text-xs font-semibold text-white">2</button>
+              <button type="button" class="h-6 w-6 rounded-full border border-gray-300 text-xs font-medium text-gray-400">3</button>
+              <button type="button" class="h-6 w-6 rounded-full border border-gray-300 text-xs font-medium text-gray-400">4</button>
+              <button type="button" class="h-6 w-6 rounded-full border border-gray-300 text-xs font-medium text-gray-400">5</button>
+            </div>
+          </div>
+          <p class="mt-1 text-xs text-gray-500">Solid fundamentals, needs more depth on tradeoffs.</p>
+        </div>
+
+        <div class="px-5 py-3.5">
+          <label for="scorecard-notes" class="text-sm font-medium text-gray-900">Additional notes</label>
+          <textarea
+            id="scorecard-notes"
+            rows="2"
+            class="mt-2 w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 shadow-sm focus:border-gray-500 focus:outline-none"
+          >
+Strong communicator, would pair well with the design team.</textarea
+          >
+        </div>
+      </div>
+
+      <div class="border-t border-gray-200 px-5 py-4">
+        <p class="mb-2 text-xs font-medium text-gray-700">Overall recommendation</p>
+        <div class="flex gap-2">
+          <button type="button" class="flex-1 rounded-md bg-emerald-600 px-3 py-1.5 text-xs font-medium text-white shadow-sm">Strong hire</button>
+          <button type="button" class="flex-1 rounded-md border border-gray-300 px-3 py-1.5 text-xs font-medium text-gray-700 shadow-sm hover:bg-gray-50">Hire</button>
+          <button type="button" class="flex-1 rounded-md border border-gray-300 px-3 py-1.5 text-xs font-medium text-gray-700 shadow-sm hover:bg-gray-50">No hire</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
