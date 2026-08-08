@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-currency-input",
+  "title": "Currency Input",
+  "description": "Masked money field with a currency symbol prefix, thousands grouping in the displayed value, and a currency-code selector.",
+  "category": "application/forms",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["currency", "money", "price", "input", "form", "billing"],
+  "useWhen": [
+    "Collecting a monetary amount such as a price, refund, or invoice line item.",
+    "The product supports more than one currency and the user needs to pick which one applies.",
+    "You want the symbol and currency code visually attached to the field rather than in a separate label."
+  ],
+  "avoidWhen": [
+    "Only a single fixed currency is ever used and switching adds no value — drop the currency select and hardcode the symbol prefix.",
+    "You need full locale-aware parsing/formatting (grouping separators, decimal marks) — wire that with a library like Intl.NumberFormat and pass the formatted string in as `value`.",
+    "The value isn't actually money (e.g. a plain quantity) — use inputs or quantity-inputs instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The field is a fixed max-w-xs block that fills its container's available width up to that cap at all breakpoints.",
+  "accessibility": [
+    "The currency symbol is aria-hidden since it's redundant with the visible currency code in the adjacent select.",
+    "The currency <select> has a visually hidden but programmatically available label so screen readers announce its purpose.",
+    "The error message uses role=\"alert\" and is linked via aria-describedby, with aria-invalid set on the input in the error state."
+  ],
+  "compatibleWith": ["application-inputs", "application-form-row", "application-selects"],
+  "variants": [
+    {
+      "id": "currency-input-1",
+      "title": "Currency input",
+      "description": "Price field with a dollar-sign prefix, formatted amount, and a currency-code selector.",
+      "source": {
+        "html": "../../../../public/examples/application/currency-input/1.html",
+        "tsx": "tsx/CurrencyInputVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "focus"],
+      "accessibility": [
+        "Focus-within styling on the wrapper makes the whole control read as focused when either the input or select has focus."
+      ]
+    },
+    {
+      "id": "currency-input-1-dark",
+      "title": "Currency input (Dark)",
+      "description": "Currency input adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/currency-input/1-dark.html",
+        "tsx": "tsx/CurrencyInputVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "focus"],
+      "accessibility": [
+        "Input, symbol, and select text colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    },
+    {
+      "id": "currency-input-2",
+      "title": "Error state",
+      "description": "Same field with a validation error: red border/ring and an alert message explaining the constraint that was violated.",
+      "source": {
+        "html": "../../../../public/examples/application/currency-input/2.html",
+        "tsx": "tsx/CurrencyInputVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["error"],
+      "accessibility": [
+        "aria-invalid and aria-describedby are set together so the error is announced when the field receives focus."
+      ]
+    },
+    {
+      "id": "currency-input-2-dark",
+      "title": "Error state (Dark)",
+      "description": "Currency input error state adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/currency-input/2-dark.html",
+        "tsx": "tsx/CurrencyInputVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["error"],
+      "accessibility": [
+        "Error border and message colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
