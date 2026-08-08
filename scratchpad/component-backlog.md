@@ -550,7 +550,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-4) Vehicle Spec Card — photo + certified badge + mileage/fuel/transmission chips + price + CTA, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #17)
 - [x] (builder-8) Fuel / Charge Gauge — vertical capsule fill-level indicator with computed range estimate and low-level warning state, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [x] (builder-7) Trip Summary Card — header w/ route line + 2x2 stat grid (distance/duration/speed/efficiency), light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
-- [~] (builder-9) Service Reminder Row — maintenance item with due-mileage bar and schedule action; distinct from sync-status-row.
+- [x] (builder-9) Service Reminder Row — 2 variants (single reminder with progress, reminder list with urgency) light+dark, registry.json, MDX entry, screenshots
 
 <!-- === WAVE 10 (deep-backlog refill, post-306) — frontier verticals, verified non-dupe against registry === -->
 
@@ -567,14 +567,14 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-8) Watch Progress Bar — video thumbnail with duration badge and resume-position overlay bar, fill computed from real watched/total minutes, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [x] (builder-2) Channel Header — gradient banner, avatar, K-formatted subscriber count, and a real toggling subscribe/subscribed button (verified via Playwright click); light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
 - [x] (builder-6) Live Stream Badge — 2 variants (thumbnail overlay with pulsing LIVE+viewer count, standalone header badge), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
-- [~] (builder-2) Playback Speed Menu — speed option list with checkmark and quality submenu; distinct from dropdown.
-- [~] (builder-10) Up-Next Autoplay Card — countdown-to-next-video card with cancel and play-now; distinct from toast-action-undo.
+- [x] (builder-2) Playback Speed Menu — two-panel Settings menu, checkmarked speed list + navigable Quality submenu with back button, full click-through flow verified in Playwright (speed select, submenu open, quality select, auto-return); light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
+- [x] (builder-10) Up-Next Autoplay Card — 2 variants (thumbnail card w/ countdown ring, video overlay w/ progress bar), light+dark, live countdown verified, registry+tsx generated, screenshots verified, pushed
 
 <!-- Theme: Email client -->
-- [~] (builder-7) Email List Row — sender, subject, snippet, time, and unread/star/attachment marks; distinct from media-object-row.
+- [x] (builder-7) Email List Row — unread dot + toggleable star + sender/subject/snippet + attachment icon, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed + rebased onto main (PR #26)
 - [~] (builder-4) Email Reading Pane — header with from/to, actions bar, and body; distinct from split-view-layout.
-- [ ] Compose Window — minimizable message composer with to/subject/body and send; distinct from comment-composer.
-- [ ] Folder / Label Sidebar — mail folders with unread counts and colored labels; distinct from settings-nav-list.
+- [x] (builder-5) Compose Window — minimizable message composer with to/subject/body and send; distinct from comment-composer. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
+- [~] (builder-7) Folder / Label Sidebar — mail folders with unread counts and colored labels; distinct from settings-nav-list.
 - [ ] Thread Collapse — stacked quoted-reply chain with expand-all; distinct from comment-thread.
 
 <!-- Theme: Developer API console -->
@@ -586,16 +586,16 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: Data pipeline / ETL -->
 - [ ] Pipeline Flow Node — draggable process node with input/output ports and status; distinct from sankey-flow-diagram.
-- [ ] Job Run Row — pipeline run with status, duration, records-processed, and logs link; distinct from build-status-row.
-- [~] (builder-8) Schema Field List — table-schema rows with name, type badge, nullable, and PK marker; distinct from feature-flag-table.
-- [ ] Data Quality Score — pass/fail check summary ring with failing-rule list; distinct from lead-score-meter.
+- [~] (builder-8) Job Run Row — pipeline run with status, duration, records-processed, and logs link; distinct from build-status-row.
+- [x] (builder-8) Schema Field List — 5-column users table w/ PK icon marker, type badges, nullable/not-null states, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
+- [~] (builder-9) Data Quality Score — pass/fail check summary ring with failing-rule list; distinct from lead-score-meter.
 - [ ] Column Mapping Rows — source→target field mapping with dropdowns and auto-match; distinct from import-wizard.
 
 <!-- Theme: Survey builder -->
 - [ ] Question Type Palette — draggable question-type cards (MC, rating, text, scale); distinct from query-builder.
 - [~] (builder-6) Likert Scale Row — labeled agree↔disagree radio row with midpoint; distinct from radio-groups.
 - [ ] Survey Progress Header — "Question X of N" bar with back/next; distinct from multi-step-progress.
-- [ ] Response Summary Bar — per-option horizontal result bars with % and count; distinct from poll-vote-card.
+- [~] (builder-2) Response Summary Bar — per-option horizontal result bars with % and count; distinct from poll-vote-card.
 - [ ] Matrix Question Grid — rows × columns radio matrix for bulk rating; distinct from notification-preferences-grid.
 - [ ] Logic Branch Row — "if answer = X go to Y" conditional-flow rule row; distinct from conditional-field-group.
 
