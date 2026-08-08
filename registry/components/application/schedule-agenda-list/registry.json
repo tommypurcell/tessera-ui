@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "name": "application-schedule-agenda-list",
+  "title": "Schedule Agenda List",
+  "description": "Conference-style agenda grouped under a day heading, with each session row showing time, title, speaker(s), and a colored track badge.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["schedule", "agenda", "conference", "sessions", "events"],
+  "useWhen": [
+    "Displaying a conference, summit, or multi-track event schedule for a single day.",
+    "You need to convey track (Engineering, Design, Main Stage) via a colored badge alongside time and speaker.",
+    "Distinct from Itinerary Timeline, which shows a multi-day travel itinerary with per-activity-type icons (flight, hotel, tour) rather than speaker/track conference metadata."
+  ],
+  "avoidWhen": [
+    "Showing a personal travel itinerary spanning flights, hotels, and activities — use Itinerary Timeline instead.",
+    "The schedule has no track/category distinction — a simpler time-ordered list may suffice."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Time stays in a fixed-width left column so session titles align vertically across rows regardless of title length.",
+  "accessibility": [
+    "Track is conveyed by both a text label and a color, never color alone.",
+    "Non-session rows like breaks are visually de-emphasized via muted text rather than removed, preserving the schedule's time continuity."
+  ],
+  "compatibleWith": ["application-itinerary-timeline", "application-event-countdown-hero"],
+  "variants": [
+    {
+      "id": "schedule-agenda-list-1",
+      "title": "Schedule Agenda List",
+      "description": "Day 1 agenda with keynote, two track sessions, a lunch break, and another track session, each with time/title/speaker/track badge.",
+      "source": {
+        "html": "../../../../public/examples/application/schedule-agenda-list/1.html",
+        "tsx": "tsx/ScheduleAgendaListVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "break"],
+      "accessibility": [
+        "Track badges pair a text label with color to remain legible without color perception."
+      ]
+    },
+    {
+      "id": "schedule-agenda-list-1-dark",
+      "title": "Schedule Agenda List (Dark)",
+      "description": "The same day agenda adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/schedule-agenda-list/1-dark.html",
+        "tsx": "tsx/ScheduleAgendaListVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "break"],
+      "accessibility": [
+        "Track badge and muted-break text contrast remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}
