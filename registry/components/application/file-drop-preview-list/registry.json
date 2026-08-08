@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "name": "application-file-drop-preview-list",
+  "title": "File Drop Preview List",
+  "description": "A drop zone paired with a per-file preview list showing upload progress, completion, and error states with cancel/retry actions.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["application", "upload", "file", "progress", "drop-zone"],
+  "useWhen": [
+    "Users upload multiple files and need per-file feedback — progress, completion, or failure — rather than a single aggregate indicator.",
+    "A failed upload needs its own retry action without forcing the user to restart the entire batch.",
+    "The list of files being uploaded should already be visible below or beside the drop zone that triggered them."
+  ],
+  "avoidWhen": [
+    "Only a single file is ever uploaded at a time with no need for a persistent list — the base file-uploaders component's drop zone alone is enough.",
+    "You only need the file rows without a drop zone — use the compact list variant, or compose your own trigger around it."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The list stacks vertically at any width; row content truncates the filename with an ellipsis rather than wrapping, keeping the row height and trailing status/action consistent.",
+  "accessibility": [
+    "The file list is a <ul> with an aria-label describing its purpose, so screen readers announce it as a distinct region separate from the drop zone.",
+    "Each progress bar communicates percentage as visible text alongside the fill, not just visually.",
+    "Cancel and retry buttons carry specific aria-labels or text naming the affected file, not a generic 'Cancel' or 'Retry', so multiple in-flight files remain distinguishable."
+  ],
+  "compatibleWith": ["application-file-uploaders", "application-progress-bars"],
+  "variants": [
+    {
+      "id": "file-drop-preview-list-1",
+      "title": "With drop zone",
+      "description": "Dashed drop zone above a file list showing uploading (progress bar + cancel), complete (checkmark), and error (retry) rows",
+      "source": {
+        "html": "../../../../public/examples/application/file-drop-preview-list/1.html",
+        "tsx": "tsx/FileDropPreviewListVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["uploading", "complete", "error"],
+      "accessibility": ["The cancel button's aria-label names the specific file being cancelled."]
+    },
+    {
+      "id": "file-drop-preview-list-1-dark",
+      "title": "With drop zone (Dark)",
+      "description": "Dashed drop zone above a file list showing uploading (progress bar + cancel), complete (checkmark), and error (retry) rows",
+      "source": {
+        "html": "../../../../public/examples/application/file-drop-preview-list/1-dark.html",
+        "tsx": "tsx/FileDropPreviewListVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["uploading", "complete", "error"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces, including the error row treatment."]
+    },
+    {
+      "id": "file-drop-preview-list-2",
+      "title": "List only",
+      "description": "Compact file list without a drop zone, for composing beside your own upload trigger",
+      "source": {
+        "html": "../../../../public/examples/application/file-drop-preview-list/2.html",
+        "tsx": "tsx/FileDropPreviewListVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["uploading", "complete"],
+      "accessibility": ["Progress percentage is exposed as visible text, not only the bar's visual width."]
+    },
+    {
+      "id": "file-drop-preview-list-2-dark",
+      "title": "List only (Dark)",
+      "description": "Compact file list without a drop zone, for composing beside your own upload trigger",
+      "source": {
+        "html": "../../../../public/examples/application/file-drop-preview-list/2-dark.html",
+        "tsx": "tsx/FileDropPreviewListVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["uploading", "complete"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    }
+  ]
+}
