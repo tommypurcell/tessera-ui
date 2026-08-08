@@ -256,7 +256,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-4) Image Cropper — draggable crop frame (rule-of-thirds grid + corner handles + mask), aspect presets, zoom slider, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #17)
 - [x] (builder-2) Avatar Uploader — circular drop-zone, hover camera overlay, real file input driving live object-URL preview, Replace/Remove actions, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components
 - [x] (builder-2) Media Object Row — 3 podcast-episode rows (thumbnail, truncating title/meta, trailing play button), reusable renderAction slot for custom trailing controls, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components
-- [~] (builder-4) PDF Page Thumbnails — scrollable page-thumbnail rail with active-page highlight; absent from library.
+- [x] (builder-4) PDF Page Thumbnails — scrollable thumbnail rail (nav landmark, aria-current) + main viewer pane w/ page count, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #17)
 
 <!-- Theme: Collaboration -->
 - [x] (builder-2) Reaction Bar — aggregated reaction pills w/ per-emoji count, toggleable reacted-by-you state (aria-pressed, count updates live), dashed add-reaction trigger, light+dark, registry+tsx+MDX, screenshot verified (caught+fixed a wrong-icon-path bug pre-commit), committed to builder-2-components
@@ -319,10 +319,10 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-10) Rate Limit Notice — 2 variants (inline warning banner w/ live countdown, compact card w/ disabled→enabled retry button), light+dark, both dynamic states verified via wait+screenshot, registry+tsx generated, screenshots verified, pushed
 - [x] (builder-2) Health Check Grid — 2x2 service tile grid (live-pulse dot on operational, amber degraded, highlighted red outage tile), status conveyed via color+text label together, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components
 - [x] (builder-8) Sync Status Row — 3-state row (syncing/synced/failed) w/ spinning icon + disabled-while-syncing Sync now action (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
-- [~] (builder-9) Maintenance Mode Screen — full-page scheduled-downtime notice with ETA; distinct from error-page.
+- [x] (builder-9) Maintenance Mode Screen — 2 variants (ETA notice, countdown with notify form) light+dark, registry.json, MDX entry, screenshots
 
 <!-- Theme: Data entry (more) -->
-- [ ] Multi-Step Form Progress — top progress bar + step labels wrapping a paged form; distinct from stepper-wizard (progress-header variant).
+- [~] (builder-6) Multi-Step Form Progress — top progress bar + step labels wrapping a paged form; distinct from stepper-wizard (progress-header variant).
 - [x] (builder-3) Inline Add Row — task table w/ always-visible footer inputs (task name + assignee), Add + clear actions, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 - [x] (builder-9) Slug Input — 2 variants (always-editable slug field, read-only preview with Edit trigger) light+dark, registry.json, MDX entry, screenshots
 - [x] (builder-2) Tag Filter Group — 6 independently toggleable tag pills, real multi-select aria-pressed state, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components
@@ -398,7 +398,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [ ] Conditional Field Group — form section that shows/hides based on a controlling input; absent from library.
 - [ ] Multi-File Attachment Row — attached-file chips with size, type icon, and remove; distinct from file-uploaders.
 - [ ] OTP Resend Timer — code-entry footer with resend countdown and attempt counter; distinct from InputOTP.
-- [ ] Consent Checklist — required agreement checkboxes gating a submit button; distinct from checkboxes.
+- [~] (builder-9) Consent Checklist — required agreement checkboxes gating a submit button; distinct from checkboxes.
 - [ ] Form Autosave Banner — sticky "changes saved / unsaved" bar with save/discard; distinct from save-status-indicator.
 
 <!-- Theme: Finance / billing -->
@@ -407,3 +407,50 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [ ] Currency Converter — dual amount fields with rate and swap button; distinct from currency-input.
 - [ ] Subscription Tier Toggle — monthly/annual billing switch with savings badge; distinct from theme-toggle-switch.
 - [ ] Spending Category Donut — expense breakdown donut with legend and total in center; distinct from donut-chart (finance framing).
+
+<!-- === WAVE 7 (deep-backlog refill, post-220) — new verticals, verified non-dupe against registry === -->
+
+<!-- Theme: Healthcare -->
+- [ ] Appointment Slot Card — provider + time + type card with book/reschedule; distinct from booking-confirmation (list slot).
+- [ ] Vitals Stat Row — labeled vital signs (HR/BP/SpO2) with normal-range coloring; distinct from stats.
+- [ ] Medication Schedule List — dose rows with time, quantity, and taken/skip toggle; absent from library.
+- [ ] Symptom Severity Slider — labeled 0–10 pain/severity scale with descriptors; distinct from range-inputs.
+- [ ] Care Timeline — patient-history events with clinician avatars and visit types; distinct from timelines (clinical framing).
+
+<!-- Theme: Education -->
+- [ ] Course Progress Card — lesson completion ring with modules-remaining and continue CTA; distinct from goal-progress-card.
+- [ ] Quiz Question Card — prompt with selectable answer options and correct/incorrect reveal; absent from library.
+- [ ] Lesson Playlist — ordered lesson rows with duration, lock, and completed checks; distinct from task-checklist.
+- [ ] Grade Badge Scale — A–F / percentage grade pill with color scale; distinct from badges.
+- [ ] Flashcard Flip — front/back card with flip animation and know/review actions; distinct from card-stack.
+
+<!-- Theme: Real estate -->
+- [ ] Property Listing Card — photo, price, beds/baths/sqft specs, and save; distinct from product-card (property specs).
+- [ ] Map Listing Split — map pane + scrollable listing list with hover-sync highlight; distinct from split-view-layout.
+- [ ] Mortgage Calculator — price/down/rate/term inputs with monthly-payment output; distinct from currency-converter.
+- [ ] Amenities Grid — icon+label feature grid with included/excluded states; distinct from grids.
+
+<!-- Theme: Travel -->
+- [ ] Flight Route Card — origin→destination with times, duration, stops, and airline; absent from library.
+- [ ] Booking Search Bar — location + date-range + guests combined search widget; distinct from data-filter-bar.
+- [ ] Seat Map Selector — grid of seats with available/taken/selected and legend; absent from library.
+- [ ] Itinerary Timeline — day-grouped trip events with time, location, and type icons; distinct from timelines.
+- [ ] Price Calendar — month grid with per-day fare and cheapest-day highlight; distinct from mini-calendar-widget.
+
+<!-- Theme: Analytics / dashboard (more) -->
+- [ ] Anomaly Alert Row — metric with expected-band, spike marker, and severity; absent from library.
+- [ ] Conversion Rate Tile — rate % with numerator/denominator and trend; distinct from big-number-delta-tile.
+- [ ] Attribution Bar — channel contribution stacked bar with % labels; distinct from segment-breakdown-bar.
+- [ ] Retention Curve Chart — decaying % line over days-since-signup with cohort selector; distinct from cohort-retention-grid.
+
+<!-- Theme: Dev tools / infra (more) -->
+- [ ] Resource Usage Gauges — CPU/memory/disk radial gauges row; distinct from gauge-chart (grouped infra).
+- [ ] Deployment Timeline — release events with commit, author, env, and rollback; distinct from version-history-list.
+- [ ] Feature Flag Table — flags with environment columns, rollout %, and toggle per env; distinct from feature-flag-toggle-row.
+- [ ] Error Rate Sparkline Row — endpoint rows with error % and inline trend; distinct from trend-sparkbar-row (error framing).
+
+<!-- Theme: Utility (more) -->
+- [ ] Cookie Preference Center — categorized consent toggles with save/accept-all; distinct from cookie banner.
+- [ ] Rate Us Prompt — inline star prompt with dismiss and feedback branch; distinct from rating-input-emoji.
+- [ ] Progress Toast Group — multiple concurrent task-progress toasts in a stack; distinct from toast-stack (progress-typed).
+- [ ] Empty Search Suggestions — no-results view offering popular/related query chips; distinct from no-results-search-state.
