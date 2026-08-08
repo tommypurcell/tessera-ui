@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-gas-fee-selector",
+  "title": "Gas Fee Selector",
+  "description": "Slow/Average/Fast network-fee tier cards showing estimated time and cost, with a total-fee summary, driven by a typed tiers prop contract.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["gas-fee", "web3", "crypto", "transaction", "fee-selector"],
+  "useWhen": [
+    "Blockchain or crypto wallet transactions where users trade off confirmation speed against network fee cost.",
+    "Exactly three tiers (slow/average/fast) communicate the tradeoff clearly without overwhelming choice.",
+    "A summary line should restate the currently selected tier's total fee."
+  ],
+  "avoidWhen": [
+    "The fee is fixed with no tier choice — a plain fee line item is simpler.",
+    "You need more than three granular options or a custom fee input — pair this with an advanced/custom fee toggle instead of stretching this pattern.",
+    "The domain isn't fee-vs-speed tradeoffs — use the Delivery Slot Picker pattern instead for windows with different pricing, which isn't tied to network-fee framing."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The three tiers sit in a fixed 3-column grid that scales down naturally; each card keeps intrinsic sizing so labels remain legible at narrow widths.",
+  "accessibility": [
+    "Each tier is a real radio input wrapped in a label (visually hidden via sr-only) so keyboard and screen-reader users get native radio-group behavior.",
+    "The selected tier uses a thicker border plus a tinted background, not border color alone, to remain distinguishable.",
+    "The bottom summary line restates the estimated fee as visible text, giving a single confirmable value independent of which tier card is visually selected."
+  ],
+  "compatibleWith": ["application-dialog", "application-delivery-slot-picker"],
+  "variants": [
+    {
+      "id": "gas-fee-selector-1",
+      "title": "Gas Fee Selector",
+      "description": "Three-tier fee selector (Slow/Average/Fast) with per-tier ETA and cost, and a bottom estimated-fee summary line.",
+      "source": {
+        "html": "../../../../public/examples/application/gas-fee-selector/1.html",
+        "tsx": "tsx/GasFeeSelectorVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "Tier cards use native radio inputs (visually hidden) so selection state is exposed to assistive technology without custom ARIA."
+      ]
+    },
+    {
+      "id": "gas-fee-selector-1-dark",
+      "title": "Gas Fee Selector (Dark)",
+      "description": "Network fee tier selector adapted for dark surfaces with the same tier-card and summary structure.",
+      "source": {
+        "html": "../../../../public/examples/application/gas-fee-selector/1-dark.html",
+        "tsx": "tsx/GasFeeSelectorVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "Tier card borders, ETA/cost text, and the summary line must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-md bg-gray-950 p-6">
+    <div class="rounded-xl border border-gray-800 bg-gray-900 p-5">
+      <h3 class="text-sm font-semibold text-white">Network fee</h3>
+
+      <div class="mt-3 grid grid-cols-3 gap-2">
+        <label class="flex cursor-pointer flex-col items-center gap-1 rounded-lg border border-gray-800 px-2 py-3 hover:bg-gray-800">
+          <input type="radio" name="gas-fee" class="sr-only" />
+          <span class="text-xs font-medium text-gray-400">Slow</span>
+          <span class="text-sm font-semibold text-white">~5 min</span>
+          <span class="text-xs text-gray-500">$0.42</span>
+        </label>
+
+        <label class="flex cursor-pointer flex-col items-center gap-1 rounded-lg border-2 border-white bg-gray-800 px-2 py-3">
+          <input type="radio" name="gas-fee" checked class="sr-only" />
+          <span class="text-xs font-medium text-white">Average</span>
+          <span class="text-sm font-semibold text-white">~1 min</span>
+          <span class="text-xs text-gray-400">$1.15</span>
+        </label>
+
+        <label class="flex cursor-pointer flex-col items-center gap-1 rounded-lg border border-gray-800 px-2 py-3 hover:bg-gray-800">
+          <input type="radio" name="gas-fee" class="sr-only" />
+          <span class="text-xs font-medium text-gray-400">Fast</span>
+          <span class="text-sm font-semibold text-white">~15 sec</span>
+          <span class="text-xs text-gray-500">$2.87</span>
+        </label>
+      </div>
+
+      <div class="mt-4 flex items-center justify-between border-t border-gray-800 pt-3 text-sm">
+        <span class="text-gray-400">Estimated fee</span>
+        <span class="font-medium text-white">$1.15</span>
+      </div>
+    </div>
+  </body>
+</html>
