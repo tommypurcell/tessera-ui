@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-menubar",
+  "title": "Menubar",
+  "description": "Horizontal application menu bar (File/Edit/View style) where each top-level label opens a dropdown of menu items, with full keyboard navigation between menus.",
+  "category": "application/navigation",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["menu", "navigation", "dropdown", "desktop", "toolbar"],
+  "useWhen": [
+    "Building a desktop-style application shell with top-level menus like File, Edit, View, Help.",
+    "You need several related dropdown menus that share one horizontal bar and keyboard-navigate between each other.",
+    "Menu items benefit from paired keyboard-shortcut hints and disabled/separator rows."
+  ],
+  "avoidWhen": [
+    "You only need a single dropdown off one trigger — use the simpler Dropdown component instead.",
+    "The navigation represents site sections rather than commands — use Navigation Menu or Vertical Menu instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The bar is a single-row inline-flex; on narrow viewports collapse it into a single trigger (e.g. a hamburger) rather than wrapping menu labels.",
+  "accessibility": [
+    "Each top-level trigger carries aria-haspopup=\"menu\" and aria-expanded reflecting open state.",
+    "Open menus use role=\"menu\" with role=\"menuitem\" children so assistive technology announces the menu semantics.",
+    "ArrowLeft/ArrowRight move focus between top-level menus, matching the WAI-ARIA menubar pattern; Escape closes the open menu and returns focus to its trigger.",
+    "Disabled items carry the disabled attribute so they are skipped by keyboard interaction and announced as unavailable."
+  ],
+  "compatibleWith": ["application-kbd", "application-dropdown"],
+  "variants": [
+    {
+      "id": "menubar-1",
+      "title": "Menubar",
+      "description": "A four-item menu bar (File, Edit, View, Help) with the File menu open, showing shortcut-hint items, a separator, and a disabled item.",
+      "source": {
+        "html": "../../../../public/examples/application/menubar/1.html",
+        "tsx": "tsx/MenubarVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "open", "disabled"],
+      "accessibility": [
+        "Keyboard users can move between File/Edit/View/Help with the arrow keys once any menu has focus."
+      ]
+    },
+    {
+      "id": "menubar-1-dark",
+      "title": "Menubar (Dark)",
+      "description": "The same four-item menu bar adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/menubar/1-dark.html",
+        "tsx": "tsx/MenubarVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "open", "disabled"],
+      "accessibility": [
+        "Open-menu and hover states remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}

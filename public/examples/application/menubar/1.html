@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-lg justify-center p-6">
+    <nav aria-label="Application menu" class="inline-flex items-center gap-0.5 rounded-lg border border-gray-200 bg-white p-1 shadow-sm">
+      <div class="relative">
+        <button
+          type="button"
+          aria-haspopup="menu"
+          aria-expanded="true"
+          class="rounded-md bg-gray-100 px-3 py-1.5 text-sm font-medium text-gray-900"
+        >
+          File
+        </button>
+        <div role="menu" aria-label="File" class="absolute left-0 top-full z-10 mt-1 w-56 rounded-lg border border-gray-200 bg-white py-1 shadow-lg">
+          <button role="menuitem" type="button" class="flex w-full items-center justify-between px-3 py-1.5 text-left text-sm text-gray-700 hover:bg-gray-50">
+            New file
+            <span class="flex items-center gap-0.5">
+              <kbd class="rounded border border-gray-300 bg-gray-50 px-1 py-0.5 font-mono text-[10px] text-gray-500">⌘</kbd>
+              <kbd class="rounded border border-gray-300 bg-gray-50 px-1 py-0.5 font-mono text-[10px] text-gray-500">N</kbd>
+            </span>
+          </button>
+          <button role="menuitem" type="button" class="flex w-full items-center justify-between px-3 py-1.5 text-left text-sm text-gray-700 hover:bg-gray-50">
+            Open&hellip;
+            <span class="flex items-center gap-0.5">
+              <kbd class="rounded border border-gray-300 bg-gray-50 px-1 py-0.5 font-mono text-[10px] text-gray-500">⌘</kbd>
+              <kbd class="rounded border border-gray-300 bg-gray-50 px-1 py-0.5 font-mono text-[10px] text-gray-500">O</kbd>
+            </span>
+          </button>
+          <div role="separator" class="my-1 border-t border-gray-200"></div>
+          <button role="menuitem" type="button" disabled class="flex w-full cursor-not-allowed items-center justify-between px-3 py-1.5 text-left text-sm text-gray-400">
+            Save
+            <kbd class="rounded border border-gray-200 bg-gray-50 px-1 py-0.5 font-mono text-[10px] text-gray-300">⌘S</kbd>
+          </button>
+        </div>
+      </div>
+
+      <button type="button" aria-haspopup="menu" aria-expanded="false" class="rounded-md px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50">
+        Edit
+      </button>
+      <button type="button" aria-haspopup="menu" aria-expanded="false" class="rounded-md px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50">
+        View
+      </button>
+      <button type="button" aria-haspopup="menu" aria-expanded="false" class="rounded-md px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50">
+        Help
+      </button>
+    </nav>
+  </body>
+</html>
