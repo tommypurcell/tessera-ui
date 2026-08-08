@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-form-autosave-banner",
+  "title": "Form Autosave Banner",
+  "description": "Form status bar: an amber 'unsaved changes' state with Discard/Save actions, or a neutral 'all saved' confirmation with a relative timestamp.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["form", "autosave", "unsaved-changes", "save", "discard"],
+  "useWhen": [
+    "A long-lived edit form (settings, profile, document) needs to communicate save state and let users act on unsaved changes.",
+    "You want a single banner that carries Discard/Save actions when there's something to resolve, not just a passive status icon.",
+    "Pairing with a sticky page layout so the banner stays visible while scrolling a long form."
+  ],
+  "avoidWhen": [
+    "You only need a small inline status glyph (e.g. next to a field) with no discard/save actions — use a bare save-status indicator instead.",
+    "The form autosaves silently with no user-facing discard option — a passive 'Saved' toast is enough."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The unsaved-state banner keeps its message and actions on one row down to narrow widths since both are short; wrap only if the container is narrower than the action buttons require.",
+  "accessibility": [
+    "The unsaved-changes state is conveyed by a colored dot, background tint, and — critically — text (\"You have unsaved changes\"), not tint alone.",
+    "Discard and Save are both real, clearly labeled buttons so their destructive vs. constructive intent is legible independent of color.",
+    "The saved state's relative timestamp is plain text, giving a concrete reference point rather than relying on a vague icon alone."
+  ],
+  "compatibleWith": ["application-conditional-field-group", "application-form-row"],
+  "variants": [
+    {
+      "id": "form-autosave-banner-1",
+      "title": "Form Autosave Banner",
+      "description": "An amber unsaved-changes bar with Discard and Save changes buttons, and a neutral all-saved confirmation bar with a checkmark and relative timestamp.",
+      "source": {
+        "html": "../../../../public/examples/application/form-autosave-banner/1.html",
+        "tsx": "tsx/FormAutosaveBannerVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["unsaved", "saved"],
+      "accessibility": [
+        "Save/Discard button text conveys intent independent of their amber vs. neutral background colors."
+      ]
+    },
+    {
+      "id": "form-autosave-banner-1-dark",
+      "title": "Form Autosave Banner (Dark)",
+      "description": "The same unsaved and saved states adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/form-autosave-banner/1-dark.html",
+        "tsx": "tsx/FormAutosaveBannerVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["unsaved", "saved"],
+      "accessibility": [
+        "Amber tint and button contrast remain legible against the dark surface in both states."
+      ]
+    }
+  ]
+}
