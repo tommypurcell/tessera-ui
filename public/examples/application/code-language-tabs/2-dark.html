@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-sm flex-col gap-4 bg-gray-950 p-6">
+    <div class="overflow-hidden rounded-lg border border-gray-800 bg-black">
+      <input type="radio" id="pkg-npm" name="pkg-tabs-1" class="peer/npm sr-only" checked />
+      <input type="radio" id="pkg-pnpm" name="pkg-tabs-1" class="peer/pnpm sr-only" />
+      <input type="radio" id="pkg-yarn" name="pkg-tabs-1" class="peer/yarn sr-only" />
+
+      <div class="flex items-center gap-1 border-b border-gray-800 p-1">
+        <label
+          for="pkg-npm"
+          class="cursor-pointer rounded-md px-2.5 py-1 text-xs font-medium text-gray-400 transition peer-checked/npm:bg-gray-800 peer-checked/npm:text-white"
+        >
+          npm
+        </label>
+        <label
+          for="pkg-pnpm"
+          class="cursor-pointer rounded-md px-2.5 py-1 text-xs font-medium text-gray-400 transition peer-checked/pnpm:bg-gray-800 peer-checked/pnpm:text-white"
+        >
+          pnpm
+        </label>
+        <label
+          for="pkg-yarn"
+          class="cursor-pointer rounded-md px-2.5 py-1 text-xs font-medium text-gray-400 transition peer-checked/yarn:bg-gray-800 peer-checked/yarn:text-white"
+        >
+          yarn
+        </label>
+      </div>
+
+      <div class="hidden items-center gap-2 px-4 py-3 font-mono text-sm text-gray-300 peer-checked/npm:flex">
+        <span class="select-none text-emerald-400">$</span>
+        npm install tessera-ui
+      </div>
+      <div class="hidden items-center gap-2 px-4 py-3 font-mono text-sm text-gray-300 peer-checked/pnpm:flex">
+        <span class="select-none text-emerald-400">$</span>
+        pnpm add tessera-ui
+      </div>
+      <div class="hidden items-center gap-2 px-4 py-3 font-mono text-sm text-gray-300 peer-checked/yarn:flex">
+        <span class="select-none text-emerald-400">$</span>
+        yarn add tessera-ui
+      </div>
+    </div>
+  </body>
+</html>
