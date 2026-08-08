@@ -668,9 +668,9 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-5) Expanded Detail Card — large hero-metric card with secondary stats grid; distinct from big-number-delta-tile. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 
 <!-- Theme: Mobile compositions -->
-- [~] (builder-1) Mobile List Section — grouped iOS-style inset list with section headers and chevrons; distinct from settings-nav-list.
-- [~] (builder-4) Mobile Filter Sheet — bottom-sheet full-screen filter form with apply/reset footer; distinct from faceted-search-sidebar.
-- [ ] Mobile Segmented Tabs — sticky top segmented control that swaps paged content; distinct from tab-bar-mobile.
+- [x] (builder-1) Mobile List Section — 2 variants (single section + multi-section), iOS-style inset grouped list, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #16).
+- [x] (builder-4) Mobile Filter Sheet — full-screen phone-frame sheet, dual-handle price slider, checkable category rows w/ counts, size chips, in-stock toggle, sticky "Show N results" footer; light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #17)
+- [~] (builder-4) Mobile Segmented Tabs — sticky top segmented control that swaps paged content; distinct from tab-bar-mobile.
 - [~] (builder-10) Mobile Form Stepper — one-field-per-screen guided flow with progress dots; distinct from multi-step-progress.
 - [ ] Swipeable Card Carousel — snap-scrolling horizontal card row with peek and dots; distinct from carousel.
 
@@ -686,18 +686,18 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [ ] Multi-Range Timeline Select — drag to select a span across a timeline with handles; distinct from timeline-scrubber.
 
 <!-- Theme: Content / marketing (dashboard-adjacent) -->
-- [~] (builder-7) Feature Highlight Row — icon + title + description alternating feature block; distinct from media-object-row.
-- [ ] Testimonial Card — quote, avatar, name, role, and rating; distinct from social-post-card.
+- [x] (builder-7) Feature Highlight Row — icon + title + description alternating feature block; distinct from media-object-row. Light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #26).
+- [x] (builder-5) Testimonial Card — quote, avatar, name, role, and rating; distinct from social-post-card. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [ ] Logo Cloud Grid — responsive customer-logo grid with subtle dividers; distinct from amenities-grid.
-- [ ] Stat Highlight Band — full-width row of 3–4 headline metrics with labels; distinct from stats.
-- [ ] CTA Banner Card — gradient promo card with heading, subtext, and action buttons; distinct from announcement-banner.
+- [~] (builder-7) Stat Highlight Band — full-width row of 3–4 headline metrics with labels; distinct from stats.
+- [~] (builder-1) CTA Banner Card — gradient promo card with heading, subtext, and action buttons; distinct from announcement-banner.
 
 <!-- Theme: Remaining vertical gaps -->
 - [x] (builder-8) Weather Forecast Row — 7-day strip (sun/cloud/rain icons), hi/lo, precip % internally consistent w/ icon choice, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
-- [ ] Sports Standings Table — ranked team table with W/L/streak and rank movement; distinct from leaderboard-list.
+- [~] (builder-8) Sports Standings Table — ranked team table with W/L/streak and rank movement; distinct from leaderboard-list.
 - [ ] Dating Profile Card — swipe-card with photo, name/age, bio, and interest tags; distinct from card-stack.
 - [ ] Menu Category Tabs — sticky food-category tab strip that scrolls the menu; distinct from tab-overflow-scroller.
-- [ ] Nutrition Facts Panel — labeled nutrition table with % daily-value column; distinct from tables.
+- [x] (builder-8) Nutrition Facts Panel — FDA-style label w/ %DV column computed live per-nutrient (amount÷FDA daily value), indented sub-nutrients, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 
 <!-- === WAVE 13 (deep-backlog refill, post-407) — variant/interaction framings + gaps, verified non-dupe === -->
 
