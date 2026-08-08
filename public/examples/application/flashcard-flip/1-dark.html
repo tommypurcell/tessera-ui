@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+    <style>
+      .flip-scene {
+        perspective: 1200px;
+      }
+      .flip-card {
+        transform-style: preserve-3d;
+        transition: transform 0.5s;
+      }
+      .flip-toggle:checked ~ .flip-scene .flip-card {
+        transform: rotateY(180deg);
+      }
+      .flip-face {
+        backface-visibility: hidden;
+      }
+      .flip-face-back {
+        transform: rotateY(180deg);
+      }
+    </style>
+  </head>
+  <body class="mx-auto flex max-w-xs flex-col items-center gap-4 p-6">
+    <input type="checkbox" id="flip-1-dark" class="flip-toggle sr-only" checked />
+
+    <label for="flip-1-dark" class="flip-scene block h-44 w-full cursor-pointer">
+      <div class="flip-card relative size-full">
+        <div class="flip-face absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-lg border border-gray-700 bg-gray-800 p-6 text-center shadow-sm">
+          <p class="text-xs font-medium text-gray-500 uppercase">Term</p>
+          <p class="text-lg font-semibold text-white">Idempotent</p>
+          <p class="text-xs text-gray-500">Tap to reveal</p>
+        </div>
+
+        <div class="flip-face flip-face-back absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-lg border border-blue-500/30 bg-blue-500/10 p-6 text-center shadow-sm">
+          <p class="text-xs font-medium text-blue-300 uppercase">Definition</p>
+          <p class="text-sm text-blue-100">
+            An operation that produces the same result no matter how many times it's applied.
+          </p>
+        </div>
+      </div>
+    </label>
+
+    <div class="flex w-full gap-2">
+      <button
+        type="button"
+        class="flex-1 rounded-md border border-gray-700 px-3 py-2 text-sm font-semibold text-gray-200 transition hover:bg-gray-800"
+      >
+        Review again
+      </button>
+      <button
+        type="button"
+        class="flex-1 rounded-md bg-green-500 px-3 py-2 text-sm font-semibold text-white transition hover:bg-green-400"
+      >
+        I know this
+      </button>
+    </div>
+  </body>
+</html>

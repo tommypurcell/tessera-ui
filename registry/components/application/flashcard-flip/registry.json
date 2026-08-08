@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-flashcard-flip",
+  "title": "Flashcard Flip",
+  "description": "Front/back flashcard components with a 3D flip animation and know/review actions, for study and language-learning apps.",
+  "category": "application/flashcard-flip",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "flashcard-flip",
+    "flashcard",
+    "study",
+    "flip",
+    "spaced repetition"
+  ],
+  "useWhen": [
+    "Front/back flashcard components with a 3D flip animation and know/review actions, for study and language-learning apps."
+  ],
+  "avoidWhen": [
+    "Avoid flashcard flip when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Flashcard Flip uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Associate each form field with a visible or programmatic label before production use.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "flashcard-flip-1",
+      "title": "Flipped card with know/review actions",
+      "description": "Flipped card with know/review actions Front/back flashcard components with a 3D flip animation and know/review actions, for study and language-learning apps.",
+      "source": {
+        "html": "../../../../public/examples/application/flashcard-flip/1.html",
+        "tsx": "tsx/FlashcardFlipVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "flashcard-flip-1-dark",
+      "title": "Flipped card with know/review actions (Dark)",
+      "description": "Flipped card with know/review actions Front/back flashcard components with a 3D flip animation and know/review actions, for study and language-learning apps.",
+      "source": {
+        "html": "../../../../public/examples/application/flashcard-flip/1-dark.html",
+        "tsx": "tsx/FlashcardFlipVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "flashcard-flip-2",
+      "title": "Compact card with deck progress",
+      "description": "Compact card with deck progress Front/back flashcard components with a 3D flip animation and know/review actions, for study and language-learning apps.",
+      "source": {
+        "html": "../../../../public/examples/application/flashcard-flip/2.html",
+        "tsx": "tsx/FlashcardFlipVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "flashcard-flip-2-dark",
+      "title": "Compact card with deck progress (Dark)",
+      "description": "Compact card with deck progress Front/back flashcard components with a 3D flip animation and know/review actions, for study and language-learning apps.",
+      "source": {
+        "html": "../../../../public/examples/application/flashcard-flip/2-dark.html",
+        "tsx": "tsx/FlashcardFlipVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    }
+  ]
+}
