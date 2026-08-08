@@ -547,7 +547,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-2) Quote Estimate Panel — coverage/deductible/term sliders with live-recalculated premium + base/deductible/term breakdown (verified via actual slider interaction in Playwright); light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
 
 <!-- Theme: Automotive -->
-- [~] (builder-4) Vehicle Spec Card — car image with mileage/fuel/transmission spec chips and price; distinct from property-listing-card.
+- [x] (builder-4) Vehicle Spec Card — photo + certified badge + mileage/fuel/transmission chips + price + CTA, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #17)
 - [x] (builder-8) Fuel / Charge Gauge — vertical capsule fill-level indicator with computed range estimate and low-level warning state, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [x] (builder-7) Trip Summary Card — header w/ route line + 2x2 stat grid (distance/duration/speed/efficiency), light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
 - [~] (builder-9) Service Reminder Row — maintenance item with due-mileage bar and schedule action; distinct from sync-status-row.
@@ -559,26 +559,26 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-5) Ticket Tier Selector — quantity steppers per price tier with running total; distinct from variant-selector. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [x] (builder-10) Event Countdown Hero — 2 variants (gradient hero w/ countdown tiles + RSVP, compact inline banner), light+dark, live tick verified, registry+tsx generated, screenshots verified, pushed
 - [x] (builder-5) Venue Section Map — clickable stadium/venue section blocks with price legend; distinct from seat-map-selector. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
-- [ ] Schedule Agenda List — day-grouped session rows with time, track, and speaker; distinct from itinerary-timeline.
+- [x] (builder-5) Schedule Agenda List — day-grouped session rows with time, track, and speaker; distinct from itinerary-timeline. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [x] (builder-7) Speaker Card — avatar+name+title, quoted talk title, X/LinkedIn/website social links, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
 
 <!-- Theme: Streaming / video -->
 - [x] (builder-8) Video Thumbnail Card — thumbnail w/ duration badge, title, channel avatar/name, K/M-formatted view count computed from real numbers, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [x] (builder-8) Watch Progress Bar — video thumbnail with duration badge and resume-position overlay bar, fill computed from real watched/total minutes, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [x] (builder-2) Channel Header — gradient banner, avatar, K-formatted subscriber count, and a real toggling subscribe/subscribed button (verified via Playwright click); light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
-- [~] (builder-6) Live Stream Badge — pulsing LIVE indicator with concurrent-viewer count; distinct from connection-status-pill.
+- [x] (builder-6) Live Stream Badge — 2 variants (thumbnail overlay with pulsing LIVE+viewer count, standalone header badge), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
 - [~] (builder-2) Playback Speed Menu — speed option list with checkmark and quality submenu; distinct from dropdown.
 - [~] (builder-10) Up-Next Autoplay Card — countdown-to-next-video card with cancel and play-now; distinct from toast-action-undo.
 
 <!-- Theme: Email client -->
 - [~] (builder-7) Email List Row — sender, subject, snippet, time, and unread/star/attachment marks; distinct from media-object-row.
-- [ ] Email Reading Pane — header with from/to, actions bar, and body; distinct from split-view-layout.
+- [~] (builder-4) Email Reading Pane — header with from/to, actions bar, and body; distinct from split-view-layout.
 - [ ] Compose Window — minimizable message composer with to/subject/body and send; distinct from comment-composer.
 - [ ] Folder / Label Sidebar — mail folders with unread counts and colored labels; distinct from settings-nav-list.
 - [ ] Thread Collapse — stacked quoted-reply chain with expand-all; distinct from comment-thread.
 
 <!-- Theme: Developer API console -->
-- [~] (builder-8) Endpoint Method Row — HTTP method pill + path + description API-reference row; distinct from webhook-event-row.
+- [x] (builder-8) Endpoint Method Row — 5-row REST reference (GET/POST/PUT/PATCH/DELETE) with color-coded method pills and monospace paths, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [ ] Request Builder — method/URL/headers/body tabs with a send button; distinct from query-builder.
 - [ ] Response Viewer — status badge, timing, and collapsible JSON body with copy; distinct from json-tree-viewer.
 - [x] (builder-8) API Rate Limit Meter — endpoint quota bar with computed usage percent, amber near-limit state (color+text), reset-time note, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
@@ -587,13 +587,13 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 <!-- Theme: Data pipeline / ETL -->
 - [ ] Pipeline Flow Node — draggable process node with input/output ports and status; distinct from sankey-flow-diagram.
 - [ ] Job Run Row — pipeline run with status, duration, records-processed, and logs link; distinct from build-status-row.
-- [ ] Schema Field List — table-schema rows with name, type badge, nullable, and PK marker; distinct from feature-flag-table.
+- [~] (builder-8) Schema Field List — table-schema rows with name, type badge, nullable, and PK marker; distinct from feature-flag-table.
 - [ ] Data Quality Score — pass/fail check summary ring with failing-rule list; distinct from lead-score-meter.
 - [ ] Column Mapping Rows — source→target field mapping with dropdowns and auto-match; distinct from import-wizard.
 
 <!-- Theme: Survey builder -->
 - [ ] Question Type Palette — draggable question-type cards (MC, rating, text, scale); distinct from query-builder.
-- [ ] Likert Scale Row — labeled agree↔disagree radio row with midpoint; distinct from radio-groups.
+- [~] (builder-6) Likert Scale Row — labeled agree↔disagree radio row with midpoint; distinct from radio-groups.
 - [ ] Survey Progress Header — "Question X of N" bar with back/next; distinct from multi-step-progress.
 - [ ] Response Summary Bar — per-option horizontal result bars with % and count; distinct from poll-vote-card.
 - [ ] Matrix Question Grid — rows × columns radio matrix for bulk rating; distinct from notification-preferences-grid.
@@ -650,3 +650,51 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [ ] Recipe Step Card — numbered cooking step with timer and image; distinct from lesson-playlist.
 - [ ] Photo EXIF Panel — image metadata rows (camera/lens/ISO/aperture) with histogram; distinct from media.
 - [ ] Photo Grid Selectable — multi-select photo grid with checkmarks and count bar; distinct from image-gallery-lightbox.
+
+<!-- === WAVE 12 (deep-backlog refill, post-356) — state/variant framings + remaining gaps, verified non-dupe === -->
+
+<!-- Theme: State variants (distinct compositions, not restyles) -->
+- [ ] Table Empty State — full-width in-table zero-rows panel with illustration and add-first-row CTA; distinct from empty-states (table-embedded).
+- [ ] Table Loading Skeleton — shimmering placeholder rows matching column layout; distinct from skeleton-card-list (table grid).
+- [ ] Table Error State — in-table failure row with reason and retry spanning columns; distinct from retry-error-state.
+- [ ] Form Success Panel — post-submit confirmation card with next-steps actions; distinct from magic-link-sent-state.
+- [ ] Partial Failure Summary — batch-result banner showing N succeeded / M failed with expandable errors; absent from library.
+- [ ] Optimistic Pending Row — list row in a "sending…" ghost state with retry-on-fail; distinct from inline-add-row.
+
+<!-- Theme: Density / size framings -->
+- [ ] Compact Data Table — high-density zebra table with condensed row height and sticky header; distinct from tables.
+- [ ] Comfortable List Row — spacious two-line list item with leading media and trailing meta; distinct from media-object-row.
+- [ ] Mini Stat Chip — inline label+value+trend micro-stat for toolbars; distinct from stat-tile.
+- [ ] Expanded Detail Card — large hero-metric card with secondary stats grid; distinct from big-number-delta-tile.
+
+<!-- Theme: Mobile compositions -->
+- [ ] Mobile List Section — grouped iOS-style inset list with section headers and chevrons; distinct from settings-nav-list.
+- [ ] Mobile Filter Sheet — bottom-sheet full-screen filter form with apply/reset footer; distinct from faceted-search-sidebar.
+- [ ] Mobile Segmented Tabs — sticky top segmented control that swaps paged content; distinct from tab-bar-mobile.
+- [ ] Mobile Form Stepper — one-field-per-screen guided flow with progress dots; distinct from multi-step-progress.
+- [ ] Swipeable Card Carousel — snap-scrolling horizontal card row with peek and dots; distinct from carousel.
+
+<!-- Theme: RTL / i18n -->
+- [ ] RTL Layout Demo — mirrored nav+content composition showcasing logical-property flipping; absent from library.
+- [ ] Bidirectional Text Field — input handling mixed LTR/RTL with direction auto-detect; distinct from inputs.
+- [ ] Number Format Preview — locale-aware number/currency/date preview rows; distinct from currency-input.
+
+<!-- Theme: Interaction primitives -->
+- [ ] Drag Handle Row — reorderable list row with grip handle and drop indicator; distinct from queue-list.
+- [ ] Resizable Column Header — table header with drag-to-resize and sort caret; distinct from column-visibility-menu.
+- [ ] Long-Press Menu — press-and-hold context menu with ripple feedback (mobile); distinct from context menu.
+- [ ] Multi-Range Timeline Select — drag to select a span across a timeline with handles; distinct from timeline-scrubber.
+
+<!-- Theme: Content / marketing (dashboard-adjacent) -->
+- [ ] Feature Highlight Row — icon + title + description alternating feature block; distinct from media-object-row.
+- [ ] Testimonial Card — quote, avatar, name, role, and rating; distinct from social-post-card.
+- [ ] Logo Cloud Grid — responsive customer-logo grid with subtle dividers; distinct from amenities-grid.
+- [ ] Stat Highlight Band — full-width row of 3–4 headline metrics with labels; distinct from stats.
+- [ ] CTA Banner Card — gradient promo card with heading, subtext, and action buttons; distinct from announcement-banner.
+
+<!-- Theme: Remaining vertical gaps -->
+- [ ] Weather Forecast Row — 7-day forecast strip with icons, hi/lo, and precip %; distinct from weather-widget.
+- [ ] Sports Standings Table — ranked team table with W/L/streak and rank movement; distinct from leaderboard-list.
+- [ ] Dating Profile Card — swipe-card with photo, name/age, bio, and interest tags; distinct from card-stack.
+- [ ] Menu Category Tabs — sticky food-category tab strip that scrolls the menu; distinct from tab-overflow-scroller.
+- [ ] Nutrition Facts Panel — labeled nutrition table with % daily-value column; distinct from tables.
