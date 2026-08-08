@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "name": "application-error-page",
+  "title": "404 / Error Page",
+  "description": "Full-page error states with a status code, headline, message, and home/back or reload actions, for a route that failed to resolve or crashed entirely.",
+  "category": "application/feedback",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["application", "error", "404", "500", "not-found"],
+  "useWhen": [
+    "A route doesn't exist or fails to resolve, and the user needs a way back to known-good content.",
+    "An unrecoverable error occurs at the route/render level rather than within one section of an otherwise working page.",
+    "Replacing the entire page content because there is nothing partial left to show."
+  ],
+  "avoidWhen": [
+    "The failure is scoped to one section or widget within an otherwise functional page — use retry-error-state instead so the rest of the page stays usable.",
+    "The user lacks permission rather than the resource being missing or the app having crashed — use a permission-denied state instead, since the messaging and remedy differ."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Content is centered and vertically stacked with a constrained message width (max-w-sm); the layout holds at any viewport without additional breakpoints beyond the heading's text size step at sm.",
+  "accessibility": [
+    "The heading is a real <h1> so the page has a correct document outline even though it replaces the normal route content.",
+    "Primary and secondary actions are distinguishable both visually (filled vs. text) and by their accessible names (Go back home vs. Go back / Reload page vs. Contact support).",
+    "The status code (404 / Error 500) is presented as supporting text before the heading, not as the only signal of what happened — the heading and message carry the full meaning."
+  ],
+  "compatibleWith": ["application-retry-error-state", "application-empty-states"],
+  "variants": [
+    {
+      "id": "error-page-1",
+      "title": "404 Not Found",
+      "description": "Full-page not-found state with a home and back action",
+      "source": {
+        "html": "../../../../public/examples/application/error-page/1.html",
+        "tsx": "tsx/ErrorPageVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["error"],
+      "accessibility": ["The 404 code is presented as secondary text; the h1 and body copy carry the full meaning independently."]
+    },
+    {
+      "id": "error-page-1-dark",
+      "title": "404 Not Found (Dark)",
+      "description": "Full-page not-found state with a home and back action",
+      "source": {
+        "html": "../../../../public/examples/application/error-page/1-dark.html",
+        "tsx": "tsx/ErrorPageVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["error"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    },
+    {
+      "id": "error-page-2",
+      "title": "500 Server Error",
+      "description": "Full-page crash state with an icon, reload action, and a support contact link",
+      "source": {
+        "html": "../../../../public/examples/application/error-page/2.html",
+        "tsx": "tsx/ErrorPageVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["error"],
+      "accessibility": ["The warning icon is decorative and aria-hidden; the heading and message independently convey the crash state."]
+    },
+    {
+      "id": "error-page-2-dark",
+      "title": "500 Server Error (Dark)",
+      "description": "Full-page crash state with an icon, reload action, and a support contact link",
+      "source": {
+        "html": "../../../../public/examples/application/error-page/2-dark.html",
+        "tsx": "tsx/ErrorPageVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["error"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    }
+  ]
+}
