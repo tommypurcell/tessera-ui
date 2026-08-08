@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-fuel-charge-gauge",
+  "title": "Fuel / Charge Gauge",
+  "description": "Vertical tank/battery-style level indicator with a percent readout and estimated range in miles — distinct from gauge-chart, which is a semicircular arc-and-needle dial rather than a fill-level capsule.",
+  "category": "application/automotive",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["automotive", "fuel", "battery", "gauge", "ev"],
+  "useWhen": [
+    "Showing a vehicle's fuel or battery level alongside an estimated driving range.",
+    "A compact capsule-style fill indicator fits better than a full arc dial.",
+    "Low-level state should trigger both a color change and explicit warning text."
+  ],
+  "avoidWhen": [
+    "You need a general-purpose semicircular dial with a needle — use gauge-chart instead.",
+    "There's no range estimate to pair with the level — a plain progress bar is simpler.",
+    "You need multiple simultaneous gauges in a dashboard grid — consider a more compact stat-tile."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The capsule has a fixed height and scales its fill height proportionally; the card itself is fluid up to a max width.",
+  "accessibility": [
+    "The capsule carries role='img' with an aria-label stating the exact percent, range, and low-level status, since fill height alone isn't announced by screen readers.",
+    "Low level is conveyed by both a red fill color and explicit 'Low — refuel soon' text, not color alone.",
+    "Percent and range are always shown as text next to the capsule, never only as a visual fill."
+  ],
+  "compatibleWith": ["application-gauge-chart", "application-vehicle-spec-card", "application-trip-summary-card"],
+  "variants": [
+    {
+      "id": "fuel-charge-gauge-1",
+      "title": "Fuel / charge gauge",
+      "description": "A 68% fuel level with a computed 312-mile range estimate, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/fuel-charge-gauge/1.html",
+        "tsx": "tsx/FuelChargeGaugeVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["normal"],
+      "accessibility": [
+        "Fill height is the real levelPercent value, not a hand-styled approximation."
+      ]
+    },
+    {
+      "id": "fuel-charge-gauge-1-dark",
+      "title": "Fuel / charge gauge (Dark)",
+      "description": "The same fuel gauge, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/fuel-charge-gauge/1-dark.html",
+        "tsx": "tsx/FuelChargeGaugeVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["normal"],
+      "accessibility": [
+        "Fill and text colors meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
