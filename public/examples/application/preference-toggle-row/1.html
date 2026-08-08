@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-md flex-col p-6">
+    <div class="rounded-lg border border-gray-200 bg-white">
+      <ul class="divide-y divide-gray-200">
+        <li class="flex items-center gap-4 px-4 py-3.5">
+          <div class="min-w-0 flex-1">
+            <label for="pref-email" class="block text-sm font-medium text-gray-900">Email notifications</label>
+            <p class="mt-0.5 text-xs text-gray-500">Receive updates about your account activity.</p>
+          </div>
+          <label class="relative block h-7 w-12 shrink-0 rounded-full bg-green-500 transition-colors [-webkit-tap-highlight-color:transparent]">
+            <input type="checkbox" id="pref-email" checked class="peer sr-only" />
+            <span class="absolute inset-y-0 start-0 m-1 size-5 rounded-full bg-white transition-[inset-inline-start] peer-checked:start-5"></span>
+          </label>
+        </li>
+
+        <li class="flex items-center gap-4 px-4 py-3.5">
+          <div class="min-w-0 flex-1">
+            <label for="pref-push" class="block text-sm font-medium text-gray-900">Push notifications</label>
+            <p class="mt-0.5 text-xs text-gray-500">Get a mobile alert for direct mentions.</p>
+          </div>
+          <label class="relative block h-7 w-12 shrink-0 rounded-full bg-gray-300 transition-colors [-webkit-tap-highlight-color:transparent]">
+            <input type="checkbox" id="pref-push" class="peer sr-only" />
+            <span class="absolute inset-y-0 start-0 m-1 size-5 rounded-full bg-white transition-[inset-inline-start] peer-checked:start-5"></span>
+          </label>
+        </li>
+
+        <li class="flex items-center gap-4 px-4 py-3.5">
+          <div class="min-w-0 flex-1">
+            <label for="pref-digest" class="block text-sm font-medium text-gray-900">Weekly digest</label>
+            <p class="mt-0.5 text-xs text-gray-500">A summary email every Monday morning.</p>
+          </div>
+          <label class="relative block h-7 w-12 shrink-0 rounded-full bg-green-500 transition-colors [-webkit-tap-highlight-color:transparent]">
+            <input type="checkbox" id="pref-digest" checked class="peer sr-only" />
+            <span class="absolute inset-y-0 start-0 m-1 size-5 rounded-full bg-white transition-[inset-inline-start] peer-checked:start-5"></span>
+          </label>
+        </li>
+
+        <li class="flex items-center gap-4 px-4 py-3.5 opacity-50">
+          <div class="min-w-0 flex-1">
+            <span class="block text-sm font-medium text-gray-900">Security alerts</span>
+            <p class="mt-0.5 text-xs text-gray-500">Always on — required for account safety.</p>
+          </div>
+          <span class="relative block h-7 w-12 shrink-0 cursor-not-allowed rounded-full bg-green-500">
+            <span class="absolute inset-y-0 start-5 m-1 size-5 rounded-full bg-white"></span>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
