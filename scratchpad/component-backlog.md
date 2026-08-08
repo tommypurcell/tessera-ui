@@ -206,7 +206,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: Navigation -->
 - [x] (builder-4) Mega Menu Panel — full-width panel, 3 labeled link-group columns + featured promo card w/ badge and CTA, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #14)
-- [ ] Command Bar Breadcrumb — editable breadcrumb where segments become dropdowns for sibling nav; distinct from breadcrumbs (interactive).
+- [~] (builder-4) Command Bar Breadcrumb — editable breadcrumb where segments become dropdowns for sibling nav; distinct from breadcrumbs (interactive).
 - [ ] Bottom Sheet Nav — mobile draggable sheet with snap points and handle; distinct from drawer (mobile snap behavior).
 - [x] (builder-10) Floating Action Menu — 2 variants (labeled stacked FAB, icon-only stacked FAB), light+dark, checkbox-driven (no JS), registry+tsx generated, screenshots verified, pushed
 - [x] (builder-7) Anchor Scroll Nav — 5-item sticky section list w/ aria-current active indicator, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
@@ -242,7 +242,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-5) Session Devices List — current-device badge (no revoke), per-row Revoke, sign-out-all-others footer, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 
 <!-- Theme: Empty / error states -->
-- [ ] First-Run Empty State — illustrative zero-data panel with primary CTA and secondary hint; distinct from empty-states (onboarding-focused).
+- [x] (builder-1) First-Run Empty State — duplicate of existing `empty-states` variant 1 "No items found" (icon, title, message, primary Create CTA, secondary hint link); no new work needed here
 - [x] (builder-1) 404 / Error Page — 2 variants (404 Not Found + 500 Server Error), real h1, dual actions, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #16).
 - [x] (builder-8) No-Results Search State — zero-result state w/ real query echo + conditional Clear filters action (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [x] (builder-7) Permission Denied State — 2 states (denied w/ request CTA, request-sent confirmation), light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
@@ -251,7 +251,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: Media -->
 - [ ] Video Player — custom controls bar (play/scrub/volume/fullscreen/speed) over a poster frame; distinct from timeline-scrubber (full player chrome).
-- [ ] Audio Player — waveform/progress track with play, time, and volume; absent from library.
+- [~] (builder-6) Audio Player — waveform/progress track with play, time, and volume; absent from library.
 - [ ] Image Gallery Lightbox — thumbnail grid opening a full-screen viewer with prev/next and caption; distinct from carousel and media.
 - [ ] Image Cropper — draggable crop frame with aspect presets and zoom slider; absent from library.
 - [x] (builder-2) Avatar Uploader — circular drop-zone, hover camera overlay, real file input driving live object-URL preview, Replace/Remove actions, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components
@@ -276,9 +276,9 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: Mobile -->
 - [ ] Tab Bar (mobile) — fixed bottom icon+label nav with active indicator and badge; distinct from dock (mobile app bar).
-- [ ] Pull-to-Refresh — top spinner reveal on overscroll for lists; absent from library.
+- [~] (builder-1) Pull-to-Refresh — top spinner reveal on overscroll for lists; absent from library.
 - [ ] Swipe Action Row — list row revealing archive/delete actions on horizontal swipe; distinct from bulk-action-bar.
-- [ ] Segmented Page Control — dot indicators for paged mobile carousels; distinct from carousel (indicator primitive).
+- [~] (builder-7) Segmented Page Control — dot indicators for paged mobile carousels; distinct from carousel (indicator primitive).
 - [ ] Action Sheet — mobile bottom list of grouped actions with cancel; distinct from bottom-sheet-nav (action list).
 
 <!-- Theme: Data-viz (more) -->
@@ -300,7 +300,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-1) Copyable Code Snippet — duplicate of existing `code-editor-block` variant 2 "File name with copy action" (file-name header, Copy button, syntax-highlighted numbered lines); no new work needed here
 - [x] (builder-5) QR Code Card — QR tile (white bg, always-scannable contrast) + caption + encoded value text + Download/Copy link actions, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [x] (builder-10) Countdown Ring Timer — 2 variants (large radial timer w/ mm:ss center, compact inline ring timer w/ action row), light+dark, registry+tsx generated, screenshots verified (live tick confirmed), pushed
-- [ ] Feature Flag Toggle Row — flag name, environment pills, and enable switch with rollout %; absent from library.
+- [~] (builder-5) Feature Flag Toggle Row — flag name, environment pills, and enable switch with rollout %; absent from library.
 - [ ] Breadcrumb Page Header — title + breadcrumb + action buttons page-header composite; distinct from breadcrumbs (header block).
 - [ ] Filter Chip Overflow — chip row that collapses extras into a "+N" popover on narrow widths; distinct from data-filter-bar.
 
