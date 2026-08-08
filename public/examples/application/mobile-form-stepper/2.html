@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-xs flex-col justify-between gap-6 p-6" style="min-height: 460px">
+    <div>
+      <div class="flex items-center justify-between">
+        <button type="button" aria-label="Back" class="rounded-md p-1 text-gray-400 transition hover:bg-gray-50 hover:text-gray-600">
+          <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        <div class="flex items-center gap-1.5" aria-label="Step 3 of 4">
+          <span class="size-1.5 rounded-full bg-gray-900"></span>
+          <span class="size-1.5 rounded-full bg-gray-900"></span>
+          <span class="size-1.5 rounded-full bg-gray-900"></span>
+          <span class="size-1.5 rounded-full bg-gray-200"></span>
+        </div>
+
+        <span class="w-5"></span>
+      </div>
+
+      <h1 class="mt-8 text-xl font-semibold text-gray-900">How will you use Tessera?</h1>
+      <p class="mt-1 text-sm text-gray-500">Pick the option that fits best.</p>
+
+      <fieldset class="mt-6 flex flex-col gap-2">
+        <legend class="sr-only">Use case</legend>
+
+        <label class="flex cursor-pointer items-center gap-3 rounded-md border-2 border-gray-900 bg-gray-50 px-3 py-3">
+          <input type="radio" name="use-case" checked class="sr-only" />
+          <span class="text-sm font-medium text-gray-900">Personal project</span>
+        </label>
+
+        <label class="flex cursor-pointer items-center gap-3 rounded-md border-2 border-gray-200 px-3 py-3">
+          <input type="radio" name="use-case" class="sr-only" />
+          <span class="text-sm font-medium text-gray-700">Team / company</span>
+        </label>
+
+        <label class="flex cursor-pointer items-center gap-3 rounded-md border-2 border-gray-200 px-3 py-3">
+          <input type="radio" name="use-case" class="sr-only" />
+          <span class="text-sm font-medium text-gray-700">Freelance client work</span>
+        </label>
+      </fieldset>
+    </div>
+
+    <button type="button" class="w-full rounded-md bg-gray-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-gray-700">
+      Continue
+    </button>
+  </body>
+</html>

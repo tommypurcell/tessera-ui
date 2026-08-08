@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-xs flex-col justify-between gap-6 bg-gray-950 p-6" style="min-height: 420px">
+    <div>
+      <div class="flex items-center justify-between">
+        <button type="button" aria-label="Back" class="rounded-md p-1 text-gray-500 transition hover:bg-gray-800 hover:text-gray-300">
+          <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        <div class="flex items-center gap-1.5" aria-label="Step 2 of 4">
+          <span class="size-1.5 rounded-full bg-gray-700"></span>
+          <span class="size-1.5 rounded-full bg-white"></span>
+          <span class="size-1.5 rounded-full bg-gray-700"></span>
+          <span class="size-1.5 rounded-full bg-gray-700"></span>
+        </div>
+
+        <span class="w-5"></span>
+      </div>
+
+      <h1 class="mt-8 text-xl font-semibold text-white">What's your email?</h1>
+      <p class="mt-1 text-sm text-gray-400">We'll send your confirmation here.</p>
+
+      <input
+        type="email"
+        placeholder="you@example.com"
+        class="mt-6 w-full rounded-md border border-gray-700 bg-gray-900 px-3 py-2.5 text-sm text-white placeholder:text-gray-500 focus:border-gray-100 focus:outline-none"
+      />
+    </div>
+
+    <button type="button" class="w-full rounded-md bg-gray-100 px-4 py-3 text-sm font-semibold text-gray-900 transition hover:bg-white">
+      Continue
+    </button>
+  </body>
+</html>

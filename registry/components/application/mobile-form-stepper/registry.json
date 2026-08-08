@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-mobile-form-stepper",
+  "title": "Mobile Form Stepper",
+  "description": "One-field-per-screen guided form flow components with progress dots and back/continue navigation, for mobile onboarding.",
+  "category": "application/mobile-form-stepper",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "mobile-form-stepper",
+    "onboarding",
+    "mobile form",
+    "progress dots",
+    "guided flow"
+  ],
+  "useWhen": [
+    "One-field-per-screen guided form flow components with progress dots and back/continue navigation, for mobile onboarding."
+  ],
+  "avoidWhen": [
+    "Avoid mobile form stepper when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Mobile Form Stepper uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Associate each form field with a visible or programmatic label before production use.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "mobile-form-stepper-1",
+      "title": "Single email field step with progress dots",
+      "description": "Single email field step with progress dots One-field-per-screen guided form flow components with progress dots and back/continue navigation, for mobile onboarding.",
+      "source": {
+        "html": "../../../../public/examples/application/mobile-form-stepper/1.html",
+        "tsx": "tsx/MobileFormStepperVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "mobile-form-stepper-1-dark",
+      "title": "Single email field step with progress dots (Dark)",
+      "description": "Single email field step with progress dots One-field-per-screen guided form flow components with progress dots and back/continue navigation, for mobile onboarding.",
+      "source": {
+        "html": "../../../../public/examples/application/mobile-form-stepper/1-dark.html",
+        "tsx": "tsx/MobileFormStepperVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "mobile-form-stepper-2",
+      "title": "Choice-card step with progress dots",
+      "description": "Choice-card step with progress dots One-field-per-screen guided form flow components with progress dots and back/continue navigation, for mobile onboarding.",
+      "source": {
+        "html": "../../../../public/examples/application/mobile-form-stepper/2.html",
+        "tsx": "tsx/MobileFormStepperVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "mobile-form-stepper-2-dark",
+      "title": "Choice-card step with progress dots (Dark)",
+      "description": "Choice-card step with progress dots One-field-per-screen guided form flow components with progress dots and back/continue navigation, for mobile onboarding.",
+      "source": {
+        "html": "../../../../public/examples/application/mobile-form-stepper/2-dark.html",
+        "tsx": "tsx/MobileFormStepperVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    }
+  ]
+}
