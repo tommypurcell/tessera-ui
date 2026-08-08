@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-cookie-consent",
+  "title": "Cookie Consent Banner",
+  "description": "Bottom-anchored cookie consent banner with accept-all, reject-non-essential, and customize actions, plus an expanded per-category preferences panel.",
+  "category": "application/overlays",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["cookie", "consent", "gdpr", "privacy", "compliance", "banner"],
+  "useWhen": [
+    "The site sets non-essential cookies (analytics, personalization) and needs explicit user consent before running them.",
+    "Compliance requires offering granular accept/reject/customize choices, not just a single dismiss button.",
+    "You need a persistent bottom banner that doesn't block the rest of the page like a modal would."
+  ],
+  "avoidWhen": [
+    "Only strictly necessary cookies are used — no consent banner is legally required in that case.",
+    "The message is unrelated to cookies/privacy — use announcement-banner for general product or maintenance notices instead.",
+    "You need a blocking, must-choose gate before any content loads — this banner is non-blocking by design; wrap it in your own gating logic if required."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The banner spans the full viewport width and stacks the description above the action buttons on narrow screens, placing them side by side from the sm breakpoint up.",
+  "accessibility": [
+    "The banner uses role=\"dialog\" with an aria-label and aria-describedby linking to the consent copy.",
+    "The essential-cookies toggle is rendered checked and disabled, with reduced opacity, to visually and programmatically convey it cannot be turned off.",
+    "Category toggles are real checkboxes with an associated label, so they're operable by keyboard and screen readers without extra ARIA."
+  ],
+  "compatibleWith": ["application-announcement-banner", "application-toggles", "application-modals"],
+  "variants": [
+    {
+      "id": "cookie-consent-1",
+      "title": "Consent banner",
+      "description": "Initial bottom banner with a consent summary and accept-all, reject-non-essential, and customize actions.",
+      "source": {
+        "html": "../../../../public/examples/application/cookie-consent/1.html",
+        "tsx": "tsx/CookieConsentVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "All three actions are real buttons reachable by keyboard in a logical tab order."
+      ]
+    },
+    {
+      "id": "cookie-consent-1-dark",
+      "title": "Consent banner (Dark)",
+      "description": "Bottom consent banner adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/cookie-consent/1-dark.html",
+        "tsx": "tsx/CookieConsentVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Button and text colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    },
+    {
+      "id": "cookie-consent-2",
+      "title": "Preferences panel",
+      "description": "Expanded customize panel with a toggle per cookie category (essential locked on) and a save action.",
+      "source": {
+        "html": "../../../../public/examples/application/cookie-consent/2.html",
+        "tsx": "tsx/CookieConsentVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The disabled essential toggle still exposes its checked state to assistive tech via the native disabled checkbox."
+      ]
+    },
+    {
+      "id": "cookie-consent-2-dark",
+      "title": "Preferences panel (Dark)",
+      "description": "Expanded cookie preferences panel adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/cookie-consent/2-dark.html",
+        "tsx": "tsx/CookieConsentVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Toggle track and thumb colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
