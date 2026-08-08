@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 814,
+  "screenshotCount": 818,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -1694,6 +1694,46 @@
       "sourcePath": "files/application-inputs/inputs-4-dark.html",
       "sourceSha256": "9a9d52e7a13fee5945a577b253d9f084801f4b626132ea91cd114b3a5d3a29a7",
       "url": "/screenshots/components/application-inputs/inputs-4-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-lesson-playlist",
+      "variantId": "lesson-playlist-1",
+      "appearance": "light",
+      "sourcePath": "files/application-lesson-playlist/lesson-playlist-1.html",
+      "sourceSha256": "a8db44dd08bffd64585305a89c7325c180456bcf6f7b56955ad5f833a485aa8c",
+      "url": "/screenshots/components/application-lesson-playlist/lesson-playlist-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-lesson-playlist",
+      "variantId": "lesson-playlist-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-lesson-playlist/lesson-playlist-1-dark.html",
+      "sourceSha256": "e9e8b274b22d12f4b023c8005ed508310d967be1aea2274c049395005933f570",
+      "url": "/screenshots/components/application-lesson-playlist/lesson-playlist-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-lesson-playlist",
+      "variantId": "lesson-playlist-2",
+      "appearance": "light",
+      "sourcePath": "files/application-lesson-playlist/lesson-playlist-2.html",
+      "sourceSha256": "498359d95c1eb4108e0decac506088e6a69b320e556488bc0092f6293325be8c",
+      "url": "/screenshots/components/application-lesson-playlist/lesson-playlist-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-lesson-playlist",
+      "variantId": "lesson-playlist-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-lesson-playlist/lesson-playlist-2-dark.html",
+      "sourceSha256": "9210d0525f369bbcc2a66edcf89e217a8f2943b5bcdcc5161458ffe6909dc5e7",
+      "url": "/screenshots/components/application-lesson-playlist/lesson-playlist-2-dark.jpg",
       "width": 600,
       "height": 400
     },
