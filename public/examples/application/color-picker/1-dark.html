@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex min-h-64 items-start justify-center bg-gray-950 p-6">
+    <div class="relative inline-block">
+      <button
+        type="button"
+        aria-expanded="true"
+        aria-haspopup="dialog"
+        class="inline-flex items-center gap-2 rounded-md border border-gray-700 bg-gray-900 py-1.5 pl-1.5 pr-3 text-sm font-medium text-gray-200 shadow-sm transition-colors hover:bg-gray-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-100 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-950"
+      >
+        <span class="size-5 rounded border border-white/10" style="background-color: #6366f1"></span>
+        Brand color
+      </button>
+
+      <div
+        role="dialog"
+        aria-label="Choose a color"
+        class="absolute left-0 top-full z-10 mt-2 w-64 rounded-lg border border-gray-700 bg-gray-900 p-4 shadow-lg shadow-black/40"
+      >
+        <div class="grid grid-cols-8 gap-1.5">
+          <button type="button" class="size-6 rounded-full border border-white/10" style="background-color: #ef4444" aria-label="Red"></button>
+          <button type="button" class="size-6 rounded-full border border-white/10" style="background-color: #f97316" aria-label="Orange"></button>
+          <button type="button" class="size-6 rounded-full border border-white/10" style="background-color: #f59e0b" aria-label="Amber"></button>
+          <button type="button" class="size-6 rounded-full border border-white/10" style="background-color: #eab308" aria-label="Yellow"></button>
+          <button type="button" class="size-6 rounded-full border border-white/10" style="background-color: #84cc16" aria-label="Lime"></button>
+          <button type="button" class="size-6 rounded-full border border-white/10" style="background-color: #22c55e" aria-label="Green"></button>
+          <button type="button" class="size-6 rounded-full border border-white/10" style="background-color: #10b981" aria-label="Emerald"></button>
+          <button type="button" class="size-6 rounded-full border border-white/10" style="background-color: #14b8a6" aria-label="Teal"></button>
+          <button type="button" class="size-6 rounded-full border border-white/10" style="background-color: #06b6d4" aria-label="Cyan"></button>
+          <button type="button" class="size-6 rounded-full border border-white/10" style="background-color: #0ea5e9" aria-label="Sky"></button>
+          <button type="button" class="size-6 rounded-full border border-white/10" style="background-color: #3b82f6" aria-label="Blue"></button>
+          <button
+            type="button"
+            aria-label="Indigo"
+            aria-current="true"
+            class="relative size-6 rounded-full ring-2 ring-white ring-offset-2 ring-offset-gray-900"
+            style="background-color: #6366f1"
+          >
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" class="absolute inset-0 m-auto size-3.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+          </button>
+          <button type="button" class="size-6 rounded-full border border-white/10" style="background-color: #a855f7" aria-label="Purple"></button>
+          <button type="button" class="size-6 rounded-full border border-white/10" style="background-color: #d946ef" aria-label="Fuchsia"></button>
+          <button type="button" class="size-6 rounded-full border border-white/10" style="background-color: #ec4899" aria-label="Pink"></button>
+          <button type="button" class="size-6 rounded-full border border-white/10" style="background-color: #64748b" aria-label="Slate"></button>
+        </div>
+
+        <div class="mt-4 flex items-center gap-2 border-t border-gray-700 pt-3">
+          <span class="size-7 shrink-0 rounded-md border border-white/10" style="background-color: #6366f1"></span>
+          <label for="color-picker-hex-dark" class="sr-only">Hex color</label>
+          <input
+            id="color-picker-hex-dark"
+            type="text"
+            value="#6366F1"
+            class="block w-full rounded-md border-gray-700 bg-gray-800 font-mono text-sm text-gray-200 shadow-sm focus:border-white focus:ring-white"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
