@@ -224,7 +224,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-8) Radar Chart — 5-axis vendor comparison polygon computed via trigonometry (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [x] (builder-8) Bullet Chart — CSAT bullet graph (72 vs 85 target) w/ Poor/Satisfactory/Good bands (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [~] (builder-4) Candlestick Chart — OHLC financial chart with volume strip; absent from library.
-- [ ] Choropleth Legend — gradient/step map legend with value buckets; pairs with map-marker-popup, absent from library.
+- [~] (builder-7) Choropleth Legend — gradient/step map legend with value buckets; pairs with map-marker-popup, absent from library.
 - [x] (builder-3) Stat Comparison Bars — ranked category bars with value labels, proportional fills, one highlighted row with tinted background, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 - [x] (builder-3) Trend Sparkbar Row — product table w/ inline 7-bar trend series per row, units column, color-coded % change column, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 
@@ -275,16 +275,16 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-9) Profile Edit Form — 2 variants (standard settings form, public profile with unsaved indicator) light+dark, registry.json, MDX entry, screenshots
 
 <!-- Theme: Mobile -->
-- [~] (builder-5) Tab Bar (mobile) — fixed bottom icon+label nav with active indicator and badge; distinct from dock (mobile app bar).
+- [x] (builder-5) Tab Bar (mobile) — 4-tab bottom bar, active-tab color+aria-current, numeric badge, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [x] (builder-1) Pull-to-Refresh — 2 variants (pull state + refreshing state), role=status/aria-live, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #16).
 - [ ] Swipe Action Row — list row revealing archive/delete actions on horizontal swipe; distinct from bulk-action-bar.
 - [x] (builder-7) Segmented Page Control — 5-dot indicator w/ elongated active pill, real button/tablist semantics, light+dark, registry+tsx+MDX, screenshot verified (fixed invisible-on-canvas contrast bug found during review), committed + pushed (PR #5)
-- [~] (builder-7) Action Sheet — mobile bottom list of grouped actions with cancel; distinct from bottom-sheet-nav (action list).
+- [x] (builder-7) Action Sheet — grouped action card w/ destructive item + separated Cancel button, native iOS-style, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
 
 <!-- Theme: Data-viz (more) -->
 - [x] (builder-8) Donut Chart — 4-segment traffic-sources ring, computed center total + legend via SVG stroke-dasharray (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [ ] Stacked Area Chart — multi-series cumulative trend with legend toggle; absent from charts set.
-- [ ] Gauge Chart — semicircular needle gauge with threshold zones; distinct from bullet-chart and progress.
+- [~] (builder-6) Gauge Chart — semicircular needle gauge with threshold zones; distinct from bullet-chart and progress.
 - [ ] Treemap — nested proportional rectangles with labels for hierarchical size; absent from library.
 - [x] (builder-8) Waterfall Chart — 6-step Q3 revenue bridge, running-total bar positions computed from deltas (tsx light+dark, html light+dark, registry.json, MDX); fixed a flex items-end height bug found during screenshot review; screenshot verified light+dark, pushed to PR #6
 - [ ] Calendar Heat Legend Chart — month grid with value intensity and axis labels; distinct from heatmap-calendar (chart framing).
@@ -292,7 +292,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 <!-- Theme: Commerce / finance -->
 - [x] (builder-8) Invoice Table — 3-item invoice w/ Pending badge, computed subtotal/8% tax/$9,806.40 total (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [x] (builder-6) Payment Method Card — 2 variants (single saved card, selectable list with add-new affordance), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
-- [ ] Discount Code Field — promo input with apply button and applied/invalid states; distinct from copy-field.
+- [~] (builder-2) Discount Code Field — promo input with apply button and applied/invalid states; distinct from copy-field.
 - [x] (builder-2) Order Status Tracker — 4-stage horizontal stepper (Placed/Shipped complete, Out for delivery current w/ pulse ring, Delivered upcoming w/ est. date), state computed from a single currentStepIndex, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components
 - [ ] Refund Request Panel — reason select, amount, and note with submit; absent from library.
 
@@ -301,18 +301,18 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-5) QR Code Card — QR tile (white bg, always-scannable contrast) + caption + encoded value text + Download/Copy link actions, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [x] (builder-10) Countdown Ring Timer — 2 variants (large radial timer w/ mm:ss center, compact inline ring timer w/ action row), light+dark, registry+tsx generated, screenshots verified (live tick confirmed), pushed
 - [x] (builder-5) Feature Flag Toggle Row — flag key + env pills (Dev/Staging/Prod) + rollout % status + enable switch, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
-- [~] (builder-2) Breadcrumb Page Header — title + breadcrumb + action buttons page-header composite; distinct from breadcrumbs (header block).
+- [x] (builder-2) Breadcrumb Page Header — 3-level breadcrumb trail (aria-current=page on last), h1 title + description, trailing action-buttons slot, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components, rebased onto origin/main cleanly (PR #13 confirmed mergeable)
 - [ ] Filter Chip Overflow — chip row that collapses extras into a "+N" popover on narrow widths; distinct from data-filter-bar.
 
 <!-- === WAVE 5 (deep-backlog refill, post-176) — themed batches, verified non-dupe against registry === -->
 
 <!-- Theme: Layout / structure -->
-- [~] (builder-3) Split View Layout — resizable master-detail two-pane shell with a collapsible list side; distinct from resizable (app layout composition).
+- [x] (builder-3) Split View Layout — inbox-style master-detail shell, collapsible list pane, resize handle, active-item aria-current, detail content slot, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 - [~] (builder-10) Sticky Section Header — list header that pins to the top while its group scrolls; absent from library.
 - [ ] Masonry Grid — variable-height card grid with balanced columns; distinct from grids (masonry flow).
 - [ ] Sidebar Layout Shell — fixed sidebar + topbar + content app frame with collapse; distinct from dashboard-sidebar (full shell).
 - [ ] Card Stack — swipeable stacked-card deck (Tinder-style) with accept/reject; absent from library.
-- [ ] Expandable Detail Row — table row that expands inline to reveal a detail panel; distinct from tables and accordions.
+- [~] (builder-3) Expandable Detail Row — table row that expands inline to reveal a detail panel; distinct from tables and accordions.
 
 <!-- Theme: Feedback / status (more) -->
 - [ ] Progress Steps Toast — long-running-task toast showing sub-step progress; distinct from toast-stack.
@@ -353,6 +353,6 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 <!-- Theme: Utility (more) -->
 - [ ] Timezone Picker — searchable tz dropdown showing offset and current time; distinct from time-picker.
 - [ ] Language Switcher — flag/label locale dropdown with checkmark on active; absent from library.
-- [ ] Theme Toggle Switch — animated light/dark/system three-way control; distinct from toggles.
+- [~] (builder-5) Theme Toggle Switch — animated light/dark/system three-way control; distinct from toggles.
 - [ ] Keyboard Focus Ring Demo — accessibility focus-order showcase with visible ring states; absent from library.
 - [ ] Copy Share Link Row — read-only link with copy + expiry/permission dropdown; distinct from copy-field and share-dialog.
