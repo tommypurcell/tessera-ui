@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-stat-highlight-band",
+  "title": "Stat Highlight Band",
+  "description": "Full-width band of 3-4 headline metrics with labels, separated by dividers rather than individual card borders.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["marketing", "stats", "metrics"],
+  "useWhen": [
+    "Showing a small set of headline numbers (customers, uptime, revenue) as a single cohesive band, e.g. on a landing page or dashboard header.",
+    "You want the stats visually unified as one group rather than as separate individual cards.",
+    "Each figure is a single static value, not something with a trend or delta to show."
+  ],
+  "avoidWhen": [
+    "Each stat needs its own delta/trend indicator or icon — use `stats` for that per-card, richer-context case instead.",
+    "You have more than 4 metrics — the band's divider layout gets cramped; split into two rows or a grid instead.",
+    "Metrics live inside a data table or list, not a summary band — this component is for a headline strip, not tabular data."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Two columns with horizontal dividers on narrow viewports, switching to a single row with vertical dividers at the sm breakpoint — never both directions of divider at once.",
+  "accessibility": [
+    "Stats use a <dl> so each value has a programmatic label (the metric name), not just visual proximity to its heading.",
+    "Values use the font's default proportional figures, not tabular-nums, since this is a set of large standalone headline numbers rather than a column that needs vertical alignment.",
+    "Dividers are drawn with divide-x/divide-y utilities rather than a border-per-cell, avoiding doubled borders between adjacent stats."
+  ],
+  "compatibleWith": ["application-stats", "application-cta-banner-card"],
+  "variants": [
+    {
+      "id": "stat-highlight-band-1",
+      "title": "Stat Highlight Band",
+      "description": "Four metrics (Customers, Countries, Uptime, Transactions) in one divided band.",
+      "source": {
+        "html": "../../../../public/examples/application/stat-highlight-band/1.html",
+        "tsx": "tsx/StatHighlightBandVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The column-count Tailwind class is chosen from a static lookup keyed by stat count (3 or 4), never built via string interpolation, so Tailwind's content scanner reliably picks it up."
+      ]
+    },
+    {
+      "id": "stat-highlight-band-1-dark",
+      "title": "Stat Highlight Band (Dark)",
+      "description": "Stat highlight band adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/stat-highlight-band/1-dark.html",
+        "tsx": "tsx/StatHighlightBandVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Divider and label colors are tuned to remain visible but recessive against the dark surface, keeping the value as the primary read."
+      ]
+    }
+  ]
+}
