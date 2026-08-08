@@ -633,7 +633,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-2) Irrigation Schedule Row — per-zone toggle switch, icon color/name emphasis/next-run text all derived from same toggled state (verified via Playwright: toggling paused zone correctly showed its data-next-run time); light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
 
 <!-- Theme: Manufacturing -->
-- [~] (builder-4) Production Line Status — station tiles with running/stopped/fault and throughput; distinct from health-check-grid.
+- [x] (builder-4) Production Line Status — 6-station grid, live-ping running dot, fault/below-target/stopped tiles, u/hr vs target, footer fault summary; light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #17)
 - [x] (builder-10) OEE Gauge Trio — 2 variants (3 semicircular gauges w/ overall score, compact horizontal bar breakdown), light+dark, semicircle arc math verified, registry+tsx generated, screenshots verified, pushed
 - [x] (builder-9) Work Order Card — 2 variants (detail card with stage-progress bar, compact list) light+dark, registry.json, MDX entry, screenshots
 
@@ -649,7 +649,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-2) Recipe Ingredient List — 4→N serving stepper recalculating every ingredient quantity live (caught+fixed unit pluralization bug: "2 cup sugar" at 8 servings should read "cups", now pluralizes based on scaled quantity), checkable rows; light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
 - [x] (builder-2) Recipe Step Card — numbered step + gradient image, real start/pause/reset countdown timer via setInterval, verified ticking + resetting in Playwright; light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
 - [x] (builder-5) Photo EXIF Panel — image metadata rows (camera/lens/ISO/aperture) with histogram; distinct from media. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
-- [ ] Photo Grid Selectable — multi-select photo grid with checkmarks and count bar; distinct from image-gallery-lightbox.
+- [x] (builder-2) Photo Grid Selectable — 6-tile grid, click-to-select with checkmark+ring, count bar appears only when selection non-empty, Clear resets all (verified via Playwright click-through); caught+fixed a Tailwind compile bug where `to-green-*` gradient stops silently failed to compile (swapped for `emerald`); light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
 
 <!-- === WAVE 12 (deep-backlog refill, post-356) — state/variant framings + remaining gaps, verified non-dupe === -->
 
@@ -663,16 +663,16 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: Density / size framings -->
 - [x] (builder-9) Compact Data Table — sticky-header zebra table with condensed row height, light+dark, registry.json, MDX entry, screenshots
-- [~] (builder-7) Comfortable List Row — spacious two-line list item with leading media and trailing meta; distinct from media-object-row.
+- [x] (builder-7) Comfortable List Row — spacious two-line list item with leading media and trailing meta; distinct from media-object-row. Light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #26).
 - [x] (builder-8) Mini Stat Chip — 3 compact toolbar chips (up/down/no-trend states), arrow direction+color derived from real signed trendPercent, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
-- [~] (builder-5) Expanded Detail Card — large hero-metric card with secondary stats grid; distinct from big-number-delta-tile.
+- [x] (builder-5) Expanded Detail Card — large hero-metric card with secondary stats grid; distinct from big-number-delta-tile. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 
 <!-- Theme: Mobile compositions -->
-- [~] (builder-1) Mobile List Section — grouped iOS-style inset list with section headers and chevrons; distinct from settings-nav-list.
-- [ ] Mobile Filter Sheet — bottom-sheet full-screen filter form with apply/reset footer; distinct from faceted-search-sidebar.
-- [ ] Mobile Segmented Tabs — sticky top segmented control that swaps paged content; distinct from tab-bar-mobile.
+- [x] (builder-1) Mobile List Section — 2 variants (single section + multi-section), iOS-style inset grouped list, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #16).
+- [x] (builder-4) Mobile Filter Sheet — full-screen phone-frame sheet, dual-handle price slider, checkable category rows w/ counts, size chips, in-stock toggle, sticky "Show N results" footer; light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #17)
+- [x] (builder-4) Mobile Segmented Tabs — sticky All/Unread/Flagged pill control (role=tablist) above scrollable inbox list w/ unread dots; light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #17)
 - [~] (builder-10) Mobile Form Stepper — one-field-per-screen guided flow with progress dots; distinct from multi-step-progress.
-- [ ] Swipeable Card Carousel — snap-scrolling horizontal card row with peek and dots; distinct from carousel.
+- [~] (builder-4) Swipeable Card Carousel — snap-scrolling horizontal card row with peek and dots; distinct from carousel.
 
 <!-- Theme: RTL / i18n -->
 - [ ] RTL Layout Demo — mirrored nav+content composition showcasing logical-property flipping; absent from library.
@@ -680,24 +680,24 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-8) Number Format Preview — 4-locale table (en-US/de-DE/ja-JP/ar-EG RTL) w/ real Intl.NumberFormat/DateTimeFormat output verified via Node, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 
 <!-- Theme: Interaction primitives -->
-- [ ] Drag Handle Row — reorderable list row with grip handle and drop indicator; distinct from queue-list.
+- [x] (builder-9) Drag Handle Row — 2 variants (reorderable list, dragging state) light+dark, registry.json, MDX entry, screenshots
 - [ ] Resizable Column Header — table header with drag-to-resize and sort caret; distinct from column-visibility-menu.
 - [ ] Long-Press Menu — press-and-hold context menu with ripple feedback (mobile); distinct from context menu.
 - [ ] Multi-Range Timeline Select — drag to select a span across a timeline with handles; distinct from timeline-scrubber.
 
 <!-- Theme: Content / marketing (dashboard-adjacent) -->
-- [ ] Feature Highlight Row — icon + title + description alternating feature block; distinct from media-object-row.
-- [ ] Testimonial Card — quote, avatar, name, role, and rating; distinct from social-post-card.
-- [ ] Logo Cloud Grid — responsive customer-logo grid with subtle dividers; distinct from amenities-grid.
-- [ ] Stat Highlight Band — full-width row of 3–4 headline metrics with labels; distinct from stats.
-- [ ] CTA Banner Card — gradient promo card with heading, subtext, and action buttons; distinct from announcement-banner.
+- [x] (builder-7) Feature Highlight Row — icon + title + description alternating feature block; distinct from media-object-row. Light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #26).
+- [x] (builder-5) Testimonial Card — quote, avatar, name, role, and rating; distinct from social-post-card. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
+- [~] (builder-5) Logo Cloud Grid — responsive customer-logo grid with subtle dividers; distinct from amenities-grid.
+- [x] (builder-7) Stat Highlight Band — full-width row of 3–4 headline metrics with labels; distinct from stats. Light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #26).
+- [~] (builder-1) CTA Banner Card — gradient promo card with heading, subtext, and action buttons; distinct from announcement-banner.
 
 <!-- Theme: Remaining vertical gaps -->
-- [~] (builder-8) Weather Forecast Row — 7-day forecast strip with icons, hi/lo, and precip %; distinct from weather-widget.
-- [ ] Sports Standings Table — ranked team table with W/L/streak and rank movement; distinct from leaderboard-list.
+- [x] (builder-8) Weather Forecast Row — 7-day strip (sun/cloud/rain icons), hi/lo, precip % internally consistent w/ icon choice, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
+- [~] (builder-8) Sports Standings Table — ranked team table with W/L/streak and rank movement; distinct from leaderboard-list.
 - [ ] Dating Profile Card — swipe-card with photo, name/age, bio, and interest tags; distinct from card-stack.
-- [ ] Menu Category Tabs — sticky food-category tab strip that scrolls the menu; distinct from tab-overflow-scroller.
-- [ ] Nutrition Facts Panel — labeled nutrition table with % daily-value column; distinct from tables.
+- [~] (builder-7) Menu Category Tabs — sticky food-category tab strip that scrolls the menu; distinct from tab-overflow-scroller.
+- [x] (builder-8) Nutrition Facts Panel — FDA-style label w/ %DV column computed live per-nutrient (amount÷FDA daily value), indented sub-nutrients, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 
 <!-- === WAVE 13 (deep-backlog refill, post-407) — variant/interaction framings + gaps, verified non-dupe === -->
 
