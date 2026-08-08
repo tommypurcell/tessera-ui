@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-feature-comparison-matrix",
+  "title": "Feature Comparison Matrix",
+  "description": "Sticky-header table comparing plans or products across feature rows with check/dash/limit cells, driven by a typed plans/rows prop contract.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["comparison", "matrix", "pricing", "table", "plans"],
+  "useWhen": [
+    "Comparing multiple plans, tiers, or product SKUs across a shared list of features or limits.",
+    "Some cells are boolean (included/not included) while others carry a specific limit or value.",
+    "One plan should be visually emphasized as the recommended or most popular option."
+  ],
+  "avoidWhen": [
+    "You only need marketing-style pricing cards without a shared feature list — use the pricing table component instead.",
+    "The comparison has only two options — a simple two-column layout may communicate the difference faster than a full matrix.",
+    "Feature rows number in the hundreds — pair this with search/filtering rather than a single static table."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The feature-label column stays pinned via position:sticky while the plan columns scroll horizontally on narrow viewports, keeping row context visible during comparison.",
+  "accessibility": [
+    "Boolean cells pair an icon with visually hidden 'Included'/'Not included' text, so screen readers don't rely on the icon alone.",
+    "The highlighted/recommended plan column uses a filled background in addition to its badge label, not color alone.",
+    "Column headers use scope='col' so assistive technology can associate each cell with its plan when navigating the table."
+  ],
+  "compatibleWith": ["application-data-table", "marketing-pricing"],
+  "variants": [
+    {
+      "id": "feature-comparison-matrix-1",
+      "title": "Feature Comparison Matrix",
+      "description": "Three-plan comparison table with a sticky feature column, a highlighted 'Popular' plan, boolean check/dash cells, and value cells for limits.",
+      "source": {
+        "html": "../../../../public/examples/application/feature-comparison-matrix/1.html",
+        "tsx": "tsx/FeatureComparisonMatrixVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Boolean feature cells always carry visually hidden text alongside the check/dash icon."
+      ]
+    },
+    {
+      "id": "feature-comparison-matrix-1-dark",
+      "title": "Feature Comparison Matrix (Dark)",
+      "description": "Plan comparison table adapted for dark surfaces with the same sticky column, highlighted plan, and cell structure.",
+      "source": {
+        "html": "../../../../public/examples/application/feature-comparison-matrix/1-dark.html",
+        "tsx": "tsx/FeatureComparisonMatrixVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Header, row, and highlighted-column text must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
