@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 822,
+  "screenshotCount": 826,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -4004,6 +4004,46 @@
       "sourcePath": "files/application-weather-widget/weather-widget-2-dark.html",
       "sourceSha256": "ff1dfe857605ccada2051c4d427587d26bbfffda07e3d599d8217b6757dde392",
       "url": "/screenshots/components/application-weather-widget/weather-widget-2-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-xp-progress-bar",
+      "variantId": "xp-progress-bar-1",
+      "appearance": "light",
+      "sourcePath": "files/application-xp-progress-bar/xp-progress-bar-1.html",
+      "sourceSha256": "70222edb7b7417ef9ca515d8890b10165d0a64c31adacd688b20df330cb5aa7f",
+      "url": "/screenshots/components/application-xp-progress-bar/xp-progress-bar-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-xp-progress-bar",
+      "variantId": "xp-progress-bar-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-xp-progress-bar/xp-progress-bar-1-dark.html",
+      "sourceSha256": "20d8ae5a83e15e583f288be06bab2a6509e6d6b445199a382544bc596c7756c1",
+      "url": "/screenshots/components/application-xp-progress-bar/xp-progress-bar-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-xp-progress-bar",
+      "variantId": "xp-progress-bar-2",
+      "appearance": "light",
+      "sourcePath": "files/application-xp-progress-bar/xp-progress-bar-2.html",
+      "sourceSha256": "e868486b24194807417f505c9c70768b227e38705bc47ab356154d510abefd91",
+      "url": "/screenshots/components/application-xp-progress-bar/xp-progress-bar-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-xp-progress-bar",
+      "variantId": "xp-progress-bar-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-xp-progress-bar/xp-progress-bar-2-dark.html",
+      "sourceSha256": "81f3ac5995016117fe834e6f4eaafbdf01cdca86d96f5ad5d50b4f49e3020782",
+      "url": "/screenshots/components/application-xp-progress-bar/xp-progress-bar-2-dark.jpg",
       "width": 600,
       "height": 400
     },
