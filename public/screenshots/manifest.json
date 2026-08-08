@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 806,
+  "screenshotCount": 810,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -2925,6 +2925,46 @@
       "sourceSha256": "c8dc7625c503bb1d21f771a5147d0aa902cd82acfc3b88ef9bc23119ce4f98f6",
       "url": "/screenshots/components/application-steps/steps-5-dark.jpg",
       "width": 816,
+      "height": 400
+    },
+    {
+      "componentId": "application-tab-overflow-scroller",
+      "variantId": "tab-overflow-scroller-1",
+      "appearance": "light",
+      "sourcePath": "files/application-tab-overflow-scroller/tab-overflow-scroller-1.html",
+      "sourceSha256": "557075b3d977d042d8da89250c65997925d11dda2fd843f34f79074f4ae860d6",
+      "url": "/screenshots/components/application-tab-overflow-scroller/tab-overflow-scroller-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-tab-overflow-scroller",
+      "variantId": "tab-overflow-scroller-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-tab-overflow-scroller/tab-overflow-scroller-1-dark.html",
+      "sourceSha256": "3dcbbb791e0a493a99812a918245ad7c71ca72dddbff67afc33cb0e50e772f7b",
+      "url": "/screenshots/components/application-tab-overflow-scroller/tab-overflow-scroller-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-tab-overflow-scroller",
+      "variantId": "tab-overflow-scroller-2",
+      "appearance": "light",
+      "sourcePath": "files/application-tab-overflow-scroller/tab-overflow-scroller-2.html",
+      "sourceSha256": "dd882025d41ab402e60795a6b32f8328b49ffaa98b3d5f13acf5a2d72282d73e",
+      "url": "/screenshots/components/application-tab-overflow-scroller/tab-overflow-scroller-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-tab-overflow-scroller",
+      "variantId": "tab-overflow-scroller-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-tab-overflow-scroller/tab-overflow-scroller-2-dark.html",
+      "sourceSha256": "c30c18435429e9a4839d0645cfcdae42373b71b8a0e68f128e7e622b08993477",
+      "url": "/screenshots/components/application-tab-overflow-scroller/tab-overflow-scroller-2-dark.jpg",
+      "width": 600,
       "height": 400
     },
     {

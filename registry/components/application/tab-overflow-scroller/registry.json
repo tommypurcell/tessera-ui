@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-tab-overflow-scroller",
+  "title": "Tab Overflow Scroller",
+  "description": "Horizontally scrollable tab strip for a fixed set of tabs too wide to fit at once — an arrow-button variant and an edge-fade variant, distinct from application-tabs which assumes all tabs fit in the available width.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["tabs", "scroll", "navigation", "overflow", "primitive"],
+  "useWhen": [
+    "A fixed set of tab labels is too wide to fit in the available width, especially on narrow screens.",
+    "You want explicit prev/next controls for scrolling through tabs, in addition to touch/trackpad scrolling.",
+    "A subtle edge-fade hint is enough to signal more tabs exist off-screen, without extra buttons."
+  ],
+  "avoidWhen": [
+    "All tabs comfortably fit in the available width — use application-tabs instead, it is simpler.",
+    "The tabs need to collapse extras into an overflow menu rather than scroll — a different \"+N more\" pattern is more appropriate.",
+    "Only two or three tabs exist — scrolling affordances add unnecessary complexity for content that always fits."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The tab strip scrolls horizontally within its own overflow-x-auto container at any width; the arrow-button variant keeps its buttons visible while the edge-fade variant relies on the fade cue alone.",
+  "accessibility": [
+    "The scrollable strip carries role='tablist' with each tab as a role='tab' and aria-selected reflecting the active tab.",
+    "Arrow buttons in variant 1 carry real aria-labels ('Scroll tabs left/right') since they have no visible text.",
+    "The edge-fade overlay in variant 2 is decorative (aria-hidden, pointer-events-none) and does not block interaction with the tabs beneath it."
+  ],
+  "compatibleWith": ["application-tabs", "application-breadcrumbs"],
+  "variants": [
+    {
+      "id": "tab-overflow-scroller-1",
+      "title": "With arrow buttons",
+      "description": "Scrollable tab strip with prev/next arrow buttons at both ends for explicit scroll control.",
+      "source": {
+        "html": "../../../../public/examples/application/tab-overflow-scroller/1.html",
+        "tsx": "tsx/TabOverflowScrollerVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "Both arrow buttons carry a descriptive aria-label since they contain only an icon."
+      ]
+    },
+    {
+      "id": "tab-overflow-scroller-1-dark",
+      "title": "With arrow buttons (Dark)",
+      "description": "Arrow-button scrollable tab strip adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/tab-overflow-scroller/1-dark.html",
+        "tsx": "tsx/TabOverflowScrollerVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "Arrow icon and active-tab underline contrast must meet WCAG AA on dark backgrounds."
+      ]
+    },
+    {
+      "id": "tab-overflow-scroller-2",
+      "title": "With edge fade",
+      "description": "Scrollable tab strip with a subtle edge-fade gradient hinting at more tabs off-screen, relying on native scroll instead of arrow buttons.",
+      "source": {
+        "html": "../../../../public/examples/application/tab-overflow-scroller/2.html",
+        "tsx": "tsx/TabOverflowScrollerVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "The fade overlay does not block pointer or keyboard interaction with the tabs underneath it."
+      ]
+    },
+    {
+      "id": "tab-overflow-scroller-2-dark",
+      "title": "With edge fade (Dark)",
+      "description": "Edge-fade scrollable tab strip adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/tab-overflow-scroller/2-dark.html",
+        "tsx": "tsx/TabOverflowScrollerVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "The fade gradient uses the dark background color so it blends rather than showing a visible seam."
+      ]
+    }
+  ]
+}

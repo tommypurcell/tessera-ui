@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex justify-center bg-gray-950 p-6">
+    <div class="relative w-full max-w-md border-b border-gray-800">
+      <div role="tablist" aria-label="Dashboard sections" class="flex gap-1 overflow-x-auto px-1">
+        <button type="button" role="tab" aria-selected="true" class="relative shrink-0 px-3 py-2.5 text-sm font-medium text-white">
+          Overview
+          <span class="absolute inset-x-0 -bottom-px h-0.5 rounded-full bg-white" aria-hidden="true"></span>
+        </button>
+        <button type="button" role="tab" aria-selected="false" class="shrink-0 px-3 py-2.5 text-sm font-medium text-gray-400 hover:text-white">Analytics</button>
+        <button type="button" role="tab" aria-selected="false" class="shrink-0 px-3 py-2.5 text-sm font-medium text-gray-400 hover:text-white">Reports</button>
+        <button type="button" role="tab" aria-selected="false" class="shrink-0 px-3 py-2.5 text-sm font-medium text-gray-400 hover:text-white">Notifications</button>
+        <button type="button" role="tab" aria-selected="false" class="shrink-0 px-3 py-2.5 text-sm font-medium text-gray-400 hover:text-white">Team</button>
+        <button type="button" role="tab" aria-selected="false" class="shrink-0 px-3 py-2.5 text-sm font-medium text-gray-400 hover:text-white">Billing</button>
+        <button type="button" role="tab" aria-selected="false" class="shrink-0 px-3 py-2.5 text-sm font-medium text-gray-400 hover:text-white">Integrations</button>
+        <button type="button" role="tab" aria-selected="false" class="shrink-0 px-3 py-2.5 text-sm font-medium text-gray-400 hover:text-white">Audit log</button>
+      </div>
+      <div class="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-gray-950 to-transparent" aria-hidden="true"></div>
+    </div>
+  </body>
+</html>
