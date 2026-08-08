@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex min-h-96 items-center justify-center p-6">
+    <div role="status" class="flex max-w-sm flex-col items-center rounded-xl border border-gray-700 bg-gray-900 p-8 text-center shadow-sm">
+      <div class="flex size-12 items-center justify-center rounded-full bg-emerald-400/10">
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-emerald-400">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+        </svg>
+      </div>
+
+      <h2 class="mt-4 text-base font-semibold text-white">Access request sent</h2>
+      <p class="mt-1.5 text-sm leading-relaxed text-gray-400">
+        We notified the <span class="font-medium text-gray-200">Design Systems</span> admins. You'll get an email
+        once your access is approved.
+      </p>
+
+      <button
+        type="button"
+        disabled
+        class="mt-6 cursor-not-allowed rounded-md bg-gray-800 px-4 py-2 text-sm font-medium text-gray-500"
+      >
+        Request sent
+      </button>
+    </div>
+  </body>
+</html>
