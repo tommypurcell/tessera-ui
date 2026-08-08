@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "name": "application-cohort-retention-grid",
+  "title": "Cohort Retention Grid",
+  "description": "A triangular cohort-by-period retention table with color-intensity-coded percentage cells, for visualizing how signup cohorts retain over successive weeks or months.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["application", "retention", "cohort", "analytics", "heatmap"],
+  "useWhen": [
+    "Analyzing how a specific signup or acquisition cohort's engagement decays (or holds) over successive time periods.",
+    "Comparing retention curves across multiple cohorts to spot whether a product change improved retention going forward."
+  ],
+  "avoidWhen": [
+    "You're showing daily activity intensity over a calendar rather than cohort-by-period retention — use heatmap-calendar instead.",
+    "There's only one cohort to show — a simple line chart of retention over time communicates a single curve more directly than a grid."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The table sits in a horizontally scrollable container so additional period columns (W5, W6, ...) can be added without breaking layout on narrow viewports.",
+  "accessibility": [
+    "Marked up as a real <table> with scope=\"col\"/scope=\"row\" headers, so screen readers can announce each cell's cohort and period.",
+    "Cells with no data yet (future periods for a recent cohort) show an em dash rather than an empty or zero cell, avoiding a false reading of 0% retention.",
+    "Color intensity is reinforced by the percentage text in every cell — retention is never conveyed by color alone."
+  ],
+  "compatibleWith": ["application-heatmap-calendar", "application-tables"],
+  "variants": [
+    {
+      "id": "cohort-retention-grid-1",
+      "title": "Weekly cohorts",
+      "description": "Four weekly cohorts across five weeks (W0-W4), with a color-intensity legend",
+      "source": {
+        "html": "../../../../public/examples/application/cohort-retention-grid/1.html",
+        "tsx": "tsx/CohortRetentionGridVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": ["Real table markup with row/column headers makes each cell's cohort and week independently announceable."]
+    },
+    {
+      "id": "cohort-retention-grid-1-dark",
+      "title": "Weekly cohorts (Dark)",
+      "description": "Four weekly cohorts across five weeks (W0-W4), with a color-intensity legend",
+      "source": {
+        "html": "../../../../public/examples/application/cohort-retention-grid/1-dark.html",
+        "tsx": "tsx/CohortRetentionGridVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    },
+    {
+      "id": "cohort-retention-grid-2",
+      "title": "Monthly cohorts (compact)",
+      "description": "Three monthly cohorts across three months (M0-M2), for a smaller dashboard card",
+      "source": {
+        "html": "../../../../public/examples/application/cohort-retention-grid/2.html",
+        "tsx": "tsx/CohortRetentionGridVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": ["Missing future-period cells show an em dash rather than implying 0% retention."]
+    },
+    {
+      "id": "cohort-retention-grid-2-dark",
+      "title": "Monthly cohorts (compact) (Dark)",
+      "description": "Three monthly cohorts across three months (M0-M2), for a smaller dashboard card",
+      "source": {
+        "html": "../../../../public/examples/application/cohort-retention-grid/2-dark.html",
+        "tsx": "tsx/CohortRetentionGridVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    }
+  ]
+}
