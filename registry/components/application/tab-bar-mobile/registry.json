@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-tab-bar-mobile",
+  "title": "Tab Bar (Mobile)",
+  "description": "Fixed bottom mobile tab bar with an icon and label per tab, an active-tab color state, and an optional numeric badge.",
+  "category": "application/navigation",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["mobile", "navigation", "tab bar", "app shell"],
+  "useWhen": [
+    "Building the primary navigation for a mobile web app or PWA with 3-5 top-level sections.",
+    "Users need an always-visible way to switch sections and see an unread count on one of them.",
+    "The active section should be clear even at small icon sizes, via color and aria-current, not shape alone."
+  ],
+  "avoidWhen": [
+    "You need a floating launcher of app icons rather than a fixed app-shell navigation bar — use Dock instead.",
+    "The screen has more than ~5 top-level destinations — collapse extras into a \"More\" tab or move to a drawer instead of cramming the bar."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Tabs are evenly distributed across the bar's full width via equal flex-basis; this component is intended for narrow (mobile) viewports and should be hidden or replaced by top navigation at wider breakpoints.",
+  "accessibility": [
+    "The bar is a <nav> with aria-label, and the active tab carries aria-current=\"page\".",
+    "Each tab is a real link with visible text, so the icon alone never carries the tab's identity.",
+    "The badge count is rendered as visible text next to the icon, readable by assistive technology, not just a colored dot."
+  ],
+  "compatibleWith": ["application-dock", "application-bottom-sheet-nav"],
+  "variants": [
+    {
+      "id": "tab-bar-mobile-1",
+      "title": "Tab Bar (Mobile)",
+      "description": "A four-tab bar (Home active, Search, Alerts with a badge count of 3, Profile) in a rounded floating bar.",
+      "source": {
+        "html": "../../../../public/examples/application/tab-bar-mobile/1.html",
+        "tsx": "tsx/TabBarMobileVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["active", "inactive", "badged"],
+      "accessibility": [
+        "The active tab is distinguishable by color and aria-current, not icon shape alone."
+      ]
+    },
+    {
+      "id": "tab-bar-mobile-1-dark",
+      "title": "Tab Bar (Mobile) (Dark)",
+      "description": "The same four-tab bar adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/tab-bar-mobile/1-dark.html",
+        "tsx": "tsx/TabBarMobileVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["active", "inactive", "badged"],
+      "accessibility": [
+        "Active-tab color and badge contrast remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}
