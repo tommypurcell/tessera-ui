@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-order-cart-drawer",
+  "title": "Order Cart Drawer",
+  "description": "Running food-order cart panel listing items with per-item modifiers and quantity, a computed subtotal, and a checkout button — distinct from checkout-order-summary, which is a full order-review/payment summary rather than an in-progress cart.",
+  "category": "application/commerce",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["cart", "order", "food", "checkout", "commerce"],
+  "useWhen": [
+    "Showing an in-progress food or product order with quantities and modifiers before checkout.",
+    "You want the subtotal computed live from real line-item quantity and price data.",
+    "A compact panel or drawer needs a persistent running total and a checkout call to action."
+  ],
+  "avoidWhen": [
+    "You need a full payment/shipping review step — use checkout-order-summary instead.",
+    "Items have no modifiers or quantity — a simple list or table is simpler.",
+    "You need an animated slide-in drawer shell — pair this content with your own drawer/sheet primitive."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The panel is fluid up to a max width and stacks item rows vertically; quantity badge, name/modifiers, and price stay on one row at all supported widths.",
+  "accessibility": [
+    "The quantity badge is presented alongside the item name as text, not conveyed by size or color alone.",
+    "The subtotal and checkout button both display the same computed total so it's never ambiguous.",
+    "The checkout button has a visible focus ring for keyboard users."
+  ],
+  "compatibleWith": ["application-checkout-order-summary", "application-invoice-table"],
+  "variants": [
+    {
+      "id": "order-cart-drawer-1",
+      "title": "Order cart drawer",
+      "description": "A three-item food order with modifiers and quantities, a computed subtotal, and a checkout button, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/order-cart-drawer/1.html",
+        "tsx": "tsx/OrderCartDrawerVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Subtotal is the real sum of quantity × price across all line items, not a hand-typed number."
+      ]
+    },
+    {
+      "id": "order-cart-drawer-1-dark",
+      "title": "Order cart drawer (Dark)",
+      "description": "The same food order cart, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/order-cart-drawer/1-dark.html",
+        "tsx": "tsx/OrderCartDrawerVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Text and badge colors meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
