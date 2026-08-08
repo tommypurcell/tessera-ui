@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "name": "application-alert-dialog",
+  "title": "Alert Dialog",
+  "description": "Blocking confirmation dialogs for destructive or consequential actions, built on the native dialog element with no dismiss-by-backdrop-click affordance.",
+  "category": "application/modals",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["application", "dialog", "alert-dialog", "confirm", "destructive"],
+  "useWhen": [
+    "Confirming a destructive or irreversible action, such as deleting an account or record.",
+    "Interrupting the user to confirm they want to lose unsaved work before navigating away.",
+    "The user must make an explicit choice (confirm or cancel) before continuing — no implicit dismissal."
+  ],
+  "avoidWhen": [
+    "The action is reversible or low-stakes — a toast with an undo action is less disruptive.",
+    "You need arbitrary content or a form inside the dialog — use a standard modal instead.",
+    "Dismissing by clicking the backdrop or pressing Escape without an explicit choice is acceptable for this action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The dialog is centered via the native dialog element's default UA styles and constrained to max-w-md; it stays comfortably readable down to small viewports without additional breakpoints.",
+  "accessibility": [
+    "Built on the native <dialog> element opened with showModal(), which traps focus and blocks interaction with the rest of the page automatically.",
+    "aria-labelledby and aria-describedby point at the title and description so screen readers announce both when the dialog opens.",
+    "Unlike a general-purpose modal, this pattern intentionally omits closedby=\"any\" — the user must choose Cancel or Confirm rather than dismiss via backdrop click.",
+    "The destructive action button uses a red focus ring to reinforce which action requires deliberate intent."
+  ],
+  "compatibleWith": ["application-modals", "application-buttons"],
+  "variants": [
+    {
+      "id": "alert-dialog-1",
+      "title": "Destructive confirmation",
+      "description": "Delete-account confirmation with a destructive red confirm button",
+      "source": {
+        "html": "../../../../public/examples/application/alert-dialog/1.html",
+        "tsx": "tsx/AlertDialogVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "open"],
+      "accessibility": ["The confirm button's red focus ring signals a destructive, deliberate action."]
+    },
+    {
+      "id": "alert-dialog-1-dark",
+      "title": "Destructive confirmation (Dark)",
+      "description": "Delete-account confirmation with a destructive red confirm button",
+      "source": {
+        "html": "../../../../public/examples/application/alert-dialog/1-dark.html",
+        "tsx": "tsx/AlertDialogVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "open"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    },
+    {
+      "id": "alert-dialog-2",
+      "title": "Warning confirmation",
+      "description": "Discard-changes confirmation with a warning icon and neutral confirm button",
+      "source": {
+        "html": "../../../../public/examples/application/alert-dialog/2.html",
+        "tsx": "tsx/AlertDialogVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "open"],
+      "accessibility": ["The warning icon is decorative and marked aria-hidden; meaning is carried by the heading and description text."]
+    },
+    {
+      "id": "alert-dialog-2-dark",
+      "title": "Warning confirmation (Dark)",
+      "description": "Discard-changes confirmation with a warning icon and neutral confirm button",
+      "source": {
+        "html": "../../../../public/examples/application/alert-dialog/2-dark.html",
+        "tsx": "tsx/AlertDialogVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "open"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    }
+  ]
+}
