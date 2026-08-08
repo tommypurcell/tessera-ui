@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "application-version-history-list",
+  "title": "Version History List",
+  "description": "Timestamped revision rows with author, a Current badge on the latest version, and View diff/Restore actions on prior versions.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["version", "history", "revision", "restore"],
+  "useWhen": [
+    "Showing a document, record, or file's edit history with who changed it and when.",
+    "Users need to compare a past revision against the current one, or roll back to it.",
+    "You want the current version visually distinct from restorable prior versions, not just another row in the list."
+  ],
+  "avoidWhen": [
+    "You're showing product/release history rather than a single record's edits — use `changelog-entry` for that dated-release framing instead.",
+    "There's no diff or restore capability — a plain `activity-feed` entry is sufficient for read-only change logs.",
+    "Only one version ever exists — there's no history to list."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Author info truncates in a flexible middle column while the trailing badge/actions stay a fixed width, keeping row height constant across revisions.",
+  "accessibility": [
+    "The current version's status is conveyed by visible text (\"Current\"), not position or color alone.",
+    "View diff and Restore are separate, explicitly labeled buttons rather than a single ambiguous overflow action.",
+    "Author avatars are decorative (empty alt) since the name is present as adjacent text.",
+    "Restore is a destructive-leaning action (reverts current state) — pair with a confirmation step in your real implementation rather than firing on a single click."
+  ],
+  "compatibleWith": ["application-diff", "application-avatar", "application-changelog-entry"],
+  "variants": [
+    {
+      "id": "version-history-list-1",
+      "title": "Version History List",
+      "description": "Four revisions: the current version with a badge, and three prior versions each with View diff and Restore actions.",
+      "source": {
+        "html": "../../../../public/examples/application/version-history-list/1.html",
+        "tsx": "tsx/VersionHistoryListVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["current", "restorable"],
+      "accessibility": [
+        "Whether a row shows the Current badge or the action pair is computed from a single isCurrent flag per revision."
+      ]
+    },
+    {
+      "id": "version-history-list-1-dark",
+      "title": "Version History List (Dark)",
+      "description": "Version history list adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/version-history-list/1-dark.html",
+        "tsx": "tsx/VersionHistoryListVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["current", "restorable"],
+      "accessibility": [
+        "Current badge and action link colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

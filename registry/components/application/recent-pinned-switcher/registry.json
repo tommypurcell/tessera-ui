@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "application-recent-pinned-switcher",
+  "title": "Recent / Pinned Switcher",
+  "description": "Workspace/project switcher panel with a search field, a Pinned section, and a Recent section, plus a create-workspace action.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["switcher", "workspace", "navigation", "search"],
+  "useWhen": [
+    "Users belong to or work across multiple workspaces/organizations/projects and need to switch between them quickly.",
+    "Some destinations are used often enough to warrant pinning above the general recency-ordered list.",
+    "The switcher list is long enough that a search field meaningfully speeds up finding a specific workspace."
+  ],
+  "avoidWhen": [
+    "There's only one workspace per user — a switcher has nothing to switch between and just adds UI weight.",
+    "You need a generic labeled menu of unrelated actions — use `dropdown` for that, not this workspace-specific composition.",
+    "Pinning/recency isn't a meaningful concept for your list — a plain searchable `combobox` is simpler without the two-section split."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Fixed-width popover-style panel; anchor it to a trigger button (e.g. the current workspace name in a top bar) and let your popover/positioning layer handle placement.",
+  "accessibility": [
+    "The active workspace carries aria-current=\"true\" in addition to its highlighted background and checkmark, so assistive tech can identify the current selection.",
+    "The search field has an associated (visually hidden) label rather than relying on placeholder text alone.",
+    "Section headings (\"Pinned\", \"Recent\") are visible text landmarks, helping users scan without relying on icon meaning alone.",
+    "Each workspace row's colored initial avatar is paired with the workspace name as text, never color/initial alone."
+  ],
+  "compatibleWith": ["application-dropdown", "application-combobox", "application-avatar"],
+  "variants": [
+    {
+      "id": "recent-pinned-switcher-1",
+      "title": "Recent / Pinned Switcher",
+      "description": "Search field, a Pinned section with the active workspace checked, a Recent section, and a Create workspace action.",
+      "source": {
+        "html": "../../../../public/examples/application/recent-pinned-switcher/1.html",
+        "tsx": "tsx/RecentPinnedSwitcherVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "filtered", "active"],
+      "accessibility": [
+        "Typing in the search field filters both the Pinned and Recent lists live against real workspace data."
+      ]
+    },
+    {
+      "id": "recent-pinned-switcher-1-dark",
+      "title": "Recent / Pinned Switcher (Dark)",
+      "description": "Workspace switcher adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/recent-pinned-switcher/1-dark.html",
+        "tsx": "tsx/RecentPinnedSwitcherVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "filtered", "active"],
+      "accessibility": [
+        "Active-row and section-heading colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}
