@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-sidebar-layout-shell",
+  "title": "Sidebar Layout Shell",
+  "description": "A full app-frame layout — fixed sidebar with nav and user footer, a topbar with breadcrumb and search, and a scrollable content area.",
+  "category": "application/sidebar-layout-shell",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "sidebar-layout-shell",
+    "layout",
+    "shell",
+    "sidebar",
+    "app frame",
+    "navigation"
+  ],
+  "useWhen": [
+    "Scaffolding a new authenticated app view — this is the outer frame that every page renders inside.",
+    "You need a starting point combining sidebar nav, a topbar, and a scrollable main region rather than assembling `dashboard-sidebar` and a header separately each time."
+  ],
+  "avoidWhen": [
+    "You only need the sidebar navigation itself, not the full page frame — use `dashboard-sidebar` or `side-menu` directly.",
+    "The app is a single-page tool without persistent navigation — a full shell adds structural overhead a simpler layout doesn't need."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The sidebar is a fixed width column beside a flex-1 content area; collapse the sidebar to an icon-only rail or an off-canvas drawer below the width needed for its full nav labels.",
+  "accessibility": [
+    "The sidebar's nav items list uses a real <nav> landmark, distinct from the <main> content region and <header> topbar.",
+    "The active nav item is marked by both a background/text color change and should carry aria-current=\"page\" in a real implementation.",
+    "The topbar's search and avatar controls are keyboard-reachable in document order before the main content."
+  ],
+  "compatibleWith": ["application-dashboard-sidebar", "application-side-menu", "application-command-bar-breadcrumb"],
+  "variants": [
+    {
+      "id": "sidebar-layout-shell-1",
+      "title": "App shell",
+      "description": "A fixed sidebar (logo, four nav items with Dashboard active, user footer) beside a topbar (breadcrumb, search, avatar) and a scrollable content grid.",
+      "source": {
+        "html": "../../../../public/examples/application/sidebar-layout-shell/1.html",
+        "tsx": "tsx/SidebarLayoutShellVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Sidebar navigation is wrapped in a <nav> landmark separate from the <main> content region."
+      ]
+    },
+    {
+      "id": "sidebar-layout-shell-1-dark",
+      "title": "App shell (Dark)",
+      "description": "Sidebar layout shell adapted for dark surfaces, including the active-nav-item highlight and topbar borders.",
+      "source": {
+        "html": "../../../../public/examples/application/sidebar-layout-shell/1-dark.html",
+        "tsx": "tsx/SidebarLayoutShellVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Sidebar, topbar, and content borders all meet WCAG AA contrast against the dark page background."
+      ]
+    }
+  ]
+}
