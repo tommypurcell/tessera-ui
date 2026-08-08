@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "application-copy-share-link-row",
+  "title": "Copy Share Link Row",
+  "description": "Read-only share link with a Copy button that writes to the clipboard and confirms with \"Copied!\", plus a link-permission select.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["share", "copy", "link", "permission"],
+  "useWhen": [
+    "Sharing a generated link (invite, document, recording) where the recipient needs to copy it in one click.",
+    "The link's access level is user-configurable (view/edit/invite-only) and should live right next to the link itself.",
+    "You want built-in visual confirmation that the copy action succeeded, not just a silent clipboard write."
+  ],
+  "avoidWhen": [
+    "You're copying an arbitrary value with no permission concept (API key, ID) — use the simpler `copy-field` instead.",
+    "Sharing needs a full flow (invite by email, member list, role assignment) — use `share-dialog`, which this row is a building block for.",
+    "The link's permission is fixed and not user-configurable — drop the select and keep just the input + Copy button."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Input and Copy button share a flex row with the input shrinking; the permission select and expiry label sit in a second row below.",
+  "accessibility": [
+    "The read-only input has an associated <label> naming it explicitly as the share link, not just a placeholder.",
+    "The Copy button's label changes to \"Copied!\" as real, user-visible text feedback — not a toast that could be missed or a color-only change.",
+    "The permission select has an associated (visually hidden) label describing it as the link's permission control.",
+    "Clipboard write failures are caught silently, leaving the read-only field manually selectable as a fallback — the UI doesn't claim success it didn't achieve."
+  ],
+  "compatibleWith": ["application-copy-field", "application-share-dialog"],
+  "variants": [
+    {
+      "id": "copy-share-link-row-1",
+      "title": "Copy Share Link Row",
+      "description": "Read-only link, Copy button, a view/edit/invite-only permission select, and an expiry label.",
+      "source": {
+        "html": "../../../../public/examples/application/copy-share-link-row/1.html",
+        "tsx": "tsx/CopyShareLinkRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "copied"],
+      "accessibility": [
+        "Copy uses the real navigator.clipboard API and reverts its confirmation label after a timeout, not a permanent state change."
+      ]
+    },
+    {
+      "id": "copy-share-link-row-1-dark",
+      "title": "Copy Share Link Row (Dark)",
+      "description": "Copy share link row adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/copy-share-link-row/1-dark.html",
+        "tsx": "tsx/CopyShareLinkRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "copied"],
+      "accessibility": [
+        "Text and border colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

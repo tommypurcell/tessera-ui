@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-md p-6">
+    <div class="flex flex-col gap-2">
+      <label for="share-link" class="text-sm font-medium text-gray-300">Share link</label>
+
+      <div class="flex gap-2">
+        <input
+          id="share-link"
+          type="text"
+          readonly
+          value="https://tessera.dev/s/8kd93jx"
+          class="min-w-0 flex-1 rounded-md border border-gray-700 bg-gray-900 px-3 py-2 text-sm text-gray-300 shadow-sm focus:border-gray-500 focus:outline-none"
+        />
+
+        <button type="button" class="shrink-0 rounded-md border border-gray-700 bg-gray-900 px-3.5 py-2 text-sm font-semibold text-gray-200 shadow-sm hover:bg-gray-800">
+          Copy
+        </button>
+      </div>
+
+      <div class="flex items-center justify-between">
+        <label for="share-permission" class="sr-only">Link permission</label>
+        <select id="share-permission" class="rounded-md border-0 bg-transparent py-1 pl-0 pr-7 text-xs font-medium text-gray-400 focus:outline-none">
+          <option>Anyone with the link can view</option>
+          <option>Anyone with the link can edit</option>
+          <option>Only invited people</option>
+        </select>
+
+        <span class="text-xs text-gray-500">Expires in 7 days</span>
+      </div>
+    </div>
+  </body>
+</html>
