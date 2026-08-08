@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-lg justify-center p-6">
+    <div class="w-full overflow-hidden rounded-xl border border-gray-800 bg-gray-950 shadow-lg">
+      <div class="flex items-center gap-1.5 border-b border-gray-800 px-4 py-2.5">
+        <span class="h-2.5 w-2.5 rounded-full bg-red-500/70" aria-hidden="true"></span>
+        <span class="h-2.5 w-2.5 rounded-full bg-amber-500/70" aria-hidden="true"></span>
+        <span class="h-2.5 w-2.5 rounded-full bg-emerald-500/70" aria-hidden="true"></span>
+        <span class="ml-2 text-xs font-medium text-gray-400">Command palette</span>
+      </div>
+
+      <div class="max-h-64 overflow-y-auto px-4 py-3 font-mono text-xs leading-relaxed">
+        <div class="mb-3">
+          <p class="flex items-center gap-1.5 text-gray-500">
+            <span class="text-emerald-400">&gt;</span>
+            deploy status
+          </p>
+          <p class="mt-1 pl-4 text-gray-300">Production: healthy &middot; last deploy 12m ago</p>
+        </div>
+
+        <div class="mb-3">
+          <p class="flex items-center gap-1.5 text-gray-500">
+            <span class="text-emerald-400">&gt;</span>
+            clear cache
+          </p>
+          <p class="mt-1 pl-4 text-emerald-400">✓ Cache cleared for 3 regions</p>
+        </div>
+
+        <div>
+          <p class="flex items-center gap-1.5 text-gray-500">
+            <span class="text-emerald-400">&gt;</span>
+            restart worker queue
+          </p>
+          <p class="mt-1 pl-4 text-red-400">✗ Permission denied — requires admin role</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-1.5 border-t border-gray-800 px-4 py-2.5 font-mono text-xs">
+        <span class="text-emerald-400">&gt;</span>
+        <span class="text-gray-300">rollback</span>
+        <span class="h-3.5 w-1.5 animate-pulse bg-gray-400" aria-hidden="true"></span>
+      </div>
+    </div>
+  </body>
+</html>

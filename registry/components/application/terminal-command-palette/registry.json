@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-terminal-command-palette",
+  "title": "Terminal Command Palette",
+  "description": "Inline command runner styled like a terminal: a scrollable history of prior command/output pairs colored by outcome, above a live input line with a blinking caret.",
+  "category": "application/overlays",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["terminal", "command", "console", "devops", "cli"],
+  "useWhen": [
+    "Building an in-app admin console or debug panel where users type and run real commands against your system.",
+    "You need to show command output (success, error, or informational) inline in a running history, not just a single result.",
+    "Distinct from Terminal Blocks (a static code/output display) and Command (a fuzzy-search action palette) — this component actually accepts and runs typed input."
+  ],
+  "avoidWhen": [
+    "You only need to display a static, non-interactive terminal transcript — use Terminal Blocks instead.",
+    "Users are searching/selecting from a fixed list of actions rather than typing free-form commands — use the Command component instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The history pane has a fixed max-height and scrolls internally; the panel itself is a fixed-width block that doesn't reflow its monospace layout at narrower widths.",
+  "accessibility": [
+    "The history region carries role=\"log\" and aria-live=\"polite\" so new command/output pairs are announced as they're added, without re-announcing the entire history each time.",
+    "The input has an explicit aria-label since its only visible affordance is a prompt glyph, not visible label text.",
+    "Output status (success/error/info) is conveyed by both color and the resulting text content (e.g. a leading ✓ or ✗ glyph and descriptive message), not color alone."
+  ],
+  "compatibleWith": ["application-terminal-blocks", "application-command"],
+  "variants": [
+    {
+      "id": "terminal-command-palette-1",
+      "title": "Terminal Command Palette",
+      "description": "A terminal panel with three prior commands (a status check, a successful cache clear, and a permission-denied error) and a live input line showing 'rollback' being typed with a blinking caret.",
+      "source": {
+        "html": "../../../../public/examples/application/terminal-command-palette/1.html",
+        "tsx": "tsx/TerminalCommandPaletteVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["success", "error", "info", "typing"],
+      "accessibility": [
+        "Each output line's status is conveyed by a leading symbol and message text, not color alone."
+      ]
+    },
+    {
+      "id": "terminal-command-palette-1-dark",
+      "title": "Terminal Command Palette (Dark)",
+      "description": "The same command history and input adapted to a true-black terminal surface.",
+      "source": {
+        "html": "../../../../public/examples/application/terminal-command-palette/1-dark.html",
+        "tsx": "tsx/TerminalCommandPaletteVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["success", "error", "info", "typing"],
+      "accessibility": [
+        "Prompt, output, and caret contrast remain legible against the true-black surface."
+      ]
+    }
+  ]
+}
