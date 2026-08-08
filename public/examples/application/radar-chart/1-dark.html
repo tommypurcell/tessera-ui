@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex justify-center bg-gray-950 p-6">
+    <div class="flex w-full max-w-xs flex-col items-center gap-2 rounded-lg border border-gray-800 bg-gray-900 p-6">
+      <h2 class="self-start text-sm font-medium text-gray-100">Vendor comparison</h2>
+
+      <svg width="200" height="200" viewBox="0 0 200 200" role="img" aria-label="Radar chart: Speed 80, Design 65, Reliability 90, Support 55, Price 70">
+        <polygon points="100.0,80.0 119.0,93.8 111.8,116.2 88.2,116.2 81.0,93.8" fill="none" stroke="#374151" stroke-width="1" />
+        <polygon points="100.0,60.0 138.0,87.6 123.5,132.4 76.5,132.4 62.0,87.6" fill="none" stroke="#374151" stroke-width="1" />
+        <polygon points="100.0,40.0 157.1,81.5 135.3,148.5 64.7,148.5 42.9,81.5" fill="none" stroke="#374151" stroke-width="1" />
+        <polygon points="100.0,20.0 176.1,75.3 147.0,164.7 53.0,164.7 23.9,75.3" fill="none" stroke="#374151" stroke-width="1" />
+
+        <line x1="100" y1="100" x2="100.0" y2="20.0" stroke="#374151" stroke-width="1" />
+        <line x1="100" y1="100" x2="176.1" y2="75.3" stroke="#374151" stroke-width="1" />
+        <line x1="100" y1="100" x2="147.0" y2="164.7" stroke="#374151" stroke-width="1" />
+        <line x1="100" y1="100" x2="53.0" y2="164.7" stroke="#374151" stroke-width="1" />
+        <line x1="100" y1="100" x2="23.9" y2="75.3" stroke="#374151" stroke-width="1" />
+
+        <polygon points="100.0,36.0 149.5,83.9 142.3,158.2 74.1,135.6 46.7,82.7" fill="#60a5fa" fill-opacity="0.25" stroke="#60a5fa" stroke-width="2" />
+
+        <circle cx="100.0" cy="36.0" r="3" fill="#60a5fa" />
+        <circle cx="149.5" cy="83.9" r="3" fill="#60a5fa" />
+        <circle cx="142.3" cy="158.2" r="3" fill="#60a5fa" />
+        <circle cx="74.1" cy="135.6" r="3" fill="#60a5fa" />
+        <circle cx="46.7" cy="82.7" r="3" fill="#60a5fa" />
+      </svg>
+
+      <div class="grid w-full grid-cols-2 gap-x-4 gap-y-1 text-xs text-gray-400">
+        <div class="flex justify-between"><span>Speed</span><span class="font-medium text-gray-100">80</span></div>
+        <div class="flex justify-between"><span>Design</span><span class="font-medium text-gray-100">65</span></div>
+        <div class="flex justify-between"><span>Reliability</span><span class="font-medium text-gray-100">90</span></div>
+        <div class="flex justify-between"><span>Support</span><span class="font-medium text-gray-100">55</span></div>
+        <div class="flex justify-between"><span>Price</span><span class="font-medium text-gray-100">70</span></div>
+      </div>
+    </div>
+  </body>
+</html>

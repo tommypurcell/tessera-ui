@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-conversion-rate-tile",
+  "title": "Conversion Rate Tile",
+  "description": "Conversion-rate tile whose headline percentage is computed from a real numerator/denominator pair (never hand-typed), with an optional trend arrow comparing against a previous-period rate.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["conversion-rate", "kpi", "metric", "dashboard"],
+  "useWhen": [
+    "Showing a conversion or completion rate (trial-to-paid, checkout completion, signup conversion) as a headline metric.",
+    "You want the rate percentage guaranteed to match its underlying numerator/denominator, not typed separately.",
+    "A period-over-period trend in percentage points adds useful context."
+  ],
+  "avoidWhen": [
+    "The metric isn't a ratio of two counts — use big-number-delta-tile for a plain value-over-value delta instead.",
+    "You need to show the raw numerator/denominator as the primary number, not the rate — use stat-tile instead.",
+    "No comparison period exists and none is planned — the trend arrow can simply be omitted by not passing previousRatePct."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The tile is a single block sized to its content; place it in your own grid or flex row to control column count at each breakpoint.",
+  "accessibility": [
+    "The rate percentage is always shown as real text with one decimal place, not implied by a bare number.",
+    "Trend direction is conveyed by both an arrow icon and \"pp\" (percentage point) delta text, not color or rotation alone.",
+    "The numerator/denominator context line is real text below the headline rate, not hidden in a tooltip."
+  ],
+  "compatibleWith": ["application-big-number-delta-tile", "application-stat-tile", "application-funnel-chart"],
+  "variants": [
+    {
+      "id": "conversion-rate-tile-1",
+      "title": "Conversion rate tile",
+      "description": "Trial-to-paid conversion tile computed as 428 of 3,200 (13.4%), with a +1.6pp green uptrend, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/conversion-rate-tile/1.html",
+        "tsx": "tsx/ConversionRateTileVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "up", "down"],
+      "accessibility": [
+        "The rate is computed as (numerator / denominator) * 100, so it can never drift out of sync with the displayed counts."
+      ]
+    },
+    {
+      "id": "conversion-rate-tile-1-dark",
+      "title": "Conversion rate tile (Dark)",
+      "description": "The same trial-to-paid conversion tile, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/conversion-rate-tile/1-dark.html",
+        "tsx": "tsx/ConversionRateTileVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "up", "down"],
+      "accessibility": [
+        "Rate, trend, and context text colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

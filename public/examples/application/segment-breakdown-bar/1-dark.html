@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex justify-center bg-gray-950 p-6">
+    <div class="flex w-full max-w-md flex-col gap-3 rounded-lg border border-gray-800 bg-gray-900 p-6">
+      <h2 class="text-sm font-medium text-gray-100">Traffic by device</h2>
+
+      <div class="flex h-4 w-full overflow-hidden rounded-full">
+        <div style="width: 55%; background-color: #60a5fa" role="img" aria-label="Desktop: 1,100 (55%)"></div>
+        <div style="width: 38%; background-color: #4ade80" role="img" aria-label="Mobile: 760 (38%)"></div>
+        <div style="width: 7%; background-color: #fbbf24" role="img" aria-label="Tablet: 140 (7%)"></div>
+      </div>
+
+      <ul class="flex flex-wrap gap-x-5 gap-y-1.5 text-sm">
+        <li class="flex items-center gap-1.5">
+          <span aria-hidden="true" class="size-2.5 shrink-0 rounded-full" style="background-color: #60a5fa"></span>
+          <span class="text-gray-300">Desktop</span>
+          <span class="font-medium text-gray-100">55%</span>
+        </li>
+        <li class="flex items-center gap-1.5">
+          <span aria-hidden="true" class="size-2.5 shrink-0 rounded-full" style="background-color: #4ade80"></span>
+          <span class="text-gray-300">Mobile</span>
+          <span class="font-medium text-gray-100">38%</span>
+        </li>
+        <li class="flex items-center gap-1.5">
+          <span aria-hidden="true" class="size-2.5 shrink-0 rounded-full" style="background-color: #fbbf24"></span>
+          <span class="text-gray-300">Tablet</span>
+          <span class="font-medium text-gray-100">7%</span>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

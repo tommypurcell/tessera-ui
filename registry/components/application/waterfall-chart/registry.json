@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-waterfall-chart",
+  "title": "Waterfall Chart",
+  "description": "Sequential increase/decrease bar chart with a running total — bar start/end positions are computed from real step deltas, showing how a starting value bridges to an ending value through a series of changes.",
+  "category": "application/charts",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["waterfall-chart", "bridge-chart", "running-total", "finance", "analytics"],
+  "useWhen": [
+    "Showing how a starting value changes step by step to reach an ending value (e.g. revenue bridge, budget variance).",
+    "Both positive and negative contributions matter and should be visually distinguished.",
+    "You want bar positions computed from real deltas rather than hand-placed pixel offsets."
+  ],
+  "avoidWhen": [
+    "The steps aren't sequential/cumulative — use a plain bar chart instead.",
+    "You only have a start and end value with no intermediate steps — use big-number-delta-tile instead.",
+    "You need to show more than one bridge/series at once — this component renders a single sequence."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Bars are flex-1 within their row so they redistribute width evenly as the container resizes; the chart height is fixed (default 160px).",
+  "accessibility": [
+    "Each bar carries role='img' with an aria-label stating the step name and its signed value (e.g. \"Churn: -30\"), since bar position/height alone isn't announced by screen readers.",
+    "Every bar's value is also shown as visible text above its label.",
+    "Total (starting/ending) bars use a neutral color distinct from the green/red positive/negative bars, so the anchor points are visually distinguishable from the deltas."
+  ],
+  "compatibleWith": ["application-charts", "application-bullet-chart", "application-stat-tile"],
+  "variants": [
+    {
+      "id": "waterfall-chart-1",
+      "title": "Waterfall chart",
+      "description": "Six-step Q3 revenue bridge (Starting revenue → New sales → Upsells → Churn → Refunds → Ending revenue), on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/waterfall-chart/1.html",
+        "tsx": "tsx/WaterfallChartVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Bar color (green/red/gray) is supplementary; the signed numeric label carries the meaning."
+      ]
+    },
+    {
+      "id": "waterfall-chart-1-dark",
+      "title": "Waterfall chart (Dark)",
+      "description": "The same six-step revenue bridge, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/waterfall-chart/1-dark.html",
+        "tsx": "tsx/WaterfallChartVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Bar and text colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

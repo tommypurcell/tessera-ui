@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-task-priority-badge",
+  "title": "Task Priority Badge Set",
+  "description": "Task priority badge with a consistent icon and color scale across Urgent/High/Medium/Low — the icon, color, and label are always selected together from a single typed priority prop.",
+  "category": "application/badges",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["priority", "badge", "task", "project-management"],
+  "useWhen": [
+    "Labeling a task, ticket, or issue with an urgency level in a table row, card, or list.",
+    "You want the priority's icon, color, and text to always stay in sync — driven by one prop instead of copy-pasted markup per level.",
+    "A compact inline badge fits better than a full select or radio group for a read-only priority indicator."
+  ],
+  "avoidWhen": [
+    "The value isn't a priority/urgency level — use the generic badges component for arbitrary labels instead.",
+    "Users need to change the priority inline — pair this with a select or dropdown menu rather than using it alone as an input.",
+    "You need more than four levels — extend the priorityConfig map rather than approximating extra levels with color alone."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Each badge is an inline-flex element sized to its content; badges wrap naturally in a flex-wrap row at any width.",
+  "accessibility": [
+    "Priority is conveyed by icon shape, color, and a text label together — never color alone.",
+    "The icon direction (up/down arrows for High/Low, triangle for Urgent) reinforces the ordinal ranking beyond color.",
+    "Each level's config bundles label + color + icon in one lookup, so a given priority can never render with a mismatched icon or color."
+  ],
+  "compatibleWith": ["application-badges", "application-tables", "application-data-filter-bar"],
+  "variants": [
+    {
+      "id": "task-priority-badge-1",
+      "title": "Task priority badge set",
+      "description": "All four priority levels (Urgent/High/Medium/Low) shown side by side, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/task-priority-badge/1.html",
+        "tsx": "tsx/TaskPriorityBadgeVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["urgent", "high", "medium", "low"],
+      "accessibility": [
+        "Each badge's icon direction and shape are distinct, not just its color, so the scale is legible without color vision."
+      ]
+    },
+    {
+      "id": "task-priority-badge-1-dark",
+      "title": "Task priority badge set (Dark)",
+      "description": "All four priority levels, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/task-priority-badge/1-dark.html",
+        "tsx": "tsx/TaskPriorityBadgeVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["urgent", "high", "medium", "low"],
+      "accessibility": [
+        "Badge background and text colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-task-checklist",
+  "title": "Task Checklist",
+  "description": "Checkable task list with real toggle state, a computed \"N/M complete\" progress count, and an add-item input — distinct from the onboarding-focused onboarding-checklist.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["checklist", "todo", "tasks", "progress"],
+  "useWhen": [
+    "Tracking a flat list of checkable tasks (a launch checklist, a to-do list) with a running completion count.",
+    "Users need to add new items to the list inline, without navigating to a separate form.",
+    "The completion count should always reflect the real checked/unchecked state, not a hand-typed fraction."
+  ],
+  "avoidWhen": [
+    "The checklist is a one-time onboarding/setup flow with its own dismiss and progress-ring styling — use onboarding-checklist instead.",
+    "Tasks need nested subtasks or hierarchy — extend the data model before reusing this flat-list markup.",
+    "You need drag-to-reorder — this component only supports check/uncheck and append."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The list and input row are a single-column block that reflows naturally to any container width.",
+  "accessibility": [
+    "Each task uses a real <label>/<input type=\"checkbox\"> pair so the whole row is a clickable, keyboard-operable target.",
+    "Completed tasks are shown with both a checked checkbox and strikethrough text, not strikethrough alone.",
+    "The progress count (\"N/M complete\") is visible text recalculated from the real items array on every toggle."
+  ],
+  "compatibleWith": ["application-onboarding-checklist", "application-checkboxes", "application-form-row"],
+  "variants": [
+    {
+      "id": "task-checklist-1",
+      "title": "Task checklist",
+      "description": "Five-item launch checklist with three completed tasks (3/5 complete) and an add-task input, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/task-checklist/1.html",
+        "tsx": "tsx/TaskChecklistVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "checked", "unchecked"],
+      "accessibility": [
+        "Pressing Enter in the add-task input submits the new item, matching native form-field conventions."
+      ]
+    },
+    {
+      "id": "task-checklist-1-dark",
+      "title": "Task checklist (Dark)",
+      "description": "The same five-item launch checklist, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/task-checklist/1-dark.html",
+        "tsx": "tsx/TaskChecklistVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "checked", "unchecked"],
+      "accessibility": [
+        "Checkbox, text, and input colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

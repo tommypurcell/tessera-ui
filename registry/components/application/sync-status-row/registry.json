@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-sync-status-row",
+  "title": "Sync Status Row",
+  "description": "Last-synced status row with a real three-state icon (spinning while syncing, checkmark on success, warning on error) and a manual Sync now action.",
+  "category": "application/feedback",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["sync", "status", "background-task", "feedback"],
+  "useWhen": [
+    "Showing the state of a background sync process (e.g. cloud backup, integration polling) alongside when it last ran.",
+    "Users need a manual way to trigger a sync outside the automatic schedule.",
+    "The sync can genuinely fail and users need to see that distinctly from \"in progress\" or \"done\"."
+  ],
+  "avoidWhen": [
+    "The operation is a one-off user action, not a recurring background process — use save-status-indicator instead.",
+    "There's no manual retry/sync affordance needed — a plain timestamp label is simpler.",
+    "The process has multiple discrete sub-steps to show — use a progress bar or stepper instead of a single status row."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The row is a single flex line that fits naturally in a settings panel or integration card at any width.",
+  "accessibility": [
+    "The row carries role='status' so screen readers announce state changes (syncing → synced/failed) without interrupting.",
+    "State is conveyed by icon shape and a text label together (Syncing…/Synced/Sync failed), not color alone.",
+    "The Sync now button is disabled (not hidden) while a sync is in progress, avoiding duplicate concurrent syncs."
+  ],
+  "compatibleWith": ["application-save-status-indicator", "application-connection-status-pill", "application-badges"],
+  "variants": [
+    {
+      "id": "sync-status-row-1",
+      "title": "Sync status row",
+      "description": "Synced, Syncing, and Sync failed states stacked to show all three, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/sync-status-row/1.html",
+        "tsx": "tsx/SyncStatusRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["syncing", "success", "error"],
+      "accessibility": [
+        "The Sync now button is disabled during the syncing state to prevent overlapping sync requests."
+      ]
+    },
+    {
+      "id": "sync-status-row-1-dark",
+      "title": "Sync status row (Dark)",
+      "description": "The same three states, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/sync-status-row/1-dark.html",
+        "tsx": "tsx/SyncStatusRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["syncing", "success", "error"],
+      "accessibility": [
+        "Icon and text colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

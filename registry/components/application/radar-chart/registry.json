@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-radar-chart",
+  "title": "Radar Chart",
+  "description": "Multi-axis polygon comparison for skill or feature profiles, with the filled shape, grid rings, and axis spokes all computed from real per-axis values via trigonometry.",
+  "category": "application/charts",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["radar-chart", "spider-chart", "polygon", "comparison", "analytics"],
+  "useWhen": [
+    "Comparing an entity across several qualitative dimensions at once (e.g. Speed/Design/Reliability/Support/Price).",
+    "The overall \"shape\" of a profile matters more than reading exact values off an axis.",
+    "You have 3–8 axes — few enough that a polygon stays legible."
+  ],
+  "avoidWhen": [
+    "You need to compare more than a couple of series on the same chart — overlapping polygons get hard to read fast.",
+    "Precise value comparison matters more than overall shape — a bar chart or bullet-chart communicates exact values better.",
+    "You have only 1–2 axes — a radar chart needs at least 3 to read as a polygon."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The chart is a fixed-size SVG (default 220px) centered in a card; scale the `size` prop for the surrounding layout rather than relying on CSS scaling.",
+  "accessibility": [
+    "The SVG carries role='img' with an aria-label listing every axis name and value, since the polygon shape alone isn't announced by screen readers.",
+    "Every axis value is also shown as visible text in the legend grid below the chart.",
+    "Grid rings and axis spokes are low-contrast supporting lines, not required for interpreting the data — the filled polygon and legend carry the meaning."
+  ],
+  "compatibleWith": ["application-charts", "application-stat-tile", "application-bullet-chart"],
+  "variants": [
+    {
+      "id": "radar-chart-1",
+      "title": "Radar chart",
+      "description": "Five-axis vendor comparison (Speed/Design/Reliability/Support/Price) as a filled polygon over grid rings, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/radar-chart/1.html",
+        "tsx": "tsx/RadarChartVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Polygon fill and stroke color is supplementary; the legend grid's numeric values carry the precise data."
+      ]
+    },
+    {
+      "id": "radar-chart-1-dark",
+      "title": "Radar chart (Dark)",
+      "description": "The same five-axis vendor comparison, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/radar-chart/1-dark.html",
+        "tsx": "tsx/RadarChartVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Grid, polygon, and text colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

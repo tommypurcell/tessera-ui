@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex justify-center p-6">
+    <div class="flex items-center gap-6 rounded-lg border border-gray-200 bg-white p-6">
+      <div class="relative shrink-0" style="width: 160px; height: 160px">
+        <svg width="160" height="160" viewBox="0 0 160 160" class="-rotate-90">
+          <circle cx="80" cy="80" r="70" fill="none" stroke="#2563eb" stroke-width="20" stroke-dasharray="184.73 255.1" stroke-dashoffset="0" role="img" aria-label="Direct: 42" />
+          <circle cx="80" cy="80" r="70" fill="none" stroke="#16a34a" stroke-width="20" stroke-dasharray="123.15 316.67" stroke-dashoffset="-184.73" role="img" aria-label="Organic: 28" />
+          <circle cx="80" cy="80" r="70" fill="none" stroke="#d97706" stroke-width="20" stroke-dasharray="79.17 360.65" stroke-dashoffset="-307.88" role="img" aria-label="Referral: 18" />
+          <circle cx="80" cy="80" r="70" fill="none" stroke="#9333ea" stroke-width="20" stroke-dasharray="52.78 387.04" stroke-dashoffset="-387.04" role="img" aria-label="Social: 12" />
+        </svg>
+        <div class="absolute inset-0 flex flex-col items-center justify-center">
+          <span class="text-2xl font-semibold text-gray-900">100</span>
+          <span class="text-xs text-gray-500">Traffic sources</span>
+        </div>
+      </div>
+
+      <ul class="flex flex-col gap-2 text-sm">
+        <li class="flex items-center gap-2">
+          <span aria-hidden="true" class="size-2.5 shrink-0 rounded-full" style="background-color: #2563eb"></span>
+          <span class="text-gray-700">Direct</span>
+          <span class="font-medium text-gray-900">42</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span aria-hidden="true" class="size-2.5 shrink-0 rounded-full" style="background-color: #16a34a"></span>
+          <span class="text-gray-700">Organic</span>
+          <span class="font-medium text-gray-900">28</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span aria-hidden="true" class="size-2.5 shrink-0 rounded-full" style="background-color: #d97706"></span>
+          <span class="text-gray-700">Referral</span>
+          <span class="font-medium text-gray-900">18</span>
+        </li>
+        <li class="flex items-center gap-2">
+          <span aria-hidden="true" class="size-2.5 shrink-0 rounded-full" style="background-color: #9333ea"></span>
+          <span class="text-gray-700">Social</span>
+          <span class="font-medium text-gray-900">12</span>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

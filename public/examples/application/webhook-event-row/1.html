@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex flex-col items-center gap-3 p-6">
+    <div class="flex w-full max-w-lg items-center gap-3 rounded-md border border-gray-200 bg-white px-4 py-3 text-sm">
+      <code class="shrink-0 rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs text-gray-700">order.created</code>
+      <span class="shrink-0 text-xs text-gray-500">2 min ago</span>
+      <span class="ml-auto shrink-0 rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-700">Delivered</span>
+      <span class="shrink-0 font-mono text-xs text-gray-500">200</span>
+    </div>
+
+    <div class="flex w-full max-w-lg items-center gap-3 rounded-md border border-gray-200 bg-white px-4 py-3 text-sm">
+      <code class="shrink-0 rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs text-gray-700">invoice.paid</code>
+      <span class="shrink-0 text-xs text-gray-500">5 min ago</span>
+      <span class="ml-auto shrink-0 rounded-full bg-amber-100 px-2 py-0.5 text-xs font-medium text-amber-700">Pending</span>
+    </div>
+
+    <div class="flex w-full max-w-lg items-center gap-3 rounded-md border border-gray-200 bg-white px-4 py-3 text-sm">
+      <code class="shrink-0 rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs text-gray-700">subscription.updated</code>
+      <span class="shrink-0 text-xs text-gray-500">12 min ago</span>
+      <span class="ml-auto shrink-0 rounded-full bg-red-100 px-2 py-0.5 text-xs font-medium text-red-700">Failed</span>
+      <span class="shrink-0 font-mono text-xs text-gray-500">503</span>
+      <button type="button" class="shrink-0 text-xs font-medium text-blue-600 hover:text-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-1">Retry</button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex justify-center bg-gray-950 p-6">
+    <div class="flex w-full max-w-sm flex-col gap-4 rounded-lg border border-gray-800 bg-gray-900 p-5">
+      <h2 class="text-sm font-medium text-gray-100">Your order</h2>
+
+      <ul class="flex flex-col gap-3">
+        <li class="flex items-start gap-3">
+          <span class="flex size-6 shrink-0 items-center justify-center rounded-full bg-gray-800 text-xs font-medium text-gray-300">2</span>
+          <div class="min-w-0 flex-1">
+            <p class="text-sm font-medium text-gray-100">Double Cheeseburger</p>
+            <p class="text-xs text-gray-500">No pickles, add bacon</p>
+          </div>
+          <span class="shrink-0 text-sm text-gray-300">$25.00</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="flex size-6 shrink-0 items-center justify-center rounded-full bg-gray-800 text-xs font-medium text-gray-300">1</span>
+          <div class="min-w-0 flex-1">
+            <p class="text-sm font-medium text-gray-100">Fries</p>
+            <p class="text-xs text-gray-500">Large</p>
+          </div>
+          <span class="shrink-0 text-sm text-gray-300">$3.00</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="flex size-6 shrink-0 items-center justify-center rounded-full bg-gray-800 text-xs font-medium text-gray-300">1</span>
+          <div class="min-w-0 flex-1">
+            <p class="text-sm font-medium text-gray-100">Milkshake</p>
+            <p class="text-xs text-gray-500">Chocolate</p>
+          </div>
+          <span class="shrink-0 text-sm text-gray-300">$6.50</span>
+        </li>
+      </ul>
+
+      <div class="flex items-center justify-between border-t border-gray-800 pt-3 text-sm font-semibold text-gray-100">
+        <span>Subtotal</span>
+        <span>$34.50</span>
+      </div>
+
+      <button
+        type="button"
+        class="rounded-md bg-blue-500 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-1 focus-visible:ring-offset-gray-900"
+      >
+        Checkout · $34.50
+      </button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex justify-center p-6">
+    <div role="tree" aria-label="Organization chart" class="flex justify-center overflow-x-auto rounded-lg border border-gray-100 bg-gray-50 p-8">
+      <div class="flex flex-col items-center">
+        <div class="flex w-40 shrink-0 flex-col items-center gap-1.5 rounded-lg border border-gray-200 bg-white px-3 py-3 text-center shadow-sm">
+          <span class="flex size-9 items-center justify-center rounded-full bg-blue-100 text-xs font-medium text-blue-700">DO</span>
+          <span class="text-sm font-medium text-gray-900">Dana Osei</span>
+          <span class="text-xs text-gray-500">CEO</span>
+        </div>
+
+        <div class="h-4 w-px bg-gray-300" aria-hidden="true"></div>
+        <div class="flex items-start">
+          <div class="flex flex-col items-center px-3">
+            <div class="relative h-px w-full bg-gray-300" aria-hidden="true">
+              <div class="absolute top-0 right-0 left-1/2 h-px bg-gray-300"></div>
+            </div>
+            <div class="h-4 w-px bg-gray-300" aria-hidden="true"></div>
+            <div class="flex w-40 shrink-0 flex-col items-center gap-1.5 rounded-lg border border-gray-200 bg-white px-3 py-3 text-center shadow-sm">
+              <span class="flex size-9 items-center justify-center rounded-full bg-blue-100 text-xs font-medium text-blue-700">PS</span>
+              <span class="text-sm font-medium text-gray-900">Priya Shah</span>
+              <span class="text-xs text-gray-500">VP Engineering</span>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center px-3">
+            <div class="relative h-px w-full bg-gray-300" aria-hidden="true">
+              <div class="absolute inset-x-0 top-0 h-px bg-gray-300"></div>
+            </div>
+            <div class="h-4 w-px bg-gray-300" aria-hidden="true"></div>
+            <div class="flex w-40 shrink-0 flex-col items-center gap-1.5 rounded-lg border border-gray-200 bg-white px-3 py-3 text-center shadow-sm">
+              <span class="flex size-9 items-center justify-center rounded-full bg-blue-100 text-xs font-medium text-blue-700">ML</span>
+              <span class="text-sm font-medium text-gray-900">Marcus Lee</span>
+              <span class="text-xs text-gray-500">VP Design</span>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center px-3">
+            <div class="relative h-px w-full bg-gray-300" aria-hidden="true">
+              <div class="absolute top-0 right-1/2 left-0 h-px bg-gray-300"></div>
+            </div>
+            <div class="h-4 w-px bg-gray-300" aria-hidden="true"></div>
+            <div class="flex w-40 shrink-0 flex-col items-center gap-1.5 rounded-lg border border-gray-200 bg-white px-3 py-3 text-center shadow-sm">
+              <span class="flex size-9 items-center justify-center rounded-full bg-blue-100 text-xs font-medium text-blue-700">LF</span>
+              <span class="text-sm font-medium text-gray-900">Lena Fischer</span>
+              <span class="text-xs text-gray-500">VP Sales</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

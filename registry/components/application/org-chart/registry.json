@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-org-chart",
+  "title": "Org Chart",
+  "description": "Hierarchical organization chart of avatar-card nodes connected by CSS connector lines, for showing reporting structure across a team or company.",
+  "category": "application/media",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["org-chart", "hierarchy", "people", "reporting-structure"],
+  "useWhen": [
+    "Visualizing who reports to whom across a team or company.",
+    "Each node needs a person's name, title, and avatar rather than a generic label.",
+    "The hierarchy is shallow to moderate in depth — a few levels that fit in a horizontally scrollable card layout."
+  ],
+  "avoidWhen": [
+    "The hierarchy represents data or files, not people/roles — use Tree View or File Tree instead.",
+    "The structure is very deep or wide (dozens of nodes per level) — a dedicated org-chart library with pan/zoom is more appropriate.",
+    "You need drag-to-reorganize editing — this component is a read-only visualization."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The chart scrolls horizontally within its container on narrow viewports rather than shrinking cards or wrapping the hierarchy.",
+  "accessibility": [
+    "The chart wrapper carries role='tree' with an aria-label describing its purpose.",
+    "Connector lines are purely decorative (aria-hidden) — the person/title text in each card is what conveys the structure.",
+    "Each node's avatar uses initials as a text fallback rather than requiring an image."
+  ],
+  "compatibleWith": ["application-tree-view", "application-avatar-group", "application-cards"],
+  "variants": [
+    {
+      "id": "org-chart-1",
+      "title": "Org chart",
+      "description": "Two-level chart: a CEO node connected to three VP nodes, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/org-chart/1.html",
+        "tsx": "tsx/OrgChartVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The recursive Branch renderer keeps connector line positioning correct regardless of how many direct reports a node has."
+      ]
+    },
+    {
+      "id": "org-chart-1-dark",
+      "title": "Org chart (Dark)",
+      "description": "The same two-level CEO/VP hierarchy, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/org-chart/1-dark.html",
+        "tsx": "tsx/OrgChartVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Card border, connector line, and text colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

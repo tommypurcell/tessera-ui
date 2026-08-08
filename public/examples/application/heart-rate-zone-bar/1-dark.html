@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex justify-center bg-gray-950 p-6">
+    <div class="flex w-full max-w-md flex-col gap-3 rounded-lg border border-gray-800 bg-gray-900 p-5">
+      <div class="flex items-baseline justify-between">
+        <h2 class="text-sm font-medium text-gray-100">Heart rate zones</h2>
+        <span class="text-xs text-gray-500">37 min session</span>
+      </div>
+
+      <div class="relative pt-4">
+        <div class="absolute top-0 flex -translate-x-1/2 flex-col items-center" style="left: 53.9%">
+          <span class="whitespace-nowrap rounded bg-gray-100 px-1.5 py-0.5 text-[10px] font-semibold text-gray-900">148 bpm</span>
+          <span aria-hidden="true" class="mt-0.5 h-2 w-px bg-gray-100"></span>
+        </div>
+
+        <div class="flex h-5 w-full overflow-hidden rounded-sm">
+          <div class="bg-blue-400" style="width: 10.8%" role="img" aria-label="Zone 1 Warm-up: 4 minutes"></div>
+          <div class="bg-emerald-500" style="width: 24.3%" role="img" aria-label="Zone 2 Easy: 9 minutes"></div>
+          <div class="bg-amber-500" style="width: 37.8%" role="img" aria-label="Zone 3 Tempo: 14 minutes"></div>
+          <div class="bg-orange-500" style="width: 21.6%" role="img" aria-label="Zone 4 Threshold: 8 minutes"></div>
+          <div class="bg-red-500" style="width: 5.4%" role="img" aria-label="Zone 5 Max: 2 minutes"></div>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-gray-500">
+        <span class="flex items-center gap-1.5">
+          <span aria-hidden="true" class="size-2.5 rounded-sm bg-blue-400"></span>
+          Z1 Warm-up · 4m
+        </span>
+        <span class="flex items-center gap-1.5">
+          <span aria-hidden="true" class="size-2.5 rounded-sm bg-emerald-500"></span>
+          Z2 Easy · 9m
+        </span>
+        <span class="flex items-center gap-1.5">
+          <span aria-hidden="true" class="size-2.5 rounded-sm bg-amber-500"></span>
+          <span class="font-semibold text-gray-100">Z3 Tempo · 14m</span>
+        </span>
+        <span class="flex items-center gap-1.5">
+          <span aria-hidden="true" class="size-2.5 rounded-sm bg-orange-500"></span>
+          Z4 Threshold · 8m
+        </span>
+        <span class="flex items-center gap-1.5">
+          <span aria-hidden="true" class="size-2.5 rounded-sm bg-red-500"></span>
+          Z5 Max · 2m
+        </span>
+      </div>
+    </div>
+  </body>
+</html>

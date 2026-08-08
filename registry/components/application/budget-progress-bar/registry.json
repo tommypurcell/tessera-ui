@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-budget-progress-bar",
+  "title": "Budget Progress Bar",
+  "description": "Spend-vs-budget progress bar that turns red and shows an explicit overspend amount when spending exceeds budget — fill width and over-budget state are both computed from real numbers.",
+  "category": "application/charts",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["budget", "spend", "finance", "progress"],
+  "useWhen": [
+    "Tracking spend against a fixed budget where exceeding it is a meaningful, visually distinct state.",
+    "You want the bar to cap at 100% width and show an explicit overspend label instead of clipping or overflowing silently.",
+    "The amounts should be real currency figures, not generic percentages."
+  ],
+  "avoidWhen": [
+    "There's no hard budget ceiling — a plain progress-bars component is simpler for open-ended progress.",
+    "You're tracking a resource quota (API calls, storage) rather than money — use usage-meter-card instead.",
+    "You need multiple budget categories compared at once — use segment-breakdown-bar or a table instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The bar and label are a fluid-width block that scales with its container at any width.",
+  "accessibility": [
+    "The filled bar carries role='img' with an aria-label stating spent amount, budget, and the overspend amount when over budget.",
+    "Over-budget state is conveyed by both bar/text color and an explicit \"$X over budget\" text line, not color alone.",
+    "The bar visually caps at 100% width even when overspending, avoiding a bar that breaks out of its container."
+  ],
+  "compatibleWith": ["application-progress-bars", "application-usage-meter-card", "application-stat-tile"],
+  "variants": [
+    {
+      "id": "budget-progress-bar-1",
+      "title": "Budget progress bar",
+      "description": "Marketing budget over its $5,000 limit at $5,420 spent, showing the red over-budget state and a $420 overspend label, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/budget-progress-bar/1.html",
+        "tsx": "tsx/BudgetProgressBarVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["under-budget", "over-budget"],
+      "accessibility": [
+        "Overspend amount is computed as spent minus budget, so it can never drift out of sync with the displayed figures."
+      ]
+    },
+    {
+      "id": "budget-progress-bar-1-dark",
+      "title": "Budget progress bar (Dark)",
+      "description": "The same over-budget marketing spend example, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/budget-progress-bar/1-dark.html",
+        "tsx": "tsx/BudgetProgressBarVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["under-budget", "over-budget"],
+      "accessibility": [
+        "Bar and text colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

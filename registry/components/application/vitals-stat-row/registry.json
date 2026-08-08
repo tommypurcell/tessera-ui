@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-vitals-stat-row",
+  "title": "Vitals Stat Row",
+  "description": "Row of labeled vital-sign readings (heart rate, blood pressure, SpO2, temperature) with normal/out-of-range coloring driven by a real isNormal flag per reading.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["vitals", "healthcare", "clinical", "stat"],
+  "useWhen": [
+    "Displaying a patient's current vital signs in a clinical dashboard or chart summary.",
+    "Readings outside the normal clinical range need to stand out visually and be labeled explicitly.",
+    "You want each reading's normal/abnormal state driven by your own range-check logic, not hard-coded styling."
+  ],
+  "avoidWhen": [
+    "The values aren't clinical vitals — use the generic stats or stat-tile components instead.",
+    "You need historical trend data per vital, not just the current reading — pair this with a chart or sparkline.",
+    "Precise range thresholds and units vary per patient (e.g. pediatric vs adult) — compute isNormal upstream per patient before passing it in."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Readings are flex-1 with a minimum width and wrap onto multiple lines as the container narrows, keeping each stat legible.",
+  "accessibility": [
+    "Out-of-range readings are marked with both red text color and an explicit \"Out of range\" label, not color alone.",
+    "Units are shown as separate, smaller text next to each value, avoiding ambiguity between similarly-formatted vitals.",
+    "Each reading's normal/abnormal state is a boolean prop your own clinical logic controls — this component never infers thresholds itself."
+  ],
+  "compatibleWith": ["application-stats", "application-stat-tile", "application-badges"],
+  "variants": [
+    {
+      "id": "vitals-stat-row-1",
+      "title": "Vitals stat row",
+      "description": "Four vital readings (Heart rate flagged out of range, Blood pressure/SpO2/Temperature normal), on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/vitals-stat-row/1.html",
+        "tsx": "tsx/VitalsStatRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["normal", "out-of-range"],
+      "accessibility": [
+        "The heart-rate reading demonstrates the out-of-range state; the other three demonstrate normal."
+      ]
+    },
+    {
+      "id": "vitals-stat-row-1-dark",
+      "title": "Vitals stat row (Dark)",
+      "description": "The same four vital readings, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/vitals-stat-row/1-dark.html",
+        "tsx": "tsx/VitalsStatRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["normal", "out-of-range"],
+      "accessibility": [
+        "Value and status text colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

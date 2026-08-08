@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-effort-estimate-chips",
+  "title": "Effort Estimate Chips",
+  "description": "Single-select chip group for story points or t-shirt sizes, rendered as a real radiogroup — pass any Fibonacci or size scale via the options prop.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["story-points", "estimate", "chips", "project-management", "form"],
+  "useWhen": [
+    "Estimating task effort with a Fibonacci story-point scale (1, 2, 3, 5, 8, 13) or t-shirt sizes (XS–XL).",
+    "You want a compact single-select control instead of a full select dropdown for a short scale.",
+    "A \"?\" or \"unsure\" option should be part of the same scale as the numeric values."
+  ],
+  "avoidWhen": [
+    "Multiple values need to be selectable at once — use tag-filter-group instead.",
+    "The scale has many options (10+) — a select or combobox scales better than a chip row.",
+    "You need free-text estimates — use a plain number input instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Chips wrap onto multiple lines within a flex-wrap row as the container narrows.",
+  "accessibility": [
+    "The group is a real fieldset/legend with role='radiogroup' and each chip as role='radio' with aria-checked.",
+    "The selected chip is marked by both a filled background and a colored border, not color alone.",
+    "Chips are real buttons, reachable and operable via keyboard tab and Enter/Space."
+  ],
+  "compatibleWith": ["application-segmented-control", "application-tag-filter-group", "application-form-row"],
+  "variants": [
+    {
+      "id": "effort-estimate-chips-1",
+      "title": "Effort estimate chips",
+      "description": "Fibonacci story-point scale (1/2/3/5/8/13/?) with 5 selected, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/effort-estimate-chips/1.html",
+        "tsx": "tsx/EffortEstimateChipsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "The default options array covers the standard Fibonacci scale plus a \"?\" unsure option."
+      ]
+    },
+    {
+      "id": "effort-estimate-chips-1-dark",
+      "title": "Effort estimate chips (Dark)",
+      "description": "The same Fibonacci story-point scale with 5 selected, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/effort-estimate-chips/1-dark.html",
+        "tsx": "tsx/EffortEstimateChipsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "Chip border, fill, and text colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

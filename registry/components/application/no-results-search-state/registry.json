@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-no-results-search-state",
+  "title": "No-Results Search State",
+  "description": "Search-specific empty view that echoes the real search query back to the user and, when filters are active, offers a real clear-filters action — distinct from the generic empty-states component.",
+  "category": "application/feedback",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["empty-state", "search", "no-results", "filters"],
+  "useWhen": [
+    "A search query returned zero results and the user needs to know exactly what they searched for.",
+    "Active filters may be responsible for the empty result set, and clearing them is a real recovery action.",
+    "The empty state is a direct consequence of user input (a query), not a generic \"no data yet\" condition."
+  ],
+  "avoidWhen": [
+    "There's no query to echo — e.g. a brand-new list with no data yet — use application-empty-states instead.",
+    "The zero-result state is a route-level error, not a search result — use retry-error-state or a 404 page instead.",
+    "You need onboarding-style guidance (first-run CTA) rather than a recovery hint — use empty-states' onboarding variant."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The panel is a centered block with a max-width message; it reflows naturally at any container width without special breakpoint handling.",
+  "accessibility": [
+    "The search query is rendered as real text (not just implied), so screen readers announce exactly what was searched.",
+    "The Clear filters button only renders when hasActiveFilters is true, so it's never a dead/no-op action.",
+    "The search icon is decorative (aria-hidden) — the query text and message carry the meaning."
+  ],
+  "compatibleWith": ["application-empty-states", "application-data-filter-bar", "application-tables"],
+  "variants": [
+    {
+      "id": "no-results-search-state-1",
+      "title": "No-results search state",
+      "description": "Zero-result state for the query \"wireless keyboard\" with active filters and a Clear filters action, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/no-results-search-state/1.html",
+        "tsx": "tsx/NoResultsSearchStateVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "with-filters"],
+      "accessibility": [
+        "The exact query is quoted in visible text so users can confirm what they searched for."
+      ]
+    },
+    {
+      "id": "no-results-search-state-1-dark",
+      "title": "No-results search state (Dark)",
+      "description": "The same zero-result state, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/no-results-search-state/1-dark.html",
+        "tsx": "tsx/NoResultsSearchStateVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "with-filters"],
+      "accessibility": [
+        "Icon, text, and button colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

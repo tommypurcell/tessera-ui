@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-org-headcount-chart",
+  "title": "Org Headcount Chart",
+  "description": "Department headcount bar chart with an open-roles overlay segment — bar widths are computed from real filled/open numbers relative to the largest department, distinct from org-chart, which visualizes reporting hierarchy rather than headcount totals.",
+  "category": "application/charts",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["headcount", "hr", "org-chart", "hiring", "chart"],
+  "useWhen": [
+    "Comparing headcount across departments alongside how many roles are still open in each.",
+    "You want bar proportions computed from real numbers, not hand-styled per department.",
+    "A legend distinguishing filled vs open roles adds necessary context to the bars."
+  ],
+  "avoidWhen": [
+    "You need to show individual reporting relationships between people — use org-chart instead.",
+    "There are no open roles to overlay — a plain segment-breakdown-bar or bar chart is simpler.",
+    "You need per-person detail, not department aggregates — use a table instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Bars are full-width within their container and scale fluidly; the legend wraps onto a new line at narrow widths.",
+  "accessibility": [
+    "Each bar segment (filled and open) carries role='img' with an aria-label stating the department and the exact count, since segment width alone isn't announced by screen readers.",
+    "Open roles are distinguished from filled roles by both a dashed border and a lighter fill, not color alone.",
+    "The legend below the chart explicitly labels what each bar segment style means."
+  ],
+  "compatibleWith": ["application-org-chart", "application-segment-breakdown-bar", "application-stat-tile"],
+  "variants": [
+    {
+      "id": "org-headcount-chart-1",
+      "title": "Org headcount chart",
+      "description": "Four departments (Engineering, Sales, Design, Support) with filled headcount bars and dashed open-roles overlays, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/org-headcount-chart/1.html",
+        "tsx": "tsx/OrgHeadcountChartVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["with-open-roles", "fully-staffed"],
+      "accessibility": [
+        "Support has zero open roles, demonstrating that the open-roles segment simply doesn't render rather than showing a zero-width sliver."
+      ]
+    },
+    {
+      "id": "org-headcount-chart-1-dark",
+      "title": "Org headcount chart (Dark)",
+      "description": "The same four-department headcount chart, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/org-headcount-chart/1-dark.html",
+        "tsx": "tsx/OrgHeadcountChartVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["with-open-roles", "fully-staffed"],
+      "accessibility": [
+        "Bar and outline colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-heart-rate-zone-bar",
+  "title": "Heart Rate Zone Bar",
+  "description": "Colored heart-rate zone distribution bar sized by real time-in-zone minutes, with a current-zone bpm marker positioned at the midpoint of the active segment — distinct from segment-breakdown-bar, which has no time-series marker or fitness-zone semantics.",
+  "category": "application/fitness",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["fitness", "heart-rate", "workout", "zones", "chart"],
+  "useWhen": [
+    "Summarizing how a workout's time was distributed across heart-rate zones.",
+    "You want a live bpm marker showing which zone the athlete is currently in.",
+    "Segment widths should be computed from real minute values per zone."
+  ],
+  "avoidWhen": [
+    "You need a generic categorical proportion bar with no fitness semantics — use segment-breakdown-bar instead.",
+    "You need a live-updating countdown or rest timer — use countdown-ring-timer instead.",
+    "There's no current-zone concept to mark — a plain stacked bar is simpler."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The bar and marker scale fluidly with container width; the zone legend wraps onto multiple lines at narrow widths.",
+  "accessibility": [
+    "Each zone segment carries role='img' with an aria-label stating the zone name and exact minutes, since width alone isn't announced by screen readers.",
+    "The current zone is indicated by both the bpm marker position and bold text in the legend, not color alone.",
+    "Zone colors progress from cool to warm (blue to red) to reinforce increasing intensity independent of hue perception."
+  ],
+  "compatibleWith": ["application-segment-breakdown-bar", "application-stat-tile", "application-body-metrics-card"],
+  "variants": [
+    {
+      "id": "heart-rate-zone-bar-1",
+      "title": "Heart rate zone bar",
+      "description": "A 37-minute session across five zones with a bpm marker centered in the currently-active Zone 3 segment, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/heart-rate-zone-bar/1.html",
+        "tsx": "tsx/HeartRateZoneBarVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Segment widths and the marker position are both derived from the same real per-zone minute values."
+      ]
+    },
+    {
+      "id": "heart-rate-zone-bar-1-dark",
+      "title": "Heart rate zone bar (Dark)",
+      "description": "The same five-zone session, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/heart-rate-zone-bar/1-dark.html",
+        "tsx": "tsx/HeartRateZoneBarVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Zone colors are shifted to lighter shades to meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

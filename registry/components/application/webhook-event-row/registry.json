@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-webhook-event-row",
+  "title": "Webhook Event Row",
+  "description": "Webhook delivery event row with an event name, real delivery status pill, HTTP response code, and a Retry action that only appears for failed deliveries.",
+  "category": "application/feedback",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["webhook", "delivery", "devtools", "event", "status"],
+  "useWhen": [
+    "Listing recent webhook delivery attempts with their event type, status, and HTTP response code.",
+    "Failed deliveries need a manual retry action that successful or pending deliveries don't show.",
+    "You want the status pill and available actions to always match the real delivery status."
+  ],
+  "avoidWhen": [
+    "You need the full request/response payload inline — pair this row with an expandable detail panel instead.",
+    "The event isn't from a webhook delivery system — use a generic log-viewer or sync-status-row instead.",
+    "You need bulk retry across many events — add a bulk-action-bar above a list of these rows."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The row is a single flex line; event name and timestamp are shrink-0 so they stay legible while the status/response/retry cluster stays right-aligned at any width.",
+  "accessibility": [
+    "Delivery status is conveyed by both pill color and a text label (Delivered/Failed/Pending), not color alone.",
+    "The Retry button only renders for failed deliveries with a real onRetry handler, so it's never a dead or inappropriate action.",
+    "Event name and response code use monospace styling to distinguish them as identifiers/codes from prose text."
+  ],
+  "compatibleWith": ["application-log-viewer", "application-sync-status-row", "application-api-key-manager"],
+  "variants": [
+    {
+      "id": "webhook-event-row-1",
+      "title": "Webhook event row",
+      "description": "Three delivery rows (delivered/pending/failed) showing status, response code, and a conditional Retry action, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/webhook-event-row/1.html",
+        "tsx": "tsx/WebhookEventRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["delivered", "pending", "failed"],
+      "accessibility": [
+        "Only the failed row shows a Retry button, since retrying an already-delivered or still-pending event isn't a valid action."
+      ]
+    },
+    {
+      "id": "webhook-event-row-1-dark",
+      "title": "Webhook event row (Dark)",
+      "description": "The same three delivery states, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/webhook-event-row/1-dark.html",
+        "tsx": "tsx/WebhookEventRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["delivered", "pending", "failed"],
+      "accessibility": [
+        "Status pill and text colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

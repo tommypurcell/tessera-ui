@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-progress-toast-group",
+  "title": "Progress Toast Group",
+  "description": "Stack of concurrent task-progress toasts, each with its own progress bar and Done state — distinct from toast-stack, whose toasts are plain messages without per-toast progress.",
+  "category": "application/feedback",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["progress", "toast", "task", "upload", "feedback"],
+  "useWhen": [
+    "Multiple background tasks (uploads, exports, batch jobs) are running concurrently and each needs its own visible progress.",
+    "You want each toast's bar width and \"Done\" label driven by the real progress/completion state.",
+    "Completed tasks should offer a Dismiss action while in-progress ones don't."
+  ],
+  "avoidWhen": [
+    "You only need plain success/error/info messages with no progress bar — use toast-stack instead.",
+    "There's only ever one concurrent task — a single inline progress bar is simpler than a toast group.",
+    "Tasks need to be cancellable mid-progress — add a cancel action to the in-progress state in your own fork."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The group is a fixed max-width column (24rem) meant for a fixed corner position; each toast's label truncates rather than wrapping.",
+  "accessibility": [
+    "The group wrapper carries aria-live='polite' and aria-label='Task progress' so screen readers announce progress changes without interrupting.",
+    "Each toast's progress bar carries role='img' with an aria-label stating the task name and percent or completion, since bar width alone isn't announced.",
+    "Completed tasks switch their bar to green and label to 'Done', conveying completion by both color and text, not color alone."
+  ],
+  "compatibleWith": ["application-toast-stack", "application-file-uploaders", "application-sync-status-row"],
+  "variants": [
+    {
+      "id": "progress-toast-group-1",
+      "title": "Progress toast group",
+      "description": "Three concurrent tasks — two in progress (42%, 78%) and one complete with a Dismiss action, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/progress-toast-group/1.html",
+        "tsx": "tsx/ProgressToastGroupVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["in-progress", "complete"],
+      "accessibility": [
+        "Only the completed toast shows a Dismiss action, since in-progress toasts represent work still underway."
+      ]
+    },
+    {
+      "id": "progress-toast-group-1-dark",
+      "title": "Progress toast group (Dark)",
+      "description": "The same three concurrent tasks, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/progress-toast-group/1-dark.html",
+        "tsx": "tsx/ProgressToastGroupVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["in-progress", "complete"],
+      "accessibility": [
+        "Toast, bar, and text colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

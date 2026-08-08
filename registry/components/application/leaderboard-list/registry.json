@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-leaderboard-list",
+  "title": "Leaderboard List",
+  "description": "Ranked list of entries with automatic medal badges for the top three ranks, avatars, scores, and up/down/same movement indicators, for gamification or performance leaderboards.",
+  "category": "application/media",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["leaderboard", "ranking", "gamification", "scoreboard"],
+  "useWhen": [
+    "Displaying a ranked set of people or entities by score, where relative position matters more than raw tabular data.",
+    "You want the top-3 medal styling to apply automatically based on rank, not hand-coded per row.",
+    "Showing whether each entry's rank changed since the last period (up/down/no change)."
+  ],
+  "avoidWhen": [
+    "You need sortable columns or additional per-row data beyond rank/name/score — use a table instead.",
+    "Ranking isn't the point — a plain list or avatar-group is simpler if order doesn't matter.",
+    "There are more entries than fit comfortably in a scrollable list — paginate or virtualize before reusing this markup."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Rows are a single flex line; on narrow viewports consider hiding the movement indicator or truncating names rather than wrapping the row.",
+  "accessibility": [
+    "The list is a real ordered list (<ol>) so assistive tech announces position and total count.",
+    "Movement direction is conveyed by both an arrow icon and a visually hidden text label (Moved up/Moved down/No change), not color or rotation alone.",
+    "Medal colors are supplementary — the numeric rank chip is always visible as the primary indicator."
+  ],
+  "compatibleWith": ["application-avatar-group", "application-tables", "application-stat-tile"],
+  "variants": [
+    {
+      "id": "leaderboard-list-1",
+      "title": "Leaderboard list",
+      "description": "Five-entry weekly leaderboard with medal badges for the top 3, scores, and movement indicators, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/leaderboard-list/1.html",
+        "tsx": "tsx/LeaderboardListVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Score values use toLocaleString for readable grouping (e.g. 9,840)."
+      ]
+    },
+    {
+      "id": "leaderboard-list-1-dark",
+      "title": "Leaderboard list (Dark)",
+      "description": "The same five-entry leaderboard, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/leaderboard-list/1-dark.html",
+        "tsx": "tsx/LeaderboardListVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Medal, avatar, and movement colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

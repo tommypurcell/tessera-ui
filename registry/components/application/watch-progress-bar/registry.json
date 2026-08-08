@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-watch-progress-bar",
+  "title": "Watch Progress Bar",
+  "description": "Video thumbnail with a duration badge and a resume-position red progress bar overlaid at its bottom edge — distinct from progress-bars, which are standalone bars with no thumbnail/media context.",
+  "category": "application/media",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["video", "media", "progress", "watch", "resume"],
+  "useWhen": [
+    "Showing a partially-watched video in a grid or list with its resume position.",
+    "You want the progress fill computed from real watched/total minutes.",
+    "A duration badge should coexist with the progress overlay without collision."
+  ],
+  "avoidWhen": [
+    "You need a standalone progress bar with no media thumbnail — use progress-bars instead.",
+    "You need full transport controls — use now-playing-bar instead.",
+    "The video hasn't been started — omit the progress overlay rather than showing a zero-width bar."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The thumbnail maintains a 16:9 aspect ratio via aspect-video at any container width; the progress bar spans the full thumbnail width.",
+  "accessibility": [
+    "The progress overlay carries role='img' with an aria-label stating watched and total duration, since bar width alone isn't announced by screen readers.",
+    "The duration badge and progress bar are positioned to avoid visually overlapping.",
+    "Title text below the thumbnail is always visible, not dependent on hover."
+  ],
+  "compatibleWith": ["application-video-thumbnail-card", "application-now-playing-bar"],
+  "variants": [
+    {
+      "id": "watch-progress-bar-1",
+      "title": "Watch progress bar",
+      "description": "A thumbnail 72.4% watched (42 of 58 minutes), with a duration badge and computed resume-position fill, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/watch-progress-bar/1.html",
+        "tsx": "tsx/WatchProgressBarVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["in-progress"],
+      "accessibility": [
+        "Fill width is watchedMinutes/totalMinutes, computed live rather than hand-typed."
+      ]
+    },
+    {
+      "id": "watch-progress-bar-1-dark",
+      "title": "Watch progress bar (Dark)",
+      "description": "The same partially-watched thumbnail, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/watch-progress-bar/1-dark.html",
+        "tsx": "tsx/WatchProgressBarVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["in-progress"],
+      "accessibility": [
+        "The duration badge retains sufficient contrast against varied thumbnail colors via a semi-opaque black background."
+      ]
+    }
+  ]
+}

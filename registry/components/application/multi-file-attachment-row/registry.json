@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-multi-file-attachment-row",
+  "title": "Multi-File Attachment Row",
+  "description": "Row of attached-file chips with a type badge, filename, and a real human-readable file size computed from bytes — distinct from the drag-and-drop file-uploaders component.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["file", "attachment", "upload", "list"],
+  "useWhen": [
+    "Listing files that have already been selected or uploaded, alongside a form or message composer.",
+    "You want the file size label (KB/MB) computed from real byte counts rather than hand-typed.",
+    "Each file needs an individual remove action rather than the full drag-and-drop upload UI."
+  ],
+  "avoidWhen": [
+    "You need the drop zone and upload-progress UI itself — use file-uploaders instead.",
+    "Files need per-item upload progress bars — extend this component's data model or use file-drop-preview-list.",
+    "There's only ever one file at a time — a single inline file chip is simpler than a list."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Each row's filename truncates with an ellipsis at narrow widths rather than wrapping, keeping every row a fixed height.",
+  "accessibility": [
+    "Each remove button carries an aria-label naming the specific file being removed, not just \"Remove\".",
+    "File size is always shown as real text (e.g. \"2.4 MB\"), not implied by icon or chip size.",
+    "The type badge shows the real file extension derived from the filename, not a generic icon guess."
+  ],
+  "compatibleWith": ["application-file-uploaders", "application-mention-textarea", "application-form-row"],
+  "variants": [
+    {
+      "id": "multi-file-attachment-row-1",
+      "title": "Multi-file attachment row",
+      "description": "Three attached files (PDF, PNG, CSV) with computed sizes and remove buttons, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/multi-file-attachment-row/1.html",
+        "tsx": "tsx/MultiFileAttachmentRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "File size formatting switches between B/KB/MB based on the real byte count, matching common OS file-size conventions."
+      ]
+    },
+    {
+      "id": "multi-file-attachment-row-1-dark",
+      "title": "Multi-file attachment row (Dark)",
+      "description": "The same three attached files, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/multi-file-attachment-row/1-dark.html",
+        "tsx": "tsx/MultiFileAttachmentRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Chip, badge, and text colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

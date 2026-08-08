@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-bullet-chart",
+  "title": "Bullet Chart",
+  "description": "Single-metric bullet graph with qualitative background bands (e.g. poor/satisfactory/good), a value bar, and a target marker, all computed from real numbers as percentages of a shared max.",
+  "category": "application/charts",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["bullet-chart", "kpi", "target", "gauge", "analytics"],
+  "useWhen": [
+    "Comparing a single metric's actual value against both a target and qualitative performance ranges in one compact row.",
+    "You need more context than a plain progress bar — e.g. showing what counts as \"poor\" vs \"good\" alongside the value.",
+    "Displaying several of these stacked in a list for a KPI scorecard."
+  ],
+  "avoidWhen": [
+    "You only need a simple percent-complete indicator with no target or qualitative bands — use progress-bars instead.",
+    "You're comparing multiple metrics over time — use charts (line/bar) instead.",
+    "The qualitative bands don't apply to your metric — a plain stat-tile or big-number-delta-tile is simpler."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The chart bar is a fluid-width block; band, value, and target positions are percentage-based so the chart scales with its container.",
+  "accessibility": [
+    "Each band, the value bar, and the target marker carry role='img' with an aria-label stating the exact number they represent, since position/width alone isn't announced by screen readers.",
+    "Qualitative band labels are always shown as visible text below the chart, not conveyed by shade alone.",
+    "The target marker is a distinct dark tick mark, not reliant on color to be distinguishable from the value bar."
+  ],
+  "compatibleWith": ["application-progress-bars", "application-stat-tile", "application-charts"],
+  "variants": [
+    {
+      "id": "bullet-chart-1",
+      "title": "Bullet chart",
+      "description": "CSAT metric (72 vs 85 target) over Poor/Satisfactory/Good qualitative bands, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/bullet-chart/1.html",
+        "tsx": "tsx/BulletChartVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "below-target", "above-target"],
+      "accessibility": [
+        "Band shade alone is supplementary; each band's aria-label and the visible legend text carry the meaning."
+      ]
+    },
+    {
+      "id": "bullet-chart-1-dark",
+      "title": "Bullet chart (Dark)",
+      "description": "The same CSAT metric, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/bullet-chart/1-dark.html",
+        "tsx": "tsx/BulletChartVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "below-target", "above-target"],
+      "accessibility": [
+        "Band, value bar, and target marker colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

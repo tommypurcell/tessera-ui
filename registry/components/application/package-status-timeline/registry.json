@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-package-status-timeline",
+  "title": "Package Status Timeline",
+  "description": "Vertical timeline of package scan events with location, timestamp, and status, with the most recent scan styled as current — distinct from order-status-tracker's fixed-stage horizontal stepper, this models an open-ended sequence of real carrier scans.",
+  "category": "application/feedback",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["shipping", "tracking", "logistics", "timeline"],
+  "useWhen": [
+    "Showing the full scan history of a shipment (pickup, transit, delivery) with location and timestamp per event.",
+    "The number of tracking events is open-ended and carrier-driven, not a small fixed set of named stages.",
+    "The most recent scan should be visually emphasized as the current status."
+  ],
+  "avoidWhen": [
+    "You only need a small, fixed set of stages (Placed/Shipped/Delivered) shown horizontally — use order-status-tracker instead.",
+    "You need a map visualization of the route, not a list of scans — use a dedicated shipment-tracking-map instead.",
+    "There's no location/timestamp data per event — a simpler activity-feed is enough."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The timeline is a single-column vertical list; location and timestamp text wrap naturally under the status line at any width.",
+  "accessibility": [
+    "The timeline is a real ordered list (<ol>) so assistive tech announces each scan's position and total count, in reverse-chronological order matching the data.",
+    "The current (most recent) scan is marked with both a larger/highlighted dot and bold status text, not color alone.",
+    "The connecting line between dots is decorative (aria-hidden); the list structure and status text carry the sequence."
+  ],
+  "compatibleWith": ["application-order-status-tracker", "application-map-marker-popup", "application-timelines"],
+  "variants": [
+    {
+      "id": "package-status-timeline-1",
+      "title": "Package status timeline",
+      "description": "Four-scan shipment history from pickup in Portland to \"Out for delivery\" in Austin, with the latest scan highlighted, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/package-status-timeline/1.html",
+        "tsx": "tsx/PackageStatusTimelineVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["current", "past"],
+      "accessibility": [
+        "Events are expected in reverse-chronological order (most recent first), matching how carriers typically render tracking pages."
+      ]
+    },
+    {
+      "id": "package-status-timeline-1-dark",
+      "title": "Package status timeline (Dark)",
+      "description": "The same four-scan shipment history, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/package-status-timeline/1-dark.html",
+        "tsx": "tsx/PackageStatusTimelineVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["current", "past"],
+      "accessibility": [
+        "Dot, status, and location text colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
