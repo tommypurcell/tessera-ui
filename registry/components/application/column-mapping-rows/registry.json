@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-column-mapping-rows",
+  "title": "Column Mapping Rows",
+  "description": "CSV/spreadsheet import field mapping rows: each source column with a sample value maps to a target-field dropdown, badged Auto or Manual, with a mapped-count summary and continue action.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["import", "csv", "mapping", "onboarding", "data"],
+  "useWhen": [
+    "Building the field-mapping step of a CSV or spreadsheet import flow.",
+    "You need to show which mappings were auto-matched by heuristic versus which need manual review.",
+    "Distinct from Import Wizard, which is the multi-step container (upload, preview, map, confirm) that this mapping step would live inside, not the row-level mapping UI itself."
+  ],
+  "avoidWhen": [
+    "You need the full multi-step import flow, not just the mapping step — compose this inside Import Wizard instead.",
+    "There's no auto-match heuristic to convey — a plain source/target pair list is simpler."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Each row uses a fixed three-column grid (source, arrow, target) so alignment holds regardless of source-column name length; the sample value truncates rather than wrapping.",
+  "accessibility": [
+    "Each target dropdown carries an aria-label naming the source column it maps, since the visible label is shared as a column header rather than per-row.",
+    "Auto/Manual match status is conveyed via both a text badge and a border-color cue on rows needing manual review, never color alone.",
+    "The mapped-count summary is plain text, giving screen reader users the same completion signal sighted users get from the badges."
+  ],
+  "compatibleWith": ["application-import-wizard"],
+  "variants": [
+    {
+      "id": "column-mapping-rows-1",
+      "title": "Column Mapping Rows",
+      "description": "Three source columns (full_name, email_addr, notes_internal) mapped to target fields, two auto-matched and one requiring manual selection, with a mapped-count footer and Continue button.",
+      "source": {
+        "html": "../../../../public/examples/application/column-mapping-rows/1.html",
+        "tsx": "tsx/ColumnMappingRowsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["auto-matched", "manual", "ignored"],
+      "accessibility": [
+        "Manual-match rows get an amber border in addition to the badge text, not color alone."
+      ]
+    },
+    {
+      "id": "column-mapping-rows-1-dark",
+      "title": "Column Mapping Rows (Dark)",
+      "description": "The same mapping rows adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/column-mapping-rows/1-dark.html",
+        "tsx": "tsx/ColumnMappingRowsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["auto-matched", "manual", "ignored"],
+      "accessibility": [
+        "Badge and border contrast remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}
