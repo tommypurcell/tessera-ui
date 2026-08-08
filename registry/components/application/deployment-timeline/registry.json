@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-deployment-timeline",
+  "title": "Deployment Timeline",
+  "description": "Vertical timeline of deployment events with commit hash, author, environment badge, and a Rollback action that only appears on past deploys, never the current one.",
+  "category": "application/feedback",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["deployment", "ci-cd", "devtools", "release", "timeline"],
+  "useWhen": [
+    "Showing a chronological history of deployments to an environment with commit and author metadata.",
+    "Users need a one-click rollback affordance on any past deploy, but never on the currently-live one.",
+    "You want exactly one entry visually marked as \"Current\", computed from real deploy state."
+  ],
+  "avoidWhen": [
+    "You need general code-change history without deployment semantics — use version-history-list instead.",
+    "There's no rollback action and no environment context — a plain activity-feed is simpler.",
+    "You need to show multiple environments side by side — pair this with tabs or a per-environment filter."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The timeline is a single-column vertical list; entry metadata (commit, environment, current badge) wraps onto multiple lines on narrow viewports.",
+  "accessibility": [
+    "The timeline is a real ordered list (<ol>) so assistive tech announces each deploy's position and total count.",
+    "The current deploy is marked with both a colored dot/ring and an explicit \"Current\" badge, not color alone.",
+    "The Rollback action only renders for non-current entries, so it never offers to roll back to the already-live deploy."
+  ],
+  "compatibleWith": ["application-build-status-row", "application-webhook-event-row", "application-timelines"],
+  "variants": [
+    {
+      "id": "deployment-timeline-1",
+      "title": "Deployment timeline",
+      "description": "Three production deploys with the newest marked Current and rollback actions on the two older entries, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/deployment-timeline/1.html",
+        "tsx": "tsx/DeploymentTimelineVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["current", "past"],
+      "accessibility": [
+        "The connecting line between dots is decorative (aria-hidden); the ordered list structure carries the sequence."
+      ]
+    },
+    {
+      "id": "deployment-timeline-1-dark",
+      "title": "Deployment timeline (Dark)",
+      "description": "The same three-deploy timeline, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/deployment-timeline/1-dark.html",
+        "tsx": "tsx/DeploymentTimelineVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["current", "past"],
+      "accessibility": [
+        "Dot, badge, and text colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
