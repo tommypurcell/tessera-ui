@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-sm flex-col gap-4 p-6">
+    <div class="flex items-center justify-between">
+      <span class="text-sm text-gray-300">Not followed</span>
+      <button type="button" class="rounded-md bg-indigo-500 px-4 py-1.5 text-sm font-medium text-white shadow-sm hover:bg-indigo-400">
+        Follow
+      </button>
+    </div>
+
+    <div class="flex items-center justify-between">
+      <span class="text-sm text-gray-300">Following (default)</span>
+      <button type="button" class="w-24 rounded-md border border-gray-700 bg-gray-900 px-4 py-1.5 text-sm font-medium text-gray-200 shadow-sm">
+        Following
+      </button>
+    </div>
+
+    <div class="flex items-center justify-between">
+      <span class="text-sm text-gray-300">Following (hover state)</span>
+      <button type="button" class="w-24 rounded-md border border-red-500/30 bg-red-500/10 px-4 py-1.5 text-sm font-medium text-red-400 shadow-sm">
+        Unfollow
+      </button>
+    </div>
+
+    <div class="flex items-center justify-between">
+      <span class="text-sm text-gray-300">Requested</span>
+      <button type="button" disabled class="w-24 cursor-not-allowed rounded-md border border-gray-800 bg-gray-900/60 px-4 py-1.5 text-sm font-medium text-gray-600">
+        Requested
+      </button>
+    </div>
+  </body>
+</html>

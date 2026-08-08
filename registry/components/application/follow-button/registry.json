@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-follow-button",
+  "title": "Follow Button",
+  "description": "Stateful follow button: \"Follow\" when not following, \"Following\" that swaps to a red \"Unfollow\" on hover/focus, and a disabled \"Requested\" state for pending follow requests.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["social", "follow", "button", "profile"],
+  "useWhen": [
+    "Building a social feature where users can follow/unfollow another user or page.",
+    "The target account may be private, requiring a pending \"Requested\" state distinct from an active follow.",
+    "Pairing with Person Hovercard or a profile page header as the primary relationship action."
+  ],
+  "avoidWhen": [
+    "The action is a simple binary favorite/save with no social-relationship semantics — use Wishlist Heart Toggle instead.",
+    "You need to follow multiple items in a compact list (e.g. a search results row) where the full-width hover-to-unfollow treatment is too heavy — a smaller icon-only toggle may fit better."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The button has a fixed minimum width in its following/requested states so the label swap on hover doesn't shift surrounding layout.",
+  "accessibility": [
+    "The hover-to-unfollow swap also responds to focus (not just mouse hover), so keyboard users see the same \"Unfollow\" affordance before activating it.",
+    "The requested state uses a real disabled button, removing it from the tab order rather than faking a disabled look on an active control.",
+    "Each state's meaning is carried by its visible label text (\"Follow\", \"Following\", \"Unfollow\", \"Requested\"), not color alone."
+  ],
+  "compatibleWith": ["application-person-hovercard", "application-profile-stats-bar"],
+  "variants": [
+    {
+      "id": "follow-button-1",
+      "title": "Follow Button",
+      "description": "Four states stacked: not-followed (indigo Follow), Following at rest, Following's red Unfollow hover state, and a disabled Requested state.",
+      "source": {
+        "html": "../../../../public/examples/application/follow-button/1.html",
+        "tsx": "tsx/FollowButtonVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["not-following", "following", "following-hover", "requested"],
+      "accessibility": [
+        "The Unfollow hover state is also reachable via keyboard focus, not mouse-only."
+      ]
+    },
+    {
+      "id": "follow-button-1-dark",
+      "title": "Follow Button (Dark)",
+      "description": "The same four states adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/follow-button/1-dark.html",
+        "tsx": "tsx/FollowButtonVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["not-following", "following", "following-hover", "requested"],
+      "accessibility": [
+        "Button borders and the red hover-state contrast remain distinguishable against the dark surface."
+      ]
+    }
+  ]
+}
