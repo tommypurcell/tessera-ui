@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-spending-category-donut",
+  "title": "Spending Category Donut",
+  "description": "A donut chart breaking down spending by category, with the total centered inside the ring and a legend listing each category's amount and percentage share.",
+  "category": "application/spending-category-donut",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "spending-category-donut",
+    "donut chart",
+    "spending",
+    "budget",
+    "expense",
+    "legend"
+  ],
+  "useWhen": [
+    "Showing how a total spend or budget breaks down across a handful of categories, with the grand total as the visual anchor.",
+    "Personal finance, expense reports, or budget dashboards where dollar amounts and percentage share both matter."
+  ],
+  "avoidWhen": [
+    "There are more than 6-7 categories — thin donut segments become hard to distinguish and read past that; use a bar breakdown instead.",
+    "You need to compare this breakdown over time — a stacked bar or area chart communicates change across periods better than a single-moment donut."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The donut SVG keeps a fixed pixel size while the legend column takes the remaining flex space; stack the donut above the legend on narrow viewports instead of keeping them side by side.",
+  "accessibility": [
+    "Each legend row pairs a color dot with the category name, dollar amount, and percentage as text — none of the information is color-only.",
+    "The centered total is rendered as large text directly inside the ring, not requiring users to sum the legend themselves.",
+    "Segment proportions are computed directly from the underlying amounts (stroke-dasharray driven by exact fractions), so the visual and the legend numbers always agree."
+  ],
+  "compatibleWith": ["application-charts", "application-usage-meter"],
+  "variants": [
+    {
+      "id": "spending-category-donut-1",
+      "title": "Monthly breakdown",
+      "description": "A five-category spending donut (Housing, Food, Transport, Subscriptions, Other) totaling $2,800, with the total centered in the ring and a legend showing each category's dollar amount and percentage.",
+      "source": {
+        "html": "../../../../public/examples/application/spending-category-donut/1.html",
+        "tsx": "tsx/SpendingCategoryDonutVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Legend rows state each category's name, amount, and percentage as text alongside its color swatch."
+      ]
+    },
+    {
+      "id": "spending-category-donut-1-dark",
+      "title": "Monthly breakdown (Dark)",
+      "description": "Spending category donut adapted for dark surfaces, with category colors re-tuned for dark contrast.",
+      "source": {
+        "html": "../../../../public/examples/application/spending-category-donut/1-dark.html",
+        "tsx": "tsx/SpendingCategoryDonutVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Segment colors, the centered total, and legend text all meet WCAG AA contrast against the dark card background."
+      ]
+    }
+  ]
+}
