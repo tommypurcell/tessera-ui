@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "name": "application-booking-search-bar",
+  "title": "Booking Search Bar",
+  "description": "A combined location, date-range, and guest-count search widget for travel or reservation booking flows, in a pill-segmented horizontal bar and a stacked card layout.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["application", "booking", "search", "travel", "reservation"],
+  "useWhen": [
+    "A travel, hospitality, or reservation site needs a single combined search entry point for where/when/how-many, rather than separate unconnected fields.",
+    "Search inputs benefit from being visually unified as one control (single border, single shadow) instead of a generic form row."
+  ],
+  "avoidWhen": [
+    "You need to filter already-loaded results by applied criteria — use data-filter-bar for that layer instead.",
+    "Only one or two search dimensions are needed — a simpler combobox or date-range picker alone may be sufficient."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The horizontal variant is a single pill-shaped row divided into four label/input segments plus a trailing search button, intended for wide viewports; the stacked variant collapses the same four fields into a bordered card with a full-width search button below, suited to narrow viewports.",
+  "accessibility": [
+    "Each segment is a real <label> wrapping its input, so the small eyebrow text (Where, Check in, Check out, Who) is the input's accessible name, not just decorative text.",
+    "The search trigger is a real <button type=\"submit\">; the icon-only horizontal variant carries an aria-label since it has no visible text.",
+    "Segments are visually separated with dividers so keyboard and screen reader users can perceive the same four-part structure sighted users see."
+  ],
+  "compatibleWith": ["application-data-filter-bar", "application-date-range-picker"],
+  "variants": [
+    {
+      "id": "booking-search-bar-1",
+      "title": "Horizontal pill",
+      "description": "Single-row pill-shaped bar with Where/Check in/Check out/Who segments and a trailing icon search button",
+      "source": {
+        "html": "../../../../public/examples/application/booking-search-bar/1.html",
+        "tsx": "tsx/BookingSearchBarVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "focus"],
+      "accessibility": ["The icon-only search button carries an aria-label."]
+    },
+    {
+      "id": "booking-search-bar-1-dark",
+      "title": "Horizontal pill (Dark)",
+      "description": "Single-row pill-shaped bar with Where/Check in/Check out/Who segments and a trailing icon search button",
+      "source": {
+        "html": "../../../../public/examples/application/booking-search-bar/1-dark.html",
+        "tsx": "tsx/BookingSearchBarVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "focus"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    },
+    {
+      "id": "booking-search-bar-2",
+      "title": "Stacked card",
+      "description": "Bordered card stacking the same four fields with a full-width Search button below, for narrower layouts",
+      "source": {
+        "html": "../../../../public/examples/application/booking-search-bar/2.html",
+        "tsx": "tsx/BookingSearchBarVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "focus"],
+      "accessibility": ["The search button includes visible text alongside its icon."]
+    },
+    {
+      "id": "booking-search-bar-2-dark",
+      "title": "Stacked card (Dark)",
+      "description": "Bordered card stacking the same four fields with a full-width Search button below, for narrower layouts",
+      "source": {
+        "html": "../../../../public/examples/application/booking-search-bar/2-dark.html",
+        "tsx": "tsx/BookingSearchBarVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "focus"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    }
+  ]
+}
