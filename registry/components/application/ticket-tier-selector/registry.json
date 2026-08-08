@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-ticket-tier-selector",
+  "title": "Ticket Tier Selector",
+  "description": "Ticket purchase tier list with a quantity stepper per tier and a footer showing the total ticket count and running price total.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["ticket", "event", "checkout", "quantity", "pricing"],
+  "useWhen": [
+    "Building an event checkout flow where users select quantities across multiple ticket tiers (GA, VIP, etc.).",
+    "You want a live running total computed from independent per-tier quantities, not a single mutually-exclusive choice.",
+    "Distinct from Variant Selector, which picks one option among mutually exclusive choices (like a size or color) rather than independent per-tier quantities."
+  ],
+  "avoidWhen": [
+    "Only one ticket type exists — a single quantity stepper next to a price is simpler than a tiered list.",
+    "The choice is mutually exclusive (pick exactly one tier) rather than additive — use Variant Selector or a radio group instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Each tier row keeps its name/description and stepper on one line; the footer's ticket count and total price never wrap independently of each other.",
+  "accessibility": [
+    "Each stepper's decrement and increment buttons carry an aria-label naming the specific tier (\"Decrease VIP Balcony quantity\"), since their visible content is just − and + glyphs.",
+    "The decrement button is a real disabled control at zero, not just visually muted, preventing quantity from going negative.",
+    "The footer total is always a live, literal sum of quantity × price per tier, computed the same way whether zero or many tiers are selected."
+  ],
+  "compatibleWith": ["application-event-ticket-card", "application-checkout-order-summary"],
+  "variants": [
+    {
+      "id": "ticket-tier-selector-1",
+      "title": "Ticket Tier Selector",
+      "description": "Three tiers (General Admission at 2, VIP Balcony and Backstage Pass at 0) with per-tier steppers and a footer showing '2 tickets' and a $130.00 total.",
+      "source": {
+        "html": "../../../../public/examples/application/ticket-tier-selector/1.html",
+        "tsx": "tsx/TicketTierSelectorVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["zero-quantity", "selected"],
+      "accessibility": [
+        "Decrement buttons at zero quantity are real disabled elements, removed from the tab order."
+      ]
+    },
+    {
+      "id": "ticket-tier-selector-1-dark",
+      "title": "Ticket Tier Selector (Dark)",
+      "description": "The same three-tier list adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/ticket-tier-selector/1-dark.html",
+        "tsx": "tsx/TicketTierSelectorVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["zero-quantity", "selected"],
+      "accessibility": [
+        "Stepper button contrast and disabled-state muting remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-md flex-col p-6">
+    <div class="rounded-xl border border-gray-200 bg-white">
+      <ul class="divide-y divide-gray-200">
+        <li class="flex items-center gap-4 px-5 py-4">
+          <div class="min-w-0 flex-1">
+            <p class="text-sm font-medium text-gray-900">General Admission</p>
+            <p class="mt-0.5 text-xs text-gray-500">Standing room &middot; $65.00</p>
+          </div>
+          <div class="flex shrink-0 items-center gap-2">
+            <button type="button" class="flex h-7 w-7 items-center justify-center rounded-md border border-gray-300 text-gray-500 hover:bg-gray-50">−</button>
+            <span class="w-5 text-center text-sm font-medium text-gray-900">2</span>
+            <button type="button" class="flex h-7 w-7 items-center justify-center rounded-md border border-gray-300 text-gray-500 hover:bg-gray-50">+</button>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-4 px-5 py-4">
+          <div class="min-w-0 flex-1">
+            <p class="text-sm font-medium text-gray-900">VIP Balcony</p>
+            <p class="mt-0.5 text-xs text-gray-500">Reserved seating &middot; $145.00</p>
+          </div>
+          <div class="flex shrink-0 items-center gap-2">
+            <button type="button" disabled class="flex h-7 w-7 cursor-not-allowed items-center justify-center rounded-md border border-gray-200 text-gray-300">−</button>
+            <span class="w-5 text-center text-sm font-medium text-gray-900">0</span>
+            <button type="button" class="flex h-7 w-7 items-center justify-center rounded-md border border-gray-300 text-gray-500 hover:bg-gray-50">+</button>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-4 px-5 py-4">
+          <div class="min-w-0 flex-1">
+            <p class="text-sm font-medium text-gray-900">Backstage Pass</p>
+            <p class="mt-0.5 text-xs text-gray-500">Meet &amp; greet included &middot; $220.00</p>
+          </div>
+          <div class="flex shrink-0 items-center gap-2">
+            <button type="button" disabled class="flex h-7 w-7 cursor-not-allowed items-center justify-center rounded-md border border-gray-200 text-gray-300">−</button>
+            <span class="w-5 text-center text-sm font-medium text-gray-900">0</span>
+            <button type="button" class="flex h-7 w-7 items-center justify-center rounded-md border border-gray-300 text-gray-500 hover:bg-gray-50">+</button>
+          </div>
+        </li>
+      </ul>
+
+      <div class="flex items-center justify-between border-t border-gray-200 px-5 py-4">
+        <span class="text-sm text-gray-500">2 tickets</span>
+        <span class="text-base font-semibold text-gray-900">$130.00</span>
+      </div>
+    </div>
+  </body>
+</html>
