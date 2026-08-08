@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-md p-6">
+    <ul class="divide-y divide-gray-100 rounded-xl border border-gray-200 bg-white shadow-sm">
+      <li class="js-zone flex items-center gap-3 p-4" data-duration="15 min" data-next-run="6:00 AM tomorrow">
+        <div class="js-icon-wrap flex size-9 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a7.5 7.5 0 0 0 7.5-7.5c0-3.5-3-6.5-7.5-11.25-4.5 4.75-7.5 7.75-7.5 11.25A7.5 7.5 0 0 0 12 21Z" />
+          </svg>
+        </div>
+
+        <div class="min-w-0 flex-1">
+          <p class="js-name-out text-sm font-medium text-gray-900">Front lawn</p>
+          <p class="js-meta-out text-xs text-gray-500">15 min &middot; Next run: 6:00 AM tomorrow</p>
+        </div>
+
+        <label class="js-switch relative block h-6 w-11 shrink-0 rounded-full bg-emerald-500 transition-colors">
+          <input type="checkbox" checked class="js-toggle peer sr-only" />
+          <span class="absolute inset-y-0 start-0 m-1 size-4 rounded-full bg-white transition-[inset-inline-start] peer-checked:start-5"></span>
+        </label>
+      </li>
+
+      <li class="js-zone flex items-center gap-3 p-4" data-duration="20 min" data-next-run="6:15 AM tomorrow">
+        <div class="js-icon-wrap flex size-9 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a7.5 7.5 0 0 0 7.5-7.5c0-3.5-3-6.5-7.5-11.25-4.5 4.75-7.5 7.75-7.5 11.25A7.5 7.5 0 0 0 12 21Z" />
+          </svg>
+        </div>
+
+        <div class="min-w-0 flex-1">
+          <p class="js-name-out text-sm font-medium text-gray-900">Vegetable garden</p>
+          <p class="js-meta-out text-xs text-gray-500">20 min &middot; Next run: 6:15 AM tomorrow</p>
+        </div>
+
+        <label class="js-switch relative block h-6 w-11 shrink-0 rounded-full bg-emerald-500 transition-colors">
+          <input type="checkbox" checked class="js-toggle peer sr-only" />
+          <span class="absolute inset-y-0 start-0 m-1 size-4 rounded-full bg-white transition-[inset-inline-start] peer-checked:start-5"></span>
+        </label>
+      </li>
+
+      <li class="js-zone flex items-center gap-3 p-4" data-duration="10 min" data-next-run="6:30 AM tomorrow">
+        <div class="js-icon-wrap flex size-9 shrink-0 items-center justify-center rounded-full bg-gray-100 text-gray-400">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a7.5 7.5 0 0 0 7.5-7.5c0-3.5-3-6.5-7.5-11.25-4.5 4.75-7.5 7.75-7.5 11.25A7.5 7.5 0 0 0 12 21Z" />
+          </svg>
+        </div>
+
+        <div class="min-w-0 flex-1">
+          <p class="js-name-out text-sm font-medium text-gray-400">Backyard drip line</p>
+          <p class="js-meta-out text-xs text-gray-400">10 min &middot; Schedule paused</p>
+        </div>
+
+        <label class="js-switch relative block h-6 w-11 shrink-0 rounded-full bg-gray-300 transition-colors">
+          <input type="checkbox" class="js-toggle peer sr-only" />
+          <span class="absolute inset-y-0 start-0 m-1 size-4 rounded-full bg-white transition-[inset-inline-start] peer-checked:start-5"></span>
+        </label>
+      </li>
+    </ul>
+
+    <script>
+      ;(function () {
+        var zones = document.querySelectorAll('.js-zone')
+
+        zones.forEach(function (zone) {
+          var toggle = zone.querySelector('.js-toggle')
+          var switchLabel = zone.querySelector('.js-switch')
+          var iconWrap = zone.querySelector('.js-icon-wrap')
+          var nameOut = zone.querySelector('.js-name-out')
+          var metaOut = zone.querySelector('.js-meta-out')
+          var duration = zone.getAttribute('data-duration')
+          var nextRun = zone.getAttribute('data-next-run')
+
+          toggle.addEventListener('change', function () {
+            var on = toggle.checked
+            switchLabel.classList.toggle('bg-emerald-500', on)
+            switchLabel.classList.toggle('bg-gray-300', !on)
+            iconWrap.classList.toggle('bg-blue-50', on)
+            iconWrap.classList.toggle('text-blue-600', on)
+            iconWrap.classList.toggle('bg-gray-100', !on)
+            iconWrap.classList.toggle('text-gray-400', !on)
+            nameOut.classList.toggle('text-gray-900', on)
+            nameOut.classList.toggle('text-gray-400', !on)
+            metaOut.classList.toggle('text-gray-500', on)
+            metaOut.classList.toggle('text-gray-400', !on)
+            metaOut.textContent = on ? duration + ' · Next run: ' + nextRun : duration + ' · Schedule paused'
+          })
+        })
+      })()
+    </script>
+  </body>
+</html>

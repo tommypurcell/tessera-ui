@@ -1,0 +1,72 @@
+import { useState } from 'react'
+
+export type IrrigationZone = {
+  id: string
+  name: string
+  durationLabel: string
+  nextRunLabel: string
+  initialOn?: boolean
+  onToggle?: (on: boolean) => void
+}
+
+export type IrrigationScheduleRowVariant1DarkProps = {
+  zones: IrrigationZone[]
+  className?: string
+}
+
+function DropletIcon() {
+  return (
+    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-5">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a7.5 7.5 0 0 0 7.5-7.5c0-3.5-3-6.5-7.5-11.25-4.5 4.75-7.5 7.75-7.5 11.25A7.5 7.5 0 0 0 12 21Z" />
+    </svg>
+  )
+}
+
+function ZoneRow({ zone }: { zone: IrrigationZone }) {
+  const [on, setOn] = useState(zone.initialOn ?? false)
+
+  function toggle() {
+    const next = !on
+    setOn(next)
+    zone.onToggle?.(next)
+  }
+
+  return (
+    <li className="flex items-center gap-3 p-4">
+      <div className={`flex size-9 shrink-0 items-center justify-center rounded-full ${on ? 'bg-blue-500/15 text-blue-400' : 'bg-gray-800 text-gray-500'}`}>
+        <DropletIcon />
+      </div>
+
+      <div className="min-w-0 flex-1">
+        <p className={`text-sm font-medium ${on ? 'text-white' : 'text-gray-500'}`}>{zone.name}</p>
+        <p className={`text-xs ${on ? 'text-gray-400' : 'text-gray-500'}`}>
+          {zone.durationLabel} &middot; {on ? `Next run: ${zone.nextRunLabel}` : 'Schedule paused'}
+        </p>
+      </div>
+
+      <button
+        type="button"
+        role="switch"
+        aria-checked={on}
+        aria-label={`Toggle ${zone.name} irrigation`}
+        onClick={toggle}
+        className={`relative h-6 w-11 shrink-0 rounded-full transition-colors ${on ? 'bg-emerald-500' : 'bg-gray-700'}`}
+      >
+        <span className={`absolute inset-y-0 start-0 m-1 size-4 rounded-full bg-white transition-[inset-inline-start] ${on ? 'start-5' : ''}`} />
+      </button>
+    </li>
+  )
+}
+
+/**
+ * Copy-and-own Tailwind component. Dark-surface variant of the irrigation schedule row.
+ */
+export function IrrigationScheduleRowVariant1Dark({ zones, className }: IrrigationScheduleRowVariant1DarkProps) {
+  return (
+    <ul className={`divide-y divide-gray-800 rounded-xl border border-gray-800 bg-gray-950 shadow-sm ${className ?? ''}`}>
+      {zones.map((zone) => (
+        <ZoneRow key={zone.id} zone={zone} />
+      ))}
+    </ul>
+  )
+}

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-irrigation-schedule-row",
+  "title": "Irrigation Schedule Row",
+  "description": "Per-zone irrigation on/off switch where icon color, name emphasis, and 'Next run' vs. 'Schedule paused' text are all derived from the same real toggled state.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["smart-home", "irrigation", "agriculture", "schedule"],
+  "useWhen": [
+    "Listing sprinkler/irrigation zones in a smart-home or farm-management app where each zone can be independently enabled or disabled.",
+    "Each zone benefits from showing its run duration and next scheduled run time, not just an on/off state.",
+    "Disabling a zone should visibly suppress its 'Next run' time rather than showing a stale or misleading schedule."
+  ],
+  "avoidWhen": [
+    "You're tracking medication doses with per-dose Take/Skip actions — use `medication-schedule-list` for that per-occurrence action pattern instead.",
+    "There's no on/off concept, just a fixed schedule to display — a plain schedule list is enough.",
+    "Zones need overlapping multi-time schedules shown at once — this row shows only the next single run."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Fixed-width list (max-w-md) with rows that keep icon and switch sizes fixed; zone name and metadata truncate rather than wrapping onto the switch at narrow widths.",
+  "accessibility": [
+    "The switch uses role=\"switch\" with aria-checked and a zone-specific aria-label, and the icon color, text color, and metadata text are all derived from that same toggled state.",
+    "Paused zones show 'Schedule paused' as real text rather than just hiding the next-run time, so the reason for the missing time is always clear.",
+    "On/off state is conveyed by switch position and color together with text, never relying on color alone."
+  ],
+  "compatibleWith": ["application-medication-schedule-list", "application-device-toggle-tile"],
+  "variants": [
+    {
+      "id": "irrigation-schedule-row-1",
+      "title": "Irrigation Schedule Row",
+      "description": "Three zones: Front lawn and Vegetable garden active with next-run times, Backyard drip line paused showing 'Schedule paused' instead of a stale time.",
+      "source": {
+        "html": "../../../../public/examples/application/irrigation-schedule-row/1.html",
+        "tsx": "tsx/IrrigationScheduleRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["on", "off"],
+      "accessibility": [
+        "Icon color, name emphasis, and metadata text are all derived from the same per-zone toggled state, verified interactively."
+      ]
+    },
+    {
+      "id": "irrigation-schedule-row-1-dark",
+      "title": "Irrigation Schedule Row (Dark)",
+      "description": "Irrigation schedule row adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/irrigation-schedule-row/1-dark.html",
+        "tsx": "tsx/IrrigationScheduleRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["on", "off"],
+      "accessibility": [
+        "Switch, icon, and text colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}
