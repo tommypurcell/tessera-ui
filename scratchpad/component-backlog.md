@@ -557,31 +557,31 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 <!-- Theme: Events / ticketing -->
 - [x] (builder-5) Event Ticket Card — perforated dashed-divider+notch ticket, event/date/venue/section/ticket#, white-tile QR stub, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [x] (builder-5) Ticket Tier Selector — quantity steppers per price tier with running total; distinct from variant-selector. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
-- [~] (builder-10) Event Countdown Hero — headline event with days/hrs/min countdown and RSVP; distinct from countdown-ring-timer.
-- [ ] Venue Section Map — clickable stadium/venue section blocks with price legend; distinct from seat-map-selector.
+- [x] (builder-10) Event Countdown Hero — 2 variants (gradient hero w/ countdown tiles + RSVP, compact inline banner), light+dark, live tick verified, registry+tsx generated, screenshots verified, pushed
+- [x] (builder-5) Venue Section Map — clickable stadium/venue section blocks with price legend; distinct from seat-map-selector. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [ ] Schedule Agenda List — day-grouped session rows with time, track, and speaker; distinct from itinerary-timeline.
 - [x] (builder-7) Speaker Card — avatar+name+title, quoted talk title, X/LinkedIn/website social links, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
 
 <!-- Theme: Streaming / video -->
 - [x] (builder-8) Video Thumbnail Card — thumbnail w/ duration badge, title, channel avatar/name, K/M-formatted view count computed from real numbers, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [x] (builder-8) Watch Progress Bar — video thumbnail with duration badge and resume-position overlay bar, fill computed from real watched/total minutes, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
-- [~] (builder-2) Channel Header — banner, avatar, subscriber count, and subscribe button; distinct from auth-card-shell.
+- [x] (builder-2) Channel Header — gradient banner, avatar, K-formatted subscriber count, and a real toggling subscribe/subscribed button (verified via Playwright click); light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
 - [~] (builder-6) Live Stream Badge — pulsing LIVE indicator with concurrent-viewer count; distinct from connection-status-pill.
-- [ ] Playback Speed Menu — speed option list with checkmark and quality submenu; distinct from dropdown.
-- [ ] Up-Next Autoplay Card — countdown-to-next-video card with cancel and play-now; distinct from toast-action-undo.
+- [~] (builder-2) Playback Speed Menu — speed option list with checkmark and quality submenu; distinct from dropdown.
+- [~] (builder-10) Up-Next Autoplay Card — countdown-to-next-video card with cancel and play-now; distinct from toast-action-undo.
 
 <!-- Theme: Email client -->
-- [ ] Email List Row — sender, subject, snippet, time, and unread/star/attachment marks; distinct from media-object-row.
+- [~] (builder-7) Email List Row — sender, subject, snippet, time, and unread/star/attachment marks; distinct from media-object-row.
 - [ ] Email Reading Pane — header with from/to, actions bar, and body; distinct from split-view-layout.
 - [ ] Compose Window — minimizable message composer with to/subject/body and send; distinct from comment-composer.
 - [ ] Folder / Label Sidebar — mail folders with unread counts and colored labels; distinct from settings-nav-list.
 - [ ] Thread Collapse — stacked quoted-reply chain with expand-all; distinct from comment-thread.
 
 <!-- Theme: Developer API console -->
-- [ ] Endpoint Method Row — HTTP method pill + path + description API-reference row; distinct from webhook-event-row.
+- [~] (builder-8) Endpoint Method Row — HTTP method pill + path + description API-reference row; distinct from webhook-event-row.
 - [ ] Request Builder — method/URL/headers/body tabs with a send button; distinct from query-builder.
 - [ ] Response Viewer — status badge, timing, and collapsible JSON body with copy; distinct from json-tree-viewer.
-- [~] (builder-8) API Rate Limit Meter — requests-used vs quota with reset-time note; distinct from usage-meter.
+- [x] (builder-8) API Rate Limit Meter — endpoint quota bar with computed usage percent, amber near-limit state (color+text), reset-time note, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [ ] Code Language Tabs — snippet panel with curl/JS/Python tabs and copy; distinct from code-editor-block.
 
 <!-- Theme: Data pipeline / ETL -->
