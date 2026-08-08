@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "name": "application-pull-to-refresh",
+  "title": "Pull-to-Refresh",
+  "description": "A top-of-list indicator that reveals on overscroll, showing a pull affordance and a refreshing spinner state, for mobile-style list refresh.",
+  "category": "application/feedback",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["application", "refresh", "mobile", "overscroll", "list"],
+  "useWhen": [
+    "A scrollable list or feed needs a mobile-native refresh gesture instead of (or alongside) a manual refresh button.",
+    "The list is already at its scroll top and overscrolling further should reveal a pull-to-refresh affordance."
+  ],
+  "avoidWhen": [
+    "The surface isn't primarily touch-scrolled — desktop-first interfaces should offer a visible refresh button instead of relying on an overscroll gesture.",
+    "The list refreshes automatically on an interval or via websocket — a pull gesture would be redundant with data that already stays current."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The indicator sits above the list content within the same overflow container; wire the pull distance and release threshold to whatever touch/scroll library the app uses to detect overscroll.",
+  "accessibility": [
+    "The idle 'Pull to refresh' state uses role=\"status\" so it can be announced if focus lands there, and the arrow icon is decorative (aria-hidden).",
+    "The refreshing state uses role=\"status\" with aria-live=\"polite\" so screen reader users are told a refresh is in progress without an interruption.",
+    "Always pair the gesture with a non-gesture way to refresh (e.g. a toolbar button) for users who cannot perform a pull gesture."
+  ],
+  "compatibleWith": ["application-loaders", "application-loading-overlay"],
+  "variants": [
+    {
+      "id": "pull-to-refresh-1",
+      "title": "Pull state",
+      "description": "Idle overscroll-revealed indicator with a downward arrow and 'Pull to refresh' label above a list",
+      "source": {
+        "html": "../../../../public/examples/application/pull-to-refresh/1.html",
+        "tsx": "tsx/PullToRefreshVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["pulling"],
+      "accessibility": ["role=\"status\" allows the pull affordance to be announced if it receives focus."]
+    },
+    {
+      "id": "pull-to-refresh-1-dark",
+      "title": "Pull state (Dark)",
+      "description": "Idle overscroll-revealed indicator with a downward arrow and 'Pull to refresh' label above a list",
+      "source": {
+        "html": "../../../../public/examples/application/pull-to-refresh/1-dark.html",
+        "tsx": "tsx/PullToRefreshVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["pulling"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    },
+    {
+      "id": "pull-to-refresh-2",
+      "title": "Refreshing state",
+      "description": "Active refresh indicator with a spinner, dimmed list content beneath while the refresh completes",
+      "source": {
+        "html": "../../../../public/examples/application/pull-to-refresh/2.html",
+        "tsx": "tsx/PullToRefreshVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["refreshing"],
+      "accessibility": ["aria-live=\"polite\" announces the refreshing state without interrupting other screen reader output."]
+    },
+    {
+      "id": "pull-to-refresh-2-dark",
+      "title": "Refreshing state (Dark)",
+      "description": "Active refresh indicator with a spinner, dimmed list content beneath while the refresh completes",
+      "source": {
+        "html": "../../../../public/examples/application/pull-to-refresh/2-dark.html",
+        "tsx": "tsx/PullToRefreshVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["refreshing"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    }
+  ]
+}
