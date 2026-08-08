@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-match-history-row",
+  "title": "Match History Row",
+  "description": "List of match results with a colored left border and Win/Loss/Draw label, game mode and queue type, score, duration, and relative time.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["gaming", "match", "history", "score", "list"],
+  "useWhen": [
+    "Showing a player's recent match/game history on a profile or stats page.",
+    "You want a quick-scan list where win/loss is immediately visible via a colored accent, not just buried in a table cell.",
+    "Distinct from a generic data table — this is a fixed row shape optimized for glanceable results, not sortable/filterable tabular data."
+  ],
+  "avoidWhen": [
+    "Users need to sort, filter, or export match data — a proper data table is the right tool for that.",
+    "The activity isn't win/loss framed (e.g. general activity log) — use a generic list or Activity Feed instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Each row is a single flex line; queue/mode text truncates or wraps first on narrow viewports while the result label, score, and colored border stay fixed.",
+  "accessibility": [
+    "Win/Loss/Draw is conveyed by both the colored left border and a text label, never color alone.",
+    "The score is rendered in a monospace font for consistent digit alignment when scanning multiple rows.",
+    "Duration and relative time are plain text, giving context without requiring the user to interpret a timestamp format."
+  ],
+  "compatibleWith": ["application-player-card", "application-leaderboard-list"],
+  "variants": [
+    {
+      "id": "match-history-row-1",
+      "title": "Match History Row",
+      "description": "Four matches: a Win (18–12, Ranked Duo), a Loss (9–16, Ranked Solo), a Draw (14–14, Casual Squad), and another Win (21–8, Ranked Duo).",
+      "source": {
+        "html": "../../../../public/examples/application/match-history-row/1.html",
+        "tsx": "tsx/MatchHistoryRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["win", "loss", "draw"],
+      "accessibility": [
+        "Each row's result label text is the primary identifier; the colored border is a secondary, reinforcing cue."
+      ]
+    },
+    {
+      "id": "match-history-row-1-dark",
+      "title": "Match History Row (Dark)",
+      "description": "The same four match rows adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/match-history-row/1-dark.html",
+        "tsx": "tsx/MatchHistoryRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["win", "loss", "draw"],
+      "accessibility": [
+        "Border and label colors remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}
