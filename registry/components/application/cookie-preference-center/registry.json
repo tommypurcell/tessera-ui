@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-cookie-preference-center",
+  "title": "Cookie Preference Center",
+  "description": "Categorized cookie-consent panel: a locked 'Necessary' row always on, plus toggleable categories with labels and descriptions, and footer Save preferences / Accept all actions.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["cookies", "consent", "privacy", "compliance", "gdpr"],
+  "useWhen": [
+    "Offering granular, per-category cookie consent (e.g. GDPR/CCPA compliance) beyond a single accept/reject choice.",
+    "Users need to understand what each category does before deciding, via a short description per row.",
+    "Distinct from a cookie consent banner, which is a single dismissible bar with accept/reject and no per-category detail."
+  ],
+  "avoidWhen": [
+    "Your compliance requirements only need a single accept/reject choice with no categories — a simple banner is sufficient and less friction.",
+    "The preferences need to live inline in account settings rather than a standalone panel — reuse Preference Toggle Row directly instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The panel is a fixed-width card with each category as a single row; footer actions split evenly and remain full-width down to narrow viewports.",
+  "accessibility": [
+    "The Necessary category's switch is a non-interactive <span>, not a disabled <input>, so it's never reachable by keyboard, matching its always-on nature.",
+    "Toggleable categories use a real <label htmlFor>/<input type=\"checkbox\"> pair so clicking the label text also toggles the switch.",
+    "Each category pairs a short description with its label, so consent decisions aren't made on a bare category name alone."
+  ],
+  "compatibleWith": ["application-preference-toggle-row", "application-toggles"],
+  "variants": [
+    {
+      "id": "cookie-preference-center-1",
+      "title": "Cookie Preference Center",
+      "description": "Four categories: locked always-on Necessary, Analytics (on), Marketing (off), and Personalization (off), with Save preferences and Accept all footer actions.",
+      "source": {
+        "html": "../../../../public/examples/application/cookie-preference-center/1.html",
+        "tsx": "tsx/CookiePreferenceCenterVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["locked", "on", "off"],
+      "accessibility": [
+        "The Necessary row's lock state is conveyed by both a non-interactive switch and reduced-opacity styling, not opacity alone."
+      ]
+    },
+    {
+      "id": "cookie-preference-center-1-dark",
+      "title": "Cookie Preference Center (Dark)",
+      "description": "The same four-category consent panel adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/cookie-preference-center/1-dark.html",
+        "tsx": "tsx/CookiePreferenceCenterVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["locked", "on", "off"],
+      "accessibility": [
+        "Switch on/off states and locked-row muting remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}

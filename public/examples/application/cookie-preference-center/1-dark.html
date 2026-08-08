@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-md justify-center p-6">
+    <div class="w-full rounded-xl border border-gray-800 bg-gray-900">
+      <div class="border-b border-gray-800 px-5 py-4">
+        <h2 class="text-sm font-semibold text-gray-100">Privacy preferences</h2>
+        <p class="mt-1 text-xs text-gray-400">Choose which categories of cookies you allow us to use.</p>
+      </div>
+
+      <ul class="divide-y divide-gray-800">
+        <li class="flex items-center gap-4 px-5 py-3.5 opacity-70">
+          <div class="min-w-0 flex-1">
+            <p class="text-sm font-medium text-gray-100">Necessary</p>
+            <p class="mt-0.5 text-xs text-gray-400">Required for the site to function. Always on.</p>
+          </div>
+          <span class="relative block h-7 w-12 shrink-0 cursor-not-allowed rounded-full bg-green-500">
+            <span class="absolute inset-y-0 start-5 m-1 size-5 rounded-full bg-white"></span>
+          </span>
+        </li>
+
+        <li class="flex items-center gap-4 px-5 py-3.5">
+          <div class="min-w-0 flex-1">
+            <label for="cookie-analytics" class="text-sm font-medium text-gray-100">Analytics</label>
+            <p class="mt-0.5 text-xs text-gray-400">Helps us understand how visitors use our site.</p>
+          </div>
+          <label class="relative block h-7 w-12 shrink-0 rounded-full bg-green-500 transition-colors [-webkit-tap-highlight-color:transparent]">
+            <input type="checkbox" id="cookie-analytics" checked class="peer sr-only" />
+            <span class="absolute inset-y-0 start-0 m-1 size-5 rounded-full bg-white transition-[inset-inline-start] peer-checked:start-5"></span>
+          </label>
+        </li>
+
+        <li class="flex items-center gap-4 px-5 py-3.5">
+          <div class="min-w-0 flex-1">
+            <label for="cookie-marketing" class="text-sm font-medium text-gray-100">Marketing</label>
+            <p class="mt-0.5 text-xs text-gray-400">Used to show you relevant ads on other sites.</p>
+          </div>
+          <label class="relative block h-7 w-12 shrink-0 rounded-full bg-gray-700 transition-colors [-webkit-tap-highlight-color:transparent]">
+            <input type="checkbox" id="cookie-marketing" class="peer sr-only" />
+            <span class="absolute inset-y-0 start-0 m-1 size-5 rounded-full bg-white transition-[inset-inline-start] peer-checked:start-5"></span>
+          </label>
+        </li>
+
+        <li class="flex items-center gap-4 px-5 py-3.5">
+          <div class="min-w-0 flex-1">
+            <label for="cookie-personalization" class="text-sm font-medium text-gray-100">Personalization</label>
+            <p class="mt-0.5 text-xs text-gray-400">Remembers your preferences across visits.</p>
+          </div>
+          <label class="relative block h-7 w-12 shrink-0 rounded-full bg-gray-700 transition-colors [-webkit-tap-highlight-color:transparent]">
+            <input type="checkbox" id="cookie-personalization" class="peer sr-only" />
+            <span class="absolute inset-y-0 start-0 m-1 size-5 rounded-full bg-white transition-[inset-inline-start] peer-checked:start-5"></span>
+          </label>
+        </li>
+      </ul>
+
+      <div class="flex gap-2 border-t border-gray-800 px-5 py-4">
+        <button type="button" class="flex-1 rounded-md border border-gray-700 px-3 py-2 text-sm font-medium text-gray-200 shadow-sm hover:bg-gray-800">
+          Save preferences
+        </button>
+        <button type="button" class="flex-1 rounded-md bg-indigo-500 px-3 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-400">
+          Accept all
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
