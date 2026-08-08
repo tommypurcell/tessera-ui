@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-avatar-group",
+  "title": "Avatar Group",
+  "description": "Overlapping cluster of avatars with a typed member list and an automatic \"+N\" overflow chip for collaborators, assignees, or attendees.",
+  "category": "application/media",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["avatar", "avatar-group", "collaborators", "people", "primitive"],
+  "useWhen": [
+    "Showing who is on a team, thread, or record without listing every name.",
+    "You have a real list of members and want overflow beyond a max count collapsed automatically.",
+    "Compact visual density matters more than showing every member at once."
+  ],
+  "avoidWhen": [
+    "Only one person needs to be shown — use a single avatar instead.",
+    "Every member needs a visible name or role alongside their image — use a list instead.",
+    "You need rich per-member interaction (click to open profile, remove member) — build a dedicated list/menu instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The cluster is an inline-flex block sized to its content; it does not reflow — reduce `max` at narrow widths if space is constrained.",
+  "accessibility": [
+    "The group wrapper carries an aria-label naming the members, including any collapsed into the overflow chip.",
+    "Each avatar carries a title attribute with the member's full name; image avatars also set alt text to the name.",
+    "The overflow chip's title lists every hidden member's name so the full roster is still discoverable."
+  ],
+  "compatibleWith": ["application-stat-tile", "application-toolbar", "application-chat-bubbles"],
+  "variants": [
+    {
+      "id": "avatar-group-1",
+      "title": "Avatar group",
+      "description": "Four overlapping initials avatars plus a \"+3\" overflow chip on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/avatar-group/1.html",
+        "tsx": "tsx/AvatarGroupVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "overflow"],
+      "accessibility": [
+        "Ring color separates overlapping avatars from each other and from the page background."
+      ]
+    },
+    {
+      "id": "avatar-group-1-dark",
+      "title": "Avatar group (Dark)",
+      "description": "Four overlapping initials avatars plus a \"+3\" overflow chip adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/avatar-group/1-dark.html",
+        "tsx": "tsx/AvatarGroupVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "overflow"],
+      "accessibility": [
+        "Initials and overflow-chip text colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
