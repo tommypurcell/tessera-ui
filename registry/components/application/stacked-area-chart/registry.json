@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-stacked-area-chart",
+  "title": "Stacked Area Chart",
+  "description": "A multi-series cumulative trend chart with layered areas and a toggleable legend, for comparing how several series contribute to a growing total over time.",
+  "category": "application/stacked-area-chart",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "stacked-area-chart",
+    "stacked area",
+    "chart",
+    "cumulative",
+    "trend",
+    "legend"
+  ],
+  "useWhen": [
+    "Showing how multiple series sum to a total over time — e.g. signups by channel, revenue by product line.",
+    "The overall trend (the top boundary) and each series' relative contribution both matter."
+  ],
+  "avoidWhen": [
+    "Precise per-series comparison at a given point matters more than the cumulative total — a multi-line chart from `charts` is easier to read for that.",
+    "There are more than 4-5 series — stacked layers become hard to distinguish past that; consider a `Stacked Area Chart` alternative like small multiples instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The chart is a single SVG with viewBox scaling that shrinks proportionally with its container; the legend wraps to a new line below the chart on narrow widths.",
+  "accessibility": [
+    "Each series has a distinct color paired with a text label in the legend, not color alone.",
+    "Legend items are real buttons with aria-pressed reflecting whether that series is currently shown, supporting keyboard toggling in a real implementation.",
+    "Provide a text or table alternative of the underlying series data for screen reader users, since the stacked SVG areas are not independently announced."
+  ],
+  "compatibleWith": ["application-charts", "application-rich-tooltip-chart"],
+  "variants": [
+    {
+      "id": "stacked-area-chart-1",
+      "title": "Three-series trend",
+      "description": "A 12-month signups-by-channel chart with three stacked series (Organic, Referral, Paid), gridlines, and a toggleable color-coded legend.",
+      "source": {
+        "html": "../../../../public/examples/application/stacked-area-chart/1.html",
+        "tsx": "tsx/StackedAreaChartVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Legend buttons carry aria-pressed to reflect each series' visibility state."
+      ]
+    },
+    {
+      "id": "stacked-area-chart-1-dark",
+      "title": "Three-series trend (Dark)",
+      "description": "Stacked area chart adapted for dark surfaces, with series colors re-tuned for dark contrast.",
+      "source": {
+        "html": "../../../../public/examples/application/stacked-area-chart/1-dark.html",
+        "tsx": "tsx/StackedAreaChartVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Series fills, boundary lines, and legend swatches all meet WCAG AA contrast against the dark card background."
+      ]
+    }
+  ]
+}
