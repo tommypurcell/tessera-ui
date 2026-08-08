@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 782,
+  "screenshotCount": 786,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -1536,6 +1536,46 @@
       "url": "/screenshots/components/application-import-wizard/import-wizard-2-dark.jpg",
       "width": 600,
       "height": 558
+    },
+    {
+      "componentId": "application-inline-validation-hint",
+      "variantId": "inline-validation-hint-1",
+      "appearance": "light",
+      "sourcePath": "files/application-inline-validation-hint/inline-validation-hint-1.html",
+      "sourceSha256": "9903d100b6e40632dc5652617d375e14941e211b1a9ddbdd1c543f403641ad34",
+      "url": "/screenshots/components/application-inline-validation-hint/inline-validation-hint-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-inline-validation-hint",
+      "variantId": "inline-validation-hint-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-inline-validation-hint/inline-validation-hint-1-dark.html",
+      "sourceSha256": "6b17efc19d0a064ed342b96135cd6bfc3768cc4109a0f878c195be8eb2ab8152",
+      "url": "/screenshots/components/application-inline-validation-hint/inline-validation-hint-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-inline-validation-hint",
+      "variantId": "inline-validation-hint-2",
+      "appearance": "light",
+      "sourcePath": "files/application-inline-validation-hint/inline-validation-hint-2.html",
+      "sourceSha256": "9944d8379b1270469b498d2e9528d373206f5b5a089a283d44b1d9241effce9a",
+      "url": "/screenshots/components/application-inline-validation-hint/inline-validation-hint-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-inline-validation-hint",
+      "variantId": "inline-validation-hint-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-inline-validation-hint/inline-validation-hint-2-dark.html",
+      "sourceSha256": "c6246fd232ab1ed58fdbfc6ef071e3a430d3b5c3839769581a9ef2a118d7f1e0",
+      "url": "/screenshots/components/application-inline-validation-hint/inline-validation-hint-2-dark.jpg",
+      "width": 600,
+      "height": 400
     },
     {
       "componentId": "application-inputs",
