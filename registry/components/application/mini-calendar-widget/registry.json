@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-mini-calendar-widget",
+  "title": "Mini Calendar Widget",
+  "description": "Compact, read-only month grid with event dots for at-a-glance schedules, sized to fit a dashboard sidebar or summary card without full date-picking interaction.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["calendar", "widget", "schedule", "dashboard", "glanceable"],
+  "useWhen": [
+    "Showing which days in the current month have events, without needing users to pick or navigate dates.",
+    "Space is limited — a dashboard sidebar or summary card widget rather than a full calendar page.",
+    "You want today highlighted and event days dotted, computed from real day numbers rather than hand-placed."
+  ],
+  "avoidWhen": [
+    "Users need to select a date or navigate between months — use the full Calendar or DatePicker instead.",
+    "Events need per-day detail (titles, times) visible in the grid — use Event Calendar Grid instead.",
+    "You need a full year or multi-month view — this widget renders a single month."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The widget is a fixed-width card (16rem) sized for sidebar placement; wrap it in a scroll container if the surrounding layout is narrower.",
+  "accessibility": [
+    "Today and days with events carry visually hidden text (\"(today)\", \"(has events)\") in addition to the visual highlight/dot, since color and a small dot alone aren't conveyed to screen readers.",
+    "Weekday header letters are supplementary; full weekday names should be provided via a wrapping table or aria-label in a production integration if needed.",
+    "The highlighted \"today\" circle uses both a filled background and bold weight, not color alone."
+  ],
+  "compatibleWith": ["application-calendar", "application-event-calendar", "application-stat-tile"],
+  "variants": [
+    {
+      "id": "mini-calendar-widget-1",
+      "title": "Mini calendar widget",
+      "description": "August 2026 month grid with today highlighted and five event-dotted days, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/mini-calendar-widget/1.html",
+        "tsx": "tsx/MiniCalendarWidgetVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "today", "has-events"],
+      "accessibility": [
+        "Event dots are decorative (aria-hidden); the sr-only \"(has events)\" text carries the meaning."
+      ]
+    },
+    {
+      "id": "mini-calendar-widget-1-dark",
+      "title": "Mini calendar widget (Dark)",
+      "description": "The same August 2026 grid, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/mini-calendar-widget/1-dark.html",
+        "tsx": "tsx/MiniCalendarWidgetVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "today", "has-events"],
+      "accessibility": [
+        "Today's highlighted background and event-dot colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
