@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "application-combobox",
+  "title": "Combobox",
+  "description": "Filterable text input paired with a listbox of matching options, with a selected state and a no-match fallback.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["combobox", "autocomplete", "search", "select", "listbox"],
+  "useWhen": [
+    "The option list is long enough that typing to filter is faster than scrolling a plain select.",
+    "Users need to search by typing a few characters rather than recognizing an option in a closed list.",
+    "Assigning or picking from a people/tag/entity list where free-text search is the natural interaction."
+  ],
+  "avoidWhen": [
+    "The option list is short (under ~8 items) — a plain `selects` dropdown is simpler and needs no typing.",
+    "Users must be able to enter a value not in the list — this pattern implies picking from known options, not free text with suggestions.",
+    "You only need single-key-press selection — a native <select> is more efficient and needs no custom listbox/aria wiring."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The listbox matches the input's width and stays anchored below it; it does not reflow to other edges on its own — pair with viewport-aware positioning if used near a screen edge.",
+  "accessibility": [
+    "The input carries role=\"combobox\" with aria-expanded and aria-controls pointing at the listbox.",
+    "The listbox has role=\"listbox\" with an aria-label describing what it lists, and each option has role=\"option\" with aria-selected.",
+    "The zero-results state is a non-interactive option with aria-disabled=\"true\" rather than being silently empty.",
+    "The search icon is decorative and marked aria-hidden."
+  ],
+  "compatibleWith": ["application-form-row", "application-avatar"],
+  "variants": [
+    {
+      "id": "combobox-1",
+      "title": "Combobox",
+      "description": "Filterable assignee search with a matched, selected, and no-match option state.",
+      "source": {
+        "html": "../../../../public/examples/application/combobox/1.html",
+        "tsx": "tsx/ComboboxVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "open", "selected", "no-match"],
+      "accessibility": [
+        "Typing filters the real option list; the listbox announces the current match count implicitly through its rendered options."
+      ]
+    },
+    {
+      "id": "combobox-1-dark",
+      "title": "Combobox (Dark)",
+      "description": "Filterable assignee search adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/combobox/1-dark.html",
+        "tsx": "tsx/ComboboxVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "open", "selected", "no-match"],
+      "accessibility": [
+        "Selected and hover option backgrounds are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}
