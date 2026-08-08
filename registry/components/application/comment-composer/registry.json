@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "name": "application-comment-composer",
+  "title": "Comment Composer",
+  "description": "A rich comment input pairing a textarea with a mention/attach/emoji toolbar and a submit action, plus a compact single-line reply variant.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["application", "comment", "composer", "toolbar", "reply"],
+  "useWhen": [
+    "Posting a top-level comment on an item (issue, post, document) where mentioning people, attaching a file, or adding an emoji are all in scope.",
+    "Replying to an existing comment in a compact thread, where a full toolbar is unnecessary but quick emoji access and a clear send action still are."
+  ],
+  "avoidWhen": [
+    "You only need @-mention autocomplete without the surrounding toolbar and submit chrome — use the mention-textarea component directly instead.",
+    "The context is a simple form field rather than a social/collaborative comment thread — use a plain textarea or form-row instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The full composer's toolbar row uses justify-between so the icon cluster and submit button stay pinned to opposite edges at any width; the reply variant is a single-row pill that already fits narrow contexts.",
+  "accessibility": [
+    "The textarea/input carries a real (visually hidden) <label> rather than relying on the placeholder alone for its accessible name.",
+    "Each toolbar icon button has a descriptive aria-label (Mention someone, Attach a file, Add an emoji, Send reply) since none contain visible text.",
+    "The primary submit action is a real <button type=\"submit\">, keyboard-operable and reachable independent of the toolbar icons."
+  ],
+  "compatibleWith": ["application-mention-textarea", "application-chat-bubbles", "application-avatar"],
+  "variants": [
+    {
+      "id": "comment-composer-1",
+      "title": "Full composer",
+      "description": "Avatar-led composer with a multi-line textarea and a mention/attach/emoji toolbar plus a Comment submit button",
+      "source": {
+        "html": "../../../../public/examples/application/comment-composer/1.html",
+        "tsx": "tsx/CommentComposerVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "focus"],
+      "accessibility": ["Each toolbar icon carries a descriptive aria-label since none have visible text."]
+    },
+    {
+      "id": "comment-composer-1-dark",
+      "title": "Full composer (Dark)",
+      "description": "Avatar-led composer with a multi-line textarea and a mention/attach/emoji toolbar plus a Comment submit button",
+      "source": {
+        "html": "../../../../public/examples/application/comment-composer/1-dark.html",
+        "tsx": "tsx/CommentComposerVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "focus"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    },
+    {
+      "id": "comment-composer-2",
+      "title": "Compact reply",
+      "description": "Single-line pill input with an emoji trigger and a send button, for replying within a thread",
+      "source": {
+        "html": "../../../../public/examples/application/comment-composer/2.html",
+        "tsx": "tsx/CommentComposerVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "focus"],
+      "accessibility": ["The send button has an aria-label since it is icon-only."]
+    },
+    {
+      "id": "comment-composer-2-dark",
+      "title": "Compact reply (Dark)",
+      "description": "Single-line pill input with an emoji trigger and a send button, for replying within a thread",
+      "source": {
+        "html": "../../../../public/examples/application/comment-composer/2-dark.html",
+        "tsx": "tsx/CommentComposerVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "focus"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    }
+  ]
+}
