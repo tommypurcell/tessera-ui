@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "application-dietary-filter-chips",
+  "title": "Dietary Filter Chips",
+  "description": "Multi-select dietary-preference chips with an icon and label per option, toggled independently via real aria-pressed state.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["food", "dietary", "filter", "chips"],
+  "useWhen": [
+    "Filtering a menu or food listing by dietary preference (vegan, gluten-free, spicy, nut-free) with multiple filters active at once.",
+    "Each preference benefits from a small icon alongside its label for quick visual scanning.",
+    "You want visually distinct selected colors for different preference categories (e.g. allergen warnings in amber vs. lifestyle choices in green)."
+  ],
+  "avoidWhen": [
+    "You're filtering by generic tags/labels unrelated to diet — use `tag-filter-group` for that general-purpose case instead.",
+    "Only one dietary filter can apply at a time — a single-select control communicates that constraint better than independent chips.",
+    "This needs to double as an allergen disclosure/warning system — consult food-safety requirements before relying on chip color alone for critical allergen information; always pair with explicit text."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Chips wrap onto additional lines via flex-wrap as the container narrows or more options are added.",
+  "accessibility": [
+    "The chip row has role=\"group\" with an aria-label describing it as a dietary preference filter.",
+    "Each chip is a real toggle button with aria-pressed reflecting its selected state, not a link or hidden checkbox behind a label.",
+    "Selected chips are distinguished by both fill color and label text, never color alone, so meaning survives without color perception.",
+    "Icons are decorative; the dietary term is always present as visible text, never conveyed by icon alone."
+  ],
+  "compatibleWith": ["application-tag-filter-group", "application-menu-item-row"],
+  "variants": [
+    {
+      "id": "dietary-filter-chips-1",
+      "title": "Dietary Filter Chips",
+      "description": "Five dietary chips (Vegan and Gluten-free selected in emerald/amber, Vegetarian/Spicy/Nut-free available).",
+      "source": {
+        "html": "../../../../public/examples/application/dietary-filter-chips/1.html",
+        "tsx": "tsx/DietaryFilterChipsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "Each chip's selection is independent real state, so any combination of dietary filters can be active at once."
+      ]
+    },
+    {
+      "id": "dietary-filter-chips-1-dark",
+      "title": "Dietary Filter Chips (Dark)",
+      "description": "Dietary filter chips adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/dietary-filter-chips/1-dark.html",
+        "tsx": "tsx/DietaryFilterChipsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "Selected and unselected chip colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}
