@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 766,
+  "screenshotCount": 770,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -1456,6 +1456,46 @@
       "url": "/screenshots/components/application-grids/grids-9.jpg",
       "width": 1200,
       "height": 400
+    },
+    {
+      "componentId": "application-import-wizard",
+      "variantId": "import-wizard-1",
+      "appearance": "light",
+      "sourcePath": "files/application-import-wizard/import-wizard-1.html",
+      "sourceSha256": "920a21714bdd0e68e7b1ac8a049515220cc195ed990722fed1481374ed2c7c3a",
+      "url": "/screenshots/components/application-import-wizard/import-wizard-1.jpg",
+      "width": 600,
+      "height": 552
+    },
+    {
+      "componentId": "application-import-wizard",
+      "variantId": "import-wizard-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-import-wizard/import-wizard-1-dark.html",
+      "sourceSha256": "308b46ffa9f50bfeb5f06c8eaeac42553c14ba32f7896ca238620d2639db5039",
+      "url": "/screenshots/components/application-import-wizard/import-wizard-1-dark.jpg",
+      "width": 600,
+      "height": 552
+    },
+    {
+      "componentId": "application-import-wizard",
+      "variantId": "import-wizard-2",
+      "appearance": "light",
+      "sourcePath": "files/application-import-wizard/import-wizard-2.html",
+      "sourceSha256": "5c0c4633e010ee98e1bd4450a508ad7a59b727dd7a36e263889ff5cf63c82aba",
+      "url": "/screenshots/components/application-import-wizard/import-wizard-2.jpg",
+      "width": 600,
+      "height": 558
+    },
+    {
+      "componentId": "application-import-wizard",
+      "variantId": "import-wizard-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-import-wizard/import-wizard-2-dark.html",
+      "sourceSha256": "e99cfba46d4f21572c893ed900e413d5dd7f0ecb5e79df919ac64ea8ee1cc897",
+      "url": "/screenshots/components/application-import-wizard/import-wizard-2-dark.jpg",
+      "width": 600,
+      "height": 558
     },
     {
       "componentId": "application-inputs",
