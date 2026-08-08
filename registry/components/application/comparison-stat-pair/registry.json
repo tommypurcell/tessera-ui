@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-comparison-stat-pair",
+  "title": "Comparison Stat Pair",
+  "description": "Two side-by-side metrics separated by a \"vs\" divider, with the winning side highlighted — the winner is determined by comparing the real numeric values, not hand-picked.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["comparison", "stat", "kpi", "vs", "dashboard"],
+  "useWhen": [
+    "Comparing exactly two related metrics head-to-head (this period vs last period, plan A vs plan B).",
+    "You want the \"leading\" side highlighted automatically based on which value is larger.",
+    "A simple two-up layout is clearer than a chart for just two numbers."
+  ],
+  "avoidWhen": [
+    "You're comparing more than two values — use a bar chart, bullet-chart, or leaderboard-list instead.",
+    "There's no meaningful \"winner\" between the two values (e.g. two unrelated metrics) — use two separate stat-tiles instead.",
+    "You need trend history, not a single snapshot comparison — use big-number-delta-tile or charts instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The two cards and divider sit in a single flex row; stack them vertically at narrow widths in your own layout if horizontal space is tight.",
+  "accessibility": [
+    "The leading side is marked with both a colored border/background and a visible \"Leading\" text label, not color alone.",
+    "When both values are equal, neither side is highlighted — the comparison never fabricates a winner.",
+    "The \"vs\" divider is real text between the two cards, keeping the relationship explicit for screen readers reading in document order."
+  ],
+  "compatibleWith": ["application-stat-tile", "application-big-number-delta-tile", "application-bullet-chart"],
+  "variants": [
+    {
+      "id": "comparison-stat-pair-1",
+      "title": "Comparison stat pair",
+      "description": "This month (1,284, leading) vs last month (972) new-signups comparison, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/comparison-stat-pair/1.html",
+        "tsx": "tsx/ComparisonStatPairVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["left-leading", "right-leading", "tied"],
+      "accessibility": [
+        "The Leading label appears only on the side with the strictly greater value."
+      ]
+    },
+    {
+      "id": "comparison-stat-pair-1-dark",
+      "title": "Comparison stat pair (Dark)",
+      "description": "The same new-signups comparison, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/comparison-stat-pair/1-dark.html",
+        "tsx": "tsx/ComparisonStatPairVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["left-leading", "right-leading", "tied"],
+      "accessibility": [
+        "Highlight border, background, and text colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
