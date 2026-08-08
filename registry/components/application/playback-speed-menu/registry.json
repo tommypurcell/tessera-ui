@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-playback-speed-menu",
+  "title": "Playback Speed Menu",
+  "description": "Video player settings menu with a checkmarked playback-speed list and a navigable Quality submenu, both driven by real selection state.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["video", "player", "menu", "settings"],
+  "useWhen": [
+    "Building a video/media player's settings control for playback speed and quality.",
+    "You need a single-select list with a visible checkmark on the current choice, not just hover highlighting.",
+    "A secondary set of options (quality) benefits from its own navigable panel rather than cluttering the main list."
+  ],
+  "avoidWhen": [
+    "You need a generic single-level action menu (links, delete, etc.) — use `dropdown` for that flatter menu pattern instead.",
+    "There's only one option group with no drill-down — a flat checkmarked list without the submenu/back navigation is enough.",
+    "The menu needs to support multi-select — this pattern is single-select (menuitemradio) per panel."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Fixed-width menu panel (w-52) anchored to its trigger button; swaps between the main and quality panel in place rather than resizing.",
+  "accessibility": [
+    "Each option uses role=\"menuitemradio\" with aria-checked reflecting real selection state, and the checkmark icon's visibility always matches that same state.",
+    "The Quality submenu has its own back button that returns focus-visible context to the main panel rather than closing the whole menu.",
+    "The trigger button exposes aria-haspopup and aria-expanded so assistive tech announces it as a menu control."
+  ],
+  "compatibleWith": ["application-dropdown", "application-video-thumbnail-card", "application-watch-progress-bar"],
+  "variants": [
+    {
+      "id": "playback-speed-menu-1",
+      "title": "Playback Speed Menu",
+      "description": "Settings menu with Normal speed selected and Auto (1080p) quality; clicking Quality navigates to a submenu with its own checkmarked list and back button.",
+      "source": {
+        "html": "../../../../public/examples/application/playback-speed-menu/1.html",
+        "tsx": "tsx/PlaybackSpeedMenuVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "quality-open"],
+      "accessibility": [
+        "Checkmark visibility and aria-checked are both derived from the same selected speed/quality state, verified interactively."
+      ]
+    },
+    {
+      "id": "playback-speed-menu-1-dark",
+      "title": "Playback Speed Menu (Dark)",
+      "description": "Playback speed menu adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/playback-speed-menu/1-dark.html",
+        "tsx": "tsx/PlaybackSpeedMenuVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "quality-open"],
+      "accessibility": [
+        "Menu panel and checkmark colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}
