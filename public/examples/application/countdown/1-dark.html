@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-sm flex-col gap-4 p-6">
+    <div class="rounded-lg border border-gray-800 bg-gray-900 p-6">
+      <p class="text-sm font-medium text-gray-200">Sale ends in</p>
+
+      <div class="mt-4 grid grid-cols-4 gap-2" role="timer" aria-live="polite" aria-atomic="true">
+        <div class="flex flex-col items-center gap-1 rounded-md bg-gray-800 py-3">
+          <span class="font-mono text-2xl font-semibold tabular-nums text-white">02</span>
+          <span class="text-[11px] font-medium tracking-wide text-gray-400 uppercase">Days</span>
+        </div>
+        <div class="flex flex-col items-center gap-1 rounded-md bg-gray-800 py-3">
+          <span class="font-mono text-2xl font-semibold tabular-nums text-white">14</span>
+          <span class="text-[11px] font-medium tracking-wide text-gray-400 uppercase">Hours</span>
+        </div>
+        <div class="flex flex-col items-center gap-1 rounded-md bg-gray-800 py-3">
+          <span class="font-mono text-2xl font-semibold tabular-nums text-white">36</span>
+          <span class="text-[11px] font-medium tracking-wide text-gray-400 uppercase">Mins</span>
+        </div>
+        <div class="flex flex-col items-center gap-1 rounded-md bg-gray-800 py-3">
+          <span class="font-mono text-2xl font-semibold tabular-nums text-blue-400">09</span>
+          <span class="text-[11px] font-medium tracking-wide text-gray-400 uppercase">Secs</span>
+        </div>
+      </div>
+
+      <p class="sr-only" aria-live="off">Time remaining: 2 days, 14 hours, 36 minutes, 9 seconds.</p>
+    </div>
+
+    <script>
+      ;(function () {
+        var el = document.currentScript.previousElementSibling
+        var totalSeconds = 2 * 86400 + 14 * 3600 + 36 * 60 + 9
+
+        function tick() {
+          if (totalSeconds <= 0) return
+          totalSeconds -= 1
+          var days = Math.floor(totalSeconds / 86400)
+          var hours = Math.floor((totalSeconds % 86400) / 3600)
+          var mins = Math.floor((totalSeconds % 3600) / 60)
+          var secs = totalSeconds % 60
+          var cells = el.querySelectorAll('.grid > div')
+          cells[0].querySelector('span:first-child').textContent = String(days).padStart(2, '0')
+          cells[1].querySelector('span:first-child').textContent = String(hours).padStart(2, '0')
+          cells[2].querySelector('span:first-child').textContent = String(mins).padStart(2, '0')
+          cells[3].querySelector('span:first-child').textContent = String(secs).padStart(2, '0')
+        }
+
+        setInterval(tick, 1000)
+      })()
+    </script>
+  </body>
+</html>

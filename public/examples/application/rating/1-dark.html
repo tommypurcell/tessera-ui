@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-xs flex-col gap-4 p-6">
+    <fieldset class="flex flex-col gap-3 rounded-lg border border-gray-800 bg-gray-900 p-6">
+      <legend class="text-sm font-medium text-gray-200">Rate your experience</legend>
+
+      <div class="flex flex-row-reverse items-center justify-end gap-1">
+        <input type="radio" id="rate-5" name="rating" value="5" class="peer/5 sr-only" />
+        <label
+          for="rate-5"
+          class="cursor-pointer text-gray-700 transition hover:text-yellow-400 peer-checked/5:text-yellow-400 [&:hover~label]:text-yellow-400"
+        >
+          <span class="sr-only">5 stars</span>
+          <svg class="size-8" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.36 4.18a1 1 0 00.95.69h4.4c.97 0 1.37 1.24.59 1.81l-3.56 2.59a1 1 0 00-.36 1.12l1.36 4.18c.3.92-.76 1.68-1.54 1.11l-3.56-2.58a1 1 0 00-1.18 0l-3.56 2.58c-.78.57-1.84-.19-1.54-1.11l1.36-4.18a1 1 0 00-.36-1.12L1.4 9.6c-.78-.57-.38-1.81.59-1.81h4.4a1 1 0 00.95-.69z" />
+          </svg>
+        </label>
+
+        <input type="radio" id="rate-4" name="rating" value="4" class="peer/4 sr-only" />
+        <label
+          for="rate-4"
+          class="cursor-pointer text-gray-700 transition hover:text-yellow-400 peer-checked/4:text-yellow-400 [&:hover~label]:text-yellow-400"
+        >
+          <span class="sr-only">4 stars</span>
+          <svg class="size-8" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.36 4.18a1 1 0 00.95.69h4.4c.97 0 1.37 1.24.59 1.81l-3.56 2.59a1 1 0 00-.36 1.12l1.36 4.18c.3.92-.76 1.68-1.54 1.11l-3.56-2.58a1 1 0 00-1.18 0l-3.56 2.58c-.78.57-1.84-.19-1.54-1.11l1.36-4.18a1 1 0 00-.36-1.12L1.4 9.6c-.78-.57-.38-1.81.59-1.81h4.4a1 1 0 00.95-.69z" />
+          </svg>
+        </label>
+
+        <input type="radio" id="rate-3" name="rating" value="3" class="peer/3 sr-only" checked />
+        <label
+          for="rate-3"
+          class="cursor-pointer text-gray-700 transition hover:text-yellow-400 peer-checked/3:text-yellow-400 [&:hover~label]:text-yellow-400"
+        >
+          <span class="sr-only">3 stars</span>
+          <svg class="size-8" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.36 4.18a1 1 0 00.95.69h4.4c.97 0 1.37 1.24.59 1.81l-3.56 2.59a1 1 0 00-.36 1.12l1.36 4.18c.3.92-.76 1.68-1.54 1.11l-3.56-2.58a1 1 0 00-1.18 0l-3.56 2.58c-.78.57-1.84-.19-1.54-1.11l1.36-4.18a1 1 0 00-.36-1.12L1.4 9.6c-.78-.57-.38-1.81.59-1.81h4.4a1 1 0 00.95-.69z" />
+          </svg>
+        </label>
+
+        <input type="radio" id="rate-2" name="rating" value="2" class="peer/2 sr-only" />
+        <label
+          for="rate-2"
+          class="cursor-pointer text-gray-700 transition hover:text-yellow-400 peer-checked/2:text-yellow-400 [&:hover~label]:text-yellow-400"
+        >
+          <span class="sr-only">2 stars</span>
+          <svg class="size-8" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.36 4.18a1 1 0 00.95.69h4.4c.97 0 1.37 1.24.59 1.81l-3.56 2.59a1 1 0 00-.36 1.12l1.36 4.18c.3.92-.76 1.68-1.54 1.11l-3.56-2.58a1 1 0 00-1.18 0l-3.56 2.58c-.78.57-1.84-.19-1.54-1.11l1.36-4.18a1 1 0 00-.36-1.12L1.4 9.6c-.78-.57-.38-1.81.59-1.81h4.4a1 1 0 00.95-.69z" />
+          </svg>
+        </label>
+
+        <input type="radio" id="rate-1" name="rating" value="1" class="peer/1 sr-only" />
+        <label
+          for="rate-1"
+          class="cursor-pointer text-gray-700 transition hover:text-yellow-400 peer-checked/1:text-yellow-400 [&:hover~label]:text-yellow-400"
+        >
+          <span class="sr-only">1 star</span>
+          <svg class="size-8" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.36 4.18a1 1 0 00.95.69h4.4c.97 0 1.37 1.24.59 1.81l-3.56 2.59a1 1 0 00-.36 1.12l1.36 4.18c.3.92-.76 1.68-1.54 1.11l-3.56-2.58a1 1 0 00-1.18 0l-3.56 2.58c-.78.57-1.84-.19-1.54-1.11l1.36-4.18a1 1 0 00-.36-1.12L1.4 9.6c-.78-.57-.38-1.81.59-1.81h4.4a1 1 0 00.95-.69z" />
+          </svg>
+        </label>
+      </div>
+
+      <p class="text-xs text-gray-400">Tap a star to set your rating.</p>
+    </fieldset>
+  </body>
+</html>

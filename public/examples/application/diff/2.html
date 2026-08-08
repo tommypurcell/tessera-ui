@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-xl flex-col gap-4 p-6">
+    <div class="overflow-hidden rounded-lg border border-gray-200 bg-white">
+      <div class="flex items-center justify-between border-b border-gray-200 bg-gray-50 px-4 py-2">
+        <p class="font-mono text-xs text-gray-500">config/settings.json</p>
+        <div class="flex items-center gap-3 text-xs font-medium">
+          <span class="text-green-600">+1</span>
+          <span class="text-red-600">-1</span>
+        </div>
+      </div>
+
+      <ol class="divide-y divide-gray-100 font-mono text-sm">
+        <li class="flex">
+          <span class="w-10 shrink-0 select-none py-1.5 text-center text-gray-400">12</span>
+          <span class="flex-1 px-3 py-1.5 text-gray-600">&nbsp;&nbsp;"timeout": 30,</span>
+        </li>
+        <li class="flex bg-red-50">
+          <span class="w-10 shrink-0 select-none py-1.5 text-center text-red-400">13</span>
+          <span class="flex-1 px-3 py-1.5 text-red-700"
+            ><span aria-hidden="true">-</span> &nbsp;"retries": 2,</span
+          >
+          <span class="sr-only">Removed:</span>
+        </li>
+        <li class="flex bg-green-50">
+          <span class="w-10 shrink-0 select-none py-1.5 text-center text-green-500">13</span>
+          <span class="flex-1 px-3 py-1.5 text-green-700"
+            ><span aria-hidden="true">+</span> &nbsp;"retries": 5,</span
+          >
+          <span class="sr-only">Added:</span>
+        </li>
+        <li class="flex">
+          <span class="w-10 shrink-0 select-none py-1.5 text-center text-gray-400">14</span>
+          <span class="flex-1 px-3 py-1.5 text-gray-600">&nbsp;&nbsp;"strict": true</span>
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>

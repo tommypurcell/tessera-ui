@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-diff",
+  "title": "Diff",
+  "description": "Diff viewer components for displaying line-by-line text or code changes between two versions in web applications.",
+  "category": "application/diff",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "diff",
+    "compare",
+    "changes",
+    "version",
+    "code review"
+  ],
+  "useWhen": [
+    "Diff viewer components for displaying line-by-line text or code changes between two versions in web applications."
+  ],
+  "avoidWhen": [
+    "Avoid diff when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Diff uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "diff-1",
+      "title": "Split before/after comparison",
+      "description": "Split before/after comparison Diff viewer components for displaying line-by-line text or code changes between two versions in web applications.",
+      "source": {
+        "html": "../../../../public/examples/application/diff/1.html",
+        "tsx": "tsx/DiffVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "diff-1-dark",
+      "title": "Split before/after comparison (Dark)",
+      "description": "Split before/after comparison Diff viewer components for displaying line-by-line text or code changes between two versions in web applications.",
+      "source": {
+        "html": "../../../../public/examples/application/diff/1-dark.html",
+        "tsx": "tsx/DiffVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "diff-2",
+      "title": "Inline unified diff with line numbers",
+      "description": "Inline unified diff with line numbers Diff viewer components for displaying line-by-line text or code changes between two versions in web applications.",
+      "source": {
+        "html": "../../../../public/examples/application/diff/2.html",
+        "tsx": "tsx/DiffVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "diff-2-dark",
+      "title": "Inline unified diff with line numbers (Dark)",
+      "description": "Inline unified diff with line numbers Diff viewer components for displaying line-by-line text or code changes between two versions in web applications.",
+      "source": {
+        "html": "../../../../public/examples/application/diff/2-dark.html",
+        "tsx": "tsx/DiffVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-xl flex-col gap-4 p-6">
+    <div class="overflow-hidden rounded-lg border border-gray-800 bg-gray-950">
+      <div class="flex items-center justify-between border-b border-gray-800 bg-gray-900 px-4 py-2">
+        <p class="font-mono text-xs text-gray-400">config/settings.json</p>
+        <div class="flex items-center gap-3 text-xs font-medium">
+          <span class="text-green-400">+1</span>
+          <span class="text-red-400">-1</span>
+        </div>
+      </div>
+
+      <ol class="divide-y divide-gray-800 font-mono text-sm">
+        <li class="flex">
+          <span class="w-10 shrink-0 select-none py-1.5 text-center text-gray-600">12</span>
+          <span class="flex-1 px-3 py-1.5 text-gray-400">&nbsp;&nbsp;"timeout": 30,</span>
+        </li>
+        <li class="flex bg-red-950/40">
+          <span class="w-10 shrink-0 select-none py-1.5 text-center text-red-500/70">13</span>
+          <span class="flex-1 px-3 py-1.5 text-red-400"
+            ><span aria-hidden="true">-</span> &nbsp;"retries": 2,</span
+          >
+          <span class="sr-only">Removed:</span>
+        </li>
+        <li class="flex bg-green-950/40">
+          <span class="w-10 shrink-0 select-none py-1.5 text-center text-green-500/70">13</span>
+          <span class="flex-1 px-3 py-1.5 text-green-400"
+            ><span aria-hidden="true">+</span> &nbsp;"retries": 5,</span
+          >
+          <span class="sr-only">Added:</span>
+        </li>
+        <li class="flex">
+          <span class="w-10 shrink-0 select-none py-1.5 text-center text-gray-600">14</span>
+          <span class="flex-1 px-3 py-1.5 text-gray-400">&nbsp;&nbsp;"strict": true</span>
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>

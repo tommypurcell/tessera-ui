@@ -1,0 +1,90 @@
+import type { HTMLAttributes, ReactNode } from 'react'
+
+export type TesseraComponentState = 'default' | 'loading' | 'empty' | 'error'
+
+export type DockVariant2Props = Omit<HTMLAttributes<HTMLDivElement>, 'children'> & {
+  /** Replaces the component's default content while preserving its outer container. */
+  children?: ReactNode
+  /** Transforms the default content without copying the component's internal markup. */
+  renderContent?: (defaultContent: ReactNode) => ReactNode
+  /** Renders immediately before the main content. */
+  before?: ReactNode
+  /** Renders immediately after the main content. */
+  after?: ReactNode
+  /** Selects an application state. The default state preserves the original component UI. */
+  state?: TesseraComponentState
+  loadingContent?: ReactNode
+  emptyContent?: ReactNode
+  errorContent?: ReactNode
+}
+
+/**
+ * Copy-and-own Tailwind component with content slots and explicit application states.
+ * Omitting the optional props preserves the original markup and visual design.
+ */
+export function DockVariant2({
+  className,
+  children,
+  renderContent,
+  before,
+  after,
+  state = 'default',
+  loadingContent,
+  emptyContent,
+  errorContent,
+  ...props
+}: DockVariant2Props) {
+  const defaultContent = (
+    <>
+      <nav aria-label="Primary" className="flex w-full items-center justify-around rounded-xl border border-gray-200 bg-white px-2 py-2 shadow-sm">
+            <a href="#" aria-current="page" className="flex flex-col items-center gap-1 rounded-lg px-4 py-1.5 text-blue-600">
+              <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+              <span className="text-[11px] font-medium">Home</span>
+            </a>
+      
+            <a href="#" className="flex flex-col items-center gap-1 rounded-lg px-4 py-1.5 text-gray-400 transition hover:text-gray-600">
+              <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z" />
+              </svg>
+              <span className="text-[11px] font-medium">Search</span>
+            </a>
+      
+            <a href="#" className="relative flex flex-col items-center gap-1 rounded-lg px-4 py-1.5 text-gray-400 transition hover:text-gray-600">
+              <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+              </svg>
+              <span className="absolute top-0.5 right-3 size-2 rounded-full bg-red-500 ring-2 ring-white"></span>
+              <span className="text-[11px] font-medium">Alerts</span>
+            </a>
+      
+            <a href="#" className="flex flex-col items-center gap-1 rounded-lg px-4 py-1.5 text-gray-400 transition hover:text-gray-600">
+              <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+              <span className="text-[11px] font-medium">Profile</span>
+            </a>
+          </nav>
+    </>
+  )
+  const content =
+    children ??
+    (state === 'loading'
+      ? (loadingContent ?? <span role="status">Loading…</span>)
+      : state === 'empty'
+        ? (emptyContent ?? <span>No content available.</span>)
+        : state === 'error'
+          ? (errorContent ?? <span role="alert">Something went wrong.</span>)
+          : renderContent
+            ? renderContent(defaultContent)
+            : defaultContent)
+
+  return (
+    <div className={className} aria-busy={state === 'loading' || undefined} {...props}>
+      {before}
+      {content}
+      {after}
+    </div>
+  )
+}
