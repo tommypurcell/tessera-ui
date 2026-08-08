@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-changelog-entry",
+  "title": "Changelog Entry",
+  "description": "Dated release card with a version badge, category tags, and grouped bullet lists, driven by a typed version/sections prop contract.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["changelog", "release-notes", "versioning", "product-updates"],
+  "useWhen": [
+    "Publishing release notes or a product changelog with grouped New/Improved/Fixed items per version.",
+    "Each entry needs a scannable version number and date alongside a short headline before the detail list.",
+    "You want a single reusable release-card primitive to stack into a changelog feed."
+  ],
+  "avoidWhen": [
+    "You need a chronological event timeline with connector lines — use the timelines component instead.",
+    "Updates are user-facing activity, not versioned releases — use the Activity Feed component instead.",
+    "The changelog has dozens of entries needing pagination or filtering — pair this card with a list/pagination wrapper."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The card is a single fixed-width block with intrinsic sizing; stack multiple entries in your own vertical list or grid to control spacing at each breakpoint.",
+  "accessibility": [
+    "The date uses a semantic <time> element with a machine-readable datetime attribute alongside the human-readable label.",
+    "Category badges (New/Improved/Fixed) pair color with a text label, never color alone.",
+    "Each category's bullet list is grouped under its own heading so screen readers announce section boundaries."
+  ],
+  "compatibleWith": ["application-timelines", "application-badges"],
+  "variants": [
+    {
+      "id": "changelog-entry-1",
+      "title": "Changelog Entry",
+      "description": "Release card with a version badge, date, headline, category badge row, and grouped New/Improved/Fixed bullet lists.",
+      "source": {
+        "html": "../../../../public/examples/application/changelog-entry/1.html",
+        "tsx": "tsx/ChangelogEntryVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Each category heading uses distinct color plus text, so the New/Improved/Fixed grouping doesn't rely on color alone."
+      ]
+    },
+    {
+      "id": "changelog-entry-1-dark",
+      "title": "Changelog Entry (Dark)",
+      "description": "Release card adapted for dark surfaces with the same version badge, category-badge, and grouped-list structure.",
+      "source": {
+        "html": "../../../../public/examples/application/changelog-entry/1-dark.html",
+        "tsx": "tsx/ChangelogEntryVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Version badge, category badges, and list text must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
