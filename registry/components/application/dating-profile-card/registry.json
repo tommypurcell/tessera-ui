@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-dating-profile-card",
+  "title": "Dating Profile Card",
+  "description": "Full-bleed photo profile card with a bottom gradient scrim carrying name/age/bio/interests, plus Pass/Like actions below the card.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["dating", "profile", "social", "swipe"],
+  "useWhen": [
+    "Presenting a single dating/social profile as a full-bleed photo card with an accept/reject decision to make.",
+    "Bio and interest tags should overlay the photo directly rather than sit in a separate white card body below a thumbnail.",
+    "You want Pass/Like actions rendered as their own row beneath the card rather than floating inside it."
+  ],
+  "avoidWhen": [
+    "You need the layered peek-behind-cards stack effect for browsing a queue of items generically — use `card-stack` for that stacked-cards composition instead.",
+    "The profile has no photo, or the photo shouldn't be the dominant visual element — use a plain contact/profile card instead.",
+    "You need actual swipe-gesture dragging rather than tap-to-decide buttons — this card shows the decision UI, not gesture physics."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Fixed-size card (h-[26rem] w-72) with the scrim and text scaling with the card; interest tags wrap onto additional lines rather than overflowing.",
+  "accessibility": [
+    "Pass/Like buttons have descriptive aria-labels naming the specific profile, not generic 'Reject'/'Accept' labels.",
+    "Text over the photo sits inside a sufficiently opaque gradient scrim to maintain contrast regardless of the underlying photo content.",
+    "All profile facts (name, age, occupation, distance, bio, interests) are real text content, remaining fully readable to screen readers despite the photo-first visual design."
+  ],
+  "compatibleWith": ["application-card-stack"],
+  "variants": [
+    {
+      "id": "dating-profile-card-1",
+      "title": "Dating Profile Card",
+      "description": "Maya Chen, 28, product designer 3 km away, with bio and three interest tags overlaid on a full-bleed photo, plus Pass/Like buttons below.",
+      "source": {
+        "html": "../../../../public/examples/application/dating-profile-card/1.html",
+        "tsx": "tsx/DatingProfileCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Pass/Like buttons include the profile name in their aria-label rather than a generic action label."
+      ]
+    },
+    {
+      "id": "dating-profile-card-1-dark",
+      "title": "Dating Profile Card (Dark)",
+      "description": "Dating profile card adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/dating-profile-card/1-dark.html",
+        "tsx": "tsx/DatingProfileCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Action button colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}
