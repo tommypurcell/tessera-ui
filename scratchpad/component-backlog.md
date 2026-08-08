@@ -628,7 +628,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-5) Ballot Option List — candidate/measure rows with select and info expander; distinct from poll-vote-card. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 
 <!-- Theme: Agriculture / IoT -->
-- [ ] Field Sensor Map — plot grid with per-zone moisture/temp color coding; distinct from fleet-status-grid.
+- [~] (builder-4) Field Sensor Map — plot grid with per-zone moisture/temp color coding; distinct from fleet-status-grid.
 - [ ] Crop Growth Timeline — planting→harvest stage tracker with dates and weather; distinct from care-timeline.
 - [x] (builder-2) Irrigation Schedule Row — per-zone toggle switch, icon color/name emphasis/next-run text all derived from same toggled state (verified via Playwright: toggling paused zone correctly showed its data-next-run time); light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
 
@@ -648,23 +648,23 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-5) Live Match Timeline — game events (goals/cards) on a minute-based timeline; distinct from timelines. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [~] (builder-2) Recipe Ingredient List — checkable ingredients with quantity scaler; distinct from task-checklist.
 - [ ] Recipe Step Card — numbered cooking step with timer and image; distinct from lesson-playlist.
-- [ ] Photo EXIF Panel — image metadata rows (camera/lens/ISO/aperture) with histogram; distinct from media.
+- [x] (builder-5) Photo EXIF Panel — image metadata rows (camera/lens/ISO/aperture) with histogram; distinct from media. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [ ] Photo Grid Selectable — multi-select photo grid with checkmarks and count bar; distinct from image-gallery-lightbox.
 
 <!-- === WAVE 12 (deep-backlog refill, post-356) — state/variant framings + remaining gaps, verified non-dupe === -->
 
 <!-- Theme: State variants (distinct compositions, not restyles) -->
-- [ ] Table Empty State — full-width in-table zero-rows panel with illustration and add-first-row CTA; distinct from empty-states (table-embedded).
+- [x] (builder-7) Table Empty State — full-width in-table zero-rows panel with illustration and add-first-row CTA; distinct from empty-states (table-embedded). Light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #26).
 - [ ] Table Loading Skeleton — shimmering placeholder rows matching column layout; distinct from skeleton-card-list (table grid).
 - [ ] Table Error State — in-table failure row with reason and retry spanning columns; distinct from retry-error-state.
 - [ ] Form Success Panel — post-submit confirmation card with next-steps actions; distinct from magic-link-sent-state.
-- [~] (builder-8) Partial Failure Summary — batch-result banner showing N succeeded / M failed with expandable errors; absent from library.
+- [x] (builder-8) Partial Failure Summary — expandable batch-result banner w/ computed success rate (succeeded/total), per-item error reasons, native details/summary (keyboard-operable), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [ ] Optimistic Pending Row — list row in a "sending…" ghost state with retry-on-fail; distinct from inline-add-row.
 
 <!-- Theme: Density / size framings -->
 - [ ] Compact Data Table — high-density zebra table with condensed row height and sticky header; distinct from tables.
 - [ ] Comfortable List Row — spacious two-line list item with leading media and trailing meta; distinct from media-object-row.
-- [ ] Mini Stat Chip — inline label+value+trend micro-stat for toolbars; distinct from stat-tile.
+- [~] (builder-8) Mini Stat Chip — inline label+value+trend micro-stat for toolbars; distinct from stat-tile.
 - [ ] Expanded Detail Card — large hero-metric card with secondary stats grid; distinct from big-number-delta-tile.
 
 <!-- Theme: Mobile compositions -->
