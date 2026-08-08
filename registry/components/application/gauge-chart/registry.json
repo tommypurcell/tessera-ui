@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-gauge-chart",
+  "title": "Gauge Chart",
+  "description": "Semicircular needle gauges with red, amber, and green threshold zones for a single at-a-glance metric reading.",
+  "category": "application/gauge-chart",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "gauge-chart",
+    "gauge",
+    "chart",
+    "needle",
+    "threshold"
+  ],
+  "useWhen": [
+    "Semicircular needle gauges with red, amber, and green threshold zones for a single at-a-glance metric reading."
+  ],
+  "avoidWhen": [
+    "Avoid gauge chart when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Gauge Chart uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "gauge-chart-1",
+      "title": "Standalone gauge",
+      "description": "Standalone gauge Semicircular needle gauges with red, amber, and green threshold zones for a single at-a-glance metric reading.",
+      "source": {
+        "html": "../../../../public/examples/application/gauge-chart/1.html",
+        "tsx": "tsx/GaugeChartVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "gauge-chart-1-dark",
+      "title": "Standalone gauge (Dark)",
+      "description": "Standalone gauge Semicircular needle gauges with red, amber, and green threshold zones for a single at-a-glance metric reading.",
+      "source": {
+        "html": "../../../../public/examples/application/gauge-chart/1-dark.html",
+        "tsx": "tsx/GaugeChartVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "gauge-chart-2",
+      "title": "Gauge with metric",
+      "description": "Gauge with metric Semicircular needle gauges with red, amber, and green threshold zones for a single at-a-glance metric reading.",
+      "source": {
+        "html": "../../../../public/examples/application/gauge-chart/2.html",
+        "tsx": "tsx/GaugeChartVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "gauge-chart-2-dark",
+      "title": "Gauge with metric (Dark)",
+      "description": "Gauge with metric Semicircular needle gauges with red, amber, and green threshold zones for a single at-a-glance metric reading.",
+      "source": {
+        "html": "../../../../public/examples/application/gauge-chart/2-dark.html",
+        "tsx": "tsx/GaugeChartVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}
