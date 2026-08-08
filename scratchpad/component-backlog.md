@@ -118,13 +118,13 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [~] (builder-1) Split Button — primary action button fused with a dropdown caret for secondary actions; common toolbar pattern not covered by button-groups.
 - [ ] Data Filter Bar — horizontal bar of chip/dropdown filters with active-filter pills and a clear-all control; the applied layer above the existing `filters` primitives.
 - [ ] Comparison Slider — before/after image reveal with a draggable vertical handle; distinct from the diff component (visual media, not text/rows).
-- [ ] Onboarding Checklist — dismissible getting-started card with progress ring and step rows that check off; drives activation in SaaS dashboards.
+- [~] (builder-10) Onboarding Checklist — dismissible getting-started card with progress ring and step rows that check off; drives activation in SaaS dashboards.
 - [ ] Command Menu Result Row — reusable list-item primitive with icon, label, meta, and trailing kbd hint; composes into palettes, comboboxes, and search results.
 - [ ] Multi-Select Combobox — searchable dropdown that returns multiple checked values rendered as inline chips; distinct from single Combobox and Tag Input.
 - [ ] Date Range Picker — dual-calendar range selector with preset shortcuts (Today, Last 7d, MTD); analytics staple beyond single DatePicker.
 - [ ] Color Picker — swatch grid + hue/alpha sliders + hex input popover; needed for theming/design tooling, absent from library.
 - [ ] Inline Edit Field — click-to-edit text that swaps to an input with save/cancel affordances; common for settings and table cells.
-- [ ] Copy-to-Clipboard Field — read-only value box with a trailing copy button and "copied" confirmation; ubiquitous for API keys, invite links, IDs.
+- [~] (builder-6) Copy-to-Clipboard Field — read-only value box with a trailing copy button and "copied" confirmation; ubiquitous for API keys, invite links, IDs.
 - [ ] Bulk Action Bar — contextual toolbar that slides in when table rows are selected, showing count + batch actions; pairs with DataTable.
 - [ ] Tree View — expandable hierarchical node list with checkboxes and indent guides (data-oriented); distinct from File Tree's file/folder framing.
 - [ ] Timeline Scrubber — horizontal draggable playhead with tick marks and range handles for media/log scrubbing; distinct from progress bars.
