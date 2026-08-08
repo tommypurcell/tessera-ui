@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-hashtag-trend-list",
+  "title": "Hashtag Trend List",
+  "description": "Ranked list of trending hashtags with category and a human-readable post-count label (e.g. \"24.3K posts\") — distinct from leaderboard-list, which ranks people/scores rather than topics.",
+  "category": "application/media",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["hashtag", "trending", "social", "ranking"],
+  "useWhen": [
+    "Showing what's trending on a social platform, ranked by post volume.",
+    "You want the K/M post-count abbreviation computed from a real number, not typed per row.",
+    "Each trend needs a category label alongside the tag itself."
+  ],
+  "avoidWhen": [
+    "You're ranking people or scores, not topics — use leaderboard-list instead.",
+    "You need per-hashtag charts or historical trend lines — pair this list with a chart component instead.",
+    "The list isn't ranked (no meaningful order) — use a plain tag list or tag-filter-group instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Rows are a single flex line with truncating hashtag text; the list itself scrolls in its own container if it exceeds available height.",
+  "accessibility": [
+    "The list is a real ordered list (<ol>) so assistive tech announces each trend's rank position and total count.",
+    "Post counts are always shown as real text (e.g. \"1.2M posts\"), never implied by rank position alone.",
+    "Category text sits directly under each hashtag, keeping the two pieces of context associated for screen readers reading in order."
+  ],
+  "compatibleWith": ["application-leaderboard-list", "application-tag-input", "application-social-post-card"],
+  "variants": [
+    {
+      "id": "hashtag-trend-list-1",
+      "title": "Hashtag trend list",
+      "description": "Five ranked trending hashtags spanning 1.2M down to 640 posts, with category labels, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/hashtag-trend-list/1.html",
+        "tsx": "tsx/HashtagTrendListVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Post-count formatting switches between raw/K/M based on the real magnitude, matching common social-platform conventions."
+      ]
+    },
+    {
+      "id": "hashtag-trend-list-1-dark",
+      "title": "Hashtag trend list (Dark)",
+      "description": "The same five trending hashtags, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/hashtag-trend-list/1-dark.html",
+        "tsx": "tsx/HashtagTrendListVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Rank, hashtag, and category text colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
