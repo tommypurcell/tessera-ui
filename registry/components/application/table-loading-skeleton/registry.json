@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-table-loading-skeleton",
+  "title": "Table Loading Skeleton",
+  "description": "Shimmering placeholder table rows that match the real column layout, with the header kept intact and a real table structure so the loading state doesn't shift layout on load.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["table", "loading", "skeleton"],
+  "useWhen": [
+    "A data table's rows are still fetching and you want a loading state shaped exactly like the real table, headers included.",
+    "You want to avoid layout shift between the loading state and the loaded table by reusing the same <table>/<thead>/<tbody> structure.",
+    "Varying placeholder bar widths per row would help it read as \"data-shaped\" rather than a uniform gray block."
+  ],
+  "avoidWhen": [
+    "You're skeletoning a card grid, not a table — use `skeleton-card-list` for that unrelated layout.",
+    "The table is genuinely empty (zero rows, fetch succeeded) — use `Table Empty State` instead; showing a skeleton forever misleads the user into thinking data is still coming.",
+    "A fetch failed — use `Table Error State` with a retry action rather than leaving a skeleton indefinitely."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Table wrapper scrolls horizontally on narrow viewports via its containing overflow rather than compressing columns; placeholder bar widths stay fixed per column so the skeleton's shape doesn't reflow at different sizes.",
+  "accessibility": [
+    "The table carries role=status and an aria-label announcing the loading state, plus a visually hidden sr-only text node, so assistive tech announces progress rather than reading placeholder bars as content.",
+    "The real column headers stay visible during loading, so users already know what the incoming data will represent.",
+    "Placeholder bars use animate-pulse rather than a moving shimmer gradient, respecting prefers-reduced-motion by default since pulse opacity change is Tailwind's built-in reduced-motion-safe animation."
+  ],
+  "compatibleWith": ["application-table-empty-state", "application-table-error-state", "application-skeleton-card-list"],
+  "variants": [
+    {
+      "id": "table-loading-skeleton-1",
+      "title": "Table Loading Skeleton",
+      "description": "Four-column table header (Name/Owner/Status/Last updated) with four shimmering placeholder rows of varying widths.",
+      "source": {
+        "html": "../../../../public/examples/application/table-loading-skeleton/1.html",
+        "tsx": "tsx/TableLoadingSkeletonVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["loading"],
+      "accessibility": [
+        "Status column placeholders use a pill shape (rounded-full) distinct from the rectangular text placeholders, previewing the real status-badge shape before data arrives."
+      ]
+    },
+    {
+      "id": "table-loading-skeleton-1-dark",
+      "title": "Table Loading Skeleton (Dark)",
+      "description": "Table loading skeleton adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/table-loading-skeleton/1-dark.html",
+        "tsx": "tsx/TableLoadingSkeletonVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["loading"],
+      "accessibility": [
+        "Placeholder bar color is tuned to remain visible without glaring against the dark surface."
+      ]
+    }
+  ]
+}
