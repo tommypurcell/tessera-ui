@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-health-check-grid",
+  "title": "Health Check Grid",
+  "description": "Service health tile grid — a status dot, service name, and status/latency text per tile — with a live-pulse animation on operational services.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["status", "monitoring", "health", "uptime", "dashboard"],
+  "useWhen": [
+    "Showing at-a-glance operational status for several independent services (API, dashboard, webhooks, search) in a compact grid.",
+    "Each tile benefits from a quick metric (latency) alongside its status, not just a status pill.",
+    "Building an internal ops dashboard or admin health panel — for a public-facing incident page, pair with `status-page-board`'s grouped list instead."
+  ],
+  "avoidWhen": [
+    "You need a grouped, scrollable list of many services with uptime history — use `status-page-board` for that denser, list-oriented layout.",
+    "There's only one service to monitor — a single `connection-status-pill` is lighter weight than a grid.",
+    "Status data isn't real-time and won't be refreshed — a static grid risks looking live when it isn't; label it clearly as a snapshot if so."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Two-column grid by default; increase grid-cols via className on wider dashboard layouts to show more tiles per row.",
+  "accessibility": [
+    "Status is communicated by both a colored dot and a text label (\"Operational\", \"Degraded\", \"Outage\"), never by color alone.",
+    "The pulsing animation on operational tiles is purely decorative (aria-hidden via the parent's lack of live-region semantics) — the status text is the source of truth for screen readers.",
+    "Latency or \"no response\" text gives concrete detail beyond the status word alone, useful context during triage."
+  ],
+  "compatibleWith": ["application-status-page-board", "application-connection-status-pill"],
+  "variants": [
+    {
+      "id": "health-check-grid-1",
+      "title": "Health Check Grid",
+      "description": "Four service tiles: two operational with a live pulse, one degraded, and one outage with a highlighted red tile.",
+      "source": {
+        "html": "../../../../public/examples/application/health-check-grid/1.html",
+        "tsx": "tsx/HealthCheckGridVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["operational", "degraded", "outage"],
+      "accessibility": [
+        "Status label and dot color are computed together from a single typed status field, so they can never disagree."
+      ]
+    },
+    {
+      "id": "health-check-grid-1-dark",
+      "title": "Health Check Grid (Dark)",
+      "description": "Health check grid adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/health-check-grid/1-dark.html",
+        "tsx": "tsx/HealthCheckGridVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["operational", "degraded", "outage"],
+      "accessibility": [
+        "Status dot and text colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

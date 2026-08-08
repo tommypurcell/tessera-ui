@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-lg p-6">
+    <ul class="grid grid-cols-2 gap-3">
+      <li class="rounded-lg border border-gray-800 bg-gray-950 p-3 shadow-sm">
+        <div class="flex items-center gap-2">
+          <span class="relative flex size-2">
+            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex size-2 rounded-full bg-emerald-500"></span>
+          </span>
+          <span class="text-sm font-medium text-white">API</span>
+        </div>
+        <p class="mt-1 text-xs text-gray-500">Operational &middot; 42ms</p>
+      </li>
+
+      <li class="rounded-lg border border-gray-800 bg-gray-950 p-3 shadow-sm">
+        <div class="flex items-center gap-2">
+          <span class="relative flex size-2">
+            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex size-2 rounded-full bg-emerald-500"></span>
+          </span>
+          <span class="text-sm font-medium text-white">Dashboard</span>
+        </div>
+        <p class="mt-1 text-xs text-gray-500">Operational &middot; 118ms</p>
+      </li>
+
+      <li class="rounded-lg border border-gray-800 bg-gray-950 p-3 shadow-sm">
+        <div class="flex items-center gap-2">
+          <span class="size-2 rounded-full bg-amber-400"></span>
+          <span class="text-sm font-medium text-white">Webhooks</span>
+        </div>
+        <p class="mt-1 text-xs text-amber-400">Degraded &middot; 890ms</p>
+      </li>
+
+      <li class="rounded-lg border border-red-900 bg-red-950 p-3 shadow-sm">
+        <div class="flex items-center gap-2">
+          <span class="size-2 rounded-full bg-red-500"></span>
+          <span class="text-sm font-medium text-white">Search</span>
+        </div>
+        <p class="mt-1 text-xs text-red-400">Outage &middot; no response</p>
+      </li>
+    </ul>
+  </body>
+</html>
