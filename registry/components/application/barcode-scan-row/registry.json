@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-barcode-scan-row",
+  "title": "Barcode Scan Row",
+  "description": "Dense POS scan-log rows with SKU, item name, quantity, computed line total, and a void action — distinct from cart-line-item, which is a rich e-commerce card with a product image and quantity stepper rather than a compact scan-log table row.",
+  "category": "application/commerce",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["pos", "barcode", "retail", "checkout", "commerce"],
+  "useWhen": [
+    "Displaying a running log of items scanned at a point-of-sale terminal.",
+    "You need a dense, fast-scanning list rather than a rich product card per item.",
+    "Cashiers need a quick void action per scanned line."
+  ],
+  "avoidWhen": [
+    "You're building a customer-facing e-commerce cart with product images — use cart-line-item instead.",
+    "You need an itemized printable receipt layout — use receipt-preview instead.",
+    "Items don't have a SKU/barcode identifier — a simpler list is sufficient."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Rows are full-width within their container; the item name truncates first to preserve the SKU, quantity, line total, and void action.",
+  "accessibility": [
+    "The void button's aria-label names the specific item being voided, not just 'Void'.",
+    "SKU codes render as monospace <code> to visually distinguish them from the item name.",
+    "Line totals are computed from unitPrice × quantity, never hand-typed independently."
+  ],
+  "compatibleWith": ["application-cash-drawer-summary", "application-pos-keypad", "application-receipt-preview"],
+  "variants": [
+    {
+      "id": "barcode-scan-row-1",
+      "title": "Barcode scan row",
+      "description": "Three scanned items with real computed line totals (unit price × quantity) and per-row void actions, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/barcode-scan-row/1.html",
+        "tsx": "tsx/BarcodeScanRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Each void button's aria-label is item-specific, aiding screen reader users scanning a long list."
+      ]
+    },
+    {
+      "id": "barcode-scan-row-1-dark",
+      "title": "Barcode scan row (Dark)",
+      "description": "The same three-item scan log, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/barcode-scan-row/1-dark.html",
+        "tsx": "tsx/BarcodeScanRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Text and void-action colors meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

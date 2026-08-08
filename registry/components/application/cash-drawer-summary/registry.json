@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-cash-drawer-summary",
+  "title": "Cash Drawer Summary",
+  "description": "Expected-vs-counted cash drawer reconciliation with a computed signed variance, highlighted as balanced/over/short — distinct from comparison-stat-pair, which is a generic head-to-head 'vs' comparison with no over/under/balanced discrepancy semantics.",
+  "category": "application/commerce",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["pos", "cash", "reconciliation", "commerce", "retail"],
+  "useWhen": [
+    "Reconciling a physical cash drawer against expected register totals at end of shift.",
+    "You want the variance and its direction (over/short) computed live from the two totals.",
+    "A small tolerance should still count as 'Balanced' rather than flagging rounding noise."
+  ],
+  "avoidWhen": [
+    "You're comparing two arbitrary metrics with no over/under/balanced meaning — use comparison-stat-pair instead.",
+    "You need a full itemized cash breakdown by denomination — pair this with a separate denomination counter.",
+    "There's no expected total to compare against — a plain counted-amount display is simpler."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The expected/counted cells sit in a two-column grid that remains side-by-side down to narrow container widths; the variance banner spans full width below.",
+  "accessibility": [
+    "The variance banner carries role='status' so a live recount announces its outcome to assistive tech.",
+    "Balanced/Over/Short states use both a distinct color and explicit text label, never color alone.",
+    "Negative variance is rendered with an explicit minus sign and 'Short' label, not just a red number."
+  ],
+  "compatibleWith": ["application-comparison-stat-pair", "application-pos-keypad", "application-receipt-preview"],
+  "variants": [
+    {
+      "id": "cash-drawer-summary-1",
+      "title": "Cash drawer summary",
+      "description": "A drawer $4.75 short of its $412.00 expected total after a $407.25 count, in the Short state, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/cash-drawer-summary/1.html",
+        "tsx": "tsx/CashDrawerSummaryVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["short"],
+      "accessibility": [
+        "Variance is computed as counted minus expected, not hand-typed independently of the two totals."
+      ]
+    },
+    {
+      "id": "cash-drawer-summary-1-dark",
+      "title": "Cash drawer summary (Dark)",
+      "description": "The same short-drawer reconciliation, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/cash-drawer-summary/1-dark.html",
+        "tsx": "tsx/CashDrawerSummaryVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["short"],
+      "accessibility": [
+        "Variance banner colors meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

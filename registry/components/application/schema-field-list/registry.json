@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-schema-field-list",
+  "title": "Schema Field List",
+  "description": "Database-table schema listing with column name, type badge, nullable/not-null state, and a primary-key marker — distinct from feature-flag-table, which lists boolean flags with rollout percentages rather than column definitions.",
+  "category": "application/developer-tools",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["database", "schema", "developer-tools", "reference"],
+  "useWhen": [
+    "Documenting a database table's column definitions for reference.",
+    "You want the primary key visually distinct from other columns via an icon marker.",
+    "Nullable vs not-null state should be scannable at a glance."
+  ],
+  "avoidWhen": [
+    "You're listing boolean feature flags with rollout percentages — use feature-flag-table instead.",
+    "You need an editable schema builder with add/remove controls — this is a read-only reference list.",
+    "You need row-level data, not column definitions — use a data table instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The card has a fixed max width; column name and type stay on one row, with not-null/nullable status right-aligned via ml-auto.",
+  "accessibility": [
+    "The primary-key icon carries role='img' with an aria-label of 'Primary key' rather than relying on icon shape alone.",
+    "Not-null fields use bolder text weight in addition to the label text, not color alone.",
+    "Column names render as monospace <code> to visually distinguish them from type badges."
+  ],
+  "compatibleWith": ["application-feature-flag-table", "application-column-mapping-rows"],
+  "variants": [
+    {
+      "id": "schema-field-list-1",
+      "title": "Schema field list",
+      "description": "A 5-column 'users' table schema with a primary-key marker on id and correct nullable/not-null states, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/schema-field-list/1.html",
+        "tsx": "tsx/SchemaFieldListVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Only one field is marked as the primary key, matching real schema semantics."
+      ]
+    },
+    {
+      "id": "schema-field-list-1-dark",
+      "title": "Schema field list (Dark)",
+      "description": "The same users table schema, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/schema-field-list/1-dark.html",
+        "tsx": "tsx/SchemaFieldListVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Type badges and text meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-job-run-row",
+  "title": "Job Run Row",
+  "description": "ETL/pipeline job-run summary row with a status badge, duration, records-processed count, and a logs link — distinct from build-status-row, which shows a sequential CI stage-pill chain rather than a single run's throughput metrics.",
+  "category": "application/developer-tools",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["etl", "pipeline", "data-engineering", "jobs", "developer-tools"],
+  "useWhen": [
+    "Listing recent ETL or batch job runs with their outcome and throughput.",
+    "You want records-processed counts formatted for readability at scale.",
+    "Each run should link out to its full logs."
+  ],
+  "avoidWhen": [
+    "You need a sequential CI/CD stage chain (build→test→deploy) — use build-status-row instead.",
+    "You need a draggable node in a visual pipeline editor — use pipeline-flow-node instead.",
+    "There's no records-processed metric — a simpler status row is sufficient."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Rows are full-width within their container; the job name truncates first to preserve the status badge, duration, record count, and logs link.",
+  "accessibility": [
+    "Status is conveyed by both a distinct background/text color and a readable label (Succeeded/Running/Failed), never color alone.",
+    "The logs link uses descriptive link text ('View logs') rather than a bare icon.",
+    "Record counts use toLocaleString formatting for readability at scale."
+  ],
+  "compatibleWith": ["application-build-status-row", "application-pipeline-flow-node"],
+  "variants": [
+    {
+      "id": "job-run-row-1",
+      "title": "Job run row",
+      "description": "Three job runs (succeeded, running, failed) with real durations and formatted records-processed counts, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/job-run-row/1.html",
+        "tsx": "tsx/JobRunRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["succeeded", "running", "failed"],
+      "accessibility": [
+        "Duration is formatted from real seconds via a shared formatDuration function, not hand-typed strings."
+      ]
+    },
+    {
+      "id": "job-run-row-1-dark",
+      "title": "Job run row (Dark)",
+      "description": "The same three job runs, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/job-run-row/1-dark.html",
+        "tsx": "tsx/JobRunRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["succeeded", "running", "failed"],
+      "accessibility": [
+        "Status badge colors meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

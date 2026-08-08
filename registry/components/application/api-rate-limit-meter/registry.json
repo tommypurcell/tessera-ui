@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-api-rate-limit-meter",
+  "title": "API Rate Limit Meter",
+  "description": "Proactive per-window API request-quota meter with a proportional fill bar and a reset-time note — distinct from rate-limit-notice, which is a reactive alert banner shown only after the limit is already hit, and from usage-meter, which is a generic storage-quota bar with no time-window/reset semantics.",
+  "category": "application/developer-tools",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["api", "rate-limit", "quota", "developer-tools", "meter"],
+  "useWhen": [
+    "Showing live API request usage against a quota before the limit is hit.",
+    "You need a reset countdown alongside the usage proportion.",
+    "A near-limit warning state should change color and copy automatically."
+  ],
+  "avoidWhen": [
+    "The limit has already been exceeded and you need a blocking alert — use rate-limit-notice instead.",
+    "You're tracking generic storage or seat usage with no time-window reset — use usage-meter instead.",
+    "You need per-endpoint breakdowns in a table — a data table is more appropriate."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The card is fluid up to a max width; the endpoint path truncates and the used/quota counts stay right-aligned at narrow widths.",
+  "accessibility": [
+    "The fill bar carries role='img' with an aria-label stating exact used/quota counts and percentage, since width alone isn't announced by screen readers.",
+    "The near-limit state is conveyed by both an amber fill color and explicit 'Approaching limit' text, not color alone.",
+    "Request counts use toLocaleString formatting for readability at scale."
+  ],
+  "compatibleWith": ["application-rate-limit-notice", "application-usage-meter", "application-endpoint-method-row"],
+  "variants": [
+    {
+      "id": "api-rate-limit-meter-1",
+      "title": "API rate limit meter",
+      "description": "An endpoint at 84.2% of its 1,000-request quota (842 used), in the near-limit warning state with a 12-minute reset note, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/api-rate-limit-meter/1.html",
+        "tsx": "tsx/ApiRateLimitMeterVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["near-limit"],
+      "accessibility": [
+        "Fill percentage is requestsUsed/requestsQuota, computed live rather than hand-typed."
+      ]
+    },
+    {
+      "id": "api-rate-limit-meter-1-dark",
+      "title": "API rate limit meter (Dark)",
+      "description": "The same near-limit rate meter, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/api-rate-limit-meter/1-dark.html",
+        "tsx": "tsx/ApiRateLimitMeterVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["near-limit"],
+      "accessibility": [
+        "Fill and warning text colors meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

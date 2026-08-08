@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-video-thumbnail-card",
+  "title": "Video Thumbnail Card",
+  "description": "Video discovery card with thumbnail, duration badge, title, channel avatar/name, and a formatted view count — distinct from image-gallery-lightbox, which is a full-screen image viewer with navigation rather than a discovery/browse card.",
+  "category": "application/media",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["video", "media", "thumbnail", "streaming", "card"],
+  "useWhen": [
+    "Building a video browse/discovery grid or feed.",
+    "You need view counts formatted at scale (K/M) rather than raw numbers.",
+    "Duration should be visible on the thumbnail without a player being active."
+  ],
+  "avoidWhen": [
+    "You need a full-screen image or media viewer with next/prev navigation — use image-gallery-lightbox instead.",
+    "The video is already playing and mid-watch — use watch-progress-bar to show resume position instead.",
+    "You need active playback controls — use now-playing-bar instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The thumbnail maintains a 16:9 aspect ratio via aspect-video; the title clamps to two lines and channel/view text truncates at narrow widths.",
+  "accessibility": [
+    "The channel avatar placeholder is aria-hidden since the channel name is already available as text.",
+    "View counts are always rendered as readable text, never encoded only in a visual size or icon.",
+    "The duration badge has sufficient contrast against any thumbnail color via a semi-opaque black background."
+  ],
+  "compatibleWith": ["application-watch-progress-bar", "application-now-playing-bar"],
+  "variants": [
+    {
+      "id": "video-thumbnail-card-1",
+      "title": "Video thumbnail card",
+      "description": "A video card with an 8:47 duration badge and a view count formatted from a real 1,240,000 to '1.2M views', on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/video-thumbnail-card/1.html",
+        "tsx": "tsx/VideoThumbnailCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Duration and view count are both computed/formatted from real numeric props, not hand-typed strings."
+      ]
+    },
+    {
+      "id": "video-thumbnail-card-1-dark",
+      "title": "Video thumbnail card (Dark)",
+      "description": "The same video card, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/video-thumbnail-card/1-dark.html",
+        "tsx": "tsx/VideoThumbnailCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Text and avatar placeholder colors meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex justify-center bg-gray-50 p-6">
+    <ul class="flex w-full max-w-2xl flex-col divide-y divide-gray-100 rounded-lg border border-gray-200 bg-white">
+      <li class="flex items-center gap-3 px-4 py-3">
+        <span class="w-16 shrink-0 rounded bg-blue-50 px-2 py-0.5 text-center text-xs font-semibold text-blue-700">GET</span>
+        <code class="shrink-0 font-mono text-sm text-gray-900">/v1/users</code>
+        <span class="min-w-0 flex-1 truncate text-sm text-gray-500">List all users in the current workspace</span>
+      </li>
+      <li class="flex items-center gap-3 px-4 py-3">
+        <span class="w-16 shrink-0 rounded bg-emerald-50 px-2 py-0.5 text-center text-xs font-semibold text-emerald-700">POST</span>
+        <code class="shrink-0 font-mono text-sm text-gray-900">/v1/users</code>
+        <span class="min-w-0 flex-1 truncate text-sm text-gray-500">Create a new user</span>
+      </li>
+      <li class="flex items-center gap-3 px-4 py-3">
+        <span class="w-16 shrink-0 rounded bg-amber-50 px-2 py-0.5 text-center text-xs font-semibold text-amber-700">PUT</span>
+        <code class="shrink-0 font-mono text-sm text-gray-900">/v1/users/{id}</code>
+        <span class="min-w-0 flex-1 truncate text-sm text-gray-500">Replace a user's full profile</span>
+      </li>
+      <li class="flex items-center gap-3 px-4 py-3">
+        <span class="w-16 shrink-0 rounded bg-violet-50 px-2 py-0.5 text-center text-xs font-semibold text-violet-700">PATCH</span>
+        <code class="shrink-0 font-mono text-sm text-gray-900">/v1/users/{id}</code>
+        <span class="min-w-0 flex-1 truncate text-sm text-gray-500">Update specific fields on a user</span>
+      </li>
+      <li class="flex items-center gap-3 px-4 py-3">
+        <span class="w-16 shrink-0 rounded bg-red-50 px-2 py-0.5 text-center text-xs font-semibold text-red-700">DELETE</span>
+        <code class="shrink-0 font-mono text-sm text-gray-900">/v1/users/{id}</code>
+        <span class="min-w-0 flex-1 truncate text-sm text-gray-500">Permanently remove a user</span>
+      </li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-tip-selector",
+  "title": "Tip Selector",
+  "description": "Preset tip-percentage buttons with a computed tip amount, total, and per-person split — distinct from tiered-donation-buttons, which select a flat impact-labeled donation amount rather than a percentage of a bill with a split calculation.",
+  "category": "application/commerce",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["tip", "checkout", "commerce", "split", "restaurant"],
+  "useWhen": [
+    "Letting a user pick a tip percentage against a known bill amount.",
+    "You want the tip, total, and per-person split all computed live from the same bill and percentage.",
+    "A group needs to split the total evenly across multiple people."
+  ],
+  "avoidWhen": [
+    "You're collecting a flat charitable donation amount with impact labels — use tiered-donation-buttons instead.",
+    "The bill amount is unknown or variable — collect it first before showing this component.",
+    "Splitting isn't needed — omit the per-person row rather than showing a redundant single-person split."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Preset buttons share equal width via flex-1 and remain in a single row down to narrow container widths.",
+  "accessibility": [
+    "Preset buttons use role='group' with an aria-label and aria-pressed to convey the selected percentage to assistive tech.",
+    "The selected percentage is also shown as text in the tip line, not conveyed only by button highlight color.",
+    "The per-person split row is omitted entirely when splitCount is 1, rather than showing a redundant identical total."
+  ],
+  "compatibleWith": ["application-checkout-order-summary", "application-order-cart-drawer"],
+  "variants": [
+    {
+      "id": "tip-selector-1",
+      "title": "Tip selector",
+      "description": "An $84.50 bill with 20% tip selected, computing a $16.90 tip, $101.40 total, and $33.80 per-person split across 3 people, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/tip-selector/1.html",
+        "tsx": "tsx/TipSelectorVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Tip, total, and per-person amounts are all derived from the same real billAmount and selectedPercent, never hand-typed independently."
+      ]
+    },
+    {
+      "id": "tip-selector-1-dark",
+      "title": "Tip selector (Dark)",
+      "description": "The same tip selector, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/tip-selector/1-dark.html",
+        "tsx": "tsx/TipSelectorVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Selected/unselected button states meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-partial-failure-summary",
+  "title": "Partial Failure Summary",
+  "description": "Batch-operation result banner showing a computed N-of-total success rate and failure count, with an expandable list of per-item failure reasons — not present elsewhere in the registry; distinct from a plain error banner because it summarizes a mixed-outcome batch rather than a single failure.",
+  "category": "application/feedback",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["batch", "errors", "feedback", "import", "summary"],
+  "useWhen": [
+    "Reporting the outcome of a bulk operation (import, batch update, mass send) that partially failed.",
+    "You want the success rate computed live from real succeeded/failed counts.",
+    "Users need to see specific per-item failure reasons without the summary taking up permanent space."
+  ],
+  "avoidWhen": [
+    "The operation either fully succeeded or fully failed — a simple success/error banner is sufficient.",
+    "There are no per-item error details to show — a plain count is enough.",
+    "You need this to auto-dismiss like a toast — use a persistent banner pattern instead since batch results need review time."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The banner is fluid up to a max width; the summary text wraps naturally and the error list scrolls with the page rather than the component.",
+  "accessibility": [
+    "Built on native <details>/<summary> so it's keyboard-operable and exposes expanded/collapsed state to assistive tech without extra ARIA wiring.",
+    "The success rate is stated as both a fraction (N of total) and a percentage in the same sentence, not just one or the other.",
+    "Each error row pairs the failing item identifier with its specific reason, not a generic 'failed' label."
+  ],
+  "compatibleWith": ["application-json-tree-viewer", "application-toast-stack"],
+  "variants": [
+    {
+      "id": "partial-failure-summary-1",
+      "title": "Partial failure summary",
+      "description": "A CSV import batch with 47 of 50 rows succeeding (94%) and 3 failing, expanded to show each row's specific error reason, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/partial-failure-summary/1.html",
+        "tsx": "tsx/PartialFailureSummaryVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["expanded"],
+      "accessibility": [
+        "Success rate percentage is computed from succeeded/(succeeded+failed), never a hand-typed number."
+      ]
+    },
+    {
+      "id": "partial-failure-summary-1-dark",
+      "title": "Partial failure summary (Dark)",
+      "description": "The same 47-of-50 batch result, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/partial-failure-summary/1-dark.html",
+        "tsx": "tsx/PartialFailureSummaryVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["expanded"],
+      "accessibility": [
+        "Amber text and border colors meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
