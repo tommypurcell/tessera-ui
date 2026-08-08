@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex justify-center p-6">
+    <div aria-live="polite" aria-label="Task progress" class="flex w-full max-w-sm flex-col gap-2">
+      <div role="status" class="rounded-md border border-gray-200 bg-white p-3 shadow-sm">
+        <div class="flex items-center justify-between gap-2">
+          <span class="truncate text-sm font-medium text-gray-900">Uploading video.mp4</span>
+          <span class="shrink-0 text-xs text-gray-500">42%</span>
+        </div>
+        <div class="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-gray-100">
+          <div class="h-1.5 rounded-full bg-blue-600" style="width: 42%" role="img" aria-label="Uploading video.mp4: 42% complete"></div>
+        </div>
+      </div>
+
+      <div role="status" class="rounded-md border border-gray-200 bg-white p-3 shadow-sm">
+        <div class="flex items-center justify-between gap-2">
+          <span class="truncate text-sm font-medium text-gray-900">Generating thumbnails</span>
+          <span class="shrink-0 text-xs text-gray-500">78%</span>
+        </div>
+        <div class="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-gray-100">
+          <div class="h-1.5 rounded-full bg-blue-600" style="width: 78%" role="img" aria-label="Generating thumbnails: 78% complete"></div>
+        </div>
+      </div>
+
+      <div role="status" class="rounded-md border border-gray-200 bg-white p-3 shadow-sm">
+        <div class="flex items-center justify-between gap-2">
+          <span class="truncate text-sm font-medium text-gray-900">Exporting captions.srt</span>
+          <span class="shrink-0 text-xs text-gray-500">Done</span>
+        </div>
+        <div class="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-gray-100">
+          <div class="h-1.5 rounded-full bg-green-500" style="width: 100%" role="img" aria-label="Exporting captions.srt: complete"></div>
+        </div>
+        <button type="button" class="mt-1.5 text-xs font-medium text-blue-600 hover:text-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-1">Dismiss</button>
+      </div>
+    </div>
+  </body>
+</html>
