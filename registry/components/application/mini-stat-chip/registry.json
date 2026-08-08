@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-mini-stat-chip",
+  "title": "Mini Stat Chip",
+  "description": "Compact inline label+value+trend micro-stat pill sized for toolbars — distinct from stat-tile, which is a full padded card rather than an inline chip. Trend arrow direction and color are derived from the real sign of a numeric trend percentage.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["stat", "chip", "toolbar", "metric", "kpi"],
+  "useWhen": [
+    "Surfacing one or more key metrics inline within a toolbar or dense header row.",
+    "You need a trend indicator without the visual weight of a full stat-tile card.",
+    "Several mini stats need to sit side-by-side in a constrained horizontal space."
+  ],
+  "avoidWhen": [
+    "You need a standalone, prominent KPI card with more visual weight — use stat-tile instead.",
+    "The metric has no trend to show — omit the trend segment rather than showing a static 0%.",
+    "You need an icon or multi-line description alongside the stat — a full card is more appropriate."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Each chip sizes to its content and wraps naturally in a flex container; multiple chips can sit inline until they overflow to a new line.",
+  "accessibility": [
+    "The trend arrow's direction and color both derive from the same signed trendPercent value, so they can never contradict each other.",
+    "A visually-hidden 'Up'/'Down' label precedes the percentage so screen readers announce direction, not just a number.",
+    "Label and value are always plain text, never conveyed only through chip color."
+  ],
+  "compatibleWith": ["application-stat-tile", "application-toolbar"],
+  "variants": [
+    {
+      "id": "mini-stat-chip-1",
+      "title": "Mini stat chip",
+      "description": "Three toolbar chips (active users trending up, error rate trending down, and uptime with no trend), on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/mini-stat-chip/1.html",
+        "tsx": "tsx/MiniStatChipVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["up", "down", "no-trend"],
+      "accessibility": [
+        "The uptime chip omits the trend segment entirely rather than rendering a misleading 0% arrow."
+      ]
+    },
+    {
+      "id": "mini-stat-chip-1-dark",
+      "title": "Mini stat chip (Dark)",
+      "description": "The same three toolbar chips, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/mini-stat-chip/1-dark.html",
+        "tsx": "tsx/MiniStatChipVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["up", "down", "no-trend"],
+      "accessibility": [
+        "Trend colors meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
