@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-code-language-tabs",
+  "title": "Code Language Tabs",
+  "description": "Tabbed code-snippet panel components for switching between request languages or package managers, with a copy action.",
+  "category": "application/code-language-tabs",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "code-language-tabs",
+    "code snippet",
+    "tabs",
+    "api docs",
+    "copy"
+  ],
+  "useWhen": [
+    "Tabbed code-snippet panel components for switching between request languages or package managers, with a copy action."
+  ],
+  "avoidWhen": [
+    "Avoid code language tabs when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Code Language Tabs uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Associate each form field with a visible or programmatic label before production use.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "code-language-tabs-1",
+      "title": "cURL/JavaScript/Python request tabs with copy",
+      "description": "cURL/JavaScript/Python request tabs with copy Tabbed code-snippet panel components for switching between request languages or package managers, with a copy action.",
+      "source": {
+        "html": "../../../../public/examples/application/code-language-tabs/1.html",
+        "tsx": "tsx/CodeLanguageTabsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "code-language-tabs-1-dark",
+      "title": "cURL/JavaScript/Python request tabs with copy (Dark)",
+      "description": "cURL/JavaScript/Python request tabs with copy Tabbed code-snippet panel components for switching between request languages or package managers, with a copy action.",
+      "source": {
+        "html": "../../../../public/examples/application/code-language-tabs/1-dark.html",
+        "tsx": "tsx/CodeLanguageTabsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "code-language-tabs-2",
+      "title": "Compact npm/pnpm/yarn install tabs",
+      "description": "Compact npm/pnpm/yarn install tabs Tabbed code-snippet panel components for switching between request languages or package managers, with a copy action.",
+      "source": {
+        "html": "../../../../public/examples/application/code-language-tabs/2.html",
+        "tsx": "tsx/CodeLanguageTabsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "code-language-tabs-2-dark",
+      "title": "Compact npm/pnpm/yarn install tabs (Dark)",
+      "description": "Compact npm/pnpm/yarn install tabs Tabbed code-snippet panel components for switching between request languages or package managers, with a copy action.",
+      "source": {
+        "html": "../../../../public/examples/application/code-language-tabs/2-dark.html",
+        "tsx": "tsx/CodeLanguageTabsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    }
+  ]
+}

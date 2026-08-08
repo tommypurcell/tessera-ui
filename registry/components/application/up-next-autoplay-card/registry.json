@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-up-next-autoplay-card",
+  "title": "Up-Next Autoplay Card",
+  "description": "Countdown-to-next-video card components with cancel and play-now actions, for video players and course platforms.",
+  "category": "application/up-next-autoplay-card",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "up-next-autoplay-card",
+    "autoplay",
+    "video",
+    "up next",
+    "countdown"
+  ],
+  "useWhen": [
+    "Countdown-to-next-video card components with cancel and play-now actions, for video players and course platforms."
+  ],
+  "avoidWhen": [
+    "Avoid up-next autoplay card when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Up-Next Autoplay Card uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Provide meaningful alternative text for informative images and empty alt text for decorative images.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "up-next-autoplay-card-1",
+      "title": "Thumbnail card with countdown ring and actions",
+      "description": "Thumbnail card with countdown ring and actions Countdown-to-next-video card components with cancel and play-now actions, for video players and course platforms.",
+      "source": {
+        "html": "../../../../public/examples/application/up-next-autoplay-card/1.html",
+        "tsx": "tsx/UpNextAutoplayCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "up-next-autoplay-card-1-dark",
+      "title": "Thumbnail card with countdown ring and actions (Dark)",
+      "description": "Thumbnail card with countdown ring and actions Countdown-to-next-video card components with cancel and play-now actions, for video players and course platforms.",
+      "source": {
+        "html": "../../../../public/examples/application/up-next-autoplay-card/1-dark.html",
+        "tsx": "tsx/UpNextAutoplayCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "up-next-autoplay-card-2",
+      "title": "Video overlay card with progress bar countdown",
+      "description": "Video overlay card with progress bar countdown Countdown-to-next-video card components with cancel and play-now actions, for video players and course platforms.",
+      "source": {
+        "html": "../../../../public/examples/application/up-next-autoplay-card/2.html",
+        "tsx": "tsx/UpNextAutoplayCardVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "up-next-autoplay-card-2-dark",
+      "title": "Video overlay card with progress bar countdown (Dark)",
+      "description": "Video overlay card with progress bar countdown Countdown-to-next-video card components with cancel and play-now actions, for video players and course platforms.",
+      "source": {
+        "html": "../../../../public/examples/application/up-next-autoplay-card/2-dark.html",
+        "tsx": "tsx/UpNextAutoplayCardVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    }
+  ]
+}

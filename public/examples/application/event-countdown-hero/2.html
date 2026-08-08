@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-lg flex-col p-6">
+    <div class="flex flex-wrap items-center justify-between gap-4 rounded-lg border border-gray-100 bg-white px-5 py-4">
+      <div>
+        <p class="text-sm font-semibold text-gray-900">Product Launch Webinar</p>
+        <p id="event-hero-2" class="mt-0.5 font-mono text-sm text-gray-500">
+          <span class="js-days">18</span>d <span class="js-hours">06</span>h <span class="js-mins">42</span>m
+        </p>
+      </div>
+
+      <a
+        href="#"
+        class="shrink-0 rounded-md bg-gray-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-gray-700"
+      >
+        Reserve seat
+      </a>
+    </div>
+
+    <script>
+      ;(function () {
+        var root = document.getElementById('event-hero-2')
+        var daysEl = root.querySelector('.js-days')
+        var hoursEl = root.querySelector('.js-hours')
+        var minsEl = root.querySelector('.js-mins')
+        var totalMinutes = 18 * 1440 + 6 * 60 + 42
+
+        function tick() {
+          if (totalMinutes <= 0) return
+          totalMinutes -= 1
+          var days = Math.floor(totalMinutes / 1440)
+          var hours = Math.floor((totalMinutes % 1440) / 60)
+          var mins = totalMinutes % 60
+          daysEl.textContent = days
+          hoursEl.textContent = String(hours).padStart(2, '0')
+          minsEl.textContent = String(mins).padStart(2, '0')
+        }
+
+        setInterval(tick, 3000)
+      })()
+    </script>
+  </body>
+</html>
