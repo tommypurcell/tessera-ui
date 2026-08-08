@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-lg p-6">
+    <section class="rounded-lg border border-red-200" aria-labelledby="dangerZoneTitle2">
+      <div class="border-b border-red-200 bg-red-50/50 px-5 py-4">
+        <h2 id="dangerZoneTitle2" class="text-sm font-semibold text-red-900">Danger zone</h2>
+        <p class="mt-0.5 text-sm text-red-700">These actions are permanent and cannot be undone.</p>
+      </div>
+
+      <div class="flex flex-col divide-y divide-gray-200">
+        <div class="flex items-center justify-between gap-4 px-5 py-4">
+          <div class="flex flex-col gap-0.5">
+            <p class="text-sm font-medium text-gray-900">Transfer ownership</p>
+            <p class="text-sm text-gray-600">Move this project to another organization member.</p>
+          </div>
+          <button type="button" class="shrink-0 rounded-md border border-gray-300 bg-white px-3.5 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">
+            Transfer
+          </button>
+        </div>
+
+        <div class="flex items-center justify-between gap-4 px-5 py-4">
+          <div class="flex flex-col gap-0.5">
+            <p class="text-sm font-medium text-gray-900">Leave organization</p>
+            <p class="text-sm text-gray-600">You'll lose access to all shared projects immediately.</p>
+          </div>
+          <button type="button" class="shrink-0 rounded-md border border-gray-300 bg-white px-3.5 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">
+            Leave
+          </button>
+        </div>
+
+        <div class="flex items-center justify-between gap-4 px-5 py-4">
+          <div class="flex flex-col gap-0.5">
+            <p class="text-sm font-medium text-gray-900">Delete this project</p>
+            <p class="text-sm text-gray-600">Permanently delete this project and all of its data.</p>
+          </div>
+          <button
+            type="button"
+            class="shrink-0 rounded-md border border-red-300 bg-white px-3.5 py-2 text-sm font-medium text-red-700 hover:bg-red-50"
+          >
+            Delete project
+          </button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
