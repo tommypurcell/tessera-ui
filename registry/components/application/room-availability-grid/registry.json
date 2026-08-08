@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-room-availability-grid",
+  "title": "Room Availability Grid",
+  "description": "Hotel room-inventory calendar with rooms as rows and dates as columns, each cell showing Free/Booked/Maintenance.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["hospitality", "hotel", "calendar", "availability"],
+  "useWhen": [
+    "Showing hotel front-desk staff which rooms are free, booked, or under maintenance across a range of dates.",
+    "You need a room-by-date matrix rather than a single room's calendar or a single day's room list.",
+    "A quick-glance status grid (not a full drag-to-book calendar) is enough for the current view."
+  ],
+  "avoidWhen": [
+    "You're showing a person's meeting/time-slot availability (hour-by-day), not room inventory over dates — use `availability-grid` for that unrelated scheduling case.",
+    "Bookings can span partial days or need drag-to-select — this fixed per-day-cell grid doesn't support sub-day granularity; use a full calendar/timeline component instead.",
+    "There are more than a handful of rooms or dates — this grid is for a compact overview; paginate or virtualize for large inventories rather than shrinking cells."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Grid columns are defined by the date count via CSS grid-template-columns; on narrow viewports the parent should scroll horizontally rather than the grid compressing cells below a legible width.",
+  "accessibility": [
+    "Each cell carries role=img with an aria-label stating the room, date, and status in words, since the cell's visual content (a short status word) alone may not be sufficient context out of grid position.",
+    "Status is encoded by both background tint and the cell's own text label, never color alone, so it remains legible without color vision.",
+    "The legend at the bottom restates the three status colors with text labels, reinforcing the mapping for sighted users scanning quickly."
+  ],
+  "compatibleWith": ["application-guest-check-in-card", "application-availability-grid"],
+  "variants": [
+    {
+      "id": "room-availability-grid-1",
+      "title": "Room Availability Grid",
+      "description": "Four rooms (101-104) across five dates (Aug 8-12) with Free/Booked/Maintenance cells and a legend.",
+      "source": {
+        "html": "../../../../public/examples/application/room-availability-grid/1.html",
+        "tsx": "tsx/RoomAvailabilityGridVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Free/Booked/Maintenance use a fixed three-way status mapping (emerald/red/neutral gray), never repurposed for an unrelated meaning."
+      ]
+    },
+    {
+      "id": "room-availability-grid-1-dark",
+      "title": "Room Availability Grid (Dark)",
+      "description": "Room availability grid adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/room-availability-grid/1-dark.html",
+        "tsx": "tsx/RoomAvailabilityGridVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Status cells use low-opacity tinted backgrounds and matching rings to hold WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}
