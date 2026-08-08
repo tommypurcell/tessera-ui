@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 838,
+  "screenshotCount": 842,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -2774,6 +2774,46 @@
       "sourcePath": "files/application-selects/selects-3-dark.html",
       "sourceSha256": "9e5467b72d1e046c47b2fc69b753803ddfecdebaffc159fb76b39431b6b6d756",
       "url": "/screenshots/components/application-selects/selects-3-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-service-reminder-row",
+      "variantId": "service-reminder-row-1",
+      "appearance": "light",
+      "sourcePath": "files/application-service-reminder-row/service-reminder-row-1.html",
+      "sourceSha256": "b02ccbae38edb913f894ebec64220512b5393b4f72d2188966fde81ce5850480",
+      "url": "/screenshots/components/application-service-reminder-row/service-reminder-row-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-service-reminder-row",
+      "variantId": "service-reminder-row-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-service-reminder-row/service-reminder-row-1-dark.html",
+      "sourceSha256": "ac62fd1c2714aa3cb45b20ab46182d8cbbfb28e3723cf839479b9d9c8759be4b",
+      "url": "/screenshots/components/application-service-reminder-row/service-reminder-row-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-service-reminder-row",
+      "variantId": "service-reminder-row-2",
+      "appearance": "light",
+      "sourcePath": "files/application-service-reminder-row/service-reminder-row-2.html",
+      "sourceSha256": "0a60a5fdb0bcde6dadd844958f381788b33b414468780ba84a8242b7369cc521",
+      "url": "/screenshots/components/application-service-reminder-row/service-reminder-row-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-service-reminder-row",
+      "variantId": "service-reminder-row-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-service-reminder-row/service-reminder-row-2-dark.html",
+      "sourceSha256": "ec0f678633ab8b7c2f339248ddc5e15f2563cc6206cab4e57919075819a8668e",
+      "url": "/screenshots/components/application-service-reminder-row/service-reminder-row-2-dark.jpg",
       "width": 600,
       "height": 400
     },
