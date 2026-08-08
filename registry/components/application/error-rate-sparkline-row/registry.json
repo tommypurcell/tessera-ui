@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-error-rate-sparkline-row",
+  "title": "Error Rate Sparkline Row",
+  "description": "API endpoint table with an inline error-rate trend sparkline and severity badge per row, driven by a typed rows prop contract.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["monitoring", "error-rate", "api", "sparkline", "observability"],
+  "useWhen": [
+    "Monitoring the error rate of multiple API endpoints and needing a quick visual trend alongside the current rate.",
+    "Endpoints should be triaged by severity (healthy, warning, critical) at a glance across many rows.",
+    "A compact dashboard table is preferable to opening a separate chart per endpoint."
+  ],
+  "avoidWhen": [
+    "You need generic numeric trends unrelated to error rates — use the Trend Sparkbar Row instead, which isn't tied to severity coloring.",
+    "Precise time-series analysis is required — pair this row with a full chart drill-down rather than relying on the sparkline alone.",
+    "There's only one endpoint to monitor — a single stat card communicates that more directly than a table."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The table scrolls horizontally on narrow viewports via its wrapping overflow container; the sparkline column keeps a fixed compact width regardless of table width.",
+  "accessibility": [
+    "The sparkline bar series is marked aria-hidden since it is a decorative trend summary — the error-rate badge is the accessible source of truth.",
+    "Severity badges pair a color dot with an explicit percentage label, never color alone.",
+    "Endpoint identifiers (method + path) render in a monospace <code> element to read clearly as API routes."
+  ],
+  "compatibleWith": ["application-trend-sparkbar-row", "application-event-log-table"],
+  "variants": [
+    {
+      "id": "error-rate-sparkline-row-1",
+      "title": "Error Rate Sparkline Row",
+      "description": "Endpoint table with a 24-hour bar trend colored by severity and a badge showing the current error-rate percentage per row.",
+      "source": {
+        "html": "../../../../public/examples/application/error-rate-sparkline-row/1.html",
+        "tsx": "tsx/ErrorRateSparklineRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["healthy", "warning", "critical"],
+      "accessibility": [
+        "Severity is communicated through both badge color and an explicit percentage value, never color alone."
+      ]
+    },
+    {
+      "id": "error-rate-sparkline-row-1-dark",
+      "title": "Error Rate Sparkline Row (Dark)",
+      "description": "Error-rate monitoring table adapted for dark surfaces with the same sparkline and severity-badge structure.",
+      "source": {
+        "html": "../../../../public/examples/application/error-rate-sparkline-row/1-dark.html",
+        "tsx": "tsx/ErrorRateSparklineRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["healthy", "warning", "critical"],
+      "accessibility": [
+        "Severity bar and badge colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
