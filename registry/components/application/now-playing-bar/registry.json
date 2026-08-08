@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-now-playing-bar",
+  "title": "Now Playing Bar",
+  "description": "Full-width bottom-docked music player bar with album art, title/artist, a live scrubber, and prev/play/next transport controls — distinct from audio-player, which is a card-style waveform podcast player rather than an app-shell-docked bar.",
+  "category": "application/media",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["music", "player", "media", "audio", "transport"],
+  "useWhen": [
+    "A persistent playback bar should dock to the bottom of the app shell across pages.",
+    "You need standard prev/play-pause/next transport controls alongside a linear scrubber.",
+    "Album art and track metadata should stay visible while the user navigates elsewhere."
+  ],
+  "avoidWhen": [
+    "You want a self-contained card player with a waveform visualization — use audio-player instead.",
+    "You need a queue of upcoming tracks — pair this with a separate queue list component.",
+    "There is no persistent playback state to dock — an inline audio-player card is simpler."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The bar spans the full container width; title/artist truncate with ellipsis and the time readout and transport controls stay fixed at narrow widths.",
+  "accessibility": [
+    "The scrubber's fill carries role='img' with an aria-label stating elapsed and total time, since visual width alone isn't announced by screen readers.",
+    "Transport buttons have descriptive aria-labels (Previous track, Play/Pause, Next track) rather than relying on icon shape alone.",
+    "The play/pause button's aria-label and icon both update together based on playback state."
+  ],
+  "compatibleWith": ["application-audio-player", "application-track-list-row"],
+  "variants": [
+    {
+      "id": "now-playing-bar-1",
+      "title": "Now playing bar",
+      "description": "A docked player bar mid-track (1:23 of 3:47) with a computed scrubber fill, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/now-playing-bar/1.html",
+        "tsx": "tsx/NowPlayingBarVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["playing"],
+      "accessibility": [
+        "Scrubber width is elapsed/duration computed live, not a hand-typed percentage."
+      ]
+    },
+    {
+      "id": "now-playing-bar-1-dark",
+      "title": "Now playing bar (Dark)",
+      "description": "The same docked player bar, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/now-playing-bar/1-dark.html",
+        "tsx": "tsx/NowPlayingBarVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["playing"],
+      "accessibility": [
+        "Controls and text meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
