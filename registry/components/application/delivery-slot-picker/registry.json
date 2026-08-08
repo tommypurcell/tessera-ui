@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-delivery-slot-picker",
+  "title": "Delivery Slot Picker",
+  "description": "Selectable delivery-window radio cards with description, price, and optional Free/Fastest badges, driven by a typed slots prop contract.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["delivery", "checkout", "scheduling", "e-commerce", "shipping"],
+  "useWhen": [
+    "Checkout flows where users pick a delivery window that affects price (standard vs. priority).",
+    "Some windows should carry a callout badge (Free, Fastest) to guide the choice.",
+    "A window may be fully booked and should remain visible but unselectable."
+  ],
+  "avoidWhen": [
+    "You need a grid of many time slots across several days — use the Availability Grid instead.",
+    "Delivery has no time-window concept, only a single estimated date — a simple text line is enough.",
+    "Pricing doesn't vary by window — a plain radio group without per-row prices is simpler."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Each slot is a full-width card stacked vertically; the layout scales naturally to any container width without needing separate breakpoints.",
+  "accessibility": [
+    "Each option is a real radio input inside a <label>, giving native keyboard and screen-reader support without custom ARIA roles.",
+    "The selected slot uses a thicker border plus a tinted background, not border color alone, to remain distinguishable.",
+    "Disabled (fully booked) slots use the native disabled attribute and reduced opacity together, and their unavailability is also stated in visible text ('Fully booked')."
+  ],
+  "compatibleWith": ["application-availability-grid", "application-dialog"],
+  "variants": [
+    {
+      "id": "delivery-slot-picker-1",
+      "title": "Delivery Slot Picker",
+      "description": "Stacked radio-card list of delivery windows with price, description, optional Free/Fastest badges, and a disabled fully-booked example.",
+      "source": {
+        "html": "../../../../public/examples/application/delivery-slot-picker/1.html",
+        "tsx": "tsx/DeliverySlotPickerVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "selected", "disabled"],
+      "accessibility": [
+        "The Free/Fastest badges pair a tinted background with a text label, never color alone."
+      ]
+    },
+    {
+      "id": "delivery-slot-picker-1-dark",
+      "title": "Delivery Slot Picker (Dark)",
+      "description": "Delivery-window picker adapted for dark surfaces with the same radio-card, badge, and disabled-state structure.",
+      "source": {
+        "html": "../../../../public/examples/application/delivery-slot-picker/1-dark.html",
+        "tsx": "tsx/DeliverySlotPickerVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "selected", "disabled"],
+      "accessibility": [
+        "Card borders, badge colors, and price text must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

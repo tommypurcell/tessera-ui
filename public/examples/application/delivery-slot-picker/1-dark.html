@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-sm bg-gray-950 p-6">
+    <div class="flex flex-col gap-2.5">
+      <h3 class="text-sm font-semibold text-white">Choose a delivery window</h3>
+
+      <label class="flex cursor-pointer items-center justify-between rounded-lg border border-gray-800 px-4 py-3 hover:bg-gray-900">
+        <div class="flex items-center gap-3">
+          <input type="radio" name="delivery-slot" class="size-4 border-gray-600 bg-gray-900 text-white focus:ring-gray-500" />
+          <div>
+            <p class="text-sm font-medium text-white">Today, 6 – 8 PM</p>
+            <p class="text-xs text-gray-500">Standard delivery</p>
+          </div>
+        </div>
+        <span class="text-sm font-medium text-white">$4.99</span>
+      </label>
+
+      <label class="flex cursor-pointer items-center justify-between rounded-lg border-2 border-white bg-gray-900 px-4 py-3">
+        <div class="flex items-center gap-3">
+          <input type="radio" name="delivery-slot" checked class="size-4 border-gray-600 bg-gray-900 text-white focus:ring-gray-500" />
+          <div>
+            <div class="flex items-center gap-1.5">
+              <p class="text-sm font-medium text-white">Tomorrow, 9 – 11 AM</p>
+              <span class="inline-flex items-center rounded-full bg-green-900/50 px-1.5 py-0.5 text-[10px] font-medium text-green-400">Free</span>
+            </div>
+            <p class="text-xs text-gray-500">Standard delivery</p>
+          </div>
+        </div>
+        <span class="text-sm font-medium text-white">$0.00</span>
+      </label>
+
+      <label class="flex cursor-pointer items-center justify-between rounded-lg border border-gray-800 px-4 py-3 hover:bg-gray-900">
+        <div class="flex items-center gap-3">
+          <input type="radio" name="delivery-slot" class="size-4 border-gray-600 bg-gray-900 text-white focus:ring-gray-500" />
+          <div>
+            <div class="flex items-center gap-1.5">
+              <p class="text-sm font-medium text-white">Today, 2 – 4 PM</p>
+              <span class="inline-flex items-center rounded-full bg-blue-900/50 px-1.5 py-0.5 text-[10px] font-medium text-blue-400">Fastest</span>
+            </div>
+            <p class="text-xs text-gray-500">Priority delivery</p>
+          </div>
+        </div>
+        <span class="text-sm font-medium text-white">$9.99</span>
+      </label>
+
+      <label class="flex items-center justify-between rounded-lg border border-gray-800 px-4 py-3 opacity-50">
+        <div class="flex items-center gap-3">
+          <input type="radio" name="delivery-slot" disabled class="size-4 border-gray-600 bg-gray-900 text-white" />
+          <div>
+            <p class="text-sm font-medium text-white">Today, 10 AM – 12 PM</p>
+            <p class="text-xs text-gray-500">Fully booked</p>
+          </div>
+        </div>
+        <span class="text-sm font-medium text-gray-500">$4.99</span>
+      </label>
+    </div>
+  </body>
+</html>
