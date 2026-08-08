@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex h-40 items-center justify-center bg-gray-950 p-6">
+    <div class="group relative inline-block">
+      <button
+        type="button"
+        aria-label="Delete"
+        aria-describedby="tooltip-2-dark"
+        class="inline-flex size-9 items-center justify-center rounded-md text-gray-400 hover:bg-gray-800 hover:text-red-400 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <div
+        id="tooltip-2-dark"
+        role="tooltip"
+        class="pointer-events-none absolute top-full left-1/2 z-10 mt-2 -translate-x-1/2 rounded-md bg-gray-100 px-2.5 py-1.5 text-xs font-medium whitespace-nowrap text-gray-900 opacity-0 shadow-lg transition-opacity group-hover:opacity-100 group-focus-within:opacity-100"
+      >
+        Delete item
+        <span
+          class="absolute bottom-full left-1/2 -translate-x-1/2 border-4 border-transparent border-b-gray-100"
+          aria-hidden="true"
+        ></span>
+      </div>
+    </div>
+  </body>
+</html>

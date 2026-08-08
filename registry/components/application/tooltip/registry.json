@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "name": "application-tooltip",
+  "title": "Tooltip",
+  "description": "Anchored text hints revealed on hover or keyboard focus, for labeling icon-only controls or adding brief supporting context to a trigger.",
+  "category": "application/popover",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["tooltip", "hint", "overlay", "anchored", "accessibility", "primitive"],
+  "useWhen": [
+    "Labeling an icon-only button so sighted users get the same context screen readers get from aria-label.",
+    "Adding a short, one-line hint to a trigger without permanently taking up layout space.",
+    "Explaining a setting or field in a sentence or two via a title-and-description rich tooltip."
+  ],
+  "avoidWhen": [
+    "The content is essential to complete a task — tooltips are hidden by default and unreliable on touch devices.",
+    "The content is long-form or contains interactive elements — use a popover or dialog instead.",
+    "The information must always be visible — use inline help text instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Tooltips are hover/focus-only and have no dedicated touch affordance; on touch devices, pair the trigger with a visible label or use a popover instead where content must always be reachable.",
+  "accessibility": [
+    "The tooltip carries role='tooltip' and is linked to its trigger via aria-describedby.",
+    "Icon-only triggers carry a real aria-label independent of the tooltip, so the accessible name does not depend on hover.",
+    "Visibility is driven by group-hover and group-focus-within, so keyboard users see the tooltip on Tab focus, not only on mouse hover."
+  ],
+  "compatibleWith": ["application-popover", "application-buttons"],
+  "variants": [
+    {
+      "id": "tooltip-1",
+      "title": "Simple hover",
+      "description": "Top-anchored tooltip with a short text label revealed on hover or focus.",
+      "source": {
+        "html": "../../../../public/examples/application/tooltip/1.html",
+        "tsx": "tsx/TooltipVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "hover", "focus"],
+      "accessibility": [
+        "The trigger's aria-describedby points at the tooltip id so assistive tech announces the hint on focus."
+      ]
+    },
+    {
+      "id": "tooltip-1-dark",
+      "title": "Simple hover (Dark)",
+      "description": "Top-anchored tooltip adapted for dark surfaces, using a light bubble for contrast.",
+      "source": {
+        "html": "../../../../public/examples/application/tooltip/1-dark.html",
+        "tsx": "tsx/TooltipVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "hover", "focus"],
+      "accessibility": [
+        "Tooltip text and background must meet WCAG AA contrast on dark surfaces."
+      ]
+    },
+    {
+      "id": "tooltip-2",
+      "title": "Icon button",
+      "description": "Bottom-anchored tooltip labeling an icon-only button, paired with a real aria-label on the trigger.",
+      "source": {
+        "html": "../../../../public/examples/application/tooltip/2.html",
+        "tsx": "tsx/TooltipVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "hover", "focus"],
+      "accessibility": [
+        "The icon-only trigger has its own aria-label so its accessible name does not depend on the tooltip being visible."
+      ]
+    },
+    {
+      "id": "tooltip-2-dark",
+      "title": "Icon button (Dark)",
+      "description": "Icon-button tooltip adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/tooltip/2-dark.html",
+        "tsx": "tsx/TooltipVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "hover", "focus"],
+      "accessibility": [
+        "Trigger hover and focus states must remain visible against a dark background."
+      ]
+    },
+    {
+      "id": "tooltip-3",
+      "title": "Rich (title + description)",
+      "description": "Right-anchored tooltip with a bold title and a supporting sentence, for explaining a setting in more than a few words.",
+      "source": {
+        "html": "../../../../public/examples/application/tooltip/3.html",
+        "tsx": "tsx/TooltipVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "hover", "focus"],
+      "accessibility": [
+        "Title and description are both included in the aria-describedby text read by assistive technology."
+      ]
+    },
+    {
+      "id": "tooltip-3-dark",
+      "title": "Rich (title + description, Dark)",
+      "description": "Rich title-and-description tooltip adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/tooltip/3-dark.html",
+        "tsx": "tsx/TooltipVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "hover", "focus"],
+      "accessibility": [
+        "Title and description contrast must meet WCAG AA on dark surfaces."
+      ]
+    }
+  ]
+}
