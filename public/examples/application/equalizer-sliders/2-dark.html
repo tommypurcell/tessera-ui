@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex min-h-64 items-center justify-center bg-gray-950 p-6">
+    <div class="w-full max-w-xs rounded-lg border border-gray-700 bg-gray-900 p-4 shadow-sm">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-semibold text-white">Equalizer</h3>
+        <label for="eq-preset-dark" class="sr-only">Preset</label>
+        <select id="eq-preset-dark" class="rounded-md border-gray-700 bg-gray-800 py-1 pl-2 pr-7 text-xs text-gray-200 focus:border-white focus:ring-white">
+          <option>Bass Boost</option>
+          <option>Flat</option>
+          <option>Vocal</option>
+        </select>
+      </div>
+
+      <div class="mt-4 flex h-28 justify-between gap-2.5">
+        <div class="flex flex-1 flex-col items-center gap-1">
+          <div class="flex h-24 w-full items-end overflow-hidden rounded-sm bg-gray-800">
+            <div class="w-full rounded-sm bg-white" style="height: 85%"></div>
+          </div>
+          <span class="text-[10px] text-gray-400">60</span>
+        </div>
+        <div class="flex flex-1 flex-col items-center gap-1">
+          <div class="flex h-24 w-full items-end overflow-hidden rounded-sm bg-gray-800">
+            <div class="w-full rounded-sm bg-white" style="height: 68%"></div>
+          </div>
+          <span class="text-[10px] text-gray-400">250</span>
+        </div>
+        <div class="flex flex-1 flex-col items-center gap-1">
+          <div class="flex h-24 w-full items-end overflow-hidden rounded-sm bg-gray-800">
+            <div class="w-full rounded-sm bg-white" style="height: 45%"></div>
+          </div>
+          <span class="text-[10px] text-gray-400">1K</span>
+        </div>
+        <div class="flex flex-1 flex-col items-center gap-1">
+          <div class="flex h-24 w-full items-end overflow-hidden rounded-sm bg-gray-800">
+            <div class="w-full rounded-sm bg-white" style="height: 30%"></div>
+          </div>
+          <span class="text-[10px] text-gray-400">4K</span>
+        </div>
+        <div class="flex flex-1 flex-col items-center gap-1">
+          <div class="flex h-24 w-full items-end overflow-hidden rounded-sm bg-gray-800">
+            <div class="w-full rounded-sm bg-white" style="height: 55%"></div>
+          </div>
+          <span class="text-[10px] text-gray-400">16K</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

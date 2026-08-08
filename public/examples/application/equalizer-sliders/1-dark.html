@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+    <style>
+      .tessera-eq-band-dark {
+        writing-mode: vertical-lr;
+        direction: rtl;
+        appearance: none;
+        width: 4px;
+        height: 100%;
+        background: #374151;
+        border-radius: 9999px;
+      }
+      .tessera-eq-band-dark::-webkit-slider-thumb {
+        appearance: none;
+        width: 16px;
+        height: 8px;
+        border-radius: 3px;
+        background: #ffffff;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body class="flex min-h-72 items-center justify-center bg-gray-950 p-6">
+    <div class="w-full max-w-sm rounded-lg border border-gray-700 bg-gray-900 p-4 shadow-sm">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-semibold text-white">Equalizer</h3>
+        <span class="rounded-full bg-gray-800 px-2 py-0.5 text-xs font-medium text-gray-300">Custom</span>
+      </div>
+
+      <div class="mt-4 flex h-40 items-stretch justify-between gap-3 px-2">
+        <div class="flex flex-1 flex-col items-center gap-1.5">
+          <span class="text-[10px] text-gray-500">+6</span>
+          <input type="range" min="-12" max="12" value="2" class="tessera-eq-band-dark" style="accent-color:#ffffff" />
+          <span class="text-[10px] text-gray-500">-6</span>
+          <span class="text-[11px] font-medium text-gray-400">60</span>
+        </div>
+        <div class="flex flex-1 flex-col items-center gap-1.5">
+          <span class="text-[10px] text-gray-500">+6</span>
+          <input type="range" min="-12" max="12" value="5" class="tessera-eq-band-dark" style="accent-color:#ffffff" />
+          <span class="text-[10px] text-gray-500">-6</span>
+          <span class="text-[11px] font-medium text-gray-400">150</span>
+        </div>
+        <div class="flex flex-1 flex-col items-center gap-1.5">
+          <span class="text-[10px] text-gray-500">+6</span>
+          <input type="range" min="-12" max="12" value="-3" class="tessera-eq-band-dark" style="accent-color:#ffffff" />
+          <span class="text-[10px] text-gray-500">-6</span>
+          <span class="text-[11px] font-medium text-gray-400">400</span>
+        </div>
+        <div class="flex flex-1 flex-col items-center gap-1.5">
+          <span class="text-[10px] text-gray-500">+6</span>
+          <input type="range" min="-12" max="12" value="0" class="tessera-eq-band-dark" style="accent-color:#ffffff" />
+          <span class="text-[10px] text-gray-500">-6</span>
+          <span class="text-[11px] font-medium text-gray-400">1K</span>
+        </div>
+        <div class="flex flex-1 flex-col items-center gap-1.5">
+          <span class="text-[10px] text-gray-500">+6</span>
+          <input type="range" min="-12" max="12" value="4" class="tessera-eq-band-dark" style="accent-color:#ffffff" />
+          <span class="text-[10px] text-gray-500">-6</span>
+          <span class="text-[11px] font-medium text-gray-400">2.5K</span>
+        </div>
+        <div class="flex flex-1 flex-col items-center gap-1.5">
+          <span class="text-[10px] text-gray-500">+6</span>
+          <input type="range" min="-12" max="12" value="6" class="tessera-eq-band-dark" style="accent-color:#ffffff" />
+          <span class="text-[10px] text-gray-500">-6</span>
+          <span class="text-[11px] font-medium text-gray-400">8K</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
