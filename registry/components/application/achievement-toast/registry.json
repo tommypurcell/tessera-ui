@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-achievement-toast",
+  "title": "Achievement Toast",
+  "description": "Unlocked-achievement popup components with an icon, title, and rarity glow, for gamified apps and progress systems.",
+  "category": "application/achievement-toast",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "achievement-toast",
+    "achievement",
+    "unlocked",
+    "gamification",
+    "badge"
+  ],
+  "useWhen": [
+    "Unlocked-achievement popup components with an icon, title, and rarity glow, for gamified apps and progress systems."
+  ],
+  "avoidWhen": [
+    "Avoid achievement toast when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Achievement Toast uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "achievement-toast-1",
+      "title": "Legendary-rarity achievement popup with glow",
+      "description": "Legendary-rarity achievement popup with glow Unlocked-achievement popup components with an icon, title, and rarity glow, for gamified apps and progress systems.",
+      "source": {
+        "html": "../../../../public/examples/application/achievement-toast/1.html",
+        "tsx": "tsx/AchievementToastVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "achievement-toast-1-dark",
+      "title": "Legendary-rarity achievement popup with glow (Dark)",
+      "description": "Legendary-rarity achievement popup with glow Unlocked-achievement popup components with an icon, title, and rarity glow, for gamified apps and progress systems.",
+      "source": {
+        "html": "../../../../public/examples/application/achievement-toast/1-dark.html",
+        "tsx": "tsx/AchievementToastVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "achievement-toast-2",
+      "title": "Compact rare-rarity achievement pill with XP",
+      "description": "Compact rare-rarity achievement pill with XP Unlocked-achievement popup components with an icon, title, and rarity glow, for gamified apps and progress systems.",
+      "source": {
+        "html": "../../../../public/examples/application/achievement-toast/2.html",
+        "tsx": "tsx/AchievementToastVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "achievement-toast-2-dark",
+      "title": "Compact rare-rarity achievement pill with XP (Dark)",
+      "description": "Compact rare-rarity achievement pill with XP Unlocked-achievement popup components with an icon, title, and rarity glow, for gamified apps and progress systems.",
+      "source": {
+        "html": "../../../../public/examples/application/achievement-toast/2-dark.html",
+        "tsx": "tsx/AchievementToastVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}
