@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 794,
+  "screenshotCount": 798,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -1795,6 +1795,46 @@
       "sourceSha256": "e73562e7500fb963b56c64c1e0711ba3ed692a0631d5025866b45197c641e538",
       "url": "/screenshots/components/application-loaders/loaders-7-dark.jpg",
       "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-masonry-grid",
+      "variantId": "masonry-grid-1",
+      "appearance": "light",
+      "sourcePath": "files/application-masonry-grid/masonry-grid-1.html",
+      "sourceSha256": "d781f6893220d91a7c11cba55bde976faded40be472ebd54c69fa2011f823f18",
+      "url": "/screenshots/components/application-masonry-grid/masonry-grid-1.jpg",
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "componentId": "application-masonry-grid",
+      "variantId": "masonry-grid-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-masonry-grid/masonry-grid-1-dark.html",
+      "sourceSha256": "8fb352f7c27d84ee99f2570634c327b218d05aabce7ecebacc351c4da8ae8155",
+      "url": "/screenshots/components/application-masonry-grid/masonry-grid-1-dark.jpg",
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "componentId": "application-masonry-grid",
+      "variantId": "masonry-grid-2",
+      "appearance": "light",
+      "sourcePath": "files/application-masonry-grid/masonry-grid-2.html",
+      "sourceSha256": "012bb963c74136af22c8ac0c480275d9b6737f192d21fa472cf3ba1b989bc694",
+      "url": "/screenshots/components/application-masonry-grid/masonry-grid-2.jpg",
+      "width": 1200,
+      "height": 400
+    },
+    {
+      "componentId": "application-masonry-grid",
+      "variantId": "masonry-grid-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-masonry-grid/masonry-grid-2-dark.html",
+      "sourceSha256": "1cc7016eb3d29837096b23a1310ff15fae9d7adafa2b94146304f12443ae6f85",
+      "url": "/screenshots/components/application-masonry-grid/masonry-grid-2-dark.jpg",
+      "width": 1200,
       "height": 400
     },
     {
