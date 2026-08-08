@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "name": "application-mortgage-calculator",
+  "title": "Mortgage Calculator",
+  "description": "Home price, down payment, interest rate, and loan term inputs with a computed estimated monthly payment, plus a compact result-summary card breaking payment down by principal, taxes, and insurance.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["application", "mortgage", "calculator", "finance", "real-estate"],
+  "useWhen": [
+    "A real estate or lending site needs to let users estimate a monthly mortgage payment from a few basic inputs.",
+    "Presenting an already-computed payment estimate broken down into principal/interest, taxes, and insurance for transparency."
+  ],
+  "avoidWhen": [
+    "You need a general currency conversion tool with no loan amortization logic — that's a distinct calculator with different inputs and math.",
+    "The audience needs a fully amortizing payment schedule table rather than a single monthly estimate — this component is a quick estimator, not a full amortization tool."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The input form uses a 2-column grid that can collapse to a single column on narrow viewports; the result card and summary breakdown are single-column and reflow naturally at any width.",
+  "accessibility": [
+    "Every input has a visible, associated <label>, and currency/percent/year units are shown as adjacent text rather than only implied by placeholder content.",
+    "The computed monthly payment is presented as plain text at a large size so it reads clearly even without the surrounding visual treatment.",
+    "The compact summary's segmented bar is accompanied by a text legend with colored swatches, so category breakdown is never conveyed by color alone."
+  ],
+  "compatibleWith": ["application-inputs", "application-form-row"],
+  "variants": [
+    {
+      "id": "mortgage-calculator-1",
+      "title": "Input form",
+      "description": "Home price, down payment, rate, and term inputs with a computed estimated monthly payment callout",
+      "source": {
+        "html": "../../../../public/examples/application/mortgage-calculator/1.html",
+        "tsx": "tsx/MortgageCalculatorVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": ["Every input pairs a visible label with a unit indicator ($ / % / yrs) shown as text."]
+    },
+    {
+      "id": "mortgage-calculator-1-dark",
+      "title": "Input form (Dark)",
+      "description": "Home price, down payment, rate, and term inputs with a computed estimated monthly payment callout",
+      "source": {
+        "html": "../../../../public/examples/application/mortgage-calculator/1-dark.html",
+        "tsx": "tsx/MortgageCalculatorVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    },
+    {
+      "id": "mortgage-calculator-2",
+      "title": "Result summary",
+      "description": "Compact result card showing the total monthly payment broken down into principal/interest, taxes, and insurance, with a segmented proportion bar",
+      "source": {
+        "html": "../../../../public/examples/application/mortgage-calculator/2.html",
+        "tsx": "tsx/MortgageCalculatorVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": ["Each segment of the proportion bar is paired with a labeled legend row, not color alone."]
+    },
+    {
+      "id": "mortgage-calculator-2-dark",
+      "title": "Result summary (Dark)",
+      "description": "Compact result card showing the total monthly payment broken down into principal/interest, taxes, and insurance, with a segmented proportion bar",
+      "source": {
+        "html": "../../../../public/examples/application/mortgage-calculator/2-dark.html",
+        "tsx": "tsx/MortgageCalculatorVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    }
+  ]
+}
