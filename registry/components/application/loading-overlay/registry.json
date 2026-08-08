@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "name": "application-loading-overlay",
+  "title": "Loading Overlay",
+  "description": "A dimmed, blurred scrim placed over existing content with a centered spinner and optional message, for blocking interaction with a section or page while an operation completes.",
+  "category": "application/feedback",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["application", "loading", "overlay", "spinner", "blocking"],
+  "useWhen": [
+    "An operation must block interaction with a section or the whole page while it completes, and the underlying content should stay visible (dimmed) for context.",
+    "Re-fetching or refreshing content in place, where replacing the content entirely with a skeleton would lose useful context.",
+    "A longer-running action (workspace setup, file processing) benefits from a message alongside the spinner to set expectations."
+  ],
+  "avoidWhen": [
+    "The initial load has no prior content to dim — use a skeleton loader instead, since there's nothing to overlay.",
+    "The operation is quick and localized to a single control, such as a button — use an inline spinner on the control instead.",
+    "You need the surrounding content to remain fully interactive during the operation — a blocking overlay is the wrong pattern."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The overlay is absolutely positioned to inset-0 within a relative parent, so it scales to cover any container from a card to a full page section without additional breakpoints.",
+  "accessibility": [
+    "Uses role=\"status\" with aria-live=\"polite\" so the loading message is announced without interrupting other screen reader output.",
+    "The spinner icon is aria-hidden since the accompanying text carries the meaning.",
+    "Because the overlay only dims content rather than removing it from the DOM, ensure interactive elements underneath are disabled or the overlay captures pointer events, so users can't interact with stale content mid-load."
+  ],
+  "compatibleWith": ["application-loaders", "application-empty-states", "application-retry-error-state"],
+  "variants": [
+    {
+      "id": "loading-overlay-1",
+      "title": "Contained overlay",
+      "description": "Overlay covering a single card or section, with a small spinner and short loading message",
+      "source": {
+        "html": "../../../../public/examples/application/loading-overlay/1.html",
+        "tsx": "tsx/LoadingOverlayVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["loading"],
+      "accessibility": ["role=\"status\" and aria-live=\"polite\" announce the loading state to assistive tech."]
+    },
+    {
+      "id": "loading-overlay-1-dark",
+      "title": "Contained overlay (Dark)",
+      "description": "Overlay covering a single card or section, with a small spinner and short loading message",
+      "source": {
+        "html": "../../../../public/examples/application/loading-overlay/1-dark.html",
+        "tsx": "tsx/LoadingOverlayVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["loading"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    },
+    {
+      "id": "loading-overlay-2",
+      "title": "Full-surface overlay",
+      "description": "Larger overlay for a full page section, with a bigger spinner and a two-line message describing what's happening and how long it takes",
+      "source": {
+        "html": "../../../../public/examples/application/loading-overlay/2.html",
+        "tsx": "tsx/LoadingOverlayVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["loading"],
+      "accessibility": ["role=\"status\" and aria-live=\"polite\" announce the loading state to assistive tech."]
+    },
+    {
+      "id": "loading-overlay-2-dark",
+      "title": "Full-surface overlay (Dark)",
+      "description": "Larger overlay for a full page section, with a bigger spinner and a two-line message describing what's happening and how long it takes",
+      "source": {
+        "html": "../../../../public/examples/application/loading-overlay/2-dark.html",
+        "tsx": "tsx/LoadingOverlayVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["loading"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    }
+  ]
+}
