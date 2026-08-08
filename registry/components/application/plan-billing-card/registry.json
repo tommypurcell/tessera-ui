@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-plan-billing-card",
+  "title": "Plan & Billing Card",
+  "description": "Current-plan summary card: plan name, price, an active-status badge, a usage bar with current/limit counts, the renewal date, and Manage/Upgrade actions.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["billing", "subscription", "plan", "usage", "settings"],
+  "useWhen": [
+    "Showing a logged-in user's current subscription plan and usage on an account or billing settings page.",
+    "You want one glanceable card combining plan identity, quota consumption, and renewal timing, rather than separate widgets.",
+    "Offering both a neutral 'Manage plan' action and a promotional 'Upgrade' action side by side."
+  ],
+  "avoidWhen": [
+    "You're comparing multiple plans for a purchase decision — use a Pricing table instead.",
+    "You only need a bare quota number with no plan identity or renewal context — use Usage Meter instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The card is a fixed-width block that stacks its header, usage bar, and action row vertically at all widths; the two action buttons split evenly and never wrap.",
+  "accessibility": [
+    "The usage bar's percentage is also stated as literal current/limit numbers in text, not conveyed by the bar's width alone.",
+    "The status badge uses both color and text (\"Active\") rather than color alone.",
+    "'Manage plan' and 'Upgrade' are both real, distinctly labeled buttons so their different intents (neutral vs. promotional) are clear from text, not just visual weight."
+  ],
+  "compatibleWith": ["application-usage-meter", "application-payment-method-card"],
+  "variants": [
+    {
+      "id": "plan-billing-card-1",
+      "title": "Plan & Billing Card",
+      "description": "A Pro plan at $49/mo, Active badge, an 82%-filled API requests usage bar (8,200 / 10,000), a renewal date, and Manage plan / Upgrade buttons.",
+      "source": {
+        "html": "../../../../public/examples/application/plan-billing-card/1.html",
+        "tsx": "tsx/PlanBillingCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Usage percentage is computed and displayed as text alongside the visual bar."
+      ]
+    },
+    {
+      "id": "plan-billing-card-1-dark",
+      "title": "Plan & Billing Card (Dark)",
+      "description": "The same plan summary card adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/plan-billing-card/1-dark.html",
+        "tsx": "tsx/PlanBillingCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Status badge and usage-bar fill color remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}
