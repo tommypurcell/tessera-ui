@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-segment-breakdown-bar",
+  "title": "Segment Breakdown Bar",
+  "description": "Single horizontal stacked bar splitting a total into labeled, colored segments with a legend — each segment's width is computed from its real share of the total, not hand-placed.",
+  "category": "application/charts",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["stacked-bar", "breakdown", "proportion", "chart", "analytics"],
+  "useWhen": [
+    "Showing how a total splits into a small number of categories in a single, compact horizontal bar.",
+    "You want a lighter-weight alternative to a donut chart when vertical space is tight (e.g. inside a table row or card header).",
+    "The legend below the bar should list every segment's exact percentage, not just imply it from bar width."
+  ],
+  "avoidWhen": [
+    "You're comparing two named categories head-to-head — use comparison-stat-pair instead.",
+    "You need to rank several distinct rows against each other — use stat-comparison-bars instead.",
+    "The breakdown has many categories (8+) — thin slivers become unreadable; use a table instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The bar is full-width and its segments are percentage-based, so it scales fluidly with its container; the legend wraps onto multiple lines as needed.",
+  "accessibility": [
+    "Each bar segment carries role='img' with an aria-label stating the category name, raw value, and percentage together.",
+    "Every segment also appears in the visible legend with a color swatch, label, and percentage.",
+    "Segment color is supplementary — the legend's text always carries the precise data."
+  ],
+  "compatibleWith": ["application-donut-chart", "application-charts", "application-stat-tile"],
+  "variants": [
+    {
+      "id": "segment-breakdown-bar-1",
+      "title": "Segment breakdown bar",
+      "description": "Three-segment traffic-by-device bar (Desktop 55%, Mobile 38%, Tablet 7%) with a legend, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/segment-breakdown-bar/1.html",
+        "tsx": "tsx/SegmentBreakdownBarVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Percentages are rounded consistently between the bar's aria-labels and the visible legend."
+      ]
+    },
+    {
+      "id": "segment-breakdown-bar-1-dark",
+      "title": "Segment breakdown bar (Dark)",
+      "description": "The same three-segment traffic-by-device bar, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/segment-breakdown-bar/1-dark.html",
+        "tsx": "tsx/SegmentBreakdownBarVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Segment and legend text colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
