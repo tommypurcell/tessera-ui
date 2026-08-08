@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "name": "application-public-notice-card",
+  "title": "Public Notice Card",
+  "description": "Formal civic/government notice card with a category badge, date, title, summary, and a read-more link — no author identity.",
+  "category": "application/cards",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["government", "civic", "notice", "announcement", "public"],
+  "useWhen": [
+    "Displaying official government or civic announcements (service interruptions, public hearings, policy updates) on a resident-facing site.",
+    "The notice is impersonal and departmental rather than attributed to a named individual.",
+    "Distinct from Announcement Feed Item, which is an internal workplace post attributed to a named author with an avatar, rather than an impersonal official notice."
+  ],
+  "avoidWhen": [
+    "The post is attributed to a specific person or team member — use Announcement Feed Item instead.",
+    "The content isn't a dated, categorized official notice — a plain content card may be simpler."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Category badge and date stay on one row via flex justify-between; the summary wraps normally without a fixed line-clamp so the full notice preview stays readable.",
+  "accessibility": [
+    "The date uses a semantic <time> element with a machine-readable datetime attribute alongside the human-readable label.",
+    "\"Read full notice\" is a real link with descriptive text, not a bare icon or \"click here\"."
+  ],
+  "compatibleWith": ["application-announcement-feed-item", "application-status-application-tracker"],
+  "variants": [
+    {
+      "id": "public-notice-card-1",
+      "title": "Public Notice Card",
+      "description": "A Public Works category notice about a scheduled water service interruption, with date, title, summary, and a read-more link.",
+      "source": {
+        "html": "../../../../public/examples/application/public-notice-card/1.html",
+        "tsx": "tsx/PublicNoticeCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Date is marked up with <time datetime> for machine readability."
+      ]
+    },
+    {
+      "id": "public-notice-card-1-dark",
+      "title": "Public Notice Card (Dark)",
+      "description": "The same notice card adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/public-notice-card/1-dark.html",
+        "tsx": "tsx/PublicNoticeCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Badge, text, and link contrast remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}
