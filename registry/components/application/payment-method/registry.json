@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-payment-method",
+  "title": "Payment Method Card",
+  "description": "Saved payment method cards with brand icon, masked card number, expiry, and a default toggle for billing and checkout settings.",
+  "category": "application/payment-method",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "payment-method",
+    "payment",
+    "card",
+    "billing",
+    "checkout"
+  ],
+  "useWhen": [
+    "Saved payment method cards with brand icon, masked card number, expiry, and a default toggle for billing and checkout settings."
+  ],
+  "avoidWhen": [
+    "Avoid payment method card when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Payment Method Card uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Associate each form field with a visible or programmatic label before production use.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "payment-method-1",
+      "title": "Single card",
+      "description": "Single card Saved payment method cards with brand icon, masked card number, expiry, and a default toggle for billing and checkout settings.",
+      "source": {
+        "html": "../../../../public/examples/application/payment-method/1.html",
+        "tsx": "tsx/PaymentMethodVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "payment-method-1-dark",
+      "title": "Single card (Dark)",
+      "description": "Single card Saved payment method cards with brand icon, masked card number, expiry, and a default toggle for billing and checkout settings.",
+      "source": {
+        "html": "../../../../public/examples/application/payment-method/1-dark.html",
+        "tsx": "tsx/PaymentMethodVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "payment-method-2",
+      "title": "Selectable list",
+      "description": "Selectable list Saved payment method cards with brand icon, masked card number, expiry, and a default toggle for billing and checkout settings.",
+      "source": {
+        "html": "../../../../public/examples/application/payment-method/2.html",
+        "tsx": "tsx/PaymentMethodVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "payment-method-2-dark",
+      "title": "Selectable list (Dark)",
+      "description": "Selectable list Saved payment method cards with brand icon, masked card number, expiry, and a default toggle for billing and checkout settings.",
+      "source": {
+        "html": "../../../../public/examples/application/payment-method/2-dark.html",
+        "tsx": "tsx/PaymentMethodVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    }
+  ]
+}

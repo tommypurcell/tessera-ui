@@ -196,24 +196,24 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-7) World Clock Row — 4-city timezone list w/ sun/moon day-night icons, light+dark, registry+tsx+MDX, screenshot verified (fixed a day/night icon mismatch found during review), committed + pushed (PR #5)
 
 <!-- Theme: Data entry -->
-- [~] (builder-4) Autocomplete Address Field — single input with suggestion dropdown and structured fill-out; distinct from combobox (address semantics).
-- [~] (builder-9) Credit Card Form — number/expiry/CVC fields with live brand detection and formatting; e-commerce staple absent from library.
+- [x] (builder-4) Autocomplete Address Field — 2 variants (open ARIA combobox suggestion dropdown, structured street/city/state/ZIP fill-out), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #14)
+- [x] (builder-9) Credit Card Form — 2 variants (standard form, with card preview) light+dark, registry.json, MDX entry, screenshots
 - [x] (builder-6) Signature Pad — 2 variants (draw canvas with undo/clear, typed-signature fallback with Draw/Type tabs), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
 - [x] (builder-10) Rating Input Emoji — 2 variants (fieldset scale w/ selected-state label, compact inline scale), light+dark, registry+tsx generated, screenshots verified, pushed
 - [x] (builder-7) Toggle Card Group — 3-card plan selector w/ has-checked: styling and checkmark badge, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
 - [x] (builder-7) Range Dual Input — 2 variants (valid + invalid min>max error state) w/ shared alert message, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
-- [ ] Markdown Editor — textarea with toolbar and live split preview pane; distinct from rich-text-toolbar (markdown + preview).
+- [~] (builder-4) Markdown Editor — textarea with toolbar and live split preview pane; distinct from rich-text-toolbar (markdown + preview).
 
 <!-- Theme: Navigation -->
 - [ ] Mega Menu Panel — full-width dropdown with multi-column link groups and featured card; distinct from navigation-menu (wide panel layout).
 - [ ] Command Bar Breadcrumb — editable breadcrumb where segments become dropdowns for sibling nav; distinct from breadcrumbs (interactive).
 - [ ] Bottom Sheet Nav — mobile draggable sheet with snap points and handle; distinct from drawer (mobile snap behavior).
 - [x] (builder-10) Floating Action Menu — 2 variants (labeled stacked FAB, icon-only stacked FAB), light+dark, checkbox-driven (no JS), registry+tsx generated, screenshots verified, pushed
-- [~] (builder-7) Anchor Scroll Nav — sticky in-page section list highlighting the active heading on scroll; distinct from tabs (scrollspy).
-- [~] (builder-3) Pagination Cursor — prev/next cursor-based pager with "showing X–Y" range and page-size selector; distinct from pagination (cursor style).
+- [x] (builder-7) Anchor Scroll Nav — 5-item sticky section list w/ aria-current active indicator, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
+- [x] (builder-3) Pagination Cursor — "Showing X-Y of total" range, rows-per-page select, disabled-aware prev/next icon buttons, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 
 <!-- Theme: Feedback / status -->
-- [ ] Inline Validation Hint — field-level success/error message with icon that animates in on blur; distinct from form-row (live feedback state).
+- [~] (builder-9) Inline Validation Hint — field-level success/error message with icon that animates in on blur; distinct from form-row (live feedback state).
 - [x] (builder-1) Loading Overlay — 2 variants (contained card overlay + full-surface overlay), dimmed/blurred scrim w/ role=status spinner+message, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #9).
 - [x] (builder-1) Skeleton Card List — 2 variants (3-card grid + 3-row list), role=status container, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #9).
 - [x] (builder-1) Retry Error State — 2 variants (full centered panel + compact inline banner), both role=alert w/ cause message + retry button, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #9).
@@ -226,7 +226,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [ ] Candlestick Chart — OHLC financial chart with volume strip; absent from library.
 - [ ] Choropleth Legend — gradient/step map legend with value buckets; pairs with map-marker-popup, absent from library.
 - [x] (builder-3) Stat Comparison Bars — ranked category bars with value labels, proportional fills, one highlighted row with tinted background, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
-- [ ] Trend Sparkbar Row — inline mini bar series inside a table row for compact trends; distinct from metric-sparkline-card (in-row).
+- [~] (builder-3) Trend Sparkbar Row — inline mini bar series inside a table row for compact trends; distinct from metric-sparkline-card (in-row).
 
 <!-- Theme: E-commerce -->
 - [x] (builder-2) Product Card — square image w/ hover quick-view overlay + discount badge, title, 5-star rating (role=img aria-label), price w/ strikethrough compare price, icon add-to-cart, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components
@@ -243,9 +243,9 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: Empty / error states -->
 - [ ] First-Run Empty State — illustrative zero-data panel with primary CTA and secondary hint; distinct from empty-states (onboarding-focused).
-- [ ] 404 / Error Page — full-page code, message, illustration, and home/back actions; distinct from retry-error-state (route-level).
-- [~] (builder-8) No-Results Search State — search-specific empty view with query echo and clear-filters suggestion; distinct from empty-states.
-- [ ] Permission Denied State — locked panel with reason and request-access button; distinct from empty-states.
+- [~] (builder-1) 404 / Error Page — full-page code, message, illustration, and home/back actions; distinct from retry-error-state (route-level).
+- [x] (builder-8) No-Results Search State — zero-result state w/ real query echo + conditional Clear filters action (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
+- [~] (builder-7) Permission Denied State — locked panel with reason and request-access button; distinct from empty-states.
 
 <!-- === WAVE 4 (deep-backlog refill, post-145) — themed batches, verified non-dupe against registry === -->
 
@@ -255,12 +255,12 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [ ] Image Gallery Lightbox — thumbnail grid opening a full-screen viewer with prev/next and caption; distinct from carousel and media.
 - [ ] Image Cropper — draggable crop frame with aspect presets and zoom slider; absent from library.
 - [ ] Avatar Uploader — circular drop-zone with preview, replace, and remove; distinct from file-uploaders (avatar-specialized).
-- [~] (builder-2) Media Object Row — thumbnail + title + meta + trailing action list-row primitive; distinct from details-list (media layout).
+- [x] (builder-2) Media Object Row — 3 podcast-episode rows (thumbnail, truncating title/meta, trailing play button), reusable renderAction slot for custom trailing controls, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components
 - [ ] PDF Page Thumbnails — scrollable page-thumbnail rail with active-page highlight; absent from library.
 
 <!-- Theme: Collaboration -->
-- [ ] Reaction Bar — inline emoji reaction counts with add-reaction popover trigger; distinct from emoji-picker (aggregated counts).
-- [ ] Typing Indicator — animated "X is typing…" dots row for chat; distinct from chat-bubbles.
+- [~] (builder-2) Reaction Bar — inline emoji reaction counts with add-reaction popover trigger; distinct from emoji-picker (aggregated counts).
+- [~] (builder-8) Typing Indicator — animated "X is typing…" dots row for chat; distinct from chat-bubbles.
 - [ ] Assignee Picker — searchable member dropdown with avatar checkmarks for task assignment; distinct from team-members-list.
 - [ ] Share Dialog — invite-by-email field, role dropdown, member list, and copy-link row; absent from library.
 - [ ] Comment Composer — rich input with mention/attach/emoji toolbar and submit; distinct from mention-textarea (full composer).
@@ -268,8 +268,8 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: Settings -->
 - [ ] Settings Nav List — grouped vertical settings menu with icons and active section; distinct from side-menu (settings layout).
-- [ ] Preference Toggle Row — label + description + trailing switch settings row; distinct from toggles (row composition).
-- [~] (builder-1) Danger Zone Panel — bordered destructive-settings section with confirm-guarded actions; absent from library.
+- [~] (builder-5) Preference Toggle Row — label + description + trailing switch settings row; distinct from toggles (row composition).
+- [x] (builder-1) Danger Zone Panel — 2 variants (single action + 3-row panel), red-bordered section w/ native <dialog> confirm guard, light+dark, registry+tsx+MDX, screenshot + live open verified, committed+pushed (PR #9).
 - [ ] Plan & Billing Card — current-plan summary with usage, renewal date, and manage button; distinct from usage-meter and pricing.
 - [ ] Notification Preferences Grid — channel × event matrix of checkboxes (email/push/SMS); absent from library.
 - [ ] Profile Edit Form — avatar + fields + save-bar settings form layout; distinct from form-row (page composition).
@@ -291,14 +291,14 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: Commerce / finance -->
 - [ ] Invoice Table — line-item table with subtotal/tax/total footer and status badge; distinct from tables (invoice semantics).
-- [~] (builder-6) Payment Method Card — saved card with brand icon, last-4, expiry, and default toggle; distinct from credit-card-form.
+- [x] (builder-6) Payment Method Card — 2 variants (single saved card, selectable list with add-new affordance), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
 - [ ] Discount Code Field — promo input with apply button and applied/invalid states; distinct from copy-field.
 - [x] (builder-2) Order Status Tracker — 4-stage horizontal stepper (Placed/Shipped complete, Out for delivery current w/ pulse ring, Delivered upcoming w/ est. date), state computed from a single currentStepIndex, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components
 - [ ] Refund Request Panel — reason select, amount, and note with submit; absent from library.
 
 <!-- Theme: Utility / misc -->
 - [x] (builder-1) Copyable Code Snippet — duplicate of existing `code-editor-block` variant 2 "File name with copy action" (file-name header, Copy button, syntax-highlighted numbered lines); no new work needed here
-- [~] (builder-5) QR Code Card — generated QR with caption and download/copy actions; absent from library.
+- [x] (builder-5) QR Code Card — QR tile (white bg, always-scannable contrast) + caption + encoded value text + Download/Copy link actions, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [~] (builder-10) Countdown Ring Timer — animated radial timer with remaining time in center; distinct from countdown (radial).
 - [ ] Feature Flag Toggle Row — flag name, environment pills, and enable switch with rollout %; absent from library.
 - [ ] Breadcrumb Page Header — title + breadcrumb + action buttons page-header composite; distinct from breadcrumbs (header block).
