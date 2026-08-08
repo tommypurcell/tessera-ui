@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-sm justify-center p-6">
+    <div class="flex w-full items-center justify-between rounded-lg border border-gray-200 bg-white px-4 py-3 shadow-sm">
+      <p class="text-sm font-medium text-gray-900">Realtime sync</p>
+
+      <span class="inline-flex items-center gap-1.5 text-sm font-medium text-amber-700" role="status">
+        <span class="relative flex size-2">
+          <span class="absolute inline-flex size-full animate-ping rounded-full bg-amber-400 opacity-75"></span>
+          <span class="relative inline-flex size-2 rounded-full bg-amber-500"></span>
+        </span>
+        Reconnecting
+      </span>
+    </div>
+  </body>
+</html>

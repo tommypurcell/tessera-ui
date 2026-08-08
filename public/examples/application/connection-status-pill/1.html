@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-sm flex-col gap-3 p-6">
+    <span class="inline-flex w-fit items-center gap-2 rounded-full border border-green-200 bg-green-50 py-1 pr-3 pl-2 text-sm font-medium text-green-700" role="status">
+      <span class="relative flex size-2">
+        <span class="absolute inline-flex size-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+        <span class="relative inline-flex size-2 rounded-full bg-green-500"></span>
+      </span>
+      Connected
+    </span>
+
+    <span class="inline-flex w-fit items-center gap-2 rounded-full border border-amber-200 bg-amber-50 py-1 pr-3 pl-2 text-sm font-medium text-amber-700" role="status">
+      <span class="relative flex size-2">
+        <span class="absolute inline-flex size-full animate-ping rounded-full bg-amber-400 opacity-75"></span>
+        <span class="relative inline-flex size-2 rounded-full bg-amber-500"></span>
+      </span>
+      Reconnecting&hellip;
+    </span>
+
+    <span class="inline-flex w-fit items-center gap-2 rounded-full border border-gray-200 bg-gray-50 py-1 pr-3 pl-2 text-sm font-medium text-gray-600" role="status">
+      <span class="size-2 rounded-full bg-gray-400"></span>
+      Offline
+    </span>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "name": "application-connection-status-pill",
+  "title": "Connection Status Pill",
+  "description": "Live online/offline/reconnecting indicator with an animated pulse ring on the active state, for surfacing realtime connectivity distinct from static status badges.",
+  "category": "application/feedback",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["application", "status", "realtime", "connection", "websocket"],
+  "useWhen": [
+    "Showing the live state of a websocket, realtime sync, or collaborative session that can change without a page reload.",
+    "The connection state actively affects what the user can do right now (e.g. changes won't save while reconnecting).",
+    "Pairing a status label with a header, toolbar, or settings row for an at-a-glance realtime indicator."
+  ],
+  "avoidWhen": [
+    "The status is static or set once per page load — use a plain badge instead, since the pulse animation implies liveness.",
+    "The state represents a resource's stored status (e.g. an order's shipped/delivered state) rather than an active connection."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Both variants are compact inline-flex elements that size to their content; the header-row variant (variant 2) uses justify-between so it stretches to fill its parent width.",
+  "accessibility": [
+    "Each pill uses role=\"status\" so state changes (connected → reconnecting → offline) are announced to screen readers as they happen.",
+    "The animate-ping pulse ring is purely decorative reinforcement — the solid dot and the text label both independently convey the state, so the animation is never the only signal.",
+    "Color is never the sole indicator: each state has distinct text (Connected / Reconnecting… / Offline) alongside its color."
+  ],
+  "compatibleWith": ["application-badges", "application-toasts"],
+  "variants": [
+    {
+      "id": "connection-status-pill-1",
+      "title": "All states",
+      "description": "Connected, reconnecting, and offline pills stacked to show the full state range",
+      "source": {
+        "html": "../../../../public/examples/application/connection-status-pill/1.html",
+        "tsx": "tsx/ConnectionStatusPillVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["connected", "reconnecting", "offline"],
+      "accessibility": ["Each state pairs a distinct color with distinct text, never relying on color alone."]
+    },
+    {
+      "id": "connection-status-pill-1-dark",
+      "title": "All states (Dark)",
+      "description": "Connected, reconnecting, and offline pills stacked to show the full state range",
+      "source": {
+        "html": "../../../../public/examples/application/connection-status-pill/1-dark.html",
+        "tsx": "tsx/ConnectionStatusPillVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["connected", "reconnecting", "offline"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    },
+    {
+      "id": "connection-status-pill-2",
+      "title": "Header row",
+      "description": "Status pill paired with a feature label inside a bordered row, for a settings panel or toolbar",
+      "source": {
+        "html": "../../../../public/examples/application/connection-status-pill/2.html",
+        "tsx": "tsx/ConnectionStatusPillVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["reconnecting"],
+      "accessibility": ["role=\"status\" ensures the reconnecting state change is announced without requiring the user to notice the animation."]
+    },
+    {
+      "id": "connection-status-pill-2-dark",
+      "title": "Header row (Dark)",
+      "description": "Status pill paired with a feature label inside a bordered row, for a settings panel or toolbar",
+      "source": {
+        "html": "../../../../public/examples/application/connection-status-pill/2-dark.html",
+        "tsx": "tsx/ConnectionStatusPillVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["reconnecting"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    }
+  ]
+}
