@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-mega-menu-panel",
+  "title": "Mega Menu Panel",
+  "description": "A full-width dropdown panel opened from a top-nav item, organizing links into labeled columns alongside a featured promo card.",
+  "category": "application/mega-menu-panel",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "mega-menu-panel",
+    "mega menu",
+    "navigation",
+    "dropdown",
+    "panel",
+    "nav"
+  ],
+  "useWhen": [
+    "A top-level nav item has enough sub-pages or product lines that a simple dropdown list would be too long or unstructured.",
+    "You want to surface a featured or promotional item (a new feature, an announcement) alongside a link browsing experience."
+  ],
+  "avoidWhen": [
+    "The nav item has fewer than about 6 links — the existing `dropdown` component is simpler and less visually heavy.",
+    "The wide-panel layout doesn't fit narrow viewports — collapse to an accordion or the `navigation-menu` pattern on mobile instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The panel's grid columns are sized in a fixed max-width container; below the width needed for all columns, collapse to a single-column accordion or a full-screen mobile nav instead of shrinking columns further.",
+  "accessibility": [
+    "The trigger button carries aria-expanded reflecting whether the panel is open.",
+    "Each column has a visible heading grouping its links, giving the link list structure beyond visual position alone.",
+    "The featured card's 'New' badge is paired with descriptive text and a text link, not conveyed by badge color alone."
+  ],
+  "compatibleWith": ["application-dropdown", "application-navigation-menu"],
+  "variants": [
+    {
+      "id": "mega-menu-panel-1",
+      "title": "Product menu",
+      "description": "A top nav bar with an open 'Products' mega menu: three labeled link-group columns (Build, Ship, Learn) plus a featured announcement card.",
+      "source": {
+        "html": "../../../../public/examples/application/mega-menu-panel/1.html",
+        "tsx": "tsx/MegaMenuPanelVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "open"],
+      "accessibility": [
+        "The 'Products' trigger carries aria-expanded=\"true\" while its panel is open."
+      ]
+    },
+    {
+      "id": "mega-menu-panel-1-dark",
+      "title": "Product menu (Dark)",
+      "description": "Mega menu panel adapted for dark surfaces, including the featured card's background and badge colors.",
+      "source": {
+        "html": "../../../../public/examples/application/mega-menu-panel/1-dark.html",
+        "tsx": "tsx/MegaMenuPanelVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "open"],
+      "accessibility": [
+        "Column headings, link text, and the featured card all meet WCAG AA contrast against the dark panel background."
+      ]
+    }
+  ]
+}
