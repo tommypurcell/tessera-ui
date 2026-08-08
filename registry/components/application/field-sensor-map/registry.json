@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-field-sensor-map",
+  "title": "Field Sensor Map",
+  "description": "A farm plot grid where each cell's color encodes soil moisture level and shows a temperature reading, with a selected-plot detail readout.",
+  "category": "application/field-sensor-map",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "field-sensor-map",
+    "agriculture",
+    "iot",
+    "soil moisture",
+    "sensor grid",
+    "farm plots"
+  ],
+  "useWhen": [
+    "Agriculture or IoT dashboards need to show many sensor readings across a physical layout (field plots, greenhouse zones) at a glance.",
+    "A single metric (moisture) benefits from color-coded density while a secondary metric (temperature) can ride along as text."
+  ],
+  "avoidWhen": [
+    "Tracking equipment or asset status rather than a continuous physical-space metric — `Fleet Status Grid`'s labeled status badges communicate discrete states better.",
+    "Only a handful of sensors need to be shown — a simple list or stat cards is clearer than a grid."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The 6-column plot grid keeps equal-width square cells at any container size; the legend and header wrap independently above it.",
+  "accessibility": [
+    "Each plot is a real <button>, keyboard-reachable, so users can tab through and select any plot without a pointer.",
+    "The selected plot carries aria-current=\"true\" in addition to its ring highlight, and its full reading (moisture % and temperature) is restated as text in the footer, not conveyed by color alone.",
+    "Each cell shows its plot ID and temperature as visible text, so the color coding is a supplement to, not a replacement for, textual data."
+  ],
+  "compatibleWith": ["application-fleet-status-grid", "application-irrigation-schedule-row"],
+  "variants": [
+    {
+      "id": "field-sensor-map-1",
+      "title": "North Field sensor map",
+      "description": "An 18-plot grid (A1-C6) color-coded by soil moisture (dry/moist/saturated) with per-plot temperature, a color legend, and a selected-plot detail readout with volumetric water content.",
+      "source": {
+        "html": "../../../../public/examples/application/field-sensor-map/1.html",
+        "tsx": "tsx/FieldSensorMapVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "The selected plot carries aria-current=\"true\"; its reading is restated as text in the footer."
+      ]
+    },
+    {
+      "id": "field-sensor-map-1-dark",
+      "title": "North Field sensor map (Dark)",
+      "description": "Field sensor map adapted for dark surfaces, including moisture-tier colors and the selected-plot ring highlight.",
+      "source": {
+        "html": "../../../../public/examples/application/field-sensor-map/1-dark.html",
+        "tsx": "tsx/FieldSensorMapVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "Plot labels, temperature text, and the footer readout all meet WCAG AA contrast against the dark card background."
+      ]
+    }
+  ]
+}

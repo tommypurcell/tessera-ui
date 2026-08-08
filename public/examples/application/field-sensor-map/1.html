@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex min-h-96 items-center justify-center bg-gray-50 p-6">
+    <div class="w-full max-w-lg rounded-lg border border-gray-200 bg-white shadow-sm">
+      <div class="flex items-center justify-between border-b border-gray-200 p-4">
+        <div>
+          <h2 class="text-sm font-semibold text-gray-900">North Field &mdash; Sensor Map</h2>
+          <p class="text-xs text-gray-500">18 plots &middot; updated 4 min ago</p>
+        </div>
+        <div class="flex items-center gap-3 text-xs text-gray-500">
+          <span class="flex items-center gap-1"><span class="size-2.5 rounded-sm bg-amber-300"></span>Dry</span>
+          <span class="flex items-center gap-1"><span class="size-2.5 rounded-sm bg-sky-300"></span>Moist</span>
+          <span class="flex items-center gap-1"><span class="size-2.5 rounded-sm bg-sky-600"></span>Saturated</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-6 gap-1.5 p-4">
+        <button type="button" class="flex aspect-square flex-col items-center justify-center gap-0.5 rounded-md bg-sky-300 text-white transition hover:ring-2 hover:ring-gray-900 hover:ring-offset-1">
+          <span class="text-[11px] font-semibold">A1</span>
+          <span class="text-[10px] font-medium">64&deg;F</span>
+        </button>
+        <button type="button" class="flex aspect-square flex-col items-center justify-center gap-0.5 rounded-md bg-sky-300 text-white transition hover:ring-2 hover:ring-gray-900 hover:ring-offset-1">
+          <span class="text-[11px] font-semibold">A2</span>
+          <span class="text-[10px] font-medium">65&deg;F</span>
+        </button>
+        <button type="button" class="flex aspect-square flex-col items-center justify-center gap-0.5 rounded-md bg-amber-300 text-white transition hover:ring-2 hover:ring-gray-900 hover:ring-offset-1">
+          <span class="text-[11px] font-semibold">A3</span>
+          <span class="text-[10px] font-medium">71&deg;F</span>
+        </button>
+        <button type="button" class="flex aspect-square flex-col items-center justify-center gap-0.5 rounded-md bg-amber-400 text-white transition hover:ring-2 hover:ring-gray-900 hover:ring-offset-1">
+          <span class="text-[11px] font-semibold">A4</span>
+          <span class="text-[10px] font-medium">73&deg;F</span>
+        </button>
+        <button type="button" class="flex aspect-square flex-col items-center justify-center gap-0.5 rounded-md bg-sky-300 text-white transition hover:ring-2 hover:ring-gray-900 hover:ring-offset-1">
+          <span class="text-[11px] font-semibold">A5</span>
+          <span class="text-[10px] font-medium">63&deg;F</span>
+        </button>
+        <button type="button" class="flex aspect-square flex-col items-center justify-center gap-0.5 rounded-md bg-sky-600 text-white transition hover:ring-2 hover:ring-gray-900 hover:ring-offset-1">
+          <span class="text-[11px] font-semibold">A6</span>
+          <span class="text-[10px] font-medium">60&deg;F</span>
+        </button>
+
+        <button type="button" class="flex aspect-square flex-col items-center justify-center gap-0.5 rounded-md bg-sky-600 text-white transition hover:ring-2 hover:ring-gray-900 hover:ring-offset-1">
+          <span class="text-[11px] font-semibold">B1</span>
+          <span class="text-[10px] font-medium">61&deg;F</span>
+        </button>
+        <button type="button" class="flex aspect-square flex-col items-center justify-center gap-0.5 rounded-md bg-sky-300 text-white transition hover:ring-2 hover:ring-gray-900 hover:ring-offset-1">
+          <span class="text-[11px] font-semibold">B2</span>
+          <span class="text-[10px] font-medium">64&deg;F</span>
+        </button>
+        <button type="button" aria-current="true" class="relative flex aspect-square flex-col items-center justify-center gap-0.5 rounded-md bg-amber-400 text-white ring-2 ring-gray-900 ring-offset-1 transition">
+          <span class="text-[11px] font-semibold">B3</span>
+          <span class="text-[10px] font-medium">74&deg;F</span>
+        </button>
+        <button type="button" class="flex aspect-square flex-col items-center justify-center gap-0.5 rounded-md bg-amber-500 text-white transition hover:ring-2 hover:ring-gray-900 hover:ring-offset-1">
+          <span class="text-[11px] font-semibold">B4</span>
+          <span class="text-[10px] font-medium">76&deg;F</span>
+        </button>
+        <button type="button" class="flex aspect-square flex-col items-center justify-center gap-0.5 rounded-md bg-sky-300 text-white transition hover:ring-2 hover:ring-gray-900 hover:ring-offset-1">
+          <span class="text-[11px] font-semibold">B5</span>
+          <span class="text-[10px] font-medium">63&deg;F</span>
+        </button>
+        <button type="button" class="flex aspect-square flex-col items-center justify-center gap-0.5 rounded-md bg-sky-300 text-white transition hover:ring-2 hover:ring-gray-900 hover:ring-offset-1">
+          <span class="text-[11px] font-semibold">B6</span>
+          <span class="text-[10px] font-medium">62&deg;F</span>
+        </button>
+
+        <button type="button" class="flex aspect-square flex-col items-center justify-center gap-0.5 rounded-md bg-amber-300 text-white transition hover:ring-2 hover:ring-gray-900 hover:ring-offset-1">
+          <span class="text-[11px] font-semibold">C1</span>
+          <span class="text-[10px] font-medium">70&deg;F</span>
+        </button>
+        <button type="button" class="flex aspect-square flex-col items-center justify-center gap-0.5 rounded-md bg-amber-300 text-white transition hover:ring-2 hover:ring-gray-900 hover:ring-offset-1">
+          <span class="text-[11px] font-semibold">C2</span>
+          <span class="text-[10px] font-medium">69&deg;F</span>
+        </button>
+        <button type="button" class="flex aspect-square flex-col items-center justify-center gap-0.5 rounded-md bg-sky-300 text-white transition hover:ring-2 hover:ring-gray-900 hover:ring-offset-1">
+          <span class="text-[11px] font-semibold">C3</span>
+          <span class="text-[10px] font-medium">65&deg;F</span>
+        </button>
+        <button type="button" class="flex aspect-square flex-col items-center justify-center gap-0.5 rounded-md bg-sky-300 text-white transition hover:ring-2 hover:ring-gray-900 hover:ring-offset-1">
+          <span class="text-[11px] font-semibold">C4</span>
+          <span class="text-[10px] font-medium">64&deg;F</span>
+        </button>
+        <button type="button" class="flex aspect-square flex-col items-center justify-center gap-0.5 rounded-md bg-sky-600 text-white transition hover:ring-2 hover:ring-gray-900 hover:ring-offset-1">
+          <span class="text-[11px] font-semibold">C5</span>
+          <span class="text-[10px] font-medium">60&deg;F</span>
+        </button>
+        <button type="button" class="flex aspect-square flex-col items-center justify-center gap-0.5 rounded-md bg-sky-600 text-white transition hover:ring-2 hover:ring-gray-900 hover:ring-offset-1">
+          <span class="text-[11px] font-semibold">C6</span>
+          <span class="text-[10px] font-medium">59&deg;F</span>
+        </button>
+      </div>
+
+      <div class="flex items-center justify-between border-t border-gray-200 px-4 py-2.5">
+        <p class="text-xs text-gray-500">Selected: <span class="font-medium text-gray-900">B3</span> &middot; 22% VWC &middot; 74&deg;F</p>
+        <button type="button" class="text-xs font-medium text-gray-600 hover:text-gray-900">View history</button>
+      </div>
+    </div>
+  </body>
+</html>
