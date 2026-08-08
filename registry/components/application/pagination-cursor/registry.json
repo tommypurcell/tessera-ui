@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-pagination-cursor",
+  "title": "Pagination Cursor",
+  "description": "Prev/next cursor-based pager with a 'showing X–Y of total' range and a page-size selector, driven by a typed range/total/hasNext prop contract.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["pagination", "cursor", "pager", "data-table"],
+  "useWhen": [
+    "Paging through results fetched via a cursor-based API where jumping to an arbitrary page number isn't possible.",
+    "Users benefit from seeing the current row range and total count alongside prev/next controls.",
+    "A data table or list needs an adjustable page size alongside cursor navigation."
+  ],
+  "avoidWhen": [
+    "The backend supports offset-based paging and users need to jump to a specific page number — use the numbered Pagination component instead.",
+    "The dataset is small enough to show in full without paging.",
+    "Infinite scroll better fits the browsing pattern — a cursor pager adds unnecessary interaction steps."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The range text, page-size selector, and prev/next controls sit on one row; the page-size label hides on narrow viewports while the select itself remains usable.",
+  "accessibility": [
+    "Prev/next icon buttons carry visually hidden text ('Previous page', 'Next page') since they show only an icon.",
+    "Disabled prev/next buttons use the native disabled attribute so assistive tech announces they're unavailable, not just dimmed.",
+    "The page-size control is a real <select> wrapped in a <label> for full keyboard and screen-reader support."
+  ],
+  "compatibleWith": ["application-data-table", "application-pagination"],
+  "variants": [
+    {
+      "id": "pagination-cursor-1",
+      "title": "Pagination Cursor",
+      "description": "Cursor pager with a 'Showing X–Y of total' range, a rows-per-page select, and disabled-aware prev/next icon buttons.",
+      "source": {
+        "html": "../../../../public/examples/application/pagination-cursor/1.html",
+        "tsx": "tsx/PaginationCursorVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "start", "end"],
+      "accessibility": [
+        "Icon-only prev/next buttons carry sr-only text so their purpose is announced without relying on the icon shape."
+      ]
+    },
+    {
+      "id": "pagination-cursor-1-dark",
+      "title": "Pagination Cursor (Dark)",
+      "description": "Cursor-based pager adapted for dark surfaces with the same range text, page-size select, and prev/next structure.",
+      "source": {
+        "html": "../../../../public/examples/application/pagination-cursor/1-dark.html",
+        "tsx": "tsx/PaginationCursorVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "start", "end"],
+      "accessibility": [
+        "Range text, select control, and button icons must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
