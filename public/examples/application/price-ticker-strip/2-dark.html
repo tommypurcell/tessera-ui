@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+    <style>
+      .flash-up {
+        animation: flash-green-dark 0.6s ease-out;
+      }
+      .flash-down {
+        animation: flash-red-dark 0.6s ease-out;
+      }
+      @keyframes flash-green-dark {
+        0% {
+          background-color: rgba(34, 197, 94, 0.2);
+        }
+        100% {
+          background-color: transparent;
+        }
+      }
+      @keyframes flash-red-dark {
+        0% {
+          background-color: rgba(239, 68, 68, 0.2);
+        }
+        100% {
+          background-color: transparent;
+        }
+      }
+    </style>
+  </head>
+  <body class="mx-auto flex max-w-sm flex-col gap-2 p-6">
+    <div id="ticker-2-dark" class="flex items-center justify-between rounded-md px-3 py-2">
+      <span class="text-sm font-semibold text-white">BTC/USD</span>
+      <span class="js-price font-mono text-sm font-semibold text-white">$67,214.50</span>
+    </div>
+    <div class="flex items-center justify-between rounded-md px-3 py-2">
+      <span class="text-sm font-semibold text-white">ETH/USD</span>
+      <span class="font-mono text-sm font-semibold text-white">$3,481.20</span>
+    </div>
+
+    <script>
+      ;(function () {
+        var row = document.getElementById('ticker-2-dark')
+        var priceEl = row.querySelector('.js-price')
+        var price = 67214.5
+
+        function tick() {
+          var delta = (Math.random() - 0.5) * 40
+          price += delta
+          priceEl.textContent = '$' + price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+          row.classList.remove('flash-up', 'flash-down')
+          void row.offsetWidth
+          row.classList.add(delta >= 0 ? 'flash-up' : 'flash-down')
+        }
+
+        setInterval(tick, 1800)
+      })()
+    </script>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+    <style>
+      @keyframes ticker-scroll {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+      .ticker-track {
+        animation: ticker-scroll 18s linear infinite;
+      }
+    </style>
+  </head>
+  <body class="mx-auto flex max-w-lg flex-col p-6">
+    <div class="overflow-hidden rounded-lg border border-gray-800 bg-gray-900 py-3">
+      <div class="ticker-track flex w-max items-center gap-8 px-4">
+        <div class="flex items-center gap-2 whitespace-nowrap">
+          <span class="text-sm font-semibold text-white">BTC</span>
+          <span class="font-mono text-sm text-gray-300">$67,214.50</span>
+          <span class="flex items-center gap-0.5 text-xs font-medium text-green-400">
+            <svg class="size-3" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l8 10H4l8-10z" /></svg>
+            2.4%
+          </span>
+        </div>
+        <div class="flex items-center gap-2 whitespace-nowrap">
+          <span class="text-sm font-semibold text-white">ETH</span>
+          <span class="font-mono text-sm text-gray-300">$3,481.20</span>
+          <span class="flex items-center gap-0.5 text-xs font-medium text-red-400">
+            <svg class="size-3" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 20L4 10h16l-8 10z" /></svg>
+            1.1%
+          </span>
+        </div>
+        <div class="flex items-center gap-2 whitespace-nowrap">
+          <span class="text-sm font-semibold text-white">SOL</span>
+          <span class="font-mono text-sm text-gray-300">$178.63</span>
+          <span class="flex items-center gap-0.5 text-xs font-medium text-green-400">
+            <svg class="size-3" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l8 10H4l8-10z" /></svg>
+            5.7%
+          </span>
+        </div>
+        <div class="flex items-center gap-2 whitespace-nowrap">
+          <span class="text-sm font-semibold text-white">AAPL</span>
+          <span class="font-mono text-sm text-gray-300">$227.85</span>
+          <span class="flex items-center gap-0.5 text-xs font-medium text-green-400">
+            <svg class="size-3" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l8 10H4l8-10z" /></svg>
+            0.6%
+          </span>
+        </div>
+        <div aria-hidden="true" class="flex items-center gap-8">
+          <div class="flex items-center gap-2 whitespace-nowrap">
+            <span class="text-sm font-semibold text-white">BTC</span>
+            <span class="font-mono text-sm text-gray-300">$67,214.50</span>
+            <span class="flex items-center gap-0.5 text-xs font-medium text-green-400">
+              <svg class="size-3" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l8 10H4l8-10z" /></svg>
+              2.4%
+            </span>
+          </div>
+          <div class="flex items-center gap-2 whitespace-nowrap">
+            <span class="text-sm font-semibold text-white">ETH</span>
+            <span class="font-mono text-sm text-gray-300">$3,481.20</span>
+            <span class="flex items-center gap-0.5 text-xs font-medium text-red-400">
+              <svg class="size-3" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 20L4 10h16l-8 10z" /></svg>
+              1.1%
+            </span>
+          </div>
+          <div class="flex items-center gap-2 whitespace-nowrap">
+            <span class="text-sm font-semibold text-white">SOL</span>
+            <span class="font-mono text-sm text-gray-300">$178.63</span>
+            <span class="flex items-center gap-0.5 text-xs font-medium text-green-400">
+              <svg class="size-3" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l8 10H4l8-10z" /></svg>
+              5.7%
+            </span>
+          </div>
+          <div class="flex items-center gap-2 whitespace-nowrap">
+            <span class="text-sm font-semibold text-white">AAPL</span>
+            <span class="font-mono text-sm text-gray-300">$227.85</span>
+            <span class="flex items-center gap-0.5 text-xs font-medium text-green-400">
+              <svg class="size-3" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4l8 10H4l8-10z" /></svg>
+              0.6%
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
