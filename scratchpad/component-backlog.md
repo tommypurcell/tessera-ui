@@ -622,7 +622,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-2) Call Log Row — contact avatar, direction icon (incoming/outgoing/missed) with color+glyph+label all derived from the same direction value, duration, timestamp, callback button; light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
 
 <!-- Theme: Gov / civic -->
-- [~] (builder-4) Form Field Wizard (gov) — long official form split into review-able sections with save-progress; distinct from stepper-wizard.
+- [x] (builder-4) Form Field Wizard (gov) — 5-section jump-anywhere list w/ progress bar, per-section status, save-and-continue-later, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #17)
 - [x] (builder-5) Status Application Tracker — submitted→under-review→decision government stepper with case number; distinct from claim-status-tracker. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [x] (builder-5) Public Notice Card — dated official announcement with category badge and read-more; distinct from announcement-feed-item. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [x] (builder-5) Ballot Option List — candidate/measure rows with select and info expander; distinct from poll-vote-card. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
@@ -630,7 +630,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 <!-- Theme: Agriculture / IoT -->
 - [ ] Field Sensor Map — plot grid with per-zone moisture/temp color coding; distinct from fleet-status-grid.
 - [ ] Crop Growth Timeline — planting→harvest stage tracker with dates and weather; distinct from care-timeline.
-- [~] (builder-2) Irrigation Schedule Row — zone with on/off, duration, and next-run; distinct from medication-schedule-list.
+- [x] (builder-2) Irrigation Schedule Row — per-zone toggle switch, icon color/name emphasis/next-run text all derived from same toggled state (verified via Playwright: toggling paused zone correctly showed its data-next-run time); light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
 
 <!-- Theme: Manufacturing -->
 - [ ] Production Line Status — station tiles with running/stopped/fault and throughput; distinct from health-check-grid.
@@ -640,13 +640,13 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 <!-- Theme: Hospitality -->
 - [ ] Room Availability Grid — room-rows × date-columns booked/free calendar; distinct from availability-grid.
 - [x] (builder-7) Guest Check-In Card — reservation with guest, room, dates, and check-in/out actions; distinct from booking-confirmation-card. Light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #26).
-- [ ] Amenity Request Row — service request with status, room, and time; distinct from approval-request-card.
+- [x] (builder-7) Amenity Request Row — service request with status, room, and time; distinct from approval-request-card. Light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #26).
 
 <!-- Theme: Media / misc verticals -->
 - [x] (builder-8) Podcast Episode Row — 2-episode list w/ art, title/date, real-computed duration formatting, play+download actions (item-specific aria-labels), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
-- [~] (builder-8) Sports Scoreboard — two-team score with period/clock and possession indicator; distinct from stats.
-- [ ] Live Match Timeline — game events (goals/cards) on a minute-based timeline; distinct from timelines.
-- [ ] Recipe Ingredient List — checkable ingredients with quantity scaler; distinct from task-checklist.
+- [x] (builder-8) Sports Scoreboard — 2-team score w/ leader derived from real comparison, possession icon (aria-labeled, not color-only), period/clock, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
+- [x] (builder-5) Live Match Timeline — game events (goals/cards) on a minute-based timeline; distinct from timelines. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
+- [~] (builder-2) Recipe Ingredient List — checkable ingredients with quantity scaler; distinct from task-checklist.
 - [ ] Recipe Step Card — numbered cooking step with timer and image; distinct from lesson-playlist.
 - [ ] Photo EXIF Panel — image metadata rows (camera/lens/ISO/aperture) with histogram; distinct from media.
 - [ ] Photo Grid Selectable — multi-select photo grid with checkmarks and count bar; distinct from image-gallery-lightbox.
@@ -658,7 +658,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [ ] Table Loading Skeleton — shimmering placeholder rows matching column layout; distinct from skeleton-card-list (table grid).
 - [ ] Table Error State — in-table failure row with reason and retry spanning columns; distinct from retry-error-state.
 - [ ] Form Success Panel — post-submit confirmation card with next-steps actions; distinct from magic-link-sent-state.
-- [ ] Partial Failure Summary — batch-result banner showing N succeeded / M failed with expandable errors; absent from library.
+- [~] (builder-8) Partial Failure Summary — batch-result banner showing N succeeded / M failed with expandable errors; absent from library.
 - [ ] Optimistic Pending Row — list row in a "sending…" ghost state with retry-on-fail; distinct from inline-add-row.
 
 <!-- Theme: Density / size framings -->
