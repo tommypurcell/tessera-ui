@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "name": "application-avatar",
+  "title": "Avatar",
+  "description": "User avatar components with image, initials-fallback, and presence-status variants at multiple sizes.",
+  "category": "application/avatar",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "avatar",
+    "profile",
+    "user",
+    "photo",
+    "presence"
+  ],
+  "useWhen": [
+    "User avatar components with image, initials-fallback, and presence-status variants at multiple sizes."
+  ],
+  "avoidWhen": [
+    "Avoid avatar when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Avatar uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Provide meaningful alternative text for informative images and empty alt text for decorative images.",
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "avatar-1",
+      "title": "Sizes",
+      "description": "Image avatar at four common sizes (8, 10, 12, 16)",
+      "source": {
+        "html": "../../../../public/examples/application/avatar/1.html",
+        "tsx": "tsx/AvatarVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "avatar-1-dark",
+      "title": "Sizes (Dark)",
+      "description": "Image avatar at four common sizes (8, 10, 12, 16)",
+      "source": {
+        "html": "../../../../public/examples/application/avatar/1-dark.html",
+        "tsx": "tsx/AvatarVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "avatar-2",
+      "title": "Initials fallback",
+      "description": "Colored initials avatars for users without a photo, plus a generic-person icon fallback",
+      "source": {
+        "html": "../../../../public/examples/application/avatar/2.html",
+        "tsx": "tsx/AvatarVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "avatar-2-dark",
+      "title": "Initials fallback (Dark)",
+      "description": "Colored initials avatars for users without a photo, plus a generic-person icon fallback",
+      "source": {
+        "html": "../../../../public/examples/application/avatar/2-dark.html",
+        "tsx": "tsx/AvatarVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "avatar-3",
+      "title": "With presence status",
+      "description": "Avatar with an online/offline/away status dot overlaid on the bottom-right corner",
+      "source": {
+        "html": "../../../../public/examples/application/avatar/3.html",
+        "tsx": "tsx/AvatarVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "avatar-3-dark",
+      "title": "With presence status (Dark)",
+      "description": "Avatar with an online/offline/away status dot overlaid on the bottom-right corner",
+      "source": {
+        "html": "../../../../public/examples/application/avatar/3-dark.html",
+        "tsx": "tsx/AvatarVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "name": "application-aspect-ratio",
+  "title": "Aspect Ratio",
+  "description": "Fixed-ratio containers for images, avatars, and video embeds so content never shifts layout as it loads.",
+  "category": "application/media",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["application", "aspect-ratio", "media", "image", "video"],
+  "useWhen": [
+    "Embedding an image, video, or iframe that must reserve a predictable amount of space before it loads.",
+    "Building a media grid or card where every item needs the same proportions regardless of source image dimensions.",
+    "Wrapping a video player or thumbnail with a play-button overlay at a fixed cinematic ratio."
+  ],
+  "avoidWhen": [
+    "The content's natural dimensions should drive layout — forcing a ratio would crop or distort it unexpectedly.",
+    "You need arbitrary, content-driven height, such as a text block or card body."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The container's width comes from its parent (max-w-md/max-w-lg in the examples); height is derived automatically from the aspect-video, aspect-square, or aspect-ratio CSS value, so it reflows correctly at any breakpoint.",
+  "accessibility": [
+    "Images inside the ratio container carry descriptive alt text; decorative overlay icons are marked aria-hidden.",
+    "The video play button uses an aria-label since it is icon-only.",
+    "object-cover on the image preserves visual proportions inside the fixed container instead of stretching or distorting it."
+  ],
+  "compatibleWith": ["application-media", "application-modals"],
+  "variants": [
+    {
+      "id": "aspect-ratio-1",
+      "title": "16:9 image",
+      "description": "Widescreen image container using Tailwind's aspect-video utility",
+      "source": {
+        "html": "../../../../public/examples/application/aspect-ratio/1.html",
+        "tsx": "tsx/AspectRatioVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": ["The image carries descriptive alt text."]
+    },
+    {
+      "id": "aspect-ratio-1-dark",
+      "title": "16:9 image (Dark)",
+      "description": "Widescreen image container using Tailwind's aspect-video utility",
+      "source": {
+        "html": "../../../../public/examples/application/aspect-ratio/1-dark.html",
+        "tsx": "tsx/AspectRatioVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": ["The loading background color meets WCAG AA contrast against the dark page background."]
+    },
+    {
+      "id": "aspect-ratio-2",
+      "title": "1:1 square",
+      "description": "Square avatar-style image container using Tailwind's aspect-square utility",
+      "source": {
+        "html": "../../../../public/examples/application/aspect-ratio/2.html",
+        "tsx": "tsx/AspectRatioVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": ["The image carries descriptive alt text."]
+    },
+    {
+      "id": "aspect-ratio-2-dark",
+      "title": "1:1 square (Dark)",
+      "description": "Square avatar-style image container using Tailwind's aspect-square utility",
+      "source": {
+        "html": "../../../../public/examples/application/aspect-ratio/2-dark.html",
+        "tsx": "tsx/AspectRatioVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": ["The loading background color meets WCAG AA contrast against the dark page background."]
+    },
+    {
+      "id": "aspect-ratio-3",
+      "title": "21:9 video embed",
+      "description": "Cinematic-ratio video placeholder with a centered play button overlay using an explicit CSS aspect-ratio value",
+      "source": {
+        "html": "../../../../public/examples/application/aspect-ratio/3.html",
+        "tsx": "tsx/AspectRatioVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": ["The play button has an aria-label since it contains only an icon."]
+    },
+    {
+      "id": "aspect-ratio-3-dark",
+      "title": "21:9 video embed (Dark)",
+      "description": "Cinematic-ratio video placeholder with a centered play button overlay using an explicit CSS aspect-ratio value",
+      "source": {
+        "html": "../../../../public/examples/application/aspect-ratio/3-dark.html",
+        "tsx": "tsx/AspectRatioVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": ["The play button retains sufficient contrast against the dark video background."]
+    }
+  ]
+}
