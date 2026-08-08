@@ -292,7 +292,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 <!-- Theme: Commerce / finance -->
 - [x] (builder-8) Invoice Table — 3-item invoice w/ Pending badge, computed subtotal/8% tax/$9,806.40 total (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [x] (builder-6) Payment Method Card — 2 variants (single saved card, selectable list with add-new affordance), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
-- [~] (builder-6) Discount Code Field — promo input with apply button and applied/invalid states; distinct from copy-field.
+- [ ] Discount Code Field — promo input with apply button and applied/invalid states; distinct from copy-field.
 - [x] (builder-2) Order Status Tracker — 4-stage horizontal stepper (Placed/Shipped complete, Out for delivery current w/ pulse ring, Delivered upcoming w/ est. date), state computed from a single currentStepIndex, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components
 - [ ] Refund Request Panel — reason select, amount, and note with submit; absent from library.
 
