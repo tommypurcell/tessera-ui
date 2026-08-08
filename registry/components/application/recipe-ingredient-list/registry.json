@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-recipe-ingredient-list",
+  "title": "Recipe Ingredient List",
+  "description": "Checkable recipe ingredient list with a serving-size scaler; every displayed quantity is recalculated live from each ingredient's base quantity and the current servings count.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["recipe", "cooking", "checklist", "scaler"],
+  "useWhen": [
+    "Showing a recipe's ingredient list where the user may want to cook a different number of servings than the recipe's default.",
+    "Ingredients benefit from a checkable state to track shopping or mise en place progress, separate from the quantity scaling.",
+    "Quantities should always be mathematically consistent with the selected serving count rather than a fixed set of pre-written amounts."
+  ],
+  "avoidWhen": [
+    "You need a generic to-do list with an add-item input — use `task-checklist` for that open-ended list pattern instead.",
+    "There's no serving concept (e.g. a non-scalable prep list) — a plain checklist is enough.",
+    "Ingredient amounts don't scale linearly (e.g. spices, leavening) — flag those separately rather than auto-scaling them with everything else."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Fixed-width card (max-w-sm) with a compact servings stepper in the header; ingredient text wraps rather than overflowing at narrow widths.",
+  "accessibility": [
+    "Every displayed quantity is computed from the same baseQuantity and servings/baseServings ratio, so ingredients can never fall out of sync with the selected serving size.",
+    "Serving stepper buttons are real disabled <button>s at the min/max bounds, not just visually dimmed.",
+    "Checked ingredients are shown with both a checked checkbox and a strikethrough style, never relying on strikethrough alone."
+  ],
+  "compatibleWith": ["application-task-checklist", "application-recipe-step-card"],
+  "variants": [
+    {
+      "id": "recipe-ingredient-list-1",
+      "title": "Recipe Ingredient List",
+      "description": "4-serving base recipe (flour, sugar, eggs, butter) with a working serving stepper that recalculates every quantity live as servings change.",
+      "source": {
+        "html": "../../../../public/examples/application/recipe-ingredient-list/1.html",
+        "tsx": "tsx/RecipeIngredientListVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "checked"],
+      "accessibility": [
+        "Quantities are recalculated from baseQuantity and the servings ratio on every stepper click, verified interactively."
+      ]
+    },
+    {
+      "id": "recipe-ingredient-list-1-dark",
+      "title": "Recipe Ingredient List (Dark)",
+      "description": "Recipe ingredient list adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/recipe-ingredient-list/1-dark.html",
+        "tsx": "tsx/RecipeIngredientListVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "checked"],
+      "accessibility": [
+        "Checkbox and text colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

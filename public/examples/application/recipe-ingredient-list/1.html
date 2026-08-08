@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex justify-center p-6">
+    <div id="recipe-1" class="flex w-full max-w-sm flex-col gap-3 rounded-lg border border-gray-200 bg-white p-5">
+      <div class="flex items-center justify-between">
+        <h2 class="text-sm font-medium text-gray-900">Ingredients</h2>
+        <div class="flex items-center gap-2">
+          <button type="button" class="js-decrement flex size-6 items-center justify-center rounded-md border border-gray-300 text-gray-500 hover:bg-gray-50" aria-label="Decrease servings">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" />
+            </svg>
+          </button>
+          <span class="js-servings-out w-20 shrink-0 text-center text-xs text-gray-500">4 servings</span>
+          <button type="button" class="js-increment flex size-6 items-center justify-center rounded-md border border-gray-300 text-gray-500 hover:bg-gray-50" aria-label="Increase servings">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <ul class="flex flex-col gap-1.5">
+        <li>
+          <label class="flex cursor-pointer items-center gap-2.5 rounded-md px-1.5 py-1 hover:bg-gray-50">
+            <input type="checkbox" class="js-check size-4 shrink-0 rounded border-gray-300 text-blue-600 focus:ring-blue-500" />
+            <span class="js-label text-sm text-gray-700"><span class="js-qty font-medium text-gray-900">2 cups</span> all-purpose flour</span>
+          </label>
+        </li>
+        <li>
+          <label class="flex cursor-pointer items-center gap-2.5 rounded-md px-1.5 py-1 hover:bg-gray-50">
+            <input type="checkbox" class="js-check size-4 shrink-0 rounded border-gray-300 text-blue-600 focus:ring-blue-500" />
+            <span class="js-label text-sm text-gray-700"><span class="js-qty font-medium text-gray-900">1 cup</span> sugar</span>
+          </label>
+        </li>
+        <li>
+          <label class="flex cursor-pointer items-center gap-2.5 rounded-md px-1.5 py-1 hover:bg-gray-50">
+            <input type="checkbox" class="js-check size-4 shrink-0 rounded border-gray-300 text-blue-600 focus:ring-blue-500" />
+            <span class="js-label text-sm text-gray-700"><span class="js-qty font-medium text-gray-900">3</span> eggs</span>
+          </label>
+        </li>
+        <li>
+          <label class="flex cursor-pointer items-center gap-2.5 rounded-md px-1.5 py-1 hover:bg-gray-50">
+            <input type="checkbox" class="js-check size-4 shrink-0 rounded border-gray-300 text-blue-600 focus:ring-blue-500" />
+            <span class="js-label text-sm text-gray-700"><span class="js-qty font-medium text-gray-900">0.5 cups</span> butter, melted</span>
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      ;(function () {
+        var root = document.getElementById('recipe-1')
+        var baseServings = 4
+        var servings = 4
+        var minServings = 1
+        var maxServings = 12
+
+        var ingredients = [
+          { el: null, baseQty: 2, unit: 'cup', name: 'all-purpose flour' },
+          { el: null, baseQty: 1, unit: 'cup', name: 'sugar' },
+          { el: null, baseQty: 3, unit: '', name: 'eggs' },
+          { el: null, baseQty: 0.5, unit: 'cup', name: 'butter, melted' },
+        ]
+
+        var qtyEls = root.querySelectorAll('.js-qty')
+        qtyEls.forEach(function (el, i) {
+          ingredients[i].el = el
+        })
+
+        var servingsOut = root.querySelector('.js-servings-out')
+        var decrementBtn = root.querySelector('.js-decrement')
+        var incrementBtn = root.querySelector('.js-increment')
+        var checks = root.querySelectorAll('.js-check')
+
+        function formatQty(value) {
+          var rounded = Math.round(value * 100) / 100
+          if (Number.isInteger(rounded)) return String(rounded)
+          return rounded.toFixed(2).replace(/0+$/, '').replace(/\.$/, '')
+        }
+
+        function render() {
+          servingsOut.textContent = servings + (servings === 1 ? ' serving' : ' servings')
+          decrementBtn.disabled = servings <= minServings
+          incrementBtn.disabled = servings >= maxServings
+          decrementBtn.classList.toggle('opacity-40', servings <= minServings)
+          incrementBtn.classList.toggle('opacity-40', servings >= maxServings)
+
+          ingredients.forEach(function (ingredient) {
+            var scaled = ingredient.baseQty * (servings / baseServings)
+            var unit = ingredient.unit && scaled !== 1 ? ingredient.unit + 's' : ingredient.unit
+            var text = formatQty(scaled) + (unit ? ' ' + unit : '')
+            ingredient.el.textContent = text
+          })
+        }
+
+        decrementBtn.addEventListener('click', function () {
+          servings = Math.max(minServings, servings - 1)
+          render()
+        })
+
+        incrementBtn.addEventListener('click', function () {
+          servings = Math.min(maxServings, servings + 1)
+          render()
+        })
+
+        checks.forEach(function (checkbox) {
+          checkbox.addEventListener('change', function () {
+            var label = checkbox.closest('label').querySelector('.js-label')
+            label.classList.toggle('text-gray-400', checkbox.checked)
+            label.classList.toggle('line-through', checkbox.checked)
+            label.classList.toggle('text-gray-700', !checkbox.checked)
+          })
+        })
+
+        render()
+      })()
+    </script>
+  </body>
+</html>
