@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex min-h-64 items-center justify-center bg-gray-950 p-6">
+    <div class="w-full max-w-sm rounded-lg border border-gray-700 bg-gray-900 p-4 shadow-sm">
+      <span class="block text-sm font-medium text-gray-300" id="duration-input-preset-label-dark">Timer duration</span>
+      <div role="radiogroup" aria-labelledby="duration-input-preset-label-dark" class="mt-2 flex flex-wrap gap-1.5">
+        <button type="button" role="radio" aria-checked="false" class="rounded-full border border-gray-700 bg-gray-900 px-3 py-1 text-xs font-medium text-gray-300 hover:bg-gray-800">15m</button>
+        <button type="button" role="radio" aria-checked="false" class="rounded-full border border-gray-700 bg-gray-900 px-3 py-1 text-xs font-medium text-gray-300 hover:bg-gray-800">30m</button>
+        <button type="button" role="radio" aria-checked="true" class="rounded-full bg-white px-3 py-1 text-xs font-medium text-gray-900">1h</button>
+        <button type="button" role="radio" aria-checked="false" class="rounded-full border border-gray-700 bg-gray-900 px-3 py-1 text-xs font-medium text-gray-300 hover:bg-gray-800">2h</button>
+        <button type="button" role="radio" aria-checked="false" class="rounded-full border border-gray-700 bg-gray-900 px-3 py-1 text-xs font-medium text-gray-300 hover:bg-gray-800">Custom</button>
+      </div>
+
+      <div class="mt-3 flex items-center gap-1 border-t border-gray-700 pt-3">
+        <label for="duration-input-custom-h-dark" class="sr-only">Custom hours</label>
+        <input
+          id="duration-input-custom-h-dark"
+          type="text"
+          inputmode="numeric"
+          placeholder="0"
+          disabled
+          class="w-10 rounded-md border-gray-700 bg-gray-800 py-1 text-center text-sm text-gray-500 shadow-sm"
+        />
+        <span class="text-sm text-gray-500">h</span>
+        <label for="duration-input-custom-m-dark" class="sr-only">Custom minutes</label>
+        <input
+          id="duration-input-custom-m-dark"
+          type="text"
+          inputmode="numeric"
+          placeholder="00"
+          disabled
+          class="w-10 rounded-md border-gray-700 bg-gray-800 py-1 text-center text-sm text-gray-500 shadow-sm"
+        />
+        <span class="text-sm text-gray-500">m</span>
+        <span class="ml-auto text-xs text-gray-400">Selected: 1h 00m</span>
+      </div>
+    </div>
+  </body>
+</html>

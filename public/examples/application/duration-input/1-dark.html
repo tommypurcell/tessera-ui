@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex min-h-64 items-center justify-center bg-gray-950 p-6">
+    <div class="w-full max-w-xs">
+      <span class="block text-sm font-medium text-gray-300" id="duration-input-label-dark">Estimated time</span>
+      <div role="group" aria-labelledby="duration-input-label-dark" class="mt-1.5 flex items-center gap-2">
+        <div class="flex items-center rounded-md border border-gray-700 bg-gray-900 pr-3 shadow-sm focus-within:border-white focus-within:ring-1 focus-within:ring-white">
+          <label for="duration-input-hours-dark" class="sr-only">Hours</label>
+          <input
+            id="duration-input-hours-dark"
+            type="text"
+            inputmode="numeric"
+            value="2"
+            class="w-12 border-0 bg-transparent py-2 pl-3 text-right text-sm text-white focus:outline-none focus:ring-0"
+          />
+          <span class="text-sm text-gray-500">h</span>
+        </div>
+
+        <div class="flex items-center rounded-md border border-gray-700 bg-gray-900 pr-3 shadow-sm focus-within:border-white focus-within:ring-1 focus-within:ring-white">
+          <label for="duration-input-minutes-dark" class="sr-only">Minutes</label>
+          <input
+            id="duration-input-minutes-dark"
+            type="text"
+            inputmode="numeric"
+            value="45"
+            class="w-12 border-0 bg-transparent py-2 pl-3 text-right text-sm text-white focus:outline-none focus:ring-0"
+          />
+          <span class="text-sm text-gray-500">m</span>
+        </div>
+      </div>
+      <p class="mt-1.5 text-xs text-gray-400">Total: 2h 45m</p>
+    </div>
+  </body>
+</html>
