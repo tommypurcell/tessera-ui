@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-refund-request-panel",
+  "title": "Refund Request Panel",
+  "description": "Refund form with an order context line, reason select, prefilled/capped amount field, and an optional note, driven by a typed order/reason prop contract.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["refund", "payments", "billing", "support", "form"],
+  "useWhen": [
+    "Support or billing tooling needs a focused form for issuing a full or partial refund against a specific order.",
+    "The refund amount should default to the charge total but remain editable up to a maximum.",
+    "A reason code should be captured alongside an optional free-text note for records."
+  ],
+  "avoidWhen": [
+    "The refund is always full-amount with no reason capture — a single confirm Dialog is simpler than a form.",
+    "You need to process the actual payment refund logic here — this is a form shell; wire the submit handler to your payment provider.",
+    "Multiple line items need individual partial refunds — build a line-item refund table instead of a single amount field."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The panel is a single fixed-width card with intrinsic sizing; place it inside a dialog, drawer, or dedicated page to control its container width.",
+  "accessibility": [
+    "Every field (reason, amount, note) has a visible, associated <label>, including the optional note field which is marked as such in its label text.",
+    "The amount input's currency symbol is a decorative prefix; the numeric value itself remains the accessible content of the field.",
+    "The maximum-refundable helper text sits directly below the amount field so screen readers encounter the constraint right after the input."
+  ],
+  "compatibleWith": ["application-dialog", "application-form-row"],
+  "variants": [
+    {
+      "id": "refund-request-panel-1",
+      "title": "Refund Request Panel",
+      "description": "Refund form with an order/charge summary line, a reason select, a currency-prefixed amount field with a max-refundable hint, an optional note, and cancel/issue actions.",
+      "source": {
+        "html": "../../../../public/examples/application/refund-request-panel/1.html",
+        "tsx": "tsx/RefundRequestPanelVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The optional Note label includes the word '(optional)' as visible text, not just a placeholder cue."
+      ]
+    },
+    {
+      "id": "refund-request-panel-1-dark",
+      "title": "Refund Request Panel (Dark)",
+      "description": "Refund request form adapted for dark surfaces with the same order-context, reason, amount, and note structure.",
+      "source": {
+        "html": "../../../../public/examples/application/refund-request-panel/1-dark.html",
+        "tsx": "tsx/RefundRequestPanelVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Field labels, helper text, and input borders must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
