@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-milestone-card",
+  "title": "Milestone Marker Card",
+  "description": "Dated goal cards with a progress bar, linked-task count, and contributor avatars, plus a compact list-row variant for milestone overviews.",
+  "category": "application/milestone-card",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "milestone-card",
+    "milestone",
+    "goal",
+    "progress",
+    "deadline"
+  ],
+  "useWhen": [
+    "Dated goal cards with a progress bar, linked-task count, and contributor avatars, plus a compact list-row variant for milestone overviews."
+  ],
+  "avoidWhen": [
+    "Avoid milestone marker card when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Milestone Marker Card uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Provide meaningful alternative text for informative images and empty alt text for decorative images.",
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "milestone-card-1",
+      "title": "Detail card",
+      "description": "Detail card Dated goal cards with a progress bar, linked-task count, and contributor avatars, plus a compact list-row variant for milestone overviews.",
+      "source": {
+        "html": "../../../../public/examples/application/milestone-card/1.html",
+        "tsx": "tsx/MilestoneCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "milestone-card-1-dark",
+      "title": "Detail card (Dark)",
+      "description": "Detail card Dated goal cards with a progress bar, linked-task count, and contributor avatars, plus a compact list-row variant for milestone overviews.",
+      "source": {
+        "html": "../../../../public/examples/application/milestone-card/1-dark.html",
+        "tsx": "tsx/MilestoneCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "milestone-card-2",
+      "title": "Compact list",
+      "description": "Compact list Dated goal cards with a progress bar, linked-task count, and contributor avatars, plus a compact list-row variant for milestone overviews.",
+      "source": {
+        "html": "../../../../public/examples/application/milestone-card/2.html",
+        "tsx": "tsx/MilestoneCardVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "milestone-card-2-dark",
+      "title": "Compact list (Dark)",
+      "description": "Compact list Dated goal cards with a progress bar, linked-task count, and contributor avatars, plus a compact list-row variant for milestone overviews.",
+      "source": {
+        "html": "../../../../public/examples/application/milestone-card/2-dark.html",
+        "tsx": "tsx/MilestoneCardVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

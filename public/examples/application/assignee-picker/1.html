@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex min-h-64 items-start justify-center bg-gray-50 p-6">
+    <div class="relative inline-block">
+      <button
+        type="button"
+        aria-haspopup="listbox"
+        aria-expanded="true"
+        class="inline-flex items-center gap-2 rounded-md border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2"
+      >
+        <img src="https://i.pravatar.cc/48?img=12" alt="" class="size-5 rounded-full object-cover" />
+        Priya Shah
+      </button>
+
+      <div class="absolute left-0 top-full z-10 mt-2 w-64 rounded-lg border border-gray-200 bg-white shadow-lg shadow-gray-900/5">
+        <div class="border-b border-gray-100 p-2">
+          <label for="assignee-picker-search" class="sr-only">Search members</label>
+          <input
+            id="assignee-picker-search"
+            type="text"
+            placeholder="Search members…"
+            class="block w-full rounded-md border-gray-300 text-sm text-gray-700 shadow-sm focus:border-gray-900 focus:ring-gray-900"
+          />
+        </div>
+        <ul role="listbox" aria-label="Assignees" class="max-h-52 overflow-y-auto p-1">
+          <li role="option" aria-selected="true" class="flex items-center gap-2.5 rounded-md px-2 py-1.5 hover:bg-gray-50">
+            <img src="https://i.pravatar.cc/48?img=12" alt="" class="size-6 rounded-full object-cover" />
+            <span class="min-w-0 flex-1 truncate text-sm text-gray-900">Priya Shah</span>
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="size-4 shrink-0 text-gray-900">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+          </li>
+          <li role="option" aria-selected="false" class="flex items-center gap-2.5 rounded-md px-2 py-1.5 hover:bg-gray-50">
+            <img src="https://i.pravatar.cc/48?img=32" alt="" class="size-6 rounded-full object-cover" />
+            <span class="min-w-0 flex-1 truncate text-sm text-gray-700">Ethan Kim</span>
+          </li>
+          <li role="option" aria-selected="false" class="flex items-center gap-2.5 rounded-md px-2 py-1.5 hover:bg-gray-50">
+            <img src="https://i.pravatar.cc/48?img=5" alt="" class="size-6 rounded-full object-cover" />
+            <span class="min-w-0 flex-1 truncate text-sm text-gray-700">Sofia Rossi</span>
+          </li>
+          <li role="option" aria-selected="false" class="flex items-center gap-2.5 rounded-md px-2 py-1.5 hover:bg-gray-50">
+            <img src="https://i.pravatar.cc/48?img=8" alt="" class="size-6 rounded-full object-cover" />
+            <span class="min-w-0 flex-1 truncate text-sm text-gray-700">Yuki Tanaka</span>
+          </li>
+          <li>
+            <button type="button" class="flex w-full items-center gap-2.5 rounded-md px-2 py-1.5 text-left text-sm text-gray-500 hover:bg-gray-50">
+              <span class="flex size-6 items-center justify-center rounded-full border border-dashed border-gray-300 text-gray-400">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-3">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+              </span>
+              Unassigned
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

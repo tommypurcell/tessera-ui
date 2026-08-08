@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex min-h-64 items-center justify-center bg-gray-950 p-6">
+    <div class="w-full max-w-sm">
+      <h3 class="text-sm font-semibold text-white">Payment methods</h3>
+      <div role="radiogroup" aria-label="Default payment method" class="mt-2 space-y-2">
+        <label class="flex cursor-pointer items-center gap-3 rounded-lg border border-white bg-gray-900 p-3 shadow-sm ring-1 ring-white">
+          <input type="radio" name="payment-method-default-dark" checked class="size-4 border-gray-600 text-white focus:ring-white" />
+          <span class="flex h-7 w-10 shrink-0 items-center justify-center rounded bg-white text-[9px] font-bold italic text-gray-900">VISA</span>
+          <span class="min-w-0 flex-1 text-sm text-white">•••• 4242 <span class="text-gray-500">· 08/28</span></span>
+        </label>
+
+        <label class="flex cursor-pointer items-center gap-3 rounded-lg border border-gray-700 bg-gray-900 p-3 hover:bg-gray-800">
+          <input type="radio" name="payment-method-default-dark" class="size-4 border-gray-600 text-white focus:ring-white" />
+          <span class="flex h-7 w-10 shrink-0 items-center justify-center rounded bg-orange-500 text-[9px] font-bold italic text-white">MC</span>
+          <span class="min-w-0 flex-1 text-sm text-gray-300">•••• 8410 <span class="text-gray-500">· 02/27</span></span>
+        </label>
+
+        <button
+          type="button"
+          class="flex w-full items-center justify-center gap-1.5 rounded-lg border border-dashed border-gray-700 p-3 text-sm font-medium text-gray-400 hover:border-gray-600 hover:text-gray-200"
+        >
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+          </svg>
+          Add payment method
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

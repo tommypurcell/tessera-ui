@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-duration-input",
+  "title": "Duration Input",
+  "description": "Segmented hour and minute entry fields for elapsed time, timers, and estimates, with a quick-preset chip variant for common durations.",
+  "category": "application/duration-input",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "duration-input",
+    "duration",
+    "timer",
+    "elapsed",
+    "estimate"
+  ],
+  "useWhen": [
+    "Segmented hour and minute entry fields for elapsed time, timers, and estimates, with a quick-preset chip variant for common durations."
+  ],
+  "avoidWhen": [
+    "Avoid duration input when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Duration Input uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Associate each form field with a visible or programmatic label before production use.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "duration-input-1",
+      "title": "Segmented fields",
+      "description": "Segmented fields Segmented hour and minute entry fields for elapsed time, timers, and estimates, with a quick-preset chip variant for common durations.",
+      "source": {
+        "html": "../../../../public/examples/application/duration-input/1.html",
+        "tsx": "tsx/DurationInputVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "duration-input-1-dark",
+      "title": "Segmented fields (Dark)",
+      "description": "Segmented fields Segmented hour and minute entry fields for elapsed time, timers, and estimates, with a quick-preset chip variant for common durations.",
+      "source": {
+        "html": "../../../../public/examples/application/duration-input/1-dark.html",
+        "tsx": "tsx/DurationInputVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "duration-input-2",
+      "title": "Preset chips",
+      "description": "Preset chips Segmented hour and minute entry fields for elapsed time, timers, and estimates, with a quick-preset chip variant for common durations.",
+      "source": {
+        "html": "../../../../public/examples/application/duration-input/2.html",
+        "tsx": "tsx/DurationInputVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "duration-input-2-dark",
+      "title": "Preset chips (Dark)",
+      "description": "Preset chips Segmented hour and minute entry fields for elapsed time, timers, and estimates, with a quick-preset chip variant for common durations.",
+      "source": {
+        "html": "../../../../public/examples/application/duration-input/2-dark.html",
+        "tsx": "tsx/DurationInputVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    }
+  ]
+}

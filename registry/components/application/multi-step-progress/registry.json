@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-multi-step-progress",
+  "title": "Multi-Step Form Progress",
+  "description": "Progress headers for paged forms — a numbered step rail with connector lines or a percentage bar with a compact step counter.",
+  "category": "application/multi-step-progress",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "multi-step-progress",
+    "form",
+    "progress",
+    "steps",
+    "wizard"
+  ],
+  "useWhen": [
+    "Progress headers for paged forms — a numbered step rail with connector lines or a percentage bar with a compact step counter."
+  ],
+  "avoidWhen": [
+    "Avoid multi-step form progress when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Multi-Step Form Progress uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "multi-step-progress-1",
+      "title": "Numbered step rail",
+      "description": "Numbered step rail Progress headers for paged forms — a numbered step rail with connector lines or a percentage bar with a compact step counter.",
+      "source": {
+        "html": "../../../../public/examples/application/multi-step-progress/1.html",
+        "tsx": "tsx/MultiStepProgressVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "multi-step-progress-1-dark",
+      "title": "Numbered step rail (Dark)",
+      "description": "Numbered step rail Progress headers for paged forms — a numbered step rail with connector lines or a percentage bar with a compact step counter.",
+      "source": {
+        "html": "../../../../public/examples/application/multi-step-progress/1-dark.html",
+        "tsx": "tsx/MultiStepProgressVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "multi-step-progress-2",
+      "title": "Percentage bar",
+      "description": "Percentage bar Progress headers for paged forms — a numbered step rail with connector lines or a percentage bar with a compact step counter.",
+      "source": {
+        "html": "../../../../public/examples/application/multi-step-progress/2.html",
+        "tsx": "tsx/MultiStepProgressVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "multi-step-progress-2-dark",
+      "title": "Percentage bar (Dark)",
+      "description": "Percentage bar Progress headers for paged forms — a numbered step rail with connector lines or a percentage bar with a compact step counter.",
+      "source": {
+        "html": "../../../../public/examples/application/multi-step-progress/2-dark.html",
+        "tsx": "tsx/MultiStepProgressVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}
