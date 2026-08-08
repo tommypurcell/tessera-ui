@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-xs flex-col items-center gap-3 p-6">
+    <p class="text-sm font-medium text-gray-700">Enter the 6-digit code</p>
+
+    <div class="flex gap-2" role="group" aria-label="One-time code">
+      <span class="flex size-10 items-center justify-center rounded-md border border-gray-200 bg-gray-50 text-sm font-semibold text-gray-900">4</span>
+      <span class="flex size-10 items-center justify-center rounded-md border border-gray-200 bg-gray-50 text-sm font-semibold text-gray-900">1</span>
+      <span class="flex size-10 items-center justify-center rounded-md border border-gray-900 bg-white text-sm font-semibold text-gray-900">2</span>
+      <span class="flex size-10 items-center justify-center rounded-md border border-gray-200 bg-gray-50"></span>
+      <span class="flex size-10 items-center justify-center rounded-md border border-gray-200 bg-gray-50"></span>
+      <span class="flex size-10 items-center justify-center rounded-md border border-gray-200 bg-gray-50"></span>
+    </div>
+
+    <p class="text-sm text-gray-500" role="status" aria-live="polite">
+      Resend code in <span id="otp-timer-1" class="font-mono font-medium text-gray-700">00:24</span>
+    </p>
+
+    <script>
+      ;(function () {
+        var timeEl = document.getElementById('otp-timer-1')
+        var statusEl = timeEl.parentElement
+        var remaining = 24
+
+        function tick() {
+          if (remaining <= 0) return
+          remaining -= 1
+          var mins = Math.floor(remaining / 60)
+          var secs = remaining % 60
+          timeEl.textContent = String(mins).padStart(2, '0') + ':' + String(secs).padStart(2, '0')
+
+          if (remaining === 0) {
+            statusEl.innerHTML = 'Didn’t get a code? <button type="button" class="font-semibold text-blue-600 hover:text-blue-700">Resend</button>'
+          }
+        }
+
+        setInterval(tick, 1000)
+      })()
+    </script>
+  </body>
+</html>

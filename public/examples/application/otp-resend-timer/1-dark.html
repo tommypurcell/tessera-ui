@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-xs flex-col items-center gap-3 p-6">
+    <p class="text-sm font-medium text-gray-200">Enter the 6-digit code</p>
+
+    <div class="flex gap-2" role="group" aria-label="One-time code">
+      <span class="flex size-10 items-center justify-center rounded-md border border-gray-700 bg-gray-800 text-sm font-semibold text-white">4</span>
+      <span class="flex size-10 items-center justify-center rounded-md border border-gray-700 bg-gray-800 text-sm font-semibold text-white">1</span>
+      <span class="flex size-10 items-center justify-center rounded-md border border-gray-100 bg-gray-900 text-sm font-semibold text-white">2</span>
+      <span class="flex size-10 items-center justify-center rounded-md border border-gray-700 bg-gray-800"></span>
+      <span class="flex size-10 items-center justify-center rounded-md border border-gray-700 bg-gray-800"></span>
+      <span class="flex size-10 items-center justify-center rounded-md border border-gray-700 bg-gray-800"></span>
+    </div>
+
+    <p class="text-sm text-gray-400" role="status" aria-live="polite">
+      Resend code in <span id="otp-timer-1-dark" class="font-mono font-medium text-gray-200">00:24</span>
+    </p>
+
+    <script>
+      ;(function () {
+        var timeEl = document.getElementById('otp-timer-1-dark')
+        var statusEl = timeEl.parentElement
+        var remaining = 24
+
+        function tick() {
+          if (remaining <= 0) return
+          remaining -= 1
+          var mins = Math.floor(remaining / 60)
+          var secs = remaining % 60
+          timeEl.textContent = String(mins).padStart(2, '0') + ':' + String(secs).padStart(2, '0')
+
+          if (remaining === 0) {
+            statusEl.innerHTML = 'Didn’t get a code? <button type="button" class="font-semibold text-blue-400 hover:text-blue-300">Resend</button>'
+          }
+        }
+
+        setInterval(tick, 1000)
+      })()
+    </script>
+  </body>
+</html>

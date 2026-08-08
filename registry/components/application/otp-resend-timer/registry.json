@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-otp-resend-timer",
+  "title": "OTP Resend Timer",
+  "description": "One-time code entry footer components with a resend countdown and attempt counter, for verification and login flows.",
+  "category": "application/otp-resend-timer",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "otp-resend-timer",
+    "otp",
+    "verification",
+    "resend",
+    "countdown"
+  ],
+  "useWhen": [
+    "One-time code entry footer components with a resend countdown and attempt counter, for verification and login flows."
+  ],
+  "avoidWhen": [
+    "Avoid otp resend timer when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "OTP Resend Timer uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "otp-resend-timer-1",
+      "title": "Resend countdown that reveals a Resend action",
+      "description": "Resend countdown that reveals a Resend action One-time code entry footer components with a resend countdown and attempt counter, for verification and login flows.",
+      "source": {
+        "html": "../../../../public/examples/application/otp-resend-timer/1.html",
+        "tsx": "tsx/OtpResendTimerVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "otp-resend-timer-1-dark",
+      "title": "Resend countdown that reveals a Resend action (Dark)",
+      "description": "Resend countdown that reveals a Resend action One-time code entry footer components with a resend countdown and attempt counter, for verification and login flows.",
+      "source": {
+        "html": "../../../../public/examples/application/otp-resend-timer/1-dark.html",
+        "tsx": "tsx/OtpResendTimerVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "otp-resend-timer-2",
+      "title": "Error state with remaining attempts and resend countdown",
+      "description": "Error state with remaining attempts and resend countdown One-time code entry footer components with a resend countdown and attempt counter, for verification and login flows.",
+      "source": {
+        "html": "../../../../public/examples/application/otp-resend-timer/2.html",
+        "tsx": "tsx/OtpResendTimerVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "otp-resend-timer-2-dark",
+      "title": "Error state with remaining attempts and resend countdown (Dark)",
+      "description": "Error state with remaining attempts and resend countdown One-time code entry footer components with a resend countdown and attempt counter, for verification and login flows.",
+      "source": {
+        "html": "../../../../public/examples/application/otp-resend-timer/2-dark.html",
+        "tsx": "tsx/OtpResendTimerVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}
