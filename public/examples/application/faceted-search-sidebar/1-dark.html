@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-xs p-6">
+    <nav aria-label="Filters" class="flex flex-col divide-y divide-gray-800 rounded-xl border border-gray-800 bg-gray-950 shadow-sm">
+      <div class="p-4">
+        <button type="button" aria-expanded="true" aria-controls="facet-category" class="flex w-full items-center justify-between text-sm font-semibold text-white">
+          Category
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4 rotate-180 text-gray-400">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+          </svg>
+        </button>
+
+        <div id="facet-category" class="mt-3 flex flex-col gap-2.5">
+          <label class="flex items-center justify-between gap-2 text-sm text-gray-300">
+            <span class="flex items-center gap-2">
+              <input type="checkbox" checked class="size-4 rounded border-gray-700 bg-gray-900 text-blue-500 focus:ring-blue-500" />
+              Headphones
+            </span>
+            <span class="text-xs text-gray-500">128</span>
+          </label>
+          <label class="flex items-center justify-between gap-2 text-sm text-gray-300">
+            <span class="flex items-center gap-2">
+              <input type="checkbox" class="size-4 rounded border-gray-700 bg-gray-900 text-blue-500 focus:ring-blue-500" />
+              Speakers
+            </span>
+            <span class="text-xs text-gray-500">64</span>
+          </label>
+          <label class="flex items-center justify-between gap-2 text-sm text-gray-300">
+            <span class="flex items-center gap-2">
+              <input type="checkbox" class="size-4 rounded border-gray-700 bg-gray-900 text-blue-500 focus:ring-blue-500" />
+              Microphones
+            </span>
+            <span class="text-xs text-gray-500">37</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="p-4">
+        <button type="button" aria-expanded="true" aria-controls="facet-price" class="flex w-full items-center justify-between text-sm font-semibold text-white">
+          Price
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4 rotate-180 text-gray-400">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+          </svg>
+        </button>
+
+        <div id="facet-price" class="mt-3 flex flex-col gap-3">
+          <div class="relative h-1.5 rounded-full bg-gray-800">
+            <div class="absolute inset-y-0 left-[20%] right-[35%] rounded-full bg-blue-500"></div>
+            <span class="absolute -top-1 left-[20%] size-3.5 -translate-x-1/2 rounded-full border-2 border-blue-500 bg-gray-950"></span>
+            <span class="absolute -top-1 right-[35%] size-3.5 translate-x-1/2 rounded-full border-2 border-blue-500 bg-gray-950"></span>
+          </div>
+          <div class="flex items-center justify-between text-xs text-gray-500">
+            <span>$25</span>
+            <span>$180</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4">
+        <button type="button" aria-expanded="false" aria-controls="facet-brand" class="flex w-full items-center justify-between text-sm font-semibold text-white">
+          Brand
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4 text-gray-400">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="p-4">
+        <button type="button" class="text-xs font-medium text-gray-400 hover:text-white">
+          Clear all filters
+        </button>
+      </div>
+    </nav>
+  </body>
+</html>
