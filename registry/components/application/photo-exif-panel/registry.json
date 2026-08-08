@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "name": "application-photo-exif-panel",
+  "title": "Photo EXIF Panel",
+  "description": "Photography EXIF metadata panel: a luminance histogram above camera, lens, focal length, aperture, shutter speed, ISO, and dimensions rows.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["photography", "exif", "metadata", "camera", "histogram"],
+  "useWhen": [
+    "Building a photo management, editing, or portfolio tool that needs to surface a shot's capture details.",
+    "You need a histogram alongside metadata rows in a compact sidebar-style panel.",
+    "Distinct from a generic Media component, which displays the image itself, rather than its embedded capture metadata and tonal distribution."
+  ],
+  "avoidWhen": [
+    "You just need to display the photo, not its metadata — use a plain image or Media component instead.",
+    "EXIF data isn't available or relevant — a simpler caption is enough."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The histogram SVG uses preserveAspectRatio=\"none\" so it stretches to the panel's full width at any container size; metadata rows keep label and value on one line via flex justify-between.",
+  "accessibility": [
+    "The histogram SVG carries role=\"img\" and a descriptive aria-label summarizing its shape (e.g. mid-tone weighted with a highlight peak), since the visual chart alone conveys no text alternative.",
+    "Metadata is marked up as a definition list (dl/dt/dd), giving assistive tech a clear label/value relationship for each row."
+  ],
+  "compatibleWith": ["application-photo-grid-selectable"],
+  "variants": [
+    {
+      "id": "photo-exif-panel-1",
+      "title": "Photo EXIF Panel",
+      "description": "A luminance histogram above Canon EOS R6 camera/lens/exposure metadata rows.",
+      "source": {
+        "html": "../../../../public/examples/application/photo-exif-panel/1.html",
+        "tsx": "tsx/PhotoExifPanelVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Histogram carries role=\"img\" with a descriptive aria-label; metadata uses a semantic definition list."
+      ]
+    },
+    {
+      "id": "photo-exif-panel-1-dark",
+      "title": "Photo EXIF Panel (Dark)",
+      "description": "The same EXIF panel adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/photo-exif-panel/1-dark.html",
+        "tsx": "tsx/PhotoExifPanelVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Histogram and metadata text contrast remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}
