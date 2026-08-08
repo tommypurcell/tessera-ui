@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex justify-center bg-gray-950 p-6">
+    <div class="flex w-full max-w-xs flex-col gap-2 rounded-lg border border-red-900 bg-red-950/40 p-5">
+      <div class="flex items-center justify-between">
+        <span class="text-sm font-medium text-gray-400">Freezer temperature</span>
+        <span class="rounded-full bg-red-500/10 px-2 py-0.5 text-xs font-medium text-red-300">Out of range</span>
+      </div>
+
+      <div class="flex items-baseline gap-2">
+        <span class="text-3xl font-semibold text-red-400">28°F</span>
+        <span class="inline-flex items-center gap-0.5 text-xs font-medium text-orange-400">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18" />
+          </svg>
+          3.0°F
+        </span>
+      </div>
+
+      <span class="text-xs text-gray-500">Safe range: 0–15°F</span>
+    </div>
+  </body>
+</html>

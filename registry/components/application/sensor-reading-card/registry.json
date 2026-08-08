@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-sensor-reading-card",
+  "title": "Sensor Reading Card",
+  "description": "Live sensor reading tile (temperature, humidity, etc.) with a trend arrow and a threshold-derived \"Out of range\" alert computed live from a real min/max safe range, for smart-home or IoT dashboards.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["sensor", "iot", "smart-home", "threshold", "alert"],
+  "useWhen": [
+    "Showing a single live sensor reading (temperature, humidity, pressure) with a safe operating range.",
+    "You want the out-of-range alert computed from the real value against real thresholds, not a hand-set flag.",
+    "A trend arrow comparing against the previous reading adds useful context."
+  ],
+  "avoidWhen": [
+    "You're showing multiple body-vital readings together — use vitals-stat-row instead.",
+    "There's no meaningful safe range to check against — use a plain stat-tile instead.",
+    "You need historical trend data, not just the latest reading — pair this card with a chart."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The card is a single block sized to its content; place it in your own grid alongside other sensor cards for a dashboard layout.",
+  "accessibility": [
+    "Out-of-range state is conveyed by both card background/border color and an explicit \"Out of range\" text badge, not color alone.",
+    "The safe range is always shown as visible text, giving context for why a reading is flagged.",
+    "Trend direction (warming/cooling or rising/falling) is conveyed by both an arrow icon and the signed delta value, not rotation alone."
+  ],
+  "compatibleWith": ["application-vitals-stat-row", "application-budget-progress-bar", "application-stat-tile"],
+  "variants": [
+    {
+      "id": "sensor-reading-card-1",
+      "title": "Sensor reading card",
+      "description": "Freezer temperature reading of 28°F against a 0–15°F safe range, shown in the out-of-range alert state with a warming trend, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/sensor-reading-card/1.html",
+        "tsx": "tsx/SensorReadingCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["normal", "out-of-range"],
+      "accessibility": [
+        "The out-of-range check (value < minSafe || value > maxSafe) is computed live, so the alert can never drift out of sync with the reading."
+      ]
+    },
+    {
+      "id": "sensor-reading-card-1-dark",
+      "title": "Sensor reading card (Dark)",
+      "description": "The same out-of-range freezer reading, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/sensor-reading-card/1-dark.html",
+        "tsx": "tsx/SensorReadingCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["normal", "out-of-range"],
+      "accessibility": [
+        "Alert background, border, and text colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
