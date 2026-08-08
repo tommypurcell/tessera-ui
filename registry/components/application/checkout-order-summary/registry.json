@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "application-checkout-order-summary",
+  "title": "Checkout Order Summary",
+  "description": "Itemized subtotal, shipping, and tax with an applicable promo code field and a computed total, ending in a checkout action.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["ecommerce", "checkout", "order", "promo", "total"],
+  "useWhen": [
+    "Building a cart or checkout page that needs a running breakdown of costs before purchase.",
+    "You want to let users apply a promo/discount code and see it reflected in the total immediately.",
+    "Pairing with `cart-line-item` rows to build a full cart-to-checkout flow."
+  ],
+  "avoidWhen": [
+    "You only need to show a single final price with no breakdown — a plain price display is simpler than a full summary.",
+    "The purchase flow has no shipping or tax concepts (e.g. digital-only, single fixed price) — drop those rows rather than showing $0.00 placeholders.",
+    "You need multi-currency or tax-jurisdiction logic — this pattern renders whatever numbers you compute; it does not calculate tax or shipping itself."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Single-column card that stacks below cart line items on narrow viewports and sits in a fixed-width side rail on wider checkout layouts.",
+  "accessibility": [
+    "Cost rows use <dl>/<dt>/<dd> so the label-value relationship is conveyed semantically, not just visually via flex alignment.",
+    "The promo code field has an associated (visually hidden) label rather than relying on placeholder text alone.",
+    "The applied promo line communicates savings through visible text (a minus sign and the code), not color alone.",
+    "The total is visually the largest text in the summary, reflecting its priority in the information hierarchy."
+  ],
+  "compatibleWith": ["application-cart-line-item", "application-product-card"],
+  "variants": [
+    {
+      "id": "checkout-order-summary-1",
+      "title": "Checkout Order Summary",
+      "description": "Subtotal, shipping, tax, an applied promo code with its discount, computed total, and a checkout button.",
+      "source": {
+        "html": "../../../../public/examples/application/checkout-order-summary/1.html",
+        "tsx": "tsx/CheckoutOrderSummaryVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "promo-applied"],
+      "accessibility": [
+        "The total recalculates from real subtotal/shipping/tax/discount state rather than being a static hardcoded figure."
+      ]
+    },
+    {
+      "id": "checkout-order-summary-1-dark",
+      "title": "Checkout Order Summary (Dark)",
+      "description": "Checkout order summary adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/checkout-order-summary/1-dark.html",
+        "tsx": "tsx/CheckoutOrderSummaryVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "promo-applied"],
+      "accessibility": [
+        "Discount text color is tuned to meet WCAG AA contrast against the dark surface while remaining visually distinct from neutral rows."
+      ]
+    }
+  ]
+}
