@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-volunteer-shift-card",
+  "title": "Volunteer Shift Card",
+  "description": "Volunteer shift card with role, date/time, a spots-filled progress bar, and a sign-up action, computed from real spotsFilled/spotsTotal props.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["volunteer", "events", "signup", "scheduling"],
+  "useWhen": [
+    "Listing volunteer shifts or events with limited capacity that supporters can sign up for.",
+    "You want the spots-remaining count and progress bar to always agree with the underlying filled/total numbers.",
+    "The shift can fill up and you need a clear full/disabled end state on the sign-up action."
+  ],
+  "avoidWhen": [
+    "You need a generic appointment or reservation slot with no capacity tracking — use `appointment-slot-card` for that instead.",
+    "Multiple shifts need to be compared in a dense table — this card is sized for a grid of a few shifts, not a data table.",
+    "There's no capacity limit at all — drop the progress bar and use a simpler event card."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Fixed-width card (max-w-sm) that stacks full-width in narrow containers; progress bar and text row scale with the card width.",
+  "accessibility": [
+    "Progress bar fill percentage and the 'left' count are both derived from the same spotsFilled/spotsTotal values, so they can never disagree.",
+    "Capacity is conveyed as text ('X of Y spots filled', 'N left') in addition to the visual bar, never by color or bar length alone.",
+    "The sign-up button is a real disabled <button> with updated label text when the shift is full, not just a visual dimming."
+  ],
+  "compatibleWith": ["application-appointment-slot-card", "application-booking-confirmation-card"],
+  "variants": [
+    {
+      "id": "volunteer-shift-card-1",
+      "title": "Volunteer Shift Card",
+      "description": "Food bank sorting shift, 6 of 8 spots filled, 2 spots left, active sign-up button.",
+      "source": {
+        "html": "../../../../public/examples/application/volunteer-shift-card/1.html",
+        "tsx": "tsx/VolunteerShiftCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Spots-left text and progress bar width are both computed from the same spotsFilled/spotsTotal props."
+      ]
+    },
+    {
+      "id": "volunteer-shift-card-1-dark",
+      "title": "Volunteer Shift Card (Dark)",
+      "description": "Volunteer shift card adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/volunteer-shift-card/1-dark.html",
+        "tsx": "tsx/VolunteerShiftCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Progress bar and text colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

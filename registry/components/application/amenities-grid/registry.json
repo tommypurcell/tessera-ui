@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-amenities-grid",
+  "title": "Amenities Grid",
+  "description": "Icon+label feature grid where excluded items render dimmed with a strikethrough, computed from a real per-item included flag.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["amenities", "features", "grid", "listing"],
+  "useWhen": [
+    "Listing a fixed set of features/amenities for a property, plan, or product where some apply and some don't.",
+    "Each item benefits from a recognizable icon alongside its label for quick scanning.",
+    "You want excluded items to remain visible (crossed out) rather than disappearing, so users see the full feature set."
+  ],
+  "avoidWhen": [
+    "All items are always included (nothing to exclude) — a plain icon list is simpler without the included/excluded branching.",
+    "You need a full comparison across multiple plans/products side by side — use `feature-comparison-matrix` for that tabular case instead.",
+    "Items don't have a natural icon — a plain text list avoids empty or generic icon slots."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Two-column grid by default; adjust grid-cols via className for wider layouts with more amenities per row.",
+  "accessibility": [
+    "Excluded amenities are marked with a real line-through text-decoration, not just faded opacity, so the \"not included\" meaning survives even without color perception.",
+    "Icons are decorative; the amenity name is always present as text, never conveyed by icon alone.",
+    "Included/excluded state is computed from a single boolean per item, so icon dimming and strikethrough always agree."
+  ],
+  "compatibleWith": ["application-feature-comparison-matrix", "application-grids"],
+  "variants": [
+    {
+      "id": "amenities-grid-1",
+      "title": "Amenities Grid",
+      "description": "Four included amenities (Wi-Fi, parking, pool, kitchen) and two excluded ones (A/C, elevator) shown crossed out.",
+      "source": {
+        "html": "../../../../public/examples/application/amenities-grid/1.html",
+        "tsx": "tsx/AmenitiesGridVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["included", "excluded"],
+      "accessibility": [
+        "Excluded styling (dimmed text + strikethrough icon and label) is driven by a single included boolean per amenity."
+      ]
+    },
+    {
+      "id": "amenities-grid-1-dark",
+      "title": "Amenities Grid (Dark)",
+      "description": "Amenities grid adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/amenities-grid/1-dark.html",
+        "tsx": "tsx/AmenitiesGridVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["included", "excluded"],
+      "accessibility": [
+        "Included and excluded text/icon colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

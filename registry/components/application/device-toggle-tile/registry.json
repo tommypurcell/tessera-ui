@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-device-toggle-tile",
+  "title": "Device Toggle Tile",
+  "description": "Smart-home device tile grid with a device icon, name, and an on/off toggle switch, with status text driven by real per-tile toggle state.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["iot", "smart-home", "device", "toggle"],
+  "useWhen": [
+    "Building a smart-home or IoT dashboard where users control multiple devices from one grid.",
+    "Each device benefits from a recognizable icon and immediate on/off status alongside the control.",
+    "You want the toggle's track color to reinforce the device's current state (green when on)."
+  ],
+  "avoidWhen": [
+    "You're toggling a plain user preference/setting, not a physical device — use `preference-toggle-row` instead, which fits list-style settings better.",
+    "The device has more than a binary on/off state (e.g. dimming, temperature) — extend this pattern with the appropriate control rather than forcing a toggle.",
+    "You need a dense list of many devices — a tile grid works best for a handful; consider a list layout at larger scale."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Two-column grid by default; adjust grid-cols via className for wider dashboard layouts with more tiles per row.",
+  "accessibility": [
+    "The toggle is a real checkbox input wrapped in its own <label>, so it is keyboard operable and has a correct accessible name from the visual label context.",
+    "On/off status is communicated by both the toggle position and visible status text (\"On\", \"Off\", \"Locked\"), not the track color alone.",
+    "Device name and status text dim together when a device is off, reducing visual weight without hiding the tile or its control."
+  ],
+  "compatibleWith": ["application-toggles", "application-preference-toggle-row"],
+  "variants": [
+    {
+      "id": "device-toggle-tile-1",
+      "title": "Device Toggle Tile",
+      "description": "Four device tiles: a light and thermostat on, a lock and plug off, each with an icon and toggle.",
+      "source": {
+        "html": "../../../../public/examples/application/device-toggle-tile/1.html",
+        "tsx": "tsx/DeviceToggleTileVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["on", "off"],
+      "accessibility": [
+        "Toggling a tile's switch updates real per-device state, changing the status text and track color together."
+      ]
+    },
+    {
+      "id": "device-toggle-tile-1-dark",
+      "title": "Device Toggle Tile (Dark)",
+      "description": "Device toggle tile grid adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/device-toggle-tile/1-dark.html",
+        "tsx": "tsx/DeviceToggleTileVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["on", "off"],
+      "accessibility": [
+        "Icon background/text and status colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

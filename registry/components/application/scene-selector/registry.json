@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-scene-selector",
+  "title": "Scene Selector",
+  "description": "Grid of home-scene preset cards with an icon, label, and a single-select active state.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["iot", "smart-home", "scene", "preset"],
+  "useWhen": [
+    "Letting users activate a named preset (Home, Away, Movie Night, Good Morning) that adjusts multiple devices at once.",
+    "Exactly one scene can be active at a time — this is single-select, not independent per-item toggles.",
+    "Each scene benefits from a recognizable icon for quick visual scanning across the grid."
+  ],
+  "avoidWhen": [
+    "You need to control individual devices independently — use `device-toggle-tile` for that per-device on/off case instead.",
+    "Multiple presets can be active simultaneously — a single-select radiogroup would misrepresent that; use independent toggles instead.",
+    "There's only one scene/mode available — there's nothing to select between."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Two-column grid by default; adjust grid-cols via className for wider dashboard layouts with more scenes per row.",
+  "accessibility": [
+    "The grid is a role=\"radiogroup\" with an aria-label describing it as Scene, and each card is role=\"radio\" with aria-checked reflecting the active scene — mutually exclusive selection semantics.",
+    "The active scene is distinguished by a thicker colored border and background tint together, not color alone, and its label additionally becomes bold.",
+    "Icons are decorative; the scene name is always present as visible text."
+  ],
+  "compatibleWith": ["application-device-toggle-tile", "application-toggle-card-group"],
+  "variants": [
+    {
+      "id": "scene-selector-1",
+      "title": "Scene Selector",
+      "description": "Four scene cards (Home, Away, Movie Night, Good Morning) with Home active.",
+      "source": {
+        "html": "../../../../public/examples/application/scene-selector/1.html",
+        "tsx": "tsx/SceneSelectorVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "active"],
+      "accessibility": [
+        "Selecting a scene updates real radiogroup state, so exactly one card is ever marked active."
+      ]
+    },
+    {
+      "id": "scene-selector-1-dark",
+      "title": "Scene Selector (Dark)",
+      "description": "Scene selector adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/scene-selector/1-dark.html",
+        "tsx": "tsx/SceneSelectorVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "active"],
+      "accessibility": [
+        "Active-card border, background, and text colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

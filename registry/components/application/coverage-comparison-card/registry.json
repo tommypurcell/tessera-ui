@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-coverage-comparison-card",
+  "title": "Coverage Comparison Card",
+  "description": "Side-by-side insurance plan cards with deductible/premium/coverage-max rows and an optional 'Best value' highlight, with all figures computed from real plan data.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["insurance", "pricing", "comparison", "plans"],
+  "useWhen": [
+    "Comparing a small number (2-4) of insurance or coverage plans side by side as standalone cards rather than a dense table.",
+    "Each plan's deductible, premium, and coverage maximum are the primary numbers a shopper needs to compare.",
+    "One plan should be visually recommended as the best value without hiding the others' numbers."
+  ],
+  "avoidWhen": [
+    "You're comparing generic SaaS/software feature sets with boolean included/excluded rows — use `feature-comparison-matrix` for that dense table layout instead.",
+    "You have more than 4 plans — a card grid this wide should become a scrollable table instead.",
+    "Deductible/premium/coverage aren't the relevant axes — reach for a plain pricing card instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Single column on narrow screens, 3-column grid at sm breakpoint and above; the highlighted plan's badge stays centered above its card at all widths.",
+  "accessibility": [
+    "Plan cards are grouped under a single role=\"group\" with an aria-label describing the choice being made.",
+    "The 'Best value' recommendation is conveyed by a text badge and border color together, never by color alone.",
+    "All monetary figures are formatted with Intl.NumberFormat and rendered as real text, remaining fully readable to screen readers."
+  ],
+  "compatibleWith": ["application-feature-comparison-matrix", "application-claim-status-tracker"],
+  "variants": [
+    {
+      "id": "coverage-comparison-card-1",
+      "title": "Coverage Comparison Card",
+      "description": "Basic/Standard/Premium plans with Standard highlighted as Best value, deductible decreasing and coverage max increasing across tiers.",
+      "source": {
+        "html": "../../../../public/examples/application/coverage-comparison-card/1.html",
+        "tsx": "tsx/CoverageComparisonCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "All plan figures are formatted from real numeric props via Intl.NumberFormat rather than hardcoded strings."
+      ]
+    },
+    {
+      "id": "coverage-comparison-card-1-dark",
+      "title": "Coverage Comparison Card (Dark)",
+      "description": "Coverage comparison card adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/coverage-comparison-card/1-dark.html",
+        "tsx": "tsx/CoverageComparisonCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Highlight border and badge colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

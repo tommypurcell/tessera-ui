@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-claim-status-tracker",
+  "title": "Claim Status Tracker",
+  "description": "Vertical timeline for an insurance claim's submitted -> review -> approved/denied stages, with completed stages and the final outcome badge computed from real currentStageIndex/outcome props.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["insurance", "claims", "stepper", "timeline"],
+  "useWhen": [
+    "Showing the progress of an insurance (or similar review) claim through a small number of sequential stages.",
+    "The process can branch to either an approved or denied outcome, and that outcome needs distinct styling from an in-progress stage.",
+    "Each stage benefits from a real or estimated date, not just a label."
+  ],
+  "avoidWhen": [
+    "You need a horizontal shipment/order stepper — use `order-status-tracker` for that linear, non-branching flow instead.",
+    "The process has no branching outcome — a simpler linear progress stepper is enough.",
+    "There are more than four or five stages — a vertical timeline this dense should switch to a more compact log/list view."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Fixed-width card (max-w-sm) with a vertical timeline; stage text wraps rather than overflowing at narrow widths.",
+  "accessibility": [
+    "Stage completion (checkmark vs. empty circle) and connecting-line color are both derived from the same currentStageIndex, so they can never disagree.",
+    "The denied outcome is conveyed with a distinct icon (X vs. checkmark), color, and text label together, never by color alone.",
+    "Stage labels and dates remain real text content, fully readable to screen readers, with an ordered list (<ol>) preserving sequence."
+  ],
+  "compatibleWith": ["application-order-status-tracker", "application-booking-confirmation-card"],
+  "variants": [
+    {
+      "id": "claim-status-tracker-1",
+      "title": "Claim Status Tracker",
+      "description": "Claim #CL-48291 approved, all three stages (submitted, under review, approved) complete with payout amount shown.",
+      "source": {
+        "html": "../../../../public/examples/application/claim-status-tracker/1.html",
+        "tsx": "tsx/ClaimStatusTrackerVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Completed-stage styling and the outcome badge are both derived from the same currentStageIndex/outcome props."
+      ]
+    },
+    {
+      "id": "claim-status-tracker-1-dark",
+      "title": "Claim Status Tracker (Dark)",
+      "description": "Claim status tracker adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/claim-status-tracker/1-dark.html",
+        "tsx": "tsx/ClaimStatusTrackerVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Outcome colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}
