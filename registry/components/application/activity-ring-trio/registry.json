@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-activity-ring-trio",
+  "title": "Activity Ring Trio",
+  "description": "Three concentric goal-ring components, Apple-Fitness style, for visualizing multiple daily activity or usage metrics at once.",
+  "category": "application/activity-ring-trio",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "activity-ring-trio",
+    "fitness",
+    "goals",
+    "concentric rings",
+    "dashboard"
+  ],
+  "useWhen": [
+    "Three concentric goal-ring components, Apple-Fitness style, for visualizing multiple daily activity or usage metrics at once."
+  ],
+  "avoidWhen": [
+    "Avoid activity ring trio when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Activity Ring Trio uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "activity-ring-trio-1",
+      "title": "Large concentric ring trio with legend",
+      "description": "Large concentric ring trio with legend Three concentric goal-ring components, Apple-Fitness style, for visualizing multiple daily activity or usage metrics at once.",
+      "source": {
+        "html": "../../../../public/examples/application/activity-ring-trio/1.html",
+        "tsx": "tsx/ActivityRingTrioVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "activity-ring-trio-1-dark",
+      "title": "Large concentric ring trio with legend (Dark)",
+      "description": "Large concentric ring trio with legend Three concentric goal-ring components, Apple-Fitness style, for visualizing multiple daily activity or usage metrics at once.",
+      "source": {
+        "html": "../../../../public/examples/application/activity-ring-trio/1-dark.html",
+        "tsx": "tsx/ActivityRingTrioVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "activity-ring-trio-2",
+      "title": "Compact inline ring trio with summary",
+      "description": "Compact inline ring trio with summary Three concentric goal-ring components, Apple-Fitness style, for visualizing multiple daily activity or usage metrics at once.",
+      "source": {
+        "html": "../../../../public/examples/application/activity-ring-trio/2.html",
+        "tsx": "tsx/ActivityRingTrioVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "activity-ring-trio-2-dark",
+      "title": "Compact inline ring trio with summary (Dark)",
+      "description": "Compact inline ring trio with summary Three concentric goal-ring components, Apple-Fitness style, for visualizing multiple daily activity or usage metrics at once.",
+      "source": {
+        "html": "../../../../public/examples/application/activity-ring-trio/2-dark.html",
+        "tsx": "tsx/ActivityRingTrioVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

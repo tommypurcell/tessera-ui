@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-rating-distribution",
+  "title": "Rating Distribution",
+  "description": "Aggregate star-rating breakdown components showing the count or percentage of reviews at each star level alongside an overall average.",
+  "category": "application/rating-distribution",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "rating-distribution",
+    "reviews",
+    "star breakdown",
+    "aggregate",
+    "summary"
+  ],
+  "useWhen": [
+    "Aggregate star-rating breakdown components showing the count or percentage of reviews at each star level alongside an overall average."
+  ],
+  "avoidWhen": [
+    "Avoid rating distribution when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Rating Distribution uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "rating-distribution-1",
+      "title": "Average score with percentage bar breakdown",
+      "description": "Average score with percentage bar breakdown Aggregate star-rating breakdown components showing the count or percentage of reviews at each star level alongside an overall average.",
+      "source": {
+        "html": "../../../../public/examples/application/rating-distribution/1.html",
+        "tsx": "tsx/RatingDistributionVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "rating-distribution-1-dark",
+      "title": "Average score with percentage bar breakdown (Dark)",
+      "description": "Average score with percentage bar breakdown Aggregate star-rating breakdown components showing the count or percentage of reviews at each star level alongside an overall average.",
+      "source": {
+        "html": "../../../../public/examples/application/rating-distribution/1-dark.html",
+        "tsx": "tsx/RatingDistributionVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "rating-distribution-2",
+      "title": "Compact bar breakdown with review counts",
+      "description": "Compact bar breakdown with review counts Aggregate star-rating breakdown components showing the count or percentage of reviews at each star level alongside an overall average.",
+      "source": {
+        "html": "../../../../public/examples/application/rating-distribution/2.html",
+        "tsx": "tsx/RatingDistributionVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "rating-distribution-2-dark",
+      "title": "Compact bar breakdown with review counts (Dark)",
+      "description": "Compact bar breakdown with review counts Aggregate star-rating breakdown components showing the count or percentage of reviews at each star level alongside an overall average.",
+      "source": {
+        "html": "../../../../public/examples/application/rating-distribution/2-dark.html",
+        "tsx": "tsx/RatingDistributionVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-rate-limit-notice",
+  "title": "Rate Limit Notice",
+  "description": "Cooldown notice components with a countdown to retry availability, for API rate limits and throttled actions.",
+  "category": "application/rate-limit-notice",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "rate-limit-notice",
+    "rate limit",
+    "cooldown",
+    "throttle",
+    "retry"
+  ],
+  "useWhen": [
+    "Cooldown notice components with a countdown to retry availability, for API rate limits and throttled actions."
+  ],
+  "avoidWhen": [
+    "Avoid rate limit notice when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Rate Limit Notice uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "rate-limit-notice-1",
+      "title": "Inline warning banner with countdown",
+      "description": "Inline warning banner with countdown Cooldown notice components with a countdown to retry availability, for API rate limits and throttled actions.",
+      "source": {
+        "html": "../../../../public/examples/application/rate-limit-notice/1.html",
+        "tsx": "tsx/RateLimitNoticeVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "rate-limit-notice-1-dark",
+      "title": "Inline warning banner with countdown (Dark)",
+      "description": "Inline warning banner with countdown Cooldown notice components with a countdown to retry availability, for API rate limits and throttled actions.",
+      "source": {
+        "html": "../../../../public/examples/application/rate-limit-notice/1-dark.html",
+        "tsx": "tsx/RateLimitNoticeVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "rate-limit-notice-2",
+      "title": "Compact card with disabled retry button",
+      "description": "Compact card with disabled retry button Cooldown notice components with a countdown to retry availability, for API rate limits and throttled actions.",
+      "source": {
+        "html": "../../../../public/examples/application/rate-limit-notice/2.html",
+        "tsx": "tsx/RateLimitNoticeVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "rate-limit-notice-2-dark",
+      "title": "Compact card with disabled retry button (Dark)",
+      "description": "Compact card with disabled retry button Cooldown notice components with a countdown to retry availability, for API rate limits and throttled actions.",
+      "source": {
+        "html": "../../../../public/examples/application/rate-limit-notice/2-dark.html",
+        "tsx": "tsx/RateLimitNoticeVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

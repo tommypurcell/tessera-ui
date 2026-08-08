@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-countdown-ring-timer",
+  "title": "Countdown Ring Timer",
+  "description": "Animated radial countdown timer components showing remaining time in the center, for OTP expiry, session timeouts, and time-boxed actions.",
+  "category": "application/countdown-ring-timer",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "countdown-ring-timer",
+    "radial",
+    "timer",
+    "expiry",
+    "session timeout"
+  ],
+  "useWhen": [
+    "Animated radial countdown timer components showing remaining time in the center, for OTP expiry, session timeouts, and time-boxed actions."
+  ],
+  "avoidWhen": [
+    "Avoid countdown ring timer when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Countdown Ring Timer uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "countdown-ring-timer-1",
+      "title": "Large radial timer with mm:ss center label",
+      "description": "Large radial timer with mm:ss center label Animated radial countdown timer components showing remaining time in the center, for OTP expiry, session timeouts, and time-boxed actions.",
+      "source": {
+        "html": "../../../../public/examples/application/countdown-ring-timer/1.html",
+        "tsx": "tsx/CountdownRingTimerVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "countdown-ring-timer-1-dark",
+      "title": "Large radial timer with mm:ss center label (Dark)",
+      "description": "Large radial timer with mm:ss center label Animated radial countdown timer components showing remaining time in the center, for OTP expiry, session timeouts, and time-boxed actions.",
+      "source": {
+        "html": "../../../../public/examples/application/countdown-ring-timer/1-dark.html",
+        "tsx": "tsx/CountdownRingTimerVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "countdown-ring-timer-2",
+      "title": "Compact inline ring timer with action row",
+      "description": "Compact inline ring timer with action row Animated radial countdown timer components showing remaining time in the center, for OTP expiry, session timeouts, and time-boxed actions.",
+      "source": {
+        "html": "../../../../public/examples/application/countdown-ring-timer/2.html",
+        "tsx": "tsx/CountdownRingTimerVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "countdown-ring-timer-2-dark",
+      "title": "Compact inline ring timer with action row (Dark)",
+      "description": "Compact inline ring timer with action row Animated radial countdown timer components showing remaining time in the center, for OTP expiry, session timeouts, and time-boxed actions.",
+      "source": {
+        "html": "../../../../public/examples/application/countdown-ring-timer/2-dark.html",
+        "tsx": "tsx/CountdownRingTimerVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

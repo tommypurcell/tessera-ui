@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-md flex-col gap-4 p-6">
+    <div class="flex items-start gap-3 rounded-lg border border-amber-500/20 bg-amber-500/10 p-4" role="alert">
+      <svg class="mt-0.5 size-5 shrink-0 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+      </svg>
+
+      <div class="min-w-0 flex-1">
+        <p class="text-sm font-medium text-amber-200">Rate limit reached</p>
+        <p class="mt-0.5 text-sm text-amber-300/80">
+          You've made too many requests. Try again in
+          <span id="rl-1-time-dark" class="font-mono font-semibold tabular-nums">00:30</span>.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      ;(function () {
+        var timeEl = document.getElementById('rl-1-time-dark')
+        var remaining = 30
+
+        function tick() {
+          if (remaining <= 0) return
+          remaining -= 1
+          var mins = Math.floor(remaining / 60)
+          var secs = remaining % 60
+          timeEl.textContent = String(mins).padStart(2, '0') + ':' + String(secs).padStart(2, '0')
+        }
+
+        setInterval(tick, 1000)
+      })()
+    </script>
+  </body>
+</html>

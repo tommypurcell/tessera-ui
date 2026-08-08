@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-sm flex-col gap-4 p-6">
+    <fieldset class="flex flex-col items-center gap-3 rounded-lg border border-gray-100 bg-white p-6">
+      <legend class="mx-auto text-sm font-medium text-gray-700">How was your experience?</legend>
+
+      <div class="flex items-center gap-2">
+        <input type="radio" id="mood-1" name="mood" value="1" class="peer/1 sr-only" />
+        <label
+          for="mood-1"
+          class="group flex size-11 cursor-pointer items-center justify-center rounded-full text-2xl grayscale transition hover:scale-110 hover:grayscale-0 peer-checked/1:scale-110 peer-checked/1:bg-red-50 peer-checked/1:grayscale-0 peer-focus-visible/1:ring-2 peer-focus-visible/1:ring-gray-900 peer-focus-visible/1:ring-offset-2"
+        >
+          <span aria-hidden="true">😡</span>
+          <span class="sr-only">Terrible</span>
+        </label>
+
+        <input type="radio" id="mood-2" name="mood" value="2" class="peer/2 sr-only" />
+        <label
+          for="mood-2"
+          class="group flex size-11 cursor-pointer items-center justify-center rounded-full text-2xl grayscale transition hover:scale-110 hover:grayscale-0 peer-checked/2:scale-110 peer-checked/2:bg-orange-50 peer-checked/2:grayscale-0 peer-focus-visible/2:ring-2 peer-focus-visible/2:ring-gray-900 peer-focus-visible/2:ring-offset-2"
+        >
+          <span aria-hidden="true">🙁</span>
+          <span class="sr-only">Not great</span>
+        </label>
+
+        <input type="radio" id="mood-3" name="mood" value="3" class="peer/3 sr-only" checked />
+        <label
+          for="mood-3"
+          class="group flex size-11 cursor-pointer items-center justify-center rounded-full text-2xl grayscale transition hover:scale-110 hover:grayscale-0 peer-checked/3:scale-110 peer-checked/3:bg-yellow-50 peer-checked/3:grayscale-0 peer-focus-visible/3:ring-2 peer-focus-visible/3:ring-gray-900 peer-focus-visible/3:ring-offset-2"
+        >
+          <span aria-hidden="true">😐</span>
+          <span class="sr-only">Okay</span>
+        </label>
+
+        <input type="radio" id="mood-4" name="mood" value="4" class="peer/4 sr-only" />
+        <label
+          for="mood-4"
+          class="group flex size-11 cursor-pointer items-center justify-center rounded-full text-2xl grayscale transition hover:scale-110 hover:grayscale-0 peer-checked/4:scale-110 peer-checked/4:bg-lime-50 peer-checked/4:grayscale-0 peer-focus-visible/4:ring-2 peer-focus-visible/4:ring-gray-900 peer-focus-visible/4:ring-offset-2"
+        >
+          <span aria-hidden="true">🙂</span>
+          <span class="sr-only">Good</span>
+        </label>
+
+        <input type="radio" id="mood-5" name="mood" value="5" class="peer/5 sr-only" />
+        <label
+          for="mood-5"
+          class="group flex size-11 cursor-pointer items-center justify-center rounded-full text-2xl grayscale transition hover:scale-110 hover:grayscale-0 peer-checked/5:scale-110 peer-checked/5:bg-green-50 peer-checked/5:grayscale-0 peer-focus-visible/5:ring-2 peer-focus-visible/5:ring-gray-900 peer-focus-visible/5:ring-offset-2"
+        >
+          <span aria-hidden="true">😄</span>
+          <span class="sr-only">Excellent</span>
+        </label>
+      </div>
+
+      <p class="text-xs text-gray-500">Okay</p>
+    </fieldset>
+  </body>
+</html>

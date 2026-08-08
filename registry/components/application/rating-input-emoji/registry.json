@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-rating-input-emoji",
+  "title": "Rating Input Emoji",
+  "description": "Emoji-based satisfaction scale input components for collecting quick, expressive feedback in web applications.",
+  "category": "application/rating-input-emoji",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "rating-input-emoji",
+    "satisfaction",
+    "feedback",
+    "emoji",
+    "csat"
+  ],
+  "useWhen": [
+    "Emoji-based satisfaction scale input components for collecting quick, expressive feedback in web applications."
+  ],
+  "avoidWhen": [
+    "Avoid rating input emoji when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Rating Input Emoji uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Associate each form field with a visible or programmatic label before production use.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "rating-input-emoji-1",
+      "title": "Fieldset emoji scale with selected-state label",
+      "description": "Fieldset emoji scale with selected-state label Emoji-based satisfaction scale input components for collecting quick, expressive feedback in web applications.",
+      "source": {
+        "html": "../../../../public/examples/application/rating-input-emoji/1.html",
+        "tsx": "tsx/RatingInputEmojiVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "rating-input-emoji-1-dark",
+      "title": "Fieldset emoji scale with selected-state label (Dark)",
+      "description": "Fieldset emoji scale with selected-state label Emoji-based satisfaction scale input components for collecting quick, expressive feedback in web applications.",
+      "source": {
+        "html": "../../../../public/examples/application/rating-input-emoji/1-dark.html",
+        "tsx": "tsx/RatingInputEmojiVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "rating-input-emoji-2",
+      "title": "Inline compact emoji scale",
+      "description": "Inline compact emoji scale Emoji-based satisfaction scale input components for collecting quick, expressive feedback in web applications.",
+      "source": {
+        "html": "../../../../public/examples/application/rating-input-emoji/2.html",
+        "tsx": "tsx/RatingInputEmojiVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "rating-input-emoji-2-dark",
+      "title": "Inline compact emoji scale (Dark)",
+      "description": "Inline compact emoji scale Emoji-based satisfaction scale input components for collecting quick, expressive feedback in web applications.",
+      "source": {
+        "html": "../../../../public/examples/application/rating-input-emoji/2-dark.html",
+        "tsx": "tsx/RatingInputEmojiVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    }
+  ]
+}

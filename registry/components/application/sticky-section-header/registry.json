@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-sticky-section-header",
+  "title": "Sticky Section Header",
+  "description": "Grouped list components with section headers that pin to the top of a scrollable container while their group scrolls beneath.",
+  "category": "application/sticky-section-header",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "sticky-section-header",
+    "sticky",
+    "grouped list",
+    "section",
+    "scroll"
+  ],
+  "useWhen": [
+    "Grouped list components with section headers that pin to the top of a scrollable container while their group scrolls beneath."
+  ],
+  "avoidWhen": [
+    "Avoid sticky section header when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Sticky Section Header uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "sticky-section-header-1",
+      "title": "Alphabetical contact list with sticky letter headers",
+      "description": "Alphabetical contact list with sticky letter headers Grouped list components with section headers that pin to the top of a scrollable container while their group scrolls beneath.",
+      "source": {
+        "html": "../../../../public/examples/application/sticky-section-header/1.html",
+        "tsx": "tsx/StickySectionHeaderVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "sticky-section-header-1-dark",
+      "title": "Alphabetical contact list with sticky letter headers (Dark)",
+      "description": "Alphabetical contact list with sticky letter headers Grouped list components with section headers that pin to the top of a scrollable container while their group scrolls beneath.",
+      "source": {
+        "html": "../../../../public/examples/application/sticky-section-header/1-dark.html",
+        "tsx": "tsx/StickySectionHeaderVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "sticky-section-header-2",
+      "title": "Settings list with sticky category headers",
+      "description": "Settings list with sticky category headers Grouped list components with section headers that pin to the top of a scrollable container while their group scrolls beneath.",
+      "source": {
+        "html": "../../../../public/examples/application/sticky-section-header/2.html",
+        "tsx": "tsx/StickySectionHeaderVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "sticky-section-header-2-dark",
+      "title": "Settings list with sticky category headers (Dark)",
+      "description": "Settings list with sticky category headers Grouped list components with section headers that pin to the top of a scrollable container while their group scrolls beneath.",
+      "source": {
+        "html": "../../../../public/examples/application/sticky-section-header/2-dark.html",
+        "tsx": "tsx/StickySectionHeaderVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-xs flex-col items-center gap-3 p-6">
+    <div id="ring-1-dark" class="relative flex size-32 items-center justify-center">
+      <svg class="size-32 -rotate-90" viewBox="0 0 120 120" aria-hidden="true">
+        <circle cx="60" cy="60" r="52" fill="none" stroke="currentColor" stroke-width="8" class="text-gray-800" />
+        <circle
+          class="js-ring text-blue-400 transition-[stroke-dashoffset] duration-1000 ease-linear"
+          cx="60"
+          cy="60"
+          r="52"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="8"
+          stroke-linecap="round"
+          stroke-dasharray="326.7"
+          stroke-dashoffset="81.7"
+        />
+      </svg>
+      <div class="absolute flex flex-col items-center">
+        <span class="js-time font-mono text-2xl font-semibold tabular-nums text-white">00:45</span>
+        <span class="text-[11px] font-medium text-gray-500 uppercase">Remaining</span>
+      </div>
+    </div>
+
+    <p class="text-sm text-gray-400" role="status" aria-live="polite">Verification code expires soon</p>
+
+    <script>
+      ;(function () {
+        var root = document.getElementById('ring-1-dark')
+        var ring = root.querySelector('.js-ring')
+        var timeEl = root.querySelector('.js-time')
+        var total = 60
+        var remaining = 45
+        var circumference = 326.7
+
+        function tick() {
+          if (remaining <= 0) return
+          remaining -= 1
+          var mins = Math.floor(remaining / 60)
+          var secs = remaining % 60
+          timeEl.textContent = String(mins).padStart(2, '0') + ':' + String(secs).padStart(2, '0')
+          ring.style.strokeDashoffset = String(circumference * (1 - remaining / total))
+        }
+
+        setInterval(tick, 1000)
+      })()
+    </script>
+  </body>
+</html>

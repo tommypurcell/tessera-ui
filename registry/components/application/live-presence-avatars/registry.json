@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-live-presence-avatars",
+  "title": "Live Presence Avatars",
+  "description": "Realtime presence indicator components showing which people are currently viewing or collaborating on a document.",
+  "category": "application/live-presence-avatars",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "live-presence-avatars",
+    "presence",
+    "online",
+    "collaborators",
+    "realtime"
+  ],
+  "useWhen": [
+    "Realtime presence indicator components showing which people are currently viewing or collaborating on a document."
+  ],
+  "avoidWhen": [
+    "Avoid live presence avatars when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Live Presence Avatars uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Provide meaningful alternative text for informative images and empty alt text for decorative images.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "live-presence-avatars-1",
+      "title": "Overlapping presence row with pulsing status dot",
+      "description": "Overlapping presence row with pulsing status dot Realtime presence indicator components showing which people are currently viewing or collaborating on a document.",
+      "source": {
+        "html": "../../../../public/examples/application/live-presence-avatars/1.html",
+        "tsx": "tsx/LivePresenceAvatarsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "live-presence-avatars-1-dark",
+      "title": "Overlapping presence row with pulsing status dot (Dark)",
+      "description": "Overlapping presence row with pulsing status dot Realtime presence indicator components showing which people are currently viewing or collaborating on a document.",
+      "source": {
+        "html": "../../../../public/examples/application/live-presence-avatars/1-dark.html",
+        "tsx": "tsx/LivePresenceAvatarsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "live-presence-avatars-2",
+      "title": "Compact online-count pill with avatar stack",
+      "description": "Compact online-count pill with avatar stack Realtime presence indicator components showing which people are currently viewing or collaborating on a document.",
+      "source": {
+        "html": "../../../../public/examples/application/live-presence-avatars/2.html",
+        "tsx": "tsx/LivePresenceAvatarsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "live-presence-avatars-2-dark",
+      "title": "Compact online-count pill with avatar stack (Dark)",
+      "description": "Compact online-count pill with avatar stack Realtime presence indicator components showing which people are currently viewing or collaborating on a document.",
+      "source": {
+        "html": "../../../../public/examples/application/live-presence-avatars/2-dark.html",
+        "tsx": "tsx/LivePresenceAvatarsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    }
+  ]
+}

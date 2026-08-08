@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="relative flex min-h-72 max-w-sm items-end justify-end bg-gray-50 p-6">
+    <div class="group relative">
+      <input type="checkbox" id="fab-toggle" class="peer sr-only" checked />
+
+      <div class="pointer-events-none absolute right-0 bottom-full mb-3 flex flex-col items-end gap-3 opacity-0 transition-all duration-150 peer-checked:pointer-events-auto peer-checked:opacity-100">
+        <div class="flex items-center gap-2 peer-checked:translate-y-0">
+          <span class="whitespace-nowrap rounded-md bg-gray-900 px-2 py-1 text-xs font-medium text-white shadow-sm">New document</span>
+          <button
+            type="button"
+            aria-label="New document"
+            class="flex size-11 items-center justify-center rounded-full bg-white text-gray-700 shadow-md ring-1 ring-gray-900/10 transition hover:bg-gray-50"
+          >
+            <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 13h6m-3-3v6m5.5 5H6.5A2.5 2.5 0 014 18.5v-13A2.5 2.5 0 016.5 3h7.379a1 1 0 01.707.293l4.121 4.121a1 1 0 01.293.707V18.5a2.5 2.5 0 01-2.5 2.5z" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <span class="whitespace-nowrap rounded-md bg-gray-900 px-2 py-1 text-xs font-medium text-white shadow-sm">Upload file</span>
+          <button
+            type="button"
+            aria-label="Upload file"
+            class="flex size-11 items-center justify-center rounded-full bg-white text-gray-700 shadow-md ring-1 ring-gray-900/10 transition hover:bg-gray-50"
+          >
+            <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 7.5L12 3m0 0L7.5 7.5M12 3v13.5" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <span class="whitespace-nowrap rounded-md bg-gray-900 px-2 py-1 text-xs font-medium text-white shadow-sm">New folder</span>
+          <button
+            type="button"
+            aria-label="New folder"
+            class="flex size-11 items-center justify-center rounded-full bg-white text-gray-700 shadow-md ring-1 ring-gray-900/10 transition hover:bg-gray-50"
+          >
+            <svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <label
+        for="fab-toggle"
+        class="flex size-14 cursor-pointer items-center justify-center rounded-full bg-blue-600 text-white shadow-lg transition hover:bg-blue-700 peer-checked:rotate-45"
+      >
+        <span class="sr-only">Toggle quick actions</span>
+        <svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+        </svg>
+      </label>
+    </div>
+  </body>
+</html>
