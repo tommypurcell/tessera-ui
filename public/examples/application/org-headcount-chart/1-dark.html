@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex justify-center bg-gray-950 p-6">
+    <div class="flex w-full max-w-lg flex-col gap-4 rounded-lg border border-gray-800 bg-gray-900 p-6">
+      <h2 class="text-sm font-medium text-gray-100">Headcount by department</h2>
+
+      <div class="flex flex-col gap-3">
+        <div class="flex flex-col gap-1">
+          <div class="flex items-baseline justify-between text-sm">
+            <span class="font-medium text-gray-300">Engineering</span>
+            <span class="text-xs text-gray-500">42 filled + 8 open</span>
+          </div>
+          <div class="flex h-5 w-full overflow-hidden rounded-sm bg-gray-800">
+            <div class="h-5 bg-blue-500" style="width: 84.0%" role="img" aria-label="Engineering: 42 filled roles"></div>
+            <div class="h-5 border-2 border-dashed border-blue-400/60 bg-blue-500/10" style="width: 16.0%" role="img" aria-label="Engineering: 8 open roles"></div>
+          </div>
+          <span class="text-xs text-gray-500">50 total headcount</span>
+        </div>
+
+        <div class="flex flex-col gap-1">
+          <div class="flex items-baseline justify-between text-sm">
+            <span class="font-medium text-gray-300">Sales</span>
+            <span class="text-xs text-gray-500">28 filled + 3 open</span>
+          </div>
+          <div class="flex h-5 w-full overflow-hidden rounded-sm bg-gray-800">
+            <div class="h-5 bg-blue-500" style="width: 56.0%" role="img" aria-label="Sales: 28 filled roles"></div>
+            <div class="h-5 border-2 border-dashed border-blue-400/60 bg-blue-500/10" style="width: 6.0%" role="img" aria-label="Sales: 3 open roles"></div>
+          </div>
+          <span class="text-xs text-gray-500">31 total headcount</span>
+        </div>
+
+        <div class="flex flex-col gap-1">
+          <div class="flex items-baseline justify-between text-sm">
+            <span class="font-medium text-gray-300">Design</span>
+            <span class="text-xs text-gray-500">12 filled + 2 open</span>
+          </div>
+          <div class="flex h-5 w-full overflow-hidden rounded-sm bg-gray-800">
+            <div class="h-5 bg-blue-500" style="width: 24.0%" role="img" aria-label="Design: 12 filled roles"></div>
+            <div class="h-5 border-2 border-dashed border-blue-400/60 bg-blue-500/10" style="width: 4.0%" role="img" aria-label="Design: 2 open roles"></div>
+          </div>
+          <span class="text-xs text-gray-500">14 total headcount</span>
+        </div>
+
+        <div class="flex flex-col gap-1">
+          <div class="flex items-baseline justify-between text-sm">
+            <span class="font-medium text-gray-300">Support</span>
+            <span class="text-xs text-gray-500">18 filled</span>
+          </div>
+          <div class="flex h-5 w-full overflow-hidden rounded-sm bg-gray-800">
+            <div class="h-5 bg-blue-500" style="width: 36.0%" role="img" aria-label="Support: 18 filled roles"></div>
+          </div>
+          <span class="text-xs text-gray-500">18 total headcount</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 text-xs text-gray-500">
+        <span class="flex items-center gap-1.5">
+          <span aria-hidden="true" class="size-2.5 rounded-sm bg-blue-500"></span>
+          Filled
+        </span>
+        <span class="flex items-center gap-1.5">
+          <span aria-hidden="true" class="size-2.5 rounded-sm border-2 border-dashed border-blue-400/60 bg-blue-500/10"></span>
+          Open roles
+        </span>
+      </div>
+    </div>
+  </body>
+</html>
