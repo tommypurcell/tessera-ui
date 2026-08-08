@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-lg p-6">
+    <div class="overflow-hidden rounded-xl border border-gray-200">
+      <table class="min-w-full divide-y divide-gray-200">
+        <thead class="bg-gray-50">
+          <tr>
+            <th scope="col" class="px-4 py-2.5 text-left text-xs font-medium uppercase tracking-wide text-gray-500">Task</th>
+            <th scope="col" class="px-4 py-2.5 text-left text-xs font-medium uppercase tracking-wide text-gray-500">Assignee</th>
+          </tr>
+        </thead>
+
+        <tbody class="divide-y divide-gray-200 bg-white">
+          <tr>
+            <td class="whitespace-nowrap px-4 py-3 text-sm text-gray-700">Redesign onboarding flow</td>
+            <td class="whitespace-nowrap px-4 py-3 text-sm text-gray-500">Nandor</td>
+          </tr>
+          <tr>
+            <td class="whitespace-nowrap px-4 py-3 text-sm text-gray-700">Fix invoice rounding bug</td>
+            <td class="whitespace-nowrap px-4 py-3 text-sm text-gray-500">Nadja</td>
+          </tr>
+        </tbody>
+
+        <tfoot class="border-t border-gray-200 bg-gray-50">
+          <tr>
+            <td colspan="2" class="px-2 py-2">
+              <div class="flex items-center gap-2">
+                <input
+                  type="text"
+                  placeholder="Task name"
+                  value="Review Q3 marketing budget"
+                  class="w-full rounded-md border border-gray-300 bg-white px-2.5 py-1.5 text-sm text-gray-900 shadow-sm placeholder:text-gray-400 focus:border-gray-500 focus:outline-none"
+                />
+                <input
+                  type="text"
+                  placeholder="Assignee"
+                  value="Colin"
+                  class="w-32 shrink-0 rounded-md border border-gray-300 bg-white px-2.5 py-1.5 text-sm text-gray-900 shadow-sm placeholder:text-gray-400 focus:border-gray-500 focus:outline-none"
+                />
+                <button type="button" class="shrink-0 rounded-md bg-gray-900 px-3 py-1.5 text-xs font-medium text-white hover:bg-gray-700">Add</button>
+                <button type="button" aria-label="Cancel adding task" class="shrink-0 text-gray-400 hover:text-gray-600">
+                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </body>
+</html>
