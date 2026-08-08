@@ -139,21 +139,21 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 <!-- === FRESH WAVE (post-94-clear) — 20 new application/dashboard-grade ideas, verified non-dupe against registry === -->
 - [~] (builder-4) Calendar Event Grid — week/day view with time-slotted event blocks, overlap handling, and current-time indicator; the scheduling surface `calendar` (date-picker) doesn't cover.
 - [~] (builder-5) Gantt Bar Chart — horizontal project timeline with dependency arrows, milestone diamonds, and today marker; distinct from timelines and timeline-scrubber.
-- [ ] Code Editor Block — syntax-highlighted panel with line numbers, gutter, active-line highlight, and language tab; richer than static `terminal-blocks`.
-- [~] (builder-3) JSON Tree Viewer — collapsible key/value explorer with type coloring and expand-all/collapse-all; distinct from generic tree-view (data-structure semantics).
-- [ ] Log Viewer — virtualized monospace stream with severity coloring, level filter chips, and auto-scroll toggle; debugging staple absent from library.
-- [ ] Comment Thread — nested reply chain with avatars, timestamps, reactions, and a composer footer; distinct from flat chat-bubbles.
+- [~] (builder-9) Code Editor Block — syntax-highlighted panel with line numbers, gutter, active-line highlight, and language tab; richer than static `terminal-blocks`.
+- [x] (builder-3) JSON Tree Viewer — monospace key/value tree with per-branch expand/collapse, type-coded values (string/number/boolean/null), collapsed item-count summaries, expand-all/collapse-all header actions, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-3-components
+- [~] (builder-8) Log Viewer — virtualized monospace stream with severity coloring, level filter chips, and auto-scroll toggle; debugging staple absent from library.
+- [~] (builder-2) Comment Thread — nested reply chain with avatars, timestamps, reactions, and a composer footer; distinct from flat chat-bubbles.
 - [ ] Mention Textarea — composer with @-mention autocomplete popover and inline highlighted tokens; distinct from tag-input and plain textareas.
 - [ ] Rich Text Toolbar — WYSIWYG formatting bar (bold/italic/list/link/heading dropdown) with active-state buttons; pairs with editors, not covered by toolbar.
 - [ ] Heatmap Calendar — GitHub-style contribution grid with intensity buckets, month labels, and cell tooltips; distinct from charts and calendar.
 - [ ] Funnel Chart — stepped conversion visualization with per-stage counts, drop-off percentages, and labels; analytics pattern not in charts set.
-- [ ] Map Marker Popup — floating card anchored to a pin with title, thumbnail, meta, and directions CTA; geo-UI primitive absent from library.
-- [ ] Cookie Consent Banner — bottom sheet with accept/reject/customize actions and category toggles; compliance staple distinct from announcement-banner.
-- [ ] Feature Comparison Matrix — sticky-header table comparing plans/products across feature rows with check/dash/limit cells; distinct from pricing table and tables.
+- [~] (builder-6) Map Marker Popup — floating card anchored to a pin with title, thumbnail, meta, and directions CTA; geo-UI primitive absent from library.
+- [~] (builder-7) Cookie Consent Banner — bottom sheet with accept/reject/customize actions and category toggles; compliance staple distinct from announcement-banner.
+- [~] (builder-3) Feature Comparison Matrix — sticky-header table comparing plans/products across feature rows with check/dash/limit cells; distinct from pricing table and tables.
 - [ ] Import Wizard — multi-step upload → column-map → preview flow with mapping dropdowns; distinct from stepper-wizard (data-import specific) and file-uploaders.
 - [ ] API Key Manager — table of keys with masked values, reveal/copy, scopes badges, last-used, and revoke; distinct from copy-field (management surface).
 - [ ] Two-Factor Setup — QR + secret display with segmented code entry and recovery-codes reveal; security-onboarding pattern not covered.
 - [x] (builder-6) Usage Meter Card — 2 variants (healthy usage emerald fill, near-limit red threshold shift with upgrade CTA), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
-- [~] (builder-10) Diff Stat Bar — added/removed line summary with green/red proportion bar and file-count; distinct from the built diff viewer (summary, not content).
+- [x] (builder-10) Diff Stat Bar — 2 variants (single-file summary bar, multi-file list with per-row bars + totals), light+dark, registry+tsx generated, screenshots verified
 - [ ] Presence Cursor Layer — live multiplayer cursors with name labels and selection highlights over a canvas; collaboration primitive absent from library.
-- [ ] Rating Distribution — horizontal bar breakdown of 5→1 star counts with percentages and average summary; distinct from rating input (aggregate view).
+- [~] (builder-10) Rating Distribution — horizontal bar breakdown of 5→1 star counts with percentages and average summary; distinct from rating input (aggregate view).
