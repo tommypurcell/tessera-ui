@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-menu-category-tabs",
+  "title": "Menu Category Tabs",
+  "description": "Sticky pill-tab strip for restaurant menu categories, swapping the item list below as the active category changes.",
+  "category": "application/navigation",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["restaurant", "menu", "tabs", "food"],
+  "useWhen": [
+    "Showing a restaurant or food-ordering menu split into categories (Starters, Mains, Desserts) with a tab strip to jump between them.",
+    "You want the category strip to stay visible (sticky) while the item list below scrolls.",
+    "A pill-shaped active state fits your visual language better than an underline tab indicator."
+  ],
+  "avoidWhen": [
+    "You're building a generic overflowing tab strip for non-menu content (repo sections, settings panels) — use `tab-overflow-scroller` for that unrelated, underline-style case.",
+    "Categories don't need to be sticky — a plain non-sticky tab list is simpler and avoids the added stacking-context complexity.",
+    "There's no associated item list to swap — a plain segmented control communicates intent better than tabs with no panel change."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Tab strip scrolls horizontally within its own container if categories overflow the available width, rather than wrapping to a second line or shrinking labels.",
+  "accessibility": [
+    "Tabs use role=tablist/role=tab with aria-selected reflecting the active category, giving assistive tech correct tab-group semantics.",
+    "The active tab is distinguished by both a filled background and white text, not color alone, so it remains legible without color vision.",
+    "The sticky header uses a backdrop blur over a translucent surface so menu items scrolling beneath it remain distinguishable from the tab strip rather than visually merging."
+  ],
+  "compatibleWith": ["application-tab-overflow-scroller", "application-comfortable-list-row"],
+  "variants": [
+    {
+      "id": "menu-category-tabs-1",
+      "title": "Menu Category Tabs",
+      "description": "Five categories (Starters, Mains, Salads, Desserts, Drinks) with Starters active, showing three starter items with prices.",
+      "source": {
+        "html": "../../../../public/examples/application/menu-category-tabs/1.html",
+        "tsx": "tsx/MenuCategoryTabsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Switching categories swaps the item list in place rather than navigating away, preserving the user's scroll context within the menu."
+      ]
+    },
+    {
+      "id": "menu-category-tabs-1-dark",
+      "title": "Menu Category Tabs (Dark)",
+      "description": "Menu category tabs adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/menu-category-tabs/1-dark.html",
+        "tsx": "tsx/MenuCategoryTabsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "The sticky header's translucent surface and blur are tuned against the dark background to keep the same legible separation from scrolling content."
+      ]
+    }
+  ]
+}
