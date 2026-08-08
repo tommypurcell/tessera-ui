@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 846,
+  "screenshotCount": 850,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -2676,6 +2676,46 @@
       "url": "/screenshots/components/application-range-inputs/range-inputs-5.jpg",
       "width": 600,
       "height": 400
+    },
+    {
+      "componentId": "application-receipt-preview",
+      "variantId": "receipt-preview-1",
+      "appearance": "light",
+      "sourcePath": "files/application-receipt-preview/receipt-preview-1.html",
+      "sourceSha256": "0b75e795bc416264ce07c35c26935862a6275c235dfa5e535284f1b9e81a8ac6",
+      "url": "/screenshots/components/application-receipt-preview/receipt-preview-1.jpg",
+      "width": 600,
+      "height": 409
+    },
+    {
+      "componentId": "application-receipt-preview",
+      "variantId": "receipt-preview-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-receipt-preview/receipt-preview-1-dark.html",
+      "sourceSha256": "df644958b86009c06e9058118cc65d8e8c3291b87c6c02feffed5ff589af337e",
+      "url": "/screenshots/components/application-receipt-preview/receipt-preview-1-dark.jpg",
+      "width": 600,
+      "height": 409
+    },
+    {
+      "componentId": "application-receipt-preview",
+      "variantId": "receipt-preview-2",
+      "appearance": "light",
+      "sourcePath": "files/application-receipt-preview/receipt-preview-2.html",
+      "sourceSha256": "1c6a88795a4ae23d3dbb71b79d3b46f1d633dadbf713f87366f7277ce70cc461",
+      "url": "/screenshots/components/application-receipt-preview/receipt-preview-2.jpg",
+      "width": 600,
+      "height": 442
+    },
+    {
+      "componentId": "application-receipt-preview",
+      "variantId": "receipt-preview-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-receipt-preview/receipt-preview-2-dark.html",
+      "sourceSha256": "efd841fd8917c23d9b81b60ae246be35670a05945ce0f889cbc84e2154792530",
+      "url": "/screenshots/components/application-receipt-preview/receipt-preview-2-dark.jpg",
+      "width": 600,
+      "height": 442
     },
     {
       "componentId": "application-saved-views-bar",
