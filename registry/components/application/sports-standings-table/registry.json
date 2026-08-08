@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-sports-standings-table",
+  "title": "Sports Standings Table",
+  "description": "League standings table with win percentage computed from real wins/losses and rank-movement arrows derived from comparing current rank against previous rank — distinct from leaderboard-list, which is a generic score-based ranked list with no win/loss record, win percentage, or streak column.",
+  "category": "application/sports",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["sports", "standings", "league", "table", "rankings"],
+  "useWhen": [
+    "Showing a league table with win/loss records, win percentage, and current streak.",
+    "You want rank-movement arrows derived from comparing this week's rank to last week's.",
+    "A dense tabular format fits better than a rank-list with avatars."
+  ],
+  "avoidWhen": [
+    "You need a generic score-based leaderboard with no win/loss semantics — use leaderboard-list instead.",
+    "There's no historical rank to compare against — omit the movement arrow rather than showing a default state.",
+    "You need per-game box scores — use sports-scoreboard instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The table has a fixed max width; on narrow viewports it should be wrapped in a horizontally scrollable container by the consuming page.",
+  "accessibility": [
+    "Rank-movement arrows carry an aria-label of 'Moved up'/'Moved down' rather than relying on arrow direction alone.",
+    "Win percentage is computed as wins/(wins+losses) for every row, so it can never be inconsistent with the W/L columns shown.",
+    "Win streaks are colored emerald and loss streaks red in addition to the W/L prefix letter, not color alone."
+  ],
+  "compatibleWith": ["application-leaderboard-list", "application-sports-scoreboard"],
+  "variants": [
+    {
+      "id": "sports-standings-table-1",
+      "title": "Sports standings table",
+      "description": "A 4-team standings table with win percentages computed from real records and rank-movement arrows on the 1st and 3rd place teams, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/sports-standings-table/1.html",
+        "tsx": "tsx/SportsStandingsTableVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "PCT values were computed via a Python script (wins/(wins+losses)) before being hand-transcribed into the static HTML, matching the TSX's live computation exactly."
+      ]
+    },
+    {
+      "id": "sports-standings-table-1-dark",
+      "title": "Sports standings table (Dark)",
+      "description": "The same 4-team standings table, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/sports-standings-table/1-dark.html",
+        "tsx": "tsx/SportsStandingsTableVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Streak and movement-arrow colors meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

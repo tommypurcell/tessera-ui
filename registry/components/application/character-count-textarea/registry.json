@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-character-count-textarea",
+  "title": "Character Count Textarea",
+  "description": "Textarea with a live character count and an over-limit warning derived from the real input length — distinct from a plain textarea, which has no counting or limit-warning behavior.",
+  "category": "application/forms",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["textarea", "character-count", "forms", "validation"],
+  "useWhen": [
+    "A text field has a hard or soft character limit (bios, tweets, SMS, meta descriptions).",
+    "You want the remaining/over-limit count computed live from the actual input value length.",
+    "The border and count text should both flip to a warning state once the limit is exceeded."
+  ],
+  "avoidWhen": [
+    "The field has no length constraint — use a plain textarea instead.",
+    "You need hard truncation instead of a warning — enforce maxLength natively and skip the counter.",
+    "The limit is extremely high and unlikely to be reached — a counter would be visual noise."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The textarea and label span the full width of their container up to a max width; the count line stays right-aligned below.",
+  "accessibility": [
+    "The count region is aria-live='polite' and referenced via aria-describedby so screen reader users hear updates without focus loss.",
+    "Over-limit state is conveyed by both a red border and explicit 'X characters over limit' text, not color alone.",
+    "The label is programmatically associated with the textarea via htmlFor/id."
+  ],
+  "compatibleWith": ["application-comment-composer", "application-inline-edit-field"],
+  "variants": [
+    {
+      "id": "character-count-textarea-1",
+      "title": "Character count textarea",
+      "description": "Two textareas against a 160-character limit: one with 128 characters remaining, one 24 characters over limit with a red border, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/character-count-textarea/1.html",
+        "tsx": "tsx/CharacterCountTextareaVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "over-limit"],
+      "accessibility": [
+        "Both character counts were computed from the real string length of the example text (32 and 184 characters) against the 160-character maxLength, not hand-typed."
+      ]
+    },
+    {
+      "id": "character-count-textarea-1-dark",
+      "title": "Character count textarea (Dark)",
+      "description": "The same two textareas, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/character-count-textarea/1-dark.html",
+        "tsx": "tsx/CharacterCountTextareaVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "over-limit"],
+      "accessibility": [
+        "Border and count text colors meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
