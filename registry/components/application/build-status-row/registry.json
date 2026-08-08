@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-build-status-row",
+  "title": "Build Status Row",
+  "description": "CI/CD pipeline row of sequential stage pills (queued/running/passed/failed) with a total duration — each pill's icon and color are derived from its real status.",
+  "category": "application/feedback",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["ci-cd", "pipeline", "build", "devtools", "status"],
+  "useWhen": [
+    "Showing the stages of a CI/CD pipeline run (build, test, deploy) and each stage's current status at a glance.",
+    "You want stage icon/color to always match the real status, not styled per-instance.",
+    "A compact single-row summary fits better than a full pipeline visualization page."
+  ],
+  "avoidWhen": [
+    "You need a grid of many services' statuses at once — use status-page-board instead.",
+    "Stages need expandable logs or detail panels — this is a compact summary row, not a full pipeline viewer.",
+    "There's only one status to show, not a sequence of stages — use a simple badge or sync-status-row instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The stage list is a flex-1 row that can wrap or scroll horizontally in your own layout on narrow viewports; the pipeline name and duration stay fixed at each end.",
+  "accessibility": [
+    "Stage status is conveyed by icon shape and color together (spinner for running, check for passed, X for failed, clock for queued), not color alone.",
+    "The running stage's spinner uses animate-spin, giving a real motion cue distinct from the static icons on other stages.",
+    "Chevron separators between stages are decorative (aria-hidden); the stage labels carry the sequence meaning."
+  ],
+  "compatibleWith": ["application-sync-status-row", "application-status-page-board", "application-badges"],
+  "variants": [
+    {
+      "id": "build-status-row-1",
+      "title": "Build status row",
+      "description": "Three-stage pipeline (Build passed, Test passed, Deploy running) with elapsed duration, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/build-status-row/1.html",
+        "tsx": "tsx/BuildStatusRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["queued", "running", "passed", "failed"],
+      "accessibility": [
+        "Each stage's icon path is looked up from its status, so it can never render out of sync with its color."
+      ]
+    },
+    {
+      "id": "build-status-row-1-dark",
+      "title": "Build status row (Dark)",
+      "description": "The same three-stage pipeline, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/build-status-row/1-dark.html",
+        "tsx": "tsx/BuildStatusRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["queued", "running", "passed", "failed"],
+      "accessibility": [
+        "Pill and separator colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
