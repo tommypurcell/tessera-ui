@@ -574,7 +574,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-7) Email List Row — unread dot + toggleable star + sender/subject/snippet + attachment icon, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed + rebased onto main (PR #26)
 - [x] (builder-4) Email Reading Pane — action bar (reply/forward/archive/delete) + subject/sender/date header + body, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #17)
 - [x] (builder-5) Compose Window — minimizable message composer with to/subject/body and send; distinct from comment-composer. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
-- [~] (builder-7) Folder / Label Sidebar — mail folders with unread counts and colored labels; distinct from settings-nav-list.
+- [x] (builder-7) Folder / Label Sidebar — 4 system folders (Inbox active w/ count badge) + 3 colored labels, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #26)
 - [x] (builder-5) Thread Collapse — stacked quoted-reply chain with expand-all; distinct from comment-thread. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 
 <!-- Theme: Developer API console -->
@@ -602,11 +602,11 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 <!-- === WAVE 11 (deep-backlog refill, post-331) — new verticals, verified non-dupe against registry === -->
 
 <!-- Theme: POS / retail -->
-- [ ] POS Keypad — numeric amount pad with total display and quick-cash buttons; distinct from quantity-inputs.
+- [~] (builder-6) POS Keypad — numeric amount pad with total display and quick-cash buttons; distinct from quantity-inputs.
 - [ ] Receipt Preview — itemized thermal-receipt layout with tax/total and footer; distinct from invoice-table.
 - [ ] Barcode Scan Row — scanned-item row with SKU, qty, price, and void; distinct from cart-line-item.
-- [~] (builder-8) Tip Selector — preset %-tip buttons with custom entry and split-count; distinct from tiered-donation-buttons.
-- [ ] Cash Drawer Summary — expected vs counted totals with variance highlight; distinct from comparison-stat-pair.
+- [x] (builder-8) Tip Selector — preset %-tip buttons w/ computed tip/total/per-person split (real math from bill×percent÷splitCount), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
+- [~] (builder-8) Cash Drawer Summary — expected vs counted totals with variance highlight; distinct from comparison-stat-pair.
 
 <!-- Theme: Banking -->
 - [ ] Account Balance Card — masked balance with show/hide, account number, and quick actions; distinct from token-balance-row.
