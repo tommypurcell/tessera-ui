@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex justify-center p-6">
+    <div class="w-full max-w-sm rounded-xl border border-gray-700 bg-gray-900 p-5 shadow-sm">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <img src="https://i.pravatar.cc/64?img=32" alt="" class="size-10 rounded-full" />
+          <div>
+            <p class="text-sm font-semibold text-white">Maria Gonzalez</p>
+            <p class="text-xs text-gray-400">Reservation #48213</p>
+          </div>
+        </div>
+        <span class="inline-flex items-center rounded-full bg-amber-400/10 px-2.5 py-1 text-xs font-medium text-amber-400">Arriving today</span>
+      </div>
+
+      <dl class="mt-4 grid grid-cols-3 gap-3 border-t border-gray-800 pt-4 text-sm">
+        <div>
+          <dt class="text-xs text-gray-400">Room</dt>
+          <dd class="mt-0.5 font-semibold text-white">412</dd>
+        </div>
+        <div>
+          <dt class="text-xs text-gray-400">Check-in</dt>
+          <dd class="mt-0.5 font-semibold text-white">Aug 8</dd>
+        </div>
+        <div>
+          <dt class="text-xs text-gray-400">Check-out</dt>
+          <dd class="mt-0.5 font-semibold text-white">Aug 11</dd>
+        </div>
+      </dl>
+
+      <div class="mt-4 grid grid-cols-2 gap-2">
+        <button type="button" class="rounded-lg bg-white px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200">Check in</button>
+        <button type="button" class="rounded-lg border border-gray-700 px-3 py-2 text-sm font-medium text-gray-200 hover:bg-gray-800">Check out</button>
+      </div>
+    </div>
+  </body>
+</html>
