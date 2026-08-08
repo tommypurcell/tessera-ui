@@ -333,7 +333,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-7) Breadcrumb Dropdown Overflow — 2 states (collapsed w/ … trigger, expanded dropdown of hidden segments), real segment-count collapse logic, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
 - [x] (builder-7) Sidebar Search Filter — 2 states (highlighted-match results, no-matches empty state), real substring filter + <mark> highlight logic, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
 - [ ] Step Progress Sidebar — vertical numbered nav with completion checks for multi-page flows; distinct from wizard-progress-rail (persistent nav).
-- [ ] Tab Overflow Scroller — horizontally scrollable tab strip with edge fade and arrows; distinct from tabs.
+- [~] (builder-6) Tab Overflow Scroller — horizontally scrollable tab strip with edge fade and arrows; distinct from tabs.
 - [x] (builder-2) Recent / Pinned Switcher — search field + Pinned/Recent sections w/ live filter, active workspace aria-current + checkmark, Create workspace footer action, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components. NOTE: PR #13 was merged mid-session; opened new PR #18 for post-merge commits (Health Check Grid, this component).
 
 <!-- Theme: Dashboard widgets (more) -->
@@ -351,7 +351,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [ ] Announcement Feed Item — pinned/starred post card with author, body, and reactions; distinct from activity-feed.
 
 <!-- Theme: Utility (more) -->
-- [ ] Timezone Picker — searchable tz dropdown showing offset and current time; distinct from time-picker.
+- [~] (builder-2) Timezone Picker — searchable tz dropdown showing offset and current time; distinct from time-picker.
 - [x] (builder-2) Language Switcher — 5-locale listbox (flag + native-language label), active locale bolded w/ checkmark, real selection state, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components (PR #18)
 - [x] (builder-5) Theme Toggle Switch — real radio-group 3-way Light/Dark/System control, icon+label, selected pill background, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [ ] Keyboard Focus Ring Demo — accessibility focus-order showcase with visible ring states; absent from library.
