@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-rate-us-prompt",
+  "title": "Rate Us Prompt",
+  "description": "In-app star rating prompt components with a positive-feedback branch and a low-rating feedback branch, for app-store review requests.",
+  "category": "application/rate-us-prompt",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "rate-us-prompt",
+    "review",
+    "feedback",
+    "app store",
+    "prompt"
+  ],
+  "useWhen": [
+    "In-app star rating prompt components with a positive-feedback branch and a low-rating feedback branch, for app-store review requests."
+  ],
+  "avoidWhen": [
+    "Avoid rate us prompt when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Rate Us Prompt uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Associate each form field with a visible or programmatic label before production use.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "rate-us-prompt-1",
+      "title": "Star prompt with positive confirmation branch",
+      "description": "Star prompt with positive confirmation branch In-app star rating prompt components with a positive-feedback branch and a low-rating feedback branch, for app-store review requests.",
+      "source": {
+        "html": "../../../../public/examples/application/rate-us-prompt/1.html",
+        "tsx": "tsx/RateUsPromptVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "rate-us-prompt-1-dark",
+      "title": "Star prompt with positive confirmation branch (Dark)",
+      "description": "Star prompt with positive confirmation branch In-app star rating prompt components with a positive-feedback branch and a low-rating feedback branch, for app-store review requests.",
+      "source": {
+        "html": "../../../../public/examples/application/rate-us-prompt/1-dark.html",
+        "tsx": "tsx/RateUsPromptVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "rate-us-prompt-2",
+      "title": "Low-rating branch with feedback textarea",
+      "description": "Low-rating branch with feedback textarea In-app star rating prompt components with a positive-feedback branch and a low-rating feedback branch, for app-store review requests.",
+      "source": {
+        "html": "../../../../public/examples/application/rate-us-prompt/2.html",
+        "tsx": "tsx/RateUsPromptVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "rate-us-prompt-2-dark",
+      "title": "Low-rating branch with feedback textarea (Dark)",
+      "description": "Low-rating branch with feedback textarea In-app star rating prompt components with a positive-feedback branch and a low-rating feedback branch, for app-store review requests.",
+      "source": {
+        "html": "../../../../public/examples/application/rate-us-prompt/2-dark.html",
+        "tsx": "tsx/RateUsPromptVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    }
+  ]
+}
