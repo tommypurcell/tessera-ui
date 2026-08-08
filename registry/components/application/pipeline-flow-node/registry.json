@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-pipeline-flow-node",
+  "title": "Pipeline Flow Node",
+  "description": "A draggable workflow-canvas process node with input/output connector ports, an icon, title, and a status indicator, shown connected to a downstream node.",
+  "category": "application/pipeline-flow-node",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "pipeline-flow-node",
+    "workflow",
+    "pipeline",
+    "node",
+    "automation",
+    "canvas"
+  ],
+  "useWhen": [
+    "Building a workflow/automation builder (ETL pipeline, no-code automation, data pipeline) with a drag-and-drop node canvas.",
+    "Each step needs to show connection points (input/output ports) and a live execution status."
+  ],
+  "avoidWhen": [
+    "You need to show proportional flow volume between stages, not a step-by-step process graph — `Sankey Flow Diagram` fits that instead.",
+    "The workflow has no branching/connection structure — a linear `Stepper Wizard` or `Steps` component is simpler."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Each node keeps a fixed width regardless of container size; the canvas itself should be a pannable/zoomable surface in a real implementation rather than reflowing at narrow widths.",
+  "accessibility": [
+    "Each node's icon is paired with a text title, and its status dot is paired with a text label (\"Success\", \"Running\"), not color alone.",
+    "The drag handle is the whole node body; in a real implementation, provide an equivalent keyboard-operable way to reorder or connect nodes.",
+    "Connector ports are decorative visual anchors; the underlying connection data should be exposed via accessible means (e.g. a text list of pipeline steps) alongside the canvas."
+  ],
+  "compatibleWith": ["application-sankey-flow-diagram", "application-board-swimlane"],
+  "variants": [
+    {
+      "id": "pipeline-flow-node-1",
+      "title": "Connected nodes",
+      "description": "Two workflow nodes ('Fetch Records' with a Success status, 'Transform' with a pulsing Running status) on a dotted canvas, connected by an arrow edge, each with visible input/output ports.",
+      "source": {
+        "html": "../../../../public/examples/application/pipeline-flow-node/1.html",
+        "tsx": "tsx/PipelineFlowNodeVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["success", "running"],
+      "accessibility": [
+        "Each node's status is stated as text (\"Success\", \"Running\") beside its indicator dot."
+      ]
+    },
+    {
+      "id": "pipeline-flow-node-1-dark",
+      "title": "Connected nodes (Dark)",
+      "description": "Pipeline flow nodes adapted for dark surfaces, including the canvas dot-grid and node status colors.",
+      "source": {
+        "html": "../../../../public/examples/application/pipeline-flow-node/1-dark.html",
+        "tsx": "tsx/PipelineFlowNodeVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["success", "running"],
+      "accessibility": [
+        "Node borders, ports, and status text all meet WCAG AA contrast against the dark canvas background."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-form-field-wizard",
+  "title": "Form Field Wizard",
+  "description": "A reviewable, jump-anywhere section list for long official forms, with overall progress, per-section completion status, and a save-and-continue-later affordance.",
+  "category": "application/form-field-wizard",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "form-field-wizard",
+    "government form",
+    "long form",
+    "sections",
+    "save progress",
+    "application"
+  ],
+  "useWhen": [
+    "Long official or government-style applications (permits, benefits, licenses) split into multiple sections, where users often need to save and return later.",
+    "Users benefit from jumping directly to any section rather than being forced through a strict linear step order."
+  ],
+  "avoidWhen": [
+    "The flow must be completed strictly in order without jumping ahead — `Stepper Wizard`'s linear step header enforces that better.",
+    "The form is short enough to fit on one screen — a section list adds unnecessary structure for a handful of fields."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The section list and header stack in a single column at all widths; the progress bar and section rows keep their full width at any container size.",
+  "accessibility": [
+    "Each section is a real <button> in an ordered <ul>, keyboard-reachable and operable without a pointer, enabling non-linear navigation.",
+    "The current section carries aria-current=\"true\" in addition to its ring highlight, and each row's status (Complete, Editing, Not started) is stated as visible text, not color alone.",
+    "Completed sections show a checkmark icon alongside the 'Complete' text label, reinforcing status beyond color."
+  ],
+  "compatibleWith": ["application-stepper-wizard", "application-form-row"],
+  "variants": [
+    {
+      "id": "form-field-wizard-1",
+      "title": "Passport application",
+      "description": "A five-section passport application (DS-11) with an overall '3 of 5 complete' progress bar, two completed sections, the current section highlighted, and two not-started sections, plus 'Save & continue later' and 'Continue editing' actions.",
+      "source": {
+        "html": "../../../../public/examples/application/form-field-wizard/1.html",
+        "tsx": "tsx/FormFieldWizardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["complete", "current", "not-started"],
+      "accessibility": [
+        "The current section carries aria-current=\"true\"; each status is stated as text."
+      ]
+    },
+    {
+      "id": "form-field-wizard-1-dark",
+      "title": "Passport application (Dark)",
+      "description": "Form field wizard adapted for dark surfaces, including the progress bar fill and current-section highlight.",
+      "source": {
+        "html": "../../../../public/examples/application/form-field-wizard/1-dark.html",
+        "tsx": "tsx/FormFieldWizardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["complete", "current", "not-started"],
+      "accessibility": [
+        "Section text, status labels, and the progress bar all meet WCAG AA contrast against the dark card background."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-vehicle-spec-card",
+  "title": "Vehicle Spec Card",
+  "description": "A car listing card with a photo, certification badge, title, icon-labeled spec chips (mileage, fuel type, transmission), price, and a view-listing CTA.",
+  "category": "application/vehicle-spec-card",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "vehicle-spec-card",
+    "vehicle",
+    "car listing",
+    "automotive",
+    "spec chips",
+    "marketplace"
+  ],
+  "useWhen": [
+    "Automotive marketplaces or dealership inventory listings where each vehicle needs a photo, key specs, and a price at a glance.",
+    "The spec set (mileage, fuel type, transmission) is domain-specific and doesn't fit the generic `Product Card` field set."
+  ],
+  "avoidWhen": [
+    "The item being listed isn't a vehicle — use `Product Card` for general retail listings instead.",
+    "You need a full detail page rather than a summary card — this component is a listing-grid tile, not a detail view."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The card keeps a fixed aspect-ratio photo area at its container's width; spec chips wrap via flex-wrap onto additional lines on narrow cards rather than overflowing.",
+  "accessibility": [
+    "Each spec chip pairs an icon with a text value (e.g. \"18,240 mi\"), not an icon-only badge.",
+    "The certification badge is text-based (\"Certified\"), not conveyed by badge color alone.",
+    "Price and the primary CTA sit in a clear visual hierarchy at the card's base, both reachable via standard tab order."
+  ],
+  "compatibleWith": ["application-product-card", "application-details-list"],
+  "variants": [
+    {
+      "id": "vehicle-spec-card-1",
+      "title": "Certified listing",
+      "description": "A 2023 Audi A4 Premium listing card with a photo, 'Certified' badge, VIN subtitle, mileage/fuel/transmission spec chips, price, and a 'View listing' button.",
+      "source": {
+        "html": "../../../../public/examples/application/vehicle-spec-card/1.html",
+        "tsx": "tsx/VehicleSpecCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Each spec chip's icon is paired with a text value, not icon-only."
+      ]
+    },
+    {
+      "id": "vehicle-spec-card-1-dark",
+      "title": "Certified listing (Dark)",
+      "description": "Vehicle spec card adapted for dark surfaces, including the photo placeholder gradient and chip backgrounds.",
+      "source": {
+        "html": "../../../../public/examples/application/vehicle-spec-card/1-dark.html",
+        "tsx": "tsx/VehicleSpecCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Chip text, price, and the CTA button all meet WCAG AA contrast against the dark card background."
+      ]
+    }
+  ]
+}

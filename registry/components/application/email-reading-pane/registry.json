@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-email-reading-pane",
+  "title": "Email Reading Pane",
+  "description": "A webmail-style reading pane with a reply/forward/archive/delete action bar, a from/to/subject header with sender avatar, and the email body.",
+  "category": "application/email-reading-pane",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "email-reading-pane",
+    "email",
+    "inbox",
+    "mail client",
+    "reading pane",
+    "webmail"
+  ],
+  "useWhen": [
+    "Building a webmail or in-app messaging client where a selected message renders in a dedicated reading pane beside a message list.",
+    "Users need quick access to reply, reply-all, forward, archive, and delete actions for the open message."
+  ],
+  "avoidWhen": [
+    "You're composing a new message rather than reading one — use `Compose Window` for the writing surface instead.",
+    "The content isn't email — a generic two-pane content view fits better without email-specific header fields (From/To) and actions."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The pane fills its container's width and height, with the action bar and header staying fixed while only the body scrolls in a real implementation with long message content.",
+  "accessibility": [
+    "Every toolbar action (Reply, Reply all, Forward, Archive, Delete) carries a descriptive aria-label since only icons are shown.",
+    "The Delete action is visually separated (pushed right) and uses a distinct hover color, signaling its destructive nature beyond position alone.",
+    "Sender name, date, and recipients are all rendered as text in the header, giving full context without relying on the avatar alone."
+  ],
+  "compatibleWith": ["application-compose-window", "application-folder-label-sidebar"],
+  "variants": [
+    {
+      "id": "email-reading-pane-1",
+      "title": "Open message",
+      "description": "An action bar (reply, reply-all, forward, archive, delete), a subject/sender/date/recipients header with avatar, and a formatted email body.",
+      "source": {
+        "html": "../../../../public/examples/application/email-reading-pane/1.html",
+        "tsx": "tsx/EmailReadingPaneVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Each toolbar icon button carries a descriptive aria-label."
+      ]
+    },
+    {
+      "id": "email-reading-pane-1-dark",
+      "title": "Open message (Dark)",
+      "description": "Email reading pane adapted for dark surfaces, including the toolbar hover states and delete-action color.",
+      "source": {
+        "html": "../../../../public/examples/application/email-reading-pane/1-dark.html",
+        "tsx": "tsx/EmailReadingPaneVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Header, toolbar, and body text all meet WCAG AA contrast against the dark pane background."
+      ]
+    }
+  ]
+}
