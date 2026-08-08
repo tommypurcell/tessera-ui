@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-optimistic-pending-row",
+  "title": "Optimistic Pending Row",
+  "description": "Optimistic-update list row: an item added immediately on submit, rendered dimmed with a spinner and \"Sending…\" while in flight, settling to normal on success or to an error state with Retry/Dismiss on failure.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["optimistic-ui", "list", "pending", "retry", "async"],
+  "useWhen": [
+    "Rendering a list (comments, messages, activity) where new items appear instantly via optimistic UI before the server confirms them.",
+    "You need a visible in-flight state and a recoverable failure state within the same row, not just a loading spinner for the whole list.",
+    "Distinct from Inline Add Row, which is the always-present composer row used to create a new item, not the transient in-flight state of an item already submitted."
+  ],
+  "avoidWhen": [
+    "You need the input row itself where the user types a new item — use Inline Add Row instead.",
+    "Requests are synchronous or fast enough that a pending state is never visible — a plain row is simpler."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Row content stays on one line with avatar, text, and (when failed) actions via flex; long titles truncate through min-w-0 rather than pushing actions off-screen.",
+  "accessibility": [
+    "Pending and failed rows carry aria-live=\"polite\" so status transitions are announced to screen reader users without needing focus.",
+    "The pending spinner is aria-hidden since the adjacent \"Sending…\" text conveys the same state as visible text.",
+    "The failed row swaps the avatar for a warning icon plus red status text, conveying failure through both icon and text, not color alone."
+  ],
+  "compatibleWith": ["application-inline-add-row", "application-toast-action-undo"],
+  "variants": [
+    {
+      "id": "optimistic-pending-row-1",
+      "title": "Optimistic Pending Row",
+      "description": "Three rows: a settled sent comment, a dimmed pending comment with a spinner, and a failed comment with Retry/Dismiss actions.",
+      "source": {
+        "html": "../../../../public/examples/application/optimistic-pending-row/1.html",
+        "tsx": "tsx/OptimisticPendingRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["sent", "pending", "failed"],
+      "accessibility": [
+        "Pending and failed rows carry aria-live=\"polite\" for status-change announcements."
+      ]
+    },
+    {
+      "id": "optimistic-pending-row-1-dark",
+      "title": "Optimistic Pending Row (Dark)",
+      "description": "The same three row states adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/optimistic-pending-row/1-dark.html",
+        "tsx": "tsx/OptimisticPendingRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["sent", "pending", "failed"],
+      "accessibility": [
+        "Status icon and text contrast remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}
