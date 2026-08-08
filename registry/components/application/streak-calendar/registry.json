@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-streak-calendar",
+  "title": "Streak Calendar",
+  "description": "Consecutive-day activity streak card: a flame icon with the current streak count, and a 7-day row showing active, missed, and today's state.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["streak", "habit", "gamification", "calendar", "activity"],
+  "useWhen": [
+    "Motivating daily habit or engagement streaks (learning apps, fitness trackers, daily check-ins).",
+    "You want a compact week view rather than a full month grid, since streaks are usually assessed over the recent past.",
+    "Distinct from Heatmap Calendar, which shows month-long intensity buckets rather than a short, gamified consecutive-day streak."
+  ],
+  "avoidWhen": [
+    "You need to show a full month or year of activity history — use Heatmap Calendar instead.",
+    "The product has no daily-cadence habit loop — a streak framing adds pressure without a clear behavior to reinforce."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The 7-column day grid stays fixed at 7 columns and shrinks each cell proportionally on narrow viewports rather than wrapping to fewer columns.",
+  "accessibility": [
+    "Each day cell's status is conveyed by both fill/outline styling and a visible glyph or label (a checkmark, a dot, or the word \"Today\"), not color alone.",
+    "The flame icon is decorative; the streak count is stated as literal text (\"12 day streak\"), which is the actual accessible information.",
+    "Day-of-week labels use the same abbreviation scheme in both variants for consistency across light/dark contexts."
+  ],
+  "compatibleWith": ["application-onboarding-checklist", "application-heatmap-calendar"],
+  "variants": [
+    {
+      "id": "streak-calendar-1",
+      "title": "Streak Calendar",
+      "description": "A 12-day streak card with a flame icon, five active (checkmark) days, one missed (dot) day, and today shown with an outlined 'Today' cell.",
+      "source": {
+        "html": "../../../../public/examples/application/streak-calendar/1.html",
+        "tsx": "tsx/StreakCalendarVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["active", "missed", "today"],
+      "accessibility": [
+        "Active, missed, and today states are each conveyed by a distinct visible glyph or label, not fill color alone."
+      ]
+    },
+    {
+      "id": "streak-calendar-1-dark",
+      "title": "Streak Calendar (Dark)",
+      "description": "The same 12-day streak card adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/streak-calendar/1-dark.html",
+        "tsx": "tsx/StreakCalendarVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["active", "missed", "today"],
+      "accessibility": [
+        "Active-day fill, missed-day muting, and the today outline remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}
