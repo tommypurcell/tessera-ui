@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+    <style>
+      .tessera-scroll-area-x {
+        scrollbar-width: thin;
+        scrollbar-color: #4b5563 transparent;
+      }
+      .tessera-scroll-area-x::-webkit-scrollbar {
+        height: 8px;
+      }
+      .tessera-scroll-area-x::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .tessera-scroll-area-x::-webkit-scrollbar-thumb {
+        background-color: #4b5563;
+        border-radius: 9999px;
+        border: 2px solid transparent;
+        background-clip: content-box;
+      }
+      .tessera-scroll-area-x::-webkit-scrollbar-thumb:hover {
+        background-color: #6b7280;
+      }
+    </style>
+  </head>
+  <body class="flex min-h-64 items-center justify-center bg-gray-950 p-6">
+    <div class="w-full max-w-md">
+      <h3 class="mb-2 text-sm font-semibold text-white">Browse categories</h3>
+      <div class="tessera-scroll-area-x flex gap-2 overflow-x-auto pb-3">
+        <button type="button" class="shrink-0 rounded-full bg-white px-3.5 py-1.5 text-sm font-medium text-gray-900">
+          All
+        </button>
+        <button type="button" class="shrink-0 rounded-full border border-gray-700 bg-gray-900 px-3.5 py-1.5 text-sm font-medium text-gray-200 hover:bg-gray-800">
+          Design
+        </button>
+        <button type="button" class="shrink-0 rounded-full border border-gray-700 bg-gray-900 px-3.5 py-1.5 text-sm font-medium text-gray-200 hover:bg-gray-800">
+          Engineering
+        </button>
+        <button type="button" class="shrink-0 rounded-full border border-gray-700 bg-gray-900 px-3.5 py-1.5 text-sm font-medium text-gray-200 hover:bg-gray-800">
+          Marketing
+        </button>
+        <button type="button" class="shrink-0 rounded-full border border-gray-700 bg-gray-900 px-3.5 py-1.5 text-sm font-medium text-gray-200 hover:bg-gray-800">
+          Sales
+        </button>
+        <button type="button" class="shrink-0 rounded-full border border-gray-700 bg-gray-900 px-3.5 py-1.5 text-sm font-medium text-gray-200 hover:bg-gray-800">
+          Support
+        </button>
+        <button type="button" class="shrink-0 rounded-full border border-gray-700 bg-gray-900 px-3.5 py-1.5 text-sm font-medium text-gray-200 hover:bg-gray-800">
+          Finance
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

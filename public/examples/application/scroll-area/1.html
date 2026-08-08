@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+    <style>
+      .tessera-scroll-area {
+        scrollbar-width: thin;
+        scrollbar-color: #d1d5db transparent;
+      }
+      .tessera-scroll-area::-webkit-scrollbar {
+        width: 8px;
+      }
+      .tessera-scroll-area::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .tessera-scroll-area::-webkit-scrollbar-thumb {
+        background-color: #d1d5db;
+        border-radius: 9999px;
+        border: 2px solid transparent;
+        background-clip: content-box;
+      }
+      .tessera-scroll-area::-webkit-scrollbar-thumb:hover {
+        background-color: #9ca3af;
+      }
+    </style>
+  </head>
+  <body class="flex min-h-64 items-center justify-center bg-gray-50 p-6">
+    <div class="w-full max-w-sm rounded-lg border border-gray-200 bg-white shadow-sm">
+      <div class="border-b border-gray-200 px-4 py-3">
+        <h3 class="text-sm font-semibold text-gray-900">Team members</h3>
+        <p class="text-xs text-gray-500">18 people</p>
+      </div>
+      <div class="tessera-scroll-area h-64 overflow-y-auto p-2">
+        <ul class="space-y-0.5">
+          <li class="flex items-center gap-3 rounded-md px-2 py-2 hover:bg-gray-50">
+            <img src="https://i.pravatar.cc/64?img=1" alt="" class="size-8 rounded-full object-cover" />
+            <div class="min-w-0">
+              <p class="truncate text-sm font-medium text-gray-900">Ava Martinez</p>
+              <p class="truncate text-xs text-gray-500">Engineering</p>
+            </div>
+          </li>
+          <li class="flex items-center gap-3 rounded-md px-2 py-2 hover:bg-gray-50">
+            <img src="https://i.pravatar.cc/64?img=2" alt="" class="size-8 rounded-full object-cover" />
+            <div class="min-w-0">
+              <p class="truncate text-sm font-medium text-gray-900">Liam Chen</p>
+              <p class="truncate text-xs text-gray-500">Design</p>
+            </div>
+          </li>
+          <li class="flex items-center gap-3 rounded-md px-2 py-2 hover:bg-gray-50">
+            <img src="https://i.pravatar.cc/64?img=3" alt="" class="size-8 rounded-full object-cover" />
+            <div class="min-w-0">
+              <p class="truncate text-sm font-medium text-gray-900">Noah Patel</p>
+              <p class="truncate text-xs text-gray-500">Engineering</p>
+            </div>
+          </li>
+          <li class="flex items-center gap-3 rounded-md px-2 py-2 hover:bg-gray-50">
+            <img src="https://i.pravatar.cc/64?img=4" alt="" class="size-8 rounded-full object-cover" />
+            <div class="min-w-0">
+              <p class="truncate text-sm font-medium text-gray-900">Sofia Rossi</p>
+              <p class="truncate text-xs text-gray-500">Marketing</p>
+            </div>
+          </li>
+          <li class="flex items-center gap-3 rounded-md px-2 py-2 hover:bg-gray-50">
+            <img src="https://i.pravatar.cc/64?img=5" alt="" class="size-8 rounded-full object-cover" />
+            <div class="min-w-0">
+              <p class="truncate text-sm font-medium text-gray-900">Ethan Kim</p>
+              <p class="truncate text-xs text-gray-500">Sales</p>
+            </div>
+          </li>
+          <li class="flex items-center gap-3 rounded-md px-2 py-2 hover:bg-gray-50">
+            <img src="https://i.pravatar.cc/64?img=6" alt="" class="size-8 rounded-full object-cover" />
+            <div class="min-w-0">
+              <p class="truncate text-sm font-medium text-gray-900">Maria Garcia</p>
+              <p class="truncate text-xs text-gray-500">Product</p>
+            </div>
+          </li>
+          <li class="flex items-center gap-3 rounded-md px-2 py-2 hover:bg-gray-50">
+            <img src="https://i.pravatar.cc/64?img=7" alt="" class="size-8 rounded-full object-cover" />
+            <div class="min-w-0">
+              <p class="truncate text-sm font-medium text-gray-900">James Wilson</p>
+              <p class="truncate text-xs text-gray-500">Engineering</p>
+            </div>
+          </li>
+          <li class="flex items-center gap-3 rounded-md px-2 py-2 hover:bg-gray-50">
+            <img src="https://i.pravatar.cc/64?img=8" alt="" class="size-8 rounded-full object-cover" />
+            <div class="min-w-0">
+              <p class="truncate text-sm font-medium text-gray-900">Yuki Tanaka</p>
+              <p class="truncate text-xs text-gray-500">Design</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
