@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-crop-growth-timeline",
+  "title": "Crop Growth Timeline",
+  "description": "A planting-to-harvest stage tracker with dated milestones, a progress connector, and current weather/growing-degree-day context.",
+  "category": "application/crop-growth-timeline",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "crop-growth-timeline",
+    "agriculture",
+    "crop stages",
+    "growth tracker",
+    "weather",
+    "planting to harvest"
+  ],
+  "useWhen": [
+    "Agriculture dashboards need to show where a specific crop/field is in its lifecycle, from seeding through harvest.",
+    "The stage sequence is fixed and known in advance (e.g. seeded, sprouted, vegetative, flowering, harvest), unlike freeform event logs."
+  ],
+  "avoidWhen": [
+    "Tracking a chronological log of discrete, varied events with notes and providers — `Care Timeline`'s avatar-led event list fits that shape better.",
+    "The crop's stage count or order varies per instance — a fixed horizontal stepper assumes a known, linear sequence."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The stage stepper stays horizontal with stages spaced evenly via flex justify-between; labels wrap to two lines under each stage marker at narrow widths.",
+  "accessibility": [
+    "The current stage carries aria-current=\"true\" in addition to its ring highlight, and completed stages show a checkmark icon rather than relying on color alone.",
+    "Each stage's name and date range are rendered as visible text beneath its marker, not conveyed only through position on the connector.",
+    "The weather/growing-degree-day summary and next-action text are plain text, readable independent of the stepper's visual layout."
+  ],
+  "compatibleWith": ["application-care-timeline", "application-field-sensor-map"],
+  "variants": [
+    {
+      "id": "crop-growth-timeline-1",
+      "title": "Sweet corn growth stages",
+      "description": "A five-stage sweet corn timeline (Seeded, Sprouted, Vegetative, Flowering, Harvest) with two completed stages, the current stage highlighted with a ring, a day-count badge, and a weather/growing-degree-day summary bar with a next-action note.",
+      "source": {
+        "html": "../../../../public/examples/application/crop-growth-timeline/1.html",
+        "tsx": "tsx/CropGrowthTimelineVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["complete", "current", "upcoming"],
+      "accessibility": [
+        "The current stage carries aria-current=\"true\"; completed stages show a checkmark icon."
+      ]
+    },
+    {
+      "id": "crop-growth-timeline-1-dark",
+      "title": "Sweet corn growth stages (Dark)",
+      "description": "Crop growth timeline adapted for dark surfaces, including the progress connector and current-stage ring highlight.",
+      "source": {
+        "html": "../../../../public/examples/application/crop-growth-timeline/1-dark.html",
+        "tsx": "tsx/CropGrowthTimelineVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["complete", "current", "upcoming"],
+      "accessibility": [
+        "Stage labels, dates, and the weather summary all meet WCAG AA contrast against the dark card background."
+      ]
+    }
+  ]
+}
