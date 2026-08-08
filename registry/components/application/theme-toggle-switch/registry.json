@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-theme-toggle-switch",
+  "title": "Theme Toggle Switch",
+  "description": "Three-way Light/Dark/System theme selector built as a real radio group with icons and a contrasting pill background on the selected option.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["theme", "dark-mode", "settings", "radio", "toggle"],
+  "useWhen": [
+    "Letting users choose between light, dark, and OS-matching (\"system\") appearance.",
+    "You want a segmented control rather than a binary switch, since \"system\" is a genuine third state, not just an intermediate value.",
+    "The choice needs icon + label pairing so the option is clear without relying on icon recognition alone."
+  ],
+  "avoidWhen": [
+    "Your app only supports light and dark (no system/auto mode) — a binary switch from the Toggles primitive is simpler and clearer.",
+    "You need the control to live inside a menu item rather than as a standalone segmented control — compose a menu item with a smaller instance instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The control is a fixed-width inline-flex group sized to its content; it doesn't reflow at different widths since its label set is always three short words.",
+  "accessibility": [
+    "Built on real radio inputs grouped by a shared name, wrapped in a <fieldset>/<legend> (visually hidden) — so it behaves like a native radio group for keyboard and screen reader users, including arrow-key navigation between options.",
+    "The selected option's pill background is a secondary visual cue; the underlying checked radio state is always the source of truth.",
+    "Each option pairs an icon with visible text, so meaning never depends on icon recognition alone."
+  ],
+  "compatibleWith": ["application-segmented-control", "application-toggles"],
+  "variants": [
+    {
+      "id": "theme-toggle-switch-1",
+      "title": "Theme Toggle Switch",
+      "description": "A three-way Light/Dark/System control with Light selected (white pill background) against a gray track.",
+      "source": {
+        "html": "../../../../public/examples/application/theme-toggle-switch/1.html",
+        "tsx": "tsx/ThemeToggleSwitchVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["light-selected", "dark-selected", "system-selected"],
+      "accessibility": [
+        "Standard radio-group keyboard navigation (arrow keys move selection) works without any custom key handling."
+      ]
+    },
+    {
+      "id": "theme-toggle-switch-1-dark",
+      "title": "Theme Toggle Switch (Dark)",
+      "description": "The same three-way control adapted for dark surfaces, shown with Dark selected.",
+      "source": {
+        "html": "../../../../public/examples/application/theme-toggle-switch/1-dark.html",
+        "tsx": "tsx/ThemeToggleSwitchVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["light-selected", "dark-selected", "system-selected"],
+      "accessibility": [
+        "Selected-pill contrast against the dark track remains distinguishable in both directions of the toggle."
+      ]
+    }
+  ]
+}
