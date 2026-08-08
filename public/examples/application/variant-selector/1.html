@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-xs p-6">
+    <div class="flex flex-col gap-5">
+      <div>
+        <p class="text-sm font-medium text-gray-900">Color: <span class="font-normal text-gray-500">Matte Black</span></p>
+
+        <div role="radiogroup" aria-label="Color" class="mt-2 flex items-center gap-2">
+          <button type="button" role="radio" aria-checked="true" aria-label="Matte Black" class="relative flex size-8 items-center justify-center rounded-full ring-2 ring-offset-2 ring-gray-900">
+            <span class="size-6 rounded-full bg-gray-900"></span>
+          </button>
+          <button type="button" role="radio" aria-checked="false" aria-label="Cloud White" class="relative flex size-8 items-center justify-center rounded-full ring-1 ring-inset ring-gray-200 hover:ring-gray-300">
+            <span class="size-6 rounded-full border border-gray-200 bg-white"></span>
+          </button>
+          <button type="button" role="radio" aria-checked="false" aria-label="Ocean Blue" class="relative flex size-8 items-center justify-center rounded-full ring-1 ring-inset ring-gray-200 hover:ring-gray-300">
+            <span class="size-6 rounded-full bg-blue-600"></span>
+          </button>
+          <button type="button" role="radio" aria-checked="false" aria-disabled="true" aria-label="Sunset Red, out of stock" class="relative flex size-8 cursor-not-allowed items-center justify-center rounded-full ring-1 ring-inset ring-gray-200 opacity-40">
+            <span class="size-6 rounded-full bg-rose-500"></span>
+            <span aria-hidden="true" class="absolute inset-0 rounded-full border border-gray-400" style="background: linear-gradient(to top right, transparent calc(50% - 1px), #9ca3af, transparent calc(50% + 1px))"></span>
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex items-center justify-between">
+          <p class="text-sm font-medium text-gray-900">Size: <span class="font-normal text-gray-500">M</span></p>
+          <button type="button" class="text-xs font-medium text-blue-600 hover:text-blue-700">Size guide</button>
+        </div>
+
+        <div role="radiogroup" aria-label="Size" class="mt-2 grid grid-cols-5 gap-2">
+          <button type="button" role="radio" aria-checked="false" class="rounded-md border border-gray-300 py-1.5 text-sm text-gray-700 hover:border-gray-400">
+            XS
+          </button>
+          <button type="button" role="radio" aria-checked="false" class="rounded-md border border-gray-300 py-1.5 text-sm text-gray-700 hover:border-gray-400">
+            S
+          </button>
+          <button type="button" role="radio" aria-checked="true" class="rounded-md border-2 border-gray-900 py-1.5 text-sm font-semibold text-gray-900">
+            M
+          </button>
+          <button type="button" role="radio" aria-checked="false" class="rounded-md border border-gray-300 py-1.5 text-sm text-gray-700 hover:border-gray-400">
+            L
+          </button>
+          <button type="button" role="radio" aria-checked="false" aria-disabled="true" class="relative cursor-not-allowed rounded-md border border-gray-200 py-1.5 text-sm text-gray-300">
+            XL
+            <span aria-hidden="true" class="absolute inset-x-2 top-1/2 h-px -translate-y-1/2 bg-gray-300"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
