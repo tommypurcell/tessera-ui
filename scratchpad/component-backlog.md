@@ -285,7 +285,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-8) Donut Chart — 4-segment traffic-sources ring, computed center total + legend via SVG stroke-dasharray (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [ ] Stacked Area Chart — multi-series cumulative trend with legend toggle; absent from charts set.
 - [x] (builder-6) Gauge Chart — 2 variants (standalone threshold-zone gauge, compact gauge with metric+target), light+dark, registry+tsx generated, screenshots verified (fixed a needle/label overlap found during review), committed to builder-6-components.
-- [ ] Treemap — nested proportional rectangles with labels for hierarchical size; absent from library.
+- [~] (builder-6) Treemap — nested proportional rectangles with labels for hierarchical size; absent from library.
 - [x] (builder-8) Waterfall Chart — 6-step Q3 revenue bridge, running-total bar positions computed from deltas (tsx light+dark, html light+dark, registry.json, MDX); fixed a flex items-end height bug found during screenshot review; screenshot verified light+dark, pushed to PR #6
 - [ ] Calendar Heat Legend Chart — month grid with value intensity and axis labels; distinct from heatmap-calendar (chart framing).
 
@@ -316,8 +316,8 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: Feedback / status (more) -->
 - [ ] Progress Steps Toast — long-running-task toast showing sub-step progress; distinct from toast-stack.
-- [ ] Rate Limit Notice — cooldown banner with countdown to retry availability; distinct from quota-warning-banner.
-- [~] (builder-2) Health Check Grid — service tiles with green/yellow/red status and latency; distinct from status-page-board (compact grid).
+- [~] (builder-10) Rate Limit Notice — cooldown banner with countdown to retry availability; distinct from quota-warning-banner.
+- [x] (builder-2) Health Check Grid — 2x2 service tile grid (live-pulse dot on operational, amber degraded, highlighted red outage tile), status conveyed via color+text label together, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components
 - [x] (builder-8) Sync Status Row — 3-state row (syncing/synced/failed) w/ spinning icon + disabled-while-syncing Sync now action (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [ ] Maintenance Mode Screen — full-page scheduled-downtime notice with ETA; distinct from error-page.
 
@@ -334,20 +334,20 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [ ] Sidebar Search Filter — sidebar-top input that live-filters the nav items below; absent from library.
 - [ ] Step Progress Sidebar — vertical numbered nav with completion checks for multi-page flows; distinct from wizard-progress-rail (persistent nav).
 - [ ] Tab Overflow Scroller — horizontally scrollable tab strip with edge fade and arrows; distinct from tabs.
-- [ ] Recent / Pinned Switcher — workspace/project switcher with pinned + recent sections; distinct from dropdown.
+- [~] (builder-2) Recent / Pinned Switcher — workspace/project switcher with pinned + recent sections; distinct from dropdown.
 
 <!-- Theme: Dashboard widgets (more) -->
-- [~] (builder-10) Activity Ring Trio — three concentric goal rings (Apple-Fitness style); distinct from progress-ring-cluster (concentric).
+- [x] (builder-10) Activity Ring Trio — 2 variants (large concentric ring trio w/ legend, compact inline ring trio w/ summary), light+dark, ring circumference/offset math verified against Python, registry+tsx generated, screenshots verified, pushed
 - [ ] Metric Trend Grid — grid of small KPI + sparkline cells for an at-a-glance board; distinct from metric-sparkline-card (grid).
 - [ ] Top Movers List — gainers/losers rows with % change and direction color; distinct from leaderboard-list.
 - [ ] Live Counter Tile — animated ticking number tile for realtime metrics; distinct from big-number-delta-tile.
-- [~] (builder-8) Comparison Stat Pair — two side-by-side metrics with a vs divider and winner highlight; absent from library.
+- [x] (builder-8) Comparison Stat Pair — This month (1,284, leading) vs Last month (972), winner computed from real values (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 
 <!-- Theme: Collaboration / content (more) -->
 - [ ] Approval Request Card — pending item with approve/reject actions and requester meta; absent from library.
 - [ ] Version History List — timestamped revision rows with author, diff link, and restore; distinct from changelog-entry.
 - [ ] Task Checklist — nested checkable subtasks with progress count and add-item; distinct from onboarding-checklist.
-- [ ] Poll / Vote Card — options with vote bars, counts, and select-to-vote; absent from library.
+- [~] (builder-8) Poll / Vote Card — options with vote bars, counts, and select-to-vote; absent from library.
 - [ ] Announcement Feed Item — pinned/starred post card with author, body, and reactions; distinct from activity-feed.
 
 <!-- Theme: Utility (more) -->
