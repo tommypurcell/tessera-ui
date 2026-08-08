@@ -466,11 +466,11 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [~] (builder-7) Mention Notification Row — "X mentioned you" row with snippet and jump link; distinct from activity-feed.
 
 <!-- Theme: Gaming -->
-- [ ] Achievement Toast — unlocked-badge popup with icon, title, and rarity glow; distinct from toast-stack.
+- [~] (builder-10) Achievement Toast — unlocked-badge popup with icon, title, and rarity glow; distinct from toast-stack.
 - [ ] XP Progress Bar — level badge + XP fill to next level with overflow; distinct from progress-bars.
 - [ ] Player Card — gamertag, rank tier, avatar, and quick stats; distinct from contact-card.
 - [ ] Match History Row — win/loss result row with score, mode, and duration; distinct from tables.
-- [ ] Leaderboard Podium — top-3 podium visualization with medals and scores; distinct from leaderboard-list.
+- [~] (builder-6) Leaderboard Podium — top-3 podium visualization with medals and scores; distinct from leaderboard-list.
 
 <!-- Theme: IoT / smart home -->
 - [~] (builder-2) Device Toggle Tile — device icon, name, and on/off with status color; distinct from preference-toggle-row.
