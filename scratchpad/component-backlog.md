@@ -127,5 +127,5 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-6) Copy-to-Clipboard Field — read-only value box with a trailing copy button and "copied" confirmation; ubiquitous for API keys, invite links, IDs.
 - [ ] Bulk Action Bar — contextual toolbar that slides in when table rows are selected, showing count + batch actions; pairs with DataTable.
 - [ ] Tree View — expandable hierarchical node list with checkboxes and indent guides (data-oriented); distinct from File Tree's file/folder framing.
-- [ ] Timeline Scrubber — horizontal draggable playhead with tick marks and range handles for media/log scrubbing; distinct from progress bars.
+- [~] (builder-6) Timeline Scrubber — horizontal draggable playhead with tick marks and range handles for media/log scrubbing; distinct from progress bars.
 - [ ] Announcement Banner — full-width top-of-page dismissible bar for product news/maintenance with CTA and severity variants; distinct from inline alerts.
