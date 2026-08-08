@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-command-bar-breadcrumb",
+  "title": "Command Bar Breadcrumb",
+  "description": "A breadcrumb trail where one segment doubles as a dropdown trigger, revealing sibling pages or projects at that level without leaving the trail.",
+  "category": "application/command-bar-breadcrumb",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "command-bar-breadcrumb",
+    "breadcrumb",
+    "navigation",
+    "dropdown",
+    "sibling nav",
+    "command bar"
+  ],
+  "useWhen": [
+    "Users regularly switch between sibling items at one level of a hierarchy (projects, workspaces, folders) and jumping there directly from the breadcrumb saves a trip up and back down.",
+    "The navigation context is deep enough that a breadcrumb is already warranted, and at least one level has several siblings worth surfacing."
+  ],
+  "avoidWhen": [
+    "The hierarchy is shallow or each level has only one path — a plain `breadcrumbs` trail is simpler and avoids implying interactivity that isn't needed.",
+    "Sibling switching is rare — a dedicated switcher (like a project picker) elsewhere in the UI may be more discoverable than an interactive breadcrumb segment."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Segments wrap via flex-wrap on narrow viewports rather than truncating; the open sibling list is left-anchored to its trigger and keeps a fixed width regardless of trail length.",
+  "accessibility": [
+    "The interactive segment is a real <button> with aria-expanded and aria-haspopup=\"listbox\", distinguishing it from the plain <a> segments around it.",
+    "The sibling list uses role=\"listbox\"/role=\"option\" with aria-selected marking the current item, plus a visible checkmark.",
+    "The final segment carries aria-current=\"page\" to mark the active location, per breadcrumb convention."
+  ],
+  "compatibleWith": ["application-breadcrumbs", "application-dropdown"],
+  "variants": [
+    {
+      "id": "command-bar-breadcrumb-1",
+      "title": "Open sibling menu",
+      "description": "A four-level breadcrumb trail with the second segment ('Design System') expanded into an open dropdown of sibling projects, the current one checked.",
+      "source": {
+        "html": "../../../../public/examples/application/command-bar-breadcrumb/1.html",
+        "tsx": "tsx/CommandBarBreadcrumbVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "open"],
+      "accessibility": [
+        "The interactive segment's aria-expanded and aria-haspopup mark it as distinct from the static link segments."
+      ]
+    },
+    {
+      "id": "command-bar-breadcrumb-1-dark",
+      "title": "Open sibling menu (Dark)",
+      "description": "Command bar breadcrumb adapted for dark surfaces, including the active-segment highlight and open dropdown.",
+      "source": {
+        "html": "../../../../public/examples/application/command-bar-breadcrumb/1-dark.html",
+        "tsx": "tsx/CommandBarBreadcrumbVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "open"],
+      "accessibility": [
+        "Segment text, separators, and the open dropdown all meet WCAG AA contrast against the dark background."
+      ]
+    }
+  ]
+}
