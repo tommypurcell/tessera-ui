@@ -226,7 +226,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [ ] Candlestick Chart — OHLC financial chart with volume strip; absent from library.
 - [ ] Choropleth Legend — gradient/step map legend with value buckets; pairs with map-marker-popup, absent from library.
 - [x] (builder-3) Stat Comparison Bars — ranked category bars with value labels, proportional fills, one highlighted row with tinted background, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
-- [~] (builder-3) Trend Sparkbar Row — inline mini bar series inside a table row for compact trends; distinct from metric-sparkline-card (in-row).
+- [x] (builder-3) Trend Sparkbar Row — product table w/ inline 7-bar trend series per row, units column, color-coded % change column, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 
 <!-- Theme: E-commerce -->
 - [x] (builder-2) Product Card — square image w/ hover quick-view overlay + discount badge, title, 5-star rating (role=img aria-label), price w/ strikethrough compare price, icon add-to-cart, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components
@@ -260,8 +260,8 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: Collaboration -->
 - [~] (builder-2) Reaction Bar — inline emoji reaction counts with add-reaction popover trigger; distinct from emoji-picker (aggregated counts).
-- [~] (builder-8) Typing Indicator — animated "X is typing…" dots row for chat; distinct from chat-bubbles.
-- [ ] Assignee Picker — searchable member dropdown with avatar checkmarks for task assignment; distinct from team-members-list.
+- [x] (builder-8) Typing Indicator — avatar + staggered bouncing-dot bubble, label pluralizes from real names array (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
+- [~] (builder-6) Assignee Picker — searchable member dropdown with avatar checkmarks for task assignment; distinct from team-members-list.
 - [ ] Share Dialog — invite-by-email field, role dropdown, member list, and copy-link row; absent from library.
 - [ ] Comment Composer — rich input with mention/attach/emoji toolbar and submit; distinct from mention-textarea (full composer).
 - [ ] Live Presence Avatars — realtime viewer avatar row with join/leave animation; distinct from avatar (presence layer).
