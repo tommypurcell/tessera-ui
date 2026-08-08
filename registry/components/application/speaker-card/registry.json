@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-speaker-card",
+  "title": "Speaker Card",
+  "description": "Conference speaker card with an initials avatar, name, title/company, a quoted talk title, and a row of social link icons.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["conference", "speaker", "event", "profile", "card"],
+  "useWhen": [
+    "A conference or event site needs a speaker grid or lineup listing presenters and their talks.",
+    "You want the talk title visually distinguished from the speaker's own bio/title line.",
+    "Social links (X, LinkedIn, personal site) should be reachable without cluttering the main text."
+  ],
+  "avoidWhen": [
+    "The person isn't giving a talk (no talk title to show) — use a plain profile or team-section card instead.",
+    "You need a photo, not initials — swap the avatar span for an <img> while keeping the same layout.",
+    "There are many speakers needing dense list scanning rather than card browsing — use a table or compact list row instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The card is a fixed max-w-xs block that fills its container's available width up to that cap at all breakpoints.",
+  "accessibility": [
+    "Each social icon link has a specific aria-label naming both the platform and the speaker, not a generic 'link'.",
+    "The talk title is set apart with a background and quotation marks, visually and semantically distinct from the speaker's bio line.",
+    "Text content (name, title, talk) remains selectable and readable by screen readers; nothing critical is encoded only in the avatar."
+  ],
+  "compatibleWith": ["application-avatar", "application-schedule-agenda-list", "application-team-sections"],
+  "variants": [
+    {
+      "id": "speaker-card-1",
+      "title": "Speaker card",
+      "description": "Elena Lindqvist, Principal Engineer at Northwind Labs, with her talk title and X/LinkedIn/website social links.",
+      "source": {
+        "html": "../../../../public/examples/application/speaker-card/1.html",
+        "tsx": "tsx/SpeakerCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Social icons are aria-hidden with the accessible name carried by each link's aria-label instead."
+      ]
+    },
+    {
+      "id": "speaker-card-1-dark",
+      "title": "Speaker card (Dark)",
+      "description": "Speaker card adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/speaker-card/1-dark.html",
+        "tsx": "tsx/SpeakerCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Talk-title background and social icon colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
