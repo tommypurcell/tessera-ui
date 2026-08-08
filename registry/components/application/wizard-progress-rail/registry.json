@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-wizard-progress-rail",
+  "title": "Wizard Progress Rail",
+  "description": "Vertical wizard navigation rail with connected step circles, per-step title and description, and click-to-jump on completed steps.",
+  "category": "application/navigation",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["wizard", "stepper", "onboarding", "navigation", "vertical"],
+  "useWhen": [
+    "Building a multi-step setup or onboarding flow laid out with a side rail rather than a horizontal header.",
+    "Users benefit from seeing a short description of each step, not just a number or short label.",
+    "Completed steps should be directly clickable to jump back, distinct from a purely linear wizard."
+  ],
+  "avoidWhen": [
+    "You need a horizontal progress header sitting above a form body — use Stepper Wizard instead, which bundles the header with back/next controls and a content slot.",
+    "The flow has no descriptions and only needs a compact numbered/dotted indicator — use Steps instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The rail is a single vertical column at all widths; on narrow viewports it typically collapses above the step content rather than sitting beside it.",
+  "accessibility": [
+    "The rail is a <nav> with aria-label, and the current step carries aria-current=\"step\".",
+    "Completed steps render as real, keyboard-focusable <button>/<a> elements so jumping back is operable without a mouse.",
+    "Upcoming steps are inert (no link or button) rather than disabled interactive elements, since they aren't yet reachable.",
+    "The connecting line between steps is aria-hidden decoration; step order and status are conveyed by the list structure and text, not the line alone."
+  ],
+  "compatibleWith": ["application-stepper-wizard", "application-steps"],
+  "variants": [
+    {
+      "id": "wizard-progress-rail-1",
+      "title": "Wizard Progress Rail",
+      "description": "A four-step rail: a completed, clickable 'Account details' step, the current 'Workspace setup' step highlighted, and two upcoming steps in muted gray.",
+      "source": {
+        "html": "../../../../public/examples/application/wizard-progress-rail/1.html",
+        "tsx": "tsx/WizardProgressRailVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["complete", "current", "upcoming"],
+      "accessibility": [
+        "Only the completed step is an interactive link; the current and upcoming steps are non-interactive text."
+      ]
+    },
+    {
+      "id": "wizard-progress-rail-1-dark",
+      "title": "Wizard Progress Rail (Dark)",
+      "description": "The same four-step rail adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/wizard-progress-rail/1-dark.html",
+        "tsx": "tsx/WizardProgressRailVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["complete", "current", "upcoming"],
+      "accessibility": [
+        "Circle borders, connecting lines, and muted upcoming-step text remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}

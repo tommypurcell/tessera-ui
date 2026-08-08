@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-wallet-connect-button",
+  "title": "Wallet Connect Button",
+  "description": "Wallet connection button with three states: disconnected (Connect wallet), connecting (spinner), and connected (status dot, truncated address, and balance).",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["web3", "wallet", "crypto", "button", "connect"],
+  "useWhen": [
+    "Building a dApp or crypto-adjacent product that authenticates via a blockchain wallet rather than email/OAuth.",
+    "You want the connected state to surface the truncated address and balance directly in the trigger, not hidden behind a menu.",
+    "Distinct from Social Login Buttons, which authenticate via an OAuth identity provider rather than a wallet address/balance."
+  ],
+  "avoidWhen": [
+    "Your app authenticates via email or OAuth only — use Social Login Buttons or Auth Card Shell instead.",
+    "You need to support multiple simultaneously connected wallets in one view — this button represents a single active connection."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The connected state's content (address, balance) doesn't wrap; on narrow viewports, hide the balance segment first and keep the truncated address and status dot as the minimum viable connected indicator.",
+  "accessibility": [
+    "Connection status is conveyed by both a colored dot and text/label content, not the dot color alone.",
+    "The connecting state uses a real disabled button so it's excluded from the tab order while the action is in flight.",
+    "The full (non-truncated) address should be available via a title attribute or accessible description in a full implementation, since the truncated display alone isn't sufficient for verification."
+  ],
+  "compatibleWith": ["application-social-login-buttons", "application-token-balance-row"],
+  "variants": [
+    {
+      "id": "wallet-connect-button-1",
+      "title": "Wallet Connect Button",
+      "description": "Three states: a filled 'Connect wallet' button, a connected state showing a green dot, truncated address, and ETH balance with a menu chevron, and a disabled 'Connecting…' spinner state.",
+      "source": {
+        "html": "../../../../public/examples/application/wallet-connect-button/1.html",
+        "tsx": "tsx/WalletConnectButtonVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["disconnected", "connecting", "connected"],
+      "accessibility": [
+        "The connecting state's spinner button is truly disabled, not just visually dimmed."
+      ]
+    },
+    {
+      "id": "wallet-connect-button-1-dark",
+      "title": "Wallet Connect Button (Dark)",
+      "description": "The same three states adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/wallet-connect-button/1-dark.html",
+        "tsx": "tsx/WalletConnectButtonVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["disconnected", "connecting", "connected"],
+      "accessibility": [
+        "Status dot and text contrast remain legible against the dark surface."
+      ]
+    }
+  ]
+}

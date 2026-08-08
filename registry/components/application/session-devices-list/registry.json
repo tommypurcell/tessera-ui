@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-session-devices-list",
+  "title": "Session Devices List",
+  "description": "List of active sign-in sessions with device/browser label, location, last-active time, a badge on the current device, per-row revoke, and a sign-out-all-others action.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["security", "sessions", "devices", "account", "settings"],
+  "useWhen": [
+    "Building an account security page where users can review and revoke active sign-in sessions.",
+    "You need to clearly distinguish the current device (no revoke action) from other signed-in devices (revokable).",
+    "Offering a single action to sign out of every session except the current one."
+  ],
+  "avoidWhen": [
+    "You're listing API keys or programmatic credentials rather than interactive login sessions — use API Key Manager instead.",
+    "You're listing team members and their roles rather than a single user's own sessions — use a team-members list instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Rows are a single flex line at all widths; on narrow viewports the location/last-active text truncates before the label or the Revoke button wraps.",
+  "accessibility": [
+    "The current session is marked with a visible 'This device' badge, and its row has no Revoke button (removed entirely, not just disabled) since a user cannot revoke their own active session.",
+    "Device-type icons are decorative; the visible label (\"Chrome on macOS\") is the accessible identifier, not the icon shape.",
+    "The destructive 'Sign out of all other sessions' action is visually and textually distinct from the per-row Revoke buttons to avoid accidental mass sign-out."
+  ],
+  "compatibleWith": ["application-api-key-manager", "application-two-factor-setup"],
+  "variants": [
+    {
+      "id": "session-devices-list-1",
+      "title": "Session Devices List",
+      "description": "Three sessions: the current Chrome on macOS device (badge, no revoke), a Safari on iPhone session with a Revoke button, and a Firefox on Windows session with a Revoke button, plus a sign-out-all-others footer action.",
+      "source": {
+        "html": "../../../../public/examples/application/session-devices-list/1.html",
+        "tsx": "tsx/SessionDevicesListVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["current", "revokable"],
+      "accessibility": [
+        "Only non-current sessions render a Revoke button; the current session is structurally exempt, not just visually muted."
+      ]
+    },
+    {
+      "id": "session-devices-list-1-dark",
+      "title": "Session Devices List (Dark)",
+      "description": "The same three-session list adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/session-devices-list/1-dark.html",
+        "tsx": "tsx/SessionDevicesListVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["current", "revokable"],
+      "accessibility": [
+        "Badge, icon, and destructive-action colors remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}

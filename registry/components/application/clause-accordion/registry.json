@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-clause-accordion",
+  "title": "Clause Accordion",
+  "description": "Numbered legal-clause list where each clause has an expand/collapse header, a stable anchor link for deep-linking, and body text.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["legal", "terms", "clause", "accordion", "compliance"],
+  "useWhen": [
+    "Rendering Terms of Service, a Privacy Policy, or a contract broken into numbered clauses.",
+    "Users need to deep-link to a specific clause (e.g. from a footnote or support reference) via a stable anchor.",
+    "Distinct from the generic Accordions component in its numbering convention and per-clause copy-link affordance, both specific to legal documents."
+  ],
+  "avoidWhen": [
+    "The content isn't numbered/clause-structured — use the generic Accordions component instead.",
+    "You need all sections visible simultaneously for printing or review — a flat numbered list without collapse may serve better."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Each clause header is a single row with the number, title, link icon, and chevron; the title wraps rather than truncating so full clause names stay readable.",
+  "accessibility": [
+    "Each header button carries aria-expanded and aria-controls pointing at its clause body's id, following the standard disclosure pattern.",
+    "The chevron rotates to reflect open/closed state, but the underlying aria-expanded value is the actual source of truth for assistive technology.",
+    "The anchor link uses a real href (\"#clause-id\") so it works even with JavaScript disabled or for right-click/copy-link, and carries an aria-label describing which clause it links to since its icon has no visible text."
+  ],
+  "compatibleWith": ["application-document-signature-block", "application-consent-checklist"],
+  "variants": [
+    {
+      "id": "clause-accordion-1",
+      "title": "Clause Accordion",
+      "description": "Three numbered clauses (Acceptance of terms, User responsibilities, Limitation of liability), with the first expanded showing its body text and an anchor-link icon on each header.",
+      "source": {
+        "html": "../../../../public/examples/application/clause-accordion/1.html",
+        "tsx": "tsx/ClauseAccordionVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["expanded", "collapsed"],
+      "accessibility": [
+        "Each clause's anchor link is a real, right-clickable href, not a JavaScript-only copy action."
+      ]
+    },
+    {
+      "id": "clause-accordion-1-dark",
+      "title": "Clause Accordion (Dark)",
+      "description": "The same three-clause list adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/clause-accordion/1-dark.html",
+        "tsx": "tsx/ClauseAccordionVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["expanded", "collapsed"],
+      "accessibility": [
+        "Number badge, chevron, and link-icon contrast remain legible against the dark surface."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-qr-code-card",
+  "title": "QR Code Card",
+  "description": "Card presenting a generated QR code with a caption, the encoded value as visible text, and Download/Copy link actions.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["qr-code", "share", "invite", "download"],
+  "useWhen": [
+    "Sharing an invite link, event check-in, or Wi-Fi credential as a scannable QR code alongside its plain-text value.",
+    "You want consistent Download/Copy actions around any QR code your app generates.",
+    "Distinct from the small QR used inside Two-Factor Setup — this card treats the QR as the primary content, not one step of a larger flow."
+  ],
+  "avoidWhen": [
+    "The QR code is only a minor decorative element next to other primary content — embed a bare QR image instead of the full card.",
+    "You need a live-scanning camera view — this component only displays a generated code, it doesn't scan one."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The card and its fixed-size QR tile stay centered at a constant size; on very narrow viewports the caption and value text wrap or truncate rather than shrinking the QR itself illegibly small.",
+  "accessibility": [
+    "The QR image has role=\"img\" with an aria-label stating the destination, since the pattern itself conveys nothing to assistive technology.",
+    "The encoded value is always shown as selectable, readable text below the code, giving a non-visual, non-camera fallback.",
+    "The QR always renders on a white background tile regardless of theme, preserving the contrast ratio real QR scanners require."
+  ],
+  "compatibleWith": ["application-two-factor-setup", "application-share-dialog"],
+  "variants": [
+    {
+      "id": "qr-code-card-1",
+      "title": "QR Code Card",
+      "description": "A 'Scan to join workspace' card with a generated QR code, the invite URL shown below it, and Download / Copy link actions.",
+      "source": {
+        "html": "../../../../public/examples/application/qr-code-card/1.html",
+        "tsx": "tsx/QrCodeCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The `qrCode` prop accepts a real QR-rendering component; the built-in placeholder pattern is purely illustrative for previewing layout."
+      ]
+    },
+    {
+      "id": "qr-code-card-1-dark",
+      "title": "QR Code Card (Dark)",
+      "description": "The same QR card adapted for dark surfaces; the QR tile itself stays white for scannability.",
+      "source": {
+        "html": "../../../../public/examples/application/qr-code-card/1-dark.html",
+        "tsx": "tsx/QrCodeCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Card chrome and text adopt dark styling, but the QR module never inverts, since real-world scanners expect dark-on-light contrast."
+      ]
+    }
+  ]
+}

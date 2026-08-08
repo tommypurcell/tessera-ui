@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-preference-toggle-row",
+  "title": "Preference Toggle Row",
+  "description": "Settings list row composition pairing a label and description with a trailing switch, including a locked/non-interactive state for mandatory settings.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["settings", "preferences", "toggle", "switch", "list"],
+  "useWhen": [
+    "Building a notification or account preferences page with several independent on/off settings.",
+    "Each setting needs a short explanation, not just a bare label, next to its switch.",
+    "One or more settings are mandatory and should render locked rather than allowing the user to turn them off."
+  ],
+  "avoidWhen": [
+    "You only need the bare switch control with no label/description composition — use the standalone Toggles primitive instead.",
+    "The settings are grouped by more than a flat list (e.g. channel × event matrix) — a grid-based preferences component fits that shape better."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Each row is a single flex line with the switch pinned to the trailing edge; on narrow viewports the description text wraps under the label while the switch stays fixed-width.",
+  "accessibility": [
+    "Interactive rows use a real <label htmlFor> wrapping a checkbox input, so clicking the label text also toggles the switch.",
+    "Locked rows render their label as plain text (not a <label>) and their switch as a non-interactive, cursor-not-allowed element — not a disabled input a screen reader might still announce as focusable.",
+    "The switch's visual on/off state is backed by the checkbox's real checked attribute, so assistive technology and visual state never diverge."
+  ],
+  "compatibleWith": ["application-session-devices-list", "application-two-factor-setup"],
+  "variants": [
+    {
+      "id": "preference-toggle-row-1",
+      "title": "Preference Toggle Row",
+      "description": "Four settings rows: Email notifications (on), Push notifications (off), Weekly digest (on), and a locked, always-on Security alerts row.",
+      "source": {
+        "html": "../../../../public/examples/application/preference-toggle-row/1.html",
+        "tsx": "tsx/PreferenceToggleRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["on", "off", "locked"],
+      "accessibility": [
+        "The locked row's switch is a <span>, not an inert <input>, so it can never receive keyboard focus."
+      ]
+    },
+    {
+      "id": "preference-toggle-row-1-dark",
+      "title": "Preference Toggle Row (Dark)",
+      "description": "The same four settings rows adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/preference-toggle-row/1-dark.html",
+        "tsx": "tsx/PreferenceToggleRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["on", "off", "locked"],
+      "accessibility": [
+        "On/off switch states and locked-row muting remain visually distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}

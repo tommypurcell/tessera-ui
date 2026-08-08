@@ -1,0 +1,117 @@
+export type Competency = {
+  id: string
+  label: string
+  note: string
+  rating: number
+  onRate?: (rating: number) => void
+}
+
+export type Recommendation = 'strong-hire' | 'hire' | 'no-hire'
+
+export type InterviewScorecardVariant1Props = {
+  candidateName: string
+  roleName: string
+  competencies: Competency[]
+  notes: string
+  onNotesChange?: (notes: string) => void
+  recommendation?: Recommendation
+  onRecommend?: (rec: Recommendation) => void
+  className?: string
+}
+
+const recommendationLabel: Record<Recommendation, string> = {
+  'strong-hire': 'Strong hire',
+  hire: 'Hire',
+  'no-hire': 'No hire',
+}
+
+/**
+ * Copy-and-own Tailwind component. Interview evaluation card: per-competency
+ * rows with a 1-5 rating scale and a short note, an overall notes textarea,
+ * and a strong-hire/hire/no-hire recommendation selector. Distinct from NPS
+ * Rating Scale, which is a single 0-10 satisfaction score, not a multi-
+ * competency structured evaluation.
+ */
+export function InterviewScorecard({
+  candidateName,
+  roleName,
+  competencies,
+  notes,
+  onNotesChange,
+  recommendation,
+  onRecommend,
+  className,
+}: InterviewScorecardVariant1Props) {
+  return (
+    <div className={`rounded-xl border border-gray-200 bg-white ${className ?? ''}`}>
+      <div className="border-b border-gray-200 px-5 py-4">
+        <h2 className="text-sm font-semibold text-gray-900">Interview scorecard</h2>
+        <p className="mt-0.5 text-xs text-gray-500">
+          {candidateName} &middot; {roleName}
+        </p>
+      </div>
+
+      <div className="flex flex-col divide-y divide-gray-200">
+        {competencies.map((comp) => (
+          <div key={comp.id} className="px-5 py-3.5">
+            <div className="flex items-center justify-between">
+              <p className="text-sm font-medium text-gray-900">{comp.label}</p>
+              <div className="flex items-center gap-1" role="radiogroup" aria-label={`${comp.label} rating`}>
+                {[1, 2, 3, 4, 5].map((n) => (
+                  <button
+                    key={n}
+                    type="button"
+                    role="radio"
+                    aria-checked={comp.rating === n}
+                    onClick={() => comp.onRate?.(n)}
+                    className={
+                      n <= comp.rating
+                        ? 'h-6 w-6 rounded-full bg-indigo-600 text-xs font-semibold text-white'
+                        : 'h-6 w-6 rounded-full border border-gray-300 text-xs font-medium text-gray-400'
+                    }
+                  >
+                    {n}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <p className="mt-1 text-xs text-gray-500">{comp.note}</p>
+          </div>
+        ))}
+
+        <div className="px-5 py-3.5">
+          <label htmlFor="scorecard-notes" className="text-sm font-medium text-gray-900">
+            Additional notes
+          </label>
+          <textarea
+            id="scorecard-notes"
+            rows={2}
+            value={notes}
+            onChange={(e) => onNotesChange?.(e.target.value)}
+            className="mt-2 w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 shadow-sm focus:border-gray-500 focus:outline-none"
+          />
+        </div>
+      </div>
+
+      <div className="border-t border-gray-200 px-5 py-4">
+        <p className="mb-2 text-xs font-medium text-gray-700">Overall recommendation</p>
+        <div className="flex gap-2">
+          {(['strong-hire', 'hire', 'no-hire'] as Recommendation[]).map((rec) => (
+            <button
+              key={rec}
+              type="button"
+              onClick={() => onRecommend?.(rec)}
+              className={
+                recommendation === rec
+                  ? 'flex-1 rounded-md bg-emerald-600 px-3 py-1.5 text-xs font-medium text-white shadow-sm'
+                  : 'flex-1 rounded-md border border-gray-300 px-3 py-1.5 text-xs font-medium text-gray-700 shadow-sm hover:bg-gray-50'
+              }
+            >
+              {recommendationLabel[rec]}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}

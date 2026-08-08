@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-social-login-buttons",
+  "title": "Social Login Buttons",
+  "description": "Stacked set of full-width OAuth provider buttons with brand-accurate icons and consistent sizing, plus an optional 'or continue with email' divider.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["auth", "oauth", "social", "login", "signup"],
+  "useWhen": [
+    "Offering Google, GitHub, or Apple sign-in alongside (or instead of) an email/password form.",
+    "Pairing with Auth Card Shell above the email form, separated by the 'or continue with' divider.",
+    "You want visually consistent provider buttons (same height, icon size, and spacing) rather than mismatched brand assets."
+  ],
+  "avoidWhen": [
+    "Your app only supports a single sign-in method — a single primary button is simpler than this stacked set.",
+    "You need icon-only compact buttons rather than full-width labeled buttons — this component is the labeled, stacked form."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Buttons are full-width within their container at every breakpoint; the stack never switches to a horizontal row, which keeps touch targets consistent on mobile.",
+  "accessibility": [
+    "Each provider button has visible text (\"Continue with Google\", etc.), not just an icon, so the action is understandable without color or logo recognition.",
+    "Provider icons are aria-hidden since the button's own text is the accessible name.",
+    "The divider text is real content, not a background image, so its meaning is available to screen readers."
+  ],
+  "compatibleWith": ["application-auth-card-shell", "application-form-row"],
+  "variants": [
+    {
+      "id": "social-login-buttons-1",
+      "title": "Social Login Buttons",
+      "description": "Three stacked provider buttons (Google, GitHub, Apple) with brand icons, followed by an 'or continue with email' divider.",
+      "source": {
+        "html": "../../../../public/examples/application/social-login-buttons/1.html",
+        "tsx": "tsx/SocialLoginButtonsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "Provider order and text labels convey identity; color and logo shape are supplementary, not load-bearing."
+      ]
+    },
+    {
+      "id": "social-login-buttons-1-dark",
+      "title": "Social Login Buttons (Dark)",
+      "description": "The same three provider buttons and divider adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/social-login-buttons/1-dark.html",
+        "tsx": "tsx/SocialLoginButtonsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "Button borders and text remain legible against the dark surface; provider brand colors (Google's icon) are preserved as-is since they're recognizable marks, not status color."
+      ]
+    }
+  ]
+}

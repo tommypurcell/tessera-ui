@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-conditional-field-group",
+  "title": "Conditional Field Group",
+  "description": "Form section gated by a controlling checkbox: an indented field group reveals when checked, with a connecting rail; an optional helper description explains the fallback when unchecked.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["form", "conditional", "reveal", "checkbox", "progressive-disclosure"],
+  "useWhen": [
+    "A form field or section is only relevant when a controlling checkbox or option is enabled (e.g. \"notify me\" revealing an email + frequency field).",
+    "You want to avoid showing irrelevant fields up front, reducing perceived form length.",
+    "The unchecked state has an implicit fallback worth explaining in a short helper line, rather than just disappearing silently."
+  ],
+  "avoidWhen": [
+    "The revealed fields are always relevant regardless of a toggle — just show them directly without gating.",
+    "The controlling input is a multi-way select rather than a boolean checkbox — build a custom conditional render keyed off the select value instead of reusing this checkbox-driven shape."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The revealed field group is a single indented column at all widths; the connecting rail and left padding stay fixed rather than scaling with viewport.",
+  "accessibility": [
+    "The controlling checkbox and its label are a real <label>/<input> pair, so clicking the label text toggles the group.",
+    "Revealed fields are removed from the DOM when unchecked (not just visually hidden), so screen readers and tab order never encounter irrelevant, hidden-but-focusable inputs.",
+    "The fallback description text explains the unchecked behavior in words, so the consequence of leaving the box unchecked isn't left ambiguous."
+  ],
+  "compatibleWith": ["application-form-row", "application-field-array-editor"],
+  "variants": [
+    {
+      "id": "conditional-field-group-1",
+      "title": "Conditional Field Group",
+      "description": "A checked 'Email me about product updates' group revealing Email address and Frequency fields with a connecting rail, and an unchecked 'Ship to a different address' group showing a fallback description instead.",
+      "source": {
+        "html": "../../../../public/examples/application/conditional-field-group/1.html",
+        "tsx": "tsx/ConditionalFieldGroupVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["checked", "unchecked"],
+      "accessibility": [
+        "Revealed fields only exist in the DOM while checked, so they're never reachable by keyboard when hidden."
+      ]
+    },
+    {
+      "id": "conditional-field-group-1-dark",
+      "title": "Conditional Field Group (Dark)",
+      "description": "The same two conditional groups adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/conditional-field-group/1-dark.html",
+        "tsx": "tsx/ConditionalFieldGroupVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["checked", "unchecked"],
+      "accessibility": [
+        "Connecting rail and revealed-field contrast remain legible against the dark surface."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-environment-switcher",
+  "title": "Environment Switcher",
+  "description": "Trigger button showing the current deploy environment with a colored status dot, opening a dropdown listing every environment with its own dot and a checkmark on the active one.",
+  "category": "application/navigation",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["environment", "deploy", "dropdown", "engineering", "devops"],
+  "useWhen": [
+    "Switching context between Development, Staging, and Production (or similar deploy targets) in an admin or internal tool.",
+    "You want the current environment always visible via a colored indicator, not just discoverable inside a menu.",
+    "The set of environments is small and fixed, unlike an open-ended workspace or project switcher."
+  ],
+  "avoidWhen": [
+    "You're switching between an open-ended, growing list of workspaces or recent items — use a recent/pinned switcher instead.",
+    "There's only one environment (e.g. a single-tenant app) — the control adds a decision point with no real choice behind it."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The trigger and dropdown are fixed-width and anchored to the trigger's left edge; on narrow viewports the panel may need repositioning to avoid overflowing the viewport edge.",
+  "accessibility": [
+    "The trigger carries aria-haspopup and aria-expanded reflecting open state; the panel closes on Escape or an outside click.",
+    "Each environment's status dot is paired with its visible name — color is never the only way an environment is identified.",
+    "The active environment is marked with a visible checkmark icon in addition to a background tint, so the current selection is clear without relying on color alone."
+  ],
+  "compatibleWith": ["application-feature-flag-toggle-row", "application-menubar"],
+  "variants": [
+    {
+      "id": "environment-switcher-1",
+      "title": "Environment Switcher",
+      "description": "A Staging trigger with an amber dot, opening a dropdown listing Development (gray), Staging (amber, active with checkmark), and Production (emerald).",
+      "source": {
+        "html": "../../../../public/examples/application/environment-switcher/1.html",
+        "tsx": "tsx/EnvironmentSwitcherVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "open", "active"],
+      "accessibility": [
+        "Each row's environment name and colored dot both convey identity; the active row adds a checkmark rather than relying on tint alone."
+      ]
+    },
+    {
+      "id": "environment-switcher-1-dark",
+      "title": "Environment Switcher (Dark)",
+      "description": "The same trigger and dropdown adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/environment-switcher/1-dark.html",
+        "tsx": "tsx/EnvironmentSwitcherVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "open", "active"],
+      "accessibility": [
+        "Status dot colors and the active-row tint remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}

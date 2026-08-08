@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-interview-scorecard",
+  "title": "Interview Scorecard",
+  "description": "Interview evaluation card: per-competency rows with a 1-5 rating scale and a short note, an overall notes textarea, and a strong-hire/hire/no-hire recommendation selector.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["hiring", "interview", "recruiting", "rating", "hr"],
+  "useWhen": [
+    "Building an applicant tracking system's post-interview feedback form.",
+    "You need a structured, multi-competency evaluation rather than a single overall score.",
+    "Distinct from NPS Rating Scale, which is a single 0-10 satisfaction score, not a multi-competency structured evaluation with notes."
+  ],
+  "avoidWhen": [
+    "You only need a single overall score with no per-competency breakdown — a simpler rating input is enough.",
+    "The feedback is unstructured free text with no rating scale at all — a plain textarea/comment field fits better."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Competency rows keep the label and rating scale on one line; the rating buttons are fixed-size and never wrap independently of their row.",
+  "accessibility": [
+    "Each competency's rating scale is a role=\"radiogroup\" of role=\"radio\" buttons with aria-checked reflecting the selected value, matching single-select semantics.",
+    "The notes textarea has a real associated <label htmlFor>.",
+    "The recommendation selector's active choice is conveyed by both a filled background and the button's own label text, not color alone."
+  ],
+  "compatibleWith": ["application-applicant-card", "application-candidate-pipeline-stage"],
+  "variants": [
+    {
+      "id": "interview-scorecard-1",
+      "title": "Interview Scorecard",
+      "description": "A scorecard for Priya Shah (Senior Product Designer) with Communication rated 4/5 and System design rated 2/5, each with a short note, an additional-notes textarea, and a Strong hire recommendation selected.",
+      "source": {
+        "html": "../../../../public/examples/application/interview-scorecard/1.html",
+        "tsx": "tsx/InterviewScorecardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["rated", "unrated", "recommendation-selected"],
+      "accessibility": [
+        "Rating buttons use role=\"radio\" within a role=\"radiogroup\" per competency, so each scale is announced as an independent single-select group."
+      ]
+    },
+    {
+      "id": "interview-scorecard-1-dark",
+      "title": "Interview Scorecard (Dark)",
+      "description": "The same scorecard adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/interview-scorecard/1-dark.html",
+        "tsx": "tsx/InterviewScorecardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["rated", "unrated", "recommendation-selected"],
+      "accessibility": [
+        "Rating dot fill and recommendation selection remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}

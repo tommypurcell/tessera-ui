@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-auth-card-shell",
+  "title": "Auth Card Shell",
+  "description": "Centered auth layout shell with a logo mark, heading, a form slot for sign-in/sign-up fields, and a footer slot for the flow-switch link.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["auth", "login", "signup", "layout", "shell"],
+  "useWhen": [
+    "Building a sign-in, sign-up, or password-reset page that needs consistent centered-card chrome.",
+    "You want one shell reused across every auth screen (logo, heading, footer switch link) while swapping the form fields inside.",
+    "Pairing with Two-Factor Setup or Magic Link Sent State as the content for a specific step in a larger auth flow."
+  ],
+  "avoidWhen": [
+    "You need a generic content card with no auth-specific header/footer conventions — use Card instead.",
+    "The page needs a split layout with marketing imagery alongside the form — this shell is a single centered card, not a two-column page layout."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The card has a fixed max width and centers itself; it should sit inside a full-viewport-height flex/grid container so it stays vertically centered on any screen size.",
+  "accessibility": [
+    "The heading is a real <h1>, establishing the page's primary landmark for screen readers even though the shell itself renders no <main>.",
+    "The form slot is left entirely to the consumer, so real <form>, <label>, and field associations come from whatever is passed as children.",
+    "The footer switch link should always be reachable by keyboard since it's the primary way to move to the other auth flow (e.g. sign-in to sign-up)."
+  ],
+  "compatibleWith": ["application-two-factor-setup", "application-magic-link-sent-state", "application-form-row"],
+  "variants": [
+    {
+      "id": "auth-card-shell-1",
+      "title": "Auth Card Shell",
+      "description": "A sign-in card: logo mark, 'Sign in to your account' heading and subtitle, an email + password form with a Forgot password link and Sign in button, and a footer Sign up link.",
+      "source": {
+        "html": "../../../../public/examples/application/auth-card-shell/1.html",
+        "tsx": "tsx/AuthCardShellVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The example form fields use real <label for> associations; replace them with your own validated form as needed."
+      ]
+    },
+    {
+      "id": "auth-card-shell-1-dark",
+      "title": "Auth Card Shell (Dark)",
+      "description": "The same sign-in card shell adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/auth-card-shell/1-dark.html",
+        "tsx": "tsx/AuthCardShellVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Card, input, and link contrast remain legible against the dark page background."
+      ]
+    }
+  ]
+}

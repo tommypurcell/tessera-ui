@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-column-visibility-menu",
+  "title": "Column Visibility Menu",
+  "description": "\"Columns\" trigger button that opens a checklist of toggleable table columns with drag handles for reordering and a locked row for required columns.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["table", "columns", "dropdown", "checklist", "data-table"],
+  "useWhen": [
+    "Pairing with a data table so users can show, hide, and reorder columns to fit their workflow.",
+    "You need to protect one or more columns (e.g. Status, ID) from being hidden while still letting users reorder or hide the rest.",
+    "The table has enough columns that a fixed layout no longer fits every user's needs."
+  ],
+  "avoidWhen": [
+    "The table has a small, fixed set of columns that never needs customization — the extra control adds clutter without value.",
+    "You need column width resizing rather than visibility/order — that's a separate concern from this menu."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The panel is a fixed-width dropdown anchored to its trigger; on narrow viewports it may need to switch to a full-width sheet rather than an anchored popover.",
+  "accessibility": [
+    "The trigger carries aria-haspopup and aria-expanded reflecting open state; the panel closes on Escape or an outside click.",
+    "Each column row is a real <label>/<input type=\"checkbox\"> pair, not a custom-styled div, so it's natively operable and announced correctly.",
+    "Required columns render a real disabled checkbox plus a visible \"Required\" label, not just a muted color, so the restriction is understandable without relying on color alone.",
+    "Drag handles are decorative (aria-hidden); reordering should also be exposed via a non-drag interaction (e.g. keyboard move up/down) in a full implementation for parity."
+  ],
+  "compatibleWith": ["application-tables", "application-data-filter-bar"],
+  "variants": [
+    {
+      "id": "column-visibility-menu-1",
+      "title": "Column Visibility Menu",
+      "description": "An open \"Columns\" panel with Name, Email, and Role checked, Company unchecked, and a locked, disabled Status row marked Required, plus a Reset to default action.",
+      "source": {
+        "html": "../../../../public/examples/application/column-visibility-menu/1.html",
+        "tsx": "tsx/ColumnVisibilityMenuVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "checked", "unchecked", "required"],
+      "accessibility": [
+        "The required column's lock state is conveyed by both a disabled checkbox and visible text, not styling alone."
+      ]
+    },
+    {
+      "id": "column-visibility-menu-1-dark",
+      "title": "Column Visibility Menu (Dark)",
+      "description": "The same column checklist and required-row lock adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/column-visibility-menu/1-dark.html",
+        "tsx": "tsx/ColumnVisibilityMenuVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "checked", "unchecked", "required"],
+      "accessibility": [
+        "Checkbox and label contrast remain distinguishable at dark-surface contrast, including the muted required row."
+      ]
+    }
+  ]
+}

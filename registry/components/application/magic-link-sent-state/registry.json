@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-magic-link-sent-state",
+  "title": "Magic Link Sent State",
+  "description": "Confirmation panel shown after sending a passwordless sign-in link: echoes the destination email, disables resend behind a countdown, and offers a change-email fallback.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["auth", "magic-link", "passwordless", "email", "onboarding"],
+  "useWhen": [
+    "Confirming to the user that a passwordless sign-in link or one-time code was emailed to them.",
+    "You want to prevent resend spam with a visible countdown rather than silently disabling the button.",
+    "The user needs a quick way to correct a mistyped email address without restarting the whole flow."
+  ],
+  "avoidWhen": [
+    "The flow uses a code the user types back in (rather than a clicked link) — pair Input OTP or Two-Factor Setup instead.",
+    "You need a generic success message with no resend/timing behavior — a simple Alert is enough."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The panel is a fixed-width card centered in its container at all widths; text wraps naturally and the button remains full-width.",
+  "accessibility": [
+    "The destination email is rendered as visible text (not just implied), so screen reader users get positive confirmation of where the link was sent.",
+    "The resend button's disabled state and its countdown label update together, so the reason it's unavailable is always stated in the button's own text, not conveyed by disabled styling alone.",
+    "\"Change it\" is a real button/link, not a decorative label, so keyboard and screen reader users can act on a mistyped address."
+  ],
+  "compatibleWith": ["application-two-factor-setup", "application-input-otp"],
+  "variants": [
+    {
+      "id": "magic-link-sent-state-1",
+      "title": "Magic Link Sent State",
+      "description": "An envelope icon, 'Check your email' heading, the echoed email address, a disabled 'Resend link in 0:45' button, and a 'Wrong email? Change it' link.",
+      "source": {
+        "html": "../../../../public/examples/application/magic-link-sent-state/1.html",
+        "tsx": "tsx/MagicLinkSentStateVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["counting-down", "resend-available"],
+      "accessibility": [
+        "The countdown is expressed in the button's own visible text so its meaning doesn't depend on a separate live region."
+      ]
+    },
+    {
+      "id": "magic-link-sent-state-1-dark",
+      "title": "Magic Link Sent State (Dark)",
+      "description": "The same confirmation panel adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/magic-link-sent-state/1-dark.html",
+        "tsx": "tsx/MagicLinkSentStateVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["counting-down", "resend-available"],
+      "accessibility": [
+        "Icon, heading, and disabled-button contrast remain legible against the dark surface."
+      ]
+    }
+  ]
+}
