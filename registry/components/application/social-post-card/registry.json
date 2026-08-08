@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-social-post-card",
+  "title": "Social Post Card",
+  "description": "Social media post card with an avatar header, media body, and a real toggleable like action plus comment/share affordances — distinct from announcement-feed-item, which is pinned/starred admin content, not a user post.",
+  "category": "application/media",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["social", "post", "feed", "like", "media"],
+  "useWhen": [
+    "Rendering a single user-generated post with a photo/video body in a social feed.",
+    "You want the like button and count to be genuinely toggleable, not a static icon.",
+    "The card needs author identity, a caption, and engagement counts together."
+  ],
+  "avoidWhen": [
+    "The content is admin-authored/pinned rather than a user post — use announcement-feed-item instead.",
+    "You need a text-only update with no media — a simpler card or activity-feed item is more appropriate.",
+    "Comments need to be shown inline, not just counted — pair this card with comment-thread below it."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The card is a fixed max-width column (24rem) with a square media area; it reflows naturally in a single-column feed at any width.",
+  "accessibility": [
+    "The like button carries aria-pressed reflecting its real toggled state and an aria-label stating both the action and the current like count.",
+    "Liked state is conveyed by both a filled heart icon and a color change, not the fill alone.",
+    "Author name in the header and in the caption line are both real text, not baked into an image."
+  ],
+  "compatibleWith": ["application-comment-thread", "application-avatar-group", "application-reaction-bar"],
+  "variants": [
+    {
+      "id": "social-post-card-1",
+      "title": "Social post card",
+      "description": "Post from Lena Fischer shown in the liked state (248 likes, filled red heart) with a caption and comment/share affordances, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/social-post-card/1.html",
+        "tsx": "tsx/SocialPostCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["liked", "unliked"],
+      "accessibility": [
+        "The media area is a gradient placeholder in this example; swap it for a real <img> or <video> with appropriate alt text in production use."
+      ]
+    },
+    {
+      "id": "social-post-card-1-dark",
+      "title": "Social post card (Dark)",
+      "description": "The same liked-state post, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/social-post-card/1-dark.html",
+        "tsx": "tsx/SocialPostCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["liked", "unliked"],
+      "accessibility": [
+        "Avatar, text, and action icon colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
