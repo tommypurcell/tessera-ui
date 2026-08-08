@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "name": "application-event-calendar",
+  "title": "Event Calendar",
+  "description": "A week-view time grid with slotted event blocks, side-by-side overlap handling, and a live current-time indicator.",
+  "category": "application/event-calendar",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "event-calendar",
+    "calendar",
+    "schedule",
+    "week view",
+    "events",
+    "agenda"
+  ],
+  "useWhen": [
+    "Displaying a day or multi-day schedule where events occupy specific time slots rather than whole calendar cells.",
+    "Two or more events overlap in time and need to render side-by-side instead of stacking or hiding one another.",
+    "The user needs to see where 'now' falls relative to their scheduled events."
+  ],
+  "avoidWhen": [
+    "You need a month-at-a-glance date picker for choosing a single date — use the existing `calendar` component instead.",
+    "Events don't carry specific start/end times — a plain list or the `timelines` component communicates sequence without a time axis."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Day columns are flex-1 and share the remaining width evenly after a fixed-width time gutter; collapse to a single scrollable day column below the sm breakpoint in your own layout.",
+  "accessibility": [
+    "Each event block carries a visible title and time range as text, not solely through position or color.",
+    "The current-time indicator is decorative (pointer-events-none) and should not be the only way users learn the current time.",
+    "Overlapping events keep a minimum readable width; avoid stacking more than two or three side-by-side before switching to a list view."
+  ],
+  "compatibleWith": ["application-calendar", "application-timelines"],
+  "variants": [
+    {
+      "id": "event-calendar-1",
+      "title": "Week grid",
+      "description": "Three-day time grid with hour rows, two side-by-side overlapping events, and a red current-time line.",
+      "source": {
+        "html": "../../../../public/examples/application/event-calendar/1.html",
+        "tsx": "tsx/EventCalendarVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Event color is paired with a text title and time range so the schedule reads without relying on color alone."
+      ]
+    },
+    {
+      "id": "event-calendar-1-dark",
+      "title": "Week grid (Dark)",
+      "description": "Week grid adapted for dark scheduling surfaces, with muted event fills that keep text at WCAG AA contrast.",
+      "source": {
+        "html": "../../../../public/examples/application/event-calendar/1-dark.html",
+        "tsx": "tsx/EventCalendarVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Event fills and borders meet WCAG AA contrast against the dark grid background."
+      ]
+    }
+  ]
+}

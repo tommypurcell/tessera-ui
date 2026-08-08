@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "name": "application-phone-number-input",
+  "title": "Phone Number Input",
+  "description": "A country-code selector (flag + dial code) fused to a national number field, with an optional open dropdown for choosing the country.",
+  "category": "application/phone-number-input",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "phone-number-input",
+    "phone",
+    "telephone",
+    "country code",
+    "input",
+    "form"
+  ],
+  "useWhen": [
+    "Collecting a phone number where the country/dial code needs to be explicit and user-selectable, not assumed.",
+    "SMS verification, contact forms, or account settings that store an international-format phone number."
+  ],
+  "avoidWhen": [
+    "You only ever collect numbers from a single fixed country — a plain `Input` with a format hint is simpler.",
+    "You need full IMEI-style validation or formatting-as-you-type logic — this component provides the visual shell; wire real formatting/validation in your app code."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The country selector keeps a fixed intrinsic width based on its flag+code content while the number field grows to fill the remaining space.",
+  "accessibility": [
+    "The country trigger button uses aria-haspopup=\"listbox\" and aria-expanded to describe its popup relationship.",
+    "The open dropdown uses role=\"listbox\"/role=\"option\" with aria-selected marking the current country, plus a visible checkmark so the state isn't color-only.",
+    "The number field keeps a real <label> associated via htmlFor/id, and type=\"tel\" hints the correct mobile keyboard."
+  ],
+  "compatibleWith": ["application-inputs", "application-form-row", "application-input-group"],
+  "variants": [
+    {
+      "id": "phone-number-input-1",
+      "title": "Closed selector",
+      "description": "A US (+1) country selector fused to a formatted national number field, with helper text below.",
+      "source": {
+        "html": "../../../../public/examples/application/phone-number-input/1.html",
+        "tsx": "tsx/PhoneNumberInputVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The number input has a real label and type=\"tel\" for correct mobile keyboard behavior."
+      ]
+    },
+    {
+      "id": "phone-number-input-1-dark",
+      "title": "Closed selector (Dark)",
+      "description": "Closed country selector and number field adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/phone-number-input/1-dark.html",
+        "tsx": "tsx/PhoneNumberInputVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Border, background, and text colors meet WCAG AA contrast on dark form surfaces."
+      ]
+    },
+    {
+      "id": "phone-number-input-2",
+      "title": "Open country dropdown",
+      "description": "The country selector open, showing a searchable list of countries with the current selection checked (United Kingdom, +44).",
+      "source": {
+        "html": "../../../../public/examples/application/phone-number-input/2.html",
+        "tsx": "tsx/PhoneNumberInputVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "open"],
+      "accessibility": [
+        "The selected option carries aria-selected=\"true\" and a visible checkmark, not color alone."
+      ]
+    },
+    {
+      "id": "phone-number-input-2-dark",
+      "title": "Open country dropdown (Dark)",
+      "description": "Open country dropdown adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/phone-number-input/2-dark.html",
+        "tsx": "tsx/PhoneNumberInputVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "open"],
+      "accessibility": [
+        "The selected row's highlight and checkmark both meet WCAG AA contrast against the dark dropdown background."
+      ]
+    }
+  ]
+}

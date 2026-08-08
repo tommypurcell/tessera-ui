@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-field-array-editor",
+  "title": "Field Array Editor",
+  "description": "A repeatable list of input rows with drag handles, per-row remove buttons, per-row validation, and an add-another affordance — for editable lists of values within a form.",
+  "category": "application/field-array-editor",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "field-array-editor",
+    "field array",
+    "repeatable",
+    "form",
+    "list input",
+    "dynamic form"
+  ],
+  "useWhen": [
+    "A form field represents a variable-length list of values — invite emails, URLs, phone numbers, custom key/value pairs.",
+    "Each row needs its own validation state and a reorder affordance, distinct from a single tag-input's inline chips."
+  ],
+  "avoidWhen": [
+    "The list is small and unordered with simple string tokens — a `Tag Input` is lighter-weight for that case.",
+    "You need a fixed-length group of related fields (like a single address) rather than a repeatable, addable/removable list — use `form-row` composed directly instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Rows stack vertically at all widths; the drag handle and remove button stay fixed-width so the input can shrink first on narrow viewports.",
+  "accessibility": [
+    "The drag handle is a real button with an aria-label (\"Drag to reorder\"), not a bare icon, so it's reachable and nameable without a pointer.",
+    "Each row's remove button carries an aria-label (\"Remove\") since its icon alone has no accessible name.",
+    "A row's error message is linked to its input via aria-describedby and the input carries aria-invalid=\"true\" when invalid."
+  ],
+  "compatibleWith": ["application-form-row", "application-inputs"],
+  "variants": [
+    {
+      "id": "field-array-editor-1",
+      "title": "Email list",
+      "description": "Three repeatable email rows with drag handles and remove buttons; the third row shows an inline validation error.",
+      "source": {
+        "html": "../../../../public/examples/application/field-array-editor/1.html",
+        "tsx": "tsx/FieldArrayEditorVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "error"],
+      "accessibility": [
+        "The invalid row's input carries aria-invalid and aria-describedby pointing at its error text."
+      ]
+    },
+    {
+      "id": "field-array-editor-1-dark",
+      "title": "Email list (Dark)",
+      "description": "Email list field array adapted for dark surfaces, including the error-state border and text color.",
+      "source": {
+        "html": "../../../../public/examples/application/field-array-editor/1-dark.html",
+        "tsx": "tsx/FieldArrayEditorVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "error"],
+      "accessibility": [
+        "The error border and error text both meet WCAG AA contrast against the dark input and page background."
+      ]
+    }
+  ]
+}

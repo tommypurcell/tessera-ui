@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-heatmap-calendar",
+  "title": "Heatmap Calendar",
+  "description": "A GitHub-style contribution grid that maps activity intensity onto a calendar of small colored cells, with month labels and a Less–More legend.",
+  "category": "application/heatmap-calendar",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "heatmap-calendar",
+    "heatmap",
+    "calendar",
+    "contributions",
+    "activity",
+    "grid"
+  ],
+  "useWhen": [
+    "Summarizing daily activity intensity across many weeks or months in one glanceable grid.",
+    "The exact date and value per cell matter less than the overall pattern of frequency or streaks over time."
+  ],
+  "avoidWhen": [
+    "Users need to pick or view a specific date — use the `calendar` component instead.",
+    "The data has few enough points that a bar or line chart from `charts` would be more precise and just as compact."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The grid scrolls horizontally inside its own overflow container on narrow viewports rather than shrinking cells below a legible size; wrap it in `overflow-x-auto` in constrained layouts.",
+  "accessibility": [
+    "Cell intensity is conveyed by both color and a five-step Less–More legend so the scale isn't color-only.",
+    "Pair each cell with a title attribute or tooltip stating the exact date and count in a real implementation — the static color alone is not sufficient for screen reader users.",
+    "Weekday and month labels stay visible so the grid can be read positionally, not just by hue."
+  ],
+  "compatibleWith": ["application-calendar", "application-charts"],
+  "variants": [
+    {
+      "id": "heatmap-calendar-1",
+      "title": "Contribution grid",
+      "description": "A five-month, five-level intensity grid with weekday and month labels and a Less–More legend.",
+      "source": {
+        "html": "../../../../public/examples/application/heatmap-calendar/1.html",
+        "tsx": "tsx/HeatmapCalendarVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "In production, give each cell an accessible name with the date and count rather than relying on color alone."
+      ]
+    },
+    {
+      "id": "heatmap-calendar-1-dark",
+      "title": "Contribution grid (Dark)",
+      "description": "Contribution grid adapted for dark surfaces, with intensity ramping toward a brighter emerald at the high end.",
+      "source": {
+        "html": "../../../../public/examples/application/heatmap-calendar/1-dark.html",
+        "tsx": "tsx/HeatmapCalendarVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Cell intensity steps remain visually distinguishable at dark-mode contrast levels."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex min-h-64 items-center justify-center bg-gray-50 p-6">
+    <div class="w-full max-w-sm">
+      <label for="workspace-url" class="mb-1.5 block text-sm font-medium text-gray-700">Workspace URL</label>
+      <div class="flex items-stretch rounded-md border border-gray-300 bg-white shadow-sm transition-colors focus-within:border-gray-900 focus-within:ring-1 focus-within:ring-gray-900">
+        <span class="flex shrink-0 items-center whitespace-nowrap rounded-l-md border-r border-gray-200 bg-gray-50 px-3 text-sm text-gray-500">tessera-ui.com/</span>
+        <input
+          type="text"
+          id="workspace-url"
+          value="acme-design"
+          class="h-10 w-full border-0 bg-transparent px-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-0"
+        />
+        <button
+          type="button"
+          class="flex items-center gap-1.5 rounded-r-md border-l border-gray-200 px-3 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-50 hover:text-gray-900 focus:outline-none focus-visible:bg-gray-50"
+        >
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.666 3.888A2.25 2.25 0 0 0 13.5 2.25h-3a2.25 2.25 0 0 0-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 0 1-.75.75H9a.75.75 0 0 1-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 0 1 1.927-.184" />
+          </svg>
+          Copy
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-slide-over-form",
+  "title": "Slide-Over Form",
+  "description": "A right-edge overlay panel purpose-built for forms — a fixed header, scrollable field body, and a sticky footer with Cancel/primary actions.",
+  "category": "application/slide-over-form",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "slide-over-form",
+    "slide over",
+    "panel",
+    "form",
+    "drawer",
+    "overlay"
+  ],
+  "useWhen": [
+    "A create/edit form needs its own focused overlay without navigating away from the current page.",
+    "The form is long enough that its action buttons should stay pinned in view while the fields scroll."
+  ],
+  "avoidWhen": [
+    "The overlay content isn't a form — use the plain `Sheet` or `Drawer` component for general-purpose side panels.",
+    "The form is short enough to fit in a centered modal — a `Dialog` is less disruptive to the page layout for brief forms."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The panel is full-height and capped at max-w-sm; on narrow viewports let it grow to full width instead of overflowing.",
+  "accessibility": [
+    "The panel uses role=\"dialog\" and aria-modal=\"true\", with aria-labelledby pointing at the visible title.",
+    "The footer's primary and secondary actions stay reachable via Tab without being scrolled out of view, since the footer is sticky/shrink-0.",
+    "The backdrop is aria-hidden and purely visual; closing on Escape or backdrop click should be wired in a real implementation."
+  ],
+  "compatibleWith": ["application-form-row", "application-inputs", "application-selects", "application-textareas"],
+  "variants": [
+    {
+      "id": "slide-over-form-1",
+      "title": "Invite form",
+      "description": "A team-invite form with name, email, role select, note, and a checkbox, in a right-edge panel with a sticky Cancel/Send invite footer.",
+      "source": {
+        "html": "../../../../public/examples/application/slide-over-form/1.html",
+        "tsx": "tsx/SlideOverFormVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "role=\"dialog\" and aria-modal=\"true\" mark the panel as a modal overlay for assistive technology."
+      ]
+    },
+    {
+      "id": "slide-over-form-1-dark",
+      "title": "Invite form (Dark)",
+      "description": "Invite form panel adapted for dark surfaces, including form control borders and focus rings re-tuned for dark contrast.",
+      "source": {
+        "html": "../../../../public/examples/application/slide-over-form/1-dark.html",
+        "tsx": "tsx/SlideOverFormVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Form field borders, focus rings, and footer buttons all meet WCAG AA contrast against the dark panel background."
+      ]
+    }
+  ]
+}

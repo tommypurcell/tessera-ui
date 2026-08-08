@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "name": "application-input-group",
+  "title": "Input Group",
+  "description": "Text inputs fused with a leading icon, addon text, or trailing action button into a single visually joined control.",
+  "category": "application/input-group",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "input-group",
+    "input",
+    "addon",
+    "group",
+    "search",
+    "form"
+  ],
+  "useWhen": [
+    "An input needs a leading icon, a fixed text prefix or suffix, or a trailing action button visually fused to its border.",
+    "Building a search field, a prefixed URL/handle field, or a copy-to-clipboard field where the addon and input should read as one control."
+  ],
+  "avoidWhen": [
+    "The label and control can simply stack — use a plain labeled input instead of adding an unnecessary addon.",
+    "The addon is actually a separate action unrelated to the input's value — use a standalone button next to the field instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The group is a single-row flex container at all widths; the input shrinks first inside a constrained parent while addons keep their intrinsic width.",
+  "accessibility": [
+    "Each input keeps a visible or programmatically associated label, even when a leading icon suggests its purpose.",
+    "Decorative icons are aria-hidden; the addon text or trailing button carries the accessible name when it conveys meaning.",
+    "Focus styles apply to the whole group via focus-within so keyboard users see one continuous focused control."
+  ],
+  "compatibleWith": ["application-form-row", "application-inputs"],
+  "variants": [
+    {
+      "id": "input-group-1",
+      "title": "Icon search",
+      "description": "A search input with a leading icon and trailing keyboard-shortcut hint fused into one bordered control.",
+      "source": {
+        "html": "../../../../public/examples/application/input-group/1.html",
+        "tsx": "tsx/InputGroupVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The search icon is aria-hidden; the visible label communicates the input's purpose to screen readers."
+      ]
+    },
+    {
+      "id": "input-group-1-dark",
+      "title": "Icon search (Dark)",
+      "description": "Icon search input adapted for dark form surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/input-group/1-dark.html",
+        "tsx": "tsx/InputGroupVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Label, placeholder, and kbd hint colors meet WCAG AA contrast on dark form backgrounds."
+      ]
+    },
+    {
+      "id": "input-group-2",
+      "title": "Text addon with action",
+      "description": "An input with a fixed text prefix and a trailing copy button, all sharing one border as a single control.",
+      "source": {
+        "html": "../../../../public/examples/application/input-group/2.html",
+        "tsx": "tsx/InputGroupVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The trailing button has a visible text label ('Copy') in addition to its icon, so its action is announced by name."
+      ]
+    },
+    {
+      "id": "input-group-2-dark",
+      "title": "Text addon with action (Dark)",
+      "description": "Text addon with action adapted for dark form surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/input-group/2-dark.html",
+        "tsx": "tsx/InputGroupVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Addon, input, and button colors meet WCAG AA contrast on dark form backgrounds."
+      ]
+    }
+  ]
+}

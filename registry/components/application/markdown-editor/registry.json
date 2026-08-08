@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-markdown-editor",
+  "title": "Markdown Editor",
+  "description": "A formatting toolbar over a raw-markdown textarea paired with a live-rendered split preview pane, plus a Split/Preview toggle.",
+  "category": "application/markdown-editor",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "markdown-editor",
+    "markdown",
+    "editor",
+    "preview",
+    "split view",
+    "textarea"
+  ],
+  "useWhen": [
+    "Authoring content in raw markdown (release notes, docs, comments) where seeing the rendered result alongside the source reduces guesswork.",
+    "Users need quick-access formatting shortcuts (bold, italic, link, list, code) without a full WYSIWYG toolbar."
+  ],
+  "avoidWhen": [
+    "Users should never see raw markup — use `Rich Text Toolbar` for a true WYSIWYG editing experience instead.",
+    "The content is short and rarely needs preview — a plain `Textarea` with a format hint is lighter-weight."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The two panes split 50/50 via CSS grid at all widths; on narrow viewports, switch to the Preview-only or Editor-only tab instead of keeping both columns.",
+  "accessibility": [
+    "Each toolbar button carries an aria-label (Bold, Italic, Link, Bulleted list, Code) since only an icon is shown.",
+    "The Split/Preview toggle uses aria-pressed to communicate which mode is active.",
+    "The textarea uses defaultValue rather than rendering markdown as literal children, keeping it a standard editable form control."
+  ],
+  "compatibleWith": ["application-textareas", "application-rich-text-toolbar"],
+  "variants": [
+    {
+      "id": "markdown-editor-1",
+      "title": "Split view",
+      "description": "A toolbar, raw-markdown textarea, and live-rendered preview pane side by side, showing headings, bold text, a bullet list, inline code, and a link.",
+      "source": {
+        "html": "../../../../public/examples/application/markdown-editor/1.html",
+        "tsx": "tsx/MarkdownEditorVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Toolbar buttons carry aria-labels describing their formatting action."
+      ]
+    },
+    {
+      "id": "markdown-editor-1-dark",
+      "title": "Split view (Dark)",
+      "description": "Split-view markdown editor adapted for dark surfaces, including the code-span and toolbar colors.",
+      "source": {
+        "html": "../../../../public/examples/application/markdown-editor/1-dark.html",
+        "tsx": "tsx/MarkdownEditorVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Toolbar icons, divider, and preview text all meet WCAG AA contrast against the dark editor background."
+      ]
+    }
+  ]
+}
