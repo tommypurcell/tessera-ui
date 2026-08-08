@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-quote-estimate-panel",
+  "title": "Quote Estimate Panel",
+  "description": "Coverage/deductible/term sliders driving a live estimated premium and rate breakdown, recomputed in real time from slider state.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["insurance", "quote", "sliders", "calculator"],
+  "useWhen": [
+    "Letting a shopper explore how coverage amount, deductible, and term trade off against estimated premium before requesting a full quote.",
+    "You want immediate, continuous feedback as inputs change rather than a submit-and-wait calculation.",
+    "A breakdown (base rate plus adjustments) helps the user understand why the premium moved, not just the final number."
+  ],
+  "avoidWhen": [
+    "You need discrete text-entry fields (home price, down payment) for a one-time calculation — use `mortgage-calculator` for that form-field-driven pattern instead.",
+    "The real premium depends on underwriting factors that can't be approximated client-side — show a static disclaimer instead of implying real-time accuracy.",
+    "Only a single input drives the output — a simpler single-slider control is enough."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Fixed-width card (max-w-md) that stacks sliders vertically at all widths; the breakdown row wraps rather than overflowing at narrow widths.",
+  "accessibility": [
+    "Every slider has a visible <label> tied via htmlFor/id, plus a live-updating value readout next to the label.",
+    "The premium and its full breakdown are derived from the same three slider values on every change, so they can never disagree.",
+    "The static HTML fixture's initial numbers match what the live calculation produces for its default slider positions, so no-JS viewers see accurate values."
+  ],
+  "compatibleWith": ["application-mortgage-calculator", "application-coverage-comparison-card"],
+  "variants": [
+    {
+      "id": "quote-estimate-panel-1",
+      "title": "Quote Estimate Panel",
+      "description": "Coverage $150,000, deductible $1,000, 12-month term producing a $27/mo estimate with a base/deductible/term breakdown that updates live as sliders move.",
+      "source": {
+        "html": "../../../../public/examples/application/quote-estimate-panel/1.html",
+        "tsx": "tsx/QuoteEstimatePanelVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Premium and breakdown values are recalculated from the same slider inputs on every change event."
+      ]
+    },
+    {
+      "id": "quote-estimate-panel-1-dark",
+      "title": "Quote Estimate Panel (Dark)",
+      "description": "Quote estimate panel adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/quote-estimate-panel/1-dark.html",
+        "tsx": "tsx/QuoteEstimatePanelVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Premium callout colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}
