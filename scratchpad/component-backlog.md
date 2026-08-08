@@ -85,6 +85,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-8) Announcement Banner — full-width dismissible top bar, info/success/warning severity + CTA (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark
 - [x] (builder-8) Data Filter Bar — active-filter chip bar with per-chip removal, clear-all, Add filter trigger (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark
 - [x] (builder-8) Inline Edit Field — click-to-edit text with save/cancel + Enter/Escape shortcuts (tsx light+dark, html light+dark showing display+editing states, registry.json, MDX); screenshot verified light+dark
+- [x] (builder-8) Multi-Select Combobox — searchable listbox returning multiple checked values as removable chips (tsx light+dark, html light+dark w/ open listbox state, registry.json, MDX); screenshot verified light+dark
 
 ### builder-9
 - [x] Toggle (builder-9) — already existed as `toggles`
@@ -123,14 +124,36 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-8) Data Filter Bar — horizontal bar of chip/dropdown filters with active-filter pills and a clear-all control; the applied layer above the existing `filters` primitives.
 - [x] (builder-10) Comparison Slider — 2 variants (corner-labeled + captioned before/after reveal), light+dark, interactive drag verified, registry+tsx generated (fixed generator's CSS-custom-property mangling by avoiding inline `--var` styles), screenshots verified
 - [x] (builder-10) Onboarding Checklist — 2 variants (progress ring card + linear progress bar card), light+dark, registry+tsx generated, screenshots verified
-- [~] (builder-5) Command Menu Result Row — reusable list-item primitive with icon, label, meta, and trailing kbd hint; composes into palettes, comboboxes, and search results.
-- [~] (builder-8) Multi-Select Combobox — searchable dropdown that returns multiple checked values rendered as inline chips; distinct from single Combobox and Tag Input.
+- [x] (builder-5) Command Menu Result Row — role="option" row primitive (icon/avatar, title+meta, trailing kbd hint or badge, selected/disabled states), light+dark, registry+tsx+MDX, screenshot verified, committed
+- [x] (builder-8) Multi-Select Combobox — searchable dropdown that returns multiple checked values rendered as inline chips; distinct from single Combobox and Tag Input.
 - [x] (builder-3) Date Range Picker — preset rail (Today/Last 7d/Last 30d/MTD/Custom) + month calendar with range fill, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-3-components
 - [x] (builder-6) Color Picker — 2 variants (popover swatch grid + hex input, hue/saturation panel with hue+alpha sliders and RGB inputs), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
 - [x] (builder-8) Inline Edit Field — click-to-edit text that swaps to an input with save/cancel affordances; common for settings and table cells.
-- [~] (builder-6) Copy-to-Clipboard Field — read-only value box with a trailing copy button and "copied" confirmation; ubiquitous for API keys, invite links, IDs.
+- [x] (builder-6) Copy-to-Clipboard Field — 2 variants (default state, copied confirmation state), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
 - [x] (builder-9) Bulk Action Bar — 2 variants (floating pill, inline table toolbar) light+dark, registry.json, MDX entry, screenshots
 - [x] (builder-3) Tree View — recursive checkbox tree w/ expand/collapse, indeterminate parent state, indent guides, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-3-components
-- [~] (builder-10) Timeline Scrubber — horizontal draggable playhead with tick marks and range handles for media/log scrubbing; distinct from progress bars.
+- [x] (builder-10) Timeline Scrubber — 2 variants (media playhead scrubber w/ buffered range + tick marks, dual-handle log-range scrubber over histogram), light+dark, registry+tsx generated, screenshots verified. Recovered from a shared-tree branch mixup where an earlier session instance's commit landed on builder-6-components; content re-applied cleanly onto builder-10-components via plumbing, original branch left untouched.
 - [x] (builder-8) Announcement Banner — full-width top-of-page dismissible bar for product news/maintenance with CTA and severity variants; distinct from inline alerts.
-- [~] (builder-7) Password Strength Meter — password input paired with a segmented strength bar and label (Weak/Fair/Strong) that updates live; common signup/settings pattern absent from library, distinct from generic range-inputs/progress-bars.
+- [x] (builder-7) Password Strength Meter — 2 states (strong/fair) w/ segmented bar, live label, requirements checklist, light+dark, registry+tsx+MDX, screenshot verified, committed (also regenerated public/component.css for missing emerald/amber-400 bg utilities)
+
+<!-- === FRESH WAVE (post-94-clear) — 20 new application/dashboard-grade ideas, verified non-dupe against registry === -->
+- [~] (builder-4) Calendar Event Grid — week/day view with time-slotted event blocks, overlap handling, and current-time indicator; the scheduling surface `calendar` (date-picker) doesn't cover.
+- [~] (builder-5) Gantt Bar Chart — horizontal project timeline with dependency arrows, milestone diamonds, and today marker; distinct from timelines and timeline-scrubber.
+- [ ] Code Editor Block — syntax-highlighted panel with line numbers, gutter, active-line highlight, and language tab; richer than static `terminal-blocks`.
+- [~] (builder-3) JSON Tree Viewer — collapsible key/value explorer with type coloring and expand-all/collapse-all; distinct from generic tree-view (data-structure semantics).
+- [ ] Log Viewer — virtualized monospace stream with severity coloring, level filter chips, and auto-scroll toggle; debugging staple absent from library.
+- [ ] Comment Thread — nested reply chain with avatars, timestamps, reactions, and a composer footer; distinct from flat chat-bubbles.
+- [ ] Mention Textarea — composer with @-mention autocomplete popover and inline highlighted tokens; distinct from tag-input and plain textareas.
+- [ ] Rich Text Toolbar — WYSIWYG formatting bar (bold/italic/list/link/heading dropdown) with active-state buttons; pairs with editors, not covered by toolbar.
+- [ ] Heatmap Calendar — GitHub-style contribution grid with intensity buckets, month labels, and cell tooltips; distinct from charts and calendar.
+- [ ] Funnel Chart — stepped conversion visualization with per-stage counts, drop-off percentages, and labels; analytics pattern not in charts set.
+- [ ] Map Marker Popup — floating card anchored to a pin with title, thumbnail, meta, and directions CTA; geo-UI primitive absent from library.
+- [ ] Cookie Consent Banner — bottom sheet with accept/reject/customize actions and category toggles; compliance staple distinct from announcement-banner.
+- [ ] Feature Comparison Matrix — sticky-header table comparing plans/products across feature rows with check/dash/limit cells; distinct from pricing table and tables.
+- [ ] Import Wizard — multi-step upload → column-map → preview flow with mapping dropdowns; distinct from stepper-wizard (data-import specific) and file-uploaders.
+- [ ] API Key Manager — table of keys with masked values, reveal/copy, scopes badges, last-used, and revoke; distinct from copy-field (management surface).
+- [ ] Two-Factor Setup — QR + secret display with segmented code entry and recovery-codes reveal; security-onboarding pattern not covered.
+- [~] (builder-6) Usage Meter Card — quota tile with used/limit progress, threshold color shift, and upgrade CTA; distinct from progress-bars and stat tiles (billing semantics).
+- [~] (builder-10) Diff Stat Bar — added/removed line summary with green/red proportion bar and file-count; distinct from the built diff viewer (summary, not content).
+- [ ] Presence Cursor Layer — live multiplayer cursors with name labels and selection highlights over a canvas; collaboration primitive absent from library.
+- [ ] Rating Distribution — horizontal bar breakdown of 5→1 star counts with percentages and average summary; distinct from rating input (aggregate view).
