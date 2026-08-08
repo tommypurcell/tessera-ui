@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-person-hovercard",
+  "title": "Person Hovercard",
+  "description": "Rich profile popover shown on hover or focus of a trigger: avatar, name/handle/role, bio, follower counts, a Follow action, and social links.",
+  "category": "application/overlays",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["profile", "hovercard", "popover", "social", "person"],
+  "useWhen": [
+    "Previewing a user's profile on hover of their avatar, @mention, or name across comments, feeds, and chat.",
+    "You need more than a name tooltip — stats, bio, and a quick Follow action without a full page navigation.",
+    "Distinct from the generic Hover Card, which previews arbitrary link/page content rather than person-specific fields like follower counts and social links."
+  ],
+  "avoidWhen": [
+    "You only need a plain name tooltip with no bio or stats — a simple Tooltip is lighter weight.",
+    "The full profile page is one click away and equally fast to reach — a hovercard adds interaction cost without much benefit for rarely-viewed profiles."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The card is a fixed-width panel anchored to its trigger's bottom-left; on touch devices, hover has no equivalent, so trigger this via focus/tap instead and ensure it doesn't block the trigger's own primary action.",
+  "accessibility": [
+    "The panel opens on both hover and focus, so keyboard users tabbing to the trigger can reach it, not just mouse users.",
+    "A short close delay after mouseleave prevents the card from vanishing while the pointer moves from the trigger into the panel itself.",
+    "Social links carry aria-label since they're icon-only; the visible name/handle text is the primary accessible identifier for the person, not the avatar image alone."
+  ],
+  "compatibleWith": ["application-hover-card", "application-avatar"],
+  "variants": [
+    {
+      "id": "person-hovercard-1",
+      "title": "Person Hovercard",
+      "description": "A profile card for Priya Shah: avatar, name/handle/role, bio, following/followers counts, a Follow button, and Twitter/GitHub/website social links.",
+      "source": {
+        "html": "../../../../public/examples/application/person-hovercard/1.html",
+        "tsx": "tsx/PersonHovercardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The card opens on focus as well as hover so it's reachable via keyboard."
+      ]
+    },
+    {
+      "id": "person-hovercard-1-dark",
+      "title": "Person Hovercard (Dark)",
+      "description": "The same profile card adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/person-hovercard/1-dark.html",
+        "tsx": "tsx/PersonHovercardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Avatar, text, and social-icon contrast remain legible against the dark surface."
+      ]
+    }
+  ]
+}
