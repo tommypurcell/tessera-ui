@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-sm flex-col gap-1.5 p-6">
+    <label for="new-password-2" class="text-sm font-medium text-gray-200">New password</label>
+
+    <input
+      id="new-password-2"
+      type="password"
+      value="password1"
+      aria-describedby="password-strength-label-2"
+      class="rounded-md border border-gray-600 bg-gray-900 px-3 py-2 text-sm text-white shadow-sm focus:border-gray-400 focus:outline-none"
+    />
+
+    <div class="mt-1 flex gap-1" role="img" aria-label="Password strength: fair">
+      <span aria-hidden="true" class="h-1.5 flex-1 rounded-full bg-amber-400"></span>
+      <span aria-hidden="true" class="h-1.5 flex-1 rounded-full bg-amber-400"></span>
+      <span aria-hidden="true" class="h-1.5 flex-1 rounded-full bg-gray-700"></span>
+      <span aria-hidden="true" class="h-1.5 flex-1 rounded-full bg-gray-700"></span>
+    </div>
+
+    <p id="password-strength-label-2" class="mt-0.5 text-xs font-medium text-amber-400">Fair password</p>
+
+    <ul class="mt-2 flex flex-col gap-1 text-xs text-gray-400">
+      <li class="flex items-center gap-1.5">
+        <svg aria-hidden="true" class="size-3.5 text-emerald-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+        </svg>
+        At least 10 characters
+      </li>
+      <li class="flex items-center gap-1.5 text-gray-500">
+        <svg aria-hidden="true" class="size-3.5 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <circle cx="12" cy="12" r="9" />
+        </svg>
+        Contains a number and symbol
+      </li>
+    </ul>
+  </body>
+</html>
