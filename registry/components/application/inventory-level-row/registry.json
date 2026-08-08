@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "name": "application-inventory-level-row",
+  "title": "Inventory Level Row",
+  "description": "A SKU-level stock indicator with an in-stock proportion bar, a reorder-threshold marker, and a low-stock warning badge, at both single-row detail and multi-row list scale.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["application", "inventory", "stock", "ecommerce", "warehouse"],
+  "useWhen": [
+    "Displaying a product's current stock level relative to its reorder threshold in an inventory or warehouse management interface.",
+    "Scanning a list of SKUs to spot which ones are healthy, low, or out of stock at a glance."
+  ],
+  "avoidWhen": [
+    "The metric is a billing/plan quota rather than physical stock — use usage-meter instead, since the reorder-threshold framing is inventory-specific.",
+    "You need per-unit transaction history rather than a current-level snapshot — a table or transaction row is more appropriate."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The detail row expands to fill its container; the list variant uses a fixed-width label column with a flexible bar so many rows stay vertically aligned regardless of product name length (names truncate with an ellipsis).",
+  "accessibility": [
+    "The reorder-threshold marker is a decorative (aria-hidden) dashed line reinforced by the 'Reorder at N' text below the bar, so the threshold is never conveyed by position alone.",
+    "The low-stock warning badge pairs an icon with explicit text ('Below reorder point'), not color or icon alone.",
+    "Exact unit counts are always shown as text alongside the proportional bar, giving precise values independent of the visual fill."
+  ],
+  "compatibleWith": ["application-usage-meter", "application-tables"],
+  "variants": [
+    {
+      "id": "inventory-level-row-1",
+      "title": "Detail row",
+      "description": "Single SKU with a stock bar, dashed reorder-threshold marker, and a below-reorder-point warning badge",
+      "source": {
+        "html": "../../../../public/examples/application/inventory-level-row/1.html",
+        "tsx": "tsx/InventoryLevelRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["low-stock"],
+      "accessibility": ["The warning badge pairs an icon with explicit text, and the threshold marker is reinforced by a text label."]
+    },
+    {
+      "id": "inventory-level-row-1-dark",
+      "title": "Detail row (Dark)",
+      "description": "Single SKU with a stock bar, dashed reorder-threshold marker, and a below-reorder-point warning badge",
+      "source": {
+        "html": "../../../../public/examples/application/inventory-level-row/1-dark.html",
+        "tsx": "tsx/InventoryLevelRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["low-stock"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    },
+    {
+      "id": "inventory-level-row-2",
+      "title": "List rows",
+      "description": "Three SKUs at healthy (green), low (amber), and out-of-stock (red) levels, for a compact inventory list",
+      "source": {
+        "html": "../../../../public/examples/application/inventory-level-row/2.html",
+        "tsx": "tsx/InventoryLevelRowVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["healthy", "low-stock", "out-of-stock"],
+      "accessibility": ["Exact unit counts are shown as text for every row, not conveyed by bar fill alone."]
+    },
+    {
+      "id": "inventory-level-row-2-dark",
+      "title": "List rows (Dark)",
+      "description": "Three SKUs at healthy (green), low (amber), and out-of-stock (red) levels, for a compact inventory list",
+      "source": {
+        "html": "../../../../public/examples/application/inventory-level-row/2-dark.html",
+        "tsx": "tsx/InventoryLevelRowVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["healthy", "low-stock", "out-of-stock"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    }
+  ]
+}
