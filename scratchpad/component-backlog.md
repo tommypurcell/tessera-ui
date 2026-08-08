@@ -592,7 +592,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-5) Column Mapping Rows — source→target field mapping with dropdowns and auto-match; distinct from import-wizard. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 
 <!-- Theme: Survey builder -->
-- [~] (builder-4) Question Type Palette — draggable question-type cards (MC, rating, text, scale); distinct from query-builder.
+- [x] (builder-4) Question Type Palette — 2x2 draggable type cards (MC/Rating/Short text/Scale), icon+label, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #17)
 - [x] (builder-6) Likert Scale Row — 2 variants (single-question 5-point scale with endpoint labels, multi-row survey table with SD/D/N/A/SA headers), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
 - [x] (builder-2) Survey Progress Header — "Question 3 of 8" bar, fill % computed from currentQuestion/totalQuestions, Back disables at first question and Next relabels to Submit at last; light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
 - [x] (builder-2) Response Summary Bar — 4-option satisfaction survey results, thin progress bars with % + raw count computed from real option.count values and total; light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
@@ -603,7 +603,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: POS / retail -->
 - [x] (builder-2) POS Keypad — numeric keypad + quick-cash buttons, change due computed live from tendered−total (verified via Playwright click: $20 cash on $18.50 total → $1.50 change), disabled Charge when short; light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
-- [~] (builder-9) Receipt Preview — itemized thermal-receipt layout with tax/total and footer; distinct from invoice-table.
+- [x] (builder-9) Receipt Preview — 2 variants (thermal receipt, digital receipt card) light+dark, registry.json, MDX entry, screenshots
 - [x] (builder-8) Barcode Scan Row — dense POS scan-log rows w/ SKU, qty, computed line total (unit×qty), per-item void action, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [x] (builder-8) Tip Selector — preset %-tip buttons w/ computed tip/total/per-person split (real math from bill×percent÷splitCount), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [x] (builder-8) Cash Drawer Summary — expected/counted totals w/ computed signed variance, balanced/over/short states (color+text), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
@@ -617,20 +617,20 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: Telecom -->
 - [~] (builder-10) Data Usage Ring — GB used vs plan with days-left projection; distinct from api-rate-limit-meter.
-- [~] (builder-8) Plan Comparison Row — talk/text/data columns with checkmarks and price; distinct from feature-comparison-matrix.
+- [x] (builder-8) Plan Comparison Row — 3 telecom plans w/ fixed talk/text/data/price columns, current-plan highlight (bg+text), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [x] (builder-8) Signal Strength Bars — 4-bar indicator w/ active count derived from real strength value, network-type label, 3 states shown (3/4, 4/4, weak 1/4), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
-- [~] (builder-2) Call Log Row — contact, direction icon, duration, and time with callback; distinct from match-history-row.
+- [x] (builder-2) Call Log Row — contact avatar, direction icon (incoming/outgoing/missed) with color+glyph+label all derived from the same direction value, duration, timestamp, callback button; light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
 
 <!-- Theme: Gov / civic -->
-- [ ] Form Field Wizard (gov) — long official form split into review-able sections with save-progress; distinct from stepper-wizard.
-- [ ] Status Application Tracker — submitted→under-review→decision government stepper with case number; distinct from claim-status-tracker.
+- [~] (builder-4) Form Field Wizard (gov) — long official form split into review-able sections with save-progress; distinct from stepper-wizard.
+- [x] (builder-5) Status Application Tracker — submitted→under-review→decision government stepper with case number; distinct from claim-status-tracker. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [x] (builder-5) Public Notice Card — dated official announcement with category badge and read-more; distinct from announcement-feed-item. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [ ] Ballot Option List — candidate/measure rows with select and info expander; distinct from poll-vote-card.
 
 <!-- Theme: Agriculture / IoT -->
 - [ ] Field Sensor Map — plot grid with per-zone moisture/temp color coding; distinct from fleet-status-grid.
 - [ ] Crop Growth Timeline — planting→harvest stage tracker with dates and weather; distinct from care-timeline.
-- [ ] Irrigation Schedule Row — zone with on/off, duration, and next-run; distinct from medication-schedule-list.
+- [~] (builder-2) Irrigation Schedule Row — zone with on/off, duration, and next-run; distinct from medication-schedule-list.
 
 <!-- Theme: Manufacturing -->
 - [ ] Production Line Status — station tiles with running/stopped/fault and throughput; distinct from health-check-grid.
@@ -643,7 +643,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [ ] Amenity Request Row — service request with status, room, and time; distinct from approval-request-card.
 
 <!-- Theme: Media / misc verticals -->
-- [ ] Podcast Episode Row — episode art, title, duration, play, and download; distinct from track-list-row.
+- [~] (builder-8) Podcast Episode Row — episode art, title, duration, play, and download; distinct from track-list-row.
 - [ ] Sports Scoreboard — two-team score with period/clock and possession indicator; distinct from stats.
 - [ ] Live Match Timeline — game events (goals/cards) on a minute-based timeline; distinct from timelines.
 - [ ] Recipe Ingredient List — checkable ingredients with quantity scaler; distinct from task-checklist.
