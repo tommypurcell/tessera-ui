@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-survey-progress-header",
+  "title": "Survey Progress Header",
+  "description": "\"Question X of N\" label and progress fill computed from real position/total props, with Back/Next controls that disable and relabel at the survey boundaries.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["survey", "forms", "progress", "navigation"],
+  "useWhen": [
+    "Heading a single-question-at-a-time survey or quiz flow where only overall position matters, not named step labels.",
+    "The number of questions is large or dynamic, making a labeled per-step indicator (like a numbered stepper) impractical.",
+    "You want the Back button and Next/Submit label to automatically reflect whether the respondent is at the first or last question."
+  ],
+  "avoidWhen": [
+    "Steps have distinct names the user should see (Account, Profile, Review) — use `multi-step-progress` for that labeled-step stepper instead.",
+    "There's no linear position to track — a plain progress bar without question framing is enough.",
+    "The flow allows jumping to arbitrary questions — pair this with a dedicated question navigator instead of relying on Back/Next alone."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Fixed-width card (max-w-lg) with a full-width progress bar; label and percentage text wrap rather than overflowing at narrow widths.",
+  "accessibility": [
+    "The progress bar's fill percentage and the visible '% complete' text are both derived from the same currentQuestion/totalQuestions props.",
+    "The Back button is a real disabled <button> at the first question rather than just visually dimmed, and the Next button relabels to 'Submit' at the last question based on the same boundary check.",
+    "Question position is announced as real text ('Question 3 of 8'), not conveyed by the progress bar alone."
+  ],
+  "compatibleWith": ["application-multi-step-progress", "application-response-summary-bar", "application-matrix-question-grid"],
+  "variants": [
+    {
+      "id": "survey-progress-header-1",
+      "title": "Survey Progress Header",
+      "description": "Question 3 of 8, 37% complete, Back enabled and Next showing (not yet at the last question).",
+      "source": {
+        "html": "../../../../public/examples/application/survey-progress-header/1.html",
+        "tsx": "tsx/SurveyProgressHeaderVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "first-question", "last-question"],
+      "accessibility": [
+        "Progress fill and '% complete' text are computed from the same currentQuestion/totalQuestions values; Back disables and Next relabels from the same boundary checks."
+      ]
+    },
+    {
+      "id": "survey-progress-header-1-dark",
+      "title": "Survey Progress Header (Dark)",
+      "description": "Survey progress header adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/survey-progress-header/1-dark.html",
+        "tsx": "tsx/SurveyProgressHeaderVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "first-question", "last-question"],
+      "accessibility": [
+        "Progress bar and button colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}
