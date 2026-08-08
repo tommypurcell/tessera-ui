@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-xs flex-col bg-gray-950 p-6">
+    <div class="relative overflow-hidden rounded-lg bg-black ring-1 ring-white/10">
+      <img
+        src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?w=400&h=225&fit=crop"
+        alt=""
+        class="aspect-video w-full object-cover opacity-40"
+      />
+
+      <div class="absolute inset-0 flex flex-col items-center justify-center gap-2 p-4 text-center">
+        <p class="text-xs font-medium text-gray-300">Up next in <span id="autoplay-2-count-dark">5</span></p>
+        <p class="text-sm font-semibold text-white">Advanced Grid Layouts</p>
+
+        <button
+          type="button"
+          aria-label="Play now"
+          class="mt-1 flex size-10 items-center justify-center rounded-full bg-white text-gray-900 transition hover:scale-105"
+        >
+          <svg class="ml-0.5 size-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M8 5.14v13.72a1 1 0 001.5.87l11-6.86a1 1 0 000-1.72l-11-6.86A1 1 0 008 5.14z" />
+          </svg>
+        </button>
+
+        <button type="button" class="mt-1 text-xs font-medium text-gray-300 underline-offset-2 hover:text-white hover:underline">
+          Cancel
+        </button>
+      </div>
+
+      <div class="absolute inset-x-0 bottom-0 h-1 bg-white/20">
+        <div id="autoplay-2-bar-dark" class="h-full w-0 bg-white transition-[width] duration-1000 ease-linear"></div>
+      </div>
+    </div>
+
+    <script>
+      ;(function () {
+        var countEl = document.getElementById('autoplay-2-count-dark')
+        var bar = document.getElementById('autoplay-2-bar-dark')
+        var total = 5
+        var remaining = 5
+
+        function tick() {
+          if (remaining <= 0) return
+          remaining -= 1
+          countEl.textContent = remaining
+          bar.style.width = (100 - (remaining / total) * 100) + '%'
+        }
+
+        setInterval(tick, 1000)
+      })()
+    </script>
+  </body>
+</html>

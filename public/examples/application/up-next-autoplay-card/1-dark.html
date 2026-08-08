@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-sm flex-col gap-4 p-6">
+    <div class="flex items-center gap-3 rounded-lg border border-gray-800 bg-gray-900 p-3">
+      <img
+        src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=160&h=90&fit=crop"
+        alt=""
+        class="h-14 w-24 shrink-0 rounded-md object-cover"
+      />
+
+      <div class="min-w-0 flex-1">
+        <p class="text-xs font-medium text-gray-400">Up next</p>
+        <p class="truncate text-sm font-semibold text-white">Designing with Tailwind v4</p>
+      </div>
+
+      <div id="autoplay-1-dark" class="relative flex size-11 shrink-0 items-center justify-center">
+        <svg class="size-11 -rotate-90" viewBox="0 0 60 60" aria-hidden="true">
+          <circle cx="30" cy="30" r="26" fill="none" stroke="currentColor" stroke-width="4" class="text-gray-800" />
+          <circle
+            class="js-ring text-blue-400 transition-[stroke-dashoffset] duration-1000 ease-linear"
+            cx="30"
+            cy="30"
+            r="26"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="4"
+            stroke-linecap="round"
+            stroke-dasharray="163.4"
+            stroke-dashoffset="65.3"
+          />
+        </svg>
+        <span class="js-time absolute text-xs font-semibold text-white">6</span>
+      </div>
+    </div>
+
+    <div class="flex gap-2">
+      <button
+        type="button"
+        class="flex-1 rounded-md border border-gray-700 px-3 py-2 text-sm font-semibold text-gray-200 transition hover:bg-gray-800"
+      >
+        Cancel
+      </button>
+      <button
+        type="button"
+        class="flex-1 rounded-md bg-gray-100 px-3 py-2 text-sm font-semibold text-gray-900 transition hover:bg-white"
+      >
+        Play now
+      </button>
+    </div>
+
+    <script>
+      ;(function () {
+        var root = document.getElementById('autoplay-1-dark')
+        var ring = root.querySelector('.js-ring')
+        var timeEl = root.querySelector('.js-time')
+        var total = 10
+        var remaining = 6
+        var circumference = 163.4
+
+        function tick() {
+          if (remaining <= 0) return
+          remaining -= 1
+          timeEl.textContent = String(remaining)
+          ring.style.strokeDashoffset = String(circumference * (1 - remaining / total))
+        }
+
+        setInterval(tick, 1000)
+      })()
+    </script>
+  </body>
+</html>
