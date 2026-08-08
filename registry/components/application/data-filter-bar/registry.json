@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-data-filter-bar",
+  "title": "Data Filter Bar",
+  "description": "Horizontal bar of active-filter chips with per-chip removal, a clear-all control, and an \"Add filter\" trigger — the applied-filters layer that sits above a filter picker for tables, lists, and search results.",
+  "category": "application/filters",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["filter", "filter-bar", "chips", "search", "data-table"],
+  "useWhen": [
+    "Showing which filters are currently applied to a table, list, or search result set.",
+    "Users need to remove one filter at a time or clear all filters in a single action.",
+    "Pairing with a filter picker (dropdown, combobox, or panel) that adds new chips via onAddFilter."
+  ],
+  "avoidWhen": [
+    "You only have a single filter or sort control — a plain select or the base application-filters component is simpler.",
+    "Filters need their own always-visible controls (not just a summary chip) — use a filter panel or the filters component's inline fields instead.",
+    "There is no active-filter state to summarize — this component has nothing to show until at least one filter is applied."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The bar wraps chips onto multiple lines on narrow viewports rather than truncating or scrolling; the Add filter and Clear all controls remain reachable at every width.",
+  "accessibility": [
+    "Active filters are grouped in a role='list' with role='listitem' chips so screen readers announce the count and each filter.",
+    "Each chip's remove button has an aria-label naming the specific filter being removed, not just 'Remove'.",
+    "Add filter and Clear all are real buttons reachable by keyboard, with visible focus rings."
+  ],
+  "compatibleWith": ["application-filters", "application-badges", "application-select"],
+  "variants": [
+    {
+      "id": "data-filter-bar-1",
+      "title": "Data filter bar",
+      "description": "Three active-filter chips with remove buttons, an Add filter trigger, and a Clear all action on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/data-filter-bar/1.html",
+        "tsx": "tsx/DataFilterBarVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "empty"],
+      "accessibility": [
+        "Chip color is supplementary; the filter label text and remove-button aria-label carry the meaning."
+      ]
+    },
+    {
+      "id": "data-filter-bar-1-dark",
+      "title": "Data filter bar (Dark)",
+      "description": "Three active-filter chips with remove buttons, an Add filter trigger, and a Clear all action, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/data-filter-bar/1-dark.html",
+        "tsx": "tsx/DataFilterBarVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "empty"],
+      "accessibility": [
+        "Chip background and text colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
