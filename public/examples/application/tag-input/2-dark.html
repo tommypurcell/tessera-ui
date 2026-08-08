@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-md p-6">
+    <label for="tagInput2" class="mb-1.5 block text-sm font-medium text-gray-300">Assignees</label>
+
+    <div class="relative">
+      <div
+        data-tag-field
+        class="flex flex-wrap items-center gap-1.5 rounded-md border border-gray-700 bg-gray-900 p-2 focus-within:border-indigo-400 focus-within:ring-1 focus-within:ring-indigo-400"
+      >
+        <span data-tag-list class="contents">
+          <span class="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 py-0.5 pr-1 pl-2.5 text-sm text-emerald-300">
+            Ava Wilson
+            <button type="button" data-tag-remove aria-label="Remove Ava Wilson" class="rounded-full p-0.5 hover:bg-emerald-500/20">
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="size-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </span>
+        </span>
+
+        <input
+          id="tagInput2"
+          type="text"
+          placeholder="Add an assignee…"
+          role="combobox"
+          aria-expanded="false"
+          aria-controls="tagSuggestions"
+          autocomplete="off"
+          class="min-w-32 flex-1 border-0 bg-transparent p-1 text-sm text-gray-100 placeholder:text-gray-500 focus:ring-0 focus:outline-none"
+        />
+      </div>
+
+      <ul
+        id="tagSuggestions"
+        role="listbox"
+        hidden
+        class="absolute z-10 mt-1 w-full overflow-hidden rounded-md border border-gray-700 bg-gray-800 py-1 shadow-lg"
+      >
+        <li role="option" data-suggestion class="cursor-pointer px-3 py-2 text-sm text-gray-200 hover:bg-gray-700">Marcus Chen</li>
+        <li role="option" data-suggestion class="cursor-pointer px-3 py-2 text-sm text-gray-200 hover:bg-gray-700">Sofia Ramirez</li>
+        <li role="option" data-suggestion class="cursor-pointer px-3 py-2 text-sm text-gray-200 hover:bg-gray-700">Priya Patel</li>
+      </ul>
+    </div>
+
+    <script>
+      const listEl = document.querySelector('[data-tag-list]')
+      const fieldEl = document.querySelector('[data-tag-field]')
+      const inputEl = document.getElementById('tagInput2')
+      const suggestionsEl = document.getElementById('tagSuggestions')
+
+      function addTag(value) {
+        const trimmed = value.trim()
+        if (!trimmed) return
+        const tagEl = document.createElement('span')
+        tagEl.className = 'inline-flex items-center gap-1 rounded-full bg-emerald-500/10 py-0.5 pr-1 pl-2.5 text-sm text-emerald-300'
+        tagEl.innerHTML = `${trimmed}<button type="button" data-tag-remove aria-label="Remove ${trimmed}" class="rounded-full p-0.5 hover:bg-emerald-500/20"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="size-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg></button>`
+        listEl.appendChild(tagEl)
+      }
+
+      function closeSuggestions() {
+        suggestionsEl.hidden = true
+        inputEl.setAttribute('aria-expanded', 'false')
+      }
+
+      inputEl.addEventListener('focus', () => {
+        suggestionsEl.hidden = false
+        inputEl.setAttribute('aria-expanded', 'true')
+      })
+
+      inputEl.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+          event.preventDefault()
+          addTag(inputEl.value)
+          inputEl.value = ''
+        } else if (event.key === 'Backspace' && inputEl.value === '') {
+          listEl.lastElementChild?.remove()
+        } else if (event.key === 'Escape') {
+          closeSuggestions()
+        }
+      })
+
+      suggestionsEl.querySelectorAll('[data-suggestion]').forEach((optionEl) => {
+        optionEl.addEventListener('click', () => {
+          addTag(optionEl.textContent)
+          inputEl.value = ''
+          inputEl.focus()
+        })
+      })
+
+      fieldEl.addEventListener('click', (event) => {
+        if (event.target.closest('[data-tag-remove]')) {
+          event.target.closest('span').remove()
+        } else {
+          inputEl.focus()
+        }
+      })
+
+      document.addEventListener('click', (event) => {
+        if (!event.target.closest('#tagInput2') && !event.target.closest('#tagSuggestions')) {
+          closeSuggestions()
+        }
+      })
+    </script>
+  </body>
+</html>
