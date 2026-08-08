@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-lg flex-col gap-4 p-6">
+    <div class="flex flex-wrap items-center justify-between gap-4 rounded-lg border border-blue-900/50 bg-blue-950/40 px-5 py-4">
+      <div>
+        <p class="text-sm font-semibold text-blue-100">Early-bird pricing ends soon</p>
+        <p
+          class="mt-0.5 font-mono text-sm tabular-nums text-blue-300"
+          role="timer"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          <span class="js-h">01</span>:<span class="js-m">45</span>:<span class="js-s">12</span>
+          <span class="sr-only">remaining</span>
+        </p>
+      </div>
+
+      <a
+        href="#"
+        class="shrink-0 rounded-md bg-blue-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-400"
+      >
+        Claim discount
+      </a>
+    </div>
+
+    <script>
+      ;(function () {
+        var container = document.currentScript.previousElementSibling
+        var hEl = container.querySelector('.js-h')
+        var mEl = container.querySelector('.js-m')
+        var sEl = container.querySelector('.js-s')
+        var totalSeconds = 1 * 3600 + 45 * 60 + 12
+
+        function tick() {
+          if (totalSeconds <= 0) return
+          totalSeconds -= 1
+          var hours = Math.floor(totalSeconds / 3600)
+          var mins = Math.floor((totalSeconds % 3600) / 60)
+          var secs = totalSeconds % 60
+          hEl.textContent = String(hours).padStart(2, '0')
+          mEl.textContent = String(mins).padStart(2, '0')
+          sEl.textContent = String(secs).padStart(2, '0')
+        }
+
+        setInterval(tick, 1000)
+      })()
+    </script>
+  </body>
+</html>

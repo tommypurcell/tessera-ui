@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-date-range-picker",
+  "title": "Date Range Picker",
+  "description": "Dual-pane range selector combining preset shortcuts and a month calendar, driven by a typed presets/day-grid prop contract.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["date", "range", "calendar", "picker", "analytics", "overlay"],
+  "useWhen": [
+    "Filtering analytics, reports, or logs by a start and end date instead of a single day.",
+    "Users benefit from common presets (Today, Last 7 days, Month to date) alongside manual day selection.",
+    "You need a reusable range primitive instead of pairing two independent single DatePickers."
+  ],
+  "avoidWhen": [
+    "Only a single date is needed — use the simpler DatePicker component instead.",
+    "The range spans many months at once — a text-based start/end input pair may be faster than paging a calendar.",
+    "Screen space is too narrow for a dual-pane layout — stack presets above the calendar instead of beside it."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The preset rail and calendar sit side by side above a certain width; stack the preset rail above the calendar on narrow viewports so both remain fully usable.",
+  "accessibility": [
+    "The active preset uses aria-current='true' in addition to its filled background, not color alone.",
+    "The popover uses role='dialog' with an aria-label describing its purpose.",
+    "Range endpoints use aria-selected while in-between days remain unmarked, so screen readers can distinguish the boundary from the fill."
+  ],
+  "compatibleWith": ["application-date-picker", "application-data-table"],
+  "variants": [
+    {
+      "id": "date-range-picker-1",
+      "title": "Date Range Picker",
+      "description": "Trigger button opening a preset rail plus month calendar with range highlighting, a nights summary, and cancel/apply actions.",
+      "source": {
+        "html": "../../../../public/examples/application/date-range-picker/1.html",
+        "tsx": "tsx/DateRangePickerVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "open", "range-selected"],
+      "accessibility": [
+        "Range start/end days are visually distinct (filled circle) from in-between days (flat fill), reinforced by aria-selected on the endpoints."
+      ]
+    },
+    {
+      "id": "date-range-picker-1-dark",
+      "title": "Date Range Picker (Dark)",
+      "description": "Date range picker adapted for dark surfaces with the same preset rail, calendar, and action structure.",
+      "source": {
+        "html": "../../../../public/examples/application/date-range-picker/1-dark.html",
+        "tsx": "tsx/DateRangePickerVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "open", "range-selected"],
+      "accessibility": [
+        "Preset list text, calendar text, and range-fill colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

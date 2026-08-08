@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-json-tree-viewer",
+  "title": "JSON Tree Viewer",
+  "description": "Collapsible key/value explorer with type-based coloring and expand-all/collapse-all controls, driven by a typed recursive data/expandedPaths prop contract.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["json", "tree", "viewer", "debugging", "api", "monospace"],
+  "useWhen": [
+    "Displaying an API response, config object, or webhook payload for inspection or debugging.",
+    "Users need to drill into nested objects and arrays while collapsing branches they don't care about.",
+    "Data types (string, number, boolean, null) should be visually distinguishable at a glance."
+  ],
+  "avoidWhen": [
+    "The hierarchy represents UI navigation or file/folder structure — use Tree View or File Tree instead, which carry different semantics.",
+    "The payload is small enough to read as flat formatted text — a plain code block is simpler.",
+    "Users need to edit values, not just inspect them — build a dedicated JSON editor instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The panel scrolls horizontally within its own container so long keys or values never break the surrounding layout; height should be constrained by the parent for very large payloads.",
+  "accessibility": [
+    "Expand/collapse toggles carry a dynamic aria-label naming the key so screen readers announce which branch will open or close.",
+    "Type coloring (string green, number orange, boolean blue, null italic gray) is a supplementary cue — the literal value text remains the source of truth.",
+    "Collapsed branches show an item count so users know content exists before expanding, aiding orientation without relying on color."
+  ],
+  "compatibleWith": ["application-tree-view", "application-terminal-blocks"],
+  "variants": [
+    {
+      "id": "json-tree-viewer-1",
+      "title": "JSON Tree Viewer",
+      "description": "Monospace key/value tree with per-branch expand/collapse, item-count summaries when collapsed, and header expand-all/collapse-all actions.",
+      "source": {
+        "html": "../../../../public/examples/application/json-tree-viewer/1.html",
+        "tsx": "tsx/JsonTreeViewerVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "expanded", "collapsed"],
+      "accessibility": [
+        "Null values use italic styling in addition to color so they remain distinguishable without relying on color alone."
+      ]
+    },
+    {
+      "id": "json-tree-viewer-1-dark",
+      "title": "JSON Tree Viewer (Dark)",
+      "description": "JSON explorer adapted for dark surfaces with the same expand/collapse, type-coloring, and count-summary structure.",
+      "source": {
+        "html": "../../../../public/examples/application/json-tree-viewer/1-dark.html",
+        "tsx": "tsx/JsonTreeViewerVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "expanded", "collapsed"],
+      "accessibility": [
+        "Type-coded value colors and key/punctuation text must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

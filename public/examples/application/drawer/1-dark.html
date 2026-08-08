@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="min-h-96 bg-black/60">
+    <div role="dialog" aria-modal="true" aria-labelledby="drawer-title" class="ml-auto flex h-full w-full max-w-sm flex-col border-l border-gray-800 bg-gray-900 shadow-2xl">
+      <div class="flex items-center justify-between border-b border-gray-800 px-5 py-4">
+        <h2 id="drawer-title" class="text-base font-semibold text-white">Edit profile</h2>
+        <button type="button" aria-label="Close drawer" class="rounded-md p-1.5 text-gray-500 hover:bg-gray-800 hover:text-gray-300">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="flex-1 space-y-5 overflow-y-auto px-5 py-5">
+        <div class="flex flex-col gap-1.5">
+          <label for="drawer-name" class="text-sm font-medium text-gray-300">Full name</label>
+          <input
+            id="drawer-name"
+            type="text"
+            value="Nandor the Relentless"
+            class="rounded-md border border-gray-700 bg-gray-900 px-3 py-2 text-sm text-white shadow-sm focus:border-gray-500 focus:outline-none"
+          />
+        </div>
+
+        <div class="flex flex-col gap-1.5">
+          <label for="drawer-role" class="text-sm font-medium text-gray-300">Role</label>
+          <input
+            id="drawer-role"
+            type="text"
+            value="Vampire Warrior"
+            class="rounded-md border border-gray-700 bg-gray-900 px-3 py-2 text-sm text-white shadow-sm focus:border-gray-500 focus:outline-none"
+          />
+        </div>
+
+        <div class="flex flex-col gap-1.5">
+          <label for="drawer-bio" class="text-sm font-medium text-gray-300">Bio</label>
+          <textarea
+            id="drawer-bio"
+            rows="4"
+            class="resize-none rounded-md border border-gray-700 bg-gray-900 px-3 py-2 text-sm text-white shadow-sm focus:border-gray-500 focus:outline-none"
+          >
+Conquered many lands. Still learning how the toaster works.</textarea
+          >
+        </div>
+      </div>
+
+      <div class="flex justify-end gap-2.5 border-t border-gray-800 px-5 py-4">
+        <button type="button" class="rounded-md border border-gray-700 bg-gray-900 px-3.5 py-2 text-sm font-medium text-gray-200 shadow-sm hover:bg-gray-800">
+          Cancel
+        </button>
+        <button type="button" class="rounded-md bg-white px-3.5 py-2 text-sm font-medium text-gray-900 shadow-sm hover:bg-gray-200">
+          Save changes
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-two-factor-setup",
+  "title": "Two-Factor Setup",
+  "description": "Three-step 2FA enrollment flow: scan a QR code or copy the manual secret, enter the 6-digit authenticator code, then reveal one-time recovery codes.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["security", "2fa", "mfa", "onboarding", "auth", "otp"],
+  "useWhen": [
+    "Building the enrollment flow for TOTP-based two-factor authentication in account security settings.",
+    "You need to present a QR code, a manual fallback secret, a verification step, and recovery codes as one cohesive flow.",
+    "Pairing with Input OTP's interaction pattern (auto-advance, paste-to-fill) for the verification step specifically in a 2FA context."
+  ],
+  "avoidWhen": [
+    "You only need a bare verification code field with no surrounding setup flow — use Input OTP directly instead.",
+    "Your 2FA method is SMS or push-based rather than an authenticator app — the QR/secret step doesn't apply."
+  ],
+  "dependencies": ["application-input-otp"],
+  "responsiveBehavior": "The three steps stack vertically in a single column at all widths; the QR code and digit boxes stay fixed-size and center within their card rather than scaling with viewport width.",
+  "accessibility": [
+    "The QR code image has role=\"img\" with a descriptive aria-label since the visual pattern itself conveys no information to assistive technology; the manual secret text is the accessible fallback.",
+    "The digit group carries role=\"group\" with an aria-label, and each box has its own aria-label announcing its position, matching the Input OTP pattern.",
+    "Recovery codes are rendered as selectable text (not an image) so they can be copied, read by a screen reader, or saved to a password manager."
+  ],
+  "compatibleWith": ["application-input-otp", "application-form-row"],
+  "variants": [
+    {
+      "id": "two-factor-setup-1",
+      "title": "Two-Factor Setup",
+      "description": "Step 1 QR code and manual secret with a copy button, step 2 six-digit verification with a Verify and enable action, and step 3 a 6-code recovery grid with Download and Copy all actions.",
+      "source": {
+        "html": "../../../../public/examples/application/two-factor-setup/1.html",
+        "tsx": "tsx/TwoFactorSetupVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "focused"],
+      "accessibility": [
+        "Each step is numbered and labeled with a heading so the flow's progress is clear independent of visual step styling."
+      ]
+    },
+    {
+      "id": "two-factor-setup-1-dark",
+      "title": "Two-Factor Setup (Dark)",
+      "description": "The same three-step enrollment flow adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/two-factor-setup/1-dark.html",
+        "tsx": "tsx/TwoFactorSetupVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "focused"],
+      "accessibility": [
+        "Recovery-code text and card borders meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

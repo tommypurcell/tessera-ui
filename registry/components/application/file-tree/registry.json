@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-file-tree",
+  "title": "File Tree",
+  "description": "Collapsible nested directory/file explorer with indent guides and icons; folders expand independently and files render as real links with an active-file state.",
+  "category": "application/navigation",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["tree", "file explorer", "sidebar", "navigation", "code"],
+  "useWhen": [
+    "Building a code editor, docs site, or file-management sidebar that needs a nested folder/file hierarchy.",
+    "Users need to expand and collapse folders independently while an active file stays highlighted.",
+    "You want indent guides so deep nesting stays readable at a glance."
+  ],
+  "avoidWhen": [
+    "The navigation is a flat, non-hierarchical list of links — use Vertical Menu or Side Menu instead.",
+    "You need drag-and-drop reordering or multi-select — this is a read/navigate-only tree, not a file manager."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The tree scrolls vertically within its container at any width; indentation is fixed so very deep trees may need a wider sidebar rather than shrinking indent size.",
+  "accessibility": [
+    "The root list carries role=\"tree\" with an aria-label, each item role=\"treeitem\", and nested folders role=\"group\" — matching the WAI-ARIA tree view pattern.",
+    "Folder rows are real <button> elements exposing aria-expanded so assistive technology announces open/closed state.",
+    "The active file link carries aria-current=\"page\".",
+    "File and folder icons are aria-hidden since the adjacent name text conveys the same information."
+  ],
+  "compatibleWith": ["application-side-menu", "application-vertical-menu"],
+  "variants": [
+    {
+      "id": "file-tree-1",
+      "title": "File Tree",
+      "description": "A src folder open with a components subfolder (Button.tsx active, Card.tsx), a collapsed hooks folder, and index.ts, plus a sibling package.json.",
+      "source": {
+        "html": "../../../../public/examples/application/file-tree/1.html",
+        "tsx": "tsx/FileTreeVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["expanded", "collapsed", "current"],
+      "accessibility": [
+        "Each folder toggles independently; collapsing a parent does not lose the expanded/collapsed state of siblings."
+      ]
+    },
+    {
+      "id": "file-tree-1-dark",
+      "title": "File Tree (Dark)",
+      "description": "The same nested file tree adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/file-tree/1-dark.html",
+        "tsx": "tsx/FileTreeVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["expanded", "collapsed", "current"],
+      "accessibility": [
+        "Indent guide lines and the active-file highlight remain visible at dark-surface contrast."
+      ]
+    }
+  ]
+}

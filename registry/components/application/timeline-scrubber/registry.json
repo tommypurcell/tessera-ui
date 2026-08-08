@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "name": "application-timeline-scrubber",
+  "title": "Timeline Scrubber",
+  "description": "Horizontal draggable playhead and range scrubbers with tick marks for media playback and log or analytics time-range selection.",
+  "category": "application/timeline-scrubber",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "timeline-scrubber",
+    "scrubber",
+    "timeline",
+    "playhead",
+    "range",
+    "media"
+  ],
+  "useWhen": [
+    "Horizontal draggable playhead and range scrubbers with tick marks for media playback and log or analytics time-range selection."
+  ],
+  "avoidWhen": [
+    "Avoid timeline scrubber when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Timeline Scrubber uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "timeline-scrubber-1",
+      "title": "Playhead",
+      "description": "Playhead Horizontal draggable playhead and range scrubbers with tick marks for media playback and log or analytics time-range selection.",
+      "source": {
+        "html": "../../../../public/examples/application/timeline-scrubber/1.html",
+        "tsx": "tsx/TimelineScrubberVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "timeline-scrubber-1-dark",
+      "title": "Playhead (Dark)",
+      "description": "Playhead Horizontal draggable playhead and range scrubbers with tick marks for media playback and log or analytics time-range selection.",
+      "source": {
+        "html": "../../../../public/examples/application/timeline-scrubber/1-dark.html",
+        "tsx": "tsx/TimelineScrubberVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "timeline-scrubber-2",
+      "title": "Range selection",
+      "description": "Range selection Horizontal draggable playhead and range scrubbers with tick marks for media playback and log or analytics time-range selection.",
+      "source": {
+        "html": "../../../../public/examples/application/timeline-scrubber/2.html",
+        "tsx": "tsx/TimelineScrubberVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "timeline-scrubber-2-dark",
+      "title": "Range selection (Dark)",
+      "description": "Range selection Horizontal draggable playhead and range scrubbers with tick marks for media playback and log or analytics time-range selection.",
+      "source": {
+        "html": "../../../../public/examples/application/timeline-scrubber/2-dark.html",
+        "tsx": "tsx/TimelineScrubberVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

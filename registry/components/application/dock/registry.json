@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-dock",
+  "title": "Dock",
+  "description": "Dock and app-launcher navigation components for surfacing pinned shortcuts and primary destinations in web applications.",
+  "category": "application/dock",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "dock",
+    "taskbar",
+    "launcher",
+    "navigation",
+    "macos"
+  ],
+  "useWhen": [
+    "Dock and app-launcher navigation components for surfacing pinned shortcuts and primary destinations in web applications."
+  ],
+  "avoidWhen": [
+    "Avoid dock when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Dock uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "dock-1",
+      "title": "Floating icon dock with hover labels",
+      "description": "Floating icon dock with hover labels Dock and app-launcher navigation components for surfacing pinned shortcuts and primary destinations in web applications.",
+      "source": {
+        "html": "../../../../public/examples/application/dock/1.html",
+        "tsx": "tsx/DockVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "dock-1-dark",
+      "title": "Floating icon dock with hover labels (Dark)",
+      "description": "Floating icon dock with hover labels Dock and app-launcher navigation components for surfacing pinned shortcuts and primary destinations in web applications.",
+      "source": {
+        "html": "../../../../public/examples/application/dock/1-dark.html",
+        "tsx": "tsx/DockVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "dock-2",
+      "title": "Labeled bottom navigation bar",
+      "description": "Labeled bottom navigation bar Dock and app-launcher navigation components for surfacing pinned shortcuts and primary destinations in web applications.",
+      "source": {
+        "html": "../../../../public/examples/application/dock/2.html",
+        "tsx": "tsx/DockVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "dock-2-dark",
+      "title": "Labeled bottom navigation bar (Dark)",
+      "description": "Labeled bottom navigation bar Dock and app-launcher navigation components for surfacing pinned shortcuts and primary destinations in web applications.",
+      "source": {
+        "html": "../../../../public/examples/application/dock/2-dark.html",
+        "tsx": "tsx/DockVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

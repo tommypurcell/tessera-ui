@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-announcement-banner",
+  "title": "Announcement Banner",
+  "description": "Full-width, dismissible top-of-page bar for product news, promotions, or maintenance notices, with info/success/warning severity variants and an optional CTA button.",
+  "category": "application/feedback",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["banner", "announcement", "notice", "promotion", "feedback"],
+  "useWhen": [
+    "Announcing a product update, new feature, or promotion to every visitor across the whole app.",
+    "Communicating scheduled maintenance or a service-wide notice that isn't tied to one specific action.",
+    "The message is relevant to the whole page/session rather than a single form field or action result."
+  ],
+  "avoidWhen": [
+    "The message is a direct result of a user action — use a toast instead.",
+    "The message is scoped to one section or form, not the whole page — use an inline alert instead.",
+    "You need to show several banners at once — a single top banner is meant to be the one most important message."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The bar spans full width with centered, wrapping content; on narrow viewports the message, CTA, and dismiss button wrap onto their own lines while staying centered.",
+  "accessibility": [
+    "Wrapped in role='region' with aria-label='Announcement' so assistive tech can locate and skip it.",
+    "The dismiss button has an explicit aria-label since it only contains an icon.",
+    "Severity is conveyed via background color and message text together, not color alone — no icon-only meaning."
+  ],
+  "compatibleWith": ["application-toasts", "application-alerts", "application-buttons"],
+  "variants": [
+    {
+      "id": "announcement-banner-1",
+      "title": "Announcement banner",
+      "description": "Info-toned full-width banner with a CTA button and dismiss control on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/announcement-banner/1.html",
+        "tsx": "tsx/AnnouncementBannerVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "dismissed"],
+      "accessibility": [
+        "Focus rings on the CTA and dismiss button use ring-offset colors that stay visible against the colored banner background."
+      ]
+    },
+    {
+      "id": "announcement-banner-1-dark",
+      "title": "Announcement banner (Dark)",
+      "description": "Info-toned full-width banner with a CTA button and dismiss control, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/announcement-banner/1-dark.html",
+        "tsx": "tsx/AnnouncementBannerVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "dismissed"],
+      "accessibility": [
+        "Text and CTA colors must meet WCAG AA contrast against each severity's dark background tint."
+      ]
+    }
+  ]
+}

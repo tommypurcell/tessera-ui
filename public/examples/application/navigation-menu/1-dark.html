@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-2xl justify-center p-6">
+    <nav aria-label="Main" class="relative w-full">
+      <ul class="flex items-center justify-center gap-1 rounded-lg border border-gray-800 bg-gray-950 p-1 shadow-sm">
+        <li class="relative">
+          <button type="button" aria-haspopup="true" aria-expanded="true" class="flex items-center gap-1 rounded-md bg-gray-800 px-3 py-2 text-sm font-medium text-gray-100">
+            Products
+            <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+            </svg>
+          </button>
+
+          <div class="absolute left-1/2 top-full z-10 mt-2 w-96 -translate-x-1/2 rounded-xl border border-gray-800 bg-gray-900 p-4 shadow-lg">
+            <div class="grid grid-cols-2 gap-2">
+              <a href="#" class="rounded-lg p-3 hover:bg-gray-800">
+                <p class="text-sm font-medium text-gray-100">Analytics</p>
+                <p class="mt-0.5 text-xs text-gray-400">Track usage and understand your users.</p>
+              </a>
+              <a href="#" class="rounded-lg p-3 hover:bg-gray-800">
+                <p class="text-sm font-medium text-gray-100">Automations</p>
+                <p class="mt-0.5 text-xs text-gray-400">Build workflows without writing code.</p>
+              </a>
+              <a href="#" class="rounded-lg p-3 hover:bg-gray-800">
+                <p class="text-sm font-medium text-gray-100">Reporting</p>
+                <p class="mt-0.5 text-xs text-gray-400">Scheduled reports delivered to your inbox.</p>
+              </a>
+              <a href="#" class="rounded-lg p-3 hover:bg-gray-800">
+                <p class="text-sm font-medium text-gray-100">Integrations</p>
+                <p class="mt-0.5 text-xs text-gray-400">Connect the tools your team already uses.</p>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-800">Pricing</a>
+        </li>
+        <li>
+          <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-800">Docs</a>
+        </li>
+        <li>
+          <a href="#" aria-current="page" class="rounded-md bg-gray-800 px-3 py-2 text-sm font-medium text-gray-100">About</a>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>

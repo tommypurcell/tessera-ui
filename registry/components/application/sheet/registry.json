@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-sheet",
+  "title": "Sheet",
+  "description": "Right-edge slide-in panel for editing or inspecting a record without leaving the current page, built on the native dialog element.",
+  "category": "application/overlays",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["sheet", "drawer", "panel", "overlay", "dialog", "slide-in"],
+  "useWhen": [
+    "Editing or inspecting a single record while keeping the underlying page context visible behind a scrim.",
+    "The content is too long or form-heavy for a centered modal but doesn't warrant a full page navigation.",
+    "You want a mobile-friendly edit surface that slides in from the edge of the screen."
+  ],
+  "avoidWhen": [
+    "The action is a simple yes/no confirmation — use a centered dialog instead.",
+    "The panel needs to stay open alongside other panels — use a persistent sidebar layout instead.",
+    "Content is short enough to fit inline or in a popover anchored to a trigger element."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The panel spans the full viewport height and clamps to a max width of 24rem (max-w-sm), growing to fill the width on small screens.",
+  "accessibility": [
+    "Uses the native <dialog> element via showModal(), which traps focus and is dismissible with the Escape key automatically.",
+    "aria-labelledby and aria-describedby associate the panel with its title and description for screen readers.",
+    "The scrim/backdrop and an explicit close button both provide a way to dismiss the panel."
+  ],
+  "compatibleWith": ["application-form-row", "application-inputs", "application-textareas", "application-modals"],
+  "variants": [
+    {
+      "id": "sheet-1",
+      "title": "Sheet",
+      "description": "Right-edge slide-in panel with header, scrollable form body, and footer actions, backed by the native dialog element.",
+      "source": {
+        "html": "../../../../public/examples/application/sheet/1.html",
+        "tsx": "tsx/SheetVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "open"],
+      "accessibility": [
+        "Focus moves into the panel on open and returns to the trigger on close, handled natively by <dialog>."
+      ]
+    },
+    {
+      "id": "sheet-1-dark",
+      "title": "Sheet (Dark)",
+      "description": "Right-edge slide-in panel adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/sheet/1-dark.html",
+        "tsx": "tsx/SheetVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "open"],
+      "accessibility": [
+        "Panel background and border colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

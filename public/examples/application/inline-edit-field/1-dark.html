@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex flex-col items-center justify-center gap-6 bg-gray-950 p-6">
+    <div class="flex flex-col gap-1">
+      <span class="text-xs font-medium text-gray-500">Display state (hover to reveal edit icon)</span>
+      <button
+        type="button"
+        aria-label="Edit project name: Atlas Dashboard"
+        class="group inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-left text-sm text-gray-100 hover:bg-gray-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+      >
+        <span>Atlas Dashboard</span>
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-3.5 text-gray-500 opacity-100">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931z" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="flex flex-col gap-1">
+      <span class="text-xs font-medium text-gray-500">Editing state</span>
+      <div class="flex items-center gap-1.5">
+        <label class="sr-only" for="inline-edit-demo-dark">Project name</label>
+        <input
+          id="inline-edit-demo-dark"
+          type="text"
+          value="Atlas Dashboard"
+          class="rounded-md border border-blue-500 bg-gray-900 px-2 py-1 text-sm text-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+        />
+        <button type="button" aria-label="Save" class="rounded-md p-1 text-green-400 hover:bg-green-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+          </svg>
+        </button>
+        <button type="button" aria-label="Cancel" class="rounded-md p-1 text-gray-400 hover:bg-gray-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

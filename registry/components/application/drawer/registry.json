@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-drawer",
+  "title": "Drawer",
+  "description": "Slide-in side panel with a header, scrollable body slot, and cancel/confirm footer driven by a typed prop contract.",
+  "category": "application/overlays",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["drawer", "side panel", "overlay", "form"],
+  "useWhen": [
+    "Editing a record or filling a multi-field form without navigating away from the current page.",
+    "The content is too long for a compact dialog but doesn't need a full page.",
+    "You want a panel that slides in from the edge of the screen and stays anchored while the page beneath is dimmed."
+  ],
+  "avoidWhen": [
+    "The action is a simple yes/no confirmation — use the lighter Dialog component instead.",
+    "The content should remain part of the page flow — use an inline expandable section instead.",
+    "Users need to compare the drawer content against the underlying page simultaneously without dimming."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The drawer is full-height and anchored to the trailing edge with a max width; on narrow viewports let it grow to full width so form fields stay usable.",
+  "accessibility": [
+    "The panel uses role='dialog' with aria-modal='true' and is labelled by its header title id.",
+    "The close button carries an explicit aria-label since it is icon-only.",
+    "Focus should move into the drawer on open and return to the trigger on close (implement in your own open/close logic)."
+  ],
+  "compatibleWith": ["application-dialog", "application-inputs", "application-textareas"],
+  "variants": [
+    {
+      "id": "drawer-1",
+      "title": "Drawer",
+      "description": "Edit-profile side panel with a header, scrollable form body, and cancel/save footer.",
+      "source": {
+        "html": "../../../../public/examples/application/drawer/1.html",
+        "tsx": "tsx/DrawerVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Form fields keep visible labels; the close icon button has an aria-label since it carries no visible text."
+      ]
+    },
+    {
+      "id": "drawer-1-dark",
+      "title": "Drawer (Dark)",
+      "description": "Slide-in side panel adapted for dark surfaces with the same header, body, and footer structure.",
+      "source": {
+        "html": "../../../../public/examples/application/drawer/1-dark.html",
+        "tsx": "tsx/DrawerVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Field labels, input borders, and button text must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

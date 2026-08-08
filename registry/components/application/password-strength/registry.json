@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-password-strength",
+  "title": "Password Strength",
+  "description": "Password input paired with a segmented strength bar, label, and optional live requirements checklist that update as the user types.",
+  "category": "application/forms",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["password", "strength", "meter", "signup", "security", "validation", "form"],
+  "useWhen": [
+    "Users are creating or changing a password and benefit from immediate feedback on how strong it is.",
+    "You want to encourage stronger passwords without hard-blocking submission until requirements are met.",
+    "Pairing a visual strength indicator with an explicit checklist of what's missing (length, symbol, number)."
+  ],
+  "avoidWhen": [
+    "The password policy is a hard minimum only — a single help-text line is simpler than a meter.",
+    "You need cryptographically rigorous strength estimation — compute the score with a library like zxcvbn and pass it in; this component only renders the result.",
+    "The field is a password confirmation/repeat field — a match indicator is more useful there than a strength meter."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The meter and checklist are a single-column flex stack that inherits the width of its container at all breakpoints.",
+  "accessibility": [
+    "The segmented bar uses role=\"img\" with an aria-label stating the strength in words, since color and fill alone aren't accessible.",
+    "The strength label is linked to the input via aria-describedby so it's announced on focus.",
+    "Requirement list items pair an icon with visible text so met/unmet state isn't conveyed by color or icon shape alone."
+  ],
+  "compatibleWith": ["application-form-row", "application-inputs", "application-progress-bars"],
+  "variants": [
+    {
+      "id": "password-strength-1",
+      "title": "Strong password",
+      "description": "Password field with a fully filled 4-segment strength bar, a 'Strong password' label, and all requirements met.",
+      "source": {
+        "html": "../../../../public/examples/application/password-strength/1.html",
+        "tsx": "tsx/PasswordStrengthVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["strong"],
+      "accessibility": [
+        "aria-label on the strength bar announces 'Password strength: strong' independent of color."
+      ]
+    },
+    {
+      "id": "password-strength-1-dark",
+      "title": "Strong password (Dark)",
+      "description": "Strong-password strength meter adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/password-strength/1-dark.html",
+        "tsx": "tsx/PasswordStrengthVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["strong"],
+      "accessibility": [
+        "Bar segment and label colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    },
+    {
+      "id": "password-strength-2",
+      "title": "Fair password",
+      "description": "Same component mid-typing: half-filled strength bar, a 'Fair password' label, and one requirement still unmet.",
+      "source": {
+        "html": "../../../../public/examples/application/password-strength/2.html",
+        "tsx": "tsx/PasswordStrengthVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["fair"],
+      "accessibility": [
+        "Unmet requirements use a distinct outline icon plus muted text, not color alone."
+      ]
+    },
+    {
+      "id": "password-strength-2-dark",
+      "title": "Fair password (Dark)",
+      "description": "Fair-password strength meter state adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/password-strength/2-dark.html",
+        "tsx": "tsx/PasswordStrengthVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["fair"],
+      "accessibility": [
+        "Bar segment and label colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

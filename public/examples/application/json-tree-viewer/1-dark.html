@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-md bg-gray-950 p-6">
+    <div class="overflow-hidden rounded-xl border border-gray-800 bg-gray-900">
+      <div class="flex items-center justify-between border-b border-gray-800 px-4 py-2.5">
+        <span class="text-xs font-medium text-gray-400">response.json</span>
+        <div class="flex items-center gap-3">
+          <button type="button" class="text-xs font-medium text-gray-400 hover:text-gray-200">Expand all</button>
+          <button type="button" class="text-xs font-medium text-gray-400 hover:text-gray-200">Collapse all</button>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto p-3 font-mono text-[13px] leading-relaxed">
+        <div>
+          <div class="flex items-start gap-1">
+            <button type="button" aria-label="Collapse user" class="mt-0.5 flex size-3.5 shrink-0 items-center justify-center text-gray-500">
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+              </svg>
+            </button>
+            <span class="text-gray-400">"user"</span>
+            <span class="text-gray-500">:</span>
+            <span class="text-gray-500">{</span>
+          </div>
+
+          <div class="ml-4 border-l border-gray-800 pl-3">
+            <div class="flex items-start gap-1 pl-[18px]">
+              <span class="text-gray-400">"id"</span>
+              <span class="text-gray-500">:</span>
+              <span class="text-orange-400">42</span>
+              <span class="text-gray-600">,</span>
+            </div>
+            <div class="flex items-start gap-1 pl-[18px]">
+              <span class="text-gray-400">"name"</span>
+              <span class="text-gray-500">:</span>
+              <span class="text-green-400">"Nandor the Relentless"</span>
+              <span class="text-gray-600">,</span>
+            </div>
+            <div class="flex items-start gap-1 pl-[18px]">
+              <span class="text-gray-400">"active"</span>
+              <span class="text-gray-500">:</span>
+              <span class="text-blue-400">true</span>
+              <span class="text-gray-600">,</span>
+            </div>
+            <div class="flex items-start gap-1 pl-[18px]">
+              <span class="text-gray-400">"manager"</span>
+              <span class="text-gray-500">:</span>
+              <span class="italic text-gray-500">null</span>
+              <span class="text-gray-600">,</span>
+            </div>
+
+            <div>
+              <div class="flex items-start gap-1">
+                <button type="button" aria-label="Expand roles" class="mt-0.5 flex size-3.5 shrink-0 items-center justify-center text-gray-500">
+                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                  </svg>
+                </button>
+                <span class="text-gray-400">"roles"</span>
+                <span class="text-gray-500">:</span>
+                <span class="text-gray-500">[</span>
+                <span class="text-gray-600">2 items</span>
+                <span class="text-gray-500">]</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-1">
+            <span class="text-gray-500">}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

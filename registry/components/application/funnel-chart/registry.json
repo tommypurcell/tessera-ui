@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-funnel-chart",
+  "title": "Funnel Chart",
+  "description": "Stepped conversion visualization with per-stage counts and drop-off percentages computed from real data, for signup, checkout, or onboarding funnels.",
+  "category": "application/charts",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["funnel", "conversion", "analytics", "chart", "drop-off"],
+  "useWhen": [
+    "Visualizing how a cohort narrows across sequential stages (e.g. visited → signed up → verified → converted).",
+    "You want the drop-off percentage between each stage computed automatically from the counts, not hand-typed.",
+    "A simple, label-forward stacked-bar funnel is enough — no need for interactive drill-down or segment breakdowns."
+  ],
+  "avoidWhen": [
+    "Stages aren't sequential/narrowing — use a bar chart or the charts component instead.",
+    "You need per-segment comparison within a funnel (e.g. by channel) — this variant shows one funnel at a time.",
+    "The dataset has only two points — a stat-tile delta is simpler than a multi-stage funnel."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The card and its bars are fluid width; bars scale proportionally to the first stage's value regardless of container width.",
+  "accessibility": [
+    "Each stage bar carries role='img' with an aria-label stating the stage name, count, and drop-off percentage together, since the bar's width alone doesn't convey exact values to screen readers.",
+    "Drop-off is shown as both a percentage label and a shorter bar, not color alone.",
+    "Stage counts use toLocaleString for readable grouping (e.g. 12,400) rather than raw unformatted numbers."
+  ],
+  "compatibleWith": ["application-charts", "application-stat-tile", "application-tables"],
+  "variants": [
+    {
+      "id": "funnel-chart-1",
+      "title": "Funnel chart",
+      "description": "Four-stage signup funnel with counts and per-stage drop-off percentages, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/funnel-chart/1.html",
+        "tsx": "tsx/FunnelChartVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Bar width is supplementary; the count and drop-off text carry the precise values."
+      ]
+    },
+    {
+      "id": "funnel-chart-1-dark",
+      "title": "Funnel chart (Dark)",
+      "description": "Four-stage signup funnel with counts and drop-off percentages, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/funnel-chart/1-dark.html",
+        "tsx": "tsx/FunnelChartVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Bar and text colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

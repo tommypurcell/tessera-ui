@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex justify-center p-6">
+    <div class="flex w-full max-w-sm flex-col gap-1.5">
+      <label for="mentionDemo" class="text-sm font-medium text-gray-700">Comment</label>
+
+      <div class="relative">
+        <textarea
+          id="mentionDemo"
+          rows="3"
+          class="w-full resize-none rounded-md border border-gray-300 p-2.5 text-sm text-gray-900 shadow-sm placeholder:text-gray-400 focus:border-gray-500 focus:outline-none"
+        >Can you loop in @m on this before we ship?</textarea>
+
+        <ul role="listbox" aria-label="Mention a user" class="absolute z-10 mt-1 w-56 overflow-hidden rounded-md border border-gray-200 bg-white py-1 shadow-lg">
+          <li role="option" aria-selected="false" class="cursor-pointer px-3 py-1.5 text-sm text-gray-700 hover:bg-gray-50">Marcus Lee</li>
+        </ul>
+      </div>
+
+      <button type="button" class="self-end rounded-md bg-blue-600 px-3 py-1.5 text-sm font-semibold text-white hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-1">
+        Post
+      </button>
+    </div>
+  </body>
+</html>

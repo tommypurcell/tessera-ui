@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-api-key-manager",
+  "title": "API Key Manager",
+  "description": "Table of API keys with masked values, reveal/copy actions, scope badges, last-used timestamps, and revoke, driven by a typed keys prop contract.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["api-key", "credentials", "security", "table", "settings"],
+  "useWhen": [
+    "A developer settings or integrations page needs to list, create, and revoke API credentials.",
+    "Each key has metadata (scopes, last-used) that should be scannable alongside the masked value.",
+    "Users need a quick reveal-or-copy action without navigating to a separate detail page."
+  ],
+  "avoidWhen": [
+    "You only need to display a single read-only value with a copy action — use the Copy-to-Clipboard Field instead.",
+    "Keys are shown once at creation and never listed again — a one-time reveal dialog is safer than a persistent table.",
+    "Fine-grained per-scope editing is required — pair this table with a dedicated scope-editing form instead of inline badges."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The table scrolls horizontally on narrow viewports via its wrapping overflow-x-auto container; the header bar and Create key action remain fixed above it.",
+  "accessibility": [
+    "Reveal and copy icon buttons carry a dynamic aria-label naming the specific key they act on.",
+    "The masked key value uses a monospace <code> element so character grouping (bullets vs. visible suffix) stays legible.",
+    "The Revoke action is a plain text button labelled with the verb itself, not just an icon, to avoid destructive-action ambiguity."
+  ],
+  "compatibleWith": ["application-data-table", "application-badges"],
+  "variants": [
+    {
+      "id": "api-key-manager-1",
+      "title": "API Key Manager",
+      "description": "Key table with a masked value plus reveal/copy icon buttons, scope badges, last-used column, and a per-row revoke action.",
+      "source": {
+        "html": "../../../../public/examples/application/api-key-manager/1.html",
+        "tsx": "tsx/ApiKeyManagerVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "masked"],
+      "accessibility": [
+        "A key that has never been used shows 'Never' in a visually distinct but still text-based way, not an empty cell."
+      ]
+    },
+    {
+      "id": "api-key-manager-1-dark",
+      "title": "API Key Manager (Dark)",
+      "description": "API key table adapted for dark surfaces with the same masked-value, scope-badge, and revoke-action structure.",
+      "source": {
+        "html": "../../../../public/examples/application/api-key-manager/1-dark.html",
+        "tsx": "tsx/ApiKeyManagerVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "masked"],
+      "accessibility": [
+        "Masked-key monospace text, scope badges, and the destructive Revoke label must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

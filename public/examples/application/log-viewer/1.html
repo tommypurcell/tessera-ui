@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex justify-center bg-gray-50 p-6">
+    <div class="flex w-full max-w-xl flex-col overflow-hidden rounded-lg border border-gray-800 bg-gray-950">
+      <div class="flex flex-wrap items-center gap-2 border-b border-gray-800 px-3 py-2">
+        <button type="button" aria-pressed="true" class="rounded-full bg-gray-800 px-2.5 py-0.5 text-xs font-medium text-blue-400">INFO</button>
+        <button type="button" aria-pressed="true" class="rounded-full bg-gray-800 px-2.5 py-0.5 text-xs font-medium text-amber-400">WARN</button>
+        <button type="button" aria-pressed="true" class="rounded-full bg-gray-800 px-2.5 py-0.5 text-xs font-medium text-red-400">ERROR</button>
+        <button type="button" aria-pressed="false" class="rounded-full bg-gray-900 px-2.5 py-0.5 text-xs font-medium text-gray-600 hover:text-gray-400">DEBUG</button>
+
+        <button type="button" aria-pressed="true" class="ml-auto inline-flex items-center gap-1.5 rounded-full bg-gray-800 px-2.5 py-0.5 text-xs font-medium text-gray-200">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
+          </svg>
+          Auto-scroll
+        </button>
+      </div>
+
+      <div role="log" aria-live="polite" class="max-h-72 overflow-y-auto px-3 py-2 font-mono text-xs leading-relaxed">
+        <p class="flex gap-3 whitespace-pre-wrap">
+          <span class="shrink-0 select-none text-gray-600">09:41:02</span>
+          <span class="shrink-0 font-semibold text-blue-400">INFO</span>
+          <span class="text-gray-300">Server listening on port 4055</span>
+        </p>
+        <p class="flex gap-3 whitespace-pre-wrap">
+          <span class="shrink-0 select-none text-gray-600">09:41:05</span>
+          <span class="shrink-0 font-semibold text-blue-400">INFO</span>
+          <span class="text-gray-300">Connected to database "tessera_prod"</span>
+        </p>
+        <p class="flex gap-3 whitespace-pre-wrap">
+          <span class="shrink-0 select-none text-gray-600">09:41:19</span>
+          <span class="shrink-0 font-semibold text-amber-400">WARN</span>
+          <span class="text-gray-300">Request to /api/sync took 2.4s (threshold 2.0s)</span>
+        </p>
+        <p class="flex gap-3 whitespace-pre-wrap">
+          <span class="shrink-0 select-none text-gray-600">09:41:24</span>
+          <span class="shrink-0 font-semibold text-red-400">ERROR</span>
+          <span class="text-gray-300">Failed to upload asset "hero.png": connection reset</span>
+        </p>
+        <p class="flex gap-3 whitespace-pre-wrap">
+          <span class="shrink-0 select-none text-gray-600">09:41:24</span>
+          <span class="shrink-0 font-semibold text-red-400">ERROR</span>
+          <span class="text-gray-300">Retry 1/3 for asset "hero.png"</span>
+        </p>
+        <p class="flex gap-3 whitespace-pre-wrap">
+          <span class="shrink-0 select-none text-gray-600">09:41:27</span>
+          <span class="shrink-0 font-semibold text-blue-400">INFO</span>
+          <span class="text-gray-300">Asset "hero.png" uploaded on retry 2/3</span>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

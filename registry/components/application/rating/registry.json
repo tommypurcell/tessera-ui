@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-rating",
+  "title": "Rating",
+  "description": "Star rating components for collecting user feedback and displaying aggregate review scores in web applications.",
+  "category": "application/rating",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "rating",
+    "stars",
+    "review",
+    "feedback",
+    "score"
+  ],
+  "useWhen": [
+    "Star rating components for collecting user feedback and displaying aggregate review scores in web applications."
+  ],
+  "avoidWhen": [
+    "Avoid rating when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Rating uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Associate each form field with a visible or programmatic label before production use.",
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "rating-1",
+      "title": "Interactive star rating input",
+      "description": "Interactive star rating input Star rating components for collecting user feedback and displaying aggregate review scores in web applications.",
+      "source": {
+        "html": "../../../../public/examples/application/rating/1.html",
+        "tsx": "tsx/RatingVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "rating-1-dark",
+      "title": "Interactive star rating input (Dark)",
+      "description": "Interactive star rating input Star rating components for collecting user feedback and displaying aggregate review scores in web applications.",
+      "source": {
+        "html": "../../../../public/examples/application/rating/1-dark.html",
+        "tsx": "tsx/RatingVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "rating-2",
+      "title": "Read-only average rating display",
+      "description": "Read-only average rating display Star rating components for collecting user feedback and displaying aggregate review scores in web applications.",
+      "source": {
+        "html": "../../../../public/examples/application/rating/2.html",
+        "tsx": "tsx/RatingVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "rating-2-dark",
+      "title": "Read-only average rating display (Dark)",
+      "description": "Read-only average rating display Star rating components for collecting user feedback and displaying aggregate review scores in web applications.",
+      "source": {
+        "html": "../../../../public/examples/application/rating/2-dark.html",
+        "tsx": "tsx/RatingVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

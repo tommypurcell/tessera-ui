@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-gantt-bar-chart",
+  "title": "Gantt Bar Chart",
+  "description": "Horizontal project timeline with task bars positioned on a day/week grid, dependency arrows between tasks, milestone diamond markers, and a vertical today-line.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["gantt", "timeline", "project", "schedule", "planning"],
+  "useWhen": [
+    "Visualizing a project schedule where tasks have a start date and duration across a shared time axis.",
+    "You need to show dependencies between tasks (task B can't start until task A finishes).",
+    "Milestones (zero-duration events like a launch date) need to appear alongside duration-based tasks."
+  ],
+  "avoidWhen": [
+    "You only need a simple ordered sequence of steps with no dates — use Steps or Stepper Wizard instead.",
+    "The timeline is a single-track log or media scrubber rather than multiple parallel task rows — use Timeline Scrubber instead.",
+    "You need heavy interactivity (drag-to-resize, drag-to-reschedule) — this is a static/display-only chart; wire your own drag handling on top of the bar positions."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The grid columns are proportional (CSS grid fractions), so the chart compresses smoothly down to its task-name column's minimum width; below that, wrap the chart in a horizontally scrolling container.",
+  "accessibility": [
+    "Milestone markers include visually hidden (sr-only) text describing the milestone since the diamond shape conveys no information to assistive technology.",
+    "Dependency arrows and the today-line are aria-hidden decorative overlays; the underlying task list order and labels carry the real information.",
+    "Bar color alone does not distinguish tasks — each bar also carries its task label as visible text."
+  ],
+  "compatibleWith": ["application-timeline-scrubber", "application-stepper-wizard"],
+  "variants": [
+    {
+      "id": "gantt-bar-chart-1",
+      "title": "Gantt Bar Chart",
+      "description": "A 10-day grid with four tasks: Research and Design connected by a dependency arrow, a Build bar, a Launch milestone diamond, and a today-line crossing Saturday.",
+      "source": {
+        "html": "../../../../public/examples/application/gantt-bar-chart/1.html",
+        "tsx": "tsx/GanttBarChartVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "milestone", "dependency"],
+      "accessibility": [
+        "Each task bar's visible label is the primary way its purpose is conveyed, not its color or position alone."
+      ]
+    },
+    {
+      "id": "gantt-bar-chart-1-dark",
+      "title": "Gantt Bar Chart (Dark)",
+      "description": "The same 10-day, four-task schedule adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/gantt-bar-chart/1-dark.html",
+        "tsx": "tsx/GanttBarChartVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "milestone", "dependency"],
+      "accessibility": [
+        "Grid lines, bar colors, and the today-line all remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}

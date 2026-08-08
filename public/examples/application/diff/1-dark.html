@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-2xl flex-col gap-4 p-6">
+    <div class="overflow-hidden rounded-lg border border-gray-800">
+      <div class="grid grid-cols-2 divide-x divide-gray-800 border-b border-gray-800 bg-gray-900 text-xs font-medium text-gray-400">
+        <p class="px-4 py-2">Before</p>
+        <p class="px-4 py-2">After</p>
+      </div>
+
+      <div class="grid grid-cols-2 divide-x divide-gray-800 bg-gray-950 font-mono text-sm">
+        <div>
+          <p class="px-4 py-1.5 text-gray-500">function greet(name) {</p>
+          <p class="bg-red-950/50 px-4 py-1.5 text-red-400">&nbsp;&nbsp;return 'Hi ' + name;</p>
+          <p class="px-4 py-1.5 text-gray-500">}</p>
+        </div>
+        <div>
+          <p class="px-4 py-1.5 text-gray-500">function greet(name) {</p>
+          <p class="bg-green-950/50 px-4 py-1.5 text-green-400">&nbsp;&nbsp;return `Hello, ${name}!`;</p>
+          <p class="px-4 py-1.5 text-gray-500">}</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="sr-only">
+      Line 2 changed from "return 'Hi ' + name;" to "return `Hello, ${name}!`;"
+    </p>
+  </body>
+</html>

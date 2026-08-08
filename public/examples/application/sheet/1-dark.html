@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="p-6">
+    <button
+      data-sheet-open
+      type="button"
+      class="rounded-md border border-gray-600 bg-gray-800 px-3.5 py-2 text-sm font-medium text-gray-200 shadow-sm hover:bg-gray-700"
+    >
+      Edit profile
+    </button>
+
+    <dialog
+      closedby="any"
+      aria-labelledby="sheetTitle"
+      aria-describedby="sheetDescription"
+      class="sheet-panel m-0 ml-auto h-dvh max-h-none w-full max-w-sm bg-gray-900 p-0 shadow-2xl backdrop:bg-black/50"
+    >
+      <div class="flex h-full flex-col">
+        <div class="flex items-start justify-between gap-4 border-b border-gray-700 px-6 py-5">
+          <div>
+            <h2 id="sheetTitle" class="text-base font-semibold text-white">Edit profile</h2>
+            <p id="sheetDescription" class="mt-1 text-sm text-gray-400">
+              Make changes to your profile here. Click save when you're done.
+            </p>
+          </div>
+
+          <button
+            type="button"
+            data-sheet-close
+            aria-label="Close"
+            class="-me-2 -mt-1 rounded-full p-2 text-gray-500 hover:bg-gray-800 hover:text-gray-300 focus:ring-2 focus:ring-indigo-300 focus:ring-offset-2 focus:ring-offset-gray-900 focus:outline-none"
+          >
+            <svg aria-hidden="true" class="size-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="flex-1 overflow-y-auto px-6 py-5">
+          <div class="flex flex-col gap-4">
+            <label class="flex flex-col gap-1.5">
+              <span class="text-sm font-medium text-gray-200">Name</span>
+              <input
+                type="text"
+                value="Jordan Lee"
+                class="rounded-md border border-gray-600 bg-gray-900 px-3 py-2 text-sm text-white shadow-sm focus:border-gray-400 focus:outline-none"
+              />
+            </label>
+
+            <label class="flex flex-col gap-1.5">
+              <span class="text-sm font-medium text-gray-200">Username</span>
+              <input
+                type="text"
+                value="@jordanlee"
+                class="rounded-md border border-gray-600 bg-gray-900 px-3 py-2 text-sm text-white shadow-sm focus:border-gray-400 focus:outline-none"
+              />
+            </label>
+
+            <label class="flex flex-col gap-1.5">
+              <span class="text-sm font-medium text-gray-200">Bio</span>
+              <textarea
+                rows="3"
+                class="resize-none rounded-md border border-gray-600 bg-gray-900 px-3 py-2 text-sm text-white shadow-sm focus:border-gray-400 focus:outline-none"
+              >
+Product designer based in Chicago.</textarea
+              >
+            </label>
+          </div>
+        </div>
+
+        <div class="flex justify-end gap-2.5 border-t border-gray-700 px-6 py-4">
+          <button
+            type="button"
+            data-sheet-close
+            class="rounded-md border border-gray-600 bg-gray-800 px-3.5 py-2 text-sm font-medium text-gray-200 shadow-sm hover:bg-gray-700"
+          >
+            Cancel
+          </button>
+          <button
+            type="button"
+            data-sheet-close
+            class="rounded-md bg-blue-300 px-3.5 py-2 text-sm font-medium text-gray-900 shadow-sm hover:bg-blue-200"
+          >
+            Save changes
+          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <style>
+      .sheet-panel {
+        transition:
+          transform 0.3s ease,
+          overlay 0.3s ease allow-discrete,
+          display 0.3s ease allow-discrete;
+        transform: translateX(100%);
+      }
+
+      .sheet-panel[open] {
+        transform: translateX(0);
+      }
+
+      @starting-style {
+        .sheet-panel[open] {
+          transform: translateX(100%);
+        }
+      }
+    </style>
+
+    <script>
+      const sheetEl = document.querySelector('.sheet-panel')
+      const openButtonEl = document.querySelector('[data-sheet-open]')
+
+      openButtonEl.addEventListener('click', () => sheetEl.showModal())
+
+      document.querySelectorAll('[data-sheet-close]').forEach((buttonEl) => {
+        buttonEl.addEventListener('click', () => sheetEl.close())
+      })
+    </script>
+  </body>
+</html>

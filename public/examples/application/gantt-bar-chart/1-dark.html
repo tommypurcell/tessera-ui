@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-3xl flex-col p-6">
+    <div class="overflow-hidden rounded-lg border border-gray-800 bg-gray-900">
+      <div class="relative grid grid-cols-[10rem_1fr]">
+        <!-- Header row -->
+        <div class="border-r border-b border-gray-800 bg-gray-950 px-3 py-2 text-xs font-semibold text-gray-500 uppercase">Task</div>
+        <div class="relative grid grid-cols-10 border-b border-gray-800 bg-gray-950">
+          <div class="border-r border-gray-800 px-2 py-2 text-center text-xs font-medium text-gray-400">Mon</div>
+          <div class="border-r border-gray-800 px-2 py-2 text-center text-xs font-medium text-gray-400">Tue</div>
+          <div class="border-r border-gray-800 px-2 py-2 text-center text-xs font-medium text-gray-400">Wed</div>
+          <div class="border-r border-gray-800 px-2 py-2 text-center text-xs font-medium text-gray-400">Thu</div>
+          <div class="border-r border-gray-800 px-2 py-2 text-center text-xs font-medium text-gray-400">Fri</div>
+          <div class="border-r border-gray-800 px-2 py-2 text-center text-xs font-medium text-gray-400">Sat</div>
+          <div class="border-r border-gray-800 px-2 py-2 text-center text-xs font-medium text-gray-400">Sun</div>
+          <div class="border-r border-gray-800 px-2 py-2 text-center text-xs font-medium text-gray-400">Mon</div>
+          <div class="border-r border-gray-800 px-2 py-2 text-center text-xs font-medium text-gray-400">Tue</div>
+          <div class="px-2 py-2 text-center text-xs font-medium text-gray-400">Wed</div>
+        </div>
+
+        <!-- Row: Research -->
+        <div class="flex items-center border-r border-b border-gray-800 px-3 py-3 text-sm text-gray-300">Research</div>
+        <div class="relative grid grid-cols-10 border-b border-gray-800">
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div></div>
+          <div class="absolute inset-y-0 left-0 flex w-[30%] items-center px-1 py-1.5" style="left: 0%">
+            <div class="flex h-full w-full items-center rounded-md bg-indigo-500 px-2 text-xs font-medium text-white shadow-sm">Research</div>
+          </div>
+        </div>
+
+        <!-- Row: Design -->
+        <div class="flex items-center border-r border-b border-gray-800 px-3 py-3 text-sm text-gray-300">Design</div>
+        <div class="relative grid grid-cols-10 border-b border-gray-800">
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div></div>
+          <div class="absolute inset-y-0 flex w-[40%] items-center px-1 py-1.5" style="left: 20%">
+            <div class="flex h-full w-full items-center rounded-md bg-violet-500 px-2 text-xs font-medium text-white shadow-sm">Design</div>
+          </div>
+          <!-- dependency arrow from Research end to Design start -->
+          <svg class="pointer-events-none absolute -top-4 left-[27%] h-8 w-[6%]" viewBox="0 0 40 32" fill="none" aria-hidden="true">
+            <path d="M2 4 L2 24 Q2 28 6 28 L34 28" stroke="#6b7280" stroke-width="1.5" fill="none" />
+            <path d="M30 24 L36 28 L30 32" stroke="#6b7280" stroke-width="1.5" fill="none" />
+          </svg>
+        </div>
+
+        <!-- Row: Build -->
+        <div class="flex items-center border-r border-b border-gray-800 px-3 py-3 text-sm text-gray-300">Build</div>
+        <div class="relative grid grid-cols-10 border-b border-gray-800">
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div></div>
+          <div class="absolute inset-y-0 flex w-[40%] items-center px-1 py-1.5" style="left: 50%">
+            <div class="flex h-full w-full items-center rounded-md bg-emerald-500 px-2 text-xs font-medium text-white shadow-sm">Build</div>
+          </div>
+        </div>
+
+        <!-- Row: Launch (milestone) -->
+        <div class="flex items-center border-r border-gray-800 px-3 py-3 text-sm text-gray-300">Launch</div>
+        <div class="relative grid grid-cols-10">
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div class="border-r border-gray-800/60"></div>
+          <div></div>
+          <div class="absolute inset-y-0 flex items-center" style="left: 90%">
+            <span class="h-3 w-3 rotate-45 rounded-[2px] bg-amber-500 shadow-sm" aria-hidden="true"></span>
+            <span class="sr-only">Launch milestone</span>
+          </div>
+        </div>
+
+        <!-- Today marker overlays the whole grid body -->
+        <div class="pointer-events-none absolute inset-y-0 z-10" style="left: calc(10rem + 45%)">
+          <div class="relative h-full w-px bg-red-400">
+            <span class="absolute top-1 left-1/2 -translate-x-1/2 rounded bg-red-500 px-1.5 py-0.5 text-[10px] font-medium whitespace-nowrap text-white">Today</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

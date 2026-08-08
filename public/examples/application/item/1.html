@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-md flex-col gap-8 p-6">
+    <!-- Icon item with trailing chevron -->
+    <div class="flex flex-col divide-y divide-gray-200 rounded-lg border border-gray-200">
+      <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50">
+        <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-indigo-50 text-indigo-600">
+          <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM8.5 16a1.5 1.5 0 003 0h-3z" />
+          </svg>
+        </span>
+        <span class="min-w-0 flex-1">
+          <span class="block truncate text-sm font-medium text-gray-900">Notifications</span>
+          <span class="block truncate text-xs text-gray-500">Push, email, and in-app alerts</span>
+        </span>
+        <svg class="h-4 w-4 shrink-0 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+        </svg>
+      </a>
+
+      <!-- Avatar item with trailing button -->
+      <div class="flex items-center gap-3 px-4 py-3">
+        <img src="https://i.pravatar.cc/64?img=12" alt="" class="h-9 w-9 shrink-0 rounded-full object-cover" />
+        <span class="min-w-0 flex-1">
+          <span class="block truncate text-sm font-medium text-gray-900">Priya Shah</span>
+          <span class="block truncate text-xs text-gray-500">priya@acme.com &middot; Editor</span>
+        </span>
+        <button type="button" class="shrink-0 rounded-md border border-gray-300 px-2.5 py-1 text-xs font-medium text-gray-700 shadow-sm hover:bg-gray-50">
+          Remove
+        </button>
+      </div>
+
+      <!-- Selectable item -->
+      <label class="flex cursor-pointer items-center gap-3 px-4 py-3 hover:bg-gray-50">
+        <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-gray-100 text-gray-600">
+          <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 01-1.6.8L10 14.25l-4.4 2.55A1 1 0 014 16V4z" clip-rule="evenodd" />
+          </svg>
+        </span>
+        <span class="min-w-0 flex-1">
+          <span class="block truncate text-sm font-medium text-gray-900">Save to reading list</span>
+          <span class="block truncate text-xs text-gray-500">Sync across your devices</span>
+        </span>
+        <input type="checkbox" checked class="h-4 w-4 shrink-0 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+      </label>
+    </div>
+  </body>
+</html>

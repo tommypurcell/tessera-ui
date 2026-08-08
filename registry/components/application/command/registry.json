@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-command",
+  "title": "Command",
+  "description": "Command palette (⌘K style) with grouped, keyboard-navigable results and a typed groups/items prop contract.",
+  "category": "application/overlays",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["command", "palette", "search", "keyboard", "overlay", "cmdk"],
+  "useWhen": [
+    "Building a global search or quick-action launcher triggered by a keyboard shortcut.",
+    "Users need to jump between pages, run actions, or search content without leaving the keyboard.",
+    "You want grouped, filterable results with visible keyboard shortcuts next to each item."
+  ],
+  "avoidWhen": [
+    "The list of actions is small enough for a simple dropdown menu or toolbar.",
+    "Touch-only interfaces where keyboard shortcuts add no value.",
+    "You need multi-select or drag-to-reorder — use a list or table component instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The palette is a fixed-width panel intended to sit centered in a full-screen overlay; on narrow viewports, reduce the max-width and hide the ESC hint if space is tight.",
+  "accessibility": [
+    "The input carries aria-label and the results list uses role='listbox' with role='option' items.",
+    "The selected/active item sets aria-selected='true' so screen readers announce the current match.",
+    "Keyboard hints (arrows, enter) are shown as visible kbd chips, not just implied by icons."
+  ],
+  "compatibleWith": ["application-dropdown", "application-popover"],
+  "variants": [
+    {
+      "id": "command-1",
+      "title": "Command",
+      "description": "Command palette with a search input, grouped results, per-item shortcut chips, and a keyboard-hint footer.",
+      "source": {
+        "html": "../../../../public/examples/application/command/1.html",
+        "tsx": "tsx/CommandVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "Result groups use a visually distinct heading; the active option is marked with aria-selected, not color alone."
+      ]
+    },
+    {
+      "id": "command-1-dark",
+      "title": "Command (Dark)",
+      "description": "Command palette adapted for dark surfaces with the same grouped-results and shortcut-chip structure.",
+      "source": {
+        "html": "../../../../public/examples/application/command/1-dark.html",
+        "tsx": "tsx/CommandVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "Text, kbd chips, and the selected-row background must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

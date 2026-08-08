@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "name": "application-tag-input",
+  "title": "Tag Input",
+  "description": "Token/chip entry field supporting add-on-enter, backspace-to-remove, and an autocomplete suggestions variant for labels, recipients, and filters.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["application", "tag-input", "chips", "tokens", "autocomplete", "form"],
+  "useWhen": [
+    "Collecting an open-ended list of short values, such as labels, keywords, or email recipients.",
+    "The list of valid values is large or unbounded but a fixed suggestion set can speed up common entries.",
+    "You need each entered value to be individually removable without retyping the rest."
+  ],
+  "avoidWhen": [
+    "The choices are a small, fixed set — a multi-select or checkbox group is clearer than free text entry.",
+    "Only a single value is needed — use a plain text input or a combobox instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The tag field wraps chips onto multiple lines as they accumulate (flex-wrap) rather than truncating or scrolling, so it stays usable at narrow widths.",
+  "accessibility": [
+    "The trigger input carries a label via a real <label for> association, and aria-describedby points at the help text explaining the Enter/Backspace interaction.",
+    "Each tag's remove button has an aria-label naming the specific tag being removed, not just a generic 'Remove'.",
+    "The autocomplete variant marks the input role=\"combobox\" with aria-expanded and aria-controls kept in sync with the suggestion listbox's visibility, and each suggestion uses role=\"option\" inside a role=\"listbox\"."
+  ],
+  "compatibleWith": ["application-form-row", "application-inputs", "application-badges"],
+  "variants": [
+    {
+      "id": "tag-input-1",
+      "title": "Basic",
+      "description": "Free-text tag input where Enter adds a chip and Backspace on an empty field removes the last one",
+      "source": {
+        "html": "../../../../public/examples/application/tag-input/1.html",
+        "tsx": "tsx/TagInputVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "focus"],
+      "accessibility": ["Help text below the field documents the Enter/Backspace interaction for users who can't discover it by keyboard alone."]
+    },
+    {
+      "id": "tag-input-1-dark",
+      "title": "Basic (Dark)",
+      "description": "Free-text tag input where Enter adds a chip and Backspace on an empty field removes the last one",
+      "source": {
+        "html": "../../../../public/examples/application/tag-input/1-dark.html",
+        "tsx": "tsx/TagInputVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "focus"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    },
+    {
+      "id": "tag-input-2",
+      "title": "With autocomplete",
+      "description": "Tag input with a suggestion listbox that filters on focus and adds a tag on selection",
+      "source": {
+        "html": "../../../../public/examples/application/tag-input/2.html",
+        "tsx": "tsx/TagInputVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "focus", "open"],
+      "accessibility": ["role=\"combobox\" with aria-expanded and aria-controls announces the suggestion list's availability and state to assistive tech."]
+    },
+    {
+      "id": "tag-input-2-dark",
+      "title": "With autocomplete (Dark)",
+      "description": "Tag input with a suggestion listbox that filters on focus and adds a tag on selection",
+      "source": {
+        "html": "../../../../public/examples/application/tag-input/2-dark.html",
+        "tsx": "tsx/TagInputVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "focus", "open"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    }
+  ]
+}
