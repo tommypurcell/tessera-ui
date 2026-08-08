@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-audio-player",
+  "title": "Audio Player",
+  "description": "Waveform and podcast-style audio players with play controls, scrubbing, elapsed time, volume, and playback speed for media interfaces.",
+  "category": "application/audio-player",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "audio-player",
+    "audio",
+    "waveform",
+    "podcast",
+    "player"
+  ],
+  "useWhen": [
+    "Waveform and podcast-style audio players with play controls, scrubbing, elapsed time, volume, and playback speed for media interfaces."
+  ],
+  "avoidWhen": [
+    "Avoid audio player when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Audio Player uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Provide meaningful alternative text for informative images and empty alt text for decorative images.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "audio-player-1",
+      "title": "Waveform",
+      "description": "Waveform Waveform and podcast-style audio players with play controls, scrubbing, elapsed time, volume, and playback speed for media interfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/audio-player/1.html",
+        "tsx": "tsx/AudioPlayerVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "audio-player-1-dark",
+      "title": "Waveform (Dark)",
+      "description": "Waveform Waveform and podcast-style audio players with play controls, scrubbing, elapsed time, volume, and playback speed for media interfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/audio-player/1-dark.html",
+        "tsx": "tsx/AudioPlayerVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "audio-player-2",
+      "title": "Podcast player",
+      "description": "Podcast player Waveform and podcast-style audio players with play controls, scrubbing, elapsed time, volume, and playback speed for media interfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/audio-player/2.html",
+        "tsx": "tsx/AudioPlayerVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "audio-player-2-dark",
+      "title": "Podcast player (Dark)",
+      "description": "Podcast player Waveform and podcast-style audio players with play controls, scrubbing, elapsed time, volume, and playback speed for media interfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/audio-player/2-dark.html",
+        "tsx": "tsx/AudioPlayerVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    }
+  ]
+}

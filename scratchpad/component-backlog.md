@@ -206,8 +206,8 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: Navigation -->
 - [x] (builder-4) Mega Menu Panel — full-width panel, 3 labeled link-group columns + featured promo card w/ badge and CTA, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #14)
-- [~] (builder-4) Command Bar Breadcrumb — editable breadcrumb where segments become dropdowns for sibling nav; distinct from breadcrumbs (interactive).
-- [ ] Bottom Sheet Nav — mobile draggable sheet with snap points and handle; distinct from drawer (mobile snap behavior).
+- [x] (builder-4) Command Bar Breadcrumb — breadcrumb w/ one segment as an open sibling dropdown (role=listbox/option, checkmark), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #14)
+- [~] (builder-4) Bottom Sheet Nav — mobile draggable sheet with snap points and handle; distinct from drawer (mobile snap behavior).
 - [x] (builder-10) Floating Action Menu — 2 variants (labeled stacked FAB, icon-only stacked FAB), light+dark, checkbox-driven (no JS), registry+tsx generated, screenshots verified, pushed
 - [x] (builder-7) Anchor Scroll Nav — 5-item sticky section list w/ aria-current active indicator, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
 - [x] (builder-3) Pagination Cursor — "Showing X-Y of total" range, rows-per-page select, disabled-aware prev/next icon buttons, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
@@ -251,7 +251,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: Media -->
 - [ ] Video Player — custom controls bar (play/scrub/volume/fullscreen/speed) over a poster frame; distinct from timeline-scrubber (full player chrome).
-- [~] (builder-6) Audio Player — waveform/progress track with play, time, and volume; absent from library.
+- [x] (builder-6) Audio Player — 2 variants (waveform bar player with play/mute, podcast player with cover art, skip controls, and speed badge), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
 - [ ] Image Gallery Lightbox — thumbnail grid opening a full-screen viewer with prev/next and caption; distinct from carousel and media.
 - [ ] Image Cropper — draggable crop frame with aspect presets and zoom slider; absent from library.
 - [x] (builder-2) Avatar Uploader — circular drop-zone, hover camera overlay, real file input driving live object-URL preview, Replace/Remove actions, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components
@@ -264,33 +264,33 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-6) Assignee Picker — 2 variants (single-select dropdown with search, multi-select checkbox list with stacked-avatar trigger), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
 - [x] (builder-3) Share Dialog — email+role invite row, member list w/ fixed Owner text + editable role selects, copy-link footer, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 - [x] (builder-1) Comment Composer — 2 variants (full avatar-led composer + compact reply pill), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #16).
-- [~] (builder-10) Live Presence Avatars — realtime viewer avatar row with join/leave animation; distinct from avatar (presence layer).
+- [x] (builder-10) Live Presence Avatars — 2 variants (overlapping row w/ pulsing dot + overflow, compact online-count pill), light+dark, registry+tsx generated, screenshots verified, pushed
 
 <!-- Theme: Settings -->
 - [x] (builder-7) Settings Nav List — 2 grouped sections (Account/Workspace) w/ icon-labeled items and active-page highlight, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
 - [x] (builder-5) Preference Toggle Row — label+description+switch settings rows, locked/non-interactive row for mandatory settings, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [x] (builder-1) Danger Zone Panel — 2 variants (single action + 3-row panel), red-bordered section w/ native <dialog> confirm guard, light+dark, registry+tsx+MDX, screenshot + live open verified, committed+pushed (PR #9).
 - [x] (builder-5) Plan & Billing Card — plan+price+status badge, usage bar w/ counts, renewal date, Manage/Upgrade actions, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
-- [~] (builder-3) Notification Preferences Grid — channel × event matrix of checkboxes (email/push/SMS); absent from library.
-- [~] (builder-9) Profile Edit Form — avatar + fields + save-bar settings form layout; distinct from form-row (page composition).
+- [x] (builder-3) Notification Preferences Grid — event×channel checkbox matrix, required always-on cell, unavailable disabled cell, footnote, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
+- [x] (builder-9) Profile Edit Form — 2 variants (standard settings form, public profile with unsaved indicator) light+dark, registry.json, MDX entry, screenshots
 
 <!-- Theme: Mobile -->
-- [ ] Tab Bar (mobile) — fixed bottom icon+label nav with active indicator and badge; distinct from dock (mobile app bar).
-- [~] (builder-1) Pull-to-Refresh — top spinner reveal on overscroll for lists; absent from library.
+- [~] (builder-5) Tab Bar (mobile) — fixed bottom icon+label nav with active indicator and badge; distinct from dock (mobile app bar).
+- [x] (builder-1) Pull-to-Refresh — 2 variants (pull state + refreshing state), role=status/aria-live, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #16).
 - [ ] Swipe Action Row — list row revealing archive/delete actions on horizontal swipe; distinct from bulk-action-bar.
-- [~] (builder-7) Segmented Page Control — dot indicators for paged mobile carousels; distinct from carousel (indicator primitive).
-- [ ] Action Sheet — mobile bottom list of grouped actions with cancel; distinct from bottom-sheet-nav (action list).
+- [x] (builder-7) Segmented Page Control — 5-dot indicator w/ elongated active pill, real button/tablist semantics, light+dark, registry+tsx+MDX, screenshot verified (fixed invisible-on-canvas contrast bug found during review), committed + pushed (PR #5)
+- [~] (builder-7) Action Sheet — mobile bottom list of grouped actions with cancel; distinct from bottom-sheet-nav (action list).
 
 <!-- Theme: Data-viz (more) -->
 - [x] (builder-8) Donut Chart — 4-segment traffic-sources ring, computed center total + legend via SVG stroke-dasharray (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [ ] Stacked Area Chart — multi-series cumulative trend with legend toggle; absent from charts set.
 - [ ] Gauge Chart — semicircular needle gauge with threshold zones; distinct from bullet-chart and progress.
 - [ ] Treemap — nested proportional rectangles with labels for hierarchical size; absent from library.
-- [~] (builder-8) Waterfall Chart — sequential increase/decrease bars with running total; absent from library.
+- [x] (builder-8) Waterfall Chart — 6-step Q3 revenue bridge, running-total bar positions computed from deltas (tsx light+dark, html light+dark, registry.json, MDX); fixed a flex items-end height bug found during screenshot review; screenshot verified light+dark, pushed to PR #6
 - [ ] Calendar Heat Legend Chart — month grid with value intensity and axis labels; distinct from heatmap-calendar (chart framing).
 
 <!-- Theme: Commerce / finance -->
-- [ ] Invoice Table — line-item table with subtotal/tax/total footer and status badge; distinct from tables (invoice semantics).
+- [~] (builder-8) Invoice Table — line-item table with subtotal/tax/total footer and status badge; distinct from tables (invoice semantics).
 - [x] (builder-6) Payment Method Card — 2 variants (single saved card, selectable list with add-new affordance), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
 - [ ] Discount Code Field — promo input with apply button and applied/invalid states; distinct from copy-field.
 - [x] (builder-2) Order Status Tracker — 4-stage horizontal stepper (Placed/Shipped complete, Out for delivery current w/ pulse ring, Delivered upcoming w/ est. date), state computed from a single currentStepIndex, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components
@@ -300,15 +300,15 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-1) Copyable Code Snippet — duplicate of existing `code-editor-block` variant 2 "File name with copy action" (file-name header, Copy button, syntax-highlighted numbered lines); no new work needed here
 - [x] (builder-5) QR Code Card — QR tile (white bg, always-scannable contrast) + caption + encoded value text + Download/Copy link actions, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [x] (builder-10) Countdown Ring Timer — 2 variants (large radial timer w/ mm:ss center, compact inline ring timer w/ action row), light+dark, registry+tsx generated, screenshots verified (live tick confirmed), pushed
-- [~] (builder-5) Feature Flag Toggle Row — flag name, environment pills, and enable switch with rollout %; absent from library.
-- [ ] Breadcrumb Page Header — title + breadcrumb + action buttons page-header composite; distinct from breadcrumbs (header block).
+- [x] (builder-5) Feature Flag Toggle Row — flag key + env pills (Dev/Staging/Prod) + rollout % status + enable switch, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
+- [~] (builder-2) Breadcrumb Page Header — title + breadcrumb + action buttons page-header composite; distinct from breadcrumbs (header block).
 - [ ] Filter Chip Overflow — chip row that collapses extras into a "+N" popover on narrow widths; distinct from data-filter-bar.
 
 <!-- === WAVE 5 (deep-backlog refill, post-176) — themed batches, verified non-dupe against registry === -->
 
 <!-- Theme: Layout / structure -->
-- [ ] Split View Layout — resizable master-detail two-pane shell with a collapsible list side; distinct from resizable (app layout composition).
-- [ ] Sticky Section Header — list header that pins to the top while its group scrolls; absent from library.
+- [~] (builder-3) Split View Layout — resizable master-detail two-pane shell with a collapsible list side; distinct from resizable (app layout composition).
+- [~] (builder-10) Sticky Section Header — list header that pins to the top while its group scrolls; absent from library.
 - [ ] Masonry Grid — variable-height card grid with balanced columns; distinct from grids (masonry flow).
 - [ ] Sidebar Layout Shell — fixed sidebar + topbar + content app frame with collapse; distinct from dashboard-sidebar (full shell).
 - [ ] Card Stack — swipeable stacked-card deck (Tinder-style) with accept/reject; absent from library.
