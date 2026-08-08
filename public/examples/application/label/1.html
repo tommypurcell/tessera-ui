@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-sm flex-col gap-6 p-6">
+    <!-- Required label -->
+    <div class="flex flex-col gap-1.5">
+      <label for="lbl-name" class="text-sm font-medium text-gray-700">
+        Full name
+        <span aria-hidden="true" class="ml-0.5 text-red-600">*</span>
+      </label>
+      <input id="lbl-name" type="text" class="rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 shadow-sm focus:border-gray-500 focus:outline-none" />
+    </div>
+
+    <!-- Optional label -->
+    <div class="flex flex-col gap-1.5">
+      <label for="lbl-nickname" class="flex items-center justify-between text-sm font-medium text-gray-700">
+        Nickname
+        <span class="text-xs font-normal text-gray-400">Optional</span>
+      </label>
+      <input id="lbl-nickname" type="text" class="rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 shadow-sm focus:border-gray-500 focus:outline-none" />
+    </div>
+
+    <!-- Label with info tooltip trigger -->
+    <div class="flex flex-col gap-1.5">
+      <span class="flex items-center gap-1.5 text-sm font-medium text-gray-700">
+        <label for="lbl-api-key">API key</label>
+        <button type="button" aria-label="What is this?" class="text-gray-400 hover:text-gray-600">
+          <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M18 10A8 8 0 11 2 10a8 8 0 0116 0zM9 9a1 1 0 012 0v4a1 1 0 11-2 0V9zm1-4a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd" />
+          </svg>
+        </button>
+      </span>
+      <input id="lbl-api-key" type="text" class="rounded-md border border-gray-300 px-3 py-2 font-mono text-sm text-gray-900 shadow-sm focus:border-gray-500 focus:outline-none" />
+    </div>
+
+    <!-- Disabled label -->
+    <div class="flex flex-col gap-1.5">
+      <label for="lbl-plan" class="text-sm font-medium text-gray-400">Plan</label>
+      <input id="lbl-plan" type="text" disabled value="Enterprise (managed by admin)" class="cursor-not-allowed rounded-md border border-gray-200 bg-gray-50 px-3 py-2 text-sm text-gray-400" />
+    </div>
+  </body>
+</html>

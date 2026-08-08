@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-label",
+  "title": "Label",
+  "description": "Standalone form label primitive with required asterisk, optional hint, disabled tone, and an info button slot for a tooltip trigger.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["form", "label", "primitive", "accessibility"],
+  "useWhen": [
+    "You need just the label element — not a bundled control, help text, and error state.",
+    "Labeling a custom or third-party control that Form Row's built-in input slot doesn't fit.",
+    "You want a consistent required/optional marker or an info tooltip trigger next to any field label."
+  ],
+  "avoidWhen": [
+    "The field also needs help text and error-state wiring with aria-describedby — use Form Row instead, which bundles all of that.",
+    "The control is a checkbox or radio where the label conventionally follows rather than precedes the control."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The label is a single inline-flex line at all widths; the optional hint and info button share the line and wrap only if the container is extremely narrow.",
+  "accessibility": [
+    "Always set htmlFor to the paired control's id so clicking the label focuses the control.",
+    "The required asterisk is aria-hidden; convey the requirement via the label text or form-level instructions for screen reader users.",
+    "The info button carries an aria-label describing its purpose since it has no visible text."
+  ],
+  "compatibleWith": ["application-form-row", "application-inputs", "application-selects"],
+  "variants": [
+    {
+      "id": "label-1",
+      "title": "Label",
+      "description": "Four label states: required with asterisk, optional with a trailing hint, with an info tooltip trigger, and disabled.",
+      "source": {
+        "html": "../../../../public/examples/application/label/1.html",
+        "tsx": "tsx/LabelVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "required", "optional", "disabled"],
+      "accessibility": [
+        "Every label uses htmlFor pointing at its control's id, including the info-button variant."
+      ]
+    },
+    {
+      "id": "label-1-dark",
+      "title": "Label (Dark)",
+      "description": "The same four label states adapted for dark form surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/label/1-dark.html",
+        "tsx": "tsx/LabelVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "required", "optional", "disabled"],
+      "accessibility": [
+        "Disabled label tone still meets WCAG AA contrast against the dark surface to remain legible, not just decoratively muted."
+      ]
+    }
+  ]
+}
