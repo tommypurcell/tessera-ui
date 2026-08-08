@@ -338,7 +338,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: Dashboard widgets (more) -->
 - [x] (builder-10) Activity Ring Trio — 2 variants (large concentric ring trio w/ legend, compact inline ring trio w/ summary), light+dark, ring circumference/offset math verified against Python, registry+tsx generated, screenshots verified, pushed
-- [~] (builder-4) Metric Trend Grid — grid of small KPI + sparkline cells for an at-a-glance board; distinct from metric-sparkline-card (grid).
+- [x] (builder-4) Metric Trend Grid — 3x2 KPI cell grid w/ computed sparklines, trend-aware color (not just delta sign), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #17)
 - [x] (builder-7) Top Movers List — 4-ticker list (2 gainers/2 losers) w/ derived direction arrow+color from sign, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
 - [x] (builder-10) Live Counter Tile — 2 variants (large tile w/ pulse indicator + ticking number, compact inline live-count row), light+dark, live-tick behavior verified via screenshot, registry+tsx generated, screenshots verified, pushed
 - [x] (builder-8) Comparison Stat Pair — This month (1,284, leading) vs Last month (972), winner computed from real values (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
@@ -354,7 +354,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-2) Timezone Picker — search field filters city+offset live, each row shows city/UTC offset/current time, no-results state, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components. NOTE: PR #18 was merged mid-session; opened new PR #19 for this component.
 - [x] (builder-2) Language Switcher — 5-locale listbox (flag + native-language label), active locale bolded w/ checkmark, real selection state, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components (PR #18)
 - [x] (builder-5) Theme Toggle Switch — real radio-group 3-way Light/Dark/System control, icon+label, selected pill background, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
-- [ ] Keyboard Focus Ring Demo — accessibility focus-order showcase with visible ring states; absent from library.
+- [x] (builder-4) Keyboard Focus Ring Demo — numbered tab-order badges + outline-based focus ring + explanatory note, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #17)
 - [x] (builder-2) Copy Share Link Row — read-only link field, Copy button w/ real navigator.clipboard write + "Copied!" text confirmation, permission select, expiry label, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components (PR #18)
 
 <!-- === WAVE 6 (deep-backlog refill, post-203) — specialized domains, verified non-dupe against registry === -->
@@ -378,13 +378,13 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-1) Cohort Retention Grid — 2 variants (weekly triangular + compact monthly), color-intensity cells, real table headers, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #16).
 - [x] (builder-1) Metric Date Comparison — duplicate of existing `big-number-delta-tile` (large number, trend arrow, % change, "vs last period" comparison label); no new work needed here
 - [x] (builder-8) Segment Breakdown Bar — traffic-by-device stacked bar (Desktop 55/Mobile 38/Tablet 7%) w/ legend (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
-- [~] (builder-6) Real-Time Visitors Map — live active-user count with a mini geo-dot map; absent from library.
+- [x] (builder-6) Real-Time Visitors Map — 2 variants (geo-dot map with live pulse indicator+region row, compact region-breakdown list with bars), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
 - [x] (builder-3) Event Log Table — type-coded icon rows (success/info/error), expand toggle revealing formatted JSON payload, timestamp column, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 
 <!-- Theme: Dev tools -->
 - [x] (builder-5) Environment Switcher — trigger w/ colored dot + dropdown listing Dev/Staging/Prod w/ dots + active checkmark, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [x] (builder-8) Build Status Row — 3-stage CI pipeline (Build/Test passed, Deploy running) w/ duration (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
-- [~] (builder-9) Secret Reveal Field — masked value with hold-to-reveal and copy, plus rotation note; distinct from api-key-manager.
+- [x] (builder-9) Secret Reveal Field — 2 variants (reveal and copy, with rotation note) light+dark, registry.json, MDX entry, screenshots
 - [x] (builder-8) Webhook Event Row — 3 delivery states (delivered/pending/failed) w/ response code + conditional Retry (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [ ] Terminal Command Palette — inline command runner with history and output pane; distinct from terminal-blocks and command.
 
@@ -392,14 +392,14 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-3) Availability Grid — week-view time-slot grid, day/hour headers, free/busy/selected button states, legend, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 - [x] (builder-2) Booking Confirmation Card — success indicator + title, date/time/host dl w/ sr-only dt labels, Reschedule/Cancel actions, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components (PR #19)
 - [x] (builder-3) Recurring Rule Builder — interval+unit select, toggleable weekday pills, 3-way end-condition radios, plain-language summary, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
-- [~] (builder-1) Timezone Overlap Bar — visual working-hours overlap across two zones; distinct from timezone picker.
+- [x] (builder-1) Timezone Overlap Bar — 2 variants (two-zone + three-zone), overlap window highlighted + stated in text, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #16).
 
 <!-- Theme: Forms (advanced) -->
 - [x] (builder-5) Conditional Field Group — checkbox-gated indented field reveal w/ connecting rail + unchecked fallback description, DOM-removed when hidden, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [x] (builder-8) Multi-File Attachment Row — 3 attached files (PDF/PNG/CSV) w/ computed sizes + remove buttons (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [x] (builder-10) OTP Resend Timer — 2 variants (resend countdown → Resend reveal, error state w/ attempts remaining), light+dark, both dynamic transitions verified via wait+screenshot, registry+tsx generated, screenshots verified, pushed
 - [x] (builder-9) Consent Checklist — 2 variants (gated submit, select-all with required/optional badges) light+dark, registry.json, MDX entry, screenshots
-- [~] (builder-5) Form Autosave Banner — sticky "changes saved / unsaved" bar with save/discard; distinct from save-status-indicator.
+- [x] (builder-5) Form Autosave Banner — amber unsaved-changes bar w/ Discard/Save + neutral all-saved confirmation w/ timestamp, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 
 <!-- Theme: Finance / billing -->
 - [x] (builder-2) Transaction Row — 4 transactions (software/housing/income/groceries), category icon+color per row, signed amount computed from single numeric value, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components (PR #19)
@@ -411,29 +411,29 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 <!-- === WAVE 7 (deep-backlog refill, post-220) — new verticals, verified non-dupe against registry === -->
 
 <!-- Theme: Healthcare -->
-- [~] (builder-3) Appointment Slot Card — provider + time + type card with book/reschedule; distinct from booking-confirmation (list slot).
-- [~] (builder-8) Vitals Stat Row — labeled vital signs (HR/BP/SpO2) with normal-range coloring; distinct from stats.
-- [ ] Medication Schedule List — dose rows with time, quantity, and taken/skip toggle; absent from library.
+- [x] (builder-3) Appointment Slot Card — provider header w/ avatar+specialty, appointment-type badge, date/time row, reschedule/confirm actions, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
+- [x] (builder-8) Vitals Stat Row — 4 readings (HR flagged out-of-range, BP/SpO2/Temp normal) w/ real isNormal flag (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
+- [x] (builder-2) Medication Schedule List — 4 dose rows (taken/pending w/ Take-Skip actions/skipped-dimmed), real per-dose status state, light+dark, registry+tsx+MDX, screenshot verified (fixed a time-column text-wrap bug found during review), committed to builder-2-components (PR #19)
 - [~] (builder-7) Symptom Severity Slider — labeled 0–10 pain/severity scale with descriptors; distinct from range-inputs.
 - [ ] Care Timeline — patient-history events with clinician avatars and visit types; distinct from timelines (clinical framing).
 
 <!-- Theme: Education -->
-- [ ] Course Progress Card — lesson completion ring with modules-remaining and continue CTA; distinct from goal-progress-card.
-- [ ] Quiz Question Card — prompt with selectable answer options and correct/incorrect reveal; absent from library.
-- [ ] Lesson Playlist — ordered lesson rows with duration, lock, and completed checks; distinct from task-checklist.
-- [ ] Grade Badge Scale — A–F / percentage grade pill with color scale; distinct from badges.
+- [~] (builder-5) Course Progress Card — lesson completion ring with modules-remaining and continue CTA; distinct from goal-progress-card.
+- [x] (builder-8) Quiz Question Card — HTTP status quiz, revealed state w/ correct(green)/wrong-answer(red) coloring (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
+- [~] (builder-9) Lesson Playlist — ordered lesson rows with duration, lock, and completed checks; distinct from task-checklist.
+- [x] (builder-1) Grade Badge Scale — 2 variants (A-F round badges + percentage pill list), green-to-red scale, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #16).
 - [ ] Flashcard Flip — front/back card with flip animation and know/review actions; distinct from card-stack.
 
 <!-- Theme: Real estate -->
-- [ ] Property Listing Card — photo, price, beds/baths/sqft specs, and save; distinct from product-card (property specs).
+- [~] (builder-8) Property Listing Card — photo, price, beds/baths/sqft specs, and save; distinct from product-card (property specs).
 - [ ] Map Listing Split — map pane + scrollable listing list with hover-sync highlight; distinct from split-view-layout.
 - [ ] Mortgage Calculator — price/down/rate/term inputs with monthly-payment output; distinct from currency-converter.
-- [ ] Amenities Grid — icon+label feature grid with included/excluded states; distinct from grids.
+- [~] (builder-2) Amenities Grid — icon+label feature grid with included/excluded states; distinct from grids.
 
 <!-- Theme: Travel -->
 - [ ] Flight Route Card — origin→destination with times, duration, stops, and airline; absent from library.
 - [ ] Booking Search Bar — location + date-range + guests combined search widget; distinct from data-filter-bar.
-- [ ] Seat Map Selector — grid of seats with available/taken/selected and legend; absent from library.
+- [~] (builder-3) Seat Map Selector — grid of seats with available/taken/selected and legend; absent from library.
 - [ ] Itinerary Timeline — day-grouped trip events with time, location, and type icons; distinct from timelines.
 - [ ] Price Calendar — month grid with per-day fare and cheapest-day highlight; distinct from mini-calendar-widget.
 
