@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-pos-keypad",
+  "title": "POS Keypad",
+  "description": "Point-of-sale numeric amount keypad with quick-cash buttons; cash tendered accumulates digit-by-digit and change due is always computed live from tendered minus the real total.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["pos", "retail", "checkout", "keypad"],
+  "useWhen": [
+    "Taking a cash payment in a point-of-sale or checkout terminal UI where a physical keyboard isn't the primary input.",
+    "Cashiers benefit from quick-cash shortcut buttons for common tender amounts instead of typing every digit.",
+    "Change due should be visibly computed and updated as digits are entered, not calculated only after submission."
+  ],
+  "avoidWhen": [
+    "You need a generic numeric stepper for product quantity — use `quantity-inputs` for that increment/decrement pattern instead.",
+    "Payment is card-only with no cash tendered/change flow — a simpler total display is enough.",
+    "The amount should be freely editable text rather than append-only digit entry — use a plain currency input instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Fixed-width card (max-w-xs) sized for a checkout terminal; keypad buttons remain in a fixed 3-column grid at all widths.",
+  "accessibility": [
+    "Change due and cash tendered are both derived from the same accumulated cents value and the real total prop, so they can never disagree.",
+    "The Charge button is a real disabled <button> when tendered cash is short of the total, not just visually dimmed.",
+    "Change due switches between emerald (covered) and red (short) together with the numeric sign, never relying on color alone."
+  ],
+  "compatibleWith": ["application-receipt-preview", "application-barcode-scan-row"],
+  "variants": [
+    {
+      "id": "pos-keypad-1",
+      "title": "POS Keypad",
+      "description": "Total due $18.50 with quick-cash buttons for $20/$25/$40 and a full numeric keypad; change due updates live as digits are entered.",
+      "source": {
+        "html": "../../../../public/examples/application/pos-keypad/1.html",
+        "tsx": "tsx/PosKeypadVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "insufficient-cash"],
+      "accessibility": [
+        "Change due is recomputed from the same tendered/total values on every keypad press, verified interactively."
+      ]
+    },
+    {
+      "id": "pos-keypad-1-dark",
+      "title": "POS Keypad (Dark)",
+      "description": "POS keypad adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/pos-keypad/1-dark.html",
+        "tsx": "tsx/PosKeypadVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "insufficient-cash"],
+      "accessibility": [
+        "Change due and keypad button colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

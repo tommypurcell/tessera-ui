@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-call-log-row",
+  "title": "Call Log Row",
+  "description": "Call log list with contact avatar, a direction icon (incoming/outgoing/missed) whose color and glyph are both derived from the same direction value, duration, timestamp, and a real callback action.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["phone", "calls", "log", "contacts"],
+  "useWhen": [
+    "Listing recent phone calls in a dialer, CRM, or support console with distinguishable incoming/outgoing/missed states.",
+    "Each entry benefits from a one-tap callback action rather than requiring navigation to a full contact record.",
+    "Missed calls need to stand out visually from completed incoming/outgoing calls."
+  ],
+  "avoidWhen": [
+    "You're logging game match results (win/loss/score) rather than phone calls — use `match-history-row` for that pattern instead.",
+    "There's no call direction to distinguish — a simpler contact list row is enough.",
+    "You need full call details (recording, transcript) inline — link out to a detail view instead of expanding this row."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Fixed-width list (max-w-lg) with rows that keep icon and button sizes fixed; contact name and metadata truncate rather than wrapping onto the callback button at narrow widths.",
+  "accessibility": [
+    "Direction icon color, glyph, and the visible label text ('Incoming'/'Outgoing'/'Missed') are all derived from the same direction value, so they can never disagree.",
+    "Missed calls are distinguished by both a red icon/text color and the word 'Missed', never relying on color alone.",
+    "The callback button has a descriptive aria-label naming the specific contact, not a generic 'Call' label."
+  ],
+  "compatibleWith": ["application-match-history-row", "application-media-object-row"],
+  "variants": [
+    {
+      "id": "call-log-row-1",
+      "title": "Call Log Row",
+      "description": "Three calls: incoming (answered, 4 min), outgoing (answered, 11 min), and a missed call from an unknown caller shown in red.",
+      "source": {
+        "html": "../../../../public/examples/application/call-log-row/1.html",
+        "tsx": "tsx/CallLogRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["incoming", "outgoing", "missed"],
+      "accessibility": [
+        "Direction icon, color, and label text are all derived from the same call.direction value per row."
+      ]
+    },
+    {
+      "id": "call-log-row-1-dark",
+      "title": "Call Log Row (Dark)",
+      "description": "Call log row adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/call-log-row/1-dark.html",
+        "tsx": "tsx/CallLogRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["incoming", "outgoing", "missed"],
+      "accessibility": [
+        "Direction icon and text colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

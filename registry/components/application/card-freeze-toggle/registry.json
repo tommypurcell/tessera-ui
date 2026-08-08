@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-card-freeze-toggle",
+  "title": "Card Freeze Toggle",
+  "description": "Bank-card visual that grayscales and gains a 'Frozen' overlay together with a toggled switch, both driven by the same real frozen state.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["banking", "fintech", "card", "security"],
+  "useWhen": [
+    "Letting a user temporarily freeze/unfreeze a payment card from an account or card-management screen.",
+    "The frozen state benefits from a visual treatment on the card artwork itself (grayscale + overlay), not just a label change.",
+    "You need the switch and the card's visual state to always agree, since a mismatch here could mislead a user about their card's real status."
+  ],
+  "avoidWhen": [
+    "You're toggling a smart-home device rather than a payment card — use `device-toggle-tile` for that icon-and-grid pattern instead.",
+    "There's no card artwork to show — a plain labeled switch is enough.",
+    "The action is irreversible or requires confirmation (e.g. permanently canceling a card) — add a confirmation step rather than a plain toggle."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Fixed-width card (max-w-xs) with an aspect-video card face that scales with container width while keeping its proportions.",
+  "accessibility": [
+    "The switch uses role=\"switch\" with aria-checked reflecting real frozen state, and the card's grayscale/overlay treatment is derived from that same state.",
+    "Frozen status is conveyed as visible text ('Card is frozen' / 'Card is active') in addition to the visual card treatment, never by color or grayscale alone.",
+    "The card number is masked to only the last four digits, matching real-world PCI display conventions."
+  ],
+  "compatibleWith": ["application-device-toggle-tile", "application-transaction-row"],
+  "variants": [
+    {
+      "id": "card-freeze-toggle-1",
+      "title": "Card Freeze Toggle",
+      "description": "Tessera Card ending in 4831, active by default; toggling the switch grayscales the card face and shows a Frozen overlay badge.",
+      "source": {
+        "html": "../../../../public/examples/application/card-freeze-toggle/1.html",
+        "tsx": "tsx/CardFreezeToggleVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["active", "frozen"],
+      "accessibility": [
+        "Card grayscale, overlay visibility, switch aria-checked, and status text are all derived from the same frozen boolean."
+      ]
+    },
+    {
+      "id": "card-freeze-toggle-1-dark",
+      "title": "Card Freeze Toggle (Dark)",
+      "description": "Card freeze toggle adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/card-freeze-toggle/1-dark.html",
+        "tsx": "tsx/CardFreezeToggleVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["active", "frozen"],
+      "accessibility": [
+        "Switch and status text colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

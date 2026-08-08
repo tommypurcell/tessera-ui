@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-md p-6">
+    <div id="quote-1" class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+      <h3 class="text-sm font-semibold text-gray-900">Get your estimate</h3>
+
+      <div class="mt-5 flex flex-col gap-5">
+        <div>
+          <div class="flex items-center justify-between">
+            <label for="coverage-1" class="text-xs font-medium text-gray-600">Coverage amount</label>
+            <span class="js-coverage-out text-sm font-semibold text-gray-900">$150,000</span>
+          </div>
+          <input
+            type="range"
+            id="coverage-1"
+            class="js-coverage mt-2 h-1.5 w-full appearance-none rounded-full bg-gray-200 [&::-webkit-slider-thumb]:size-4 [&::-webkit-slider-thumb]:cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-blue-600"
+            min="50000"
+            max="500000"
+            step="10000"
+            value="150000"
+          />
+        </div>
+
+        <div>
+          <div class="flex items-center justify-between">
+            <label for="deductible-1" class="text-xs font-medium text-gray-600">Deductible</label>
+            <span class="js-deductible-out text-sm font-semibold text-gray-900">$1,000</span>
+          </div>
+          <input
+            type="range"
+            id="deductible-1"
+            class="js-deductible mt-2 h-1.5 w-full appearance-none rounded-full bg-gray-200 [&::-webkit-slider-thumb]:size-4 [&::-webkit-slider-thumb]:cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-blue-600"
+            min="250"
+            max="5000"
+            step="250"
+            value="1000"
+          />
+        </div>
+
+        <div>
+          <div class="flex items-center justify-between">
+            <label for="term-1" class="text-xs font-medium text-gray-600">Policy term</label>
+            <span class="js-term-out text-sm font-semibold text-gray-900">12 months</span>
+          </div>
+          <input
+            type="range"
+            id="term-1"
+            class="js-term mt-2 h-1.5 w-full appearance-none rounded-full bg-gray-200 [&::-webkit-slider-thumb]:size-4 [&::-webkit-slider-thumb]:cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-blue-600"
+            min="6"
+            max="24"
+            step="6"
+            value="12"
+          />
+        </div>
+      </div>
+
+      <div class="mt-5 rounded-lg bg-blue-50 px-4 py-3">
+        <div class="flex items-center justify-between">
+          <p class="text-xs font-medium text-blue-700">Estimated monthly premium</p>
+          <p class="js-premium-out text-xl font-bold text-blue-900">$27</p>
+        </div>
+        <dl class="mt-2 flex flex-col gap-1 border-t border-blue-100 pt-2 text-xs text-blue-700/80">
+          <div class="flex items-center justify-between">
+            <dt>Base rate</dt>
+            <dd class="js-base-out">$27</dd>
+          </div>
+          <div class="flex items-center justify-between">
+            <dt>Deductible adjustment</dt>
+            <dd class="js-deductible-adj-out">&minus;$0</dd>
+          </div>
+          <div class="flex items-center justify-between">
+            <dt>Term adjustment</dt>
+            <dd class="js-term-adj-out">+$0</dd>
+          </div>
+        </dl>
+      </div>
+
+      <button type="button" class="mt-4 w-full rounded-md bg-blue-600 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-700">
+        Get full quote
+      </button>
+    </div>
+
+    <script>
+      ;(function () {
+        var root = document.getElementById('quote-1')
+        var coverage = root.querySelector('.js-coverage')
+        var deductible = root.querySelector('.js-deductible')
+        var term = root.querySelector('.js-term')
+
+        var coverageOut = root.querySelector('.js-coverage-out')
+        var deductibleOut = root.querySelector('.js-deductible-out')
+        var termOut = root.querySelector('.js-term-out')
+        var premiumOut = root.querySelector('.js-premium-out')
+        var baseOut = root.querySelector('.js-base-out')
+        var deductibleAdjOut = root.querySelector('.js-deductible-adj-out')
+        var termAdjOut = root.querySelector('.js-term-adj-out')
+
+        function fmt(n) {
+          return '$' + Math.round(n).toLocaleString('en-US')
+        }
+
+        function recalc() {
+          var c = Number(coverage.value)
+          var d = Number(deductible.value)
+          var t = Number(term.value)
+
+          coverageOut.textContent = fmt(c)
+          deductibleOut.textContent = fmt(d)
+          termOut.textContent = t + ' months'
+
+          var base = (c / 1000) * 0.18
+          var deductibleAdj = -((d - 1000) / 1000) * 3
+          var termAdj = ((t - 12) / 6) * 4.5
+          var premium = Math.max(base + deductibleAdj + termAdj, 10)
+
+          baseOut.textContent = fmt(base)
+          deductibleAdjOut.textContent = (deductibleAdj <= 0 ? '−' : '+') + fmt(Math.abs(deductibleAdj))
+          termAdjOut.textContent = (termAdj >= 0 ? '+' : '−') + fmt(Math.abs(termAdj))
+          premiumOut.textContent = fmt(premium)
+        }
+
+        coverage.addEventListener('input', recalc)
+        deductible.addEventListener('input', recalc)
+        term.addEventListener('input', recalc)
+        recalc()
+      })()
+    </script>
+  </body>
+</html>

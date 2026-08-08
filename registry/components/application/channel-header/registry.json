@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-channel-header",
+  "title": "Channel Header",
+  "description": "Streaming channel header with gradient banner, avatar, formatted subscriber/video counts, and a real toggling subscribe button.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["streaming", "video", "channel", "subscribe"],
+  "useWhen": [
+    "Heading a channel or creator profile page on a video/streaming platform.",
+    "You need a subscribe/follow action whose label and style should visibly reflect the current subscribed state.",
+    "Subscriber counts are large enough to benefit from K/M-abbreviated formatting rather than a raw number."
+  ],
+  "avoidWhen": [
+    "You need a generic authentication/profile card shell (sign-in, account switcher) — use `auth-card-shell` for that instead.",
+    "The channel has no banner imagery or subscriber concept — a simpler user header is enough.",
+    "You need to display more than a name, avatar, and two counts — move additional metadata to a dedicated about section."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Fixed-width card (max-w-xl) with a fixed-height banner; name and counts truncate rather than wrapping onto the subscribe button at narrow widths.",
+  "accessibility": [
+    "The subscribe button uses aria-pressed to reflect real toggled state, with its visible label ('Subscribe' vs. 'Subscribed') always matching that state.",
+    "Subscribed/unsubscribed styling changes both background color and border together, never relying on color alone.",
+    "Avatar and banner are decorative and marked appropriately; all channel identity is conveyed through real text content."
+  ],
+  "compatibleWith": ["application-video-thumbnail-card", "application-watch-progress-bar", "application-live-stream-badge"],
+  "variants": [
+    {
+      "id": "channel-header-1",
+      "title": "Channel Header",
+      "description": "Systems Deep Dive channel, 284K subscribers, 312 videos, unsubscribed initial state with a working subscribe toggle.",
+      "source": {
+        "html": "../../../../public/examples/application/channel-header/1.html",
+        "tsx": "tsx/ChannelHeaderVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "subscribed"],
+      "accessibility": [
+        "Subscribe button aria-pressed state and visible label are both derived from the same subscribed boolean."
+      ]
+    },
+    {
+      "id": "channel-header-1-dark",
+      "title": "Channel Header (Dark)",
+      "description": "Channel header adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/channel-header/1-dark.html",
+        "tsx": "tsx/ChannelHeaderVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "subscribed"],
+      "accessibility": [
+        "Subscribe button colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

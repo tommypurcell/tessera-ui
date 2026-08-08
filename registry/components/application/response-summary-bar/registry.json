@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-response-summary-bar",
+  "title": "Response Summary Bar",
+  "description": "Per-option horizontal result bars with percentage and raw response count, both computed from real counts and the total across all options.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["survey", "results", "analytics", "chart"],
+  "useWhen": [
+    "Displaying closed-ended survey or form question results as a read-only summary, after responses have been collected.",
+    "Each option benefits from both a percentage and its underlying raw count shown together.",
+    "You want a compact list of thin progress bars rather than a card styled to invite an active vote."
+  ],
+  "avoidWhen": [
+    "You're presenting an interactive poll a user can still vote on — use `poll-vote-card` for that vote-first card treatment instead.",
+    "There's no meaningful total to compute percentages against — show raw counts alone instead of a bar.",
+    "You have many (10+) options — this compact list becomes a bar or column chart instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Fixed-width card (max-w-md) with bars spanning the full row width; label and percent/count text wrap rather than overflowing at narrow widths.",
+  "accessibility": [
+    "Percentage and raw count are both derived from the same options[].count values and the same computed total, so they can never disagree.",
+    "Every bar's fill percentage is shown alongside its numeric percentage as real text, not conveyed by bar length alone.",
+    "The response total footer sums the same option counts driving the bars above it, so it always agrees with the visible breakdown."
+  ],
+  "compatibleWith": ["application-poll-vote-card", "application-matrix-question-grid"],
+  "variants": [
+    {
+      "id": "response-summary-bar-1",
+      "title": "Response Summary Bar",
+      "description": "Satisfaction survey results across 4 options (Very satisfied 45%, Satisfied 30%, Neutral 15%, Dissatisfied 10%) totaling 240 responses.",
+      "source": {
+        "html": "../../../../public/examples/application/response-summary-bar/1.html",
+        "tsx": "tsx/ResponseSummaryBarVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Bar width, percentage text, and count text are all computed from the same option.count and total values."
+      ]
+    },
+    {
+      "id": "response-summary-bar-1-dark",
+      "title": "Response Summary Bar (Dark)",
+      "description": "Response summary bar adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/response-summary-bar/1-dark.html",
+        "tsx": "tsx/ResponseSummaryBarVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Bar and text colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}
