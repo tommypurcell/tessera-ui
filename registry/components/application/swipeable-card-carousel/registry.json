@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-swipeable-card-carousel",
+  "title": "Swipeable Card Carousel",
+  "description": "A snap-scrolling horizontal row of product cards with an edge peek and dot pagination, driven by touch/scroll rather than arrow buttons.",
+  "category": "application/swipeable-card-carousel",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "swipeable-card-carousel",
+    "carousel",
+    "snap scroll",
+    "card row",
+    "peek",
+    "mobile"
+  ],
+  "useWhen": [
+    "Showing a browsable row of multiple items (products, articles) where users swipe or scroll horizontally, with the next card peeking at the edge as an affordance.",
+    "A touch-first mobile or tablet layout where native scroll-snap gestures are preferable to explicit prev/next controls."
+  ],
+  "avoidWhen": [
+    "Displaying a single full-width hero image/slide at a time with explicit prev/next arrows and slide indicators — `Carousel`'s single-slide layout fits that shape better.",
+    "The item count is small enough (2-3) to just lay out in a static row without scrolling."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Cards are sized as a percentage of the scroll container width so roughly 1.3 cards are visible at once at any viewport, preserving the peek affordance; the row scrolls horizontally with CSS scroll-snap.",
+  "accessibility": [
+    "The scroll container is native-scrollable and keyboard-reachable via standard horizontal scroll/arrow-key behavior, unlike carousels that trap focus in JS-only controls.",
+    "Card content (title, description, price) is plain text within each card, readable independent of scroll position.",
+    "Dot pagination indicators use an elongated shape for the current position, distinguishing it by shape and size, not color alone."
+  ],
+  "compatibleWith": ["application-carousel", "application-image-gallery-lightbox"],
+  "variants": [
+    {
+      "id": "swipeable-card-carousel-1",
+      "title": "Recommended products",
+      "description": "A 'Recommended for you' row of four product cards (image, title, subtitle, price) in a snap-scrolling container with a partially visible peeking card and dot pagination beneath.",
+      "source": {
+        "html": "../../../../public/examples/application/swipeable-card-carousel/1.html",
+        "tsx": "tsx/SwipeableCardCarouselVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The row uses native horizontal scroll-snap, reachable via touch, mouse drag, or keyboard scroll."
+      ]
+    },
+    {
+      "id": "swipeable-card-carousel-1-dark",
+      "title": "Recommended products (Dark)",
+      "description": "Swipeable card carousel adapted for dark surfaces, including card borders, gradient thumbnails, and pagination dots.",
+      "source": {
+        "html": "../../../../public/examples/application/swipeable-card-carousel/1-dark.html",
+        "tsx": "tsx/SwipeableCardCarouselVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Card titles, subtitles, and prices all meet WCAG AA contrast against the dark card background."
+      ]
+    }
+  ]
+}
