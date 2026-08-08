@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-status-application-tracker",
+  "title": "Status Application Tracker",
+  "description": "Government/civic application-status tracker: a horizontal numbered-step progress bar (Submitted, Under review, Decision) above a case number, status badge, processing office, and estimated decision date.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["government", "civic", "application", "status", "case-tracking"],
+  "useWhen": [
+    "Tracking the status of a government or civic application (permit, license, benefits) through submitted/under-review/decision stages.",
+    "You need to surface a case number, processing office, and estimated decision date alongside progress.",
+    "Distinct from Claim Status Tracker, which renders a vertical timeline with a completion date per step for an insurance claim, rather than a horizontal stepper with case metadata for a government application."
+  ],
+  "avoidWhen": [
+    "Tracking an insurance claim with per-step completion dates — use Claim Status Tracker instead.",
+    "There's no case number or processing-office metadata to show — a plain stepper is simpler."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The stepper's connecting lines use flex-1 so segments stretch evenly regardless of container width; the metadata grid collapses gracefully since it's already two columns.",
+  "accessibility": [
+    "The stepper is a semantic ordered list with an aria-label describing its purpose.",
+    "Completed vs. upcoming stages are distinguished by both fill color and text weight/color, never color alone.",
+    "Status badge text (e.g. \"Under review\") duplicates the current stage conveyed visually by the stepper, reinforcing state through text."
+  ],
+  "compatibleWith": ["application-claim-status-tracker", "application-public-notice-card"],
+  "variants": [
+    {
+      "id": "status-application-tracker-1",
+      "title": "Status Application Tracker",
+      "description": "A licensing application at the Under review stage, with case number, status badge, processing office, and estimated decision date.",
+      "source": {
+        "html": "../../../../public/examples/application/status-application-tracker/1.html",
+        "tsx": "tsx/StatusApplicationTrackerVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["submitted", "under-review", "decision"],
+      "accessibility": [
+        "Stepper conveys completed state via both fill color and text weight, not color alone."
+      ]
+    },
+    {
+      "id": "status-application-tracker-1-dark",
+      "title": "Status Application Tracker (Dark)",
+      "description": "The same tracker adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/status-application-tracker/1-dark.html",
+        "tsx": "tsx/StatusApplicationTrackerVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["submitted", "under-review", "decision"],
+      "accessibility": [
+        "Stepper and badge contrast remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}
