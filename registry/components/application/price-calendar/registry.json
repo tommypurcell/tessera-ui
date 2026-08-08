@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-price-calendar",
+  "title": "Price Calendar",
+  "description": "Month grid showing a fare or price beneath each day with a cheapest-day highlight, driven by a typed days prop contract.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["price", "calendar", "fare", "travel", "booking"],
+  "useWhen": [
+    "Travel or booking flows where the price varies by day and users benefit from seeing all days' fares at once.",
+    "You want to highlight the single cheapest day in the visible month to guide flexible-date shoppers.",
+    "Users need to both browse fares and select a specific date from the same grid."
+  ],
+  "avoidWhen": [
+    "Price doesn't vary by day — use a plain Date Picker instead, which doesn't need the extra fare row.",
+    "You need a compact glanceable widget without day-level interaction — use the Mini Calendar Widget instead.",
+    "Users need to compare a date range's total cost rather than single-day prices — pair with a Date Range Picker and a computed total instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The 7-column day grid scales within its container; on narrow viewports the per-day price label may need to shrink further or be hidden below a minimum cell width.",
+  "accessibility": [
+    "The cheapest day uses aria-current in addition to its green tint, and the selected day uses aria-pressed in addition to its filled background — neither state relies on color alone.",
+    "Each day cell shows the price as visible text beneath the date number, not only as a tooltip or hover reveal.",
+    "The bottom legend restates the cheapest/selected meaning with both a swatch and a text label."
+  ],
+  "compatibleWith": ["application-date-picker", "application-date-range-picker"],
+  "variants": [
+    {
+      "id": "price-calendar-1",
+      "title": "Price Calendar",
+      "description": "Month grid with a fare shown under each day, a highlighted cheapest day, a selected-day fill, and month navigation controls.",
+      "source": {
+        "html": "../../../../public/examples/application/price-calendar/1.html",
+        "tsx": "tsx/PriceCalendarVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "cheapest", "selected"],
+      "accessibility": [
+        "The cheapest-day highlight and selected-day fill are both reinforced by aria attributes, not color alone."
+      ]
+    },
+    {
+      "id": "price-calendar-1-dark",
+      "title": "Price Calendar (Dark)",
+      "description": "Fare calendar adapted for dark surfaces with the same per-day price, cheapest-highlight, and selection structure.",
+      "source": {
+        "html": "../../../../public/examples/application/price-calendar/1-dark.html",
+        "tsx": "tsx/PriceCalendarVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "cheapest", "selected"],
+      "accessibility": [
+        "Day text, fare text, and the cheapest/selected fill colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
