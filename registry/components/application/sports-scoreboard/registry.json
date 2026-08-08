@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-sports-scoreboard",
+  "title": "Sports Scoreboard",
+  "description": "Two-team scoreboard with period/clock and a possession indicator, where the leading team is derived by comparing real scores — distinct from a generic stats display, which has no live clock or possession semantics.",
+  "category": "application/sports",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["sports", "scoreboard", "live", "game", "score"],
+  "useWhen": [
+    "Showing a live or in-progress game's score alongside period and clock.",
+    "You want the leading team visually distinguished, computed from the real scores.",
+    "Possession matters (basketball, football) and should be marked on the possessing team."
+  ],
+  "avoidWhen": [
+    "You need a generic post-game stats summary with no live clock — use a stats table instead.",
+    "The sport has no possession concept (e.g. baseball, tennis) — omit the possession icon.",
+    "You need a play-by-play event timeline — use live-match-timeline instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The two team columns share equal width via flex-1 and remain side-by-side at any supported width; the period/clock row stays centered below.",
+  "accessibility": [
+    "The possession icon carries an aria-label of 'Has possession' rather than relying on icon shape alone.",
+    "The leading team's score and abbreviation use higher-contrast text than the trailing team's, not color hue alone.",
+    "Score and clock values use tabular-nums so digit widths don't shift as they update."
+  ],
+  "compatibleWith": ["application-live-match-timeline", "application-stat-tile"],
+  "variants": [
+    {
+      "id": "sports-scoreboard-1",
+      "title": "Sports scoreboard",
+      "description": "A 78–82 fourth-quarter game with the home team leading and holding possession, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/sports-scoreboard/1.html",
+        "tsx": "tsx/SportsScoreboardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["in-progress"],
+      "accessibility": [
+        "The leading team is computed by comparing the two real score values, never hand-picked independently of the scores shown."
+      ]
+    },
+    {
+      "id": "sports-scoreboard-1-dark",
+      "title": "Sports scoreboard (Dark)",
+      "description": "The same 78–82 game, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/sports-scoreboard/1-dark.html",
+        "tsx": "tsx/SportsScoreboardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["in-progress"],
+      "accessibility": [
+        "Leading vs trailing team text colors meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
