@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-deal-pipeline-stage",
+  "title": "Deal Pipeline Stage",
+  "description": "Value-weighted pipeline stage columns with deal cards, owner avatars, close dates, and a stage total for CRM board views.",
+  "category": "application/deal-pipeline-stage",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "deal-pipeline-stage",
+    "deal",
+    "pipeline",
+    "crm",
+    "stage"
+  ],
+  "useWhen": [
+    "Value-weighted pipeline stage columns with deal cards, owner avatars, close dates, and a stage total for CRM board views."
+  ],
+  "avoidWhen": [
+    "Avoid deal pipeline stage when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Deal Pipeline Stage uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Provide meaningful alternative text for informative images and empty alt text for decorative images.",
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "deal-pipeline-stage-1",
+      "title": "Single stage",
+      "description": "Single stage Value-weighted pipeline stage columns with deal cards, owner avatars, close dates, and a stage total for CRM board views.",
+      "source": {
+        "html": "../../../../public/examples/application/deal-pipeline-stage/1.html",
+        "tsx": "tsx/DealPipelineStageVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "deal-pipeline-stage-1-dark",
+      "title": "Single stage (Dark)",
+      "description": "Single stage Value-weighted pipeline stage columns with deal cards, owner avatars, close dates, and a stage total for CRM board views.",
+      "source": {
+        "html": "../../../../public/examples/application/deal-pipeline-stage/1-dark.html",
+        "tsx": "tsx/DealPipelineStageVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "deal-pipeline-stage-2",
+      "title": "Two-stage flow",
+      "description": "Two-stage flow Value-weighted pipeline stage columns with deal cards, owner avatars, close dates, and a stage total for CRM board views.",
+      "source": {
+        "html": "../../../../public/examples/application/deal-pipeline-stage/2.html",
+        "tsx": "tsx/DealPipelineStageVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "deal-pipeline-stage-2-dark",
+      "title": "Two-stage flow (Dark)",
+      "description": "Two-stage flow Value-weighted pipeline stage columns with deal cards, owner avatars, close dates, and a stage total for CRM board views.",
+      "source": {
+        "html": "../../../../public/examples/application/deal-pipeline-stage/2-dark.html",
+        "tsx": "tsx/DealPipelineStageVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}
