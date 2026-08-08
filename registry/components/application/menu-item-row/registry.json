@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "name": "application-menu-item-row",
+  "title": "Menu Item Row",
+  "description": "A restaurant menu row with dish name, description, dietary tags, price, and an add-to-order button, at both a detailed single-item scale and a compact multi-item list.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["application", "menu", "restaurant", "food", "order"],
+  "useWhen": [
+    "Displaying a restaurant or food-ordering menu where each item needs a description, dietary tags, and a clear add action.",
+    "Browsing available dishes before they're added to an order — the browsing state, not the already-added cart state."
+  ],
+  "avoidWhen": [
+    "The item has already been added to an order and needs quantity/remove controls — use cart-line-item for that stage instead.",
+    "You need a photo-forward card layout rather than a text row — a dish card with an image is a better fit."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The detailed row uses a flexible text column with a fixed-size add button pinned to the right; the compact list keeps the same right-aligned price/button pairing per row so multiple items stay visually aligned.",
+  "accessibility": [
+    "The icon-only add button carries an aria-label naming the specific dish, not a generic 'Add', so multiple items remain distinguishable to screen reader users.",
+    "Dietary tags (VEGAN, GF) are rendered as visible text badges, not icon-only, so their meaning doesn't depend on recognizing an icon.",
+    "Price is always plain text adjacent to the item, independent of any visual styling."
+  ],
+  "compatibleWith": ["application-cart-line-item", "application-badges"],
+  "variants": [
+    {
+      "id": "menu-item-row-1",
+      "title": "Detailed row",
+      "description": "Single dish with name, dietary tag badges, full description, price, and a circular add button",
+      "source": {
+        "html": "../../../../public/examples/application/menu-item-row/1.html",
+        "tsx": "tsx/MenuItemRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": ["The add button's aria-label names the specific dish."]
+    },
+    {
+      "id": "menu-item-row-1-dark",
+      "title": "Detailed row (Dark)",
+      "description": "Single dish with name, dietary tag badges, full description, price, and a circular add button",
+      "source": {
+        "html": "../../../../public/examples/application/menu-item-row/1-dark.html",
+        "tsx": "tsx/MenuItemRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    },
+    {
+      "id": "menu-item-row-2",
+      "title": "Compact list",
+      "description": "Three menu items in a tight list with name, short description, price, and a small add button per row",
+      "source": {
+        "html": "../../../../public/examples/application/menu-item-row/2.html",
+        "tsx": "tsx/MenuItemRowVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": ["Each add button's aria-label names its specific dish."]
+    },
+    {
+      "id": "menu-item-row-2-dark",
+      "title": "Compact list (Dark)",
+      "description": "Three menu items in a tight list with name, short description, price, and a small add button per row",
+      "source": {
+        "html": "../../../../public/examples/application/menu-item-row/2-dark.html",
+        "tsx": "tsx/MenuItemRowVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    }
+  ]
+}
