@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-lg p-6">
+    <div class="relative h-72 w-full overflow-hidden rounded-xl border border-gray-800 bg-gray-900">
+      <div class="absolute inset-6 rounded-lg border border-dashed border-gray-700 bg-gray-950 p-4">
+        <p class="text-xs font-medium text-gray-500">Shared canvas</p>
+      </div>
+
+      <div class="pointer-events-none absolute -translate-x-1 -translate-y-1" style="left: 33%; top: 25%" role="img" aria-label="Priya's cursor">
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#60a5fa" class="size-5 drop-shadow">
+          <path d="M4.5 3.5 19 10.5l-6.2 1.7L10.5 19 4.5 3.5Z" />
+        </svg>
+        <span class="ml-4 -mt-1 inline-block rounded-md bg-blue-500 px-2 py-0.5 text-xs font-medium text-white shadow-sm">
+          Priya
+        </span>
+      </div>
+
+      <div class="pointer-events-none absolute -translate-x-1 -translate-y-1" style="left: 66%; top: 50%" role="img" aria-label="Marcus's cursor">
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#f472b6" class="size-5 drop-shadow">
+          <path d="M4.5 3.5 19 10.5l-6.2 1.7L10.5 19 4.5 3.5Z" />
+        </svg>
+        <span class="ml-4 -mt-1 inline-block rounded-md bg-pink-500 px-2 py-0.5 text-xs font-medium text-white shadow-sm">
+          Marcus
+        </span>
+      </div>
+
+      <div class="pointer-events-none absolute -translate-x-1 -translate-y-1" style="left: 25%; top: 70%" role="img" aria-label="Dana's cursor, selecting a region">
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#34d399" class="size-5 drop-shadow">
+          <path d="M4.5 3.5 19 10.5l-6.2 1.7L10.5 19 4.5 3.5Z" />
+        </svg>
+        <span class="ml-4 -mt-1 inline-block rounded-md bg-emerald-500 px-2 py-0.5 text-xs font-medium text-white shadow-sm">
+          Dana
+        </span>
+        <div class="absolute left-4 top-5 h-10 w-16 rounded-sm border-2 border-emerald-400 bg-emerald-400/10"></div>
+      </div>
+    </div>
+
+    <p class="sr-only" role="status">3 collaborators active: Priya, Marcus, Dana.</p>
+  </body>
+</html>
