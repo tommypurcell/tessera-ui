@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-weather-forecast-row",
+  "title": "Weather Forecast Row",
+  "description": "7-day forecast strip with per-day condition icon, high/low temperatures, and precipitation percentage — distinct from weather-widget, which is a current-conditions tile with an hourly strip and no multi-day forecast or precipitation data.",
+  "category": "application/weather",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["weather", "forecast", "climate"],
+  "useWhen": [
+    "Showing a week-ahead weather outlook rather than current conditions.",
+    "You need precipitation likelihood alongside each day's high/low.",
+    "A compact horizontal strip fits better than a full weather widget card."
+  ],
+  "avoidWhen": [
+    "You need current conditions with an hourly breakdown — use weather-widget instead.",
+    "You only need a single day's forecast — a simpler stat display is sufficient.",
+    "Precipitation data isn't available — omit that row rather than showing a placeholder 0%."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Each day column shares equal width via flex-1 within the strip; on narrow viewports the consuming page should wrap this in a horizontally scrollable container.",
+  "accessibility": [
+    "Condition icons are aria-hidden since the high/low and precipitation text already convey the day's forecast.",
+    "High and low temperatures use distinct font weights (semibold vs regular) so they're distinguishable without relying on position alone.",
+    "Precipitation percentage is always shown as text, not implied only by icon choice."
+  ],
+  "compatibleWith": ["application-weather-widget"],
+  "variants": [
+    {
+      "id": "weather-forecast-row-1",
+      "title": "Weather forecast row",
+      "description": "A 7-day forecast mixing sun, cloud, and rain days with varying precipitation percentages and hi/lo temperatures, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/weather-forecast-row/1.html",
+        "tsx": "tsx/WeatherForecastRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Rain days show meaningfully higher precipitation percentages (60-80%) than sun days (0%), keeping the icon and number internally consistent."
+      ]
+    },
+    {
+      "id": "weather-forecast-row-1-dark",
+      "title": "Weather forecast row (Dark)",
+      "description": "The same 7-day forecast, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/weather-forecast-row/1-dark.html",
+        "tsx": "tsx/WeatherForecastRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Icon and text colors meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
