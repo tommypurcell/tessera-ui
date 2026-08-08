@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 778,
+  "screenshotCount": 782,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -896,6 +896,46 @@
       "url": "/screenshots/components/application-code-editor-block/code-editor-block-2-dark.jpg",
       "width": 672,
       "height": 400
+    },
+    {
+      "componentId": "application-credit-card-form",
+      "variantId": "credit-card-form-1",
+      "appearance": "light",
+      "sourcePath": "files/application-credit-card-form/credit-card-form-1.html",
+      "sourceSha256": "6e224cf92a9066b51f5384c9caeb1e946dae1d8366a34a0977b5200f242fcb98",
+      "url": "/screenshots/components/application-credit-card-form/credit-card-form-1.jpg",
+      "width": 600,
+      "height": 470
+    },
+    {
+      "componentId": "application-credit-card-form",
+      "variantId": "credit-card-form-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-credit-card-form/credit-card-form-1-dark.html",
+      "sourceSha256": "4311cdc9bcfd27b4f750625c8026a7f149663b18395659ea1399b7d102140cd9",
+      "url": "/screenshots/components/application-credit-card-form/credit-card-form-1-dark.jpg",
+      "width": 600,
+      "height": 470
+    },
+    {
+      "componentId": "application-credit-card-form",
+      "variantId": "credit-card-form-2",
+      "appearance": "light",
+      "sourcePath": "files/application-credit-card-form/credit-card-form-2.html",
+      "sourceSha256": "76d8add8a4cad3cc0049df626864bda2bf69696e5f73b793a6c0b7a50c1455e3",
+      "url": "/screenshots/components/application-credit-card-form/credit-card-form-2.jpg",
+      "width": 600,
+      "height": 502
+    },
+    {
+      "componentId": "application-credit-card-form",
+      "variantId": "credit-card-form-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-credit-card-form/credit-card-form-2-dark.html",
+      "sourceSha256": "452747ee659d4ec82286298521589e14476fe1a181d79e776ab305eff822feac",
+      "url": "/screenshots/components/application-credit-card-form/credit-card-form-2-dark.jpg",
+      "width": 600,
+      "height": 502
     },
     {
       "componentId": "application-details-list",
