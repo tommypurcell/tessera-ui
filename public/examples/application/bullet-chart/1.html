@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex justify-center p-6">
+    <div class="flex w-full max-w-md flex-col gap-2 rounded-lg border border-gray-200 bg-white p-6">
+      <div class="flex items-baseline justify-between text-sm">
+        <span class="font-medium text-gray-700">Customer satisfaction (CSAT)</span>
+        <span class="font-semibold text-gray-900">72 <span class="font-normal text-gray-400">/ 85 target</span></span>
+      </div>
+
+      <div class="relative h-6 w-full overflow-hidden rounded-sm">
+        <div class="absolute inset-y-0 bg-gray-300" style="left: 0%; width: 50%" role="img" aria-label="Poor: up to 50"></div>
+        <div class="absolute inset-y-0 bg-gray-200" style="left: 50%; width: 30%" role="img" aria-label="Satisfactory: up to 80"></div>
+        <div class="absolute inset-y-0 bg-gray-100" style="left: 80%; width: 20%" role="img" aria-label="Good: up to 100"></div>
+
+        <div class="absolute inset-y-0 left-0 flex items-center bg-blue-600" style="width: 72%" role="img" aria-label="Customer satisfaction (CSAT): 72">
+          <div class="-mr-0.5 ml-auto h-3.5 w-1.5 rounded-sm bg-blue-800"></div>
+        </div>
+
+        <div class="absolute inset-y-1 w-0.5 bg-gray-900" style="left: 85%" role="img" aria-label="Target: 85"></div>
+      </div>
+
+      <div class="flex gap-4 text-xs text-gray-500">
+        <span>Poor</span>
+        <span>Satisfactory</span>
+        <span>Good</span>
+      </div>
+    </div>
+  </body>
+</html>
