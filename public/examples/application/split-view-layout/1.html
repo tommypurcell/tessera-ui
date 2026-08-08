@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="p-6">
+    <div class="mx-auto flex h-96 max-w-3xl overflow-hidden rounded-xl border border-gray-200">
+      <div class="flex w-72 shrink-0 flex-col border-r border-gray-200">
+        <div class="flex items-center justify-between border-b border-gray-200 px-4 py-3">
+          <span class="text-sm font-semibold text-gray-900">Inbox</span>
+          <button type="button" aria-label="Collapse list" class="text-gray-400 hover:text-gray-600">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="flex-1 divide-y divide-gray-100 overflow-y-auto">
+          <button type="button" aria-current="true" class="block w-full bg-gray-50 px-4 py-3 text-left">
+            <p class="text-sm font-medium text-gray-900">Nandor the Relentless</p>
+            <p class="mt-0.5 truncate text-xs text-gray-500">Re: Nightclub renovation budget</p>
+          </button>
+          <button type="button" class="block w-full px-4 py-3 text-left hover:bg-gray-50">
+            <p class="text-sm font-medium text-gray-900">Nadja</p>
+            <p class="mt-0.5 truncate text-xs text-gray-500">Familiar orientation schedule</p>
+          </button>
+          <button type="button" class="block w-full px-4 py-3 text-left hover:bg-gray-50">
+            <p class="text-sm font-medium text-gray-900">Colin Robinson</p>
+            <p class="mt-0.5 truncate text-xs text-gray-500">Meeting notes attached</p>
+          </button>
+          <button type="button" class="block w-full px-4 py-3 text-left hover:bg-gray-50">
+            <p class="text-sm font-medium text-gray-900">Guillermo de la Cruz</p>
+            <p class="mt-0.5 truncate text-xs text-gray-500">Vampire hunter application</p>
+          </button>
+        </div>
+      </div>
+
+      <div class="w-1.5 shrink-0 cursor-col-resize bg-gray-100 hover:bg-gray-200" role="separator" aria-orientation="vertical" aria-label="Resize panels"></div>
+
+      <div class="flex flex-1 flex-col">
+        <div class="border-b border-gray-200 px-5 py-3">
+          <h2 class="text-sm font-semibold text-gray-900">Re: Nightclub renovation budget</h2>
+          <p class="mt-0.5 text-xs text-gray-500">From Nandor the Relentless — Today, 2:14 PM</p>
+        </div>
+        <div class="flex-1 overflow-y-auto p-5 text-sm leading-relaxed text-gray-600">
+          <p class="mb-3">I have reviewed the proposal and I believe we should proceed with the expanded seating area.</p>
+          <p>The budget looks reasonable. Please forward to Nadja for final sign-off before Friday.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

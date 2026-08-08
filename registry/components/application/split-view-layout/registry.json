@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-split-view-layout",
+  "title": "Split View Layout",
+  "description": "Resizable master-detail two-pane shell with a collapsible list side and a detail content slot, driven by a typed items/detail prop contract.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["split-view", "master-detail", "layout", "shell", "inbox"],
+  "useWhen": [
+    "Building an inbox, ticket queue, or document browser where selecting an item in a list updates a detail pane.",
+    "Users benefit from seeing the list and the currently open item simultaneously rather than navigating between pages.",
+    "The list side should be collapsible to give the detail pane more room on demand."
+  ],
+  "avoidWhen": [
+    "You only need a generic resizable two-pane split with no list/detail semantics — use the plain Resizable component instead.",
+    "The interface is primarily mobile — a master-detail split doesn't fit narrow viewports; navigate between list and detail as separate screens instead.",
+    "There is only ever one detail view with no list to select from — a simple page layout is simpler than this shell."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The two-pane layout assumes desktop-class width; below a breakpoint, replace the list+detail split with a single-pane navigation (list, then detail) rather than shrinking both columns.",
+  "accessibility": [
+    "The resize handle uses role='separator' with aria-orientation='vertical' and a descriptive aria-label per the WAI-ARIA window-splitter pattern.",
+    "Each list item is a real <button> with aria-current marking the active selection, not just a background color change.",
+    "The collapse-list icon button carries an explicit aria-label since it shows only an icon."
+  ],
+  "compatibleWith": ["application-resizable", "application-data-table"],
+  "variants": [
+    {
+      "id": "split-view-layout-1",
+      "title": "Split View Layout",
+      "description": "Inbox-style split view with a collapsible list pane, a resize handle, and a detail pane showing the selected item's content.",
+      "source": {
+        "html": "../../../../public/examples/application/split-view-layout/1.html",
+        "tsx": "tsx/SplitViewLayoutVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "The active list item sets aria-current='true' in addition to its background tint, so selection state is announced."
+      ]
+    },
+    {
+      "id": "split-view-layout-1-dark",
+      "title": "Split View Layout (Dark)",
+      "description": "Master-detail split view adapted for dark surfaces with the same list, resize-handle, and detail-pane structure.",
+      "source": {
+        "html": "../../../../public/examples/application/split-view-layout/1-dark.html",
+        "tsx": "tsx/SplitViewLayoutVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "List item text, the resize handle, and detail-pane content must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
