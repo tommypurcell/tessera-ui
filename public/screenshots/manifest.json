@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 826,
+  "screenshotCount": 830,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -934,6 +934,46 @@
       "sourcePath": "files/application-consent-checklist/consent-checklist-2-dark.html",
       "sourceSha256": "6e91009ae0dd7ab5646d04990909b4a915c4eb8dbb8fca068f2a6bf2f97645f2",
       "url": "/screenshots/components/application-consent-checklist/consent-checklist-2-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-consent-version-banner",
+      "variantId": "consent-version-banner-1",
+      "appearance": "light",
+      "sourcePath": "files/application-consent-version-banner/consent-version-banner-1.html",
+      "sourceSha256": "1f6a786254630a517a204adb609c9db187a82181a8130bd2517678017db1d285",
+      "url": "/screenshots/components/application-consent-version-banner/consent-version-banner-1.jpg",
+      "width": 608,
+      "height": 400
+    },
+    {
+      "componentId": "application-consent-version-banner",
+      "variantId": "consent-version-banner-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-consent-version-banner/consent-version-banner-1-dark.html",
+      "sourceSha256": "8c2487ce577e3389a9ca0337829b8f2a34235888017c10365242056831dc8a9c",
+      "url": "/screenshots/components/application-consent-version-banner/consent-version-banner-1-dark.jpg",
+      "width": 608,
+      "height": 400
+    },
+    {
+      "componentId": "application-consent-version-banner",
+      "variantId": "consent-version-banner-2",
+      "appearance": "light",
+      "sourcePath": "files/application-consent-version-banner/consent-version-banner-2.html",
+      "sourceSha256": "e2761bff4088713a2c53da97bfc490a541805811568a1ef868e21cd42c8e408c",
+      "url": "/screenshots/components/application-consent-version-banner/consent-version-banner-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-consent-version-banner",
+      "variantId": "consent-version-banner-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-consent-version-banner/consent-version-banner-2-dark.html",
+      "sourceSha256": "a114bc5b93ca725333274fba68556a6af0b2b0d5862c54038a1526813525ea7f",
+      "url": "/screenshots/components/application-consent-version-banner/consent-version-banner-2-dark.jpg",
       "width": 600,
       "height": 400
     },
