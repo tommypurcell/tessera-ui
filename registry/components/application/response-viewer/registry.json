@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-response-viewer",
+  "title": "Response Viewer",
+  "description": "API response panel with a status-code badge, request timing and size, a copy action, and Body/Headers tabs — the body renders as a single formatted JSON block.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["api", "http", "response", "developer-tools", "json"],
+  "useWhen": [
+    "Building an API client or request-testing tool (like a lightweight Postman/Insomnia panel) that shows the result of a request.",
+    "You need status/timing/size metadata plus a Headers tab alongside the response body.",
+    "Distinct from Json Tree Viewer, which offers per-key expand/collapse interaction rather than a status/timing header and body/headers tab switcher for an HTTP response."
+  ],
+  "avoidWhen": [
+    "You need to explore deeply nested JSON node-by-node — use Json Tree Viewer instead.",
+    "There's no HTTP response context (status/timing/headers) — a plain code block is simpler."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The body/header pre block scrolls horizontally on overflow rather than wrapping, preserving JSON/header formatting at any width.",
+  "accessibility": [
+    "Status badge conveys success/error via both color and the numeric code plus status text, never color alone.",
+    "The Copy button announces its result via visible label text change (\"Copy\" to \"Copied\") rather than an icon-only state change.",
+    "Body/Headers tabs use aria-current to indicate the active tab."
+  ],
+  "compatibleWith": ["application-request-builder", "application-json-tree-viewer"],
+  "variants": [
+    {
+      "id": "response-viewer-1",
+      "title": "Response Viewer",
+      "description": "200 OK status badge with timing/size, a Copy action, Body/Headers tabs, and a formatted JSON body.",
+      "source": {
+        "html": "../../../../public/examples/application/response-viewer/1.html",
+        "tsx": "tsx/ResponseViewerVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["body-tab", "headers-tab", "copied"],
+      "accessibility": [
+        "Copy button label switches to \"Copied\" as a text-based confirmation."
+      ]
+    },
+    {
+      "id": "response-viewer-1-dark",
+      "title": "Response Viewer (Dark)",
+      "description": "The same response panel adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/response-viewer/1-dark.html",
+        "tsx": "tsx/ResponseViewerVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["body-tab", "headers-tab", "copied"],
+      "accessibility": [
+        "Status badge and tab contrast remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}
