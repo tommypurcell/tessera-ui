@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-stat-comparison-bars",
+  "title": "Stat Comparison Bars",
+  "description": "Horizontal category comparison bars with value labels and an optional highlighted row, driven by a typed rows prop contract.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["comparison", "bars", "ranking", "dashboard", "compact"],
+  "useWhen": [
+    "Comparing a small set of categories (traffic sources, regions, plan tiers) by a single numeric value.",
+    "A compact dashboard card needs a ranked bar comparison without the overhead of a full charting library.",
+    "One row (e.g. the current user's segment or the top performer) should stand out from the rest."
+  ],
+  "avoidWhen": [
+    "You need axes, legends, or multiple data series — use a proper chart component instead.",
+    "There are more than a handful of categories — a scrollable table communicates dense rankings better than stacked bars.",
+    "Precise value comparison matters more than relative proportion — a table with sortable columns is more precise."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Each row's bar track spans the full card width; the card itself is a single block meant to sit in your own dashboard grid or sidebar.",
+  "accessibility": [
+    "Every bar is paired with an explicit numeric value label — the bar length is a visual reinforcement, not the only source of the number.",
+    "The highlighted row uses both a background tint and bolder text, not fill color alone, to remain distinguishable.",
+    "Bar tracks and fills use sufficient contrast against their card background independent of the highlighted state."
+  ],
+  "compatibleWith": ["application-stat-tile", "application-charts"],
+  "variants": [
+    {
+      "id": "stat-comparison-bars-1",
+      "title": "Stat Comparison Bars",
+      "description": "Ranked category bars with a value label per row, proportional bar fills, and one highlighted row with a tinted background.",
+      "source": {
+        "html": "../../../../public/examples/application/stat-comparison-bars/1.html",
+        "tsx": "tsx/StatComparisonBarsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "highlighted"],
+      "accessibility": [
+        "The highlighted row is set apart via background tint and bold text together, not fill color alone."
+      ]
+    },
+    {
+      "id": "stat-comparison-bars-1-dark",
+      "title": "Stat Comparison Bars (Dark)",
+      "description": "Category comparison bars adapted for dark surfaces with the same value-label, bar-fill, and highlighted-row structure.",
+      "source": {
+        "html": "../../../../public/examples/application/stat-comparison-bars/1-dark.html",
+        "tsx": "tsx/StatComparisonBarsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "highlighted"],
+      "accessibility": [
+        "Bar track and fill colors must meet WCAG AA contrast against the dark card background."
+      ]
+    }
+  ]
+}
