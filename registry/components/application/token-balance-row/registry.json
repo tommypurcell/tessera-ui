@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-token-balance-row",
+  "title": "Token Balance Row",
+  "description": "Wallet asset list showing each token's icon, name, held balance, USD value, and a direction-colored 24h change percentage.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["crypto", "wallet", "token", "balance", "finance"],
+  "useWhen": [
+    "A crypto wallet or portfolio view needs to list held tokens with their current value.",
+    "Users need to see both the native-unit balance (1.842 ETH) and its USD equivalent at a glance.",
+    "Each asset benefits from a 24h change indicator to convey short-term movement."
+  ],
+  "avoidWhen": [
+    "The list needs sorting, filtering, or many columns (cost basis, allocation %) — use a data table instead.",
+    "There's no live price data — a static holdings list without change percentages is simpler and avoids implying real-time accuracy.",
+    "The asset isn't a token/balance at all — use transaction-row for a movement/activity record instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The list is a fixed max-w-sm block that fills its container's available width up to that cap at all breakpoints.",
+  "accessibility": [
+    "Change direction is conveyed by both an arrow icon and text color, never color alone.",
+    "Balance and USD value are both always-visible text, so screen reader users get the same information sighted users do.",
+    "Token icon badges use text initials as a fallback identity marker; pair with a real logo image where available for stronger visual recognition."
+  ],
+  "compatibleWith": ["application-top-movers-list", "application-transaction-row", "application-stat-tile"],
+  "variants": [
+    {
+      "id": "token-balance-row-1",
+      "title": "Token balance row",
+      "description": "Three-asset wallet list (ETH, BTC, SOL) with balances, USD values, and mixed positive/negative 24h changes.",
+      "source": {
+        "html": "../../../../public/examples/application/token-balance-row/1.html",
+        "tsx": "tsx/TokenBalanceRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Each token's icon badge uses a distinct background/text color pair for quick visual differentiation."
+      ]
+    },
+    {
+      "id": "token-balance-row-1-dark",
+      "title": "Token balance row (Dark)",
+      "description": "Token balance row adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/token-balance-row/1-dark.html",
+        "tsx": "tsx/TokenBalanceRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Icon badge, value, and change-percent colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
