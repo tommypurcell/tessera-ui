@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-media-object-row",
+  "title": "Media Object Row",
+  "description": "Reusable media-row primitive — thumbnail, title, meta line, and a trailing action slot — for lists of media-backed items like episodes, files, or tracks.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["media", "list", "row", "primitive"],
+  "useWhen": [
+    "Listing items that each have a thumbnail/cover image, a title, a short metadata line, and one primary action — podcast episodes, tracks, files, videos.",
+    "You want a lightweight, reusable row primitive rather than a full table for media-centric lists.",
+    "The trailing action varies per item (play, download, more menu) — pass `renderAction` to customize it per row."
+  ],
+  "avoidWhen": [
+    "Rows need multiple columns of comparable data (size, date modified, owner) — use `tables` or `details-list` instead.",
+    "The list represents team/role membership rather than media — use `team-members-list` for that semantic instead.",
+    "There's no image/thumbnail to anchor the row — a plain text list avoids the unused image slot."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Thumbnail, text column, and trailing action sit in a single flex row; the title/meta column truncates with an ellipsis rather than wrapping, keeping row height constant at any width.",
+  "accessibility": [
+    "The thumbnail image's alt text is empty by default (decorative) since the title conveys the same information as text; pass imageAlt when the image carries unique meaning.",
+    "The default trailing play button has an aria-label that includes the item's title, not a generic \"Play\", since every row shares the same icon-only button.",
+    "Title and meta are separate text nodes so screen readers announce them distinctly rather than as one run-on string."
+  ],
+  "compatibleWith": ["application-details-list", "application-avatar"],
+  "variants": [
+    {
+      "id": "media-object-row-1",
+      "title": "Media Object Row",
+      "description": "Three podcast episode rows with thumbnail, title, episode/duration meta, and a play button.",
+      "source": {
+        "html": "../../../../public/examples/application/media-object-row/1.html",
+        "tsx": "tsx/MediaObjectRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The renderAction slot lets callers swap in any accessible control (download, menu) while keeping the row's semantic structure intact."
+      ]
+    },
+    {
+      "id": "media-object-row-1-dark",
+      "title": "Media Object Row (Dark)",
+      "description": "Media object row list adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/media-object-row/1-dark.html",
+        "tsx": "tsx/MediaObjectRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Text and divider colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "application-order-status-tracker",
+  "title": "Order Status Tracker",
+  "description": "Horizontal shipment status stepper — Placed, Shipped, Out for delivery, Delivered — with a date under each stage and a computed completed/current/upcoming state.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["order", "shipment", "tracking", "stepper", "ecommerce"],
+  "useWhen": [
+    "Showing the progress of a single linear order/shipment through a fixed sequence of stages.",
+    "Each stage benefits from a date so users know both what happened and when.",
+    "Pairing with `checkout-order-summary` or an order-detail page to communicate delivery status at a glance."
+  ],
+  "avoidWhen": [
+    "The sequence isn't linear or a stage can be skipped/repeated — a stepper implies a fixed forward-only path.",
+    "You need a generic multi-step form/onboarding flow, not an order's real-world status — use `steps` or `stepper-wizard` instead.",
+    "You're tracking many orders in a list, not one order in detail — a status badge in a table row is lighter weight than a full stepper per row."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Steps share equal flex-1 width in a single row; on very narrow viewports the labels may need to wrap or the component should switch to a vertical stack via a variant.",
+  "accessibility": [
+    "Steps are list items in an <ol> with an aria-label describing the tracker's purpose, so the sequence and count are conveyed to assistive tech.",
+    "The current step carries aria-current=\"step\" in addition to its visual highlight.",
+    "Completed vs. upcoming states are distinguished by both icon (checkmark vs. empty dot) and label weight, not by color alone.",
+    "Estimated (not yet occurred) dates are visually deemphasized relative to confirmed dates, communicating certainty through contrast, not implying a factual date has passed."
+  ],
+  "compatibleWith": ["application-checkout-order-summary", "application-steps"],
+  "variants": [
+    {
+      "id": "order-status-tracker-1",
+      "title": "Order Status Tracker",
+      "description": "Four-stage tracker with Placed and Shipped complete, Out for delivery current, and Delivered upcoming with an estimated date.",
+      "source": {
+        "html": "../../../../public/examples/application/order-status-tracker/1.html",
+        "tsx": "tsx/OrderStatusTrackerVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["complete", "current", "upcoming"],
+      "accessibility": [
+        "Step state (complete/current/upcoming) is computed from a single currentStepIndex, so it always stays internally consistent."
+      ]
+    },
+    {
+      "id": "order-status-tracker-1-dark",
+      "title": "Order Status Tracker (Dark)",
+      "description": "Order status tracker adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/order-status-tracker/1-dark.html",
+        "tsx": "tsx/OrderStatusTrackerVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["complete", "current", "upcoming"],
+      "accessibility": [
+        "Connector line and icon colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

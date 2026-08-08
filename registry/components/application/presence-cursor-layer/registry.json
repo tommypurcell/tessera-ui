@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "application-presence-cursor-layer",
+  "title": "Presence Cursor Layer",
+  "description": "Overlay of named, colored cursor markers with an optional selection box, showing live collaborator presence over a shared canvas.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["presence", "collaboration", "multiplayer", "cursor", "realtime"],
+  "useWhen": [
+    "Building a real-time collaborative surface (design canvas, document, whiteboard) where showing other users' pointer positions builds shared awareness.",
+    "You have a live position feed (e.g. from a WebSocket or CRDT presence channel) to drive cursor coordinates.",
+    "Users benefit from seeing not just who else is present, but what they're pointing at or selecting."
+  ],
+  "avoidWhen": [
+    "You only need to show who is online, not where they are — an `avatar-group` communicates that with far less complexity.",
+    "The surface isn't truly real-time collaborative — a static list of collaborators is more honest than simulated cursor positions.",
+    "Precise, low-latency positioning matters and you don't have a real transport for position updates — an inaccurate or stale cursor layer is worse than none."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Cursor positions are percentage-based within the canvas container, so they stay correctly placed as the canvas resizes; labels do not reflow and may clip near the canvas edges at very small sizes.",
+  "accessibility": [
+    "The cursor layer is decorative and marked pointer-events-none so it never intercepts clicks meant for the canvas beneath it.",
+    "Each cursor has role=\"img\" with an aria-label describing who it belongs to and whether it is selecting a region.",
+    "A visually hidden role=\"status\" element announces the current list of active collaborators for screen reader users, since the visual layer alone conveys nothing to them.",
+    "Color is paired with a text name label, not used as the only way to distinguish collaborators."
+  ],
+  "compatibleWith": ["application-avatar", "application-avatar-group"],
+  "variants": [
+    {
+      "id": "presence-cursor-layer-1",
+      "title": "Presence Cursor Layer",
+      "description": "Three collaborator cursors over a shared canvas, one with an active selection box.",
+      "source": {
+        "html": "../../../../public/examples/application/presence-cursor-layer/1.html",
+        "tsx": "tsx/PresenceCursorLayerVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "selecting"],
+      "accessibility": [
+        "A screen-reader-only status region lists active collaborators by name, since cursor position is a purely visual signal."
+      ]
+    },
+    {
+      "id": "presence-cursor-layer-1-dark",
+      "title": "Presence Cursor Layer (Dark)",
+      "description": "Collaborator cursors adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/presence-cursor-layer/1-dark.html",
+        "tsx": "tsx/PresenceCursorLayerVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "selecting"],
+      "accessibility": [
+        "Cursor label colors are brightened relative to the light variant to hold contrast against the dark canvas."
+      ]
+    }
+  ]
+}

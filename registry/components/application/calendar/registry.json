@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "application-calendar",
+  "title": "Calendar",
+  "description": "Single-month date grid with previous/next navigation, a highlighted today, and a selectable date.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["calendar", "date", "date picker", "schedule", "navigation"],
+  "useWhen": [
+    "Letting a user browse and pick a single date, such as scheduling an event or setting a due date.",
+    "Displaying a month-at-a-glance view with the current day highlighted for orientation.",
+    "Building a date picker's dropdown/popover content — pair with a trigger input."
+  ],
+  "avoidWhen": [
+    "You need a full multi-month range picker with linked start/end selection — extend this pattern rather than using it as-is.",
+    "The date only needs typing, not browsing — a plain text or native date input is lighter weight.",
+    "You need a dense event calendar with multiple items per day — this is a date picker, not a scheduling grid."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Fixed-width single-month grid that fits comfortably down to narrow mobile viewports; wrap in a popover or dialog when embedding inline would crowd the layout.",
+  "accessibility": [
+    "Each day is a real <button> so it is reachable and activatable via keyboard, not a styled <div> or <span>.",
+    "The current day carries aria-current=\"date\" and the selected day carries aria-pressed=\"true\" so both states are announced by assistive tech.",
+    "Previous/next month controls have explicit aria-label text since they are icon-only buttons.",
+    "Disabled trailing/leading days (if hidden) should use the disabled attribute rather than styling alone."
+  ],
+  "compatibleWith": ["application-popover", "application-inputs", "application-form-row"],
+  "variants": [
+    {
+      "id": "calendar-1",
+      "title": "Calendar",
+      "description": "Single-month date grid with month navigation, today highlight, and a selected date.",
+      "source": {
+        "html": "../../../../public/examples/application/calendar/1.html",
+        "tsx": "tsx/CalendarVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "selected", "disabled"],
+      "accessibility": [
+        "Day buttons are focusable and operable with keyboard alone; today and selected states are conveyed with aria attributes, not color alone."
+      ]
+    },
+    {
+      "id": "calendar-1-dark",
+      "title": "Calendar (Dark)",
+      "description": "Single-month date grid adapted for dark surfaces, with month navigation, today highlight, and a selected date.",
+      "source": {
+        "html": "../../../../public/examples/application/calendar/1-dark.html",
+        "tsx": "tsx/CalendarVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "selected", "disabled"],
+      "accessibility": [
+        "Today and selected colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

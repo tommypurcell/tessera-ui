@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "application-variant-selector",
+  "title": "Variant Selector",
+  "description": "Color swatch and size button radiogroups for choosing a product variant, with a real out-of-stock state that disables unavailable options.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["ecommerce", "product", "variant", "options"],
+  "useWhen": [
+    "A product has mutually exclusive options (color, size) that must be chosen before adding to cart.",
+    "Some option combinations may be unavailable and need a clear, non-interactive out-of-stock state rather than silently disappearing.",
+    "Pairing with `product-card` on a product detail page."
+  ],
+  "avoidWhen": [
+    "Options aren't mutually exclusive (e.g. multi-select add-ons) — a `toggle-group` in multi-select mode or checkboxes fit that better.",
+    "There's only one variant dimension with many options (10+) — a `selects` dropdown may scale better than a wide button row.",
+    "Stock state doesn't matter for this catalog — the extra visual treatment for unavailable options isn't worth the complexity."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Color swatches wrap in a flex row; size buttons sit in a fixed 5-column grid that will need adjusting via className override if the option count differs significantly from 5.",
+  "accessibility": [
+    "Each option group is a role=\"radiogroup\" with an aria-label, and each option is role=\"radio\" with aria-checked reflecting selection — single-select semantics, not checkboxes.",
+    "Out-of-stock options carry aria-disabled=\"true\" and are excluded from the click handler, not just visually dimmed while remaining clickable.",
+    "Out-of-stock color swatches include the out-of-stock state in their aria-label text (e.g. \"Sunset Red, out of stock\") since the diagonal strike is a purely visual cue.",
+    "The selected color/size name is echoed as visible text next to the group label, not conveyed by the swatch/button state alone."
+  ],
+  "compatibleWith": ["application-product-card", "application-cart-line-item"],
+  "variants": [
+    {
+      "id": "variant-selector-1",
+      "title": "Variant Selector",
+      "description": "Color swatches (one out of stock) and size buttons (one out of stock) with a selected state for each group.",
+      "source": {
+        "html": "../../../../public/examples/application/variant-selector/1.html",
+        "tsx": "tsx/VariantSelectorVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "selected", "out-of-stock"],
+      "accessibility": [
+        "Out-of-stock options cannot be selected via the click handler even if a user manages to focus them."
+      ]
+    },
+    {
+      "id": "variant-selector-1-dark",
+      "title": "Variant Selector (Dark)",
+      "description": "Variant selector adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/variant-selector/1-dark.html",
+        "tsx": "tsx/VariantSelectorVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "selected", "out-of-stock"],
+      "accessibility": [
+        "Selected-state ring and border colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

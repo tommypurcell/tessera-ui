@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "application-cart-line-item",
+  "title": "Cart Line Item",
+  "description": "Cart row with a product thumbnail, variant label, a quantity stepper, computed unit and line-total price, and a remove action.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["ecommerce", "cart", "checkout", "quantity"],
+  "useWhen": [
+    "Listing items already added to a shopping cart, where each row needs its own quantity control and price.",
+    "You need the line total to update live as quantity changes, driven by real state rather than a static number.",
+    "Pairing with `checkout-order-summary` to build a full cart/checkout flow."
+  ],
+  "avoidWhen": [
+    "You're showing a product to be added to the cart, not an item already in it — use `product-card` for that pre-cart state.",
+    "The list is large and tabular (many columns, sortable) — a `tables` row is a better fit than this card-style row.",
+    "Quantity isn't user-adjustable — a simpler read-only row without the stepper avoids implying an interaction that isn't there."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Thumbnail and content sit in a single flex row that wraps price to the right; on very narrow viewports consider stacking price below the quantity stepper instead of forcing horizontal scroll.",
+  "accessibility": [
+    "The quantity stepper is a role=\"group\" with an aria-label naming the specific product, and the current count uses aria-live=\"polite\" so screen readers announce changes.",
+    "Decrease/increase buttons are icon-only with explicit aria-label text and become disabled (not just visually dimmed) at the min/max bound.",
+    "The remove button's aria-label includes the product name rather than a generic \"Remove\", since multiple line items share the same visual button.",
+    "The thumbnail's alt text describes the product for users relying on screen readers, distinct from the visible title text."
+  ],
+  "compatibleWith": ["application-product-card", "application-checkout-order-summary"],
+  "variants": [
+    {
+      "id": "cart-line-item-1",
+      "title": "Cart Line Item",
+      "description": "Headphones cart row with a variant label, quantity stepper at 2, and a computed line total.",
+      "source": {
+        "html": "../../../../public/examples/application/cart-line-item/1.html",
+        "tsx": "tsx/CartLineItemVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "min-quantity", "max-quantity"],
+      "accessibility": [
+        "Quantity changes are announced via aria-live, and the line total recalculates from real unit-price × quantity state."
+      ]
+    },
+    {
+      "id": "cart-line-item-1-dark",
+      "title": "Cart Line Item (Dark)",
+      "description": "Cart line item adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/cart-line-item/1-dark.html",
+        "tsx": "tsx/CartLineItemVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "min-quantity", "max-quantity"],
+      "accessibility": [
+        "Stepper button and text colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

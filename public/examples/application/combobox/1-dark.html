@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-xs p-6">
+    <div class="flex flex-col gap-1.5">
+      <label for="combobox-input" class="text-sm font-medium text-gray-300">Assignee</label>
+
+      <div class="relative">
+        <input
+          id="combobox-input"
+          type="text"
+          role="combobox"
+          aria-expanded="true"
+          aria-controls="combobox-listbox"
+          autocomplete="off"
+          value="Pr"
+          placeholder="Search people…"
+          class="w-full rounded-md border border-gray-700 bg-gray-900 py-2 pl-3 pr-9 text-sm text-white shadow-sm focus:border-gray-500 focus:outline-none"
+        />
+
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="pointer-events-none absolute right-3 top-1/2 size-4 -translate-y-1/2 text-gray-500">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+        </svg>
+
+        <ul id="combobox-listbox" role="listbox" aria-label="People" class="absolute z-10 mt-1.5 w-full overflow-hidden rounded-md border border-gray-800 bg-gray-900 py-1 shadow-lg">
+          <li role="option" aria-selected="true" class="flex items-center justify-between gap-2 bg-blue-950 px-3 py-1.5 text-sm text-blue-300">
+            <span>Priya Shah</span>
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+          </li>
+          <li role="option" aria-selected="false" class="px-3 py-1.5 text-sm text-gray-200 hover:bg-gray-800">Preston Ng</li>
+          <li role="option" aria-selected="false" class="px-3 py-1.5 text-sm text-gray-500" aria-disabled="true">No more matches</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

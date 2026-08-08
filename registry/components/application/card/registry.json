@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-card",
+  "title": "Card",
+  "description": "Media, eyebrow/title/description, and an optional author + action row inside a bordered surface.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["card", "content", "media", "container", "layout"],
+  "useWhen": [
+    "Presenting a single piece of content — an article, product, or update — with an optional image and a clear action.",
+    "Grouping related information (title, description, metadata) inside a visually distinct, self-contained surface.",
+    "Building a grid or list of similar items, such as a blog index or product catalog."
+  ],
+  "avoidWhen": [
+    "The content is a single short KPI or number — use `stat-tile` instead, which is purpose-built for that density.",
+    "You need a clickable preview that appears on hover over a trigger — use `hover-card` instead.",
+    "The layout has no natural title or grouping — a bare container without the card chrome is lighter weight."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Fills its container width; the image maintains a fixed height and crops via object-cover so the card holds its shape at any width.",
+  "accessibility": [
+    "The image's alt text should be empty (decorative) unless it conveys information the title/description doesn't already provide.",
+    "The action is a real <button> so it is reachable and operable via keyboard.",
+    "Heading level for the title should be chosen by the surrounding page structure, not hardcoded to always be an h3."
+  ],
+  "compatibleWith": ["application-avatar", "application-badges", "application-buttons"],
+  "variants": [
+    {
+      "id": "card-1",
+      "title": "Card",
+      "description": "Image, eyebrow, title, description, author, and an action button.",
+      "source": {
+        "html": "../../../../public/examples/application/card/1.html",
+        "tsx": "tsx/CardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Decorative content image uses an empty alt attribute; the author avatar is similarly decorative since the name is present as text."
+      ]
+    },
+    {
+      "id": "card-1-dark",
+      "title": "Card (Dark)",
+      "description": "Image, eyebrow, title, description, author, and an action button, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/card/1-dark.html",
+        "tsx": "tsx/CardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Text and border colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-reaction-bar",
+  "title": "Reaction Bar",
+  "description": "Aggregated emoji reaction pills with per-reaction counts, a toggleable reacted-by-you state, and an add-reaction trigger.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["reactions", "emoji", "social", "comments"],
+  "useWhen": [
+    "Showing the aggregate reaction counts on a comment, message, or post, where multiple users can react with the same emoji.",
+    "You need users to be able to add their own reaction or toggle an existing one they already added.",
+    "Pairing with `comment-thread` or `chat-bubbles`, using `emoji-picker` as the add-reaction popover content."
+  ],
+  "avoidWhen": [
+    "You need the full emoji browsing/search experience, not aggregated counts — use `emoji-picker` directly instead.",
+    "Only one reaction per item is allowed (not per-emoji aggregation) — a single like/heart toggle button is simpler.",
+    "Reaction counts aren't meaningful in your product (e.g. single-user context) — skip the aggregation entirely."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Pills wrap onto multiple lines via flex-wrap as more reactions accumulate, rather than overflowing or truncating.",
+  "accessibility": [
+    "The pill group has role=\"group\" with an aria-label describing it as reactions.",
+    "Each reaction pill is a real toggle button with aria-pressed reflecting whether the current user has reacted, and its aria-label states the emoji name, count, and reacted state as text — not relying on the emoji glyph or color alone.",
+    "The add-reaction control is a dashed-border icon button with an explicit aria-label, visually distinct from the filled reaction pills."
+  ],
+  "compatibleWith": ["application-comment-thread", "application-chat-bubbles", "application-emoji-picker"],
+  "variants": [
+    {
+      "id": "reaction-bar-1",
+      "title": "Reaction Bar",
+      "description": "Three reaction pills (one reacted by you) and an add-reaction trigger.",
+      "source": {
+        "html": "../../../../public/examples/application/reaction-bar/1.html",
+        "tsx": "tsx/ReactionBarVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "reacted"],
+      "accessibility": [
+        "Toggling a reaction updates real count and aria-pressed state together, so they never drift out of sync."
+      ]
+    },
+    {
+      "id": "reaction-bar-1-dark",
+      "title": "Reaction Bar (Dark)",
+      "description": "Reaction bar adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/reaction-bar/1-dark.html",
+        "tsx": "tsx/ReactionBarVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "reacted"],
+      "accessibility": [
+        "Reacted-state pill colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

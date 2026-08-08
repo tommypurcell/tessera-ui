@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "application-comment-thread",
+  "title": "Comment Thread",
+  "description": "Nested reply chain with avatars, timestamps, a like count, reply affordance, and a composer footer.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["comments", "thread", "discussion", "reply", "composer"],
+  "useWhen": [
+    "Showing a discussion with parent comments and nested replies, such as on a pull request, issue, or post.",
+    "Users need to both read a conversation and add to it in the same surface, via the composer footer.",
+    "Replies have a clear one-level parent/child relationship you want to convey with indentation."
+  ],
+  "avoidWhen": [
+    "The conversation is a flat, real-time message exchange between two or more people — use `chat-bubbles` instead.",
+    "You don't need threading — a flat list of comments without replies is simpler without the nested `<ol>` and indent rail.",
+    "Replies can nest more than one level deep — this pattern's single indent rail does not represent deeper nesting; consider a recursive tree pattern instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Stacks in a single column at all widths; the reply indent rail keeps a fixed pixel offset so deeply nested threads should be avoided on narrow viewports.",
+  "accessibility": [
+    "Comments and replies are list items (<ol>/<li>) so assistive tech announces thread structure and position.",
+    "The composer textarea has an associated (visually hidden) label rather than relying on placeholder text alone.",
+    "The submit button is disabled when the draft is empty, communicated via the disabled attribute rather than only visual dimming.",
+    "Avatar images are decorative (empty alt) since the author name is present as adjacent text."
+  ],
+  "compatibleWith": ["application-avatar", "application-textareas", "application-chat-bubbles"],
+  "variants": [
+    {
+      "id": "comment-thread-1",
+      "title": "Comment Thread",
+      "description": "A top-level comment with one nested reply and a comment composer.",
+      "source": {
+        "html": "../../../../public/examples/application/comment-thread/1.html",
+        "tsx": "tsx/CommentThreadVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "empty-draft", "filled-draft"],
+      "accessibility": [
+        "Reply threading is conveyed structurally via nested <ol> elements, not just visual indentation."
+      ]
+    },
+    {
+      "id": "comment-thread-1-dark",
+      "title": "Comment Thread (Dark)",
+      "description": "Comment thread adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/comment-thread/1-dark.html",
+        "tsx": "tsx/CommentThreadVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "empty-draft", "filled-draft"],
+      "accessibility": [
+        "Text and border colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

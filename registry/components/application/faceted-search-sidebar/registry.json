@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "application-faceted-search-sidebar",
+  "title": "Faceted Search Sidebar",
+  "description": "Collapsible filter groups combining checkbox facets with per-option result counts and a two-thumb price range facet.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["search", "filters", "facets", "ecommerce", "sidebar"],
+  "useWhen": [
+    "Building a product listing, catalog, or search results page where users narrow results by multiple independent dimensions.",
+    "Each filter option benefits from showing a live result count so users know a facet's usefulness before selecting it.",
+    "You need distinct facet types (checkbox groups, ranges) coexisting in one collapsible sidebar."
+  ],
+  "avoidWhen": [
+    "The filters are a small, flat set already applied and just need to be displayed/removed as chips — use `data-filter-bar` for that applied-filter layer instead.",
+    "There's only one filter dimension — a single `selects` or `toggle-group` is simpler than a full facet sidebar.",
+    "The page is too narrow for a persistent sidebar — consider a `drawer` or `sheet` housing the same facet groups instead of forcing this layout."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Fixed-width column meant for a sidebar rail; on narrow viewports, house it inside a `drawer` or `sheet` instead of shrinking it in place.",
+  "accessibility": [
+    "The sidebar is a <nav> with an aria-label describing it as filters, distinguishing it from primary site navigation.",
+    "Each facet group's trigger has aria-expanded reflecting its open state and aria-controls referencing the panel it toggles.",
+    "Checkbox facets are real <input type=\"checkbox\"> elements inside <label>s, so they are keyboard operable and their state is announced natively.",
+    "The price range's two thumbs are positioned with inline styles computed from real numeric state, not hardcoded percentages, so custom range values stay accurate."
+  ],
+  "compatibleWith": ["application-data-filter-bar", "application-checkboxes", "application-range-inputs"],
+  "variants": [
+    {
+      "id": "faceted-search-sidebar-1",
+      "title": "Faceted Search Sidebar",
+      "description": "Category checkboxes with counts, a price range facet, a collapsed Brand group, and a clear-all action.",
+      "source": {
+        "html": "../../../../public/examples/application/faceted-search-sidebar/1.html",
+        "tsx": "tsx/FacetedSearchSidebarVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "expanded", "collapsed"],
+      "accessibility": [
+        "Facet group expand/collapse state is real aria-expanded state, not just a rotated chevron."
+      ]
+    },
+    {
+      "id": "faceted-search-sidebar-1-dark",
+      "title": "Faceted Search Sidebar (Dark)",
+      "description": "Faceted search sidebar adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/faceted-search-sidebar/1-dark.html",
+        "tsx": "tsx/FacetedSearchSidebarVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "expanded", "collapsed"],
+      "accessibility": [
+        "Checkbox and range-thumb colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

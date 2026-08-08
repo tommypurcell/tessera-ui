@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-sm p-6">
+    <div class="rounded-xl border border-gray-800 bg-gray-950 p-4 shadow-sm">
+      <h3 class="text-sm font-semibold text-white">Order summary</h3>
+
+      <dl class="mt-4 flex flex-col gap-2.5 text-sm">
+        <div class="flex items-center justify-between">
+          <dt class="text-gray-400">Subtotal (3 items)</dt>
+          <dd class="text-white">$239.97</dd>
+        </div>
+        <div class="flex items-center justify-between">
+          <dt class="text-gray-400">Shipping</dt>
+          <dd class="text-white">$6.50</dd>
+        </div>
+        <div class="flex items-center justify-between">
+          <dt class="text-gray-400">Tax</dt>
+          <dd class="text-white">$19.72</dd>
+        </div>
+        <div class="flex items-center justify-between">
+          <dt class="text-emerald-400">Promo (WELCOME10)</dt>
+          <dd class="text-emerald-400">-$24.00</dd>
+        </div>
+      </dl>
+
+      <div class="mt-4 flex gap-2 border-t border-gray-800 pt-4">
+        <label for="promo-code" class="sr-only">Promo code</label>
+        <input
+          id="promo-code"
+          type="text"
+          placeholder="Promo code"
+          class="min-w-0 flex-1 rounded-md border border-gray-700 bg-gray-900 px-3 py-1.5 text-sm text-white shadow-sm focus:border-gray-500 focus:outline-none"
+        />
+        <button type="button" class="shrink-0 rounded-md border border-gray-700 bg-gray-900 px-3 py-1.5 text-xs font-semibold text-gray-200 shadow-sm hover:bg-gray-800">
+          Apply
+        </button>
+      </div>
+
+      <div class="mt-4 flex items-center justify-between border-t border-gray-800 pt-4">
+        <span class="text-sm font-semibold text-white">Total</span>
+        <span class="text-lg font-semibold text-white">$242.19</span>
+      </div>
+
+      <button type="button" class="mt-4 w-full rounded-md bg-blue-600 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500">
+        Proceed to checkout
+      </button>
+    </div>
+  </body>
+</html>

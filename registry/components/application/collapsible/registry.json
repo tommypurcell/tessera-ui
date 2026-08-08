@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-collapsible",
+  "title": "Collapsible",
+  "description": "A single expand/collapse content section with a button trigger and rotating chevron, driven by real aria-expanded state.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["collapsible", "expand", "disclosure", "toggle"],
+  "useWhen": [
+    "Hiding a single block of secondary content — comments, details, logs — behind a toggle to reduce initial visual weight.",
+    "Progressive disclosure for one section, where showing/hiding is independent of any sibling sections.",
+    "You need the disclosure pattern without the multi-item accordion semantics (single-open/multi-open groups)."
+  ],
+  "avoidWhen": [
+    "You have several related sections that should share open/close behavior as a group — use `accordions` instead.",
+    "The content is short enough to just show — collapsing it adds an interaction cost without a real space payoff.",
+    "The trigger needs to reveal a small floating panel anchored to it rather than push content inline — use `popover` instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Trigger and panel are both full-width block elements, so the component reflows naturally at any container width.",
+  "accessibility": [
+    "The trigger is a real <button> with aria-expanded reflecting open state.",
+    "aria-controls on the trigger references the panel's id so assistive tech can associate them.",
+    "The chevron icon is aria-hidden since its rotation is a redundant visual cue, not the source of truth."
+  ],
+  "compatibleWith": ["application-accordions", "application-card"],
+  "variants": [
+    {
+      "id": "collapsible-1",
+      "title": "Collapsible",
+      "description": "Expand/collapse section showing a comment thread, open by default.",
+      "source": {
+        "html": "../../../../public/examples/application/collapsible/1.html",
+        "tsx": "tsx/CollapsibleVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "expanded", "collapsed"],
+      "accessibility": [
+        "aria-expanded toggles between true/false as real state, not just a visual chevron flip."
+      ]
+    },
+    {
+      "id": "collapsible-1-dark",
+      "title": "Collapsible (Dark)",
+      "description": "Expand/collapse section adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/collapsible/1-dark.html",
+        "tsx": "tsx/CollapsibleVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "expanded", "collapsed"],
+      "accessibility": [
+        "Border and text colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

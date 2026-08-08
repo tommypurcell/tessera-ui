@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "application-product-card",
+  "title": "Product Card",
+  "description": "E-commerce product card with a hover quick-view overlay, title, star rating, price with an optional compare-at price, and an add-to-cart action.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["ecommerce", "product", "card", "shop", "cart"],
+  "useWhen": [
+    "Building a product listing or catalog grid where each item needs an image, price, and quick add-to-cart action.",
+    "You want to surface a discount by showing both the sale price and the original compare-at price.",
+    "A hover quick-view affordance would let users preview a product without a full page navigation."
+  ],
+  "avoidWhen": [
+    "The item has no price or purchase action — the generic `card` component is a better fit for editorial or content tiles.",
+    "You're showing an item already in the cart with quantity controls — use `cart-line-item` for that row-based, already-added state instead.",
+    "Hover states aren't reachable on the target device (e.g. a touch-primary storefront) — ensure quick-view has a non-hover fallback such as a persistent affordance."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Fixed-aspect square image scales with the card's width; the card itself is meant to sit inside a responsive grid that controls column count per breakpoint.",
+  "accessibility": [
+    "The star rating is a single role=\"img\" group with an aria-label stating the numeric rating and review count, rather than 5 separate ambiguous icons.",
+    "The add-to-cart button is icon-only with an aria-label naming the specific product, not a generic \"Add to cart\".",
+    "The discount badge and compare-at price communicate the sale through visible text (strikethrough + label), not color alone.",
+    "The product image's alt text describes the product, not the marketing copy already present in the title."
+  ],
+  "compatibleWith": ["application-card", "application-rating-distribution"],
+  "variants": [
+    {
+      "id": "product-card-1",
+      "title": "Product Card",
+      "description": "Headphones product card with a discount badge, hover quick-view, 4.5-star rating, and add-to-cart.",
+      "source": {
+        "html": "../../../../public/examples/application/product-card/1.html",
+        "tsx": "tsx/ProductCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "Quick-view only appears on hover/focus of the card group, so it must also be reachable via keyboard focus, not pointer hover alone."
+      ]
+    },
+    {
+      "id": "product-card-1-dark",
+      "title": "Product Card (Dark)",
+      "description": "Product card adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/product-card/1-dark.html",
+        "tsx": "tsx/ProductCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "Text and star colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

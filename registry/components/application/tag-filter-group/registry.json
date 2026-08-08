@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-tag-filter-group",
+  "title": "Tag Filter Group",
+  "description": "Multi-select tag filter pills — each tag toggles independently via real aria-pressed state — for filtering a list by facet.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["filter", "tags", "pills", "facet"],
+  "useWhen": [
+    "Filtering a list or grid by one or more independent tag facets (topics, labels, categories) with immediate visual feedback.",
+    "The number of tags is small enough to display as a wrapped row of pills (roughly under 15-20).",
+    "Multiple tags can be active simultaneously — this is multi-select, not a single-choice control."
+  ],
+  "avoidWhen": [
+    "You're collecting free-form tags from user text entry — use `tag-input` for that add/remove-by-typing pattern instead.",
+    "Only one tag can be active at a time — a `segmented-control` or `toggle-group` in single-select mode better conveys that constraint.",
+    "The tag list is long or needs search — pair with a `combobox` or move it into a `faceted-search-sidebar` checkbox group instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Pills wrap onto additional lines via flex-wrap as the container narrows or more tags are added, rather than overflowing or scrolling horizontally.",
+  "accessibility": [
+    "The pill row has role=\"group\" with an aria-label describing it as a tag filter.",
+    "Each pill is a real toggle button with aria-pressed reflecting its selected state, not a link or a styled checkbox hidden behind a label.",
+    "Selected vs. unselected pills are distinguished by both fill and border, not by color alone, so the state reads even without color perception."
+  ],
+  "compatibleWith": ["application-faceted-search-sidebar", "application-data-filter-bar", "application-tag-input"],
+  "variants": [
+    {
+      "id": "tag-filter-group-1",
+      "title": "Tag Filter Group",
+      "description": "Six tag pills with two selected (Design, Frontend) and four available.",
+      "source": {
+        "html": "../../../../public/examples/application/tag-filter-group/1.html",
+        "tsx": "tsx/TagFilterGroupVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "Each tag's selection is independent real state, so any combination of tags can be active at once."
+      ]
+    },
+    {
+      "id": "tag-filter-group-1-dark",
+      "title": "Tag Filter Group (Dark)",
+      "description": "Tag filter group adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/tag-filter-group/1-dark.html",
+        "tsx": "tsx/TagFilterGroupVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "Selected and unselected pill colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

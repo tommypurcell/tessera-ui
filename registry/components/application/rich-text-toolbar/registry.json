@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "application-rich-text-toolbar",
+  "title": "Rich Text Toolbar",
+  "description": "WYSIWYG formatting bar with a heading select, toggled bold/italic/underline and list buttons, and a link action, driven by real aria-pressed state.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["editor", "wysiwyg", "formatting", "toolbar", "rich text"],
+  "useWhen": [
+    "Building a rich text editor and need a formatting control bar above the editable region.",
+    "Users need to toggle inline styles (bold, italic, underline) and block formats (lists) on selected text.",
+    "The editing surface benefits from a heading-level select alongside inline formatting controls."
+  ],
+  "avoidWhen": [
+    "You need a generic page/section action bar with titles and buttons — use `toolbar` instead, which is not text-formatting specific.",
+    "The content is read-only or plain text — there is nothing to format, so the control bar adds noise without function.",
+    "You need a full document outline or multi-row ribbon — this is a single-row, focused formatting bar, not a ribbon UI."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Buttons wrap onto a second row via flex-wrap on narrow containers rather than overflowing or scrolling horizontally.",
+  "accessibility": [
+    "The button group carries role=\"toolbar\" with an aria-label describing its purpose.",
+    "Each toggle button has an explicit aria-label (since the visible glyph, e.g. \"B\", is not a reliable accessible name) and aria-pressed reflecting its active state.",
+    "Vertical dividers between button groups use role=\"separator\" with aria-orientation=\"vertical\" rather than a purely decorative element.",
+    "The heading select has an associated (visually hidden) label rather than relying on option text alone."
+  ],
+  "compatibleWith": ["application-textareas", "application-toolbar"],
+  "variants": [
+    {
+      "id": "rich-text-toolbar-1",
+      "title": "Rich Text Toolbar",
+      "description": "Formatting bar with heading select, bold/italic/underline toggles, list buttons, and a link action above sample editable text.",
+      "source": {
+        "html": "../../../../public/examples/application/rich-text-toolbar/1.html",
+        "tsx": "tsx/RichTextToolbarVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "active"],
+      "accessibility": [
+        "Toggle buttons announce their pressed state via aria-pressed, not just a background color change."
+      ]
+    },
+    {
+      "id": "rich-text-toolbar-1-dark",
+      "title": "Rich Text Toolbar (Dark)",
+      "description": "Formatting bar adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/rich-text-toolbar/1-dark.html",
+        "tsx": "tsx/RichTextToolbarVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "active"],
+      "accessibility": [
+        "Active-button and hover backgrounds are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

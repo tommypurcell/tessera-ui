@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "application-avatar-uploader",
+  "title": "Avatar Uploader",
+  "description": "Circular avatar drop-zone with a hover camera overlay, a live preview from a real file input, and Replace/Remove actions.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["avatar", "upload", "profile", "photo"],
+  "useWhen": [
+    "Letting a user set or change their profile photo on an account or settings page.",
+    "The upload target is a single circular image with an obvious 1:1 crop expectation, not an arbitrary file.",
+    "You want the whole avatar to be the click target rather than a separate small upload button."
+  ],
+  "avoidWhen": [
+    "Users need to upload multiple files or non-image files — use `file-uploaders` for that general-purpose case instead.",
+    "The avatar isn't user-editable (e.g. viewing someone else's profile) — a plain `avatar` display is correct without upload affordances.",
+    "You need cropping/zooming before saving — pair this with an `image-cropper` step rather than accepting the raw file as-is."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Fixed circular size that does not need to reflow; center it within its container at any viewport width.",
+  "accessibility": [
+    "The entire avatar circle is a <label> wrapping a real file input, so it is reachable and operable via keyboard, not just a decorative click target.",
+    "The camera overlay icon is aria-hidden since the label's accessible name already communicates the upload action.",
+    "The hidden native file input is visually hidden with sr-only, not display:none, so it remains in the accessibility tree and focusable.",
+    "Replace/Remove are separate, clearly labeled text actions rather than being bundled into one ambiguous control."
+  ],
+  "compatibleWith": ["application-avatar", "application-file-uploaders", "application-profile-edit-form"],
+  "variants": [
+    {
+      "id": "avatar-uploader-1",
+      "title": "Avatar Uploader",
+      "description": "Circular photo preview with a hover camera overlay and Replace/Remove actions below.",
+      "source": {
+        "html": "../../../../public/examples/application/avatar-uploader/1.html",
+        "tsx": "tsx/AvatarUploaderVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "empty", "hover"],
+      "accessibility": [
+        "Selecting a file updates a real object-URL preview and reveals the Remove action, rather than being a static mockup."
+      ]
+    },
+    {
+      "id": "avatar-uploader-1-dark",
+      "title": "Avatar Uploader (Dark)",
+      "description": "Avatar uploader adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/avatar-uploader/1-dark.html",
+        "tsx": "tsx/AvatarUploaderVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "empty", "hover"],
+      "accessibility": [
+        "The empty-state ring and placeholder text colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

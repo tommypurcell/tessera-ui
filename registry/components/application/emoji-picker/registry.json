@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "application-emoji-picker",
+  "title": "Emoji / Reaction Picker",
+  "description": "Searchable emoji picker with category tabs, a recently-used grid, and per-emoji accessible labels.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["emoji", "reactions", "picker", "popover"],
+  "useWhen": [
+    "Letting users add an emoji reaction to a comment, message, or post — pair with `comment-thread` or `chat-bubbles`.",
+    "Building a text composer that needs an emoji-insert affordance alongside formatting controls.",
+    "You want quick access to recently-used emoji before making users browse full categories."
+  ],
+  "avoidWhen": [
+    "You only need a small, fixed set of quick reactions (e.g. 👍 ❤️ 😂) — a plain row of buttons is lighter weight than a full picker.",
+    "The product doesn't need free-form emoji selection at all — don't add this just because it's available.",
+    "You need skin-tone variants or full Unicode coverage — this pattern ships a small curated set per category as a starting point, not an exhaustive emoji database."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Fixed-width popover-style panel; anchor it to a trigger button and let your popover/positioning layer handle placement near viewport edges.",
+  "accessibility": [
+    "Category tabs use role=\"tablist\"/role=\"tab\" with aria-selected reflecting the active category.",
+    "The emoji grid uses role=\"listbox\"/role=\"option\" and every emoji button has a real aria-label describing it (e.g. \"Thumbs up\"), since the emoji glyph alone is not a reliable accessible name.",
+    "The search field has an associated (visually hidden) label rather than relying on placeholder text alone.",
+    "An empty search result state is rendered as visible text (\"No matching emoji\"), not a silently empty grid."
+  ],
+  "compatibleWith": ["application-comment-thread", "application-chat-bubbles", "application-popover"],
+  "variants": [
+    {
+      "id": "emoji-picker-1",
+      "title": "Emoji / Reaction Picker",
+      "description": "Search field, category tabs (Recent/Smileys/Gestures/Nature), and a recently-used emoji grid.",
+      "source": {
+        "html": "../../../../public/examples/application/emoji-picker/1.html",
+        "tsx": "tsx/EmojiPickerVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "filtered", "no-results"],
+      "accessibility": [
+        "Search filters a real emoji list by label, and results reflect the active category, not a static grid."
+      ]
+    },
+    {
+      "id": "emoji-picker-1-dark",
+      "title": "Emoji / Reaction Picker (Dark)",
+      "description": "Emoji picker adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/emoji-picker/1-dark.html",
+        "tsx": "tsx/EmojiPickerVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "filtered", "no-results"],
+      "accessibility": [
+        "Active-tab and hover backgrounds are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}
