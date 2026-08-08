@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-recipe-step-card",
+  "title": "Recipe Step Card",
+  "description": "Numbered cooking step with instructions, an image, and a real start/pause/reset countdown timer that ticks via an interval and stops itself at zero.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["recipe", "cooking", "timer", "step"],
+  "useWhen": [
+    "Walking a user through a single recipe step at a time where a specific step benefits from an active countdown (simmering, baking, resting).",
+    "The timer should be genuinely interactive (start/pause/reset), not a static duration label.",
+    "Each step benefits from a numbered badge over an image to visually anchor progress through the recipe."
+  ],
+  "avoidWhen": [
+    "You're building a sequential list of lessons/videos to play through — use `lesson-playlist` for that playlist-navigation pattern instead.",
+    "The step has no timed component — drop the timer control and use a simpler numbered instruction card.",
+    "Multiple timers need to run simultaneously across steps — coordinate state at a parent level rather than duplicating this card blindly."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Fixed-width card (max-w-sm) with an aspect-video image; instructions text wraps naturally and the timer control row stays a fixed height.",
+  "accessibility": [
+    "The Start/Pause button label always reflects real running state, and disables itself once the timer reaches zero rather than allowing a no-op restart.",
+    "Timer time is rendered as monospaced, tabular-nums text so digits don't shift width as they change.",
+    "Reset returns the timer to its original duration and stopped state in one action, matching the visible 'Reset' label."
+  ],
+  "compatibleWith": ["application-recipe-ingredient-list", "application-lesson-playlist"],
+  "variants": [
+    {
+      "id": "recipe-step-card-1",
+      "title": "Recipe Step Card",
+      "description": "Step 3 of a recipe with an 8-minute simmer timer; Start begins a real countdown, Pause halts it, Reset restores 08:00.",
+      "source": {
+        "html": "../../../../public/examples/application/recipe-step-card/1.html",
+        "tsx": "tsx/RecipeStepCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["idle", "running", "paused", "finished"],
+      "accessibility": [
+        "Timer countdown is driven by a real interval and the Start/Pause button label and disabled state are derived from the same running/remaining values."
+      ]
+    },
+    {
+      "id": "recipe-step-card-1-dark",
+      "title": "Recipe Step Card (Dark)",
+      "description": "Recipe step card adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/recipe-step-card/1-dark.html",
+        "tsx": "tsx/RecipeStepCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["idle", "running", "paused", "finished"],
+      "accessibility": [
+        "Timer and button colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}
