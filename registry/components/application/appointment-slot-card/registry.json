@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-appointment-slot-card",
+  "title": "Appointment Slot Card",
+  "description": "Provider, appointment type, and time-slot card with reschedule/confirm actions, driven by a typed provider/slot prop contract.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["appointment", "booking", "scheduling", "healthcare", "provider"],
+  "useWhen": [
+    "Presenting a single proposed or confirmed appointment slot with a provider and time before final booking.",
+    "The appointment type (video call, in-person, phone) should be visually distinguished from the provider identity.",
+    "Users need a clear reschedule-or-confirm decision point for one specific slot."
+  ],
+  "avoidWhen": [
+    "You need to display a list of many appointment options at once — use the Availability Grid for slot selection instead.",
+    "The confirmation flow needs multiple steps (insurance, forms) — pair this card with a Stepper Wizard rather than a single card.",
+    "There is no provider concept (e.g. a generic calendar event) — a simpler event card is more appropriate."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The card is a single fixed-width block with intrinsic sizing; the reschedule/confirm buttons sit side by side and remain full-width within their half of the row at any card width.",
+  "accessibility": [
+    "The appointment type badge uses both a background tint and a text label so the type is never communicated by color alone.",
+    "The date/time row uses a decorative calendar icon (aria-hidden) with the schedule text itself carrying the actual meaning.",
+    "Reschedule and Confirm are both full-width, clearly labeled buttons rather than icon-only actions, avoiding ambiguity about which is primary."
+  ],
+  "compatibleWith": ["application-availability-grid", "application-avatar"],
+  "variants": [
+    {
+      "id": "appointment-slot-card-1",
+      "title": "Appointment Slot Card",
+      "description": "Provider avatar/name/specialty header, an appointment-type badge, a date/time row, and reschedule/confirm-booking actions.",
+      "source": {
+        "html": "../../../../public/examples/application/appointment-slot-card/1.html",
+        "tsx": "tsx/AppointmentSlotCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The appointment-type badge pairs a tinted background with a text label, not color alone."
+      ]
+    },
+    {
+      "id": "appointment-slot-card-1-dark",
+      "title": "Appointment Slot Card (Dark)",
+      "description": "Appointment card adapted for dark surfaces with the same provider-header, type-badge, and action structure.",
+      "source": {
+        "html": "../../../../public/examples/application/appointment-slot-card/1-dark.html",
+        "tsx": "tsx/AppointmentSlotCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Provider name, badge, time text, and button labels must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
