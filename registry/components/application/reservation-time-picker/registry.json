@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-reservation-time-picker",
+  "title": "Reservation Time Picker",
+  "description": "Party-size stepper, date trigger, and a wrapped grid of available/unavailable time chips with a confirm action, driven by a typed party-size/date/times prop contract.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["reservation", "booking", "restaurant", "scheduling", "time-chip"],
+  "useWhen": [
+    "Booking a restaurant table or similar reservation where party size, date, and time slot all need to be chosen together.",
+    "Time slots should render as a compact wrapping chip grid rather than a full calendar grid.",
+    "Some time chips are unavailable and should remain visible but unselectable, distinct from selectable slots."
+  ],
+  "avoidWhen": [
+    "You need a full week/day grid of bookable slots — use the Availability Grid instead.",
+    "There's no party-size concept (e.g. equipment or room booking) — a simpler Date Picker plus time chips without the stepper is enough.",
+    "Pricing varies by slot — use the Delivery Slot Picker pattern instead, which surfaces price per option."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The party-size and date controls sit in a two-column grid that can stack on very narrow viewports; the time chip row wraps naturally via flex-wrap regardless of width.",
+  "accessibility": [
+    "The party-size stepper buttons carry explicit aria-labels ('Decrease party size', 'Increase party size') since they show only a glyph.",
+    "Unavailable time chips are real disabled buttons, not just visually dimmed clickable elements, so they're correctly skipped in keyboard navigation.",
+    "The selected time chip uses aria-pressed in addition to its filled background, and the confirm button restates the full selection in its label."
+  ],
+  "compatibleWith": ["application-date-picker", "application-availability-grid"],
+  "variants": [
+    {
+      "id": "reservation-time-picker-1",
+      "title": "Reservation Time Picker",
+      "description": "Party-size stepper and date trigger side by side, a wrapping grid of available/unavailable/selected time chips, and a confirm button restating the full booking.",
+      "source": {
+        "html": "../../../../public/examples/application/reservation-time-picker/1.html",
+        "tsx": "tsx/ReservationTimePickerVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "selected", "unavailable"],
+      "accessibility": [
+        "Unavailable time chips are disabled buttons rather than styled spans, keeping them out of the tab order appropriately."
+      ]
+    },
+    {
+      "id": "reservation-time-picker-1-dark",
+      "title": "Reservation Time Picker (Dark)",
+      "description": "Reservation picker adapted for dark surfaces with the same party-size, date, time-chip, and confirm-action structure.",
+      "source": {
+        "html": "../../../../public/examples/application/reservation-time-picker/1-dark.html",
+        "tsx": "tsx/ReservationTimePickerVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "selected", "unavailable"],
+      "accessibility": [
+        "Time chip fills, ring colors, and the confirm button must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

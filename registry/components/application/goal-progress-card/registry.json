@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-goal-progress-card",
+  "title": "Goal Progress Card",
+  "description": "Target-vs-actual card with a pacing indicator and projected-finish note, driven by a typed current/target/pacing prop contract.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["goal", "target", "pacing", "kpi", "dashboard"],
+  "useWhen": [
+    "Tracking a time-bound goal (revenue, signups, tasks) where progress should be compared against an expected pace, not just a raw percentage.",
+    "Users benefit from a projection ('on track to finish at X by date') rather than only the current value.",
+    "A dashboard needs a single-goal focus card distinct from a generic percent-complete progress bar."
+  ],
+  "avoidWhen": [
+    "You only need to show a simple percent-complete value — use the plain progress-bars component instead.",
+    "The metric is a resource quota with a hard ceiling (e.g. storage limit) — use the Usage Meter Card instead, which is threshold-alerting rather than pacing-focused.",
+    "There is no time dimension or expected pace to compare against — a stat tile communicates a single value more simply."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The card is a single fixed-width block with intrinsic sizing; place it in your own dashboard grid to control column count at each breakpoint.",
+  "accessibility": [
+    "The pacing badge pairs a color dot with an explicit text label ('Ahead of pace', 'Behind pace'), not color alone.",
+    "The expected-pace marker on the progress track is a supplementary visual cue; the 'Expected today: X%' text below is the accessible source of truth.",
+    "The projection note is rendered as real paragraph text so screen readers announce the full projected outcome, not just a number."
+  ],
+  "compatibleWith": ["application-stat-tile", "application-progress-bars"],
+  "variants": [
+    {
+      "id": "goal-progress-card-1",
+      "title": "Goal Progress Card",
+      "description": "Goal card with current-vs-target value, a progress bar showing an expected-pace marker, percent labels, and a projected-finish note.",
+      "source": {
+        "html": "../../../../public/examples/application/goal-progress-card/1.html",
+        "tsx": "tsx/GoalProgressCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["ahead", "on-pace", "behind"],
+      "accessibility": [
+        "The expected-pace tick mark on the bar is decorative; the numeric 'Expected today' label carries the actual meaning."
+      ]
+    },
+    {
+      "id": "goal-progress-card-1-dark",
+      "title": "Goal Progress Card (Dark)",
+      "description": "Goal-tracking card adapted for dark surfaces with the same pacing badge, progress bar, and projection-note structure.",
+      "source": {
+        "html": "../../../../public/examples/application/goal-progress-card/1-dark.html",
+        "tsx": "tsx/GoalProgressCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["ahead", "on-pace", "behind"],
+      "accessibility": [
+        "Pacing badge, progress fill, and projection text must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

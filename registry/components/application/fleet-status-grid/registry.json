@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-fleet-status-grid",
+  "title": "Fleet Status Grid",
+  "description": "Vehicle tile grid with active/idle/maintenance status pills and assigned driver, driven by a typed vehicles prop contract.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["fleet", "vehicles", "logistics", "status", "grid"],
+  "useWhen": [
+    "Logistics or delivery dashboards need an at-a-glance overview of many vehicles' current status.",
+    "Each vehicle has a driver assignment (or lack thereof) worth surfacing alongside its status.",
+    "Vehicles fall into a small set of states (active, idle, maintenance) that benefit from consistent status pills."
+  ],
+  "avoidWhen": [
+    "You need service-level infrastructure health rather than physical vehicles — use the Health Check Grid instead.",
+    "Only one vehicle needs tracking — a single detail card is simpler than a grid.",
+    "Real-time location matters more than status — pair this grid with (or replace it with) a live map view."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The grid uses 2 columns on narrow viewports and 3 columns from the sm breakpoint up; each tile keeps intrinsic sizing so it reflows cleanly at any grid width.",
+  "accessibility": [
+    "Status pills pair a color dot with an explicit text label ('Active', 'Idle', 'Maintenance'), never color alone.",
+    "The vehicle icon at the top of each tile is decorative (aria-hidden); the label and driver text carry the actual identifying information.",
+    "Unassigned vehicles show 'Unassigned' as visible text rather than leaving the driver line blank, avoiding ambiguity."
+  ],
+  "compatibleWith": ["application-status-page-board", "application-health-check-grid"],
+  "variants": [
+    {
+      "id": "fleet-status-grid-1",
+      "title": "Fleet Status Grid",
+      "description": "Responsive tile grid with a vehicle icon, status pill (active/idle/maintenance), vehicle label, and assigned driver per tile.",
+      "source": {
+        "html": "../../../../public/examples/application/fleet-status-grid/1.html",
+        "tsx": "tsx/FleetStatusGridVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["active", "idle", "maintenance"],
+      "accessibility": [
+        "Each status pill's color is reinforced by an explicit text label so status is never communicated by color alone."
+      ]
+    },
+    {
+      "id": "fleet-status-grid-1-dark",
+      "title": "Fleet Status Grid (Dark)",
+      "description": "Vehicle status grid adapted for dark surfaces with the same icon, status-pill, and driver-label structure.",
+      "source": {
+        "html": "../../../../public/examples/application/fleet-status-grid/1-dark.html",
+        "tsx": "tsx/FleetStatusGridVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["active", "idle", "maintenance"],
+      "accessibility": [
+        "Status pill colors and tile text must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

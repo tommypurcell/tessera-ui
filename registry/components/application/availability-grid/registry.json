@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-availability-grid",
+  "title": "Availability Grid",
+  "description": "Bookable time-slot grid with free/busy/selected button states across a row of days, driven by a typed days/times/slots prop contract.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["availability", "booking", "scheduling", "calendar", "time-slot"],
+  "useWhen": [
+    "Letting a user pick a bookable time slot across several days, such as scheduling a meeting or appointment.",
+    "Some slots must be shown as unavailable (busy) and excluded from selection, distinct from free slots.",
+    "A compact grid view of the week's availability is preferable to paging through single days."
+  ],
+  "avoidWhen": [
+    "You need a full month calendar with events — use the Event Calendar component instead.",
+    "Only a single day's slots need to be shown — a simple vertical list of times may be clearer than a grid.",
+    "Slots don't have a fixed grid cadence (e.g. arbitrary-length events) — a calendar view fits variable-duration events better."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The day columns use a CSS grid that shares available width evenly; on narrow viewports, reduce the number of visible days or allow the grid to scroll horizontally rather than shrinking cells below a legible size.",
+  "accessibility": [
+    "Each slot button carries a composed aria-label naming the day, time, and current state, since the grid layout alone doesn't convey that combination to screen readers.",
+    "Busy slots are real disabled buttons, not just visually dimmed clickable elements, so they're correctly skipped in keyboard navigation.",
+    "Selected slots use aria-pressed in addition to their filled background, and the bottom legend restates all three states with both a swatch and a text label."
+  ],
+  "compatibleWith": ["application-date-picker", "application-stepper-wizard"],
+  "variants": [
+    {
+      "id": "availability-grid-1",
+      "title": "Availability Grid",
+      "description": "Week-view time-slot grid with day column headers, hour row labels, free/busy/selected button states, and a bottom legend.",
+      "source": {
+        "html": "../../../../public/examples/application/availability-grid/1.html",
+        "tsx": "tsx/AvailabilityGridVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["free", "busy", "selected"],
+      "accessibility": [
+        "Busy slots are disabled buttons; free and selected states are distinguished by both fill color and text label, not color alone."
+      ]
+    },
+    {
+      "id": "availability-grid-1-dark",
+      "title": "Availability Grid (Dark)",
+      "description": "Bookable time-slot grid adapted for dark surfaces with the same day/time-header, slot-state, and legend structure.",
+      "source": {
+        "html": "../../../../public/examples/application/availability-grid/1-dark.html",
+        "tsx": "tsx/AvailabilityGridVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["free", "busy", "selected"],
+      "accessibility": [
+        "Free/busy/selected fill colors and their text labels must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

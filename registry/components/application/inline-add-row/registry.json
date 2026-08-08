@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-inline-add-row",
+  "title": "Inline Add Row",
+  "description": "Table footer row with always-editable inputs for adding a new item without leaving the table, driven by a typed items/draft prop contract.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["table", "inline-add", "editable", "quick-add"],
+  "useWhen": [
+    "Users frequently add short, simple rows (tasks, tags, line items) and shouldn't need a separate dialog.",
+    "The new-item fields are few enough to fit inline in a footer row.",
+    "You want the add affordance always visible rather than hidden behind a button that opens a form."
+  ],
+  "avoidWhen": [
+    "The new item needs many fields or complex validation — use a Dialog or Drawer form instead of cramming it into a row.",
+    "Rows need full inline cell editing after creation too — pair this with a dedicated data-grid cell editor instead.",
+    "Table width is too narrow for multiple inline inputs — a modal add-flow avoids layout cramping."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The footer inputs sit in a flex row that wraps if needed on narrow viewports; the task input grows to fill remaining space while the assignee input keeps a fixed width.",
+  "accessibility": [
+    "Both inputs carry visible placeholder text describing their purpose; pair with a visually hidden label if omitting placeholder-only guidance in production.",
+    "The Add button is a labeled text button, not icon-only, so its action is unambiguous.",
+    "The cancel (clear) button is icon-only but carries an explicit aria-label."
+  ],
+  "compatibleWith": ["application-data-table", "application-tables"],
+  "variants": [
+    {
+      "id": "inline-add-row-1",
+      "title": "Inline Add Row",
+      "description": "Task table with existing rows and an always-visible footer row containing task-name and assignee inputs, an Add button, and a clear action.",
+      "source": {
+        "html": "../../../../public/examples/application/inline-add-row/1.html",
+        "tsx": "tsx/InlineAddRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "drafting"],
+      "accessibility": [
+        "The footer row uses colSpan to remain a valid table row while hosting non-cell input controls."
+      ]
+    },
+    {
+      "id": "inline-add-row-1-dark",
+      "title": "Inline Add Row (Dark)",
+      "description": "Inline add-row table adapted for dark surfaces with the same footer-input and Add/clear action structure.",
+      "source": {
+        "html": "../../../../public/examples/application/inline-add-row/1-dark.html",
+        "tsx": "tsx/InlineAddRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "drafting"],
+      "accessibility": [
+        "Footer input borders, placeholder text, and the Add button must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

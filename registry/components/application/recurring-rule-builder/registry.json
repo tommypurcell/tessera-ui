@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-recurring-rule-builder",
+  "title": "Recurring Rule Builder",
+  "description": "Schedule editor for 'repeats every N days/weeks on…' recurrence rules with weekday toggles and an end condition, driven by a typed interval/weekdays/end-mode prop contract.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["recurring", "schedule", "calendar", "rrule", "form"],
+  "useWhen": [
+    "Configuring a recurring event, task, or reminder with an interval, specific weekdays, and an end condition.",
+    "Users need to see a plain-language summary of the rule they're building as they edit it.",
+    "The recurrence needs to support multiple end conditions: never, a specific date, or after N occurrences."
+  ],
+  "avoidWhen": [
+    "The recurrence is a fixed set of presets (daily, weekly, monthly) with no customization — a simple select is simpler than a full rule builder.",
+    "You need arbitrary boolean condition logic — use the Query Builder instead, which is built for AND/OR grouping rather than calendar recurrence.",
+    "The schedule only ever repeats indefinitely with no weekday or end-date control — a basic interval input suffices."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The interval row and weekday toggle row both wrap via flex-wrap on narrow viewports; the end-condition radio group stacks vertically at any width.",
+  "accessibility": [
+    "Weekday toggle buttons use aria-pressed to reflect selection state, not fill color alone.",
+    "The end-condition inputs (date, occurrence count) are disabled via the native disabled attribute when their radio option isn't selected, preventing confusing focus/edit states.",
+    "The plain-language summary at the bottom restates the rule in full sentences, giving non-visual users a single place to confirm the configured schedule."
+  ],
+  "compatibleWith": ["application-date-picker", "application-query-builder"],
+  "variants": [
+    {
+      "id": "recurring-rule-builder-1",
+      "title": "Recurring Rule Builder",
+      "description": "Interval input + unit select, a row of toggleable weekday pills, a three-way end-condition radio group, and a plain-language rule summary.",
+      "source": {
+        "html": "../../../../public/examples/application/recurring-rule-builder/1.html",
+        "tsx": "tsx/RecurringRuleBuilderVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Selected weekday pills use both a filled background and aria-pressed, not fill color alone."
+      ]
+    },
+    {
+      "id": "recurring-rule-builder-1-dark",
+      "title": "Recurring Rule Builder (Dark)",
+      "description": "Recurring schedule editor adapted for dark surfaces with the same interval, weekday-pill, and end-condition structure.",
+      "source": {
+        "html": "../../../../public/examples/application/recurring-rule-builder/1-dark.html",
+        "tsx": "tsx/RecurringRuleBuilderVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Weekday pill fills, radio labels, and the summary box text must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

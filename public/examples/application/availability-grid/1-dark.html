@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-lg bg-gray-950 p-6">
+    <div class="rounded-xl border border-gray-800 bg-gray-900 p-4">
+      <div class="grid grid-cols-[3.5rem_repeat(4,1fr)] gap-1">
+        <span></span>
+        <span class="text-center text-xs font-medium text-gray-400">Mon</span>
+        <span class="text-center text-xs font-medium text-gray-400">Tue</span>
+        <span class="text-center text-xs font-medium text-gray-400">Wed</span>
+        <span class="text-center text-xs font-medium text-gray-400">Thu</span>
+
+        <span class="py-1.5 text-right text-xs text-gray-500">9 AM</span>
+        <button type="button" aria-pressed="false" aria-label="Monday 9 AM, available" class="rounded-md bg-green-950/50 py-2 text-xs font-medium text-green-400 ring-1 ring-inset ring-green-900 hover:bg-green-900/50">Free</button>
+        <button type="button" disabled aria-label="Tuesday 9 AM, unavailable" class="rounded-md bg-gray-800 py-2 text-xs text-gray-600">Busy</button>
+        <button type="button" aria-pressed="false" aria-label="Wednesday 9 AM, available" class="rounded-md bg-green-950/50 py-2 text-xs font-medium text-green-400 ring-1 ring-inset ring-green-900 hover:bg-green-900/50">Free</button>
+        <button type="button" aria-pressed="false" aria-label="Thursday 9 AM, available" class="rounded-md bg-green-950/50 py-2 text-xs font-medium text-green-400 ring-1 ring-inset ring-green-900 hover:bg-green-900/50">Free</button>
+
+        <span class="py-1.5 text-right text-xs text-gray-500">10 AM</span>
+        <button type="button" aria-pressed="true" aria-label="Monday 10 AM, selected" class="rounded-md bg-white py-2 text-xs font-medium text-gray-900">Selected</button>
+        <button type="button" aria-pressed="false" aria-label="Tuesday 10 AM, available" class="rounded-md bg-green-950/50 py-2 text-xs font-medium text-green-400 ring-1 ring-inset ring-green-900 hover:bg-green-900/50">Free</button>
+        <button type="button" disabled aria-label="Wednesday 10 AM, unavailable" class="rounded-md bg-gray-800 py-2 text-xs text-gray-600">Busy</button>
+        <button type="button" aria-pressed="false" aria-label="Thursday 10 AM, available" class="rounded-md bg-green-950/50 py-2 text-xs font-medium text-green-400 ring-1 ring-inset ring-green-900 hover:bg-green-900/50">Free</button>
+
+        <span class="py-1.5 text-right text-xs text-gray-500">11 AM</span>
+        <button type="button" disabled aria-label="Monday 11 AM, unavailable" class="rounded-md bg-gray-800 py-2 text-xs text-gray-600">Busy</button>
+        <button type="button" aria-pressed="false" aria-label="Tuesday 11 AM, available" class="rounded-md bg-green-950/50 py-2 text-xs font-medium text-green-400 ring-1 ring-inset ring-green-900 hover:bg-green-900/50">Free</button>
+        <button type="button" aria-pressed="false" aria-label="Wednesday 11 AM, available" class="rounded-md bg-green-950/50 py-2 text-xs font-medium text-green-400 ring-1 ring-inset ring-green-900 hover:bg-green-900/50">Free</button>
+        <button type="button" aria-pressed="false" aria-label="Thursday 11 AM, available" class="rounded-md bg-green-950/50 py-2 text-xs font-medium text-green-400 ring-1 ring-inset ring-green-900 hover:bg-green-900/50">Free</button>
+      </div>
+
+      <div class="mt-4 flex items-center gap-4 border-t border-gray-800 pt-3 text-xs text-gray-400">
+        <span class="flex items-center gap-1.5">
+          <span class="size-2.5 rounded-sm bg-green-950/50 ring-1 ring-inset ring-green-900"></span>
+          Free
+        </span>
+        <span class="flex items-center gap-1.5">
+          <span class="size-2.5 rounded-sm bg-gray-800"></span>
+          Busy
+        </span>
+        <span class="flex items-center gap-1.5">
+          <span class="size-2.5 rounded-sm bg-white"></span>
+          Selected
+        </span>
+      </div>
+    </div>
+  </body>
+</html>

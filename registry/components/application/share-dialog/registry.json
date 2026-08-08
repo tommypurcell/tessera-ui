@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-share-dialog",
+  "title": "Share Dialog",
+  "description": "Invite-by-email dialog with a role dropdown, member list with per-member role control, and a copy-link row, driven by a typed members prop contract.",
+  "category": "application/overlays",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["share", "invite", "collaboration", "permissions", "dialog"],
+  "useWhen": [
+    "Sharing a document, project, or resource with specific people by email, each with their own access level.",
+    "Users need to see and adjust existing collaborators' roles alongside inviting new ones.",
+    "A general shareable-link option should sit alongside individual email invites."
+  ],
+  "avoidWhen": [
+    "Only a single shareable link is needed with no per-person roles — a simpler Copy-to-Clipboard Field is enough.",
+    "You need to manage a large team's roles in bulk — use a dedicated members/settings page instead of a dialog.",
+    "The resource has no concept of granular roles (edit/view) — a plain invite list without a role selector is simpler."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The dialog is a fixed-width card meant to sit centered over a full-screen scrim; the invite row wraps its input/select/button as needed on narrow viewports.",
+  "accessibility": [
+    "The dialog uses role='dialog' with aria-modal='true' and is labelled by its heading id.",
+    "The email field carries a visible placeholder and type='email' for correct keyboard and validation behavior.",
+    "Each member's role control is either a real <select> (editable) or plain text (fixed, e.g. Owner), never a non-interactive dropdown look-alike."
+  ],
+  "compatibleWith": ["application-dialog", "application-avatar"],
+  "variants": [
+    {
+      "id": "share-dialog-1",
+      "title": "Share Dialog",
+      "description": "Invite dialog with an email + role + invite row, a member list showing fixed Owner and editable role selects, and a copy-link footer row.",
+      "source": {
+        "html": "../../../../public/examples/application/share-dialog/1.html",
+        "tsx": "tsx/ShareDialogVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The Owner role is shown as plain text since it isn't editable, avoiding a disabled-looking dropdown."
+      ]
+    },
+    {
+      "id": "share-dialog-1-dark",
+      "title": "Share Dialog (Dark)",
+      "description": "Invite dialog adapted for dark surfaces with the same invite row, member list, and copy-link structure.",
+      "source": {
+        "html": "../../../../public/examples/application/share-dialog/1-dark.html",
+        "tsx": "tsx/ShareDialogVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Member names, emails, role text, and the copy-link action must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

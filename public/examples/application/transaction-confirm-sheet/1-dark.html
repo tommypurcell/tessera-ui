@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex min-h-96 items-center justify-center bg-black/60 p-6">
+    <div role="dialog" aria-modal="true" aria-labelledby="tx-confirm-title" class="w-full max-w-sm rounded-xl border border-gray-800 bg-gray-900 p-6 shadow-2xl">
+      <h2 id="tx-confirm-title" class="text-base font-semibold text-white">Confirm transaction</h2>
+
+      <div class="mt-4 flex flex-col items-center rounded-lg bg-gray-800 py-4">
+        <span class="text-2xl font-semibold text-white">0.42 ETH</span>
+        <span class="mt-0.5 text-sm text-gray-400">≈ $1,428.60</span>
+      </div>
+
+      <div class="mt-4 flex flex-col gap-2.5 text-sm">
+        <div class="flex items-center justify-between">
+          <span class="text-gray-400">From</span>
+          <code class="text-white">0x8f2a…c19e</code>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-gray-400">To</span>
+          <code class="text-white">0x4b71…9a03</code>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-gray-400">Network fee</span>
+          <span class="text-white">$1.15</span>
+        </div>
+        <div class="flex items-center justify-between border-t border-gray-800 pt-2.5 font-medium">
+          <span class="text-white">Total</span>
+          <span class="text-white">$1,429.75</span>
+        </div>
+      </div>
+
+      <div class="mt-5 flex gap-2.5">
+        <button type="button" class="flex-1 rounded-md border border-gray-700 bg-gray-900 px-3.5 py-2 text-sm font-medium text-gray-200 shadow-sm hover:bg-gray-800">
+          Cancel
+        </button>
+        <button type="button" class="flex-1 rounded-md bg-white px-3.5 py-2 text-sm font-medium text-gray-900 shadow-sm hover:bg-gray-200">
+          Confirm
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

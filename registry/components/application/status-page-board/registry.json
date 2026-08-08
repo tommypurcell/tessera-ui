@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-status-page-board",
+  "title": "Status Page Board",
+  "description": "Grouped service list with operational/degraded/outage pills and per-service uptime bars, driven by a typed groups/services prop contract.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["status", "uptime", "monitoring", "incident", "board"],
+  "useWhen": [
+    "A public or internal status page needs to show the health of multiple grouped services at a glance.",
+    "Each service benefits from a short recent-history strip (uptime bars) alongside its current state pill.",
+    "Services are naturally grouped (e.g. Core services, Infrastructure) rather than a single flat list."
+  ],
+  "avoidWhen": [
+    "You only need a single aggregate health indicator — a Connection Status Pill is lighter for that case.",
+    "You need a chronological log of past incidents — pair this board with a separate incident history list.",
+    "Real-time per-minute granularity is required — this component summarizes into discrete bars, not a live chart."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Each service row stays on one line with the uptime bars and status pill right-aligned; on very narrow viewports, let the row wrap so the pill remains fully legible.",
+  "accessibility": [
+    "Status pills pair a color dot with a text label ('Operational', 'Degraded', 'Outage'), never color alone.",
+    "The uptime bar strip is marked aria-hidden since it is a supplementary visual summary — the status pill is the accessible source of truth.",
+    "Group headings use distinct typography (uppercase, muted) to separate sections without relying on spacing alone."
+  ],
+  "compatibleWith": ["application-badges", "application-activity-feed"],
+  "variants": [
+    {
+      "id": "status-page-board-1",
+      "title": "Status Page Board",
+      "description": "Grouped service board with an overall status header, per-group service rows showing a 6-bar uptime strip and a status pill, and a footer caption.",
+      "source": {
+        "html": "../../../../public/examples/application/status-page-board/1.html",
+        "tsx": "tsx/StatusPageBoardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["operational", "degraded", "outage"],
+      "accessibility": [
+        "Each status pill's color is reinforced by a text label so status is never communicated by color alone."
+      ]
+    },
+    {
+      "id": "status-page-board-1-dark",
+      "title": "Status Page Board (Dark)",
+      "description": "Service status board adapted for dark surfaces with the same grouped-list, uptime-bar, and status-pill structure.",
+      "source": {
+        "html": "../../../../public/examples/application/status-page-board/1-dark.html",
+        "tsx": "tsx/StatusPageBoardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["operational", "degraded", "outage"],
+      "accessibility": [
+        "Status pill colors and uptime bar colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

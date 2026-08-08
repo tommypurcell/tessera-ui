@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-2xl p-6">
+    <div class="rounded-xl border border-gray-200 bg-white p-4">
+      <div class="flex items-center gap-2 text-sm">
+        <span class="font-medium text-gray-900">Where</span>
+        <div class="inline-flex rounded-md border border-gray-200 p-0.5">
+          <button type="button" aria-pressed="true" class="rounded px-2 py-0.5 text-xs font-medium bg-gray-900 text-white">AND</button>
+          <button type="button" aria-pressed="false" class="rounded px-2 py-0.5 text-xs font-medium text-gray-500 hover:text-gray-700">OR</button>
+        </div>
+      </div>
+
+      <div class="mt-3 flex flex-col gap-2 border-l-2 border-gray-100 pl-4">
+        <div class="flex flex-wrap items-center gap-2">
+          <select class="rounded-md border border-gray-300 px-2.5 py-1.5 text-sm text-gray-900 shadow-sm focus:border-gray-500 focus:outline-none">
+            <option>Status</option>
+          </select>
+          <select class="rounded-md border border-gray-300 px-2.5 py-1.5 text-sm text-gray-900 shadow-sm focus:border-gray-500 focus:outline-none">
+            <option>is</option>
+          </select>
+          <select class="rounded-md border border-gray-300 px-2.5 py-1.5 text-sm text-gray-900 shadow-sm focus:border-gray-500 focus:outline-none">
+            <option>Active</option>
+          </select>
+          <button type="button" aria-label="Remove condition" class="ml-auto text-gray-400 hover:text-gray-600">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2">
+          <select class="rounded-md border border-gray-300 px-2.5 py-1.5 text-sm text-gray-900 shadow-sm focus:border-gray-500 focus:outline-none">
+            <option>Created at</option>
+          </select>
+          <select class="rounded-md border border-gray-300 px-2.5 py-1.5 text-sm text-gray-900 shadow-sm focus:border-gray-500 focus:outline-none">
+            <option>is after</option>
+          </select>
+          <input
+            type="text"
+            value="2026-01-01"
+            class="rounded-md border border-gray-300 px-2.5 py-1.5 text-sm text-gray-900 shadow-sm focus:border-gray-500 focus:outline-none"
+          />
+          <button type="button" aria-label="Remove condition" class="ml-auto text-gray-400 hover:text-gray-600">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="rounded-lg border border-dashed border-gray-200 p-3">
+          <div class="flex items-center gap-2 text-xs">
+            <span class="font-medium text-gray-500">Match</span>
+            <div class="inline-flex rounded-md border border-gray-200 p-0.5">
+              <button type="button" aria-pressed="false" class="rounded px-2 py-0.5 text-xs font-medium text-gray-500 hover:text-gray-700">AND</button>
+              <button type="button" aria-pressed="true" class="rounded px-2 py-0.5 text-xs font-medium bg-gray-900 text-white">OR</button>
+            </div>
+          </div>
+
+          <div class="mt-2 flex flex-col gap-2 border-l-2 border-gray-100 pl-3">
+            <div class="flex flex-wrap items-center gap-2">
+              <select class="rounded-md border border-gray-300 px-2.5 py-1.5 text-sm text-gray-900 shadow-sm focus:border-gray-500 focus:outline-none">
+                <option>Plan</option>
+              </select>
+              <select class="rounded-md border border-gray-300 px-2.5 py-1.5 text-sm text-gray-900 shadow-sm focus:border-gray-500 focus:outline-none">
+                <option>is</option>
+              </select>
+              <select class="rounded-md border border-gray-300 px-2.5 py-1.5 text-sm text-gray-900 shadow-sm focus:border-gray-500 focus:outline-none">
+                <option>Pro</option>
+              </select>
+              <button type="button" aria-label="Remove condition" class="ml-auto text-gray-400 hover:text-gray-600">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div class="flex flex-wrap items-center gap-2">
+              <select class="rounded-md border border-gray-300 px-2.5 py-1.5 text-sm text-gray-900 shadow-sm focus:border-gray-500 focus:outline-none">
+                <option>Plan</option>
+              </select>
+              <select class="rounded-md border border-gray-300 px-2.5 py-1.5 text-sm text-gray-900 shadow-sm focus:border-gray-500 focus:outline-none">
+                <option>is</option>
+              </select>
+              <select class="rounded-md border border-gray-300 px-2.5 py-1.5 text-sm text-gray-900 shadow-sm focus:border-gray-500 focus:outline-none">
+                <option>Enterprise</option>
+              </select>
+              <button type="button" aria-label="Remove condition" class="ml-auto text-gray-400 hover:text-gray-600">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-3 flex items-center gap-3">
+        <button type="button" class="inline-flex items-center gap-1 text-xs font-medium text-gray-600 hover:text-gray-900">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-3.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+          </svg>
+          Add condition
+        </button>
+        <button type="button" class="inline-flex items-center gap-1 text-xs font-medium text-gray-600 hover:text-gray-900">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-3.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+          </svg>
+          Add group
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

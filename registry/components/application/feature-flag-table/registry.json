@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-feature-flag-table",
+  "title": "Feature Flag Table",
+  "description": "Feature flag matrix with a toggle per environment column and an optional rollout percentage, driven by a typed environments/rows prop contract.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["feature-flags", "environments", "rollout", "engineering", "table"],
+  "useWhen": [
+    "An internal admin tool needs to manage multiple feature flags across multiple environments (dev, staging, production) at once.",
+    "Some flags are in partial rollout and need a visible percentage alongside their enabled state.",
+    "You want a single reusable flag-matrix primitive instead of one toggle-row component per flag."
+  ],
+  "avoidWhen": [
+    "You only manage a single flag in a single context — use the simpler Feature Flag Toggle Row instead.",
+    "Flags need per-user or per-segment targeting rules — pair this table with a dedicated targeting rule editor.",
+    "There is only one environment — a flat list of toggles is simpler than a matrix table."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The table scrolls horizontally on narrow viewports via its wrapping overflow container; each environment column stays a fixed minimum width so the toggle switches remain tappable.",
+  "accessibility": [
+    "Each toggle uses role='switch' with aria-checked reflecting state, plus a composed aria-label naming the flag, environment, and rollout percentage when applicable.",
+    "The rollout percentage is rendered as visible text beneath the toggle, not conveyed by switch position alone.",
+    "Flag keys render in a monospace <code> element to distinguish them as identifiers rather than prose."
+  ],
+  "compatibleWith": ["application-data-table", "application-toggles"],
+  "variants": [
+    {
+      "id": "feature-flag-table-1",
+      "title": "Feature Flag Table",
+      "description": "Flag matrix with Dev/Staging/Production columns, per-environment toggle switches, and a visible rollout percentage for a partially-enabled flag.",
+      "source": {
+        "html": "../../../../public/examples/application/feature-flag-table/1.html",
+        "tsx": "tsx/FeatureFlagTableVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["enabled", "disabled", "partial-rollout"],
+      "accessibility": [
+        "Toggle switches carry aria-checked and a full descriptive aria-label including the rollout percentage when relevant."
+      ]
+    },
+    {
+      "id": "feature-flag-table-1-dark",
+      "title": "Feature Flag Table (Dark)",
+      "description": "Feature flag matrix adapted for dark surfaces with the same environment-column, toggle, and rollout structure.",
+      "source": {
+        "html": "../../../../public/examples/application/feature-flag-table/1-dark.html",
+        "tsx": "tsx/FeatureFlagTableVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["enabled", "disabled", "partial-rollout"],
+      "accessibility": [
+        "Toggle track/thumb colors and rollout percentage text must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

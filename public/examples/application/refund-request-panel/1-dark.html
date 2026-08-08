@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-sm bg-gray-950 p-6">
+    <div class="rounded-xl border border-gray-800 bg-gray-900 p-5">
+      <h3 class="text-sm font-semibold text-white">Request a refund</h3>
+      <p class="mt-1 text-xs text-gray-500">Order #4821 — $284.00 charged on Aug 1, 2026</p>
+
+      <div class="mt-4 flex flex-col gap-4">
+        <div class="flex flex-col gap-1.5">
+          <label for="refund-reason" class="text-sm font-medium text-gray-300">Reason</label>
+          <select
+            id="refund-reason"
+            class="rounded-md border border-gray-700 bg-gray-900 px-3 py-2 text-sm text-white shadow-sm focus:border-gray-500 focus:outline-none"
+          >
+            <option>Item arrived damaged</option>
+          </select>
+        </div>
+
+        <div class="flex flex-col gap-1.5">
+          <label for="refund-amount" class="text-sm font-medium text-gray-300">Amount</label>
+          <div class="relative">
+            <span class="pointer-events-none absolute inset-y-0 left-3 flex items-center text-sm text-gray-500">$</span>
+            <input
+              id="refund-amount"
+              type="text"
+              value="284.00"
+              class="w-full rounded-md border border-gray-700 bg-gray-900 py-2 pl-7 pr-3 text-sm text-white shadow-sm focus:border-gray-500 focus:outline-none"
+            />
+          </div>
+          <p class="text-xs text-gray-500">Maximum refundable: $284.00</p>
+        </div>
+
+        <div class="flex flex-col gap-1.5">
+          <label for="refund-note" class="text-sm font-medium text-gray-300">
+            Note
+            <span class="font-normal text-gray-500">(optional)</span>
+          </label>
+          <textarea
+            id="refund-note"
+            rows="3"
+            placeholder="Add context for the customer or your records…"
+            class="resize-none rounded-md border border-gray-700 bg-gray-900 px-3 py-2 text-sm text-white shadow-sm placeholder:text-gray-500 focus:border-gray-500 focus:outline-none"
+          ></textarea>
+        </div>
+      </div>
+
+      <div class="mt-5 flex justify-end gap-2.5">
+        <button type="button" class="rounded-md border border-gray-700 bg-gray-900 px-3.5 py-2 text-sm font-medium text-gray-200 shadow-sm hover:bg-gray-800">
+          Cancel
+        </button>
+        <button type="button" class="rounded-md bg-white px-3.5 py-2 text-sm font-medium text-gray-900 shadow-sm hover:bg-gray-200">
+          Issue refund
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

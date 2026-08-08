@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-sm bg-gray-950 p-6">
+    <div class="rounded-xl border border-gray-800 bg-gray-900 p-5">
+      <div class="grid grid-cols-2 gap-3">
+        <div class="flex flex-col gap-1.5">
+          <label for="party-size" class="text-xs font-medium uppercase tracking-wide text-gray-500">Party size</label>
+          <div class="flex items-center justify-between rounded-md border border-gray-700 px-2 py-1.5">
+            <button type="button" aria-label="Decrease party size" class="flex size-6 items-center justify-center rounded text-gray-400 hover:bg-gray-800">−</button>
+            <span id="party-size" class="text-sm font-medium text-white">4</span>
+            <button type="button" aria-label="Increase party size" class="flex size-6 items-center justify-center rounded text-gray-400 hover:bg-gray-800">+</button>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-1.5">
+          <span class="text-xs font-medium uppercase tracking-wide text-gray-500">Date</span>
+          <button type="button" class="flex items-center gap-1.5 rounded-md border border-gray-700 bg-gray-900 px-2.5 py-1.5 text-sm text-white shadow-sm hover:bg-gray-800">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 shrink-0 text-gray-500">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+            </svg>
+            <span class="truncate">Sat, Aug 15</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <span class="text-xs font-medium uppercase tracking-wide text-gray-500">Available times</span>
+        <div class="mt-2 flex flex-wrap gap-1.5">
+          <button type="button" aria-pressed="false" class="rounded-full px-3 py-1.5 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700 hover:bg-gray-800">5:30 PM</button>
+          <button type="button" aria-pressed="false" class="rounded-full px-3 py-1.5 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700 hover:bg-gray-800">6:00 PM</button>
+          <button type="button" aria-pressed="true" class="rounded-full bg-white px-3 py-1.5 text-xs font-medium text-gray-900">6:30 PM</button>
+          <button type="button" disabled class="cursor-not-allowed rounded-full px-3 py-1.5 text-xs text-gray-600 ring-1 ring-inset ring-gray-800">7:00 PM</button>
+          <button type="button" aria-pressed="false" class="rounded-full px-3 py-1.5 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700 hover:bg-gray-800">7:30 PM</button>
+          <button type="button" aria-pressed="false" class="rounded-full px-3 py-1.5 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700 hover:bg-gray-800">8:00 PM</button>
+          <button type="button" disabled class="cursor-not-allowed rounded-full px-3 py-1.5 text-xs text-gray-600 ring-1 ring-inset ring-gray-800">8:30 PM</button>
+          <button type="button" aria-pressed="false" class="rounded-full px-3 py-1.5 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700 hover:bg-gray-800">9:00 PM</button>
+        </div>
+      </div>
+
+      <button type="button" class="mt-4 w-full rounded-md bg-white px-3.5 py-2 text-sm font-medium text-gray-900 shadow-sm hover:bg-gray-200">
+        Reserve for 4 at 6:30 PM
+      </button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-query-builder",
+  "title": "Query Builder",
+  "description": "Visual AND/OR condition group builder with field/operator/value rows and nested groups, driven by a typed recursive rules prop contract.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["query", "filter", "conditions", "and-or", "power-user"],
+  "useWhen": [
+    "Users need to build complex filter logic beyond a flat list of chips, including nested AND/OR grouping.",
+    "An admin or analytics tool exposes advanced search where conditions can be combined in different ways.",
+    "Each condition needs a field, operator, and value picked independently, with the ability to add or remove rows."
+  ],
+  "avoidWhen": [
+    "Filters are simple and flat — use the Data Filter Bar for single-level chip filtering instead.",
+    "Most users won't need boolean grouping — a basic search box or a handful of toggles may be faster to use.",
+    "The query needs to be authored as raw text or code — a query language editor may fit better than a visual builder."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Condition rows wrap onto multiple lines on narrow viewports via flex-wrap; nested groups remain indented with a border-left rail to preserve hierarchy at any width.",
+  "accessibility": [
+    "AND/OR toggles are real buttons with aria-pressed reflecting the active combinator, not just background color.",
+    "Each remove-condition button carries an explicit aria-label since it is icon-only.",
+    "Field, operator, and value controls remain native form elements (select, input) for full keyboard and screen-reader support."
+  ],
+  "compatibleWith": ["application-data-table", "application-data-filter-bar"],
+  "variants": [
+    {
+      "id": "query-builder-1",
+      "title": "Query Builder",
+      "description": "Nested condition builder with a top-level AND/OR toggle, field/operator/value rows, a nested OR sub-group, and add condition/group actions.",
+      "source": {
+        "html": "../../../../public/examples/application/query-builder/1.html",
+        "tsx": "tsx/QueryBuilderVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "nested"],
+      "accessibility": [
+        "The active AND/OR combinator is marked with aria-pressed in addition to its filled background."
+      ]
+    },
+    {
+      "id": "query-builder-1-dark",
+      "title": "Query Builder (Dark)",
+      "description": "Query builder adapted for dark surfaces with the same combinator toggle, condition-row, and nested-group structure.",
+      "source": {
+        "html": "../../../../public/examples/application/query-builder/1-dark.html",
+        "tsx": "tsx/QueryBuilderVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "nested"],
+      "accessibility": [
+        "Combinator toggle, condition-row controls, and indent-rail lines must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

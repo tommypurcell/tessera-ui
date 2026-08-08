@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-seat-map-selector",
+  "title": "Seat Map Selector",
+  "description": "Grid of seat buttons with available/taken/selected states, row labels, an aisle gap, and a legend, driven by a typed rows/seats prop contract.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["seat-map", "booking", "selection", "venue", "theater"],
+  "useWhen": [
+    "Letting users choose specific seats for a theater, flight, or event with a physical row/column layout.",
+    "Some seats must be shown as unavailable (taken) and excluded from selection.",
+    "A visual, spatial seat layout communicates position better than a plain list of seat numbers."
+  ],
+  "avoidWhen": [
+    "Seating is general admission or unassigned — a simple quantity selector is enough.",
+    "The venue layout is too complex for a simple row grid (stadium sections, curved rows) — a custom SVG map may fit better.",
+    "You only need time-slot selection, not physical seats — use the Availability Grid instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The seat grid is centered with fixed-size seat buttons; on narrow viewports allow the grid to scroll horizontally rather than shrinking seat buttons below a legible tap target size.",
+  "accessibility": [
+    "Each seat button carries a composed aria-label naming the row, seat number, and current state (available/taken/selected).",
+    "Taken seats are real disabled buttons, not just visually dimmed clickable elements, so they're correctly skipped in keyboard navigation.",
+    "Selected seats use aria-pressed in addition to their filled background, and the legend restates all three states with both a swatch and a text label."
+  ],
+  "compatibleWith": ["application-availability-grid", "application-dialog"],
+  "variants": [
+    {
+      "id": "seat-map-selector-1",
+      "title": "Seat Map Selector",
+      "description": "Row-labeled seat grid with an aisle gap between seat pairs, available/taken/selected seat states, and a bottom legend.",
+      "source": {
+        "html": "../../../../public/examples/application/seat-map-selector/1.html",
+        "tsx": "tsx/SeatMapSelectorVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["available", "taken", "selected"],
+      "accessibility": [
+        "Taken seats are disabled buttons; available and selected states are distinguished by both fill and text label, not color alone."
+      ]
+    },
+    {
+      "id": "seat-map-selector-1-dark",
+      "title": "Seat Map Selector (Dark)",
+      "description": "Seat map grid adapted for dark surfaces with the same row-label, aisle-gap, and seat-state structure.",
+      "source": {
+        "html": "../../../../public/examples/application/seat-map-selector/1-dark.html",
+        "tsx": "tsx/SeatMapSelectorVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["available", "taken", "selected"],
+      "accessibility": [
+        "Seat state fill colors and legend swatches must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-expandable-detail-row",
+  "title": "Expandable Detail Row",
+  "description": "Table row that expands inline to reveal a line-item detail panel, driven by a typed rows/lineItems prop contract.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["table", "expandable", "detail", "orders", "line-items"],
+  "useWhen": [
+    "A table row (order, invoice, transaction) has structured sub-detail that shouldn't clutter the main row.",
+    "Users need to inspect line items without leaving the table or opening a separate page/modal.",
+    "Only a few rows are typically expanded at once, keeping the table compact by default."
+  ],
+  "avoidWhen": [
+    "The detail content is unrelated to a tabular row — use a plain Accordion instead of table semantics.",
+    "Most rows need to be expanded simultaneously — a flat table with all detail visible may be simpler.",
+    "The detail is substantial enough to warrant its own page or drawer — use application-drawer instead of inline expansion."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The table scrolls horizontally on narrow viewports via its wrapping overflow container; the expanded detail row spans the full column width via colSpan regardless of screen size.",
+  "accessibility": [
+    "The expand/collapse toggle is a real button with aria-expanded reflecting state and a descriptive aria-label naming the row.",
+    "The chevron icon direction changes with state, but aria-expanded is the source of truth for assistive technology.",
+    "The emphasized total line item (e.g. Shipping) is set apart with a border and bold text, not color alone."
+  ],
+  "compatibleWith": ["application-data-table", "application-tables"],
+  "variants": [
+    {
+      "id": "expandable-detail-row-1",
+      "title": "Expandable Detail Row",
+      "description": "Order table with a toggleable chevron column; the expanded row reveals a full-width detail panel listing line items and an emphasized shipping total.",
+      "source": {
+        "html": "../../../../public/examples/application/expandable-detail-row/1.html",
+        "tsx": "tsx/ExpandableDetailRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["collapsed", "expanded"],
+      "accessibility": [
+        "The toggle button's aria-expanded and aria-label update together so the collapsed/expanded state is always announced accurately."
+      ]
+    },
+    {
+      "id": "expandable-detail-row-1-dark",
+      "title": "Expandable Detail Row (Dark)",
+      "description": "Expandable order table adapted for dark surfaces with the same toggle, detail-panel, and line-item structure.",
+      "source": {
+        "html": "../../../../public/examples/application/expandable-detail-row/1-dark.html",
+        "tsx": "tsx/ExpandableDetailRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["collapsed", "expanded"],
+      "accessibility": [
+        "Detail panel background, line-item text, and the emphasized total row must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

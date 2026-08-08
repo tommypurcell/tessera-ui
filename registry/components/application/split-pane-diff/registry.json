@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-split-pane-diff",
+  "title": "Split Pane Diff",
+  "description": "Side-by-side scroll-synced two-column layout for comparing document versions, driven by a typed left/right paragraph prop contract.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["diff", "compare", "document", "split-pane", "versions"],
+  "useWhen": [
+    "Comparing two versions of prose content (legal terms, policies, documentation) rather than code.",
+    "Users benefit from reading full paragraphs side by side with additions and removals highlighted inline.",
+    "You want a reusable two-pane layout frame and can supply your own scroll-sync logic."
+  ],
+  "avoidWhen": [
+    "You need line-by-line code diffing with line numbers — use the existing Diff component instead, which is built for that.",
+    "The comparison fits in a single column with inline strikethrough — a simpler unified view may be clearer.",
+    "Content is primarily images — use a Comparison Slider (drag reveal) instead of a text-oriented split pane."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The two-column grid assumes enough width for both panes to remain readable; stack panes vertically on narrow viewports instead of shrinking columns further.",
+  "accessibility": [
+    "Added and removed paragraphs use both a background tint and text color, with removed text also struck through, so the change type isn't conveyed by color alone.",
+    "The legend in the footer labels the removed/added color swatches with text, not color alone.",
+    "Version badges are paired with the file name so each pane's context remains clear independent of column position."
+  ],
+  "compatibleWith": ["application-diff"],
+  "variants": [
+    {
+      "id": "split-pane-diff-1",
+      "title": "Split Pane Diff",
+      "description": "Two-column document comparison with version badges, per-paragraph added/removed highlighting, and a synced-scroll footer legend.",
+      "source": {
+        "html": "../../../../public/examples/application/split-pane-diff/1.html",
+        "tsx": "tsx/SplitPaneDiffVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Removed text combines strikethrough styling with red color so it reads as removed even without color."
+      ]
+    },
+    {
+      "id": "split-pane-diff-1-dark",
+      "title": "Split Pane Diff (Dark)",
+      "description": "Split-pane document comparison adapted for dark surfaces with the same version-badge, paragraph-highlight, and legend structure.",
+      "source": {
+        "html": "../../../../public/examples/application/split-pane-diff/1-dark.html",
+        "tsx": "tsx/SplitPaneDiffVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Added/removed paragraph tints and legend swatches must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
