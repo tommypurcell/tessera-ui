@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-audit-trail-row",
+  "title": "Audit Trail Row",
+  "description": "Compliance-oriented log list showing actor, action, target, an optional before/after change, and a timestamp, driven by a typed entries prop contract.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["audit", "compliance", "log", "actor", "history"],
+  "useWhen": [
+    "Compliance or security tooling needs to show who did what, to what, and when, for accountability.",
+    "Some actions have a specific before/after value change worth showing inline (e.g. plan changed from Starter to Pro).",
+    "Destructive actions (e.g. removing an API key) should be visually distinguished from routine changes."
+  ],
+  "avoidWhen": [
+    "The log is about system/analytics events rather than human actor actions — use the Event Log Table instead, which is built for structured payloads rather than actor-centric sentences.",
+    "No before/after value is relevant — a simpler Activity Feed communicates plain actions without the diff affordance.",
+    "You need full JSON payload inspection — pair this with the JSON Tree Viewer for detailed forensic review."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Each entry is a full-width row with the actor avatar, sentence, and optional diff on the left and the timestamp right-aligned; long actor sentences wrap naturally within the row.",
+  "accessibility": [
+    "Each entry reads as a natural-language sentence ('Actor action target') so screen readers convey the full audit context without relying on visual layout.",
+    "The before/after diff pairs strikethrough styling with red color for the removed value and a plain green tint for the new value, not color alone.",
+    "Destructive-action avatars use both a red background and remain part of the same sentence structure, so severity isn't conveyed by color alone."
+  ],
+  "compatibleWith": ["application-event-log-table", "application-activity-feed"],
+  "variants": [
+    {
+      "id": "audit-trail-row-1",
+      "title": "Audit Trail Row",
+      "description": "Actor-avatar log list with natural-language action sentences, an inline before/after value diff, a monospace note for identifier-style changes, and timestamps.",
+      "source": {
+        "html": "../../../../public/examples/application/audit-trail-row/1.html",
+        "tsx": "tsx/AuditTrailRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "with-diff", "destructive"],
+      "accessibility": [
+        "Removed values use strikethrough in addition to red color; the full sentence structure carries meaning without relying on the diff colors alone."
+      ]
+    },
+    {
+      "id": "audit-trail-row-1-dark",
+      "title": "Audit Trail Row (Dark)",
+      "description": "Audit trail list adapted for dark surfaces with the same actor-avatar, sentence, and before/after diff structure.",
+      "source": {
+        "html": "../../../../public/examples/application/audit-trail-row/1-dark.html",
+        "tsx": "tsx/AuditTrailRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "with-diff", "destructive"],
+      "accessibility": [
+        "Actor avatar colors, diff chip colors, and timestamp text must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
