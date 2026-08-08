@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-event-log-table",
+  "title": "Event Log Table",
+  "description": "Timestamped analytics event table with a type icon and an expandable JSON payload row, driven by a typed rows prop contract.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["events", "analytics", "log", "audit", "table"],
+  "useWhen": [
+    "Displaying a stream of discrete analytics or audit events (signups, payments, webhook calls) with timestamps.",
+    "Each event has a structured payload that's useful for debugging but shouldn't clutter the default row.",
+    "Events fall into a small set of types (success, info, error) that benefit from an at-a-glance icon."
+  ],
+  "avoidWhen": [
+    "You need a continuous scrolling log stream with severity filters — use the Log Viewer component instead.",
+    "Events have no structured payload worth expanding — a plain table row is simpler.",
+    "Real-time streaming updates are required — pair this with your own live-data subscription, this component is presentation-only."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The table scrolls horizontally on narrow viewports via its wrapping overflow container; the expanded payload row spans the full column width via colSpan regardless of screen size.",
+  "accessibility": [
+    "The expand/collapse toggle is a real button with aria-expanded and a descriptive aria-label naming the event.",
+    "Event type icons sit inside a colored badge that is supplementary — the event name itself remains the primary identifier, not color alone.",
+    "The JSON payload renders inside a <pre> element so whitespace and formatting are preserved for screen readers and sighted users alike."
+  ],
+  "compatibleWith": ["application-json-tree-viewer", "application-data-table"],
+  "variants": [
+    {
+      "id": "event-log-table-1",
+      "title": "Event Log Table",
+      "description": "Event table with a type-coded icon per row, an expand toggle revealing a formatted JSON payload, and a timestamp column.",
+      "source": {
+        "html": "../../../../public/examples/application/event-log-table/1.html",
+        "tsx": "tsx/EventLogTableVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["collapsed", "expanded"],
+      "accessibility": [
+        "The toggle button's aria-expanded and aria-label stay in sync so the collapsed/expanded state is always announced accurately."
+      ]
+    },
+    {
+      "id": "event-log-table-1-dark",
+      "title": "Event Log Table (Dark)",
+      "description": "Event log table adapted for dark surfaces with the same type-icon, expand-toggle, and payload structure.",
+      "source": {
+        "html": "../../../../public/examples/application/event-log-table/1-dark.html",
+        "tsx": "tsx/EventLogTableVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["collapsed", "expanded"],
+      "accessibility": [
+        "Type-badge colors, event name text, and payload syntax coloring must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
