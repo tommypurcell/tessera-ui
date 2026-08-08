@@ -574,13 +574,13 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-7) Email List Row — unread dot + toggleable star + sender/subject/snippet + attachment icon, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed + rebased onto main (PR #26)
 - [x] (builder-4) Email Reading Pane — action bar (reply/forward/archive/delete) + subject/sender/date header + body, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #17)
 - [x] (builder-5) Compose Window — minimizable message composer with to/subject/body and send; distinct from comment-composer. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
-- [~] (builder-7) Folder / Label Sidebar — mail folders with unread counts and colored labels; distinct from settings-nav-list.
+- [x] (builder-7) Folder / Label Sidebar — 4 system folders (Inbox active w/ count badge) + 3 colored labels, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #26)
 - [x] (builder-5) Thread Collapse — stacked quoted-reply chain with expand-all; distinct from comment-thread. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 
 <!-- Theme: Developer API console -->
 - [x] (builder-8) Endpoint Method Row — 5-row REST reference (GET/POST/PUT/PATCH/DELETE) with color-coded method pills and monospace paths, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [~] (builder-4) Request Builder — method/URL/headers/body tabs with a send button; distinct from query-builder.
-- [ ] Response Viewer — status badge, timing, and collapsible JSON body with copy; distinct from json-tree-viewer.
+- [x] (builder-5) Response Viewer — status badge, timing, and collapsible JSON body with copy; distinct from json-tree-viewer. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [x] (builder-8) API Rate Limit Meter — endpoint quota bar with computed usage percent, amber near-limit state (color+text), reset-time note, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [~] (builder-10) Code Language Tabs — snippet panel with curl/JS/Python tabs and copy; distinct from code-editor-block.
 
@@ -593,8 +593,8 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: Survey builder -->
 - [ ] Question Type Palette — draggable question-type cards (MC, rating, text, scale); distinct from query-builder.
-- [~] (builder-6) Likert Scale Row — labeled agree↔disagree radio row with midpoint; distinct from radio-groups.
-- [ ] Survey Progress Header — "Question X of N" bar with back/next; distinct from multi-step-progress.
+- [x] (builder-6) Likert Scale Row — 2 variants (single-question 5-point scale with endpoint labels, multi-row survey table with SD/D/N/A/SA headers), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
+- [x] (builder-2) Survey Progress Header — "Question 3 of 8" bar, fill % computed from currentQuestion/totalQuestions, Back disables at first question and Next relabels to Submit at last; light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
 - [x] (builder-2) Response Summary Bar — 4-option satisfaction survey results, thin progress bars with % + raw count computed from real option.count values and total; light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
 - [ ] Matrix Question Grid — rows × columns radio matrix for bulk rating; distinct from notification-preferences-grid.
 - [ ] Logic Branch Row — "if answer = X go to Y" conditional-flow rule row; distinct from conditional-field-group.
@@ -605,11 +605,11 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [ ] POS Keypad — numeric amount pad with total display and quick-cash buttons; distinct from quantity-inputs.
 - [ ] Receipt Preview — itemized thermal-receipt layout with tax/total and footer; distinct from invoice-table.
 - [ ] Barcode Scan Row — scanned-item row with SKU, qty, price, and void; distinct from cart-line-item.
-- [~] (builder-8) Tip Selector — preset %-tip buttons with custom entry and split-count; distinct from tiered-donation-buttons.
-- [ ] Cash Drawer Summary — expected vs counted totals with variance highlight; distinct from comparison-stat-pair.
+- [x] (builder-8) Tip Selector — preset %-tip buttons w/ computed tip/total/per-person split (real math from bill×percent÷splitCount), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
+- [~] (builder-8) Cash Drawer Summary — expected vs counted totals with variance highlight; distinct from comparison-stat-pair.
 
 <!-- Theme: Banking -->
-- [ ] Account Balance Card — masked balance with show/hide, account number, and quick actions; distinct from token-balance-row.
+- [~] (builder-7) Account Balance Card — masked balance with show/hide, account number, and quick actions; distinct from token-balance-row.
 - [ ] Transfer Form — from/to account selectors, amount, and schedule; distinct from currency-converter.
 - [ ] Statement Row — posted transaction with running balance column; distinct from transaction-row.
 - [ ] Card Freeze Toggle — card visual with freeze/unfreeze switch and status; distinct from device-toggle-tile.
