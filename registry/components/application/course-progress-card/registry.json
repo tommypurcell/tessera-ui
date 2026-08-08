@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-course-progress-card",
+  "title": "Course Progress Card",
+  "description": "Course card with an SVG lesson-completion ring, title, a modules-remaining line, and a Continue learning CTA.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["education", "course", "progress", "ring", "learning"],
+  "useWhen": [
+    "Showing a user's progress through a specific course or curriculum on a dashboard or \"continue learning\" list.",
+    "You want a compact ring + count pairing rather than a full linear progress bar.",
+    "Distinct from Goal Progress Card, which shows target-vs-actual pacing (e.g. a savings goal) rather than a simple completed/total lesson count."
+  ],
+  "avoidWhen": [
+    "You're showing a generic percentage with no course/lesson semantics — a bare Progress Ring or Progress Bar is simpler.",
+    "The course has no clear module count to complete against (e.g. open-ended reading) — a ring implies a countable finish line."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The card is a fixed-width block; the ring and title/subtitle sit in a single row that doesn't reflow, with the Continue button spanning full width below.",
+  "accessibility": [
+    "The percentage is rendered as text inside the ring, not conveyed by the arc length alone.",
+    "The modules-remaining line states the same progress as literal numbers (\"7 of 10\"), giving a redundant, unambiguous data point alongside the ring.",
+    "The ring's decorative SVG circles are aria-hidden; the surrounding text carries the accessible information."
+  ],
+  "compatibleWith": ["application-goal-progress-card", "application-onboarding-checklist"],
+  "variants": [
+    {
+      "id": "course-progress-card-1",
+      "title": "Course Progress Card",
+      "description": "An 'Advanced TypeScript Patterns' course at 70% (7 of 10 modules complete) with a Continue learning button.",
+      "source": {
+        "html": "../../../../public/examples/application/course-progress-card/1.html",
+        "tsx": "tsx/CourseProgressCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Percentage and module counts are both rendered as text, redundant with the visual ring."
+      ]
+    },
+    {
+      "id": "course-progress-card-1-dark",
+      "title": "Course Progress Card (Dark)",
+      "description": "The same course progress card adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/course-progress-card/1-dark.html",
+        "tsx": "tsx/CourseProgressCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Ring track and fill colors remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}
