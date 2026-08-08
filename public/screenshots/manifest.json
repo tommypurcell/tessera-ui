@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 786,
+  "screenshotCount": 790,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -2096,6 +2096,46 @@
       "url": "/screenshots/components/application-pagination/pagination-3-dark.jpg",
       "width": 600,
       "height": 400
+    },
+    {
+      "componentId": "application-profile-edit-form",
+      "variantId": "profile-edit-form-1",
+      "appearance": "light",
+      "sourcePath": "files/application-profile-edit-form/profile-edit-form-1.html",
+      "sourceSha256": "699c2fc2a5cbf6dda686bea96badd76aea08d21dd4fe4806a340cfd8374795b4",
+      "url": "/screenshots/components/application-profile-edit-form/profile-edit-form-1.jpg",
+      "width": 608,
+      "height": 631
+    },
+    {
+      "componentId": "application-profile-edit-form",
+      "variantId": "profile-edit-form-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-profile-edit-form/profile-edit-form-1-dark.html",
+      "sourceSha256": "ec112f0b90120a709bc361080575490ce519fc6802a3f1a1a889b7a8ec853a20",
+      "url": "/screenshots/components/application-profile-edit-form/profile-edit-form-1-dark.jpg",
+      "width": 608,
+      "height": 631
+    },
+    {
+      "componentId": "application-profile-edit-form",
+      "variantId": "profile-edit-form-2",
+      "appearance": "light",
+      "sourcePath": "files/application-profile-edit-form/profile-edit-form-2.html",
+      "sourceSha256": "e7219fe3ff4fcb59ea3b86d20d8625b6a7407cd236fb0ec64b2e7d1e7faaddc1",
+      "url": "/screenshots/components/application-profile-edit-form/profile-edit-form-2.jpg",
+      "width": 608,
+      "height": 519
+    },
+    {
+      "componentId": "application-profile-edit-form",
+      "variantId": "profile-edit-form-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-profile-edit-form/profile-edit-form-2-dark.html",
+      "sourceSha256": "3ba47d5b5893f0fbfd8f072962264d06c5604ae760ee7ce4898565f21cc21ac7",
+      "url": "/screenshots/components/application-profile-edit-form/profile-edit-form-2-dark.jpg",
+      "width": 608,
+      "height": 519
     },
     {
       "componentId": "application-progress-bars",
