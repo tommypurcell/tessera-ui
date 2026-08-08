@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 810,
+  "screenshotCount": 814,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -2515,6 +2515,46 @@
       "sourceSha256": "be22ec4f34a6879ff476befb48bf37e8e97a53ce6d92a78e07c32bee6ad4af73",
       "url": "/screenshots/components/application-saved-views-bar/saved-views-bar-2-dark.jpg",
       "width": 672,
+      "height": 400
+    },
+    {
+      "componentId": "application-secret-reveal-field",
+      "variantId": "secret-reveal-field-1",
+      "appearance": "light",
+      "sourcePath": "files/application-secret-reveal-field/secret-reveal-field-1.html",
+      "sourceSha256": "f9edd373aeb0f4ebc784c568437c3c79ddf2cf6c46c03104e2a8deaac84aa035",
+      "url": "/screenshots/components/application-secret-reveal-field/secret-reveal-field-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-secret-reveal-field",
+      "variantId": "secret-reveal-field-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-secret-reveal-field/secret-reveal-field-1-dark.html",
+      "sourceSha256": "4eb407f18065d8ad7894ba57be705f5e8e7e0cae55df78829d4326c91f970e78",
+      "url": "/screenshots/components/application-secret-reveal-field/secret-reveal-field-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-secret-reveal-field",
+      "variantId": "secret-reveal-field-2",
+      "appearance": "light",
+      "sourcePath": "files/application-secret-reveal-field/secret-reveal-field-2.html",
+      "sourceSha256": "999d14ffd00b2c2c4d31dc063484c9de6fca8b21368625cd8b8a002617434302",
+      "url": "/screenshots/components/application-secret-reveal-field/secret-reveal-field-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-secret-reveal-field",
+      "variantId": "secret-reveal-field-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-secret-reveal-field/secret-reveal-field-2-dark.html",
+      "sourceSha256": "3179724337631921e61d71cdd263eb8d3752a40168dbd215f1e3a64853bf8404",
+      "url": "/screenshots/components/application-secret-reveal-field/secret-reveal-field-2-dark.jpg",
+      "width": 600,
       "height": 400
     },
     {
