@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-feature-flag-toggle-row",
+  "title": "Feature Flag Toggle Row",
+  "description": "Feature-flag management row: the flag key, environment pills (Dev/Staging/Prod), a rollout-percentage or not-enabled status line, and a trailing enable switch.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["feature-flag", "rollout", "settings", "engineering", "toggle"],
+  "useWhen": [
+    "Building an internal feature-flag or rollout-management admin panel.",
+    "Each flag needs to show which environments it's live in and its current rollout percentage at a glance.",
+    "Pairing with Preference Toggle Row's switch pattern but for engineering/ops audiences rather than end-user settings."
+  ],
+  "avoidWhen": [
+    "You're building end-user notification/account preferences — use Preference Toggle Row instead, which has no environment or rollout semantics.",
+    "The flag system has more states than on/off (e.g. percentage-only rollout without a master switch) — extend the data model rather than reusing this as-is."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Environment pills wrap onto a second line on narrow viewports while the flag key and switch stay on the first line; the switch never wraps away from the row's trailing edge.",
+  "accessibility": [
+    "The flag key uses <code> since it's an identifier, not prose, giving semantic and visual (monospace) distinction.",
+    "Environment pills use both a background color and visible text (\"Prod\", \"Staging\", \"Dev\") so their meaning doesn't depend on color alone.",
+    "The switch is a real checkbox wrapped in a <label>, so clicking anywhere in the switch track toggles it and the checked state stays in sync with assistive technology."
+  ],
+  "compatibleWith": ["application-preference-toggle-row", "application-api-key-manager"],
+  "variants": [
+    {
+      "id": "feature-flag-toggle-row-1",
+      "title": "Feature Flag Toggle Row",
+      "description": "Three flags: new-checkout-flow (Prod+Staging, 40% rollout, on), ai-summary-panel (Staging only, off), and dark-mode-v2 (Prod+Staging+Dev, 100% rollout, on).",
+      "source": {
+        "html": "../../../../public/examples/application/feature-flag-toggle-row/1.html",
+        "tsx": "tsx/FeatureFlagToggleRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["on", "off"],
+      "accessibility": [
+        "Rollout percentage is always shown as text; it is never conveyed through the switch's on/off state alone."
+      ]
+    },
+    {
+      "id": "feature-flag-toggle-row-1-dark",
+      "title": "Feature Flag Toggle Row (Dark)",
+      "description": "The same three flag rows adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/feature-flag-toggle-row/1-dark.html",
+        "tsx": "tsx/FeatureFlagToggleRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["on", "off"],
+      "accessibility": [
+        "Environment pill colors and switch on/off states remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-lg flex-col p-6">
+    <div class="rounded-lg border border-gray-800 bg-gray-900">
+      <ul class="divide-y divide-gray-800">
+        <li class="flex items-center gap-4 px-4 py-3.5">
+          <div class="min-w-0 flex-1">
+            <div class="flex flex-wrap items-center gap-2">
+              <code class="font-mono text-sm font-medium text-gray-100">new-checkout-flow</code>
+              <span class="rounded bg-emerald-500/10 px-1.5 py-0.5 text-[10px] font-medium text-emerald-400">Prod</span>
+              <span class="rounded bg-amber-500/10 px-1.5 py-0.5 text-[10px] font-medium text-amber-400">Staging</span>
+            </div>
+            <p class="mt-1 text-xs text-gray-400">Rolling out to <span class="font-medium text-gray-200">40%</span> of users</p>
+          </div>
+          <label class="relative block h-7 w-12 shrink-0 rounded-full bg-green-500 transition-colors [-webkit-tap-highlight-color:transparent]">
+            <input type="checkbox" checked class="peer sr-only" />
+            <span class="absolute inset-y-0 start-0 m-1 size-5 rounded-full bg-white transition-[inset-inline-start] peer-checked:start-5"></span>
+          </label>
+        </li>
+
+        <li class="flex items-center gap-4 px-4 py-3.5">
+          <div class="min-w-0 flex-1">
+            <div class="flex flex-wrap items-center gap-2">
+              <code class="font-mono text-sm font-medium text-gray-100">ai-summary-panel</code>
+              <span class="rounded bg-amber-500/10 px-1.5 py-0.5 text-[10px] font-medium text-amber-400">Staging</span>
+            </div>
+            <p class="mt-1 text-xs text-gray-400">Not enabled in production</p>
+          </div>
+          <label class="relative block h-7 w-12 shrink-0 rounded-full bg-gray-700 transition-colors [-webkit-tap-highlight-color:transparent]">
+            <input type="checkbox" class="peer sr-only" />
+            <span class="absolute inset-y-0 start-0 m-1 size-5 rounded-full bg-white transition-[inset-inline-start] peer-checked:start-5"></span>
+          </label>
+        </li>
+
+        <li class="flex items-center gap-4 px-4 py-3.5">
+          <div class="min-w-0 flex-1">
+            <div class="flex flex-wrap items-center gap-2">
+              <code class="font-mono text-sm font-medium text-gray-100">dark-mode-v2</code>
+              <span class="rounded bg-emerald-500/10 px-1.5 py-0.5 text-[10px] font-medium text-emerald-400">Prod</span>
+              <span class="rounded bg-amber-500/10 px-1.5 py-0.5 text-[10px] font-medium text-amber-400">Staging</span>
+              <span class="rounded bg-gray-800 px-1.5 py-0.5 text-[10px] font-medium text-gray-400">Dev</span>
+            </div>
+            <p class="mt-1 text-xs text-gray-400">Rolling out to <span class="font-medium text-gray-200">100%</span> of users</p>
+          </div>
+          <label class="relative block h-7 w-12 shrink-0 rounded-full bg-green-500 transition-colors [-webkit-tap-highlight-color:transparent]">
+            <input type="checkbox" checked class="peer sr-only" />
+            <span class="absolute inset-y-0 start-0 m-1 size-5 rounded-full bg-white transition-[inset-inline-start] peer-checked:start-5"></span>
+          </label>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
