@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-log-viewer",
+  "title": "Log Viewer",
+  "description": "Monospace log stream with severity coloring, toggleable level filter chips (info/warn/error/debug), and an auto-scroll toggle — a debugging staple for admin panels, deploy logs, and observability dashboards.",
+  "category": "application/media",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["log", "logs", "console", "debugging", "monospace", "terminal"],
+  "useWhen": [
+    "Streaming or displaying structured log entries with a severity level per line.",
+    "Users need to filter noisy output down to specific levels (e.g. only WARN and ERROR).",
+    "A live-updating stream should stay pinned to the newest entry unless the user opts out via auto-scroll."
+  ],
+  "avoidWhen": [
+    "The content isn't line-oriented or timestamped — use a plain code block or terminal-blocks instead.",
+    "You need syntax-highlighted source code, not runtime log output — use code-editor-block instead.",
+    "The dataset is small and static — a plain list or table is simpler than a scrolling log panel."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The panel is a fixed-width block with an internal max-height scroll region; filter chips wrap onto multiple lines on narrow viewports.",
+  "accessibility": [
+    "The scrolling log region carries role='log' and aria-live='polite' so new entries are announced without interrupting.",
+    "Level filter chips and the auto-scroll toggle are real buttons with aria-pressed reflecting their on/off state.",
+    "Severity is conveyed by both the level text label (INFO/WARN/ERROR/DEBUG) and color, not color alone."
+  ],
+  "compatibleWith": ["application-terminal-blocks", "application-code-editor-block", "application-badges"],
+  "variants": [
+    {
+      "id": "log-viewer-1",
+      "title": "Log viewer",
+      "description": "Dark terminal-style log panel with INFO/WARN/ERROR entries, active level filter chips, and auto-scroll enabled, on a light page.",
+      "source": {
+        "html": "../../../../public/examples/application/log-viewer/1.html",
+        "tsx": "tsx/LogViewerVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "filtered", "empty"],
+      "accessibility": [
+        "The log panel keeps its dark terminal chrome regardless of page theme, matching common log-viewer conventions."
+      ]
+    },
+    {
+      "id": "log-viewer-1-dark",
+      "title": "Log viewer (Dark)",
+      "description": "Log panel with the same entries and controls, deepened to sit inside a fully dark app shell.",
+      "source": {
+        "html": "../../../../public/examples/application/log-viewer/1-dark.html",
+        "tsx": "tsx/LogViewerVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "filtered", "empty"],
+      "accessibility": [
+        "Level text colors must meet WCAG AA contrast against the near-black panel background."
+      ]
+    }
+  ]
+}
