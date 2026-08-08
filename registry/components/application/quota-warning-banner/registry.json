@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "name": "application-quota-warning-banner",
+  "title": "Quota Warning Banner",
+  "description": "Inline alert combining a threshold-crossing message, an embedded usage bar, and an upgrade call to action, for surfacing approaching or exceeded plan limits inline within page content.",
+  "category": "application/feedback",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["application", "quota", "usage", "billing", "alert", "upgrade"],
+  "useWhen": [
+    "A user is approaching or has exceeded a metered limit (storage, API requests, seats) and needs both the numeric context and an immediate upgrade path.",
+    "The warning should live inline within the page content the user is already looking at, rather than as a full-width top bar or a separate settings card."
+  ],
+  "avoidWhen": [
+    "The message applies site-wide regardless of context — use an announcement banner instead.",
+    "You only need a standalone usage summary without an alert framing — use a usage meter card instead.",
+    "The limit hasn't been approached yet — don't show a warning for healthy usage levels."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The banner is a single-column flex stack with the usage bar spanning the full available width; the max-w-lg container in the examples can be removed to fill any parent width.",
+  "accessibility": [
+    "Uses role=\"alert\" so the warning is announced immediately, since a crossed quota threshold requires timely user awareness.",
+    "The usage bar carries role=\"progressbar\" with aria-valuenow/min/max and an aria-label describing what's being measured, so the numeric context is available to screen readers, not just the visual fill.",
+    "Color alone doesn't convey severity — the heading text and description explicitly state whether the limit is approaching or exceeded."
+  ],
+  "compatibleWith": ["application-alerts", "application-usage-meter", "application-announcement-banner"],
+  "variants": [
+    {
+      "id": "quota-warning-banner-1",
+      "title": "Approaching limit",
+      "description": "Amber warning banner for a storage quota nearing its limit, with an inline usage bar and an upgrade CTA",
+      "source": {
+        "html": "../../../../public/examples/application/quota-warning-banner/1.html",
+        "tsx": "tsx/QuotaWarningBannerVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["warning"],
+      "accessibility": ["role=\"alert\" plus a labeled progressbar communicate both the message and the exact usage figures."]
+    },
+    {
+      "id": "quota-warning-banner-1-dark",
+      "title": "Approaching limit (Dark)",
+      "description": "Amber warning banner for a storage quota nearing its limit, with an inline usage bar and an upgrade CTA",
+      "source": {
+        "html": "../../../../public/examples/application/quota-warning-banner/1-dark.html",
+        "tsx": "tsx/QuotaWarningBannerVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["warning"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    },
+    {
+      "id": "quota-warning-banner-2",
+      "title": "Limit exceeded",
+      "description": "Red critical banner for an API request quota that has been fully exhausted, with a full usage bar and both upgrade and view-usage actions",
+      "source": {
+        "html": "../../../../public/examples/application/quota-warning-banner/2.html",
+        "tsx": "tsx/QuotaWarningBannerVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["critical"],
+      "accessibility": ["role=\"alert\" ensures the exhausted-quota state, which blocks further usage, is announced without user action."]
+    },
+    {
+      "id": "quota-warning-banner-2-dark",
+      "title": "Limit exceeded (Dark)",
+      "description": "Red critical banner for an API request quota that has been fully exhausted, with a full usage bar and both upgrade and view-usage actions",
+      "source": {
+        "html": "../../../../public/examples/application/quota-warning-banner/2-dark.html",
+        "tsx": "tsx/QuotaWarningBannerVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["critical"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces, including button states."]
+    }
+  ]
+}
