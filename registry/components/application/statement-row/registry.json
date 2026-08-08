@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-statement-row",
+  "title": "Statement Row",
+  "description": "Bank-statement-style transaction table rows with a running balance column that accumulates from a real starting balance — distinct from transaction-row, which shows category icons and merchant metadata with no cumulative balance tracking.",
+  "category": "application/fintech",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["banking", "statement", "fintech", "transactions", "balance"],
+  "useWhen": [
+    "Displaying an account statement where each row's balance reflects all prior transactions.",
+    "You want the running balance computed live rather than hand-typed per row.",
+    "A simple tabular format fits better than icon-driven transaction cards."
+  ],
+  "avoidWhen": [
+    "You need category icons and merchant-focused metadata with no balance column — use transaction-row instead.",
+    "You're confirming a single pending transaction — use transaction-confirm-sheet instead.",
+    "There's no starting balance to accumulate from — a plain transaction list is simpler."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The table has a fixed max width; on narrow viewports it should be wrapped in a horizontally scrollable container by the consuming page.",
+  "accessibility": [
+    "Semantic <table> markup with <th> headers lets assistive tech announce column meaning per cell.",
+    "Credit amounts are marked with both a '+' prefix and emerald color, never color alone.",
+    "The running balance is computed by accumulating each transaction in order, guaranteeing it never drifts from the underlying data."
+  ],
+  "compatibleWith": ["application-transaction-row", "application-transaction-confirm-sheet"],
+  "variants": [
+    {
+      "id": "statement-row-1",
+      "title": "Statement row",
+      "description": "A 4-transaction statement starting from $2,450.00, with a running balance column computed cumulatively down to $4,122.05, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/statement-row/1.html",
+        "tsx": "tsx/StatementRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Each row's balance is the real cumulative sum of the starting balance and all prior transaction amounts."
+      ]
+    },
+    {
+      "id": "statement-row-1-dark",
+      "title": "Statement row (Dark)",
+      "description": "The same 4-transaction statement, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/statement-row/1-dark.html",
+        "tsx": "tsx/StatementRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Credit amount color meets WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
