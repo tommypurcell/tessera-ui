@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "application-approval-request-card",
+  "title": "Approval Request Card",
+  "description": "Access/approval request card with requester, resource, an optional note, and Approve/Reject actions that resolve to a real decided state.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["approval", "access-request", "review", "admin"],
+  "useWhen": [
+    "Building an admin queue where a reviewer approves or rejects pending requests one at a time.",
+    "Each request benefits from requester identity, the specific resource being requested, and optional free-text justification.",
+    "You want the card to visually resolve (badge change, actions disappearing) once a decision is made, rather than staying interactive after resolution."
+  ],
+  "avoidWhen": [
+    "Requests need bulk approve/reject across many rows at once — a `tables` row with checkboxes and a `bulk-action-bar` fits that better.",
+    "There's no reviewable request, just a status to display — a plain `badges` pill is sufficient without the action buttons.",
+    "The decision needs additional required input (e.g. a reason for rejection) — extend this pattern with a confirmation step rather than a single click."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Single-column card; the requester row and note stack naturally at any width, with actions right-aligned in the footer.",
+  "accessibility": [
+    "The status badge text (\"Pending\", \"Approved\", \"Rejected\") is the source of truth, not just badge color, satisfying colorblind and screen-reader users alike.",
+    "Approve/Reject are separate, clearly labeled buttons rather than a single ambiguous toggle.",
+    "Once resolved, the action buttons are removed rather than disabled-but-visible, preventing a false impression that the decision can still be changed from this view.",
+    "The requester avatar is decorative (empty alt) since the name is present as adjacent text."
+  ],
+  "compatibleWith": ["application-team-members-list", "application-avatar", "application-badges"],
+  "variants": [
+    {
+      "id": "approval-request-card-1",
+      "title": "Approval Request Card",
+      "description": "Pending access request with requester, resource, a note, and Approve/Reject actions.",
+      "source": {
+        "html": "../../../../public/examples/application/approval-request-card/1.html",
+        "tsx": "tsx/ApprovalRequestCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["pending", "approved", "rejected"],
+      "accessibility": [
+        "Clicking Approve or Reject transitions to a real resolved state, updating the badge and removing the now-irrelevant actions."
+      ]
+    },
+    {
+      "id": "approval-request-card-1-dark",
+      "title": "Approval Request Card (Dark)",
+      "description": "Approval request card adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/approval-request-card/1-dark.html",
+        "tsx": "tsx/ApprovalRequestCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["pending", "approved", "rejected"],
+      "accessibility": [
+        "Status badge colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}
