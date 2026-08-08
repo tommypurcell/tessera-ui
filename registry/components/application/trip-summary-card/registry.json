@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-trip-summary-card",
+  "title": "Trip Summary Card",
+  "description": "Drive summary card with a title/timestamp header, a route line, and a 2x2 grid of trip stats (distance, duration, average speed, efficiency).",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["trip", "drive", "navigation", "automotive", "stats"],
+  "useWhen": [
+    "Summarizing a completed drive or trip in a navigation, EV, or fleet app.",
+    "You want distance, duration, average speed, and efficiency together in one glanceable card.",
+    "The trip has a clear origin/destination worth naming in a route line."
+  ],
+  "avoidWhen": [
+    "You need a live, in-progress trip view rather than a post-trip summary — build a dedicated active-navigation UI instead.",
+    "There are more than 4 stats to show — extend the grid to 3 columns or link to a full trip detail page rather than cramming more cells in.",
+    "Efficiency doesn't apply (e.g. non-EV) — swap that cell for a more relevant stat like fuel cost or CO2 saved."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The card is a fixed max-w-sm block whose 2-column stat grid fills the available width up to that cap at all breakpoints.",
+  "accessibility": [
+    "Each stat pairs a value with its unit as adjacent, always-visible text, avoiding ambiguous bare numbers.",
+    "The route line uses a full text arrow ('Oak Street → Riverside Tech Campus'), not an icon-only representation of direction.",
+    "Timestamp and title are both plain text in the header, keeping trip identity scannable without extra context."
+  ],
+  "compatibleWith": ["application-stat-tile", "application-fuel-charge-gauge", "application-shipment-tracking-map"],
+  "variants": [
+    {
+      "id": "trip-summary-card-1",
+      "title": "Trip summary card",
+      "description": "'Morning commute' trip with a route line and a 2x2 grid: Distance, Duration, Avg speed, Efficiency.",
+      "source": {
+        "html": "../../../../public/examples/application/trip-summary-card/1.html",
+        "tsx": "tsx/TripSummaryCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Stat cells use a shared light background to visually group them as a set, separate from the header text."
+      ]
+    },
+    {
+      "id": "trip-summary-card-1-dark",
+      "title": "Trip summary card (Dark)",
+      "description": "Trip summary card adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/trip-summary-card/1-dark.html",
+        "tsx": "tsx/TripSummaryCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Stat cell background and text colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
