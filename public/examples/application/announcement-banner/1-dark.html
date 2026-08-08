@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="bg-gray-950">
+    <div role="region" aria-label="Announcement" class="bg-blue-900 text-blue-50">
+      <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-4 gap-y-1 px-4 py-2.5 sm:px-6">
+        <p class="text-sm font-medium">Tessera UI 2.0 is here — new components, faster theming, and a redesigned CLI.</p>
+
+        <button
+          type="button"
+          class="shrink-0 rounded-md bg-blue-50 px-3 py-1 text-sm font-semibold text-blue-900 transition-colors hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
+        >
+          See what's new
+        </button>
+
+        <button
+          type="button"
+          aria-label="Dismiss announcement"
+          class="ml-auto shrink-0 rounded-md p-1 opacity-80 transition-opacity hover:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
+        >
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
