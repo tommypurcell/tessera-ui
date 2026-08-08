@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex justify-center bg-gray-950 p-6">
+    <div class="flex w-full max-w-sm flex-col gap-3 rounded-lg border border-gray-800 bg-gray-900 p-5">
+      <div class="flex items-baseline justify-between">
+        <h2 class="text-sm font-medium text-gray-100">Launch checklist</h2>
+        <span class="text-xs text-gray-500">3/5 complete</span>
+      </div>
+
+      <ul class="flex flex-col gap-1.5">
+        <li>
+          <label class="flex cursor-pointer items-center gap-2.5 rounded-md px-1.5 py-1 hover:bg-gray-800">
+            <input type="checkbox" checked class="size-4 shrink-0 rounded border-gray-600 bg-gray-800 text-blue-500 focus:ring-blue-400" />
+            <span class="text-sm text-gray-600 line-through">Write launch announcement</span>
+          </label>
+        </li>
+        <li>
+          <label class="flex cursor-pointer items-center gap-2.5 rounded-md px-1.5 py-1 hover:bg-gray-800">
+            <input type="checkbox" checked class="size-4 shrink-0 rounded border-gray-600 bg-gray-800 text-blue-500 focus:ring-blue-400" />
+            <span class="text-sm text-gray-600 line-through">Finalize pricing page</span>
+          </label>
+        </li>
+        <li>
+          <label class="flex cursor-pointer items-center gap-2.5 rounded-md px-1.5 py-1 hover:bg-gray-800">
+            <input type="checkbox" checked class="size-4 shrink-0 rounded border-gray-600 bg-gray-800 text-blue-500 focus:ring-blue-400" />
+            <span class="text-sm text-gray-600 line-through">Smoke-test checkout flow</span>
+          </label>
+        </li>
+        <li>
+          <label class="flex cursor-pointer items-center gap-2.5 rounded-md px-1.5 py-1 hover:bg-gray-800">
+            <input type="checkbox" class="size-4 shrink-0 rounded border-gray-600 bg-gray-800 text-blue-500 focus:ring-blue-400" />
+            <span class="text-sm text-gray-300">Notify support team</span>
+          </label>
+        </li>
+        <li>
+          <label class="flex cursor-pointer items-center gap-2.5 rounded-md px-1.5 py-1 hover:bg-gray-800">
+            <input type="checkbox" class="size-4 shrink-0 rounded border-gray-600 bg-gray-800 text-blue-500 focus:ring-blue-400" />
+            <span class="text-sm text-gray-300">Schedule social posts</span>
+          </label>
+        </li>
+      </ul>
+
+      <div class="flex items-center gap-2 border-t border-gray-800 pt-2.5">
+        <input type="text" placeholder="Add a task…" class="flex-1 rounded-md border-0 bg-transparent text-sm text-gray-100 placeholder:text-gray-500 focus:ring-0 focus:outline-none" />
+        <button type="button" class="text-xs font-medium text-blue-400 hover:text-blue-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-1 focus-visible:ring-offset-gray-900">Add</button>
+      </div>
+    </div>
+  </body>
+</html>
