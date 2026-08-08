@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "name": "application-inline-validation-hint",
+  "title": "Inline Validation Hint",
+  "description": "Field-level success/error message paired with a border-color change and an icon, meant to appear after a field loses focus — distinct from form-row's static help/error text.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["validation", "form", "field", "feedback", "primitive"],
+  "useWhen": [
+    "Showing live success or error feedback for a single field after the user finishes typing or blurs it.",
+    "Confirming a value is valid (e.g. an available username or a valid coupon code) as well as flagging an error.",
+    "You want the field border, an icon, and the message to change together as one status, not just static help text."
+  ],
+  "avoidWhen": [
+    "The message is static and doesn't change based on user input — use application-form-row's plain help/error text instead.",
+    "Validation happens only on submit, not per-field — a single form-level error summary is more appropriate.",
+    "The field has no meaningful pass/fail state, only optional guidance — use plain help text instead of a status hint."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The field and hint stack vertically at any width; wire your own container width around the component in a form grid.",
+  "accessibility": [
+    "The input's aria-describedby points at the hint's id so assistive tech announces the message when the field is focused.",
+    "Error hints carry role='alert' so screen readers announce them immediately when they appear; success hints do not, since they are not urgent.",
+    "Status is communicated with an icon and text together, in addition to color, so it does not rely on color alone.",
+    "aria-invalid is set to true only in the error state, reflecting the field's real validity to assistive technology."
+  ],
+  "compatibleWith": ["application-form-row", "application-inputs"],
+  "variants": [
+    {
+      "id": "inline-validation-hint-1",
+      "title": "Message below field",
+      "description": "Field with a colored border and a below-field message pairing an icon with success or error text.",
+      "source": {
+        "html": "../../../../public/examples/application/inline-validation-hint/1.html",
+        "tsx": "tsx/InlineValidationHintVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["success", "error"],
+      "accessibility": [
+        "The error message carries role='alert'; the success message does not, since it is not time-sensitive."
+      ]
+    },
+    {
+      "id": "inline-validation-hint-1-dark",
+      "title": "Message below field (Dark)",
+      "description": "Below-field validation hint adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/inline-validation-hint/1-dark.html",
+        "tsx": "tsx/InlineValidationHintVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["success", "error"],
+      "accessibility": [
+        "Border and message colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    },
+    {
+      "id": "inline-validation-hint-2",
+      "title": "Trailing icon in field",
+      "description": "Field with a trailing status icon inside the input itself, plus a short message below — suited to compact values like codes.",
+      "source": {
+        "html": "../../../../public/examples/application/inline-validation-hint/2.html",
+        "tsx": "tsx/InlineValidationHintVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["success", "error"],
+      "accessibility": [
+        "The trailing icon is supplementary; the message text and aria-invalid state carry the actual meaning."
+      ]
+    },
+    {
+      "id": "inline-validation-hint-2-dark",
+      "title": "Trailing icon in field (Dark)",
+      "description": "Trailing-icon validation hint adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/inline-validation-hint/2-dark.html",
+        "tsx": "tsx/InlineValidationHintVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["success", "error"],
+      "accessibility": [
+        "Trailing icon and message contrast must meet WCAG AA on dark backgrounds."
+      ]
+    }
+  ]
+}

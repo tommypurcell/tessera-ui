@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-saved-views-bar",
+  "title": "Saved Views Bar",
+  "description": "Row of named saved views (persisted filter/sort presets) with add, rename, and star affordances — distinct from tabs, which switch content panes rather than a saved query.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["saved-views", "filters", "tabs", "presets", "primitive", "dashboard"],
+  "useWhen": [
+    "Letting users save and switch between named filter or sort presets on a list or table.",
+    "Surfacing a favorited/starred view alongside other saved views.",
+    "Offering a quick 'save current filters as a view' action next to existing presets."
+  ],
+  "avoidWhen": [
+    "The items switch between different content panes rather than re-querying the same view — use application-tabs instead.",
+    "There is only one possible view — a saved-views row adds UI for a choice that doesn't exist yet.",
+    "Views need deep hierarchical organization (folders/groups) — this is a flat single-row list only."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The underline variant scrolls horizontally if the views overflow their container; the pill variant wraps onto multiple lines on narrow screens.",
+  "accessibility": [
+    "The row carries role='tablist' and each view carries role='tab' with aria-selected reflecting the active view.",
+    "The active view's options control is a separate real button from the selection button, not a nested interactive element.",
+    "The star/favorite icon is decorative; the view's visible label is what identifies it to assistive technology."
+  ],
+  "compatibleWith": ["application-tabs", "application-data-filter-bar", "application-toolbar"],
+  "variants": [
+    {
+      "id": "saved-views-bar-1",
+      "title": "Underline views",
+      "description": "Underline-style row of saved views with a trailing button to save the current filters as a new view.",
+      "source": {
+        "html": "../../../../public/examples/application/saved-views-bar/1.html",
+        "tsx": "tsx/SavedViewsBarVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "The active view is marked with aria-selected='true' in addition to the underline indicator."
+      ]
+    },
+    {
+      "id": "saved-views-bar-1-dark",
+      "title": "Underline views (Dark)",
+      "description": "Underline-style saved views row adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/saved-views-bar/1-dark.html",
+        "tsx": "tsx/SavedViewsBarVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "The underline indicator and active text color must meet WCAG AA contrast on dark backgrounds."
+      ]
+    },
+    {
+      "id": "saved-views-bar-2",
+      "title": "Pill views with star and options",
+      "description": "Pill-style saved views with a starred/favorite indicator and a separate options button on the active view, plus a dashed 'New view' affordance.",
+      "source": {
+        "html": "../../../../public/examples/application/saved-views-bar/2.html",
+        "tsx": "tsx/SavedViewsBarVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "The selection button and the options button are two separate real button elements, not a button nested inside a button."
+      ]
+    },
+    {
+      "id": "saved-views-bar-2-dark",
+      "title": "Pill views with star and options (Dark)",
+      "description": "Pill-style saved views bar adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/saved-views-bar/2-dark.html",
+        "tsx": "tsx/SavedViewsBarVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "Active and inactive pill contrast must meet WCAG AA on dark backgrounds."
+      ]
+    }
+  ]
+}

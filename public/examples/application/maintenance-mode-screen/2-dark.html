@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex min-h-[26rem] items-center justify-center bg-gray-950 p-6">
+    <div class="flex max-w-md flex-col items-center text-center">
+      <span class="flex size-14 items-center justify-center rounded-full bg-blue-500/15 text-blue-400">
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6l4 2m6-2a10 10 0 11-20 0 10 10 0 0120 0z" />
+        </svg>
+      </span>
+      <h1 class="mt-5 text-xl font-semibold text-white">Scheduled maintenance in progress</h1>
+      <p class="mt-2 text-sm text-gray-400">
+        We're upgrading our database infrastructure. Your data is safe and no action is needed.
+      </p>
+
+      <div class="mt-6 flex items-center gap-4">
+        <div class="flex flex-col items-center">
+          <span class="text-2xl font-semibold text-white">01</span>
+          <span class="text-xs text-gray-400">hours</span>
+        </div>
+        <span class="text-xl text-gray-700">:</span>
+        <div class="flex flex-col items-center">
+          <span class="text-2xl font-semibold text-white">42</span>
+          <span class="text-xs text-gray-400">minutes</span>
+        </div>
+        <span class="text-xl text-gray-700">:</span>
+        <div class="flex flex-col items-center">
+          <span class="text-2xl font-semibold text-white">18</span>
+          <span class="text-xs text-gray-400">seconds</span>
+        </div>
+      </div>
+
+      <form class="mt-6 flex w-full max-w-xs gap-2">
+        <label for="mm-email-dark" class="sr-only">Email address</label>
+        <input
+          id="mm-email-dark"
+          type="email"
+          placeholder="you@example.com"
+          class="min-w-0 flex-1 rounded-md border border-gray-700 bg-gray-900 px-3 py-2 text-sm text-white shadow-sm focus:border-blue-500 focus:outline-none"
+        />
+        <button
+          type="submit"
+          class="shrink-0 rounded-md bg-white px-3.5 py-2 text-sm font-medium text-gray-900 shadow-sm hover:bg-gray-200"
+        >
+          Notify me
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

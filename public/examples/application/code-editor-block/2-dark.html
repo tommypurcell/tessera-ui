@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex justify-center bg-gray-950 p-6">
+    <div class="w-full max-w-xl overflow-hidden rounded-lg border border-gray-800 bg-black">
+      <div class="flex items-center justify-between border-b border-gray-800 bg-gray-900 px-4 py-2">
+        <div class="flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="size-3.5 text-amber-400" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2C9 2 8 3.5 8 5v2h4v1H6c-1.5 0-3 1-3 4s1.5 4 3 4h1v-2c0-1.5 1-3 3-3h4c1.5 0 3-1 3-3V5c0-1.5-1-3-3-3h-2zm-1.5 2a.75.75 0 110 1.5.75.75 0 010-1.5z" />
+          </svg>
+          <span class="text-xs font-medium text-gray-300">seed_users.py</span>
+        </div>
+        <button
+          type="button"
+          class="inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium text-gray-400 hover:bg-gray-800 hover:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="size-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+          </svg>
+          Copy
+        </button>
+      </div>
+      <pre class="overflow-x-auto p-0 font-mono text-sm leading-6" aria-label="Python code, seed_users.py"><code class="grid grid-cols-[3rem_1fr]"
+><span class="select-none border-r border-gray-800 px-3 text-right text-gray-600">1</span><span class="px-4 text-gray-200"><span class="text-purple-400">def</span> <span class="text-sky-400">seed_users</span>(count: <span class="text-sky-400">int</span> = <span class="text-orange-400">10</span>):</span
+><span class="select-none border-r border-gray-800 bg-gray-800/60 px-3 text-right text-gray-300">2</span><span class="bg-gray-800/60 px-4 text-gray-200">    <span class="text-gray-500"># deterministic seed so re-runs stay idempotent</span></span
+><span class="select-none border-r border-gray-800 px-3 text-right text-gray-600">3</span><span class="px-4 text-gray-200">    random.seed(<span class="text-orange-400">42</span>)</span
+><span class="select-none border-r border-gray-800 px-3 text-right text-gray-600">4</span><span class="px-4 text-gray-200">    <span class="text-purple-400">for</span> i <span class="text-purple-400">in</span> range(count):</span
+><span class="select-none border-r border-gray-800 px-3 text-right text-gray-600">5</span><span class="px-4 text-gray-200">        User.objects.create(email=<span class="text-emerald-400">f'user{i}@example.com'</span>)</span
+></code></pre>
+    </div>
+  </body>
+</html>

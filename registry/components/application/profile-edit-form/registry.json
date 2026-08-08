@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-profile-edit-form",
+  "title": "Profile Edit Form",
+  "description": "Settings-page profile form combining an avatar with a change-photo action, name/contact fields, and a save bar — a full page-section composition, distinct from application-form-row's single field.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["profile", "settings", "form", "avatar", "primitive"],
+  "useWhen": [
+    "Building an account or settings page section where a user edits their name, photo, and contact details.",
+    "Showing an explicit unsaved-changes indicator so users know a save is pending.",
+    "You want the avatar, fields, and save actions composed as one section rather than assembled from individual form-row primitives."
+  ],
+  "avoidWhen": [
+    "You only need a single field with a label and help text — use application-form-row instead.",
+    "The form doesn't need an avatar or photo upload — a plain field list may be simpler.",
+    "Changes save automatically per field — an explicit save bar would be redundant with autosave."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The form has a fixed max width suited to a settings page column; the name fields collapse from a two-column grid to a single column on very narrow screens.",
+  "accessibility": [
+    "Every field carries a real label associated via htmlFor/id.",
+    "The change-photo control is a real button, not a clickable image, so it has a clear accessible name.",
+    "The unsaved-changes indicator in variant 2 pairs a dot, a background tint, and text together, not color alone."
+  ],
+  "compatibleWith": ["application-form-row", "application-toolbar", "application-file-uploaders"],
+  "variants": [
+    {
+      "id": "profile-edit-form-1",
+      "title": "Standard settings form",
+      "description": "Avatar with a change-photo action, name/email/bio fields, and an always-visible footer save bar.",
+      "source": {
+        "html": "../../../../public/examples/application/profile-edit-form/1.html",
+        "tsx": "tsx/ProfileEditFormVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The avatar image carries descriptive alt text naming the person, not just 'avatar'."
+      ]
+    },
+    {
+      "id": "profile-edit-form-1-dark",
+      "title": "Standard settings form (Dark)",
+      "description": "Standard profile edit form adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/profile-edit-form/1-dark.html",
+        "tsx": "tsx/ProfileEditFormVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Field borders and footer bar contrast must meet WCAG AA on dark backgrounds."
+      ]
+    },
+    {
+      "id": "profile-edit-form-2",
+      "title": "Public profile with unsaved indicator",
+      "description": "Public-profile form with an 'Unsaved changes' header indicator that appears while isDirty is true, and a prefixed username field.",
+      "source": {
+        "html": "../../../../public/examples/application/profile-edit-form/2.html",
+        "tsx": "tsx/ProfileEditFormVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "dirty"],
+      "accessibility": [
+        "The dirty field's border color change is paired with the header indicator, not used as the only signal of unsaved state."
+      ]
+    },
+    {
+      "id": "profile-edit-form-2-dark",
+      "title": "Public profile with unsaved indicator (Dark)",
+      "description": "Public-profile form with an unsaved-changes indicator, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/profile-edit-form/2-dark.html",
+        "tsx": "tsx/ProfileEditFormVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "dirty"],
+      "accessibility": [
+        "Unsaved-changes indicator and field border contrast must meet WCAG AA on dark backgrounds."
+      ]
+    }
+  ]
+}

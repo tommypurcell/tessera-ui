@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-receipt-preview",
+  "title": "Receipt Preview",
+  "description": "Itemized receipt layout with subtotal, tax, and total, distinct from application-invoice-table since it renders a single standalone receipt document rather than a table of invoice rows.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["receipt", "checkout", "order", "payment", "primitive"],
+  "useWhen": [
+    "Showing a printable-style itemized receipt after a purchase or order.",
+    "Confirming a paid order with a payment-method footer in a modern card style.",
+    "Displaying order history detail as a standalone document rather than a table row."
+  ],
+  "avoidWhen": [
+    "You need a sortable, filterable list of many invoices — use application-invoice-table instead.",
+    "The order hasn't been paid yet — this component assumes a completed transaction; use application-checkout-order-summary for a pre-payment summary instead.",
+    "No real line-item data exists yet — avoid rendering a receipt with placeholder amounts."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Both variants have a fixed max width sized for a receipt-style document; line items wrap their label text if needed while keeping the amount right-aligned on the same row where space allows.",
+  "accessibility": [
+    "Subtotal, tax, and total are each labeled with real text, not just visually distinguished by font weight.",
+    "The Paid status badge in Variant 2 pairs a color tint with a text label, not color alone.",
+    "The payment-method footer states the card brand and last four digits in real text, not just an icon."
+  ],
+  "compatibleWith": ["application-invoice-table", "application-checkout-order-summary"],
+  "variants": [
+    {
+      "id": "receipt-preview-1",
+      "title": "Thermal receipt",
+      "description": "Classic thermal-receipt layout with a monospace font and dashed section separators.",
+      "source": {
+        "html": "../../../../public/examples/application/receipt-preview/1.html",
+        "tsx": "tsx/ReceiptPreviewVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Line items, subtotal, tax, and total are each on their own row with a real text label."
+      ]
+    },
+    {
+      "id": "receipt-preview-1-dark",
+      "title": "Thermal receipt (Dark)",
+      "description": "Thermal receipt adapted for a dark page surface — the receipt paper stays white, as a real printed receipt would, with a ring for edge separation.",
+      "source": {
+        "html": "../../../../public/examples/application/receipt-preview/1-dark.html",
+        "tsx": "tsx/ReceiptPreviewVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "The ring provides a visible edge against the dark page background where a shadow alone would not show."
+      ]
+    },
+    {
+      "id": "receipt-preview-2",
+      "title": "Digital receipt card",
+      "description": "Modern digital-receipt card with a Paid status badge and a payment-method footer.",
+      "source": {
+        "html": "../../../../public/examples/application/receipt-preview/2.html",
+        "tsx": "tsx/ReceiptPreviewVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["paid"],
+      "accessibility": [
+        "The Paid badge uses both a green tint and the word 'Paid', not color alone."
+      ]
+    },
+    {
+      "id": "receipt-preview-2-dark",
+      "title": "Digital receipt card (Dark)",
+      "description": "Digital receipt card adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/receipt-preview/2-dark.html",
+        "tsx": "tsx/ReceiptPreviewVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["paid"],
+      "accessibility": [
+        "Status badge and line-item text contrast must meet WCAG AA on dark backgrounds."
+      ]
+    }
+  ]
+}

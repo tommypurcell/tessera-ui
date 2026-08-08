@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-xp-progress-bar",
+  "title": "XP Progress Bar",
+  "description": "Level badge paired with an XP progress bar toward the next level, distinct from application-progress-bars since it carries level/XP-specific semantics rather than a generic percentage.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["gamification", "xp", "level", "progress", "primitive"],
+  "useWhen": [
+    "Showing a user's level and progress toward the next level in a gamified product.",
+    "Celebrating a level-up moment with the new level and the overflow XP carried into the next bar.",
+    "You want level-specific framing (a level badge, 'XP to next level' copy) rather than a generic progress bar."
+  ],
+  "avoidWhen": [
+    "The progress isn't level-based — use application-progress-bars for a generic percentage instead.",
+    "No real leveling system exists in the product — fabricating XP numbers would mislead users.",
+    "The metric is a countdown or quota rather than cumulative growth — use application-usage-meter-card instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The card has a fixed max width; the level badge and XP text stay on one row at any width the card supports, wrapping only the surrounding page layout.",
+  "accessibility": [
+    "The bar carries role='progressbar' with aria-valuenow/min/max reflecting the real XP values, not just a visual width.",
+    "The current and next level are stated in real text (e.g. 'Level 12', 'XP to next level'), not conveyed by the bar alone.",
+    "The level-up state pairs a badge, an icon, and text together, not color alone, to signal the celebratory moment."
+  ],
+  "compatibleWith": ["application-progress-bars", "application-stat-tile"],
+  "variants": [
+    {
+      "id": "xp-progress-bar-1",
+      "title": "Level progress",
+      "description": "Level badge with an XP bar toward the next level and a remaining-XP caption.",
+      "source": {
+        "html": "../../../../public/examples/application/xp-progress-bar/1.html",
+        "tsx": "tsx/XpProgressBarVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "aria-valuenow/min/max on the progressbar reflect the real current and target XP values."
+      ]
+    },
+    {
+      "id": "xp-progress-bar-1-dark",
+      "title": "Level progress (Dark)",
+      "description": "Level-progress XP bar adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/xp-progress-bar/1-dark.html",
+        "tsx": "tsx/XpProgressBarVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Bar fill and badge contrast must meet WCAG AA on dark backgrounds."
+      ]
+    },
+    {
+      "id": "xp-progress-bar-2",
+      "title": "Level-up celebration",
+      "description": "Level-up state showing the new level badge, a celebratory icon, and the overflow XP carried into the next level's bar.",
+      "source": {
+        "html": "../../../../public/examples/application/xp-progress-bar/2.html",
+        "tsx": "tsx/XpProgressBarVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["level-up"],
+      "accessibility": [
+        "The 'Level up!' message is real text, not conveyed by the star icon or amber tint alone."
+      ]
+    },
+    {
+      "id": "xp-progress-bar-2-dark",
+      "title": "Level-up celebration (Dark)",
+      "description": "Level-up celebration state adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/xp-progress-bar/2-dark.html",
+        "tsx": "tsx/XpProgressBarVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["level-up"],
+      "accessibility": [
+        "Amber tint and text contrast must meet WCAG AA on dark backgrounds."
+      ]
+    }
+  ]
+}

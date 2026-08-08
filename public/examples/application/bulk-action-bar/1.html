@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex h-40 items-end justify-center p-6">
+    <div
+      role="toolbar"
+      aria-label="Bulk actions"
+      class="flex items-center gap-4 rounded-full border border-gray-200 bg-white py-2 pr-2 pl-4 shadow-lg"
+    >
+      <span class="text-sm font-medium text-gray-700">3 selected</span>
+
+      <div class="h-5 w-px bg-gray-200" aria-hidden="true"></div>
+
+      <div class="flex items-center gap-1">
+        <button
+          type="button"
+          class="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2v-9a2 2 0 00-2-2h-3m-1-4l-4-4m0 0L8 3m4-4v12" />
+          </svg>
+          Archive
+        </button>
+
+        <button
+          type="button"
+          class="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M8 7V4a1 1 0 011-1h6a1 1 0 011 1v3m3 0v13a2 2 0 01-2 2H7a2 2 0 01-2-2V7h14z" />
+          </svg>
+          Delete
+        </button>
+      </div>
+
+      <button
+        type="button"
+        aria-label="Clear selection"
+        class="inline-flex size-8 items-center justify-center rounded-full text-gray-400 hover:bg-gray-100 hover:text-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </body>
+</html>

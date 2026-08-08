@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-code-editor-block",
+  "title": "Code Editor Block",
+  "description": "Syntax-highlighted code panel with line numbers, a gutter, an active-line highlight, and a file-tab or file-name header — richer editor chrome than a plain terminal block.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["code", "editor", "syntax-highlighting", "developer-tools", "primitive"],
+  "useWhen": [
+    "Displaying a code sample that needs line numbers or a highlighted current/relevant line.",
+    "Showing more than one related file via a tab bar above the code panel.",
+    "Documentation or a changelog needs a copy-to-clipboard affordance next to a code sample."
+  ],
+  "avoidWhen": [
+    "The sample is a single shell command — use application-terminal-blocks instead, it is simpler and prompt-styled.",
+    "The content must be actually editable by the user — this is a display-only block, not a live editor.",
+    "Real syntax highlighting across many languages is required — this component supplies the chrome only; pass your own tokenized spans or wire in a highlighter."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The panel has a fixed max width and the code scrolls horizontally inside its own overflow-x-auto container so long lines never widen the page.",
+  "accessibility": [
+    "The code panel carries an aria-label stating the language and file name, since syntax color alone does not convey that to assistive tech.",
+    "Line numbers are marked select-none so copying code doesn't include them in the clipboard text.",
+    "The active-line highlight uses both a background tint and gutter number color change, not color alone."
+  ],
+  "compatibleWith": ["application-terminal-blocks"],
+  "variants": [
+    {
+      "id": "code-editor-block-1",
+      "title": "File tabs",
+      "description": "Code panel with a multi-file tab bar, line numbers, and an active-line highlight, for showing one file among several related ones.",
+      "source": {
+        "html": "../../../../public/examples/application/code-editor-block/1.html",
+        "tsx": "tsx/CodeEditorBlockVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The pre element carries an aria-label naming the language and active file."
+      ]
+    },
+    {
+      "id": "code-editor-block-1-dark",
+      "title": "File tabs (Dark)",
+      "description": "File-tab code panel adapted for a dark page surface.",
+      "source": {
+        "html": "../../../../public/examples/application/code-editor-block/1-dark.html",
+        "tsx": "tsx/CodeEditorBlockVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "The card border and surrounding chrome must remain visible against a dark page background."
+      ]
+    },
+    {
+      "id": "code-editor-block-2",
+      "title": "File name with copy action",
+      "description": "Code panel with a file-name header, a language icon, and a copy-to-clipboard button, for a single standalone code sample.",
+      "source": {
+        "html": "../../../../public/examples/application/code-editor-block/2.html",
+        "tsx": "tsx/CodeEditorBlockVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The copy button carries visible text, not just an icon, so its purpose does not depend on the icon alone."
+      ]
+    },
+    {
+      "id": "code-editor-block-2-dark",
+      "title": "File name with copy action (Dark)",
+      "description": "File-name code panel with a copy action, adapted for a dark page surface.",
+      "source": {
+        "html": "../../../../public/examples/application/code-editor-block/2-dark.html",
+        "tsx": "tsx/CodeEditorBlockVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "The copy button's hover and focus states must remain visible against the dark header."
+      ]
+    }
+  ]
+}

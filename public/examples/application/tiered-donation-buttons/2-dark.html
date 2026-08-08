@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex justify-center bg-gray-950 p-6">
+    <div class="w-full max-w-sm rounded-xl border border-gray-800 bg-gray-900 p-5">
+      <div class="flex items-center justify-between">
+        <h2 class="text-sm font-semibold text-white">Support our mission</h2>
+        <div role="radiogroup" aria-label="Donation frequency" class="flex rounded-full bg-gray-800 p-0.5 text-xs font-medium">
+          <button type="button" role="radio" aria-checked="true" class="rounded-full bg-gray-700 px-2.5 py-1 text-white shadow-sm">Monthly</button>
+          <button type="button" role="radio" aria-checked="false" class="rounded-full px-2.5 py-1 text-gray-400">One-time</button>
+        </div>
+      </div>
+
+      <div role="radiogroup" aria-label="Monthly donation amount" class="mt-4 flex flex-col gap-2">
+        <button type="button" role="radio" aria-checked="false" class="flex items-center justify-between rounded-lg border border-gray-700 px-4 py-3 text-left hover:border-gray-600">
+          <span class="text-sm font-medium text-white">$10 / month</span>
+          <span class="text-xs text-gray-400">Provides clean water for 1 family</span>
+        </button>
+        <button type="button" role="radio" aria-checked="true" class="flex items-center justify-between rounded-lg border-2 border-blue-500 bg-blue-500/10 px-4 py-3 text-left">
+          <span class="text-sm font-medium text-blue-200">$25 / month</span>
+          <span class="text-xs text-blue-300">Supports a student's school supplies</span>
+        </button>
+        <button type="button" role="radio" aria-checked="false" class="flex items-center justify-between rounded-lg border border-gray-700 px-4 py-3 text-left hover:border-gray-600">
+          <span class="text-sm font-medium text-white">$50 / month</span>
+          <span class="text-xs text-gray-400">Funds a health clinic visit</span>
+        </button>
+      </div>
+
+      <button type="button" class="mt-4 w-full rounded-md bg-white px-4 py-2.5 text-sm font-medium text-gray-900 shadow-sm hover:bg-gray-200">
+        Donate $25/month
+      </button>
+    </div>
+  </body>
+</html>

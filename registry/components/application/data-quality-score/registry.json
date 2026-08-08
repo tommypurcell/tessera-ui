@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-data-quality-score",
+  "title": "Data Quality Score",
+  "description": "Circular pass/fail check summary ring with a failing-rule list, distinct from application-lead-score-meter since it summarizes validation checks on a dataset rather than a lead's fit or intent score.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["data-quality", "validation", "score", "ring", "primitive"],
+  "useWhen": [
+    "Summarizing how many validation checks a dataset or import passed versus failed as a single score.",
+    "Listing the specific failing rules so a user knows what to fix.",
+    "Surfacing a dataset's quality status inline in a list of files or tables via a compact summary bar."
+  ],
+  "avoidWhen": [
+    "The score represents a lead's fit or purchase intent rather than data validation — use application-lead-score-meter instead.",
+    "No specific failing rules can be listed — a plain pass/fail badge is more honest than an empty or vague list.",
+    "The dataset has only one validation rule — a single pass/fail indicator is simpler than a full score ring."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Both variants have a fixed max width; Variant 1's failing-rule list wraps naturally within the card, and Variant 2's dataset name and check counts wrap onto a second line on narrow screens.",
+  "accessibility": [
+    "The score ring carries role='img' with an aria-label stating the numeric score in words, since the ring visual alone doesn't convey the exact number to assistive technology.",
+    "Failing rules are listed as real text with row counts, not just an icon, so screen readers get the full context.",
+    "The 'needs attention' framing in Variant 2 is real text, not conveyed by the amber color alone."
+  ],
+  "compatibleWith": ["application-lead-score-meter", "application-json-tree-viewer"],
+  "variants": [
+    {
+      "id": "data-quality-score-1",
+      "title": "Score ring with failing rules",
+      "description": "Circular score ring paired with a list of specific failing validation rules and their failure counts.",
+      "source": {
+        "html": "../../../../public/examples/application/data-quality-score/1.html",
+        "tsx": "tsx/DataQualityScoreVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The ring's aria-label states the exact score in words, not just a visual fill percentage."
+      ]
+    },
+    {
+      "id": "data-quality-score-1-dark",
+      "title": "Score ring with failing rules (Dark)",
+      "description": "Score ring with a failing-rule list, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/data-quality-score/1-dark.html",
+        "tsx": "tsx/DataQualityScoreVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Ring fill and failing-rule text contrast must meet WCAG AA on dark backgrounds."
+      ]
+    },
+    {
+      "id": "data-quality-score-2",
+      "title": "Compact summary bar",
+      "description": "Horizontal summary bar with a smaller score ring, pass/fail/total counts, and a View report action — for inline use in a file or table list.",
+      "source": {
+        "html": "../../../../public/examples/application/data-quality-score/2.html",
+        "tsx": "tsx/DataQualityScoreVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["needs-attention"],
+      "accessibility": [
+        "The 'needs attention' message is real text, not conveyed by the amber background alone."
+      ]
+    },
+    {
+      "id": "data-quality-score-2-dark",
+      "title": "Compact summary bar (Dark)",
+      "description": "Compact data-quality summary bar adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/data-quality-score/2-dark.html",
+        "tsx": "tsx/DataQualityScoreVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["needs-attention"],
+      "accessibility": [
+        "Amber tint and text contrast must meet WCAG AA on dark backgrounds."
+      ]
+    }
+  ]
+}

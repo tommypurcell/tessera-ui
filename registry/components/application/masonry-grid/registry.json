@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "name": "application-masonry-grid",
+  "title": "Masonry Grid",
+  "description": "CSS-only variable-height grid using multi-column layout, so images or cards of different natural heights balance across columns without a JS layout engine — distinct from application-grids' uniform equal-height cells.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["masonry", "grid", "gallery", "layout", "primitive"],
+  "useWhen": [
+    "Laying out images or cards with varying natural heights, like a photo gallery or a notes board.",
+    "You want a Pinterest-style balanced-column layout without pulling in a JS masonry library.",
+    "Content order top-to-bottom-then-across-columns is acceptable — CSS columns fill top to bottom within each column first."
+  ],
+  "avoidWhen": [
+    "All items are the same height — use application-grids' uniform grid instead, it is simpler and gives more control over row alignment.",
+    "Reading order must go left-to-right, row by row — CSS multi-column layout flows top-to-bottom per column instead.",
+    "Items need to reflow or animate position on resize — CSS columns don't animate reflow the way a JS masonry library can."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The columns count is a fixed prop; wrap the component in your own responsive class overrides (e.g. reduce to columns-2 or columns-1) to change the column count at narrower breakpoints.",
+  "accessibility": [
+    "Every image carries descriptive alt text — decorative-only masonry galleries should still describe their content since users may rely on alt text to browse.",
+    "Card variant items use real heading (h3) and paragraph elements so their structure is available to assistive technology, not just visual columns."
+  ],
+  "compatibleWith": ["application-grids", "application-media"],
+  "variants": [
+    {
+      "id": "masonry-grid-1",
+      "title": "Image gallery",
+      "description": "CSS-only image masonry gallery where images of varying natural heights balance across columns.",
+      "source": {
+        "html": "../../../../public/examples/application/masonry-grid/1.html",
+        "tsx": "tsx/MasonryGridVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Each image carries alt text describing its content, not left empty."
+      ]
+    },
+    {
+      "id": "masonry-grid-1-dark",
+      "title": "Image gallery (Dark)",
+      "description": "Image masonry gallery adapted for dark surfaces with a subtle ring per tile.",
+      "source": {
+        "html": "../../../../public/examples/application/masonry-grid/1-dark.html",
+        "tsx": "tsx/MasonryGridVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "The ring gives each tile a visible edge against the dark background where a shadow alone would not show."
+      ]
+    },
+    {
+      "id": "masonry-grid-2",
+      "title": "Card masonry",
+      "description": "CSS-only card masonry for content of varying length, such as notes or activity cards, using break-inside-avoid to keep each card intact.",
+      "source": {
+        "html": "../../../../public/examples/application/masonry-grid/2.html",
+        "tsx": "tsx/MasonryGridVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Each card uses a real heading and paragraph, not styled divs, so its structure is available to assistive technology."
+      ]
+    },
+    {
+      "id": "masonry-grid-2-dark",
+      "title": "Card masonry (Dark)",
+      "description": "Card masonry adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/masonry-grid/2-dark.html",
+        "tsx": "tsx/MasonryGridVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Card border and text contrast must meet WCAG AA on dark backgrounds."
+      ]
+    }
+  ]
+}

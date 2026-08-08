@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-bulk-action-bar",
+  "title": "Bulk Action Bar",
+  "description": "Contextual toolbar that appears once one or more rows are selected in a table or list, showing a selection count and a row of batch actions.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["toolbar", "bulk-actions", "table", "selection", "primitive", "dashboard"],
+  "useWhen": [
+    "Offering batch operations (archive, export, delete) on multiple selected rows in a table or list.",
+    "Replacing per-row action menus with a single bar once more than one row is selected.",
+    "Pairing with a data table's checkbox column to confirm how many rows are currently selected."
+  ],
+  "avoidWhen": [
+    "Only a single row can ever be selected at a time — use per-row actions instead.",
+    "There is only one possible bulk action — a single confirm button next to the count is simpler than a toolbar.",
+    "The destructive action has no separate confirmation step — pair Delete with a confirmation dialog before it runs."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The floating variant sizes to its content and is meant to be positioned (e.g. fixed to the bottom of the viewport) by the consuming layout; the inline variant is full width and wraps its action group on narrow screens.",
+  "accessibility": [
+    "The bar carries role='toolbar' with an aria-label describing its purpose.",
+    "The clear/dismiss control has a real aria-label since it is icon-only.",
+    "The destructive action is distinguished by both color and a distinct label, not color alone."
+  ],
+  "compatibleWith": ["application-tables", "application-toolbar", "application-checkboxes"],
+  "variants": [
+    {
+      "id": "bulk-action-bar-1",
+      "title": "Floating pill",
+      "description": "Floating pill-shaped bar with a selection count, a row of actions, and a dismiss control, meant to float above the page once rows are selected.",
+      "source": {
+        "html": "../../../../public/examples/application/bulk-action-bar/1.html",
+        "tsx": "tsx/BulkActionBarVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The dismiss control has an aria-label since it has no visible text."
+      ]
+    },
+    {
+      "id": "bulk-action-bar-1-dark",
+      "title": "Floating pill (Dark)",
+      "description": "Floating pill-shaped bulk action bar adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/bulk-action-bar/1-dark.html",
+        "tsx": "tsx/BulkActionBarVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Action text and the pill's border must meet WCAG AA contrast on dark backgrounds."
+      ]
+    },
+    {
+      "id": "bulk-action-bar-2",
+      "title": "Inline table toolbar",
+      "description": "Full-width bar meant to replace a table's header row, with a tinted selected state, a clear checkbox, and a destructive action styled distinctly from secondary actions.",
+      "source": {
+        "html": "../../../../public/examples/application/bulk-action-bar/2.html",
+        "tsx": "tsx/BulkActionBarVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The destructive action uses both red color and the word Delete, not color alone, to signal its effect."
+      ]
+    },
+    {
+      "id": "bulk-action-bar-2-dark",
+      "title": "Inline table toolbar (Dark)",
+      "description": "Inline table bulk action bar adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/bulk-action-bar/2-dark.html",
+        "tsx": "tsx/BulkActionBarVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Selected-state tint and action text must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex justify-center p-6">
+    <div class="flex w-full max-w-md items-center border-b border-gray-200">
+      <button
+        type="button"
+        aria-label="Scroll tabs left"
+        class="flex size-9 shrink-0 items-center justify-center text-gray-400 hover:text-gray-700 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      <div role="tablist" aria-label="Repository sections" class="flex flex-1 gap-1 overflow-x-auto">
+        <button type="button" role="tab" aria-selected="true" class="relative shrink-0 px-3 py-2.5 text-sm font-medium text-gray-900">
+          Code
+          <span class="absolute inset-x-0 -bottom-px h-0.5 rounded-full bg-gray-900" aria-hidden="true"></span>
+        </button>
+        <button type="button" role="tab" aria-selected="false" class="shrink-0 px-3 py-2.5 text-sm font-medium text-gray-500 hover:text-gray-900">Issues</button>
+        <button type="button" role="tab" aria-selected="false" class="shrink-0 px-3 py-2.5 text-sm font-medium text-gray-500 hover:text-gray-900">Pull requests</button>
+        <button type="button" role="tab" aria-selected="false" class="shrink-0 px-3 py-2.5 text-sm font-medium text-gray-500 hover:text-gray-900">Actions</button>
+        <button type="button" role="tab" aria-selected="false" class="shrink-0 px-3 py-2.5 text-sm font-medium text-gray-500 hover:text-gray-900">Projects</button>
+        <button type="button" role="tab" aria-selected="false" class="shrink-0 px-3 py-2.5 text-sm font-medium text-gray-500 hover:text-gray-900">Wiki</button>
+        <button type="button" role="tab" aria-selected="false" class="shrink-0 px-3 py-2.5 text-sm font-medium text-gray-500 hover:text-gray-900">Security</button>
+        <button type="button" role="tab" aria-selected="false" class="shrink-0 px-3 py-2.5 text-sm font-medium text-gray-500 hover:text-gray-900">Insights</button>
+        <button type="button" role="tab" aria-selected="false" class="shrink-0 px-3 py-2.5 text-sm font-medium text-gray-500 hover:text-gray-900">Settings</button>
+      </div>
+
+      <button
+        type="button"
+        aria-label="Scroll tabs right"
+        class="flex size-9 shrink-0 items-center justify-center text-gray-700 hover:text-gray-900 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+  </body>
+</html>

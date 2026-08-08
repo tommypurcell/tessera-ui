@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-service-reminder-row",
+  "title": "Service Reminder Row",
+  "description": "Maintenance-reminder row with a due-mileage progress bar and a Schedule action, distinct from application-sync-status-row since it tracks mileage-based service intervals rather than data-sync recency.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["vehicle", "maintenance", "reminder", "automotive", "primitive"],
+  "useWhen": [
+    "Showing a single upcoming maintenance item with how much mileage remains before it's due.",
+    "Listing multiple maintenance reminders with overdue, upcoming, and ok urgency states.",
+    "Offering a Schedule action per reminder in a vehicle or fleet dashboard."
+  ],
+  "avoidWhen": [
+    "The reminder isn't mileage-based — a plain date-based reminder row may be simpler.",
+    "You are tracking data-sync recency rather than vehicle maintenance — use application-sync-status-row instead.",
+    "Only one maintenance item ever needs tracking — the single-row variant is enough; skip the list variant's extra structure."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Both variants have a fixed max width; the list variant's rows keep the service name and Schedule button on one line down to narrow tablet widths.",
+  "accessibility": [
+    "The progress bar in Variant 1 carries role='progressbar' with aria-valuenow/min/max reflecting real mileage values.",
+    "Urgency (overdue/upcoming/ok) is communicated through both button color and text label, not color alone.",
+    "The overdue action is labeled 'Schedule now' rather than just 'Schedule', giving the urgency a textual cue as well as a color one."
+  ],
+  "compatibleWith": ["application-sync-status-row", "application-progress-bars"],
+  "variants": [
+    {
+      "id": "service-reminder-row-1",
+      "title": "Single reminder with progress",
+      "description": "Single maintenance-item row with a due-mileage progress bar and a Schedule action.",
+      "source": {
+        "html": "../../../../public/examples/application/service-reminder-row/1.html",
+        "tsx": "tsx/ServiceReminderRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "aria-valuenow/min/max on the progress bar reflect the real current, last-service, and due mileage values."
+      ]
+    },
+    {
+      "id": "service-reminder-row-1-dark",
+      "title": "Single reminder with progress (Dark)",
+      "description": "Single maintenance-reminder row adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/service-reminder-row/1-dark.html",
+        "tsx": "tsx/ServiceReminderRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Progress bar fill and text contrast must meet WCAG AA on dark backgrounds."
+      ]
+    },
+    {
+      "id": "service-reminder-row-2",
+      "title": "Reminder list with urgency",
+      "description": "List of maintenance reminders with overdue, upcoming, and ok urgency states, each with its own Schedule action.",
+      "source": {
+        "html": "../../../../public/examples/application/service-reminder-row/2.html",
+        "tsx": "tsx/ServiceReminderRowVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["overdue", "upcoming", "ok"],
+      "accessibility": [
+        "The overdue item's button text ('Schedule now') and red color together signal urgency, not color alone."
+      ]
+    },
+    {
+      "id": "service-reminder-row-2-dark",
+      "title": "Reminder list with urgency (Dark)",
+      "description": "Maintenance-reminder list adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/service-reminder-row/2-dark.html",
+        "tsx": "tsx/ServiceReminderRowVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["overdue", "upcoming", "ok"],
+      "accessibility": [
+        "Urgency text and button contrast must meet WCAG AA on dark backgrounds for every state."
+      ]
+    }
+  ]
+}

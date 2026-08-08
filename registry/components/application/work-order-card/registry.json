@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-work-order-card",
+  "title": "Work Order Card",
+  "description": "Maintenance/manufacturing work order with part, quantity, due date, and a segmented stage-progress bar, plus a compact list-row variant for scanning many orders at once.",
+  "category": "application/work-order-card",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["application", "work-order", "maintenance", "manufacturing", "production", "stage-progress"],
+  "useWhen": [
+    "Tracking a maintenance or manufacturing work order through discrete production stages.",
+    "Showing the part, quantity, and due date needed to fulfill an order at a glance.",
+    "Listing many open work orders compactly for a dispatcher or supervisor view."
+  ],
+  "avoidWhen": [
+    "The item being tracked is a dated goal or deliverable rather than a production/maintenance order — use application-milestone-card instead.",
+    "Progress is best expressed as a single percentage rather than discrete named stages.",
+    "You need per-station real-time status across a whole line — use a station/line status grid instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Variant 1 has a fixed max width sized for a detail card; the stage bar segments scale to fill the available width. Variant 2's list rows truncate long titles and keep the due-date/stage summary right-aligned.",
+  "accessibility": [
+    "The status badge in Variant 1 pairs a color tint with a text label, not color alone.",
+    "Each stage segment has a visually-hidden label stating its name and status (complete/current/pending) for screen reader users.",
+    "Variant 2's status dot is decorative; the order title and stage summary carry the actual status information in text."
+  ],
+  "compatibleWith": ["application-milestone-card"],
+  "variants": [
+    {
+      "id": "work-order-card-1",
+      "title": "Detail card",
+      "description": "Work order detail card with part, quantity, due date, assignee, and a segmented stage-progress bar.",
+      "source": {
+        "html": "../../../../public/examples/application/work-order-card/1.html",
+        "tsx": "tsx/WorkOrderCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Each stage segment carries a visually-hidden name and status label."
+      ]
+    },
+    {
+      "id": "work-order-card-1-dark",
+      "title": "Detail card (Dark)",
+      "description": "Work order detail card adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/work-order-card/1-dark.html",
+        "tsx": "tsx/WorkOrderCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Stage segment contrast (blue vs. gray-700) meets WCAG AA on the dark card background."
+      ]
+    },
+    {
+      "id": "work-order-card-2",
+      "title": "Compact list",
+      "description": "Compact list-row variant for scanning many open work orders at once.",
+      "source": {
+        "html": "../../../../public/examples/application/work-order-card/2.html",
+        "tsx": "tsx/WorkOrderCardVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Status is conveyed in text (stage summary) alongside the decorative color dot, not by color alone."
+      ]
+    },
+    {
+      "id": "work-order-card-2-dark",
+      "title": "Compact list (Dark)",
+      "description": "Compact work-order list row adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/work-order-card/2-dark.html",
+        "tsx": "tsx/WorkOrderCardVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Text and dot colors meet WCAG AA contrast against the dark row background."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-slug-input",
+  "title": "Slug Input",
+  "description": "Title field paired with a live URL-slug preview or editable field, so users can see and optionally override the URL that will be generated from their content's title.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["slug", "url", "form", "cms", "primitive"],
+  "useWhen": [
+    "Letting users see the URL that will be generated from a title before publishing.",
+    "Allowing an override of the auto-generated slug for SEO or readability reasons.",
+    "Building a CMS, blog editor, or settings page where content needs a stable, editable URL segment."
+  ],
+  "avoidWhen": [
+    "The URL is never shown or editable by the user — skip the extra UI entirely.",
+    "The slug is derived from an immutable identifier (e.g. a database id) rather than a title — a plain read-only field is simpler.",
+    "No slugify logic is available yet — wire one in before shipping; do not fake the transformation with a hardcoded example."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The component has a fixed max width; the slug row truncates the prefix and value with an ellipsis on narrow containers rather than wrapping.",
+  "accessibility": [
+    "The title and slug fields each carry a real, associated label.",
+    "The Edit trigger is a real button with visible text describing its action.",
+    "The URL prefix is plain text adjacent to the editable value, not baked into a single unlabeled string, so screen readers can distinguish the fixed and editable parts."
+  ],
+  "compatibleWith": ["application-form-row", "application-copy-field"],
+  "variants": [
+    {
+      "id": "slug-input-1",
+      "title": "Always-editable slug field",
+      "description": "Title field with an always-visible, always-editable URL slug field beneath it and help text explaining the auto-generation.",
+      "source": {
+        "html": "../../../../public/examples/application/slug-input/1.html",
+        "tsx": "tsx/SlugInputVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The slug field's label and the adjacent URL prefix are both real text, not combined into a single opaque string."
+      ]
+    },
+    {
+      "id": "slug-input-1-dark",
+      "title": "Always-editable slug field (Dark)",
+      "description": "Always-editable slug field pair adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/slug-input/1-dark.html",
+        "tsx": "tsx/SlugInputVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Field borders and help text contrast must meet WCAG AA on dark backgrounds."
+      ]
+    },
+    {
+      "id": "slug-input-2",
+      "title": "Read-only preview with Edit trigger",
+      "description": "Read-only slug preview with a separate Edit button, keeping the URL out of the way until the user explicitly wants to change it.",
+      "source": {
+        "html": "../../../../public/examples/application/slug-input/2.html",
+        "tsx": "tsx/SlugInputVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "editing"],
+      "accessibility": [
+        "The Edit button has visible text, not just an icon, so its purpose is clear without relying on the icon alone."
+      ]
+    },
+    {
+      "id": "slug-input-2-dark",
+      "title": "Read-only preview with Edit trigger (Dark)",
+      "description": "Read-only slug preview with an Edit trigger, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/slug-input/2-dark.html",
+        "tsx": "tsx/SlugInputVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "editing"],
+      "accessibility": [
+        "Preview text and Edit button contrast must meet WCAG AA on dark backgrounds."
+      ]
+    }
+  ]
+}

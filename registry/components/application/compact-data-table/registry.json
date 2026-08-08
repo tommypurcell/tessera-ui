@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-compact-data-table",
+  "title": "Compact Data Table",
+  "description": "High-density zebra-striped table with a condensed row height and a sticky header, for scanning many rows in a fixed-height scroll panel.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["table", "data", "compact", "dense", "sticky-header", "zebra"],
+  "useWhen": [
+    "Displaying many rows of simple tabular data in a constrained-height panel, such as an inventory or lookup list.",
+    "Row density matters more than spacious readability — the user is scanning, not reading in depth.",
+    "A sticky header is needed so column labels stay visible while scrolling a long row list."
+  ],
+  "avoidWhen": [
+    "The table needs sortable columns, row selection, or inline actions — use application-tables or application-data-grid-cell-editor instead.",
+    "Rows contain rich content (avatars, multi-line text, badges) — condensed row height will feel cramped; use application-tables instead.",
+    "The dataset is short enough to fit without scrolling — the sticky header and scroll container add no value."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The table sits in a fixed max-width, max-height scroll container; the header stays pinned via position: sticky while the body scrolls. Columns do not reflow at smaller widths — enable horizontal scroll on the outer container if needed.",
+  "accessibility": [
+    "Column headers use scope=\"col\" so screen readers announce the correct header for each cell.",
+    "Zebra striping is a visual aid only; row content itself does not rely on color to convey meaning.",
+    "The sticky header remains keyboard-scrollable along with the body via native scroll behavior."
+  ],
+  "compatibleWith": ["application-tables", "application-data-grid-cell-editor"],
+  "variants": [
+    {
+      "id": "compact-data-table-1",
+      "title": "Sticky header, dense rows",
+      "description": "Zebra-striped table with condensed row height and a sticky header inside a scrollable panel.",
+      "source": {
+        "html": "../../../../public/examples/application/compact-data-table/1.html",
+        "tsx": "tsx/CompactDataTableVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Header cells use scope=\"col\" for correct screen-reader association with body cells."
+      ]
+    },
+    {
+      "id": "compact-data-table-1-dark",
+      "title": "Sticky header, dense rows (Dark)",
+      "description": "Compact data table adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/compact-data-table/1-dark.html",
+        "tsx": "tsx/CompactDataTableVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Zebra row and header contrast meet WCAG AA against the dark panel background."
+      ]
+    }
+  ]
+}

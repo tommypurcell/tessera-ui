@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex justify-center bg-gray-950 p-6">
+    <div class="w-full max-w-sm rounded-xl border border-amber-900 bg-amber-500/10 p-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="size-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M10 2a1 1 0 01.894.553l1.382 2.764 3.05.443a1 1 0 01.554 1.706l-2.207 2.152.521 3.038a1 1 0 01-1.451 1.054L10 12.347l-2.743 1.363a1 1 0 01-1.451-1.054l.521-3.038-2.207-2.152a1 1 0 01.554-1.706l3.05-.443L9.106 2.553A1 1 0 0110 2z" />
+          </svg>
+          <p class="text-sm font-semibold text-amber-300">Level up! Now level 13</p>
+        </div>
+        <span class="flex size-9 shrink-0 items-center justify-center rounded-full bg-amber-500 text-sm font-bold text-gray-950">13</span>
+      </div>
+
+      <div class="mt-3">
+        <div class="flex items-baseline justify-between">
+          <p class="text-xs font-medium text-amber-400">Progress to level 14</p>
+          <p class="text-xs text-amber-500">120 / 3,300 XP</p>
+        </div>
+        <div
+          role="progressbar"
+          aria-label="Progress to level 14"
+          aria-valuenow="120"
+          aria-valuemin="0"
+          aria-valuemax="3300"
+          class="mt-1.5 h-2.5 w-full overflow-hidden rounded-full bg-amber-950/60"
+        >
+          <div class="h-full rounded-full bg-amber-400" style="width: 4%"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

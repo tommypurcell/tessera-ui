@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-credit-card-form",
+  "title": "Credit Card Form",
+  "description": "Payment form with card number, expiry, and CVC fields, live brand-badge detection, and correct autocomplete attributes for browser and password-manager card fill.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["payment", "credit-card", "checkout", "form", "e-commerce", "primitive"],
+  "useWhen": [
+    "Collecting a credit or debit card for checkout or saving a payment method.",
+    "Showing a detected card brand badge as the user types their card number.",
+    "You want a live visual card preview reflecting the entered name, expiry, and last 4 digits."
+  ],
+  "avoidWhen": [
+    "You use a hosted payment element (e.g. a PCI-compliant iframe field) — that field owns its own markup and should not be wrapped in a plain input like this.",
+    "Only a single stored payment method needs to be displayed, not entered — use a read-only card summary instead.",
+    "Brand detection logic isn't available — leave the brand prop as 'unknown' rather than guessing or hardcoding a badge."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The form has a fixed max width suited to a checkout column; the expiry and CVC fields sit in a two-column grid that stacks on very narrow screens.",
+  "accessibility": [
+    "Every field carries a real label and the correct autocomplete attribute (cc-number, cc-exp, cc-csc, cc-name) for browser and password-manager autofill.",
+    "The detected brand badge is supplementary — the card number itself remains the source of truth, not the badge.",
+    "The visual card preview in variant 2 is decorative (aria-hidden) since its content duplicates the real form fields below it."
+  ],
+  "compatibleWith": ["application-form-row", "application-inputs"],
+  "variants": [
+    {
+      "id": "credit-card-form-1",
+      "title": "Standard form",
+      "description": "Vertical payment form with a card-number field showing a detected-brand badge, an expiry/CVC row, and a name field.",
+      "source": {
+        "html": "../../../../public/examples/application/credit-card-form/1.html",
+        "tsx": "tsx/CreditCardFormVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "brand-detected"],
+      "accessibility": [
+        "Each field carries the matching cc-* autocomplete token so password managers can fill the form correctly."
+      ]
+    },
+    {
+      "id": "credit-card-form-1-dark",
+      "title": "Standard form (Dark)",
+      "description": "Standard credit card form adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/credit-card-form/1-dark.html",
+        "tsx": "tsx/CreditCardFormVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "brand-detected"],
+      "accessibility": [
+        "Field borders and label text must meet WCAG AA contrast on dark backgrounds."
+      ]
+    },
+    {
+      "id": "credit-card-form-2",
+      "title": "With card preview",
+      "description": "Payment form with a live visual card preview above the fields, showing the masked number, name, and expiry.",
+      "source": {
+        "html": "../../../../public/examples/application/credit-card-form/2.html",
+        "tsx": "tsx/CreditCardFormVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The decorative card preview is marked aria-hidden since its content duplicates the real, labeled form fields."
+      ]
+    },
+    {
+      "id": "credit-card-form-2-dark",
+      "title": "With card preview (Dark)",
+      "description": "Card-preview payment form adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/credit-card-form/2-dark.html",
+        "tsx": "tsx/CreditCardFormVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "The card preview's ring provides a visible edge against the dark form background."
+      ]
+    }
+  ]
+}

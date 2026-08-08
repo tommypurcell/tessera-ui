@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex justify-center bg-gray-950 p-6">
+    <div role="tablist" aria-label="Saved views" class="flex w-full max-w-xl items-center gap-1 border-b border-gray-800">
+      <button
+        type="button"
+        role="tab"
+        aria-selected="true"
+        class="relative px-3 py-2.5 text-sm font-medium text-white"
+      >
+        All issues
+        <span class="absolute inset-x-0 -bottom-px h-0.5 rounded-full bg-white" aria-hidden="true"></span>
+      </button>
+
+      <button
+        type="button"
+        role="tab"
+        aria-selected="false"
+        class="px-3 py-2.5 text-sm font-medium text-gray-400 hover:text-white"
+      >
+        Assigned to me
+      </button>
+
+      <button
+        type="button"
+        role="tab"
+        aria-selected="false"
+        class="px-3 py-2.5 text-sm font-medium text-gray-400 hover:text-white"
+      >
+        High priority
+      </button>
+
+      <button
+        type="button"
+        aria-label="Save current filters as a new view"
+        class="ml-auto inline-flex size-8 shrink-0 items-center justify-center rounded-md text-gray-500 hover:bg-gray-800 hover:text-gray-200 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.5v15m7.5-7.5h-15" />
+        </svg>
+      </button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex h-40 items-center justify-center p-6">
+    <div class="group relative inline-block">
+      <button
+        type="button"
+        aria-describedby="tooltip-1"
+        class="rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+      >
+        Hover me
+      </button>
+      <div
+        id="tooltip-1"
+        role="tooltip"
+        class="pointer-events-none absolute -top-2 left-1/2 -translate-x-1/2 -translate-y-full rounded-md bg-gray-900 px-2.5 py-1.5 text-xs font-medium whitespace-nowrap text-white opacity-0 shadow-lg transition-opacity group-hover:opacity-100 group-focus-within:opacity-100"
+      >
+        Saves your changes
+        <span
+          class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"
+          aria-hidden="true"
+        ></span>
+      </div>
+    </div>
+  </body>
+</html>

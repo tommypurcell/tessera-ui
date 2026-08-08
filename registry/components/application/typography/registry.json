@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "name": "application-typography",
+  "title": "Typography",
+  "description": "A type scale of real heading, paragraph, blockquote, list, and utility text elements for keeping text hierarchy consistent across a page or app.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["typography", "text", "heading", "type-scale", "primitive", "content"],
+  "useWhen": [
+    "Establishing a consistent heading and body-text scale across a page or feature.",
+    "Rendering long-form content that needs real headings, a blockquote, a list, and inline code.",
+    "Replacing ad hoc font-size and font-weight utilities with a shared, named type scale."
+  ],
+  "avoidWhen": [
+    "You only need a single label or metric value — use application-stat-tile or a plain span instead.",
+    "The eyebrow/metric/helper trio is what you need — use building-blocks-typography-primitives instead.",
+    "Rich text is user-authored — sanitize and render it separately rather than hardcoding structure."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Text sizes are fixed per element; wrap the scale in your own responsive container to control max width and reduce heading sizes at narrow breakpoints if needed.",
+  "accessibility": [
+    "Headings use real h1-h4 elements in descending order so the scale contributes a correct document outline.",
+    "Blockquote and list content use real blockquote and ul/li elements, not styled divs, so assistive tech announces them correctly.",
+    "Text and muted-text colors meet WCAG AA contrast against the surface they render on."
+  ],
+  "compatibleWith": ["building-blocks-typography-primitives", "application-form-row"],
+  "variants": [
+    {
+      "id": "typography-1",
+      "title": "Heading scale",
+      "description": "h1-h4 heading scale plus a lead paragraph, as typed string props rendered through real heading elements.",
+      "source": {
+        "html": "../../../../public/examples/application/typography/1.html",
+        "tsx": "tsx/TypographyVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Headings render in descending h1-h4 order so screen reader users can navigate the outline."
+      ]
+    },
+    {
+      "id": "typography-1-dark",
+      "title": "Heading scale (Dark)",
+      "description": "Heading scale and lead paragraph adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/typography/1-dark.html",
+        "tsx": "tsx/TypographyVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Heading and lead text contrast must meet WCAG AA on dark backgrounds."
+      ]
+    },
+    {
+      "id": "typography-2",
+      "title": "Body text",
+      "description": "Lead paragraph, running text, blockquote, list, and inline code as typed props rendered through real semantic elements.",
+      "source": {
+        "html": "../../../../public/examples/application/typography/2.html",
+        "tsx": "tsx/TypographyVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The quote renders as a real blockquote and the list as a real ul/li so assistive tech announces their semantics."
+      ]
+    },
+    {
+      "id": "typography-2-dark",
+      "title": "Body text (Dark)",
+      "description": "Body-text elements adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/typography/2-dark.html",
+        "tsx": "tsx/TypographyVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Body text, blockquote, and inline code contrast must meet WCAG AA on dark backgrounds."
+      ]
+    },
+    {
+      "id": "typography-3",
+      "title": "Utility sizes",
+      "description": "Large confirmation text, a form label, and muted helper text as typed props.",
+      "source": {
+        "html": "../../../../public/examples/application/typography/3.html",
+        "tsx": "tsx/TypographyVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The label renders as a real label element; pair it with a form control's id in your own usage."
+      ]
+    },
+    {
+      "id": "typography-3-dark",
+      "title": "Utility sizes (Dark)",
+      "description": "Utility text sizes adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/typography/3-dark.html",
+        "tsx": "tsx/TypographyVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Muted text must still meet WCAG AA contrast against the dark surface, not just visually recede."
+      ]
+    }
+  ]
+}

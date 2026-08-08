@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-secret-reveal-field",
+  "title": "Secret Reveal Field",
+  "description": "Masked secret value field with a reveal toggle and a copy button, distinct from application-api-key-manager since it displays and manages a single secret rather than a table of many keys.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["secret", "security", "reveal", "copy", "form", "primitive"],
+  "useWhen": [
+    "Displaying a single sensitive value, such as a webhook signing secret or an API key, masked by default.",
+    "Letting a user briefly reveal a secret to verify or copy it without permanently exposing it on screen.",
+    "Reminding a user to rotate a key that hasn't been refreshed recently."
+  ],
+  "avoidWhen": [
+    "Multiple keys need to be listed, scoped, and revoked — use application-api-key-manager's table instead.",
+    "The value is not actually sensitive — a plain read-only field or application-copy-field is simpler.",
+    "The secret must never be rendered in the DOM even when masked — fetch and reveal it only on demand from your backend rather than pre-loading the real value."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The field has a fixed max width; the monospace value truncates rather than wraps if the container is narrower than the value's rendered width.",
+  "accessibility": [
+    "The reveal button carries aria-pressed reflecting whether the secret is currently shown, and its aria-label changes between 'Show secret' and 'Hide secret'.",
+    "The copy button has a real aria-label since it is icon-only.",
+    "The rotation warning pairs an icon with text, not color alone, to communicate the reminder."
+  ],
+  "compatibleWith": ["application-api-key-manager", "application-copy-field"],
+  "variants": [
+    {
+      "id": "secret-reveal-field-1",
+      "title": "Reveal and copy",
+      "description": "Masked value with a reveal toggle, a copy button, and help text explaining how to reveal it.",
+      "source": {
+        "html": "../../../../public/examples/application/secret-reveal-field/1.html",
+        "tsx": "tsx/SecretRevealFieldVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["masked", "revealed"],
+      "accessibility": [
+        "aria-pressed on the reveal button reflects whether the value is currently shown as plain text."
+      ]
+    },
+    {
+      "id": "secret-reveal-field-1-dark",
+      "title": "Reveal and copy (Dark)",
+      "description": "Reveal-and-copy secret field adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/secret-reveal-field/1-dark.html",
+        "tsx": "tsx/SecretRevealFieldVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["masked", "revealed"],
+      "accessibility": [
+        "Field text and icon button contrast must meet WCAG AA on dark backgrounds."
+      ]
+    },
+    {
+      "id": "secret-reveal-field-2",
+      "title": "With rotation note",
+      "description": "Secret field shown in its revealed state with a Rotate key action and a rotation-age warning note.",
+      "source": {
+        "html": "../../../../public/examples/application/secret-reveal-field/2.html",
+        "tsx": "tsx/SecretRevealFieldVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["revealed"],
+      "accessibility": [
+        "The Rotate key action is a real button with visible text, not just an icon."
+      ]
+    },
+    {
+      "id": "secret-reveal-field-2-dark",
+      "title": "With rotation note (Dark)",
+      "description": "Secret field with a rotation note, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/secret-reveal-field/2-dark.html",
+        "tsx": "tsx/SecretRevealFieldVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["revealed"],
+      "accessibility": [
+        "Rotation warning background and text contrast must meet WCAG AA on dark backgrounds."
+      ]
+    }
+  ]
+}

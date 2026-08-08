@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-import-wizard",
+  "title": "Import Wizard",
+  "description": "Multi-step upload, column-mapping, and preview flow for importing spreadsheet or CSV data, with per-column field mapping and a row-count review before confirming.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["import", "csv", "wizard", "onboarding", "data", "primitive"],
+  "useWhen": [
+    "Letting a user upload a spreadsheet or CSV and map its columns to fields in your data model before importing.",
+    "Showing a row-count preview and skip warnings before committing an import.",
+    "The import flow is specific enough (file → mapping → review) that the generic application-stepper-wizard shell needs this specialized content."
+  ],
+  "avoidWhen": [
+    "The import format is fixed and never needs column mapping — a plain file uploader is simpler.",
+    "The flow has generic steps unrelated to file import — use application-stepper-wizard instead.",
+    "Import happens instantly with no preview needed — skip straight to a confirmation toast instead of a multi-step flow."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The wizard card has a fixed max width and stacks its step header vertically once the step labels no longer fit horizontally; the preview table scrolls horizontally on narrow screens.",
+  "accessibility": [
+    "The current step is marked with aria-current='step' on its indicator.",
+    "The skip/warning message is not the only signal a column is unmapped — style and copy communicate it together.",
+    "The preview table uses real th/scope='col' headers so screen readers announce column names per cell."
+  ],
+  "compatibleWith": ["application-stepper-wizard", "application-file-uploaders", "application-tables"],
+  "variants": [
+    {
+      "id": "import-wizard-1",
+      "title": "Map columns step",
+      "description": "Second step of the wizard: match each source column to a destination field, with unresolved mappings flagged as a warning.",
+      "source": {
+        "html": "../../../../public/examples/application/import-wizard/1.html",
+        "tsx": "tsx/ImportWizardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "warning"],
+      "accessibility": [
+        "Unmapped fields are flagged with red border and text together with the warning copy, not color alone."
+      ]
+    },
+    {
+      "id": "import-wizard-1-dark",
+      "title": "Map columns step (Dark)",
+      "description": "Column-mapping wizard step adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/import-wizard/1-dark.html",
+        "tsx": "tsx/ImportWizardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "warning"],
+      "accessibility": [
+        "Warning and unmapped-field colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    },
+    {
+      "id": "import-wizard-2",
+      "title": "Review step",
+      "description": "Final step of the wizard: a preview table of the first rows, a count of remaining rows, and a skip-reason warning before confirming the import.",
+      "source": {
+        "html": "../../../../public/examples/application/import-wizard/2.html",
+        "tsx": "tsx/ImportWizardVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "warning"],
+      "accessibility": [
+        "The import button states the exact row count that will be imported, not just a generic 'Import' label."
+      ]
+    },
+    {
+      "id": "import-wizard-2-dark",
+      "title": "Review step (Dark)",
+      "description": "Import review step adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/import-wizard/2-dark.html",
+        "tsx": "tsx/ImportWizardVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "warning"],
+      "accessibility": [
+        "Table header and row text contrast must meet WCAG AA on dark backgrounds."
+      ]
+    }
+  ]
+}

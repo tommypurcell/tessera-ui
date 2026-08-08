@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-xs p-6">
+    <div class="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+      <div class="relative">
+        <img
+          src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=480&h=320&fit=crop"
+          alt="Margherita pizza with fresh basil"
+          class="aspect-[3/2] w-full object-cover"
+        />
+        <div class="absolute top-2 left-2 flex gap-1">
+          <span class="rounded-full bg-white/95 px-2 py-0.5 text-xs font-medium text-green-700">Vegetarian</span>
+        </div>
+      </div>
+
+      <div class="p-4">
+        <div class="flex items-start justify-between gap-2">
+          <h3 class="text-sm font-medium text-gray-900">Margherita Pizza</h3>
+          <div class="flex shrink-0 items-center gap-1" role="img" aria-label="Rated 4.7 out of 5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-3.5 text-amber-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.454 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clip-rule="evenodd" />
+            </svg>
+            <span class="text-xs text-gray-500">4.7</span>
+          </div>
+        </div>
+        <p class="mt-1 text-xs text-gray-500">San Marzano tomatoes, fresh mozzarella, basil</p>
+
+        <div class="mt-3 flex items-center justify-between">
+          <span class="text-sm font-semibold text-gray-900">$14.50</span>
+          <button
+            type="button"
+            class="rounded-md bg-gray-900 px-3 py-1.5 text-xs font-semibold text-white shadow-sm hover:bg-gray-700"
+          >
+            Add to order
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

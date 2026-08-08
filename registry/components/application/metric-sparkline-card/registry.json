@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-metric-sparkline-card",
+  "title": "Metric Sparkline Card",
+  "description": "KPI tile pairing a big number and delta badge with an inline sparkline trend, computed from a typed points array without a charting library.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["stat", "kpi", "metric", "sparkline", "dashboard", "chart", "primitive"],
+  "useWhen": [
+    "Showing a KPI alongside its recent trend, not just its current value.",
+    "Building a dashboard summary row where each metric needs a lightweight visual trend, not a full chart.",
+    "You want a self-contained SVG sparkline instead of pulling in a charting library for a small trend line."
+  ],
+  "avoidWhen": [
+    "The metric has no meaningful time-series trend to show — use application-stat-tile instead.",
+    "The data needs axes, tooltips, or zoom — use application-charts instead.",
+    "More than one series must be compared on the same chart — a sparkline is single-series only."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The card has a fixed width intended for a dashboard grid; the sparkline SVG uses preserveAspectRatio='none' and scales to the card's width at any breakpoint.",
+  "accessibility": [
+    "The sparkline SVG carries role='img' and an aria-label summarizing the trend's start and end values in words.",
+    "Growth direction uses both an icon and a text delta, not color alone.",
+    "Decorative icons carry aria-hidden='true'."
+  ],
+  "compatibleWith": ["application-stat-tile", "application-stats", "application-charts"],
+  "variants": [
+    {
+      "id": "metric-sparkline-card-1",
+      "title": "Area sparkline",
+      "description": "KPI tile with an area-fill sparkline, for a rising or falling trend with a filled visual weight.",
+      "source": {
+        "html": "../../../../public/examples/application/metric-sparkline-card/1.html",
+        "tsx": "tsx/MetricSparklineCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The sparkline's aria-label states the trend's direction and range in words, not just visually."
+      ]
+    },
+    {
+      "id": "metric-sparkline-card-1-dark",
+      "title": "Area sparkline (Dark)",
+      "description": "Area-fill sparkline KPI tile adapted for dark dashboard surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/metric-sparkline-card/1-dark.html",
+        "tsx": "tsx/MetricSparklineCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Value, label, and delta badge colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    },
+    {
+      "id": "metric-sparkline-card-2",
+      "title": "Line sparkline",
+      "description": "KPI tile with a line-only sparkline and a marker dot on the latest value.",
+      "source": {
+        "html": "../../../../public/examples/application/metric-sparkline-card/2.html",
+        "tsx": "tsx/MetricSparklineCardVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The marker dot is supplementary; the aria-label already states the latest value in words."
+      ]
+    },
+    {
+      "id": "metric-sparkline-card-2-dark",
+      "title": "Line sparkline (Dark)",
+      "description": "Line-only sparkline KPI tile adapted for dark dashboard surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/metric-sparkline-card/2-dark.html",
+        "tsx": "tsx/MetricSparklineCardVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Line and marker colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

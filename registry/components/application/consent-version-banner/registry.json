@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-consent-version-banner",
+  "title": "Consent Version Banner",
+  "description": "Updated-terms notice with a view-changes link and an accept action, for re-consenting existing users to a revised policy — distinct from application-consent-checklist, which collects initial agreement rather than re-consent to an update.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["consent", "legal", "terms", "banner", "primitive"],
+  "useWhen": [
+    "Notifying existing users that a Terms of Service or Privacy Policy has been updated and needs re-acceptance.",
+    "Summarizing what changed in a policy update so users don't have to read the full document.",
+    "Offering a 'Remind me later' path alongside acceptance for a less disruptive re-consent flow."
+  ],
+  "avoidWhen": [
+    "This is a user's first time agreeing to terms — use application-consent-checklist instead.",
+    "No real change summary is available — link to a diff or changelog rather than fabricating bullet points.",
+    "The update is legally required with no opt-out — consider whether 'Remind me later' is appropriate, or require acceptance to continue."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The floating banner in variant 1 has a fixed max width and keeps its title and Accept button on one row down to narrow tablet widths, wrapping only at very small viewports; the card in variant 2 has a fixed max width with sufficient padding for the changelog list at any width it supports.",
+  "accessibility": [
+    "The 'View changes' and 'Remind me later' controls are real buttons, not visual-only text.",
+    "The version badge in variant 2 is supplementary; the heading and effective-date text carry the primary meaning.",
+    "Each changelog item uses a real list element (ul/li) so screen readers announce it as a list, not a block of text."
+  ],
+  "compatibleWith": ["application-consent-checklist", "application-announcement-banner"],
+  "variants": [
+    {
+      "id": "consent-version-banner-1",
+      "title": "Floating banner",
+      "description": "Compact floating banner with a 'View changes' link and an Accept action for a quick re-consent.",
+      "source": {
+        "html": "../../../../public/examples/application/consent-version-banner/1.html",
+        "tsx": "tsx/ConsentVersionBannerVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The effective date is stated in real text, not only implied by the banner's presence."
+      ]
+    },
+    {
+      "id": "consent-version-banner-1-dark",
+      "title": "Floating banner (Dark)",
+      "description": "Floating consent-update banner adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/consent-version-banner/1-dark.html",
+        "tsx": "tsx/ConsentVersionBannerVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Banner text and button contrast must meet WCAG AA on dark backgrounds."
+      ]
+    },
+    {
+      "id": "consent-version-banner-2",
+      "title": "Card with changelog",
+      "description": "Updated-policy card with an inline changelog list and Remind me later / Accept and continue actions.",
+      "source": {
+        "html": "../../../../public/examples/application/consent-version-banner/2.html",
+        "tsx": "tsx/ConsentVersionBannerVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The changelog renders as a real ul/li list so its item count and structure are announced to screen readers."
+      ]
+    },
+    {
+      "id": "consent-version-banner-2-dark",
+      "title": "Card with changelog (Dark)",
+      "description": "Updated-policy card with a changelog list, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/consent-version-banner/2-dark.html",
+        "tsx": "tsx/ConsentVersionBannerVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Version badge and changelog text contrast must meet WCAG AA on dark backgrounds."
+      ]
+    }
+  ]
+}
