@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-mobile-filter-sheet",
+  "title": "Mobile Filter Sheet",
+  "description": "A full-screen mobile filter form with price range, category checkboxes, size chips, an availability toggle, and a sticky apply footer.",
+  "category": "application/mobile-filter-sheet",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "mobile-filter-sheet",
+    "mobile",
+    "filter sheet",
+    "bottom sheet",
+    "facets",
+    "apply reset"
+  ],
+  "useWhen": [
+    "A mobile app or responsive site needs a dedicated, full-screen filtering experience reached from a 'Filters' button, rather than an always-visible panel.",
+    "The result count should update live in a sticky footer button (\"Show 42 results\") to preview the effect of filter changes before committing."
+  ],
+  "avoidWhen": [
+    "Building a desktop or wide-viewport filtering UI — `Faceted Search Sidebar`'s persistent side panel fits that shape better.",
+    "Filters are simple enough for a single dropdown or a few inline chips — a dedicated full-screen sheet adds unnecessary navigation."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Filter groups scroll independently in the middle section while the header (Cancel/Filters/Reset) and footer apply button stay pinned via shrink-0 flex children.",
+  "accessibility": [
+    "Category options use real <label>/<input type=\"checkbox\"> pairs, keyboard-reachable and screen-reader announced with their result counts.",
+    "Size chips use aria-pressed to expose selection state to assistive technology beyond the filled background color.",
+    "The availability switch is a labelled row so its on/off state is associated with visible text, not just the toggle's position."
+  ],
+  "compatibleWith": ["application-faceted-search-sidebar", "application-bottom-sheet-nav"],
+  "variants": [
+    {
+      "id": "mobile-filter-sheet-1",
+      "title": "Shoe filters",
+      "description": "A full-screen filter sheet in a phone frame with a dual-handle price range slider, checkable category rows with counts, multi-select size chips, an in-stock-only toggle, and a sticky 'Show 42 results' footer button.",
+      "source": {
+        "html": "../../../../public/examples/application/mobile-filter-sheet/1.html",
+        "tsx": "tsx/MobileFilterSheetVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "selected", "checked"],
+      "accessibility": [
+        "Checkboxes and size chips expose their state via native inputs and aria-pressed, not color alone."
+      ]
+    },
+    {
+      "id": "mobile-filter-sheet-1-dark",
+      "title": "Shoe filters (Dark)",
+      "description": "Mobile filter sheet adapted for dark surfaces, including the price slider track, selected size chips, and the toggle switch.",
+      "source": {
+        "html": "../../../../public/examples/application/mobile-filter-sheet/1-dark.html",
+        "tsx": "tsx/MobileFilterSheetVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "selected", "checked"],
+      "accessibility": [
+        "All labels, counts, and the footer button text meet WCAG AA contrast against the dark sheet background."
+      ]
+    }
+  ]
+}
