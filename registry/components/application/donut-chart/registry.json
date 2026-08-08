@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-donut-chart",
+  "title": "Donut Chart",
+  "description": "Multi-segment proportion ring with a real computed center total and a color-keyed legend — each segment's arc length is derived from its share of the whole via SVG stroke-dasharray.",
+  "category": "application/charts",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["donut-chart", "pie-chart", "proportion", "chart", "analytics"],
+  "useWhen": [
+    "Showing how a total breaks down into a small number of categories (e.g. traffic sources, budget allocation).",
+    "You want the center of the ring to display the real computed total, not a hand-typed number.",
+    "A compact ring plus legend fits better than a full bar or table for 3–6 categories."
+  ],
+  "avoidWhen": [
+    "You have many categories (8+) — the ring gets crowded and thin slices become unreadable; use a table or bar chart instead.",
+    "You need a single metric against one target — use progress-ring-cluster (single dials) or bullet-chart instead.",
+    "Precise per-category comparison matters more than proportion-of-whole — a bar chart communicates that better."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The ring is a fixed-size SVG (default 160px) next to a legend list; scale the `size` prop for the surrounding layout rather than relying on CSS scaling.",
+  "accessibility": [
+    "Each ring segment carries role='img' with an aria-label stating the category name and value, since arc length alone isn't announced by screen readers.",
+    "Every segment also appears in the visible legend with a color swatch, label, and exact value.",
+    "The center total is real text, not an image, so it's selectable and readable by assistive tech."
+  ],
+  "compatibleWith": ["application-charts", "application-progress-ring-cluster", "application-stat-tile"],
+  "variants": [
+    {
+      "id": "donut-chart-1",
+      "title": "Donut chart",
+      "description": "Four-segment traffic-sources donut (Direct/Organic/Referral/Social) with a center total of 100 and a legend, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/donut-chart/1.html",
+        "tsx": "tsx/DonutChartVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Segment color is supplementary; the legend's label and numeric value carry the precise data."
+      ]
+    },
+    {
+      "id": "donut-chart-1-dark",
+      "title": "Donut chart (Dark)",
+      "description": "The same four-segment traffic-sources donut, adapted for dark surfaces with lightened segment colors for contrast.",
+      "source": {
+        "html": "../../../../public/examples/application/donut-chart/1-dark.html",
+        "tsx": "tsx/DonutChartVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Segment, center text, and legend colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
