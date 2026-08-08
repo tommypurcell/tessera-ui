@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex flex-col items-center gap-3 bg-gray-950 p-6">
+    <div class="flex w-full max-w-lg items-center gap-3 rounded-md border border-gray-800 bg-gray-900 px-4 py-3 text-sm">
+      <code class="shrink-0 rounded bg-gray-800 px-1.5 py-0.5 font-mono text-xs text-gray-300">order.created</code>
+      <span class="shrink-0 text-xs text-gray-500">2 min ago</span>
+      <span class="ml-auto shrink-0 rounded-full bg-green-500/10 px-2 py-0.5 text-xs font-medium text-green-300">Delivered</span>
+      <span class="shrink-0 font-mono text-xs text-gray-500">200</span>
+    </div>
+
+    <div class="flex w-full max-w-lg items-center gap-3 rounded-md border border-gray-800 bg-gray-900 px-4 py-3 text-sm">
+      <code class="shrink-0 rounded bg-gray-800 px-1.5 py-0.5 font-mono text-xs text-gray-300">invoice.paid</code>
+      <span class="shrink-0 text-xs text-gray-500">5 min ago</span>
+      <span class="ml-auto shrink-0 rounded-full bg-amber-500/10 px-2 py-0.5 text-xs font-medium text-amber-300">Pending</span>
+    </div>
+
+    <div class="flex w-full max-w-lg items-center gap-3 rounded-md border border-gray-800 bg-gray-900 px-4 py-3 text-sm">
+      <code class="shrink-0 rounded bg-gray-800 px-1.5 py-0.5 font-mono text-xs text-gray-300">subscription.updated</code>
+      <span class="shrink-0 text-xs text-gray-500">12 min ago</span>
+      <span class="ml-auto shrink-0 rounded-full bg-red-500/10 px-2 py-0.5 text-xs font-medium text-red-300">Failed</span>
+      <span class="shrink-0 font-mono text-xs text-gray-500">503</span>
+      <button type="button" class="shrink-0 text-xs font-medium text-blue-400 hover:text-blue-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-1 focus-visible:ring-offset-gray-900">Retry</button>
+    </div>
+  </body>
+</html>
