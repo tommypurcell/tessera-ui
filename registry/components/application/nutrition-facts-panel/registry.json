@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-nutrition-facts-panel",
+  "title": "Nutrition Facts Panel",
+  "description": "FDA-style nutrition facts panel with a % Daily Value column computed live as dailyValueAmount / dailyValueTotal per nutrient — distinct from a generic table, which has no %DV derivation or nutrition-label formatting conventions.",
+  "category": "application/food",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["nutrition", "food", "label", "health"],
+  "useWhen": [
+    "Displaying a product's nutrition facts in the familiar FDA label format.",
+    "You want the % Daily Value column derived from real per-nutrient amounts rather than hand-typed.",
+    "Indentation should distinguish sub-nutrients (e.g. Saturated Fat under Total Fat) from top-level rows."
+  ],
+  "avoidWhen": [
+    "You need a generic data table with no nutrition-label semantics — use a plain table instead.",
+    "You only need calorie count, not a full nutrient breakdown — a simple stat is sufficient.",
+    "The daily-value percentages aren't meaningful for your data — a plain amount list is more honest."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The panel has a fixed narrow max width matching real nutrition label proportions and doesn't need to reflow at different container widths.",
+  "accessibility": [
+    "Semantic heading and list markup let screen readers navigate the label's structure the same way as visually.",
+    "Each %DV value is computed from the same amount shown in the row, so the two numbers can never contradict each other.",
+    "Sub-nutrient rows are visually indented in addition to being nested in markup order, not conveyed by indentation alone."
+  ],
+  "compatibleWith": ["application-recipe-ingredient-list", "application-dish-card"],
+  "variants": [
+    {
+      "id": "nutrition-facts-panel-1",
+      "title": "Nutrition facts panel",
+      "description": "A granola bar's nutrition facts with %DV computed from real per-nutrient amounts against FDA 2020 daily values, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/nutrition-facts-panel/1.html",
+        "tsx": "tsx/NutritionFactsPanelVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Every %DV value was independently verified via a Python script computing amount/dailyValueTotal before being hand-transcribed into the static HTML."
+      ]
+    },
+    {
+      "id": "nutrition-facts-panel-1-dark",
+      "title": "Nutrition facts panel (Dark)",
+      "description": "The same nutrition facts panel, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/nutrition-facts-panel/1-dark.html",
+        "tsx": "tsx/NutritionFactsPanelVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "High-contrast black-and-white label styling is preserved on dark backgrounds by inverting to white-on-near-black rather than muted grays."
+      ]
+    }
+  ]
+}
