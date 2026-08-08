@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 850,
+  "screenshotCount": 854,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -8506,6 +8506,46 @@
       "url": "/screenshots/components/transcript-ribbon/conversation-flow.jpg",
       "width": 1156,
       "height": 468
+    },
+    {
+      "componentId": "application-work-order-card",
+      "variantId": "work-order-card-1",
+      "appearance": "light",
+      "sourcePath": "files/application-work-order-card/work-order-card-1.html",
+      "sourceSha256": "2085311c757e5f46af1a635cea72e8060ffa6dfc1d340dc7963e6417a80a8c3d",
+      "url": "/screenshots/components/application-work-order-card/work-order-card-1.jpg",
+      "width": 600,
+      "height": 312
+    },
+    {
+      "componentId": "application-work-order-card",
+      "variantId": "work-order-card-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-work-order-card/work-order-card-1-dark.html",
+      "sourceSha256": "908133693707a05b04a1a87124f0334a08b651ce73ac1c47688bf2219cbe7aa8",
+      "url": "/screenshots/components/application-work-order-card/work-order-card-1-dark.jpg",
+      "width": 600,
+      "height": 312
+    },
+    {
+      "componentId": "application-work-order-card",
+      "variantId": "work-order-card-2",
+      "appearance": "light",
+      "sourcePath": "files/application-work-order-card/work-order-card-2.html",
+      "sourceSha256": "a80fd04e452b92f315a677d5de3b4fa5fce48a74ca85481eeb13dcffebf23bab",
+      "url": "/screenshots/components/application-work-order-card/work-order-card-2.jpg",
+      "width": 600,
+      "height": 238
+    },
+    {
+      "componentId": "application-work-order-card",
+      "variantId": "work-order-card-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-work-order-card/work-order-card-2-dark.html",
+      "sourceSha256": "a71e1cb8d0f55f6f3983340963e9d2d53ee52b3d469a91c08bb268a2a05770aa",
+      "url": "/screenshots/components/application-work-order-card/work-order-card-2-dark.jpg",
+      "width": 600,
+      "height": 238
     }
   ]
 }
