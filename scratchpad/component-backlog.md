@@ -161,26 +161,88 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- === WAVE 2 (builders back on, post-102) — 24 new application/dashboard-grade ideas, verified non-dupe against registry === -->
 - [x] (builder-4) Data Grid Cell Editor — actively-editing ringed cell + dirty-cell highlight w/ unsaved indicator + nav hint footer, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #14)
-- [~] (builder-5) Column Visibility Menu — dropdown of toggleable table columns with show/hide checkboxes and reorder handles; companion control for data tables.
-- [~] (builder-9) Saved Views Bar — tab-like row of named filter/sort presets with add/rename/star affordances; distinct from tabs (persisted query state).
-- [~] (builder-3) Query Builder — visual AND/OR condition group builder with field/operator/value rows and nesting; power-filter UI absent from library.
-- [~] (builder-2) Faceted Search Sidebar — collapsible filter groups with counts, checkboxes, and range facets; e-commerce/search staple distinct from data-filter-bar.
-- [~] (builder-4) Rich Tooltip Chart — hover tooltip card showing series color swatches, values, and delta for a chart datapoint; pairs with charts.
-- [~] (builder-8) Progress Ring Cluster — grouped radial progress dials with center labels for multi-metric dashboards; distinct from progress-bars (radial, grouped).
-- [ ] Sankey Flow Diagram — node-and-flow visualization for conversion/traffic routing with weighted links; distinct from funnel-chart.
-- [ ] Org Chart — hierarchical node tree with avatar cards and connector lines; distinct from tree-view (person/reporting semantics).
-- [ ] Wizard Progress Rail — vertical stepper with per-step status, descriptions, and click-to-jump; distinct from stepper-wizard (nav rail, not form shell).
-- [ ] Slide-Over Form — right-edge panel with scrollable form body and sticky footer actions; distinct from drawer (form-specialized layout).
+- [x] (builder-5) Column Visibility Menu — "Columns" trigger + checklist panel (checkbox toggle, drag handles, locked/disabled required row, reset action), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
+- [x] (builder-9) Saved Views Bar — 2 variants (underline views, pill views with star and options) light+dark, registry.json, MDX entry, screenshots
+- [x] (builder-3) Query Builder — top-level AND/OR toggle, field/operator/value condition rows, nested OR sub-group, add condition/group actions, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
+- [x] (builder-2) Faceted Search Sidebar — collapsible Category (checkboxes+counts) and Price (two-thumb range) facets + collapsed Brand group + clear-all, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components
+- [x] (builder-4) Rich Tooltip Chart — 2-series line chart + floating tooltip card (color swatches, values, week-over-week delta badge), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #14)
+- [x] (builder-8) Progress Ring Cluster — 3-metric radial dial cluster (CPU/Memory/Disk) computed via SVG stroke-dasharray from real values (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
+- [x] (builder-4) Sankey Flow Diagram — 3-column weighted flow (2 sources → 2 mid-outcomes → 3 final outcomes), proportional ribbons, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #14)
+- [~] (builder-8) Org Chart — hierarchical node tree with avatar cards and connector lines; distinct from tree-view (person/reporting semantics).
+- [x] (builder-5) Wizard Progress Rail — connected vertical step circles (complete/current/upcoming), title+description, click-to-jump on completed steps, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
+- [x] (builder-4) Slide-Over Form — right-edge panel, fixed header, scrollable field body (text/email/select/textarea/checkbox), sticky Cancel/primary footer, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #14)
 - [x] (builder-7) Confirmation Input — 2 states (disabled/awaiting, matched/confirmed) w/ live phrase-match validation, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
-- [ ] Field Array Editor — repeatable add/remove form-row group with drag reorder for lists of inputs; common form pattern absent from library.
-- [~] (builder-7) Currency Input — masked money field with symbol prefix, thousands grouping, and locale/currency selector; distinct from inputs.
-- [ ] Phone Number Input — country-code flag dropdown + formatted national number field; distinct from inputs.
+- [x] (builder-4) Field Array Editor — repeatable input rows w/ drag handle, remove button, per-row validation, add-another affordance, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #14)
+- [x] (builder-7) Currency Input — 2 variants (default + error state) w/ symbol prefix and currency-code selector, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
+- [~] (builder-4) Phone Number Input — country-code flag dropdown + formatted national number field; distinct from inputs.
 - [x] (builder-6) Time Picker — 2 variants (scrolling hour/minute/period column picker, compact dropdown listbox), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
 - [x] (builder-6) Duration Input — 2 variants (segmented hour/minute fields, quick-preset chips with disabled custom fields), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
 - [ ] Slider Range Histogram — dual-thumb range slider over a value histogram for price/date filtering; distinct from range-inputs and timeline-scrubber.
-- [~] (builder-10) Toast Action Undo — snackbar with a countdown ring and inline Undo action for reversible operations; distinct from toast-stack (single actionable pattern).
-- [ ] Status Page Board — grouped service list with operational/degraded/outage pills and uptime bars; distinct from stats and activity-feed.
-- [ ] Changelog Entry — dated release card with version badge, category tags, and grouped bullet lists; distinct from timelines and activity-feed.
-- [ ] Quota Warning Banner — inline threshold-crossing alert with usage bar and upgrade CTA; distinct from usage-meter (alerting) and announcement-banner.
-- [ ] Split Pane Diff — side-by-side scroll-synced two-column layout for comparing documents; distinct from diff (framework/layout, not line rendering).
-- [ ] Emoji / Reaction Picker — searchable grid popover with category tabs and recents; pairs with comment-thread, absent from library.
+- [x] (builder-10) Toast Action Undo — 2 variants (countdown ring snackbar, linear countdown bar snackbar), light+dark, registry+tsx generated, screenshots verified, pushed
+- [x] (builder-3) Status Page Board — overall status header, grouped service rows w/ 6-bar uptime strip + operational/degraded/outage pill, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
+- [x] (builder-3) Changelog Entry — version badge + date, headline, New/Improved/Fixed category badges, grouped bullet lists per category, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
+- [x] (builder-1) Quota Warning Banner — 2 variants (amber approaching-limit + red limit-exceeded), inline role=alert w/ labeled progressbar + upgrade CTA, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #9).
+- [x] (builder-3) Split Pane Diff — two-column document comparison, version badges, per-paragraph added/removed highlighting, synced-scroll footer legend, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
+- [x] (builder-2) Emoji / Reaction Picker — search field + category tabs (Recent/Smileys/Gestures/Nature) + emoji grid w/ real search-filter and pick state, per-emoji aria-labels, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components
+
+<!-- === WAVE 3 (scale-up, deep backlog ≥40) — themed batches, verified non-dupe against ~110-component registry === -->
+
+<!-- Theme: Dashboard widgets -->
+- [x] (builder-8) Big Number Delta Tile — oversized KPI (MRR $84,210) w/ direction-derived trend arrow, delta %, and comparison label (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
+- [x] (builder-3) Goal Progress Card — current/target values, progress bar with expected-pace tick mark, pacing badge (ahead/on-pace/behind), projected-finish note, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
+- [x] (builder-8) Leaderboard List — 5-entry ranked list w/ auto top-3 medal badges, avatars, scores, up/down/same movement indicators (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
+- [x] (builder-8) Mini Calendar Widget — read-only August 2026 month grid, today highlighted, 6 event-dotted days (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
+- [~] (builder-9) Weather Widget — condition icon, temp, and hourly strip; canonical dashboard tile absent from library.
+- [x] (builder-7) World Clock Row — 4-city timezone list w/ sun/moon day-night icons, light+dark, registry+tsx+MDX, screenshot verified (fixed a day/night icon mismatch found during review), committed + pushed (PR #5)
+
+<!-- Theme: Data entry -->
+- [ ] Autocomplete Address Field — single input with suggestion dropdown and structured fill-out; distinct from combobox (address semantics).
+- [~] (builder-9) Credit Card Form — number/expiry/CVC fields with live brand detection and formatting; e-commerce staple absent from library.
+- [~] (builder-6) Signature Pad — canvas draw area with clear/undo and typed-signature fallback; distinct from inputs.
+- [x] (builder-10) Rating Input Emoji — 2 variants (fieldset scale w/ selected-state label, compact inline scale), light+dark, registry+tsx generated, screenshots verified, pushed
+- [x] (builder-7) Toggle Card Group — 3-card plan selector w/ has-checked: styling and checkmark badge, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
+- [~] (builder-7) Range Dual Input — paired min/max number fields with validation between them; distinct from range-inputs (typed pair).
+- [ ] Markdown Editor — textarea with toolbar and live split preview pane; distinct from rich-text-toolbar (markdown + preview).
+
+<!-- Theme: Navigation -->
+- [ ] Mega Menu Panel — full-width dropdown with multi-column link groups and featured card; distinct from navigation-menu (wide panel layout).
+- [ ] Command Bar Breadcrumb — editable breadcrumb where segments become dropdowns for sibling nav; distinct from breadcrumbs (interactive).
+- [ ] Bottom Sheet Nav — mobile draggable sheet with snap points and handle; distinct from drawer (mobile snap behavior).
+- [x] (builder-10) Floating Action Menu — 2 variants (labeled stacked FAB, icon-only stacked FAB), light+dark, checkbox-driven (no JS), registry+tsx generated, screenshots verified, pushed
+- [ ] Anchor Scroll Nav — sticky in-page section list highlighting the active heading on scroll; distinct from tabs (scrollspy).
+- [ ] Pagination Cursor — prev/next cursor-based pager with "showing X–Y" range and page-size selector; distinct from pagination (cursor style).
+
+<!-- Theme: Feedback / status -->
+- [ ] Inline Validation Hint — field-level success/error message with icon that animates in on blur; distinct from form-row (live feedback state).
+- [x] (builder-1) Loading Overlay — 2 variants (contained card overlay + full-surface overlay), dimmed/blurred scrim w/ role=status spinner+message, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #9).
+- [~] (builder-1) Skeleton Card List — content-shaped shimmer placeholders for card grids; distinct from generic loaders (layout-matched).
+- [x] (builder-1) Retry Error State — 2 variants (full centered panel + compact inline banner), both role=alert w/ cause message + retry button, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #9).
+- [x] (builder-7) Save Status Indicator — 3 states (saving spinner, saved checkmark, failed w/ retry), light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
+- [x] (builder-1) Connection Status Pill — 2 variants (all-states stack + header row), animate-ping pulse ring, role=status, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #9).
+
+<!-- Theme: Data viz -->
+- [ ] Radar Chart — multi-axis polygon comparison for skill/feature profiles; absent from charts set.
+- [~] (builder-8) Bullet Chart — single-metric bar with target marker and qualitative bands; distinct from progress-bars and charts.
+- [ ] Candlestick Chart — OHLC financial chart with volume strip; absent from library.
+- [ ] Choropleth Legend — gradient/step map legend with value buckets; pairs with map-marker-popup, absent from library.
+- [~] (builder-3) Stat Comparison Bars — horizontal category bars with value labels and a highlighted row; distinct from charts (compact comparison).
+- [ ] Trend Sparkbar Row — inline mini bar series inside a table row for compact trends; distinct from metric-sparkline-card (in-row).
+
+<!-- Theme: E-commerce -->
+- [x] (builder-2) Product Card — square image w/ hover quick-view overlay + discount badge, title, 5-star rating (role=img aria-label), price w/ strikethrough compare price, icon add-to-cart, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components
+- [x] (builder-2) Cart Line Item — thumbnail + variant label, quantity stepper w/ real clamped state + aria-live count, computed line total, remove action, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components
+- [x] (builder-2) Checkout Order Summary — itemized subtotal/shipping/tax + promo-code apply w/ real discount state, computed total, checkout CTA, light+dark, registry+tsx+MDX, screenshot verified (math double-checked), committed to builder-2-components
+- [~] (builder-2) Variant Selector — swatch/size option buttons with out-of-stock states; distinct from toggle-group.
+- [ ] Wishlist Heart Toggle — animated favorite button with saved-count; distinct from toggles.
+
+<!-- Theme: Auth -->
+- [x] (builder-5) Social Login Buttons — Google/GitHub/Apple stacked buttons with brand icons + email divider, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
+- [x] (builder-5) Auth Card Shell — logo+heading+form slot(children)+footer switch-link layout shell, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
+- [x] (builder-5) Magic Link Sent State — envelope icon, email echo, live resend countdown (stated in button text), change-email link, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
+- [ ] Session Devices List — active-session rows with device/location/last-active and revoke; distinct from api-key-manager and team-members-list.
+
+<!-- Theme: Empty / error states -->
+- [ ] First-Run Empty State — illustrative zero-data panel with primary CTA and secondary hint; distinct from empty-states (onboarding-focused).
+- [ ] 404 / Error Page — full-page code, message, illustration, and home/back actions; distinct from retry-error-state (route-level).
+- [ ] No-Results Search State — search-specific empty view with query echo and clear-filters suggestion; distinct from empty-states.
+- [ ] Permission Denied State — locked panel with reason and request-access button; distinct from empty-states.
