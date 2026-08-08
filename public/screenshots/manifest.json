@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 830,
+  "screenshotCount": 834,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -1095,6 +1095,46 @@
       "sourceSha256": "d3dd130ef99c37ef680e1a3be6509b9d6cef2d5f785c2bf29a06e13cfd36be19",
       "url": "/screenshots/components/application-details-list/details-list-4-dark.jpg",
       "width": 816,
+      "height": 400
+    },
+    {
+      "componentId": "application-dish-card",
+      "variantId": "dish-card-1",
+      "appearance": "light",
+      "sourcePath": "files/application-dish-card/dish-card-1.html",
+      "sourceSha256": "7d13233dcb00bb86a0600cba45a60dfbdbc18cf256260d75f7f10b8213c3c458",
+      "url": "/screenshots/components/application-dish-card/dish-card-1.jpg",
+      "width": 600,
+      "height": 406
+    },
+    {
+      "componentId": "application-dish-card",
+      "variantId": "dish-card-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-dish-card/dish-card-1-dark.html",
+      "sourceSha256": "631ccfb009a81962b4fbac932667ce71facab22c1a608cb2ac77cf6a93184814",
+      "url": "/screenshots/components/application-dish-card/dish-card-1-dark.jpg",
+      "width": 600,
+      "height": 406
+    },
+    {
+      "componentId": "application-dish-card",
+      "variantId": "dish-card-2",
+      "appearance": "light",
+      "sourcePath": "files/application-dish-card/dish-card-2.html",
+      "sourceSha256": "01ed9a21cc8aa439cc91b9ba1e4cd7aba274bdfef59ea75e206043136598861a",
+      "url": "/screenshots/components/application-dish-card/dish-card-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-dish-card",
+      "variantId": "dish-card-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-dish-card/dish-card-2-dark.html",
+      "sourceSha256": "c024caafd0f29c66464f4808f1d42f5ca85f7da3213ad47bc9b7cf5d2c116048",
+      "url": "/screenshots/components/application-dish-card/dish-card-2-dark.jpg",
+      "width": 600,
       "height": 400
     },
     {

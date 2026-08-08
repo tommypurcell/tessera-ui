@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-dish-card",
+  "title": "Dish Card",
+  "description": "Food-menu item card with a photo, dietary tag, rating, price, and a quick-add action, distinct from application-product-card since it carries food-specific framing (dietary tags, spice level, order language) rather than generic e-commerce cart semantics.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["food", "menu", "restaurant", "dish", "order", "primitive"],
+  "useWhen": [
+    "Displaying a restaurant or food-delivery menu item with a photo, description, and price.",
+    "Surfacing dietary information (vegetarian, vegan, gluten-free) or a spice-level indicator for a dish.",
+    "Letting a user add an item to their order or adjust its quantity once added."
+  ],
+  "avoidWhen": [
+    "The item isn't food — use application-product-card for general e-commerce products instead.",
+    "No real dietary or spice data is available — omit the tag rather than guessing or defaulting it.",
+    "The layout needs to show a full nutrition breakdown — this card is a menu-browsing summary, not a detail page."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Variant 1's vertical card has a fixed max width suited to a menu grid; Variant 2's horizontal row spans its container width and truncates the name and description with an ellipsis on narrow screens.",
+  "accessibility": [
+    "The star rating uses role='img' with an aria-label stating the numeric rating, not just filled star icons.",
+    "The spice-level chilis in Variant 2 are grouped under a single role='img' with an aria-label naming the level in words (e.g. 'Hot'), not conveyed by icon count alone.",
+    "The quantity stepper's increase/decrease buttons carry real aria-labels since they are icon-only."
+  ],
+  "compatibleWith": ["application-product-card", "application-checkout-order-summary"],
+  "variants": [
+    {
+      "id": "dish-card-1",
+      "title": "Menu card",
+      "description": "Vertical menu-item card with a photo, dietary tag, rating, price, and an Add to order button.",
+      "source": {
+        "html": "../../../../public/examples/application/dish-card/1.html",
+        "tsx": "tsx/DishCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The dish photo carries descriptive alt text naming the dish, not just 'food photo'."
+      ]
+    },
+    {
+      "id": "dish-card-1-dark",
+      "title": "Menu card (Dark)",
+      "description": "Vertical menu-item card adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/dish-card/1-dark.html",
+        "tsx": "tsx/DishCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Dietary tag and price text contrast must meet WCAG AA on dark backgrounds."
+      ]
+    },
+    {
+      "id": "dish-card-2",
+      "title": "Order row with quantity",
+      "description": "Horizontal menu row with a spice-level indicator and a quantity stepper for an item already added to the order.",
+      "source": {
+        "html": "../../../../public/examples/application/dish-card/2.html",
+        "tsx": "tsx/DishCardVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The quantity stepper buttons carry real aria-labels ('Decrease quantity', 'Increase quantity')."
+      ]
+    },
+    {
+      "id": "dish-card-2-dark",
+      "title": "Order row with quantity (Dark)",
+      "description": "Horizontal order-row dish card adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/dish-card/2-dark.html",
+        "tsx": "tsx/DishCardVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Stepper button and quantity text contrast must meet WCAG AA on dark backgrounds."
+      ]
+    }
+  ]
+}
