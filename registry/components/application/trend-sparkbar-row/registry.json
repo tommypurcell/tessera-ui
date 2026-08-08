@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-trend-sparkbar-row",
+  "title": "Trend Sparkbar Row",
+  "description": "Table with an inline mini bar-series column for compact per-row trends, driven by a typed rows/values prop contract.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["sparkline", "sparkbar", "trend", "table", "compact"],
+  "useWhen": [
+    "A data table needs a compact visual trend indicator alongside each row's numeric value.",
+    "Users benefit from scanning many rows' recent trajectories at once without opening a chart per row.",
+    "The trend is a supporting visual cue, with the actual change percentage stated in a nearby column."
+  ],
+  "avoidWhen": [
+    "You need a single prominent trend visualization on its own — use the Metric Sparkline Card, which is a standalone KPI tile, not an in-row indicator.",
+    "Precise value-by-value reading matters — a small bar series can't substitute for a full chart with axes.",
+    "The table already has too many columns — an inline trend column competes for space with primary data."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The table scrolls horizontally on narrow viewports via its wrapping overflow container; bar heights stay fixed in pixels so the sparkbar column keeps a consistent compact width.",
+  "accessibility": [
+    "Each sparkbar series is marked aria-hidden since it is a decorative summary — the adjacent Change column states the same trend in text.",
+    "Bar color (green/red/gray) reinforces but never replaces the numeric change label, which always carries a +/- sign.",
+    "Column headers use scope='col' so assistive technology can associate each cell with its column when navigating."
+  ],
+  "compatibleWith": ["application-data-table", "application-metric-sparkline-card"],
+  "variants": [
+    {
+      "id": "trend-sparkbar-row-1",
+      "title": "Trend Sparkbar Row",
+      "description": "Product table with an inline 7-bar trend series per row, a units-sold column, and a color-coded percentage change column.",
+      "source": {
+        "html": "../../../../public/examples/application/trend-sparkbar-row/1.html",
+        "tsx": "tsx/TrendSparkbarRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["up", "down", "flat"],
+      "accessibility": [
+        "The sparkbar series is aria-hidden; the numeric Change column is the accessible source of trend direction."
+      ]
+    },
+    {
+      "id": "trend-sparkbar-row-1-dark",
+      "title": "Trend Sparkbar Row (Dark)",
+      "description": "Sparkbar trend table adapted for dark surfaces with the same in-row bar series and change-column structure.",
+      "source": {
+        "html": "../../../../public/examples/application/trend-sparkbar-row/1-dark.html",
+        "tsx": "tsx/TrendSparkbarRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["up", "down", "flat"],
+      "accessibility": [
+        "Bar colors and the change-column text must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
