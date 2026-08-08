@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex justify-center bg-gray-950 p-6">
+    <div class="flex w-full max-w-sm flex-col gap-4 rounded-lg border border-gray-800 bg-gray-900 p-5">
+      <h2 class="text-sm font-medium text-gray-100">Drawer count</h2>
+
+      <div class="grid grid-cols-2 gap-3">
+        <div class="flex flex-col items-center gap-1 rounded-md bg-gray-800 p-3 text-center">
+          <span class="text-xs text-gray-500">Expected</span>
+          <span class="text-lg font-semibold text-gray-100">$412.00</span>
+        </div>
+        <div class="flex flex-col items-center gap-1 rounded-md bg-gray-800 p-3 text-center">
+          <span class="text-xs text-gray-500">Counted</span>
+          <span class="text-lg font-semibold text-gray-100">$407.25</span>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between rounded-md border border-red-800 bg-red-500/10 p-3" role="status">
+        <span class="text-sm font-medium text-red-400">Short</span>
+        <span class="text-sm font-semibold text-red-400">-$4.75</span>
+      </div>
+    </div>
+  </body>
+</html>
