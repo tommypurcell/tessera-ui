@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-energy-usage-bar",
+  "title": "Energy Usage Bar",
+  "description": "A real-time watt-draw bar with a green-to-red intensity gradient, a peak-usage marker, and an estimated cost readout.",
+  "category": "application/energy-usage-bar",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "energy-usage-bar",
+    "energy",
+    "power",
+    "watts",
+    "smart home",
+    "usage"
+  ],
+  "useWhen": [
+    "Smart home, EV charging, or utility dashboards that need to show live power draw against a known scale and today's peak.",
+    "Pairing raw watt usage with an estimated cost helps users connect consumption to their bill in real time."
+  ],
+  "avoidWhen": [
+    "You're tracking a generic budget/quota against a fixed limit — `Budget Progress Bar` fits that simpler use case without energy-specific framing.",
+    "You need historical usage over time rather than a live snapshot — a line or bar chart from `charts` fits trend data better."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The bar and its min/peak/max label row scale to the card's full width; the peak marker's percentage-based position stays proportionally correct at any width.",
+  "accessibility": [
+    "The peak marker is paired with a text label (\"Peak: 2,850 W (6:40 PM)\") stating the exact value and time, not conveyed by marker position alone.",
+    "The gradient fill communicates intensity, but the exact current draw is always shown as large text above the bar.",
+    "The usage-trend alert pairs an icon with descriptive text, not color alone, to convey the warning."
+  ],
+  "compatibleWith": ["application-usage-meter", "application-charts"],
+  "variants": [
+    {
+      "id": "energy-usage-bar-1",
+      "title": "Current draw",
+      "description": "A live 2,140W draw shown on a green-to-red gradient bar with a peak marker at 2,850W, min/max scale labels, an estimated daily cost, and a usage-trend alert.",
+      "source": {
+        "html": "../../../../public/examples/application/energy-usage-bar/1.html",
+        "tsx": "tsx/EnergyUsageBarVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "elevated"],
+      "accessibility": [
+        "The peak marker's value and time are stated as visible text beside the bar, not solely as a line position."
+      ]
+    },
+    {
+      "id": "energy-usage-bar-1-dark",
+      "title": "Current draw (Dark)",
+      "description": "Energy usage bar adapted for dark surfaces, including the gradient fill and alert banner colors.",
+      "source": {
+        "html": "../../../../public/examples/application/energy-usage-bar/1-dark.html",
+        "tsx": "tsx/EnergyUsageBarVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "elevated"],
+      "accessibility": [
+        "Bar gradient, peak marker, and alert text all meet WCAG AA contrast against the dark card background."
+      ]
+    }
+  ]
+}
