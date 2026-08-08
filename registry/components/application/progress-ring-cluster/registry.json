@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-progress-ring-cluster",
+  "title": "Progress Ring Cluster",
+  "description": "Grouped radial progress dials with center percentage labels for showing several related metrics (CPU, memory, disk, etc.) at a glance on a multi-metric dashboard.",
+  "category": "application/charts",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["progress", "radial", "ring", "dial", "dashboard"],
+  "useWhen": [
+    "Showing several related percentage metrics side by side in a compact, glanceable form.",
+    "A radial dial communicates \"fullness\" more intuitively than a linear bar for the specific metric (e.g. resource usage).",
+    "Each metric needs its own color and center label rather than being stacked in one chart."
+  ],
+  "avoidWhen": [
+    "You only have one metric — a single progress-bars or a stat-tile is simpler.",
+    "Precise comparison between values matters more than at-a-glance shape — a bar chart or table communicates exact differences better.",
+    "The values change very frequently — smooth realtime radial animation needs extra work beyond this static-render component."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Rings wrap onto multiple lines within the flex container as space runs out; each ring is a fixed pixel size (default 96px) via the `size` prop.",
+  "accessibility": [
+    "Each filled ring circle carries role='img' with an aria-label stating the metric name and percentage, since arc angle alone isn't announced by screen readers.",
+    "The percentage is also rendered as visible text in the center of each ring, not conveyed by the arc alone.",
+    "Values are clamped to 0–100 before being used to compute the stroke-dasharray offset."
+  ],
+  "compatibleWith": ["application-charts", "application-stat-tile", "application-progress-bars"],
+  "variants": [
+    {
+      "id": "progress-ring-cluster-1",
+      "title": "Progress ring cluster",
+      "description": "Three radial dials (CPU 72%, Memory 45%, Disk 88%) with distinct colors and center labels, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/progress-ring-cluster/1.html",
+        "tsx": "tsx/ProgressRingClusterVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Ring color is supplementary; the center percentage text and aria-label carry the precise value."
+      ]
+    },
+    {
+      "id": "progress-ring-cluster-1-dark",
+      "title": "Progress ring cluster (Dark)",
+      "description": "Three radial dials with the same metrics, adapted for dark surfaces with lightened ring colors for contrast.",
+      "source": {
+        "html": "../../../../public/examples/application/progress-ring-cluster/1-dark.html",
+        "tsx": "tsx/ProgressRingClusterVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Ring and track colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
