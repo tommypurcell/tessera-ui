@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-resizable-column-header",
+  "title": "Resizable Column Header",
+  "description": "Table header row with a sort-caret toggle button per column and a drag-to-resize handle on each column's trailing edge, backed by table-fixed so widths hold.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["table", "resize", "sort", "data-grid", "spreadsheet"],
+  "useWhen": [
+    "Building a data-dense table or spreadsheet-like grid where users need to both sort and manually widen/narrow columns.",
+    "You want the resize handle discoverable only on hover, not always visible, to keep the header visually clean.",
+    "Distinct from Column Visibility Menu, which toggles whole columns on/off from a dropdown, rather than resizing or sorting the columns already shown."
+  ],
+  "avoidWhen": [
+    "You need to show/hide entire columns — use Column Visibility Menu instead.",
+    "Column widths never need to change — a plain sortable header is simpler without the resize handles."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The table uses table-fixed with explicit per-column pixel widths so resizing one column doesn't reflow the others unexpectedly; resize handles are hover-revealed via group-hover to stay unobtrusive at any width.",
+  "accessibility": [
+    "Each sort trigger is a real button with an aria-label stating the column and, when active, the current sort direction.",
+    "Sort direction is conveyed by both an arrow icon rotation and the aria-label text, never rotation alone.",
+    "The resize handle is a decorative aria-hidden element since resizing is a pointer-only enhancement with no equivalent keyboard requirement for reading the table."
+  ],
+  "compatibleWith": ["application-column-visibility-menu", "application-compact-data-table"],
+  "variants": [
+    {
+      "id": "resizable-column-header-1",
+      "title": "Resizable Column Header",
+      "description": "Three-column table (Name/Status/Updated) with Name actively sorted ascending and hover-revealed resize handles between columns.",
+      "source": {
+        "html": "../../../../public/examples/application/resizable-column-header/1.html",
+        "tsx": "tsx/ResizableColumnHeaderVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["sorted", "unsorted", "resizing"],
+      "accessibility": [
+        "Sort buttons carry aria-labels stating column and current direction when active."
+      ]
+    },
+    {
+      "id": "resizable-column-header-1-dark",
+      "title": "Resizable Column Header (Dark)",
+      "description": "The same header adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/resizable-column-header/1-dark.html",
+        "tsx": "tsx/ResizableColumnHeaderVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["sorted", "unsorted", "resizing"],
+      "accessibility": [
+        "Sort caret and resize-handle contrast remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}
