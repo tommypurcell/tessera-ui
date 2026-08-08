@@ -481,7 +481,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: Logistics -->
 - [ ] Shipment Tracking Map — route line with origin/current/destination pins and ETA; distinct from map-marker-popup.
-- [~] (builder-8) Package Status Timeline — scan events with location, timestamp, and status; distinct from order-status-tracker.
+- [x] (builder-8) Package Status Timeline — 4-scan Portland-to-Austin shipment history, latest scan highlighted (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [x] (builder-3) Delivery Slot Picker — radio-card list w/ price, description, Free/Fastest badges, disabled fully-booked state, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 - [x] (builder-1) Inventory Level Row — 2 variants (detail row + multi-SKU list), reorder-threshold marker + warning badge, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #16).
 - [ ] Fleet Status Grid — vehicle tiles with active/idle/maintenance status and driver; distinct from health-check-grid.
@@ -490,11 +490,11 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [ ] Candidate Pipeline Stage — applicant cards in a hiring-stage column with count; distinct from deal-pipeline-stage.
 - [x] (builder-7) Applicant Card — avatar+name+role, 5-star rating, resume link, stage badge, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
 - [x] (builder-5) Interview Scorecard — per-competency 1-5 radiogroup ratings+notes, notes textarea, strong-hire/hire/no-hire selector, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
-- [ ] Org Headcount Chart — department bar breakdown with open-roles overlay; distinct from org-chart.
+- [~] (builder-8) Org Headcount Chart — department bar breakdown with open-roles overlay; distinct from org-chart.
 - [x] (builder-2) PTO Balance Card — remaining-days readout + progress bar + accrued/used/pending stat row, all computed from single accrued/used/pending inputs, Request time off button, light+dark, registry+tsx+MDX, screenshot verified (caught+fixed a static-fixture math inconsistency: 9 remaining shown against 15/6/2 stats, corrected to 7), committed to builder-2-components (PR #20)
 
 <!-- Theme: Legal / compliance -->
-- [~] (builder-1) Document Signature Block — signer rows with name, date, and signed/pending status; distinct from signature-pad.
+- [x] (builder-1) Document Signature Block — 2 variants (signer list + progress summary), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #16).
 - [~] (builder-5) Clause Accordion — numbered legal-clause sections with expand and anchor links; distinct from accordions.
 - [x] (builder-3) Audit Trail Row — actor avatar, natural-language action sentence, before/after diff chip, monospace note, timestamp, destructive variant, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 - [~] (builder-9) Consent Version Banner — updated-terms notice with view-changes and accept; distinct from consent-checklist.
@@ -507,12 +507,12 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 <!-- === WAVE 9 (deep-backlog refill, post-272) — new verticals, verified non-dupe against registry === -->
 
 <!-- Theme: Restaurant / food -->
-- [ ] Menu Item Row — dish name, description, price, and dietary tags with add button; distinct from cart-line-item.
+- [~] (builder-1) Menu Item Row — dish name, description, price, and dietary tags with add button; distinct from cart-line-item.
 - [ ] Dish Card — photo, name, price, rating, and quick-add; distinct from product-card (food framing).
 - [ ] Order Cart Drawer — running food-order list with modifiers, subtotal, and checkout; distinct from checkout-order-summary.
 - [~] (builder-3) Reservation Time Picker — party-size + date + available time-chip grid; distinct from availability-grid.
 - [~] (builder-2) Dietary Filter Chips — vegan/gluten-free/spicy toggle chips with icons; distinct from tag-filter-group.
-- [ ] Kitchen Order Ticket — ticket card with items, timer, and bump/complete action; absent from library.
+- [~] (builder-6) Kitchen Order Ticket — ticket card with items, timer, and bump/complete action; absent from library.
 
 <!-- Theme: Fitness -->
 - [ ] Workout Set Row — exercise with sets×reps×weight inputs and done toggle; distinct from inline-add-row.
