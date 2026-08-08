@@ -360,7 +360,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 <!-- === WAVE 6 (deep-backlog refill, post-203) — specialized domains, verified non-dupe against registry === -->
 
 <!-- Theme: Project management -->
-- [ ] Sprint Burndown Chart — ideal vs actual remaining-work line over a sprint with today marker; absent from library.
+- [~] (builder-4) Sprint Burndown Chart — ideal vs actual remaining-work line over a sprint with today marker; absent from library.
 - [ ] Board Swimlane — horizontal grouped lane spanning multiple status columns with a lane header; distinct from kanban column.
 - [x] (builder-8) Task Priority Badge Set — 4-level Urgent/High/Medium/Low badges, icon+color+label bundled per level (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [x] (builder-8) Effort Estimate Chips — Fibonacci story-point radiogroup (1/2/3/5/8/13/?), 5 selected (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
@@ -386,7 +386,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-8) Build Status Row — 3-stage CI pipeline (Build/Test passed, Deploy running) w/ duration (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [x] (builder-9) Secret Reveal Field — 2 variants (reveal and copy, with rotation note) light+dark, registry.json, MDX entry, screenshots
 - [x] (builder-8) Webhook Event Row — 3 delivery states (delivered/pending/failed) w/ response code + conditional Retry (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
-- [ ] Terminal Command Palette — inline command runner with history and output pane; distinct from terminal-blocks and command.
+- [~] (builder-5) Terminal Command Palette — inline command runner with history and output pane; distinct from terminal-blocks and command.
 
 <!-- Theme: Scheduling -->
 - [x] (builder-3) Availability Grid — week-view time-slot grid, day/hour headers, free/busy/selected button states, legend, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
@@ -414,24 +414,24 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-3) Appointment Slot Card — provider header w/ avatar+specialty, appointment-type badge, date/time row, reschedule/confirm actions, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 - [x] (builder-8) Vitals Stat Row — 4 readings (HR flagged out-of-range, BP/SpO2/Temp normal) w/ real isNormal flag (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [x] (builder-2) Medication Schedule List — 4 dose rows (taken/pending w/ Take-Skip actions/skipped-dimmed), real per-dose status state, light+dark, registry+tsx+MDX, screenshot verified (fixed a time-column text-wrap bug found during review), committed to builder-2-components (PR #19)
-- [~] (builder-7) Symptom Severity Slider — labeled 0–10 pain/severity scale with descriptors; distinct from range-inputs.
+- [x] (builder-7) Symptom Severity Slider — 0-10 native range w/ derived descriptor label, light+dark, registry+tsx+MDX, screenshot verified (fixed invisible gradient-track CSS bug), committed + pushed (PR #5)
 - [ ] Care Timeline — patient-history events with clinician avatars and visit types; distinct from timelines (clinical framing).
 
 <!-- Theme: Education -->
-- [~] (builder-5) Course Progress Card — lesson completion ring with modules-remaining and continue CTA; distinct from goal-progress-card.
+- [x] (builder-5) Course Progress Card — SVG completion ring (computed %), title, modules-remaining count, Continue learning CTA, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [x] (builder-8) Quiz Question Card — HTTP status quiz, revealed state w/ correct(green)/wrong-answer(red) coloring (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [~] (builder-9) Lesson Playlist — ordered lesson rows with duration, lock, and completed checks; distinct from task-checklist.
 - [x] (builder-1) Grade Badge Scale — 2 variants (A-F round badges + percentage pill list), green-to-red scale, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #16).
-- [ ] Flashcard Flip — front/back card with flip animation and know/review actions; distinct from card-stack.
+- [~] (builder-10) Flashcard Flip — front/back card with flip animation and know/review actions; distinct from card-stack.
 
 <!-- Theme: Real estate -->
 - [~] (builder-8) Property Listing Card — photo, price, beds/baths/sqft specs, and save; distinct from product-card (property specs).
 - [ ] Map Listing Split — map pane + scrollable listing list with hover-sync highlight; distinct from split-view-layout.
-- [ ] Mortgage Calculator — price/down/rate/term inputs with monthly-payment output; distinct from currency-converter.
+- [~] (builder-1) Mortgage Calculator — price/down/rate/term inputs with monthly-payment output; distinct from currency-converter.
 - [~] (builder-2) Amenities Grid — icon+label feature grid with included/excluded states; distinct from grids.
 
 <!-- Theme: Travel -->
-- [ ] Flight Route Card — origin→destination with times, duration, stops, and airline; absent from library.
+- [~] (builder-6) Flight Route Card — origin→destination with times, duration, stops, and airline; absent from library.
 - [ ] Booking Search Bar — location + date-range + guests combined search widget; distinct from data-filter-bar.
 - [~] (builder-3) Seat Map Selector — grid of seats with available/taken/selected and legend; absent from library.
 - [ ] Itinerary Timeline — day-grouped trip events with time, location, and type icons; distinct from timelines.
