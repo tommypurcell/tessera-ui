@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "application-breadcrumb-page-header",
+  "title": "Breadcrumb Page Header",
+  "description": "Page-header composite — a breadcrumb trail, page title, optional description, and a trailing action slot for buttons.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["header", "breadcrumb", "page-header", "layout"],
+  "useWhen": [
+    "Starting a detail or list page that sits several levels deep in navigation and benefits from a breadcrumb trail above the title.",
+    "The page needs primary and/or secondary actions positioned consistently in the header, not scattered in the body.",
+    "You want the standard title + description + breadcrumb block to be a single reusable unit rather than hand-assembled per page."
+  ],
+  "avoidWhen": [
+    "The page is top-level with no meaningful parent trail — a bare title without `breadcrumbs` is simpler and avoids a one-item trail.",
+    "You only need the breadcrumb trail on its own, not bundled with a title/actions block — use `breadcrumbs` directly.",
+    "The header needs tabs or a more complex sub-navigation row — extend this pattern rather than overloading the actions slot with navigation."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Title/description and actions share a flex row that can wrap actions below the title on narrow viewports if the actions slot contains more than 1-2 buttons.",
+  "accessibility": [
+    "The breadcrumb trail is a <nav> with an aria-label distinguishing it from primary site navigation, per the `breadcrumbs` component's own pattern.",
+    "The current page in the trail carries aria-current=\"page\" rather than being a link, since it isn't a navigable target.",
+    "The title is a real <h1>, establishing the page's primary heading for assistive tech and document outline tools.",
+    "Chevron separators between breadcrumb items are aria-hidden, decorative only."
+  ],
+  "compatibleWith": ["application-breadcrumbs", "application-buttons"],
+  "variants": [
+    {
+      "id": "breadcrumb-page-header-1",
+      "title": "Breadcrumb Page Header",
+      "description": "Three-level breadcrumb trail, page title and description, and two trailing action buttons.",
+      "source": {
+        "html": "../../../../public/examples/application/breadcrumb-page-header/1.html",
+        "tsx": "tsx/BreadcrumbPageHeaderVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Breadcrumb link/current-page rendering is computed from real array position, so it stays correct as trails are extended or shortened."
+      ]
+    },
+    {
+      "id": "breadcrumb-page-header-1-dark",
+      "title": "Breadcrumb Page Header (Dark)",
+      "description": "Breadcrumb page header adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/breadcrumb-page-header/1-dark.html",
+        "tsx": "tsx/BreadcrumbPageHeaderVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Text and border colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}
