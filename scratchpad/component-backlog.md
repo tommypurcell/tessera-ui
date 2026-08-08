@@ -207,7 +207,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 <!-- Theme: Navigation -->
 - [x] (builder-4) Mega Menu Panel — full-width panel, 3 labeled link-group columns + featured promo card w/ badge and CTA, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #14)
 - [x] (builder-4) Command Bar Breadcrumb — breadcrumb w/ one segment as an open sibling dropdown (role=listbox/option, checkmark), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #14)
-- [~] (builder-4) Bottom Sheet Nav — mobile draggable sheet with snap points and handle; distinct from drawer (mobile snap behavior).
+- [x] (builder-4) Bottom Sheet Nav — mobile phone-frame mockup, drag handle, snap-point dots, 4-item icon nav row w/ active state, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #14)
 - [x] (builder-10) Floating Action Menu — 2 variants (labeled stacked FAB, icon-only stacked FAB), light+dark, checkbox-driven (no JS), registry+tsx generated, screenshots verified, pushed
 - [x] (builder-7) Anchor Scroll Nav — 5-item sticky section list w/ aria-current active indicator, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
 - [x] (builder-3) Pagination Cursor — "Showing X-Y of total" range, rows-per-page select, disabled-aware prev/next icon buttons, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
@@ -223,7 +223,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 <!-- Theme: Data viz -->
 - [x] (builder-8) Radar Chart — 5-axis vendor comparison polygon computed via trigonometry (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [x] (builder-8) Bullet Chart — CSAT bullet graph (72 vs 85 target) w/ Poor/Satisfactory/Good bands (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
-- [ ] Candlestick Chart — OHLC financial chart with volume strip; absent from library.
+- [~] (builder-4) Candlestick Chart — OHLC financial chart with volume strip; absent from library.
 - [ ] Choropleth Legend — gradient/step map legend with value buckets; pairs with map-marker-popup, absent from library.
 - [x] (builder-3) Stat Comparison Bars — ranked category bars with value labels, proportional fills, one highlighted row with tinted background, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 - [x] (builder-3) Trend Sparkbar Row — product table w/ inline 7-bar trend series per row, units column, color-coded % change column, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
@@ -290,9 +290,9 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [ ] Calendar Heat Legend Chart — month grid with value intensity and axis labels; distinct from heatmap-calendar (chart framing).
 
 <!-- Theme: Commerce / finance -->
-- [~] (builder-8) Invoice Table — line-item table with subtotal/tax/total footer and status badge; distinct from tables (invoice semantics).
+- [x] (builder-8) Invoice Table — 3-item invoice w/ Pending badge, computed subtotal/8% tax/$9,806.40 total (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [x] (builder-6) Payment Method Card — 2 variants (single saved card, selectable list with add-new affordance), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
-- [ ] Discount Code Field — promo input with apply button and applied/invalid states; distinct from copy-field.
+- [~] (builder-6) Discount Code Field — promo input with apply button and applied/invalid states; distinct from copy-field.
 - [x] (builder-2) Order Status Tracker — 4-stage horizontal stepper (Placed/Shipped complete, Out for delivery current w/ pulse ring, Delivered upcoming w/ est. date), state computed from a single currentStepIndex, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components
 - [ ] Refund Request Panel — reason select, amount, and note with submit; absent from library.
 
@@ -318,13 +318,13 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [ ] Progress Steps Toast — long-running-task toast showing sub-step progress; distinct from toast-stack.
 - [ ] Rate Limit Notice — cooldown banner with countdown to retry availability; distinct from quota-warning-banner.
 - [ ] Health Check Grid — service tiles with green/yellow/red status and latency; distinct from status-page-board (compact grid).
-- [ ] Sync Status Row — last-synced timestamp with spinning/success/error icon and manual sync; absent from library.
+- [~] (builder-8) Sync Status Row — last-synced timestamp with spinning/success/error icon and manual sync; absent from library.
 - [ ] Maintenance Mode Screen — full-page scheduled-downtime notice with ETA; distinct from error-page.
 
 <!-- Theme: Data entry (more) -->
 - [ ] Multi-Step Form Progress — top progress bar + step labels wrapping a paged form; distinct from stepper-wizard (progress-header variant).
 - [ ] Inline Add Row — table footer "add new" row that turns into editable inputs; distinct from data-grid-cell-editor.
-- [ ] Slug Input — text field that live-generates a URL slug with editable override; absent from library.
+- [~] (builder-9) Slug Input — text field that live-generates a URL slug with editable override; absent from library.
 - [ ] Tag Filter Group — toggleable tag pills for multi-facet selection; distinct from tag-input (filter mode).
 - [ ] Rating Scale (NPS) — 0–10 numeric scale row with detractor/passive/promoter coloring; distinct from rating-input-emoji.
 - [ ] File Drop Preview List — drop zone plus per-file upload rows with progress and cancel; distinct from file-uploaders (list + progress).
