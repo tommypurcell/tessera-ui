@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-sm flex-col gap-4 p-6">
+    <div class="rounded-lg border border-gray-800 bg-gray-900 p-4">
+      <div class="flex items-center justify-between">
+        <p class="text-sm font-semibold text-white">Overall OEE</p>
+        <p class="font-mono text-lg font-bold text-white">80%</p>
+      </div>
+
+      <div class="mt-3 flex flex-col gap-2.5">
+        <div class="flex items-center gap-2">
+          <span class="w-24 text-xs font-medium text-gray-400">Availability</span>
+          <div class="h-2 flex-1 overflow-hidden rounded-full bg-gray-800">
+            <div class="h-full rounded-full bg-green-500" style="width: 94%"></div>
+          </div>
+          <span class="w-9 text-right font-mono text-xs text-gray-400">94%</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-24 text-xs font-medium text-gray-400">Performance</span>
+          <div class="h-2 flex-1 overflow-hidden rounded-full bg-gray-800">
+            <div class="h-full rounded-full bg-amber-500" style="width: 87%"></div>
+          </div>
+          <span class="w-9 text-right font-mono text-xs text-gray-400">87%</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-24 text-xs font-medium text-gray-400">Quality</span>
+          <div class="h-2 flex-1 overflow-hidden rounded-full bg-gray-800">
+            <div class="h-full rounded-full bg-blue-500" style="width: 98%"></div>
+          </div>
+          <span class="w-9 text-right font-mono text-xs text-gray-400">98%</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
