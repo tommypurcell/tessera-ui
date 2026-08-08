@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-item",
+  "title": "Item",
+  "description": "Composable list row primitive with an icon or avatar slot, a title/description text block, and a trailing action (link chevron, button, or checkbox).",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["list", "row", "primitive", "settings", "menu"],
+  "useWhen": [
+    "Building a settings list, member list, or option list where every row shares the same icon + text + action shape.",
+    "You want a single row primitive that can end in a navigation chevron, a button, or a checkbox without three different components.",
+    "Stacking rows inside a divided container (e.g. rounded-lg border with divide-y) to form a list."
+  ],
+  "avoidWhen": [
+    "The row needs multiple independent columns of tabular data — use a table instead.",
+    "You need drag-and-drop reordering or nested rows — this is a flat, single-level row primitive."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Text truncates with an ellipsis on narrow containers instead of wrapping; the row itself is a single flex line at all widths.",
+  "accessibility": [
+    "Link-action rows render as a real <a> element so the whole row is keyboard-focusable and activatable, not just the chevron.",
+    "Checkbox-action rows wrap the row in a <label> so clicking anywhere in the row toggles the control, matching the visible hit target.",
+    "Icons are aria-hidden since the adjacent title text already conveys the row's purpose."
+  ],
+  "compatibleWith": ["application-form-row", "application-details-list"],
+  "variants": [
+    {
+      "id": "item-1",
+      "title": "Item",
+      "description": "Three stacked rows in a divided list: icon item with a navigation chevron, avatar item with a trailing remove button, and a selectable item with a checkbox.",
+      "source": {
+        "html": "../../../../public/examples/application/item/1.html",
+        "tsx": "tsx/ItemVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "hover", "checked"],
+      "accessibility": [
+        "Each row's trailing action determines its interaction semantics: link, button, or checkbox."
+      ]
+    },
+    {
+      "id": "item-1-dark",
+      "title": "Item (Dark)",
+      "description": "The same three row types adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/item/1-dark.html",
+        "tsx": "tsx/ItemVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "hover", "checked"],
+      "accessibility": [
+        "Row text and icon colors meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
