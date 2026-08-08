@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-dialog",
+  "title": "Dialog",
+  "description": "Confirmation dialog with an icon, title, description, and cancel/confirm actions driven by a typed prop contract.",
+  "category": "application/overlays",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["dialog", "confirm", "modal", "overlay"],
+  "useWhen": [
+    "Confirming a destructive or consequential action (delete, cancel subscription) before it happens.",
+    "You need a focused, blocking prompt with exactly two outcomes: proceed or cancel.",
+    "A single reusable confirmation primitive is preferable to hand-editing modal markup per action."
+  ],
+  "avoidWhen": [
+    "The content requires a form with several fields — use a full modal/sheet instead of a compact dialog.",
+    "The action is low-stakes and easily undoable — skip the confirmation step entirely.",
+    "You need a non-blocking notification — use a toast instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The dialog is a fixed-width card meant to sit centered over a full-screen scrim; reduce max-width and padding on narrow viewports.",
+  "accessibility": [
+    "The dialog uses role='dialog' with aria-modal='true' and is labelled/described by its title and description ids.",
+    "Focus should move into the dialog on open and return to the trigger on close (implement in your own open/close logic).",
+    "The destructive confirm action uses red color plus an explicit verb label, not color alone."
+  ],
+  "compatibleWith": ["application-modals", "application-drawer"],
+  "variants": [
+    {
+      "id": "dialog-1",
+      "title": "Dialog",
+      "description": "Destructive-action confirmation dialog with a warning icon, title, description, and cancel/confirm buttons.",
+      "source": {
+        "html": "../../../../public/examples/application/dialog/1.html",
+        "tsx": "tsx/DialogVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The warning icon is decorative (aria-hidden); the heading and description carry the actual meaning."
+      ]
+    },
+    {
+      "id": "dialog-1-dark",
+      "title": "Dialog (Dark)",
+      "description": "Confirmation dialog adapted for dark surfaces with the same icon, title, description, and action structure.",
+      "source": {
+        "html": "../../../../public/examples/application/dialog/1-dark.html",
+        "tsx": "tsx/DialogVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Title, description, and button text must meet WCAG AA contrast against the dark card background."
+      ]
+    }
+  ]
+}

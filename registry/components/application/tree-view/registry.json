@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-tree-view",
+  "title": "Tree View",
+  "description": "Expandable hierarchical node list with checkboxes, indent guides, and indeterminate parent state, driven by a typed recursive nodes prop contract.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["tree", "hierarchy", "checkbox", "nested", "permissions"],
+  "useWhen": [
+    "Selecting or browsing data with a parent-child structure, such as team/role permissions or nested categories.",
+    "Users need to bulk-select a group and all of its descendants via a single checkbox.",
+    "Content depth varies per branch and each level should be individually expandable."
+  ],
+  "avoidWhen": [
+    "The hierarchy represents files and folders specifically — use a dedicated File Tree component with file-type icons instead.",
+    "The data is flat with no nesting — a plain list or checkbox group is simpler.",
+    "Every node must always be visible at once — a flat searchable list may scan faster than nested disclosure."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The tree scrolls vertically within its own container on tall hierarchies; indentation compounds per depth level, so constrain nesting depth on narrow viewports.",
+  "accessibility": [
+    "The root uses role='tree' with role='treeitem' rows and role='group' for nested children, per the WAI-ARIA tree pattern.",
+    "Expand/collapse toggles carry a dynamic aria-label naming the node so screen readers announce which branch will open or close.",
+    "A parent checkbox with a mixed-selection state sets the checkbox's indeterminate property, not just a visual dash."
+  ],
+  "compatibleWith": ["application-checkboxes", "application-data-table"],
+  "variants": [
+    {
+      "id": "tree-view-1",
+      "title": "Tree View",
+      "description": "Two-level permissions tree with expand/collapse toggles, per-node checkboxes, an indeterminate parent state, and a selected-row highlight.",
+      "source": {
+        "html": "../../../../public/examples/application/tree-view/1.html",
+        "tsx": "tsx/TreeViewVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "expanded", "collapsed", "selected", "indeterminate"],
+      "accessibility": [
+        "The indeterminate checkbox state is set programmatically (element.indeterminate) since HTML has no indeterminate attribute."
+      ]
+    },
+    {
+      "id": "tree-view-1-dark",
+      "title": "Tree View (Dark)",
+      "description": "Hierarchical checkbox tree adapted for dark surfaces with the same expand, checkbox, and selection structure.",
+      "source": {
+        "html": "../../../../public/examples/application/tree-view/1-dark.html",
+        "tsx": "tsx/TreeViewVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "expanded", "collapsed", "selected", "indeterminate"],
+      "accessibility": [
+        "Indent guide lines, row text, and the selected-row fill must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

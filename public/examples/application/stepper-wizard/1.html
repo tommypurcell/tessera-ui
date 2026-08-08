@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-lg p-6">
+    <div class="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+      <div class="border-b border-gray-200 px-6 py-5">
+        <ol class="flex items-center">
+          <li class="flex items-center">
+            <div class="flex items-center gap-2">
+              <span class="flex size-7 shrink-0 items-center justify-center rounded-full bg-gray-900 text-xs font-medium text-white">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-3.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                </svg>
+              </span>
+              <span class="text-sm font-medium text-gray-900">Account</span>
+            </div>
+            <div class="mx-3 h-px w-8 bg-gray-900 sm:w-12"></div>
+          </li>
+
+          <li class="flex items-center">
+            <div class="flex items-center gap-2">
+              <span aria-current="step" class="flex size-7 shrink-0 items-center justify-center rounded-full border-2 border-gray-900 text-xs font-semibold text-gray-900">
+                2
+              </span>
+              <span class="text-sm font-medium text-gray-900">Billing</span>
+            </div>
+            <div class="mx-3 h-px w-8 bg-gray-200 sm:w-12"></div>
+          </li>
+
+          <li class="flex items-center">
+            <span class="flex size-7 shrink-0 items-center justify-center rounded-full border-2 border-gray-200 text-xs font-medium text-gray-400">3</span>
+            <span class="ml-2 text-sm font-medium text-gray-400">Review</span>
+          </li>
+        </ol>
+      </div>
+
+      <div class="px-6 py-6">
+        <h2 class="text-base font-semibold text-gray-900">Billing details</h2>
+        <p class="mt-1 text-sm text-gray-500">Step 2 of 3 — this information appears on your invoice.</p>
+
+        <div class="mt-5 flex flex-col gap-4">
+          <div class="flex flex-col gap-1.5">
+            <label for="wizard-company" class="text-sm font-medium text-gray-700">Company name</label>
+            <input
+              id="wizard-company"
+              type="text"
+              value="Nightclub Vault Enterprises"
+              class="rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 shadow-sm focus:border-gray-500 focus:outline-none"
+            />
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="flex flex-col gap-1.5">
+              <label for="wizard-card" class="text-sm font-medium text-gray-700">Card number</label>
+              <input
+                id="wizard-card"
+                type="text"
+                value="•••• •••• •••• 4242"
+                class="rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 shadow-sm focus:border-gray-500 focus:outline-none"
+              />
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label for="wizard-expiry" class="text-sm font-medium text-gray-700">Expiry</label>
+              <input
+                id="wizard-expiry"
+                type="text"
+                value="08 / 30"
+                class="rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 shadow-sm focus:border-gray-500 focus:outline-none"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between border-t border-gray-200 px-6 py-4">
+        <button type="button" class="rounded-md border border-gray-300 bg-white px-3.5 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50">
+          Back
+        </button>
+        <button type="button" class="rounded-md bg-gray-900 px-3.5 py-2 text-sm font-medium text-white shadow-sm hover:bg-gray-700">
+          Continue
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

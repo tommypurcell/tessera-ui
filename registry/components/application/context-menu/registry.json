@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-context-menu",
+  "title": "Context Menu",
+  "description": "Right-click menu with icon, shortcut, separator, and destructive-item support driven by a typed items prop contract.",
+  "category": "application/overlays",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["context-menu", "right-click", "menu", "overlay"],
+  "useWhen": [
+    "A surface (file, row, canvas item) has a set of contextual actions triggered by right-click or long-press.",
+    "You want a compact action list anchored to the pointer position rather than a fixed toolbar.",
+    "Grouping destructive actions (delete) visually apart from safe actions (copy, rename)."
+  ],
+  "avoidWhen": [
+    "The actions should always be visible — use a toolbar or button group instead.",
+    "Touch-only interfaces without a long-press affordance to trigger the menu.",
+    "There is only one action — a single button is simpler than a menu."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The menu is absolutely positioned at a given x/y; clamp those coordinates to the viewport in your own event handler so the menu never renders off-screen.",
+  "accessibility": [
+    "The menu uses role='menu' with role='menuitem' buttons so assistive tech announces it as a menu, not a generic list.",
+    "Destructive actions are marked with both color and a text label, not color alone.",
+    "Each item is a real <button>, so it is reachable and activatable via keyboard once focus enters the menu."
+  ],
+  "compatibleWith": ["application-dropdown", "application-command"],
+  "variants": [
+    {
+      "id": "context-menu-1",
+      "title": "Context Menu",
+      "description": "Right-click menu with icons, keyboard shortcut hints, a separator, and a destructive delete action.",
+      "source": {
+        "html": "../../../../public/examples/application/context-menu/1.html",
+        "tsx": "tsx/ContextMenuVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The destructive item uses red text and icon plus a visible label — never color as the only signal."
+      ]
+    },
+    {
+      "id": "context-menu-1-dark",
+      "title": "Context Menu (Dark)",
+      "description": "Right-click menu adapted for dark surfaces with the same icon, shortcut, and destructive-item structure.",
+      "source": {
+        "html": "../../../../public/examples/application/context-menu/1-dark.html",
+        "tsx": "tsx/ContextMenuVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Menu item text, icons, and the destructive red accent must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
