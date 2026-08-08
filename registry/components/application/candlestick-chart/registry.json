@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-candlestick-chart",
+  "title": "Candlestick Chart",
+  "description": "An OHLC financial chart — open/high/low/close candles with up/down coloring — paired with a matching volume strip below the price axis.",
+  "category": "application/candlestick-chart",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "candlestick-chart",
+    "candlestick",
+    "ohlc",
+    "stock chart",
+    "finance",
+    "volume"
+  ],
+  "useWhen": [
+    "Displaying price history for a tradable asset where the open/high/low/close range per period matters, not just the closing value.",
+    "Volume alongside price helps explain conviction behind a price move (e.g. a breakout on high volume vs. low volume drift)."
+  ],
+  "avoidWhen": [
+    "You only need the closing trend over time — a simple line chart from `charts` is lighter-weight and easier to read at a glance.",
+    "The data isn't time-series OHLC data — this component's visual language specifically implies open/high/low/close semantics."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The chart is a single SVG with viewBox scaling; candle and volume-bar widths scale proportionally with the container, so it stays legible down to roughly 320px wide before candles become too thin to read.",
+  "accessibility": [
+    "Up/down movement is conveyed by both color (green/red) and candle position (body above or below the open line) so the direction isn't color-only.",
+    "The header states the exact closing price and percentage change as text, not solely inferred from the chart shape.",
+    "Provide a text or table alternative (date, open, high, low, close, volume) for screen reader users, since the SVG candles are not independently announced."
+  ],
+  "compatibleWith": ["application-charts", "application-rich-tooltip-chart"],
+  "variants": [
+    {
+      "id": "candlestick-chart-1",
+      "title": "Price and volume",
+      "description": "A 24-period OHLC candlestick chart with a matching volume strip below, header showing the ticker, exchange, closing price, and percentage change.",
+      "source": {
+        "html": "../../../../public/examples/application/candlestick-chart/1.html",
+        "tsx": "tsx/CandlestickChartVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The percentage change is colored to match its sign (green for positive, red for negative) and prefixed with a '+' or implicit '-' as text."
+      ]
+    },
+    {
+      "id": "candlestick-chart-1-dark",
+      "title": "Price and volume (Dark)",
+      "description": "Candlestick and volume chart adapted for dark surfaces, with up/down colors re-tuned for dark contrast.",
+      "source": {
+        "html": "../../../../public/examples/application/candlestick-chart/1-dark.html",
+        "tsx": "tsx/CandlestickChartVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Candle and volume-bar colors meet WCAG AA contrast against the dark card background."
+      ]
+    }
+  ]
+}
