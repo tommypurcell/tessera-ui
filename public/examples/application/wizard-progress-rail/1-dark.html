@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-xs p-6">
+    <nav aria-label="Setup progress" class="w-full">
+      <ol class="flex flex-col">
+        <!-- Completed step -->
+        <li class="relative flex gap-3 pb-8">
+          <span class="absolute top-7 left-[15px] h-full w-px bg-indigo-500" aria-hidden="true"></span>
+          <button type="button" class="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-indigo-500 text-white">
+            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+            </svg>
+          </button>
+          <a href="#" class="flex flex-col pt-1 hover:opacity-80">
+            <span class="text-sm font-semibold text-gray-100">Account details</span>
+            <span class="text-xs text-gray-400">Name, email, and password</span>
+          </a>
+        </li>
+
+        <!-- Current step -->
+        <li class="relative flex gap-3 pb-8">
+          <span class="absolute top-7 left-[15px] h-full w-px bg-gray-800" aria-hidden="true"></span>
+          <span class="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 border-indigo-400 bg-gray-900 text-sm font-semibold text-indigo-400" aria-current="step">
+            2
+          </span>
+          <div class="flex flex-col pt-1">
+            <span class="text-sm font-semibold text-gray-100">Workspace setup</span>
+            <span class="text-xs text-gray-400">Team name and invite members</span>
+          </div>
+        </li>
+
+        <!-- Upcoming step -->
+        <li class="relative flex gap-3 pb-8">
+          <span class="absolute top-7 left-[15px] h-full w-px bg-gray-800" aria-hidden="true"></span>
+          <span class="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 border-gray-700 bg-gray-900 text-sm font-semibold text-gray-500">3</span>
+          <div class="flex flex-col pt-1 text-gray-500">
+            <span class="text-sm font-semibold">Billing plan</span>
+            <span class="text-xs">Choose a plan and add payment</span>
+          </div>
+        </li>
+
+        <!-- Upcoming step (last, no connector) -->
+        <li class="relative flex gap-3">
+          <span class="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 border-gray-700 bg-gray-900 text-sm font-semibold text-gray-500">4</span>
+          <div class="flex flex-col pt-1 text-gray-500">
+            <span class="text-sm font-semibold">Review and finish</span>
+            <span class="text-xs">Confirm settings and launch</span>
+          </div>
+        </li>
+      </ol>
+    </nav>
+  </body>
+</html>
