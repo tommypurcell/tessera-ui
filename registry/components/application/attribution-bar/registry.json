@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-attribution-bar",
+  "title": "Attribution Bar",
+  "description": "Horizontal stacked bar showing conversion or revenue attribution by channel, with a matching legend listing each channel's color, label, and percentage.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["attribution", "marketing", "channel", "stacked-bar", "chart"],
+  "useWhen": [
+    "Showing how conversions or revenue break down across a small, fixed set of marketing channels.",
+    "The channels are categorical (identity), not an ordered magnitude scale, so each gets a distinct hue.",
+    "A compact single-row visual plus an exact-percentage legend is more useful than a full pie or donut chart."
+  ],
+  "avoidWhen": [
+    "There are more than about 5-6 channels — a stacked bar this thin becomes unreadable; use a table instead.",
+    "You need to compare attribution across multiple time periods — pair this with a grouped/small-multiples layout rather than a single bar.",
+    "The values are magnitudes on a shared scale, not parts of a 100% whole — use a bar chart instead of a stacked one."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The bar and legend are a fixed w-80 block that fills its container's available width up to that cap at all breakpoints.",
+  "accessibility": [
+    "The stacked bar itself is role=\"img\" with a full text summary of every channel and percentage as its aria-label, since the visual segments alone convey nothing to screen readers.",
+    "The legend list repeats every value as visible text, so no information exists only in the bar's proportional widths.",
+    "Each channel is assigned a fixed, distinct hue (not color-cycled) so channel identity stays consistent if the list is reordered."
+  ],
+  "compatibleWith": ["application-charts", "application-segment-breakdown-bar", "application-stat-tile"],
+  "variants": [
+    {
+      "id": "attribution-bar-1",
+      "title": "Attribution bar",
+      "description": "Four-channel conversion attribution bar (Paid search, Organic search, Referral, Direct) with a matching legend and percentages.",
+      "source": {
+        "html": "../../../../public/examples/application/attribution-bar/1.html",
+        "tsx": "tsx/AttributionBarVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Legend swatches use the same colors as the bar segments, keeping the color-to-channel mapping consistent."
+      ]
+    },
+    {
+      "id": "attribution-bar-1-dark",
+      "title": "Attribution bar (Dark)",
+      "description": "Attribution bar adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/attribution-bar/1-dark.html",
+        "tsx": "tsx/AttributionBarVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Channel colors are lightened relative to the light variant to remain distinguishable against the dark surface."
+      ]
+    }
+  ]
+}
