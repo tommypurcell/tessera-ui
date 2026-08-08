@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 860,
+  "screenshotCount": 864,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -8606,6 +8606,46 @@
       "url": "/screenshots/components/application-drag-handle-row/drag-handle-row-2-dark.jpg",
       "width": 600,
       "height": 286
+    },
+    {
+      "componentId": "application-breadcrumb-segmented-path",
+      "variantId": "breadcrumb-segmented-path-1",
+      "appearance": "light",
+      "sourcePath": "files/application-breadcrumb-segmented-path/breadcrumb-segmented-path-1.html",
+      "sourceSha256": "8b34685bca2640909ae0638309023444fa0b6d1ee84f8195ce878527c138dc4a",
+      "url": "/screenshots/components/application-breadcrumb-segmented-path/breadcrumb-segmented-path-1.jpg",
+      "width": 600,
+      "height": 74
+    },
+    {
+      "componentId": "application-breadcrumb-segmented-path",
+      "variantId": "breadcrumb-segmented-path-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-breadcrumb-segmented-path/breadcrumb-segmented-path-1-dark.html",
+      "sourceSha256": "6d6babd100c2dad7a8598c4ffc7b22b01af5edd6732b3bb5966c038a5451d8e3",
+      "url": "/screenshots/components/application-breadcrumb-segmented-path/breadcrumb-segmented-path-1-dark.jpg",
+      "width": 600,
+      "height": 74
+    },
+    {
+      "componentId": "application-breadcrumb-segmented-path",
+      "variantId": "breadcrumb-segmented-path-2",
+      "appearance": "light",
+      "sourcePath": "files/application-breadcrumb-segmented-path/breadcrumb-segmented-path-2.html",
+      "sourceSha256": "43590f81ebc07ebd7bd95db52bfc42b4af3ccfdbfdb858509dfb616d93a034eb",
+      "url": "/screenshots/components/application-breadcrumb-segmented-path/breadcrumb-segmented-path-2.jpg",
+      "width": 600,
+      "height": 80
+    },
+    {
+      "componentId": "application-breadcrumb-segmented-path",
+      "variantId": "breadcrumb-segmented-path-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-breadcrumb-segmented-path/breadcrumb-segmented-path-2-dark.html",
+      "sourceSha256": "67200c1bfcef70fabbba8a8abf4ab327beba9a3d550d1ce778768fd99c89b225",
+      "url": "/screenshots/components/application-breadcrumb-segmented-path/breadcrumb-segmented-path-2-dark.jpg",
+      "width": 600,
+      "height": 80
     }
   ]
 }

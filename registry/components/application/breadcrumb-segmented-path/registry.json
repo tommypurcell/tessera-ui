@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "name": "application-breadcrumb-segmented-path",
+  "title": "Breadcrumb Segmented Path",
+  "description": "Pill-style segmented breadcrumb path with a home icon in place of a text root, plus a truncation variant that collapses middle segments into an ellipsis pill opening a dropdown menu.",
+  "category": "application/breadcrumb-segmented-path",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["application", "breadcrumb", "navigation", "path", "pill", "truncation"],
+  "useWhen": [
+    "Showing the current location in a nested hierarchy with a distinct, chip-like visual treatment rather than plain text links.",
+    "The path is deep enough that middle segments should collapse into a truncation menu to keep the breadcrumb on one line.",
+    "A home icon is preferred over a text root segment such as \"Home\" or \"Dashboard\"."
+  ],
+  "avoidWhen": [
+    "A plain, low-emphasis text breadcrumb with simple dividers is more appropriate — use application-breadcrumbs instead.",
+    "The path never grows beyond 2-3 segments — the truncation variant adds unneeded complexity.",
+    "The current page's route also needs an inline action bar (search, share, more menu) — use application-breadcrumb-page-header or application-command-bar-breadcrumb instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Segments wrap onto multiple lines on narrow viewports via flex-wrap; the truncation variant's dropdown is positioned absolutely below the ellipsis pill and does not affect the breadcrumb's own line height.",
+  "accessibility": [
+    "The breadcrumb list is wrapped in a <nav aria-label=\"Breadcrumb\"> landmark distinguishing it from other navigation.",
+    "The home pill's icon has an sr-only 'Home' label since the icon alone conveys no accessible name.",
+    "The current page segment uses aria-current=\"page\" instead of being a clickable link.",
+    "The truncation menu uses a native <details>/<summary> disclosure, which is keyboard-operable and announced correctly by screen readers without additional script."
+  ],
+  "compatibleWith": ["application-breadcrumbs", "application-breadcrumb-page-header"],
+  "variants": [
+    {
+      "id": "breadcrumb-segmented-path-1",
+      "title": "Segmented path",
+      "description": "Short pill-style breadcrumb path with a home icon and a highlighted current page pill.",
+      "source": {
+        "html": "../../../../public/examples/application/breadcrumb-segmented-path/1.html",
+        "tsx": "tsx/BreadcrumbSegmentedPathVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Current page pill uses aria-current=\"page\" rather than an interactive link."
+      ]
+    },
+    {
+      "id": "breadcrumb-segmented-path-1-dark",
+      "title": "Segmented path (Dark)",
+      "description": "Segmented breadcrumb path adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/breadcrumb-segmented-path/1-dark.html",
+        "tsx": "tsx/BreadcrumbSegmentedPathVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Pill and current-page contrast meet WCAG AA against the dark page background."
+      ]
+    },
+    {
+      "id": "breadcrumb-segmented-path-2",
+      "title": "Truncated with menu",
+      "description": "Segmented path with middle segments collapsed into an ellipsis pill that opens a dropdown of hidden segments.",
+      "source": {
+        "html": "../../../../public/examples/application/breadcrumb-segmented-path/2.html",
+        "tsx": "tsx/BreadcrumbSegmentedPathVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "expanded"],
+      "accessibility": [
+        "The ellipsis pill has an sr-only label describing its function; the disclosure is native <details>/<summary>, keyboard-operable by default."
+      ]
+    },
+    {
+      "id": "breadcrumb-segmented-path-2-dark",
+      "title": "Truncated with menu (Dark)",
+      "description": "Truncated segmented breadcrumb path adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/breadcrumb-segmented-path/2-dark.html",
+        "tsx": "tsx/BreadcrumbSegmentedPathVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "expanded"],
+      "accessibility": [
+        "Dropdown menu contrast and focus outline remain visible against the dark background."
+      ]
+    }
+  ]
+}
