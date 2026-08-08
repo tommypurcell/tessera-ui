@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 774,
+  "screenshotCount": 778,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -3526,6 +3526,46 @@
       "url": "/screenshots/components/application-vertical-menu/vertical-menu-8-dark.jpg",
       "width": 600,
       "height": 478
+    },
+    {
+      "componentId": "application-weather-widget",
+      "variantId": "weather-widget-1",
+      "appearance": "light",
+      "sourcePath": "files/application-weather-widget/weather-widget-1.html",
+      "sourceSha256": "d92572eb8fd1c69f8cbb0377582969cc45e22dfb9460261d6fc53c7142fee296",
+      "url": "/screenshots/components/application-weather-widget/weather-widget-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-weather-widget",
+      "variantId": "weather-widget-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-weather-widget/weather-widget-1-dark.html",
+      "sourceSha256": "95801dd2dcc5599979feed9bf0c6deb5a5bd72adc769ffd63b5a740239aacd66",
+      "url": "/screenshots/components/application-weather-widget/weather-widget-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-weather-widget",
+      "variantId": "weather-widget-2",
+      "appearance": "light",
+      "sourcePath": "files/application-weather-widget/weather-widget-2.html",
+      "sourceSha256": "be35e4092c63997c10a0a82a8072765bbb38cfd8d73b23f920e13a763d141c54",
+      "url": "/screenshots/components/application-weather-widget/weather-widget-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-weather-widget",
+      "variantId": "weather-widget-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-weather-widget/weather-widget-2-dark.html",
+      "sourceSha256": "ff1dfe857605ccada2051c4d427587d26bbfffda07e3d599d8217b6757dde392",
+      "url": "/screenshots/components/application-weather-widget/weather-widget-2-dark.jpg",
+      "width": 600,
+      "height": 400
     },
     {
       "componentId": "building-blocks-actions",

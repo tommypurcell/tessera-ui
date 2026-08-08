@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-weather-widget",
+  "title": "Weather Widget",
+  "description": "Dashboard weather tile pairing a condition icon and current temperature with a forecast strip — hourly or 5-day, depending on the variant.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["weather", "widget", "dashboard", "forecast", "primitive"],
+  "useWhen": [
+    "Showing current conditions and an hourly or daily forecast on a dashboard or home screen.",
+    "You want a self-contained glanceable tile rather than a full weather page.",
+    "Pairing a bold gradient tile with other dashboard widgets that need visual variety."
+  ],
+  "avoidWhen": [
+    "You need a full multi-day detailed forecast page — this is a compact glanceable tile only.",
+    "No real weather data source is available — a static placeholder tile can mislead users if left unconfigured.",
+    "The dashboard already has too many bold gradient tiles — use the bordered variant instead to reduce visual noise."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The card has a fixed width suited to a dashboard grid cell; the forecast strip uses an even flex or grid split so it reflows if the card is narrowed.",
+  "accessibility": [
+    "Every icon is decorative and marked aria-hidden — the adjacent visible text (temperature, condition, time/day label) is what conveys the information.",
+    "Temperature and condition text must meet WCAG AA contrast against the card's background, including on the gradient variant.",
+    "The current temperature and condition are stated in real text, not encoded only in an icon or color."
+  ],
+  "compatibleWith": ["application-stat-tile", "application-metric-sparkline-card"],
+  "variants": [
+    {
+      "id": "weather-widget-1",
+      "title": "Hourly forecast",
+      "description": "Bordered current-conditions tile with an hourly forecast strip beneath a divider.",
+      "source": {
+        "html": "../../../../public/examples/application/weather-widget/1.html",
+        "tsx": "tsx/WeatherWidgetVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Each hourly entry pairs a visible time label and temperature with a decorative icon."
+      ]
+    },
+    {
+      "id": "weather-widget-1-dark",
+      "title": "Hourly forecast (Dark)",
+      "description": "Hourly-forecast weather tile adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/weather-widget/1-dark.html",
+        "tsx": "tsx/WeatherWidgetVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Text and divider contrast must meet WCAG AA on dark backgrounds."
+      ]
+    },
+    {
+      "id": "weather-widget-2",
+      "title": "5-day forecast (gradient)",
+      "description": "Bold gradient-card tile with a 5-day forecast row, for a more prominent dashboard widget.",
+      "source": {
+        "html": "../../../../public/examples/application/weather-widget/2.html",
+        "tsx": "tsx/WeatherWidgetVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "White text on the gradient meets WCAG AA contrast against both gradient endpoints."
+      ]
+    },
+    {
+      "id": "weather-widget-2-dark",
+      "title": "5-day forecast (gradient, Dark)",
+      "description": "Gradient 5-day forecast tile with a deeper gradient and a subtle ring for separation on a dark page.",
+      "source": {
+        "html": "../../../../public/examples/application/weather-widget/2-dark.html",
+        "tsx": "tsx/WeatherWidgetVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "The ring provides a visible edge against a dark page background where a shadow alone would not be visible."
+      ]
+    }
+  ]
+}
