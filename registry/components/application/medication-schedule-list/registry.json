@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-medication-schedule-list",
+  "title": "Medication Schedule List",
+  "description": "Medication dose schedule with time, medication/dosage, and either a resolved Taken/Skipped badge or Take/Skip actions per dose.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["healthcare", "medication", "schedule", "checklist"],
+  "useWhen": [
+    "Showing a patient's or user's daily medication schedule with clear times and dosage information.",
+    "Users need to mark each dose as taken or skipped, with the row visually resolving once logged.",
+    "You want past/logged doses to look distinctly resolved (dimmed, badge) from upcoming ones (still showing actions)."
+  ],
+  "avoidWhen": [
+    "Doses aren't user-loggable (a read-only prescription list) — drop the action buttons and show only time/medication/dosage.",
+    "You need a general-purpose task checklist unrelated to medication — a plain checklist component is simpler and avoids implying clinical semantics.",
+    "This is patient-facing clinical software requiring regulatory-grade audit trails — this is a UI pattern only, not a substitute for a validated medication-adherence system."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Time, medication/dosage, and the trailing badge/actions sit in a single flex row with a fixed-width time column, keeping doses vertically scannable at any width.",
+  "accessibility": [
+    "Resolved doses show real text status (\"Taken\", \"Skipped\"), not color alone, and reduce the row's visual weight rather than hiding it.",
+    "Take and Skip are separate, explicitly labeled buttons rather than a single ambiguous toggle.",
+    "Dosage and quantity are both present as text so users can confirm the exact dose before logging it, not just the medication name."
+  ],
+  "compatibleWith": ["application-checkbox", "application-badges"],
+  "variants": [
+    {
+      "id": "medication-schedule-list-1",
+      "title": "Medication Schedule List",
+      "description": "Four doses: one taken, two pending with Take/Skip actions, and one skipped and dimmed.",
+      "source": {
+        "html": "../../../../public/examples/application/medication-schedule-list/1.html",
+        "tsx": "tsx/MedicationScheduleListVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["pending", "taken", "skipped"],
+      "accessibility": [
+        "Logging a dose transitions real per-row state from pending to taken/skipped, replacing the action buttons with a status badge."
+      ]
+    },
+    {
+      "id": "medication-schedule-list-1-dark",
+      "title": "Medication Schedule List (Dark)",
+      "description": "Medication schedule list adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/medication-schedule-list/1-dark.html",
+        "tsx": "tsx/MedicationScheduleListVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["pending", "taken", "skipped"],
+      "accessibility": [
+        "Status badge and dimmed-row colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}
