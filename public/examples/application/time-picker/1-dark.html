@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+    <style>
+      .tessera-time-col {
+        scrollbar-width: thin;
+        scrollbar-color: #4b5563 transparent;
+      }
+      .tessera-time-col::-webkit-scrollbar {
+        width: 6px;
+      }
+      .tessera-time-col::-webkit-scrollbar-thumb {
+        background-color: #4b5563;
+        border-radius: 9999px;
+      }
+    </style>
+  </head>
+  <body class="flex min-h-64 items-center justify-center bg-gray-950 p-6">
+    <div class="w-full max-w-xs rounded-lg border border-gray-700 bg-gray-900 p-4 shadow-sm">
+      <h3 class="text-sm font-semibold text-white">Meeting time</h3>
+
+      <div class="relative mt-3 flex h-40 gap-2">
+        <div class="tessera-time-col flex-1 overflow-y-auto rounded-md bg-gray-800/60 py-14 text-center">
+          <div class="py-1.5 text-sm text-gray-500">08</div>
+          <div class="py-1.5 text-sm text-gray-500">09</div>
+          <div class="rounded-md bg-gray-800 py-1.5 text-sm font-semibold text-white shadow-sm ring-1 ring-gray-600">10</div>
+          <div class="py-1.5 text-sm text-gray-500">11</div>
+          <div class="py-1.5 text-sm text-gray-500">12</div>
+        </div>
+        <div class="tessera-time-col flex-1 overflow-y-auto rounded-md bg-gray-800/60 py-14 text-center">
+          <div class="py-1.5 text-sm text-gray-500">00</div>
+          <div class="py-1.5 text-sm text-gray-500">15</div>
+          <div class="rounded-md bg-gray-800 py-1.5 text-sm font-semibold text-white shadow-sm ring-1 ring-gray-600">30</div>
+          <div class="py-1.5 text-sm text-gray-500">45</div>
+        </div>
+        <div class="tessera-time-col flex-1 overflow-y-auto rounded-md bg-gray-800/60 py-14 text-center">
+          <div class="rounded-md bg-gray-800 py-1.5 text-sm font-semibold text-white shadow-sm ring-1 ring-gray-600">AM</div>
+          <div class="py-1.5 text-sm text-gray-500">PM</div>
+        </div>
+
+        <div class="pointer-events-none absolute inset-x-0 top-1/2 h-8 -translate-y-1/2 rounded-md ring-1 ring-inset ring-white/10"></div>
+      </div>
+
+      <div class="mt-3 flex items-center justify-between border-t border-gray-700 pt-3">
+        <p class="text-sm text-gray-400">Selected: <span class="font-medium text-white">10:30 AM</span></p>
+        <button type="button" class="rounded-md bg-white px-3 py-1.5 text-xs font-semibold text-gray-900 transition-colors hover:bg-gray-200">
+          Set time
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
