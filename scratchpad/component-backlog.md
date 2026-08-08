@@ -480,14 +480,14 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-4) Energy Usage Bar — green-red gradient watt bar, peak marker w/ value+time, cost estimate, trend alert, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #17)
 
 <!-- Theme: Logistics -->
-- [~] (builder-4) Shipment Tracking Map — route line with origin/current/destination pins and ETA; distinct from map-marker-popup.
+- [x] (builder-4) Shipment Tracking Map — dashed route + origin/current/destination pins (size+icon distinct) + ETA footer, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #17)
 - [x] (builder-8) Package Status Timeline — 4-scan Portland-to-Austin shipment history, latest scan highlighted (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [x] (builder-3) Delivery Slot Picker — radio-card list w/ price, description, Free/Fastest badges, disabled fully-booked state, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 - [x] (builder-1) Inventory Level Row — 2 variants (detail row + multi-SKU list), reorder-threshold marker + warning badge, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #16).
 - [x] (builder-3) Fleet Status Grid — responsive vehicle tile grid, active/idle/maintenance status pills, driver assignment, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 
 <!-- Theme: HR / recruiting -->
-- [ ] Candidate Pipeline Stage — applicant cards in a hiring-stage column with count; distinct from deal-pipeline-stage.
+- [x] (builder-4) Candidate Pipeline Stage — hiring-stage column (count badge) w/ candidate cards (avatar/role/source tag/rating), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #17)
 - [x] (builder-7) Applicant Card — avatar+name+role, 5-star rating, resume link, stage badge, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
 - [x] (builder-5) Interview Scorecard — per-competency 1-5 radiogroup ratings+notes, notes textarea, strong-hire/hire/no-hire selector, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [x] (builder-8) Org Headcount Chart — 4 departments w/ dashed open-roles overlay, bars proportional to real filled/open counts (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
@@ -508,59 +508,59 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: Restaurant / food -->
 - [x] (builder-1) Menu Item Row — 2 variants (detailed row + compact list), dietary tag badges, named add buttons, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #16).
-- [~] (builder-9) Dish Card — photo, name, price, rating, and quick-add; distinct from product-card (food framing).
+- [x] (builder-9) Dish Card — 2 variants (menu card, order row with quantity) light+dark, registry.json, MDX entry, screenshots
 - [x] (builder-8) Order Cart Drawer — food-order list with quantity badges, per-item modifiers, computed subtotal (sum of qty×price), checkout button, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [x] (builder-3) Reservation Time Picker — party-size stepper, date trigger, wrapping time-chip grid (available/unavailable/selected), confirm action, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 - [x] (builder-2) Dietary Filter Chips — 5 chips (Vegan+Gluten-free selected in emerald/amber, Vegetarian/Spicy/Nut-free available), real independent multi-select aria-pressed state, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components (PR #20)
 - [x] (builder-6) Kitchen Order Ticket — 2 variants (active ticket with elapsed timer+item list+Bump action, bumped/completed state with strikethrough items), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
 
 <!-- Theme: Fitness -->
-- [~] (builder-1) Workout Set Row — exercise with sets×reps×weight inputs and done toggle; distinct from inline-add-row.
-- [~] (builder-10) Rep Counter Ring — circular count-up with target and rest-timer; distinct from countdown-ring-timer.
-- [~] (builder-8) Heart Rate Zone Bar — colored HR zone distribution bar with current-zone marker; distinct from segment-breakdown-bar.
+- [x] (builder-1) Workout Set Row — 2 variants (set input grid + exercise summary list), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #16).
+- [x] (builder-10) Rep Counter Ring — 2 variants (rep-count ring w/ Log rep action, rest-timer ring w/ live countdown), light+dark, live tick verified via screenshot, registry+tsx generated, screenshots verified, pushed
+- [x] (builder-8) Heart Rate Zone Bar — 5-zone stacked bar with widths from real time-in-zone minutes, bpm marker centered in active zone segment, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [x] (builder-5) Streak Calendar — flame icon+streak count, 7-day active(check)/missed(dot)/today row, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [x] (builder-2) Body Metrics Card — 3 metric cells (weight/BMI/body fat), trend arrow direction+color both computed from a real signed delta + per-metric increaseIsGood flag, light+dark, registry+tsx+MDX, screenshot verified (caught+fixed an internally-inconsistent arrow-direction bug pre-commit), committed to builder-2-components (PR #20)
 
 <!-- Theme: Music -->
-- [ ] Now Playing Bar — bottom player with art, title, scrubber, and transport controls; distinct from audio-player.
+- [x] (builder-8) Now Playing Bar — full-width bottom-docked bar with art, title/artist, live scrubber (elapsed/duration computed), prev/play/next transport, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [x] (builder-7) Track List Row — 4-track list w/ index→play-icon hover swap, playing-state highlight, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
-- [~] (builder-6) Equalizer Sliders — vertical band-gain sliders with dB labels; distinct from range-inputs.
-- [ ] Album Grid Card — cover art with hover play overlay and title/artist; distinct from dish-card.
-- [ ] Queue List — reorderable up-next tracks with drag handles and remove; distinct from lesson-playlist.
+- [x] (builder-6) Equalizer Sliders — 2 variants (native vertical band sliders w/ dB range labels, fill-bar bands w/ preset dropdown), light+dark, registry+tsx generated, screenshots verified (fixed a fill-bar height collapse bug found during review), committed to builder-6-components.
+- [x] (builder-8) Album Grid Card — square cover-art grid tile, hover/focus-revealed play overlay w/ descriptive aria-label, light+dark, registry+tsx+MDX, screenshot verified (rebuilt component.css to fix missing gradient utility classes), committed+pushed to PR #6.
+- [~] (builder-4) Queue List — reorderable up-next tracks with drag handles and remove; distinct from lesson-playlist.
 
 <!-- Theme: Crypto / web3 -->
-- [~] (builder-5) Wallet Connect Button — connect/connected state with address truncation and balance; distinct from social-login-buttons.
-- [~] (builder-7) Token Balance Row — token icon, symbol, balance, and USD value with change %; distinct from transaction-row.
-- [ ] Price Ticker Strip — scrolling asset prices with up/down flash coloring; distinct from live-counter-tile.
-- [~] (builder-3) Gas Fee Selector — slow/avg/fast fee option cards with time and cost; distinct from delivery-slot-picker.
+- [x] (builder-5) Wallet Connect Button — disconnected/connecting(spinner)/connected(dot+truncated address+balance+chevron) states, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
+- [x] (builder-7) Token Balance Row — 3-asset wallet list w/ derived direction arrow+color, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
+- [x] (builder-10) Price Ticker Strip — 2 variants (infinite scrolling multi-asset ticker, compact flash-on-update price rows), light+dark, both scroll animation + live flash verified via screenshot, registry+tsx generated, screenshots verified, pushed
+- [x] (builder-3) Gas Fee Selector — 3-tier fee cards (Slow/Average/Fast) w/ ETA+cost, radio-based selection, estimated-fee summary, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 - [ ] NFT Card — artwork, name, collection, price, and bid button; distinct from product-card.
-- [ ] Transaction Confirm Sheet — pending-tx summary with from/to, amount, fee, and confirm; distinct from checkout-order-summary.
+- [x] (builder-3) Transaction Confirm Sheet — large amount+fiat display, from/to monospace addresses, fee/total breakdown, cancel/confirm actions, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 
 <!-- Theme: Nonprofit / fundraising -->
 - [x] (builder-6) Donation Progress Card — 2 variants (campaign card with photo+donor avatars+CTA, compact fundraiser row), light+dark, registry+tsx generated, screenshots verified (caught & fixed a broken Unsplash image URL during review), committed to builder-6-components.
-- [ ] Tiered Donation Buttons — preset amount buttons + custom field with impact labels; distinct from variant-selector.
-- [~] (builder-2) Volunteer Shift Card — role, date/time, spots-filled bar, and sign-up; distinct from appointment-slot-card.
+- [~] (builder-9) Tiered Donation Buttons — preset amount buttons + custom field with impact labels; distinct from variant-selector.
+- [x] (builder-2) Volunteer Shift Card — role, date/time, spots-filled progress bar (computed from spotsFilled/spotsTotal), full/disabled sign-up state; light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
 
 <!-- Theme: Insurance -->
-- [ ] Coverage Comparison Card — plan tiers with deductible/premium/coverage rows; distinct from feature-comparison-matrix.
-- [ ] Claim Status Tracker — submitted→review→approved/denied stepper with dates; distinct from order-status-tracker.
+- [~] (builder-2) Coverage Comparison Card — plan tiers with deductible/premium/coverage rows; distinct from feature-comparison-matrix.
+- [x] (builder-2) Claim Status Tracker — vertical timeline, submitted→review→approved/denied with dates+payout, branching outcome driven by currentStageIndex/outcome props; light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
 - [ ] Quote Estimate Panel — input sliders with live premium output and breakdown; distinct from mortgage-calculator.
 
 <!-- Theme: Automotive -->
 - [ ] Vehicle Spec Card — car image with mileage/fuel/transmission spec chips and price; distinct from property-listing-card.
-- [ ] Fuel / Charge Gauge — tank/battery level dial with range estimate; distinct from gauge-chart.
-- [ ] Trip Summary Card — distance/time/avg-speed/efficiency stat row for a drive; distinct from stats.
+- [~] (builder-8) Fuel / Charge Gauge — tank/battery level dial with range estimate; distinct from gauge-chart.
+- [x] (builder-7) Trip Summary Card — header w/ route line + 2x2 stat grid (distance/duration/speed/efficiency), light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
 - [ ] Service Reminder Row — maintenance item with due-mileage bar and schedule action; distinct from sync-status-row.
 
 <!-- === WAVE 10 (deep-backlog refill, post-306) — frontier verticals, verified non-dupe against registry === -->
 
 <!-- Theme: Events / ticketing -->
-- [ ] Event Ticket Card — perforated ticket with event, seat, QR, and barcode strip; distinct from qr-code-card.
-- [ ] Ticket Tier Selector — quantity steppers per price tier with running total; distinct from variant-selector.
+- [x] (builder-5) Event Ticket Card — perforated dashed-divider+notch ticket, event/date/venue/section/ticket#, white-tile QR stub, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
+- [~] (builder-5) Ticket Tier Selector — quantity steppers per price tier with running total; distinct from variant-selector.
 - [ ] Event Countdown Hero — headline event with days/hrs/min countdown and RSVP; distinct from countdown-ring-timer.
 - [ ] Venue Section Map — clickable stadium/venue section blocks with price legend; distinct from seat-map-selector.
 - [ ] Schedule Agenda List — day-grouped session rows with time, track, and speaker; distinct from itinerary-timeline.
-- [ ] Speaker Card — headshot, name, title, talk, and social links; distinct from contact-card.
+- [~] (builder-7) Speaker Card — headshot, name, title, talk, and social links; distinct from contact-card.
 
 <!-- Theme: Streaming / video -->
 - [ ] Video Thumbnail Card — thumbnail with duration badge, title, channel, and views; distinct from image-gallery-lightbox.
@@ -598,3 +598,55 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [ ] Response Summary Bar — per-option horizontal result bars with % and count; distinct from poll-vote-card.
 - [ ] Matrix Question Grid — rows × columns radio matrix for bulk rating; distinct from notification-preferences-grid.
 - [ ] Logic Branch Row — "if answer = X go to Y" conditional-flow rule row; distinct from conditional-field-group.
+
+<!-- === WAVE 11 (deep-backlog refill, post-331) — new verticals, verified non-dupe against registry === -->
+
+<!-- Theme: POS / retail -->
+- [ ] POS Keypad — numeric amount pad with total display and quick-cash buttons; distinct from quantity-inputs.
+- [ ] Receipt Preview — itemized thermal-receipt layout with tax/total and footer; distinct from invoice-table.
+- [ ] Barcode Scan Row — scanned-item row with SKU, qty, price, and void; distinct from cart-line-item.
+- [ ] Tip Selector — preset %-tip buttons with custom entry and split-count; distinct from tiered-donation-buttons.
+- [ ] Cash Drawer Summary — expected vs counted totals with variance highlight; distinct from comparison-stat-pair.
+
+<!-- Theme: Banking -->
+- [ ] Account Balance Card — masked balance with show/hide, account number, and quick actions; distinct from token-balance-row.
+- [ ] Transfer Form — from/to account selectors, amount, and schedule; distinct from currency-converter.
+- [ ] Statement Row — posted transaction with running balance column; distinct from transaction-row.
+- [ ] Card Freeze Toggle — card visual with freeze/unfreeze switch and status; distinct from device-toggle-tile.
+- [ ] Spending Insights Bar — month category bars with over/under-average markers; distinct from budget-progress-bar.
+
+<!-- Theme: Telecom -->
+- [ ] Data Usage Ring — GB used vs plan with days-left projection; distinct from api-rate-limit-meter.
+- [ ] Plan Comparison Row — talk/text/data columns with checkmarks and price; distinct from feature-comparison-matrix.
+- [ ] Signal Strength Bars — animated bars with network-type label (5G/LTE); distinct from connection-status-pill.
+- [ ] Call Log Row — contact, direction icon, duration, and time with callback; distinct from match-history-row.
+
+<!-- Theme: Gov / civic -->
+- [ ] Form Field Wizard (gov) — long official form split into review-able sections with save-progress; distinct from stepper-wizard.
+- [ ] Status Application Tracker — submitted→under-review→decision government stepper with case number; distinct from claim-status-tracker.
+- [ ] Public Notice Card — dated official announcement with category badge and read-more; distinct from announcement-feed-item.
+- [ ] Ballot Option List — candidate/measure rows with select and info expander; distinct from poll-vote-card.
+
+<!-- Theme: Agriculture / IoT -->
+- [ ] Field Sensor Map — plot grid with per-zone moisture/temp color coding; distinct from fleet-status-grid.
+- [ ] Crop Growth Timeline — planting→harvest stage tracker with dates and weather; distinct from care-timeline.
+- [ ] Irrigation Schedule Row — zone with on/off, duration, and next-run; distinct from medication-schedule-list.
+
+<!-- Theme: Manufacturing -->
+- [ ] Production Line Status — station tiles with running/stopped/fault and throughput; distinct from health-check-grid.
+- [ ] OEE Gauge Trio — availability/performance/quality gauges with overall score; distinct from activity-ring-trio.
+- [ ] Work Order Card — order with part, quantity, due date, and stage progress; distinct from milestone-card.
+
+<!-- Theme: Hospitality -->
+- [ ] Room Availability Grid — room-rows × date-columns booked/free calendar; distinct from availability-grid.
+- [ ] Guest Check-In Card — reservation with guest, room, dates, and check-in/out actions; distinct from booking-confirmation-card.
+- [ ] Amenity Request Row — service request with status, room, and time; distinct from approval-request-card.
+
+<!-- Theme: Media / misc verticals -->
+- [ ] Podcast Episode Row — episode art, title, duration, play, and download; distinct from track-list-row.
+- [ ] Sports Scoreboard — two-team score with period/clock and possession indicator; distinct from stats.
+- [ ] Live Match Timeline — game events (goals/cards) on a minute-based timeline; distinct from timelines.
+- [ ] Recipe Ingredient List — checkable ingredients with quantity scaler; distinct from task-checklist.
+- [ ] Recipe Step Card — numbered cooking step with timer and image; distinct from lesson-playlist.
+- [ ] Photo EXIF Panel — image metadata rows (camera/lens/ISO/aperture) with histogram; distinct from media.
+- [ ] Photo Grid Selectable — multi-select photo grid with checkmarks and count bar; distinct from image-gallery-lightbox.

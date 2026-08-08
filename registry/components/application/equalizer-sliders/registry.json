@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-equalizer-sliders",
+  "title": "Equalizer Sliders",
+  "description": "Vertical band-gain sliders with frequency and dB labels for audio equalizer controls, in native-slider and fill-bar variants.",
+  "category": "application/equalizer-sliders",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "equalizer-sliders",
+    "equalizer",
+    "audio",
+    "slider",
+    "frequency"
+  ],
+  "useWhen": [
+    "Vertical band-gain sliders with frequency and dB labels for audio equalizer controls, in native-slider and fill-bar variants."
+  ],
+  "avoidWhen": [
+    "Avoid equalizer sliders when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Equalizer Sliders uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Associate each form field with a visible or programmatic label before production use.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "equalizer-sliders-1",
+      "title": "Native band sliders",
+      "description": "Native band sliders Vertical band-gain sliders with frequency and dB labels for audio equalizer controls, in native-slider and fill-bar variants.",
+      "source": {
+        "html": "../../../../public/examples/application/equalizer-sliders/1.html",
+        "tsx": "tsx/EqualizerSlidersVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "equalizer-sliders-1-dark",
+      "title": "Native band sliders (Dark)",
+      "description": "Native band sliders Vertical band-gain sliders with frequency and dB labels for audio equalizer controls, in native-slider and fill-bar variants.",
+      "source": {
+        "html": "../../../../public/examples/application/equalizer-sliders/1-dark.html",
+        "tsx": "tsx/EqualizerSlidersVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "equalizer-sliders-2",
+      "title": "Fill bar bands",
+      "description": "Fill bar bands Vertical band-gain sliders with frequency and dB labels for audio equalizer controls, in native-slider and fill-bar variants.",
+      "source": {
+        "html": "../../../../public/examples/application/equalizer-sliders/2.html",
+        "tsx": "tsx/EqualizerSlidersVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "equalizer-sliders-2-dark",
+      "title": "Fill bar bands (Dark)",
+      "description": "Fill bar bands Vertical band-gain sliders with frequency and dB labels for audio equalizer controls, in native-slider and fill-bar variants.",
+      "source": {
+        "html": "../../../../public/examples/application/equalizer-sliders/2-dark.html",
+        "tsx": "tsx/EqualizerSlidersVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    }
+  ]
+}
