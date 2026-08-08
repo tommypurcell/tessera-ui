@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "name": "application-retry-error-state",
+  "title": "Retry Error State",
+  "description": "Inline failure panels for data that failed to load, pairing a cause message with a retry action, at both full-panel and compact widget scale.",
+  "category": "application/feedback",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["application", "error", "retry", "failure", "feedback"],
+  "useWhen": [
+    "A fetch, mutation, or data load has failed and the user needs a clear way to retry it.",
+    "Replacing a section or widget's content with a failure state after an unsuccessful request, rather than showing stale or broken content.",
+    "The failure is scoped to one section of the page — other content and navigation should remain usable."
+  ],
+  "avoidWhen": [
+    "There is no data yet because none has been created — use an empty state instead, since there's nothing to retry.",
+    "The failure is fatal and affects the entire page or route — use a full error page instead.",
+    "The error is a validation problem on a form field — use inline field validation instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The full panel centers its content and constrains message width (max-w-xs) so it reads well at any container size; the compact variant is a single-row flex layout that wraps naturally in narrow cards.",
+  "accessibility": [
+    "Both variants use role=\"alert\" so the failure is announced to screen readers as soon as it renders.",
+    "The retry button is a real <button>, keyboard-operable and independently focusable from any surrounding content.",
+    "The compact variant surfaces the underlying cause (e.g. an HTTP status) as secondary text, giving users and support agents concrete diagnostic detail without cluttering the primary message."
+  ],
+  "compatibleWith": ["application-empty-states", "application-alerts", "application-loaders"],
+  "variants": [
+    {
+      "id": "retry-error-state-1",
+      "title": "Full panel",
+      "description": "Centered failure panel with icon, message, and a primary retry button, for a section or full dashboard load failure",
+      "source": {
+        "html": "../../../../public/examples/application/retry-error-state/1.html",
+        "tsx": "tsx/RetryErrorStateVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["error"],
+      "accessibility": ["role=\"alert\" on the panel ensures the failure is announced without requiring the user to discover it visually."]
+    },
+    {
+      "id": "retry-error-state-1-dark",
+      "title": "Full panel (Dark)",
+      "description": "Centered failure panel with icon, message, and a primary retry button, for a section or full dashboard load failure",
+      "source": {
+        "html": "../../../../public/examples/application/retry-error-state/1-dark.html",
+        "tsx": "tsx/RetryErrorStateVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["error"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    },
+    {
+      "id": "retry-error-state-2",
+      "title": "Compact inline",
+      "description": "Single-row failure banner with a cause message and a trailing retry action, for a smaller widget or card that failed to load",
+      "source": {
+        "html": "../../../../public/examples/application/retry-error-state/2.html",
+        "tsx": "tsx/RetryErrorStateVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["error"],
+      "accessibility": ["The HTTP status text gives assistive-tech users the same diagnostic detail sighted users see."]
+    },
+    {
+      "id": "retry-error-state-2-dark",
+      "title": "Compact inline (Dark)",
+      "description": "Single-row failure banner with a cause message and a trailing retry action, for a smaller widget or card that failed to load",
+      "source": {
+        "html": "../../../../public/examples/application/retry-error-state/2-dark.html",
+        "tsx": "tsx/RetryErrorStateVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["error"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    }
+  ]
+}
