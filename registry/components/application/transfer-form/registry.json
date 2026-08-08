@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-transfer-form",
+  "title": "Transfer Form",
+  "description": "Transfer form with from/to account selectors, an amount field, a Now/Schedule toggle, and a date input.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["banking", "finance", "form", "transfer"],
+  "useWhen": [
+    "Moving money between two of the user's own accounts, or to a saved external recipient, in a banking dashboard.",
+    "You need both an immediate and a scheduled transfer path in the same form, toggled with a single control.",
+    "The from-account option should show its live balance so the user can gut-check before submitting."
+  ],
+  "avoidWhen": [
+    "You're converting between currencies rather than transferring within one currency — use `currency-converter` for that unrelated case.",
+    "There's no scheduling need — drop the Now/Schedule toggle and the date field entirely rather than disabling them.",
+    "Recipients are managed elsewhere (payee list, address book) — link out to that flow instead of inlining a third account selector here."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Single-column form at a fixed max width; the Now/Schedule toggle stays a fixed 2-column grid at any form width.",
+  "accessibility": [
+    "From/To selects are real <select> elements with associated <label for>, not custom listboxes, so they work with native keyboard and screen-reader support.",
+    "The Now/Schedule choice uses a radio fieldset with a visible <legend>, not a div-based tab pattern, preserving native grouped-choice semantics.",
+    "The date input is only meaningfully actionable when Schedule is selected; it remains present (not conditionally unmounted) so its state persists across toggling."
+  ],
+  "compatibleWith": ["application-account-balance-card", "application-currency-converter"],
+  "variants": [
+    {
+      "id": "transfer-form-1",
+      "title": "Transfer Form",
+      "description": "From Everyday Checking to High-Yield Savings, $250.00, Now/Schedule toggle, and a date field.",
+      "source": {
+        "html": "../../../../public/examples/application/transfer-form/1.html",
+        "tsx": "tsx/TransferFormVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The selected When option is reflected with both a filled background and a border change, not color alone."
+      ]
+    },
+    {
+      "id": "transfer-form-1-dark",
+      "title": "Transfer Form (Dark)",
+      "description": "Transfer form adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/transfer-form/1-dark.html",
+        "tsx": "tsx/TransferFormVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "The native date picker uses color-scheme: dark so its calendar icon and popover remain legible on the dark surface."
+      ]
+    }
+  ]
+}
