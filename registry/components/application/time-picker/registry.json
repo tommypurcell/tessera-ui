@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-time-picker",
+  "title": "Time Picker",
+  "description": "Hour, minute, and period selectors as a scrolling column picker or a compact dropdown listbox for scheduling and reminder interfaces.",
+  "category": "application/time-picker",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "time-picker",
+    "time",
+    "clock",
+    "schedule",
+    "dropdown"
+  ],
+  "useWhen": [
+    "Hour, minute, and period selectors as a scrolling column picker or a compact dropdown listbox for scheduling and reminder interfaces."
+  ],
+  "avoidWhen": [
+    "Avoid time picker when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Time Picker uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "time-picker-1",
+      "title": "Column picker",
+      "description": "Column picker Hour, minute, and period selectors as a scrolling column picker or a compact dropdown listbox for scheduling and reminder interfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/time-picker/1.html",
+        "tsx": "tsx/TimePickerVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "time-picker-1-dark",
+      "title": "Column picker (Dark)",
+      "description": "Column picker Hour, minute, and period selectors as a scrolling column picker or a compact dropdown listbox for scheduling and reminder interfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/time-picker/1-dark.html",
+        "tsx": "tsx/TimePickerVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "time-picker-2",
+      "title": "Dropdown list",
+      "description": "Dropdown list Hour, minute, and period selectors as a scrolling column picker or a compact dropdown listbox for scheduling and reminder interfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/time-picker/2.html",
+        "tsx": "tsx/TimePickerVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "time-picker-2-dark",
+      "title": "Dropdown list (Dark)",
+      "description": "Dropdown list Hour, minute, and period selectors as a scrolling column picker or a compact dropdown listbox for scheduling and reminder interfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/time-picker/2-dark.html",
+        "tsx": "tsx/TimePickerVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}
