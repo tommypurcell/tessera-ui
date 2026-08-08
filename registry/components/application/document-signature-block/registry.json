@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "name": "application-document-signature-block",
+  "title": "Document Signature Block",
+  "description": "Signer status rows (name, role, signed date or pending) for a document or agreement, plus a compact avatar-based signature progress summary.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["application", "signature", "legal", "compliance", "esignature"],
+  "useWhen": [
+    "Showing who has and hasn't signed a document or agreement, alongside their role and signing date.",
+    "Summarizing overall signature completion at a glance in a smaller card or sidebar context."
+  ],
+  "avoidWhen": [
+    "You need the actual drawing/capture surface for a signature — use signature-pad for the input itself, not the status display.",
+    "There's only a single signer and no multi-party tracking is needed — a simple status badge may be sufficient."
+  ],
+  "dependencies": ["application-signature-pad"],
+  "responsiveBehavior": "The list variant is a single-column stack that reflows naturally at any width; the compact variant's overlapping avatar stack stays fixed-size and wraps its summary text above it.",
+  "accessibility": [
+    "Each signer's status (Signed / Pending) pairs an icon with explicit text, never relying on icon or color alone.",
+    "The compact variant's placeholder avatar (initials) carries a title attribute naming the pending signer, since it has no image alt text to rely on.",
+    "Signed dates are given as explicit text (e.g. 'Signed Jun 12, 2026') rather than only a checkmark, preserving an audit-relevant detail."
+  ],
+  "compatibleWith": ["application-signature-pad", "application-avatar"],
+  "variants": [
+    {
+      "id": "document-signature-block-1",
+      "title": "Signer list",
+      "description": "Three signer rows with role, signed date or pending status, and a status badge",
+      "source": {
+        "html": "../../../../public/examples/application/document-signature-block/1.html",
+        "tsx": "tsx/DocumentSignatureBlockVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["signed", "pending"],
+      "accessibility": ["Each status badge pairs an icon with explicit Signed/Pending text."]
+    },
+    {
+      "id": "document-signature-block-1-dark",
+      "title": "Signer list (Dark)",
+      "description": "Three signer rows with role, signed date or pending status, and a status badge",
+      "source": {
+        "html": "../../../../public/examples/application/document-signature-block/1-dark.html",
+        "tsx": "tsx/DocumentSignatureBlockVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["signed", "pending"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    },
+    {
+      "id": "document-signature-block-2",
+      "title": "Progress summary",
+      "description": "Compact card with a completion bar, 'N of M signed' text, and an overlapping avatar stack",
+      "source": {
+        "html": "../../../../public/examples/application/document-signature-block/2.html",
+        "tsx": "tsx/DocumentSignatureBlockVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": ["The pending signer's initials avatar carries a title naming them, since there is no photo alt text to rely on."]
+    },
+    {
+      "id": "document-signature-block-2-dark",
+      "title": "Progress summary (Dark)",
+      "description": "Compact card with a completion bar, 'N of M signed' text, and an overlapping avatar stack",
+      "source": {
+        "html": "../../../../public/examples/application/document-signature-block/2-dark.html",
+        "tsx": "tsx/DocumentSignatureBlockVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    }
+  ]
+}
