@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-sm p-6">
+    <div class="rounded-lg border border-gray-200 bg-white shadow-sm">
+      <button
+        type="button"
+        aria-expanded="true"
+        aria-controls="collapsible-panel"
+        class="flex w-full items-center justify-between gap-2 px-4 py-3 text-left"
+      >
+        <span class="text-sm font-semibold text-gray-900">3 comments on this pull request</span>
+
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4 shrink-0 rotate-180 text-gray-500 transition-transform">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+        </svg>
+      </button>
+
+      <div id="collapsible-panel" class="border-t border-gray-100 px-4 py-3">
+        <ul class="flex flex-col gap-2.5 text-sm text-gray-600">
+          <li class="flex gap-2">
+            <span class="font-medium text-gray-900">Priya:</span>
+            <span>Left a comment on line 42 — looks good, just double check the null case.</span>
+          </li>
+          <li class="flex gap-2">
+            <span class="font-medium text-gray-900">Marcus:</span>
+            <span>Approved with one nit on naming.</span>
+          </li>
+          <li class="flex gap-2">
+            <span class="font-medium text-gray-900">Dana:</span>
+            <span>Can you rebase on main before merging?</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
