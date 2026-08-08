@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-sprint-burndown-chart",
+  "title": "Sprint Burndown Chart",
+  "description": "An ideal-vs-actual remaining-work line chart over a sprint, with a today marker showing exactly where the team stands against the planned pace.",
+  "category": "application/sprint-burndown-chart",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "sprint-burndown-chart",
+    "burndown",
+    "sprint",
+    "agile",
+    "chart",
+    "today marker"
+  ],
+  "useWhen": [
+    "Tracking agile sprint progress where the team needs to see actual remaining work against the ideal linear pace.",
+    "A vertical 'today' marker helps distinguish completed days from remaining days at a glance."
+  ],
+  "avoidWhen": [
+    "You're tracking cumulative completed work rather than remaining work — a burn-up chart communicates that direction more naturally.",
+    "The work isn't time-boxed into a sprint — a generic line chart from `charts` fits open-ended trend tracking better."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The chart is a single SVG with viewBox scaling that shrinks proportionally with its container; day labels below the chart stay anchored to Day 0, Today, and the final day regardless of width.",
+  "accessibility": [
+    "The ideal line uses a dashed stroke and the actual line a solid stroke, distinguishing them by pattern in addition to color.",
+    "The today marker is a dashed vertical line paired with a 'Today' text label below the axis, not conveyed by position alone.",
+    "The header states the exact remaining points and days left as text, not solely inferred from the chart's visual endpoint."
+  ],
+  "compatibleWith": ["application-charts", "application-stepper-wizard"],
+  "variants": [
+    {
+      "id": "sprint-burndown-chart-1",
+      "title": "Ten-day sprint",
+      "description": "A 10-day sprint burndown: dashed gray ideal-pace line, solid blue actual-remaining-work line ending at today with a marker dot, and a dashed red today line.",
+      "source": {
+        "html": "../../../../public/examples/application/sprint-burndown-chart/1.html",
+        "tsx": "tsx/SprintBurndownChartVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Ideal and actual lines are distinguished by both color and dash pattern, and both are labeled in a text legend."
+      ]
+    },
+    {
+      "id": "sprint-burndown-chart-1-dark",
+      "title": "Ten-day sprint (Dark)",
+      "description": "Sprint burndown chart adapted for dark surfaces, with line and marker colors re-tuned for dark contrast.",
+      "source": {
+        "html": "../../../../public/examples/application/sprint-burndown-chart/1-dark.html",
+        "tsx": "tsx/SprintBurndownChartVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Line strokes and the today marker meet WCAG AA contrast against the dark card background."
+      ]
+    }
+  ]
+}
