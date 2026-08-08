@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-notification-preferences-grid",
+  "title": "Notification Preferences Grid",
+  "description": "Channel-by-event notification matrix of checkboxes (Email/Push/SMS) with per-cell disabled/required states, driven by a typed channels/rows prop contract.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["notifications", "preferences", "settings", "matrix", "checkboxes"],
+  "useWhen": [
+    "A settings page needs users to configure which channel (email, push, SMS) delivers each type of notification.",
+    "Some notification/channel combinations must be locked (e.g. security alerts always email) while others stay optional.",
+    "The event list and channel list are both data-driven and may grow independently."
+  ],
+  "avoidWhen": [
+    "There is only one channel — a simple checkbox list per event is simpler than a matrix.",
+    "Users need granular per-recipient rules, not per-event-type rules — a rules/filter builder fits better.",
+    "The number of events is very large — paginate or group events instead of one long matrix."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The table scrolls horizontally within its own container on narrow viewports where the channel columns no longer fit; the event label column should remain legible at any width.",
+  "accessibility": [
+    "Each checkbox carries a composed aria-label naming both the event and the channel, since the grid layout alone doesn't convey that pairing to screen readers.",
+    "Disabled cells (unavailable or required-and-locked) use the native disabled attribute plus a footnote explaining why, not just a dimmed appearance.",
+    "Column headers use scope='col' so assistive technology associates each checkbox column with its channel label."
+  ],
+  "compatibleWith": ["application-checkboxes", "application-form-row"],
+  "variants": [
+    {
+      "id": "notification-preferences-grid-1",
+      "title": "Notification Preferences Grid",
+      "description": "Event-by-channel checkbox matrix with a required always-on cell, an unavailable disabled cell, and a footnote explaining the locked row.",
+      "source": {
+        "html": "../../../../public/examples/application/notification-preferences-grid/1.html",
+        "tsx": "tsx/NotificationPreferencesGridVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "checked", "disabled"],
+      "accessibility": [
+        "The required Security alerts / Email cell is disabled-checked with an aria-label noting it is required, and a footnote explains why."
+      ]
+    },
+    {
+      "id": "notification-preferences-grid-1-dark",
+      "title": "Notification Preferences Grid (Dark)",
+      "description": "Notification matrix adapted for dark surfaces with the same channel-header, checkbox-cell, and footnote structure.",
+      "source": {
+        "html": "../../../../public/examples/application/notification-preferences-grid/1-dark.html",
+        "tsx": "tsx/NotificationPreferencesGridVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "checked", "disabled"],
+      "accessibility": [
+        "Checkbox borders, disabled-state dimming, and footnote text must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}

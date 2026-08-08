@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-lg p-6">
+    <div class="rounded-xl border border-gray-200 bg-white">
+      <div class="border-b border-gray-200 px-5 py-4">
+        <h3 class="text-sm font-semibold text-gray-900">Notification preferences</h3>
+        <p class="mt-0.5 text-xs text-gray-500">Choose how you want to be notified for each event.</p>
+      </div>
+
+      <table class="w-full">
+        <thead>
+          <tr class="text-xs font-medium uppercase tracking-wide text-gray-400">
+            <th scope="col" class="px-5 py-2.5 text-left">Event</th>
+            <th scope="col" class="px-3 py-2.5 text-center">Email</th>
+            <th scope="col" class="px-3 py-2.5 text-center">Push</th>
+            <th scope="col" class="px-3 py-2.5 text-center">SMS</th>
+          </tr>
+        </thead>
+
+        <tbody class="divide-y divide-gray-100">
+          <tr>
+            <td class="px-5 py-3 text-sm text-gray-700">New comments</td>
+            <td class="px-3 py-3 text-center">
+              <input type="checkbox" checked class="size-4 rounded border-gray-300 text-gray-900 focus:ring-gray-500" aria-label="New comments via Email" />
+            </td>
+            <td class="px-3 py-3 text-center">
+              <input type="checkbox" checked class="size-4 rounded border-gray-300 text-gray-900 focus:ring-gray-500" aria-label="New comments via Push" />
+            </td>
+            <td class="px-3 py-3 text-center">
+              <input type="checkbox" class="size-4 rounded border-gray-300 text-gray-900 focus:ring-gray-500" aria-label="New comments via SMS" />
+            </td>
+          </tr>
+
+          <tr>
+            <td class="px-5 py-3 text-sm text-gray-700">Task assigned to you</td>
+            <td class="px-3 py-3 text-center">
+              <input type="checkbox" checked class="size-4 rounded border-gray-300 text-gray-900 focus:ring-gray-500" aria-label="Task assigned to you via Email" />
+            </td>
+            <td class="px-3 py-3 text-center">
+              <input type="checkbox" checked class="size-4 rounded border-gray-300 text-gray-900 focus:ring-gray-500" aria-label="Task assigned to you via Push" />
+            </td>
+            <td class="px-3 py-3 text-center">
+              <input type="checkbox" checked class="size-4 rounded border-gray-300 text-gray-900 focus:ring-gray-500" aria-label="Task assigned to you via SMS" />
+            </td>
+          </tr>
+
+          <tr>
+            <td class="px-5 py-3 text-sm text-gray-700">Weekly summary</td>
+            <td class="px-3 py-3 text-center">
+              <input type="checkbox" checked class="size-4 rounded border-gray-300 text-gray-900 focus:ring-gray-500" aria-label="Weekly summary via Email" />
+            </td>
+            <td class="px-3 py-3 text-center">
+              <input type="checkbox" class="size-4 rounded border-gray-300 text-gray-900 focus:ring-gray-500" aria-label="Weekly summary via Push" />
+            </td>
+            <td class="px-3 py-3 text-center">
+              <input type="checkbox" disabled class="size-4 rounded border-gray-200 text-gray-300" aria-label="Weekly summary via SMS (unavailable)" />
+            </td>
+          </tr>
+
+          <tr>
+            <td class="px-5 py-3 text-sm text-gray-700">Security alerts</td>
+            <td class="px-3 py-3 text-center">
+              <input type="checkbox" checked disabled class="size-4 rounded border-gray-200 text-gray-400" aria-label="Security alerts via Email (required)" />
+            </td>
+            <td class="px-3 py-3 text-center">
+              <input type="checkbox" checked class="size-4 rounded border-gray-300 text-gray-900 focus:ring-gray-500" aria-label="Security alerts via Push" />
+            </td>
+            <td class="px-3 py-3 text-center">
+              <input type="checkbox" checked class="size-4 rounded border-gray-300 text-gray-900 focus:ring-gray-500" aria-label="Security alerts via SMS" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="border-t border-gray-200 px-5 py-2.5 text-xs text-gray-400">Security alerts always send by email and cannot be disabled.</div>
+    </div>
+  </body>
+</html>
