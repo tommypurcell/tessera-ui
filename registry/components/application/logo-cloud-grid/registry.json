@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "name": "application-logo-cloud-grid",
+  "title": "Logo Cloud Grid",
+  "description": "Customer/partner logo cloud: a heading above a grid of monochrome logos separated by subtle interior dividers rather than gapped cards.",
+  "category": "application/marketing",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["logos", "social-proof", "customers", "partners", "marketing"],
+  "useWhen": [
+    "Showing a row or grid of customer/partner company logos as social proof on a marketing or pricing page.",
+    "You want a cohesive bordered grid with dividers between cells instead of individually spaced logo cards.",
+    "Distinct from Amenities Grid, which lists icon+label facility features, rather than external brand/company logos as social proof."
+  ],
+  "avoidWhen": [
+    "Listing facility or product features with icons and labels — use Amenities Grid instead.",
+    "Only a couple of logos need to be shown — a simple inline row is simpler than a bordered grid."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The grid steps from 3 columns on narrow viewports to 4 columns at the sm breakpoint; divide-x/divide-y keeps interior borders consistent regardless of column count.",
+  "accessibility": [
+    "Each logo SVG carries an aria-label naming the company, since the mark alone (shape + wordmark) may not be recognizable to assistive tech.",
+    "Logos render in a single desaturated color so brand recognition doesn't rely on color alone."
+  ],
+  "compatibleWith": ["application-testimonial-card"],
+  "variants": [
+    {
+      "id": "logo-cloud-grid-1",
+      "title": "Logo Cloud Grid",
+      "description": "An 8-logo grid of stylized monochrome company marks with a 'Trusted by teams at' heading.",
+      "source": {
+        "html": "../../../../public/examples/application/logo-cloud-grid/1.html",
+        "tsx": "tsx/LogoCloudGridVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Each logo SVG carries an aria-label naming the company."
+      ]
+    },
+    {
+      "id": "logo-cloud-grid-1-dark",
+      "title": "Logo Cloud Grid (Dark)",
+      "description": "The same logo grid adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/logo-cloud-grid/1-dark.html",
+        "tsx": "tsx/LogoCloudGridVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Logo and divider contrast remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}
