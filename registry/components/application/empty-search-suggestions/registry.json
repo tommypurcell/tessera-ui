@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-empty-search-suggestions",
+  "title": "Empty Search Suggestions",
+  "description": "No-results search state offering clickable popular or related query suggestions to help the user recover — distinct from application-no-results-search-state, which offers only a clear-filters action with no query suggestions.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["search", "empty-state", "no-results", "suggestions", "primitive"],
+  "useWhen": [
+    "A search returns zero results and you have popular or related search terms to suggest instead.",
+    "A likely spelling correction is available for the user's query (a 'Did you mean' suggestion).",
+    "Offering category browsing as a recovery path when the specific search term didn't match anything."
+  ],
+  "avoidWhen": [
+    "No real suggestions or corrections are available — use application-no-results-search-state's simpler clear-filters message instead of fabricating suggestions.",
+    "The empty state isn't from a search at all (e.g. a genuinely empty list) — use application-empty-states instead.",
+    "Filters, not the search term, caused zero results — a clear-filters action is more useful than search suggestions."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The card has a fixed max width; suggestion chips wrap onto multiple lines as needed at narrow widths.",
+  "accessibility": [
+    "The searched query is echoed back in real text so users can confirm what didn't match.",
+    "Suggestion chips and the 'Did you mean' correction are real buttons, not styled spans, so they are keyboard-operable.",
+    "The category label uses a real heading-like text element to group the suggestion chips for screen reader users."
+  ],
+  "compatibleWith": ["application-no-results-search-state", "application-faceted-search-sidebar"],
+  "variants": [
+    {
+      "id": "empty-search-suggestions-1",
+      "title": "Popular searches",
+      "description": "No-results state with a row of clickable popular-search chips.",
+      "source": {
+        "html": "../../../../public/examples/application/empty-search-suggestions/1.html",
+        "tsx": "tsx/EmptySearchSuggestionsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Each suggestion chip is a real button with its own accessible name (the suggested term)."
+      ]
+    },
+    {
+      "id": "empty-search-suggestions-1-dark",
+      "title": "Popular searches (Dark)",
+      "description": "Popular-searches empty state adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/empty-search-suggestions/1-dark.html",
+        "tsx": "tsx/EmptySearchSuggestionsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Chip border and text contrast must meet WCAG AA on dark backgrounds."
+      ]
+    },
+    {
+      "id": "empty-search-suggestions-2",
+      "title": "Did you mean + categories",
+      "description": "No-results state with a spelling-correction suggestion and a row of category chips to browse instead.",
+      "source": {
+        "html": "../../../../public/examples/application/empty-search-suggestions/2.html",
+        "tsx": "tsx/EmptySearchSuggestionsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The 'Did you mean' correction is a real button, not a link styled to look clickable without being one."
+      ]
+    },
+    {
+      "id": "empty-search-suggestions-2-dark",
+      "title": "Did you mean + categories (Dark)",
+      "description": "Spelling-correction and category-chip empty state adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/empty-search-suggestions/2-dark.html",
+        "tsx": "tsx/EmptySearchSuggestionsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Category chip and correction-link contrast must meet WCAG AA on dark backgrounds."
+      ]
+    }
+  ]
+}

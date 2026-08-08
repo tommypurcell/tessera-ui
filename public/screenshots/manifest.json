@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 818,
+  "screenshotCount": 822,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -1234,6 +1234,46 @@
       "sourcePath": "files/application-dropdown/dropdown-3-dark.html",
       "sourceSha256": "f7b4018bd4f8dd734489a59f3fdca2d18d97fcf68f534b917add308b3a50c264",
       "url": "/screenshots/components/application-dropdown/dropdown-3-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-empty-search-suggestions",
+      "variantId": "empty-search-suggestions-1",
+      "appearance": "light",
+      "sourcePath": "files/application-empty-search-suggestions/empty-search-suggestions-1.html",
+      "sourceSha256": "68ad5e676af9e511feb90197f28cd6e7d9e28813003e627d00adb7bce5fa917a",
+      "url": "/screenshots/components/application-empty-search-suggestions/empty-search-suggestions-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-empty-search-suggestions",
+      "variantId": "empty-search-suggestions-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-empty-search-suggestions/empty-search-suggestions-1-dark.html",
+      "sourceSha256": "67148a24c4b28eb4e6bf864df1cf74c0da8873e6de5f509fd084edc21351c301",
+      "url": "/screenshots/components/application-empty-search-suggestions/empty-search-suggestions-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-empty-search-suggestions",
+      "variantId": "empty-search-suggestions-2",
+      "appearance": "light",
+      "sourcePath": "files/application-empty-search-suggestions/empty-search-suggestions-2.html",
+      "sourceSha256": "30c33cb70915713590edf070b7202903cec4b3f4ff1596061c142fd086c10265",
+      "url": "/screenshots/components/application-empty-search-suggestions/empty-search-suggestions-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-empty-search-suggestions",
+      "variantId": "empty-search-suggestions-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-empty-search-suggestions/empty-search-suggestions-2-dark.html",
+      "sourceSha256": "7ed1ab0bbb1288bada9339f48bfdfaba06a22786ff9f32ff246843d006b045d1",
+      "url": "/screenshots/components/application-empty-search-suggestions/empty-search-suggestions-2-dark.jpg",
       "width": 600,
       "height": 400
     },
