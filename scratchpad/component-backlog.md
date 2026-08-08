@@ -153,7 +153,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [ ] Import Wizard — multi-step upload → column-map → preview flow with mapping dropdowns; distinct from stepper-wizard (data-import specific) and file-uploaders.
 - [ ] API Key Manager — table of keys with masked values, reveal/copy, scopes badges, last-used, and revoke; distinct from copy-field (management surface).
 - [ ] Two-Factor Setup — QR + secret display with segmented code entry and recovery-codes reveal; security-onboarding pattern not covered.
-- [~] (builder-6) Usage Meter Card — quota tile with used/limit progress, threshold color shift, and upgrade CTA; distinct from progress-bars and stat tiles (billing semantics).
+- [x] (builder-6) Usage Meter Card — 2 variants (healthy usage emerald fill, near-limit red threshold shift with upgrade CTA), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
 - [~] (builder-10) Diff Stat Bar — added/removed line summary with green/red proportion bar and file-count; distinct from the built diff viewer (summary, not content).
 - [ ] Presence Cursor Layer — live multiplayer cursors with name labels and selection highlights over a canvas; collaboration primitive absent from library.
 - [ ] Rating Distribution — horizontal bar breakdown of 5→1 star counts with percentages and average summary; distinct from rating input (aggregate view).
