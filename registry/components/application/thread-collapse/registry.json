@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-thread-collapse",
+  "title": "Thread Collapse",
+  "description": "Email-style quoted-reply chain where older messages collapse to a one-line summary bar that expands individually, with an Expand all control, and the newest message always shown in full.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["email", "thread", "quoted-reply", "collapse", "mail"],
+  "useWhen": [
+    "Showing a long email reply chain where only the newest message needs to be fully visible by default.",
+    "You want per-message disclosure plus a single control to expand every collapsed message at once.",
+    "Distinct from Comment Thread, which shows nested replies with avatars and always-visible bodies rather than a collapsed quoted-email chain."
+  ],
+  "avoidWhen": [
+    "Showing a discussion/comment thread where every reply should stay visible — use Comment Thread instead.",
+    "The thread only has one or two messages — collapsing adds no value."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Collapsed rows truncate their preview text with an ellipsis rather than wrapping, keeping each row a single line regardless of width.",
+  "accessibility": [
+    "Each collapsed message is a real button with aria-expanded and aria-controls pointing at its expanded content region.",
+    "The disclosure chevron rotates to reflect expanded state, reinforcing the aria-expanded value visually.",
+    "\"Expand all\" is a normal focusable button, keyboard-operable without needing to open each row individually."
+  ],
+  "compatibleWith": ["application-compose-window", "application-comment-thread"],
+  "variants": [
+    {
+      "id": "thread-collapse-1",
+      "title": "Thread Collapse",
+      "description": "Two collapsed prior messages with sender/preview/date, an Expand all control, and the newest message shown in full.",
+      "source": {
+        "html": "../../../../public/examples/application/thread-collapse/1.html",
+        "tsx": "tsx/ThreadCollapseVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["collapsed", "expanded"],
+      "accessibility": [
+        "Collapsed rows are buttons with aria-expanded=\"false\" and aria-controls until toggled."
+      ]
+    },
+    {
+      "id": "thread-collapse-1-dark",
+      "title": "Thread Collapse (Dark)",
+      "description": "The same thread adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/thread-collapse/1-dark.html",
+        "tsx": "tsx/ThreadCollapseVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["collapsed", "expanded"],
+      "accessibility": [
+        "Row and preview text contrast remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}

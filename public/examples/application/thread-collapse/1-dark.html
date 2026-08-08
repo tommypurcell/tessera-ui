@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-lg p-6">
+    <div class="rounded-xl border border-gray-800 bg-gray-900">
+      <div class="flex items-center justify-between border-b border-gray-800 px-5 py-3">
+        <p class="text-sm font-semibold text-gray-100">Q3 roadmap review</p>
+        <button type="button" class="text-xs font-medium text-indigo-400 hover:text-indigo-300">Expand all</button>
+      </div>
+
+      <ol class="divide-y divide-gray-800">
+        <li>
+          <button type="button" aria-expanded="false" aria-controls="thread-msg-1" class="flex w-full items-center gap-3 px-5 py-2.5 text-left hover:bg-gray-800/50">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-3.5 shrink-0 text-gray-500">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg>
+            <span class="min-w-0 flex-1 truncate text-xs text-gray-400">
+              <span class="font-medium text-gray-300">Priya Chandran</span> — Thanks for putting this together, a few thoughts below...
+            </span>
+            <span class="shrink-0 text-xs text-gray-500">Mon</span>
+          </button>
+        </li>
+
+        <li>
+          <button type="button" aria-expanded="false" aria-controls="thread-msg-2" class="flex w-full items-center gap-3 px-5 py-2.5 text-left hover:bg-gray-800/50">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-3.5 shrink-0 text-gray-500">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg>
+            <span class="min-w-0 flex-1 truncate text-xs text-gray-400">
+              <span class="font-medium text-gray-300">Jordan Lang</span> — Agreed on scope. Can we push the launch date...
+            </span>
+            <span class="shrink-0 text-xs text-gray-500">Tue</span>
+          </button>
+        </li>
+
+        <li id="thread-msg-3">
+          <div class="px-5 py-4">
+            <div class="flex items-center justify-between">
+              <span class="text-sm font-medium text-gray-100">You</span>
+              <span class="text-xs text-gray-500">Today, 9:14 AM</span>
+            </div>
+            <p class="mt-1.5 text-sm text-gray-300">
+              Sharing the updated draft roadmap ahead of Thursday's sync — take a look and let me know if the revised timeline works for your teams.
+            </p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>
