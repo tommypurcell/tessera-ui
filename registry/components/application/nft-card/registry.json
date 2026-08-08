@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "name": "application-nft-card",
+  "title": "NFT Card",
+  "description": "NFT marketplace card showing artwork, verified collection identity, token id, title, and a current bid in ETH with a USD equivalent, plus a bid action.",
+  "category": "application/cards",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["nft", "crypto", "marketplace", "web3", "card"],
+  "useWhen": [
+    "Listing NFT or digital-collectible artwork in a marketplace grid.",
+    "You need to show collection identity (avatar, name, verified badge) and a crypto-native price pair (ETH + USD) rather than a fiat-only price.",
+    "Distinct from Product Card, which shows a star rating and percent-off discount badge rather than collection identity and a bid action."
+  ],
+  "avoidWhen": [
+    "Listing conventional retail products — use Product Card instead, which has ratings and discount-badge conventions shoppers expect.",
+    "You don't need collection/creator identity or a bid affordance — a plain image card is simpler."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The artwork stays a 1:1 square via aspect-square; the price and bid button stay on one row and never wrap independently of each other.",
+  "accessibility": [
+    "The verified-collection checkmark carries an aria-label (\"Verified collection\") since it conveys meaning through an icon alone.",
+    "Artwork alt text is a required prop, encouraging real descriptive text describing the piece rather than a generic filename."
+  ],
+  "compatibleWith": ["application-wallet-connect-button", "application-gas-fee-selector"],
+  "variants": [
+    {
+      "id": "nft-card-1",
+      "title": "NFT Card",
+      "description": "Square artwork with token id badge, verified collection row, title, ETH/USD current bid, and a Place bid button.",
+      "source": {
+        "html": "../../../../public/examples/application/nft-card/1.html",
+        "tsx": "tsx/NftCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Verified badge SVG carries an aria-label rather than relying on color alone to convey verification."
+      ]
+    },
+    {
+      "id": "nft-card-1-dark",
+      "title": "NFT Card (Dark)",
+      "description": "The same card adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/nft-card/1-dark.html",
+        "tsx": "tsx/NftCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Verified badge and price contrast remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}
