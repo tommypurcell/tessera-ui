@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "name": "application-alerts",
+  "title": "Alerts",
+  "description": "Inline alert and banner components for status messages, dismissible notices, warnings with actions, and left-accent notification variants.",
+  "category": "application/feedback",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["application", "alert", "banner", "notice", "status", "feedback"],
+  "useWhen": [
+    "Surfacing a status message, warning, or confirmation inline within page content rather than as a transient toast.",
+    "Communicating an error or validation problem that should persist until the user acts on it.",
+    "Grouping several related status messages (success, warning, error) in a stacked layout."
+  ],
+  "avoidWhen": [
+    "The message is transient and should disappear automatically — use a toast instead.",
+    "You need a blocking confirmation before a destructive action — use an alert dialog instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Alerts are a single-column flex layout that wraps text naturally; the max-w-lg container in the example can be removed to fill any parent width.",
+  "accessibility": [
+    "Informational alerts use role=\"status\"; alerts requiring immediate attention (errors, failures) use role=\"alert\" so screen readers announce them without user action.",
+    "Icons are decorative and marked aria-hidden — meaning is conveyed by text, not color or icon shape alone.",
+    "Dismiss buttons carry an aria-label since they contain only an icon."
+  ],
+  "compatibleWith": ["application-toasts", "application-form-row"],
+  "variants": [
+    {
+      "id": "alerts-1",
+      "title": "Base",
+      "description": "Simple informational alert with icon, title, and message",
+      "source": {
+        "html": "../../../../public/examples/application/alerts/1.html",
+        "tsx": "tsx/AlertsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": ["Uses role=\"status\" for a non-urgent informational message."]
+    },
+    {
+      "id": "alerts-1-dark",
+      "title": "Base (Dark)",
+      "description": "Simple informational alert with icon, title, and message",
+      "source": {
+        "html": "../../../../public/examples/application/alerts/1-dark.html",
+        "tsx": "tsx/AlertsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    },
+    {
+      "id": "alerts-2",
+      "title": "Stacked severities",
+      "description": "Success, warning, and error alerts stacked to show the full semantic color range",
+      "source": {
+        "html": "../../../../public/examples/application/alerts/2.html",
+        "tsx": "tsx/AlertsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": ["The error alert uses role=\"alert\" so it interrupts screen reader flow; success and warning use role=\"status\"."]
+    },
+    {
+      "id": "alerts-2-dark",
+      "title": "Stacked severities (Dark)",
+      "description": "Success, warning, and error alerts stacked to show the full semantic color range",
+      "source": {
+        "html": "../../../../public/examples/application/alerts/2-dark.html",
+        "tsx": "tsx/AlertsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    },
+    {
+      "id": "alerts-3",
+      "title": "With actions",
+      "description": "Warning alert with a title, message, and primary/secondary action buttons",
+      "source": {
+        "html": "../../../../public/examples/application/alerts/3.html",
+        "tsx": "tsx/AlertsVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": ["Uses role=\"alert\" since it requires user action before storage fills up."]
+    },
+    {
+      "id": "alerts-3-dark",
+      "title": "With actions (Dark)",
+      "description": "Warning alert with a title, message, and primary/secondary action buttons",
+      "source": {
+        "html": "../../../../public/examples/application/alerts/3-dark.html",
+        "tsx": "tsx/AlertsVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces, including button states."]
+    },
+    {
+      "id": "alerts-4",
+      "title": "Left accent",
+      "description": "Minimal alerts with a colored left border instead of a filled background, for lower-emphasis notices",
+      "source": {
+        "html": "../../../../public/examples/application/alerts/4.html",
+        "tsx": "tsx/AlertsVariant4.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": ["The connection-lost alert uses role=\"alert\"; the maintenance notice uses role=\"status\"."]
+    },
+    {
+      "id": "alerts-4-dark",
+      "title": "Left accent (Dark)",
+      "description": "Minimal alerts with a colored left border instead of a filled background, for lower-emphasis notices",
+      "source": {
+        "html": "../../../../public/examples/application/alerts/4-dark.html",
+        "tsx": "tsx/AlertsVariant4Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    },
+    {
+      "id": "alerts-5",
+      "title": "Dismissible",
+      "description": "Informational alert with a close button for user dismissal",
+      "source": {
+        "html": "../../../../public/examples/application/alerts/5.html",
+        "tsx": "tsx/AlertsVariant5.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "dismissed"],
+      "accessibility": ["The dismiss button has an aria-label since it is icon-only."]
+    },
+    {
+      "id": "alerts-5-dark",
+      "title": "Dismissible (Dark)",
+      "description": "Informational alert with a close button for user dismissal",
+      "source": {
+        "html": "../../../../public/examples/application/alerts/5-dark.html",
+        "tsx": "tsx/AlertsVariant5Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "dismissed"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    }
+  ]
+}
