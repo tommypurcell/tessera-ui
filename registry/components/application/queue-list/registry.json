@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-queue-list",
+  "title": "Queue List",
+  "description": "A \"Now playing\" row with an animated equalizer, followed by a reorderable \"Up next\" queue of tracks with drag handles, durations, and hover-revealed remove buttons.",
+  "category": "application/queue-list",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "queue-list",
+    "queue",
+    "playlist",
+    "up next",
+    "music player",
+    "reorder"
+  ],
+  "useWhen": [
+    "Music, podcast, or video players that need an editable up-next queue distinct from the currently-playing track.",
+    "Users should be able to reorder or remove queued items without leaving the player context."
+  ],
+  "avoidWhen": [
+    "The list is a fixed, non-reorderable curated playlist — use `Lesson Playlist` or a plain list instead of implying drag-to-reorder.",
+    "There's no active 'now playing' concept — a plain reorderable list without the now-playing header is simpler."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The now-playing row and queue items share the same width and stack vertically at all sizes; truncate long titles/artists rather than wrapping to preserve row height.",
+  "accessibility": [
+    "The drag handle is a real button with an aria-label (\"Drag to reorder\"), reachable and nameable without a pointer.",
+    "The remove button carries an aria-label (\"Remove from queue\") since only an icon is shown, and should remain keyboard-focusable even though it's visually hover-revealed.",
+    "The equalizer animation is decorative; the now-playing state should also be conveyed via an aria-live region or text status in a real implementation."
+  ],
+  "compatibleWith": ["application-media", "application-video-player"],
+  "variants": [
+    {
+      "id": "queue-list-1",
+      "title": "Up next queue",
+      "description": "A now-playing row (album art, play icon, animated equalizer bars) above three reorderable queue tracks, each with a drag handle, colored album art, title/artist, duration, and a hover-revealed remove button.",
+      "source": {
+        "html": "../../../../public/examples/application/queue-list/1.html",
+        "tsx": "tsx/QueueListVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "playing"],
+      "accessibility": [
+        "Drag handles and remove buttons both carry descriptive aria-labels."
+      ]
+    },
+    {
+      "id": "queue-list-1-dark",
+      "title": "Up next queue (Dark)",
+      "description": "Queue list adapted for dark surfaces, including the now-playing highlight and equalizer bar color.",
+      "source": {
+        "html": "../../../../public/examples/application/queue-list/1-dark.html",
+        "tsx": "tsx/QueueListVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "playing"],
+      "accessibility": [
+        "Track text and duration meet WCAG AA contrast against the dark queue background."
+      ]
+    }
+  ]
+}
