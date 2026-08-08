@@ -602,7 +602,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 <!-- === WAVE 11 (deep-backlog refill, post-331) — new verticals, verified non-dupe against registry === -->
 
 <!-- Theme: POS / retail -->
-- [~] (builder-6) POS Keypad — numeric amount pad with total display and quick-cash buttons; distinct from quantity-inputs.
+- [ ] POS Keypad — numeric amount pad with total display and quick-cash buttons; distinct from quantity-inputs.
 - [ ] Receipt Preview — itemized thermal-receipt layout with tax/total and footer; distinct from invoice-table.
 - [ ] Barcode Scan Row — scanned-item row with SKU, qty, price, and void; distinct from cart-line-item.
 - [x] (builder-8) Tip Selector — preset %-tip buttons w/ computed tip/total/per-person split (real math from bill×percent÷splitCount), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
