@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex justify-center p-6">
+    <div class="w-full max-w-md overflow-hidden rounded-xl border border-gray-200 bg-white">
+      <div class="sticky top-0 z-10 border-b border-gray-100 bg-white/95 px-3 py-3 backdrop-blur">
+        <div role="tablist" aria-label="Menu categories" class="flex gap-2 overflow-x-auto">
+          <button type="button" role="tab" aria-selected="true" class="shrink-0 rounded-full bg-gray-900 px-4 py-1.5 text-sm font-medium text-white">Starters</button>
+          <button type="button" role="tab" aria-selected="false" class="shrink-0 rounded-full px-4 py-1.5 text-sm font-medium text-gray-600 hover:bg-gray-100">Mains</button>
+          <button type="button" role="tab" aria-selected="false" class="shrink-0 rounded-full px-4 py-1.5 text-sm font-medium text-gray-600 hover:bg-gray-100">Salads</button>
+          <button type="button" role="tab" aria-selected="false" class="shrink-0 rounded-full px-4 py-1.5 text-sm font-medium text-gray-600 hover:bg-gray-100">Desserts</button>
+          <button type="button" role="tab" aria-selected="false" class="shrink-0 rounded-full px-4 py-1.5 text-sm font-medium text-gray-600 hover:bg-gray-100">Drinks</button>
+        </div>
+      </div>
+
+      <ul class="divide-y divide-gray-100">
+        <li class="flex items-start justify-between gap-4 p-4">
+          <div class="min-w-0">
+            <p class="text-sm font-semibold text-gray-900">Crispy calamari</p>
+            <p class="mt-0.5 text-sm text-gray-500">Lightly fried, served with lemon aioli.</p>
+          </div>
+          <span class="shrink-0 text-sm font-semibold text-gray-900">$12</span>
+        </li>
+        <li class="flex items-start justify-between gap-4 p-4">
+          <div class="min-w-0">
+            <p class="text-sm font-semibold text-gray-900">Burrata &amp; heirloom tomato</p>
+            <p class="mt-0.5 text-sm text-gray-500">Fresh burrata, basil oil, aged balsamic.</p>
+          </div>
+          <span class="shrink-0 text-sm font-semibold text-gray-900">$14</span>
+        </li>
+        <li class="flex items-start justify-between gap-4 p-4">
+          <div class="min-w-0">
+            <p class="text-sm font-semibold text-gray-900">Roasted beet hummus</p>
+            <p class="mt-0.5 text-sm text-gray-500">Whipped feta, dukkah, warm pita.</p>
+          </div>
+          <span class="shrink-0 text-sm font-semibold text-gray-900">$10</span>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-comfortable-list-row",
+  "title": "Comfortable List Row",
+  "description": "Spacious two-line list row with a leading avatar, title/subtitle pair, and trailing meta text with a chevron — the \"comfortable\" density variant of a list item.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["list", "density", "avatar", "navigation"],
+  "useWhen": [
+    "Listing people, contacts, or generic navigable items where generous spacing and a two-line title/subtitle improve scannability.",
+    "The row navigates somewhere on click/tap (it's an anchor with a chevron), not a media-playback row.",
+    "You want a density that reads as roomy and touch-friendly rather than compact/data-dense."
+  ],
+  "avoidWhen": [
+    "You're listing playable media (tracks, episodes) with a play button — use `media-object-row` for that unrelated, action-specific pattern.",
+    "You need a high-density list to fit many items on screen — this row's generous padding works against that; use a tighter row pattern instead.",
+    "The row doesn't navigate anywhere — drop the chevron and the anchor semantics rather than implying navigation that doesn't happen."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Single-column list at a fixed max width; the subtitle truncates with an ellipsis before the trailing meta/chevron ever wraps or gets squeezed.",
+  "accessibility": [
+    "Each row is a real <a> wrapping the full row content, giving the entire row a single large hit target and correct link semantics rather than a click handler on a div.",
+    "The chevron is aria-hidden since it's a directional affordance, not additional information beyond \"this row navigates further.\"",
+    "Title and subtitle are separate text nodes (not a single concatenated string) so screen readers pause naturally between the person's name and their role."
+  ],
+  "compatibleWith": ["application-media-object-row", "application-settings-nav-list"],
+  "variants": [
+    {
+      "id": "comfortable-list-row-1",
+      "title": "Comfortable List Row",
+      "description": "Three people rows with avatar, name/role, relative time, and a chevron.",
+      "source": {
+        "html": "../../../../public/examples/application/comfortable-list-row/1.html",
+        "tsx": "tsx/ComfortableListRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "The full row is one hit target via a wrapping <a>, avoiding small, hard-to-hit click zones on trailing meta or chevron alone."
+      ]
+    },
+    {
+      "id": "comfortable-list-row-1-dark",
+      "title": "Comfortable List Row (Dark)",
+      "description": "Comfortable list row adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/comfortable-list-row/1-dark.html",
+        "tsx": "tsx/ComfortableListRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "Meta text and chevron colors are tuned to stay legible but recessive against the dark surface, keeping the title as the primary read."
+      ]
+    }
+  ]
+}

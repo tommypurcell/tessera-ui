@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-hover-preview-card",
+  "title": "Hover Preview Card",
+  "description": "Inline text link that reveals a rich preview popover (badge, title, description) above it on hover, using CSS group-hover rather than JS-driven positioning.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["hover", "preview", "tooltip", "link"],
+  "useWhen": [
+    "An inline link references external content (an article, a doc, a resource) worth previewing without navigating away.",
+    "You want a lightweight, CSS-only hover reveal rather than a JS positioning library or a click-triggered popover.",
+    "The preview content is short enough to read at a glance (a title, one description line, a small badge/thumbnail)."
+  ],
+  "avoidWhen": [
+    "You're previewing a person/user profile specifically — use `person-hovercard` for that richer, person-specific layout.",
+    "The trigger needs to work on touch devices where hover doesn't exist — pair with a tap-to-open fallback or use a click-triggered popover instead.",
+    "The preview content is long or interactive (forms, multiple actions) — a hover popover that requires sustained pointer position is the wrong pattern for that; use a click-opened panel."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The popover is centered above its trigger via absolute positioning and a fixed width; it does not reflow with viewport size, so on narrow viewports ensure the trigger isn't near a screen edge.",
+  "accessibility": [
+    "The popover carries role=tooltip so assistive tech announces it as supplementary information tied to the link.",
+    "Visibility is toggled with both `invisible`/`visible` and `opacity`, so the popover is removed from the accessibility tree and hit-testing when hidden, not just made transparent.",
+    "The popover has pointer-events-none, preventing it from intercepting clicks or shifting layout when the pointer passes near but not directly over the trigger."
+  ],
+  "compatibleWith": ["application-person-hovercard", "application-comfortable-list-row"],
+  "variants": [
+    {
+      "id": "hover-preview-card-1",
+      "title": "Hover Preview Card",
+      "description": "An inline \"Refactoring UI\" link inside a sentence, revealing a badge + title + description popover on hover.",
+      "source": {
+        "html": "../../../../public/examples/application/hover-preview-card/1.html",
+        "tsx": "tsx/HoverPreviewCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "The reveal is driven by CSS group-hover rather than JS mouseenter/mouseleave timers, so there is no risk of a lingering popover if a state-update is missed."
+      ]
+    },
+    {
+      "id": "hover-preview-card-1-dark",
+      "title": "Hover Preview Card (Dark)",
+      "description": "Hover preview card adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/hover-preview-card/1-dark.html",
+        "tsx": "tsx/HoverPreviewCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "The popover surface is lifted one step above the page background (gray-800 on gray-900) so its shadow and border remain perceptible against the dark surface."
+      ]
+    }
+  ]
+}

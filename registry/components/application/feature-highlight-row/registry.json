@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-feature-highlight-row",
+  "title": "Feature Highlight Row",
+  "description": "Stacked icon + title + description feature blocks, each icon in its own tinted color square.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["marketing", "features", "onboarding"],
+  "useWhen": [
+    "Listing a small set of product features or benefits with an icon, short title, and one to two sentences of description.",
+    "You want each feature's icon to carry its own distinct accent color for visual variety without full illustrations.",
+    "The list reads top-to-bottom as a stack, not side-by-side cards or a grid."
+  ],
+  "avoidWhen": [
+    "You're listing playable media or navigable list items, not static feature descriptions — use `media-object-row` for that unrelated, interactive pattern.",
+    "You need a card-grid layout instead of a vertical stack — this component doesn't wrap into columns on its own.",
+    "There are more than 4-5 features — a stacked list that long should be paginated, tabbed, or split into sections instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Single-column stack at a fixed max width; icon squares stay a fixed size while title/description text wraps naturally within the remaining width.",
+  "accessibility": [
+    "Each feature title is a real heading (<h3>), giving the block a navigable outline for screen reader users rather than styled paragraph text.",
+    "Icons are aria-hidden since the adjacent heading already names the feature; the icon is a visual accelerator, not the sole identifier.",
+    "Each icon's tint color is decorative variety only — no meaning is encoded in which color a given feature gets, so color choice never needs to be memorized to understand the content."
+  ],
+  "compatibleWith": ["application-feature-comparison-matrix", "application-testimonial-card"],
+  "variants": [
+    {
+      "id": "feature-highlight-row-1",
+      "title": "Feature Highlight Row",
+      "description": "Three features (Bank-grade encryption, Instant transfers, Works everywhere) each with a distinct icon tint.",
+      "source": {
+        "html": "../../../../public/examples/application/feature-highlight-row/1.html",
+        "tsx": "tsx/FeatureHighlightRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Icon tint colors are purely decorative and never the sole means of distinguishing one feature from another — titles and descriptions carry the actual meaning."
+      ]
+    },
+    {
+      "id": "feature-highlight-row-1-dark",
+      "title": "Feature Highlight Row (Dark)",
+      "description": "Feature highlight row adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/feature-highlight-row/1-dark.html",
+        "tsx": "tsx/FeatureHighlightRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Icon tint squares use low-opacity backgrounds with -400 icon strokes to hold WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}
