@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-signature-pad",
+  "title": "Signature Pad",
+  "description": "A canvas signature drawing area with clear and undo actions, plus a typed-signature fallback for consent and agreement flows.",
+  "category": "application/signature-pad",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "signature-pad",
+    "signature",
+    "canvas",
+    "draw",
+    "consent"
+  ],
+  "useWhen": [
+    "A canvas signature drawing area with clear and undo actions, plus a typed-signature fallback for consent and agreement flows."
+  ],
+  "avoidWhen": [
+    "Avoid signature pad when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Signature Pad uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Associate each form field with a visible or programmatic label before production use.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "signature-pad-1",
+      "title": "Draw canvas",
+      "description": "Draw canvas A canvas signature drawing area with clear and undo actions, plus a typed-signature fallback for consent and agreement flows.",
+      "source": {
+        "html": "../../../../public/examples/application/signature-pad/1.html",
+        "tsx": "tsx/SignaturePadVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "signature-pad-1-dark",
+      "title": "Draw canvas (Dark)",
+      "description": "Draw canvas A canvas signature drawing area with clear and undo actions, plus a typed-signature fallback for consent and agreement flows.",
+      "source": {
+        "html": "../../../../public/examples/application/signature-pad/1-dark.html",
+        "tsx": "tsx/SignaturePadVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "signature-pad-2",
+      "title": "Typed fallback",
+      "description": "Typed fallback A canvas signature drawing area with clear and undo actions, plus a typed-signature fallback for consent and agreement flows.",
+      "source": {
+        "html": "../../../../public/examples/application/signature-pad/2.html",
+        "tsx": "tsx/SignaturePadVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "signature-pad-2-dark",
+      "title": "Typed fallback (Dark)",
+      "description": "Typed fallback A canvas signature drawing area with clear and undo actions, plus a typed-signature fallback for consent and agreement flows.",
+      "source": {
+        "html": "../../../../public/examples/application/signature-pad/2-dark.html",
+        "tsx": "tsx/SignaturePadVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    }
+  ]
+}

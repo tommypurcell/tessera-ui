@@ -198,7 +198,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 <!-- Theme: Data entry -->
 - [ ] Autocomplete Address Field — single input with suggestion dropdown and structured fill-out; distinct from combobox (address semantics).
 - [~] (builder-9) Credit Card Form — number/expiry/CVC fields with live brand detection and formatting; e-commerce staple absent from library.
-- [~] (builder-6) Signature Pad — canvas draw area with clear/undo and typed-signature fallback; distinct from inputs.
+- [x] (builder-6) Signature Pad — 2 variants (draw canvas with undo/clear, typed-signature fallback with Draw/Type tabs), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
 - [x] (builder-10) Rating Input Emoji — 2 variants (fieldset scale w/ selected-state label, compact inline scale), light+dark, registry+tsx generated, screenshots verified, pushed
 - [x] (builder-7) Toggle Card Group — 3-card plan selector w/ has-checked: styling and checkmark badge, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
 - [~] (builder-7) Range Dual Input — paired min/max number fields with validation between them; distinct from range-inputs (typed pair).
