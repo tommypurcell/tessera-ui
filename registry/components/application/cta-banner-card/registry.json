@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "name": "application-cta-banner-card",
+  "title": "CTA Banner Card",
+  "description": "A standalone gradient promotional card with a heading, supporting text, and one or two action buttons, for driving a specific conversion within page content rather than as a top-of-page bar.",
+  "category": "application/marketing",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["application", "cta", "promo", "marketing", "upgrade"],
+  "useWhen": [
+    "Promoting a specific upgrade, feature, or action within the body of a page (dashboard, settings, content feed), not as a global top-of-page notice.",
+    "The call to action benefits from strong visual weight (gradient background, large heading) to stand out from surrounding content."
+  ],
+  "avoidWhen": [
+    "The message applies site-wide and needs a dismiss control at the top of every page — use announcement-banner for that placement and behavior instead.",
+    "The action is routine or low-stakes — reserve the high-visual-weight gradient treatment for genuinely promotional moments."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The centered variant stacks its heading, message, and button row vertically and constrains message width (max-w-sm) so it reads well at any card width; the split variant's icon, text, and button stay in a single row down to moderately narrow widths before requiring a layout change.",
+  "accessibility": [
+    "Heading uses a real <h2> so the card has a correct place in the page's document outline.",
+    "The icon accent in the split variant is decorative (aria-hidden); the heading and message independently convey the card's purpose.",
+    "Button labels are outcome-specific (Upgrade now, Publish) rather than generic, so their purpose is clear out of context to screen reader users navigating by button list."
+  ],
+  "compatibleWith": ["application-announcement-banner", "application-buttons"],
+  "variants": [
+    {
+      "id": "cta-banner-card-1",
+      "title": "Centered gradient",
+      "description": "Centered card with a bold indigo-to-purple gradient, heading, message, and primary/secondary action buttons",
+      "source": {
+        "html": "../../../../public/examples/application/cta-banner-card/1.html",
+        "tsx": "tsx/CtaBannerCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": ["Uses a real <h2> for the promotional heading."]
+    },
+    {
+      "id": "cta-banner-card-1-dark",
+      "title": "Centered gradient (Dark)",
+      "description": "Centered card with a bold indigo-to-purple gradient, heading, message, and primary/secondary action buttons",
+      "source": {
+        "html": "../../../../public/examples/application/cta-banner-card/1-dark.html",
+        "tsx": "tsx/CtaBannerCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    },
+    {
+      "id": "cta-banner-card-2",
+      "title": "Split with icon",
+      "description": "Row layout with an icon accent, left-aligned heading and message, and a single primary action button",
+      "source": {
+        "html": "../../../../public/examples/application/cta-banner-card/2.html",
+        "tsx": "tsx/CtaBannerCardVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": ["The icon is decorative and aria-hidden; the heading and message carry the full meaning."]
+    },
+    {
+      "id": "cta-banner-card-2-dark",
+      "title": "Split with icon (Dark)",
+      "description": "Row layout with an icon accent, left-aligned heading and message, and a single primary action button",
+      "source": {
+        "html": "../../../../public/examples/application/cta-banner-card/2-dark.html",
+        "tsx": "tsx/CtaBannerCardVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    }
+  ]
+}
