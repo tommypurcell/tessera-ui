@@ -547,7 +547,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-2) Quote Estimate Panel — coverage/deductible/term sliders with live-recalculated premium + base/deductible/term breakdown (verified via actual slider interaction in Playwright); light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
 
 <!-- Theme: Automotive -->
-- [~] (builder-4) Vehicle Spec Card — car image with mileage/fuel/transmission spec chips and price; distinct from property-listing-card.
+- [x] (builder-4) Vehicle Spec Card — photo + certified badge + mileage/fuel/transmission chips + price + CTA, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #17)
 - [x] (builder-8) Fuel / Charge Gauge — vertical capsule fill-level indicator with computed range estimate and low-level warning state, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [x] (builder-7) Trip Summary Card — header w/ route line + 2x2 stat grid (distance/duration/speed/efficiency), light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
 - [~] (builder-9) Service Reminder Row — maintenance item with due-mileage bar and schedule action; distinct from sync-status-row.
@@ -558,16 +558,16 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-5) Event Ticket Card — perforated dashed-divider+notch ticket, event/date/venue/section/ticket#, white-tile QR stub, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [x] (builder-5) Ticket Tier Selector — quantity steppers per price tier with running total; distinct from variant-selector. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [x] (builder-10) Event Countdown Hero — 2 variants (gradient hero w/ countdown tiles + RSVP, compact inline banner), light+dark, live tick verified, registry+tsx generated, screenshots verified, pushed
-- [~] (builder-5) Venue Section Map — clickable stadium/venue section blocks with price legend; distinct from seat-map-selector.
-- [ ] Schedule Agenda List — day-grouped session rows with time, track, and speaker; distinct from itinerary-timeline.
+- [x] (builder-5) Venue Section Map — clickable stadium/venue section blocks with price legend; distinct from seat-map-selector. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
+- [~] (builder-5) Schedule Agenda List — day-grouped session rows with time, track, and speaker; distinct from itinerary-timeline.
 - [x] (builder-7) Speaker Card — avatar+name+title, quoted talk title, X/LinkedIn/website social links, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
 
 <!-- Theme: Streaming / video -->
 - [x] (builder-8) Video Thumbnail Card — thumbnail w/ duration badge, title, channel avatar/name, K/M-formatted view count computed from real numbers, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [x] (builder-8) Watch Progress Bar — video thumbnail with duration badge and resume-position overlay bar, fill computed from real watched/total minutes, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
-- [~] (builder-2) Channel Header — banner, avatar, subscriber count, and subscribe button; distinct from auth-card-shell.
+- [x] (builder-2) Channel Header — gradient banner, avatar, K-formatted subscriber count, and a real toggling subscribe/subscribed button (verified via Playwright click); light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
 - [x] (builder-6) Live Stream Badge — 2 variants (thumbnail overlay with pulsing LIVE+viewer count, standalone header badge), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
-- [ ] Playback Speed Menu — speed option list with checkmark and quality submenu; distinct from dropdown.
+- [~] (builder-2) Playback Speed Menu — speed option list with checkmark and quality submenu; distinct from dropdown.
 - [~] (builder-10) Up-Next Autoplay Card — countdown-to-next-video card with cancel and play-now; distinct from toast-action-undo.
 
 <!-- Theme: Email client -->
@@ -593,7 +593,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: Survey builder -->
 - [ ] Question Type Palette — draggable question-type cards (MC, rating, text, scale); distinct from query-builder.
-- [ ] Likert Scale Row — labeled agree↔disagree radio row with midpoint; distinct from radio-groups.
+- [~] (builder-6) Likert Scale Row — labeled agree↔disagree radio row with midpoint; distinct from radio-groups.
 - [ ] Survey Progress Header — "Question X of N" bar with back/next; distinct from multi-step-progress.
 - [ ] Response Summary Bar — per-option horizontal result bars with % and count; distinct from poll-vote-card.
 - [ ] Matrix Question Grid — rows × columns radio matrix for bulk rating; distinct from notification-preferences-grid.
