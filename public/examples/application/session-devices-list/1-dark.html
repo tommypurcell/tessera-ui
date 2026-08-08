@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-2xl flex-col p-6">
+    <div class="rounded-lg border border-gray-800 bg-gray-900">
+      <div class="border-b border-gray-800 px-4 py-3">
+        <h3 class="text-sm font-semibold text-gray-100">Active sessions</h3>
+        <p class="mt-0.5 text-xs text-gray-400">Devices currently signed in to your account.</p>
+      </div>
+
+      <ul class="divide-y divide-gray-800">
+        <li class="flex items-center gap-3 px-4 py-3">
+          <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-indigo-500/10 text-indigo-400">
+            <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M2 4.25A2.25 2.25 0 014.25 2h11.5A2.25 2.25 0 0118 4.25v8.5A2.25 2.25 0 0115.75 15h-3.105a3.501 3.501 0 001.1 1.677A.75.75 0 0113.26 18H6.74a.75.75 0 01-.484-1.323A3.501 3.501 0 007.355 15H4.25A2.25 2.25 0 012 12.75v-8.5zm1.5 0a.75.75 0 01.75-.75h11.5a.75.75 0 01.75.75v7.5a.75.75 0 01-.75.75H4.25a.75.75 0 01-.75-.75v-7.5z" clip-rule="evenodd" />
+            </svg>
+          </span>
+          <div class="min-w-0 flex-1">
+            <div class="flex items-center gap-2">
+              <span class="text-sm font-medium text-gray-100">Chrome on macOS</span>
+              <span class="rounded bg-emerald-500/10 px-1.5 py-0.5 text-[10px] font-medium text-emerald-400">This device</span>
+            </div>
+            <p class="text-xs text-gray-400">San Francisco, US &middot; Active now</p>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-3 px-4 py-3">
+          <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-gray-800 text-gray-400">
+            <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M6 3a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2H6zm2 12a1 1 0 100 2h4a1 1 0 100-2H8z" clip-rule="evenodd" />
+            </svg>
+          </span>
+          <div class="min-w-0 flex-1">
+            <span class="text-sm font-medium text-gray-100">Safari on iPhone</span>
+            <p class="text-xs text-gray-400">San Francisco, US &middot; Last active 2 hours ago</p>
+          </div>
+          <button type="button" class="shrink-0 rounded-md border border-gray-700 px-2.5 py-1 text-xs font-medium text-gray-200 shadow-sm hover:bg-gray-800">
+            Revoke
+          </button>
+        </li>
+
+        <li class="flex items-center gap-3 px-4 py-3">
+          <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-gray-800 text-gray-400">
+            <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M2 4.25A2.25 2.25 0 014.25 2h11.5A2.25 2.25 0 0118 4.25v8.5A2.25 2.25 0 0115.75 15h-3.105a3.501 3.501 0 001.1 1.677A.75.75 0 0113.26 18H6.74a.75.75 0 01-.484-1.323A3.501 3.501 0 007.355 15H4.25A2.25 2.25 0 012 12.75v-8.5zm1.5 0a.75.75 0 01.75-.75h11.5a.75.75 0 01.75.75v7.5a.75.75 0 01-.75.75H4.25a.75.75 0 01-.75-.75v-7.5z" clip-rule="evenodd" />
+            </svg>
+          </span>
+          <div class="min-w-0 flex-1">
+            <span class="text-sm font-medium text-gray-100">Firefox on Windows</span>
+            <p class="text-xs text-gray-400">Austin, US &middot; Last active 3 days ago</p>
+          </div>
+          <button type="button" class="shrink-0 rounded-md border border-gray-700 px-2.5 py-1 text-xs font-medium text-gray-200 shadow-sm hover:bg-gray-800">
+            Revoke
+          </button>
+        </li>
+      </ul>
+
+      <div class="border-t border-gray-800 px-4 py-3">
+        <button type="button" class="text-xs font-medium text-red-400 hover:text-red-300">Sign out of all other sessions</button>
+      </div>
+    </div>
+  </body>
+</html>
