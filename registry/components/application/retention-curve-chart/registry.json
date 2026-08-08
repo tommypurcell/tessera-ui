@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-retention-curve-chart",
+  "title": "Retention Curve Chart",
+  "description": "A decaying percentage-retained line chart over days-since-signup, with a cohort selector for comparing how different signup cohorts retain over time.",
+  "category": "application/retention-curve-chart",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "retention-curve-chart",
+    "retention",
+    "cohort",
+    "chart",
+    "product analytics",
+    "decay curve"
+  ],
+  "useWhen": [
+    "Tracking how a percentage of users remain active over days/weeks since signup, the classic product-analytics retention curve shape.",
+    "Comparing retention across multiple signup cohorts (by month, by acquisition channel) via a selector above the chart."
+  ],
+  "avoidWhen": [
+    "You need a grid of retention percentages across many cohorts at once — `Cohort Retention Grid` (heatmap table) fits that comparison better than a single line.",
+    "The metric isn't naturally a decaying percentage over time since a fixed start event — a generic line chart from `charts` fits other trend shapes better."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The chart is a single SVG with viewBox scaling that shrinks proportionally with its container; the cohort selector tabs wrap or scroll horizontally on narrow viewports rather than shrinking below a legible tap target.",
+  "accessibility": [
+    "The cohort selector buttons use aria-pressed to indicate the active cohort, not solely a background color change.",
+    "Each data point is marked with a visible dot in addition to the connecting line, aiding precise reading of values at labeled days.",
+    "Day-since-signup labels (Day 0, 1, 3, 7, 14, 21, 30) are shown as text below the axis, not solely inferred from x-position."
+  ],
+  "compatibleWith": ["application-charts", "application-stacked-area-chart"],
+  "variants": [
+    {
+      "id": "retention-curve-chart-1",
+      "title": "Cohort retention curve",
+      "description": "A retention curve decaying from 100% at Day 0 to a ~22% plateau by Day 30, with data-point dots, a shaded area, and a three-cohort selector (Jun/May/Apr, Jun active).",
+      "source": {
+        "html": "../../../../public/examples/application/retention-curve-chart/1.html",
+        "tsx": "tsx/RetentionCurveChartVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The active cohort tab carries aria-pressed=\"true\" and a distinct raised background."
+      ]
+    },
+    {
+      "id": "retention-curve-chart-1-dark",
+      "title": "Cohort retention curve (Dark)",
+      "description": "Retention curve chart adapted for dark surfaces, with line and area colors re-tuned for dark contrast.",
+      "source": {
+        "html": "../../../../public/examples/application/retention-curve-chart/1-dark.html",
+        "tsx": "tsx/RetentionCurveChartVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Line, area fill, and cohort tab text all meet WCAG AA contrast against the dark card background."
+      ]
+    }
+  ]
+}

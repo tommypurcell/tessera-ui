@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex min-h-72 items-center justify-center bg-gray-950 p-6">
+    <div class="w-full max-w-xl rounded-lg border border-gray-700 bg-gray-900 p-5 shadow-sm">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-sm font-semibold text-white">User retention</p>
+          <p class="text-xs text-gray-400">% of cohort still active, by day since signup</p>
+        </div>
+        <div class="flex items-center gap-1 rounded-md bg-gray-800 p-0.5 text-xs font-medium">
+          <button type="button" aria-pressed="true" class="rounded px-2 py-1 bg-gray-950 text-white shadow-sm">Jun cohort</button>
+          <button type="button" aria-pressed="false" class="rounded px-2 py-1 text-gray-400">May cohort</button>
+          <button type="button" aria-pressed="false" class="rounded px-2 py-1 text-gray-400">Apr cohort</button>
+        </div>
+      </div>
+
+      <svg viewBox="0 0 480 200" class="mt-4 w-full">
+          <line x1="0" y1="0.0" x2="480" y2="0.0" stroke="#374151" stroke-width="1" />
+          <line x1="0" y1="50.0" x2="480" y2="50.0" stroke="#374151" stroke-width="1" />
+          <line x1="0" y1="100.0" x2="480" y2="100.0" stroke="#374151" stroke-width="1" />
+          <line x1="0" y1="150.0" x2="480" y2="150.0" stroke="#374151" stroke-width="1" />
+          <line x1="0" y1="200.0" x2="480" y2="200.0" stroke="#374151" stroke-width="1" />
+          <path d="M0.0,0.0 L80.0,17.6 L160.0,47.2 L240.0,88.7 L320.0,126.9 L400.0,143.4 L480.0,151.7 L480.0,200.0 L0.0,200.0 Z" fill="rgba(96,165,250,0.15)" stroke="none" />
+          <path d="M0.0,0.0 L80.0,17.6 L160.0,47.2 L240.0,88.7 L320.0,126.9 L400.0,143.4 L480.0,151.7" fill="none" stroke="#60a5fa" stroke-width="2" />
+          <circle cx="0.0" cy="0.0" r="3" fill="#60a5fa" />
+          <circle cx="80.0" cy="17.6" r="3" fill="#60a5fa" />
+          <circle cx="160.0" cy="47.2" r="3" fill="#60a5fa" />
+          <circle cx="240.0" cy="88.7" r="3" fill="#60a5fa" />
+          <circle cx="320.0" cy="126.9" r="3" fill="#60a5fa" />
+          <circle cx="400.0" cy="143.4" r="3" fill="#60a5fa" />
+          <circle cx="480.0" cy="151.7" r="3" fill="#60a5fa" />
+      </svg>
+
+      <div class="mt-1 flex items-center justify-between text-xs text-gray-400">
+        <span>Day 0</span>
+        <span>Day 1</span>
+        <span>Day 3</span>
+        <span>Day 7</span>
+        <span>Day 14</span>
+        <span>Day 21</span>
+        <span>Day 30</span>
+      </div>
+    </div>
+  </body>
+</html>
