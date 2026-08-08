@@ -588,7 +588,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [~] (builder-4) Pipeline Flow Node — draggable process node with input/output ports and status; distinct from sankey-flow-diagram.
 - [x] (builder-8) Job Run Row — 3-state (succeeded/running/failed) run summary row w/ formatted duration, toLocaleString record counts, logs link, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [x] (builder-8) Schema Field List — 5-column users table w/ PK icon marker, type badges, nullable/not-null states, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
-- [~] (builder-9) Data Quality Score — pass/fail check summary ring with failing-rule list; distinct from lead-score-meter.
+- [x] (builder-9) Data Quality Score — 2 variants (score ring with failing rules, compact summary bar) light+dark, registry.json, MDX entry, screenshots
 - [x] (builder-5) Column Mapping Rows — source→target field mapping with dropdowns and auto-match; distinct from import-wizard. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 
 <!-- Theme: Survey builder -->
@@ -596,23 +596,23 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-6) Likert Scale Row — 2 variants (single-question 5-point scale with endpoint labels, multi-row survey table with SD/D/N/A/SA headers), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
 - [x] (builder-2) Survey Progress Header — "Question 3 of 8" bar, fill % computed from currentQuestion/totalQuestions, Back disables at first question and Next relabels to Submit at last; light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
 - [x] (builder-2) Response Summary Bar — 4-option satisfaction survey results, thin progress bars with % + raw count computed from real option.count values and total; light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
-- [ ] Matrix Question Grid — rows × columns radio matrix for bulk rating; distinct from notification-preferences-grid.
+- [x] (builder-5) Matrix Question Grid — rows × columns radio matrix for bulk rating; distinct from notification-preferences-grid. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [ ] Logic Branch Row — "if answer = X go to Y" conditional-flow rule row; distinct from conditional-field-group.
 
 <!-- === WAVE 11 (deep-backlog refill, post-331) — new verticals, verified non-dupe against registry === -->
 
 <!-- Theme: POS / retail -->
-- [~] (builder-2) POS Keypad — numeric amount pad with total display and quick-cash buttons; distinct from quantity-inputs.
-- [ ] Receipt Preview — itemized thermal-receipt layout with tax/total and footer; distinct from invoice-table.
-- [~] (builder-8) Barcode Scan Row — scanned-item row with SKU, qty, price, and void; distinct from cart-line-item.
+- [x] (builder-2) POS Keypad — numeric keypad + quick-cash buttons, change due computed live from tendered−total (verified via Playwright click: $20 cash on $18.50 total → $1.50 change), disabled Charge when short; light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
+- [~] (builder-9) Receipt Preview — itemized thermal-receipt layout with tax/total and footer; distinct from invoice-table.
+- [x] (builder-8) Barcode Scan Row — dense POS scan-log rows w/ SKU, qty, computed line total (unit×qty), per-item void action, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [x] (builder-8) Tip Selector — preset %-tip buttons w/ computed tip/total/per-person split (real math from bill×percent÷splitCount), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [x] (builder-8) Cash Drawer Summary — expected/counted totals w/ computed signed variance, balanced/over/short states (color+text), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 
 <!-- Theme: Banking -->
 - [~] (builder-7) Account Balance Card — masked balance with show/hide, account number, and quick actions; distinct from token-balance-row.
 - [ ] Transfer Form — from/to account selectors, amount, and schedule; distinct from currency-converter.
-- [ ] Statement Row — posted transaction with running balance column; distinct from transaction-row.
-- [ ] Card Freeze Toggle — card visual with freeze/unfreeze switch and status; distinct from device-toggle-tile.
+- [~] (builder-8) Statement Row — posted transaction with running balance column; distinct from transaction-row.
+- [~] (builder-2) Card Freeze Toggle — card visual with freeze/unfreeze switch and status; distinct from device-toggle-tile.
 - [ ] Spending Insights Bar — month category bars with over/under-average markers; distinct from budget-progress-bar.
 
 <!-- Theme: Telecom -->
