@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 798,
+  "screenshotCount": 802,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -1794,6 +1794,46 @@
       "sourcePath": "files/application-loaders/loaders-7-dark.html",
       "sourceSha256": "e73562e7500fb963b56c64c1e0711ba3ed692a0631d5025866b45197c641e538",
       "url": "/screenshots/components/application-loaders/loaders-7-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-maintenance-mode-screen",
+      "variantId": "maintenance-mode-screen-1",
+      "appearance": "light",
+      "sourcePath": "files/application-maintenance-mode-screen/maintenance-mode-screen-1.html",
+      "sourceSha256": "9f4f742be709bdc435070ea0e425adf1f91a2790a55de22258a14dcddad2d6b1",
+      "url": "/screenshots/components/application-maintenance-mode-screen/maintenance-mode-screen-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-maintenance-mode-screen",
+      "variantId": "maintenance-mode-screen-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-maintenance-mode-screen/maintenance-mode-screen-1-dark.html",
+      "sourceSha256": "cc948c0db2d3359b6bb4cd99281403645c3ed715908246657781cbbdecf17abb",
+      "url": "/screenshots/components/application-maintenance-mode-screen/maintenance-mode-screen-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-maintenance-mode-screen",
+      "variantId": "maintenance-mode-screen-2",
+      "appearance": "light",
+      "sourcePath": "files/application-maintenance-mode-screen/maintenance-mode-screen-2.html",
+      "sourceSha256": "8bf9a442812390ef157c05bdc259290777345b9cedc7015a7cce8084ad118db2",
+      "url": "/screenshots/components/application-maintenance-mode-screen/maintenance-mode-screen-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-maintenance-mode-screen",
+      "variantId": "maintenance-mode-screen-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-maintenance-mode-screen/maintenance-mode-screen-2-dark.html",
+      "sourceSha256": "a963b65cdb717003d5f7af1f9b5ea24d6b3f50ca8fd9b0716d6dd5b4f5486d73",
+      "url": "/screenshots/components/application-maintenance-mode-screen/maintenance-mode-screen-2-dark.jpg",
       "width": 600,
       "height": 400
     },
