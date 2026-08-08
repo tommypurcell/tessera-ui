@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-ballot-option-list",
+  "title": "Ballot Option List",
+  "description": "Formal pre-vote ballot: a radiogroup of candidate/measure rows, each with an optional expandable More info panel, and no result percentages since voting hasn't happened yet.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["voting", "ballot", "election", "civic", "government"],
+  "useWhen": [
+    "Rendering an electoral ballot or measure vote where the user selects exactly one option before submitting.",
+    "You need per-candidate biographical detail available on demand without cluttering the default row.",
+    "Distinct from Poll Vote Card, which shows result percentage bars (before or after voting) rather than a formal single-select ballot with per-candidate biographical detail."
+  ],
+  "avoidWhen": [
+    "You want to show live or final vote percentages — use Poll Vote Card instead.",
+    "The choice allows multiple selections — a checkbox-based list is more appropriate than a radiogroup ballot."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Candidate name and the More info toggle stay on one row via flex; the expanded info panel wraps normally beneath, indented to align under the name rather than the radio input.",
+  "accessibility": [
+    "Options are grouped in a real <fieldset role=\"radiogroup\"> with an aria-label naming the race, giving native single-choice keyboard behavior.",
+    "The selected option's row uses a distinct border, not just a filled radio, keeping the current pick visible even at a glance.",
+    "The info toggle button uses aria-expanded and aria-controls, and its label switches between \"More info\" and \"Hide info\" for a plain-text state cue."
+  ],
+  "compatibleWith": ["application-poll-vote-card", "application-public-notice-card"],
+  "variants": [
+    {
+      "id": "ballot-option-list-1",
+      "title": "Ballot Option List",
+      "description": "Three City Council candidates in a radiogroup, one selected, with an expanded More info panel showing a short bio.",
+      "source": {
+        "html": "../../../../public/examples/application/ballot-option-list/1.html",
+        "tsx": "tsx/BallotOptionListVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["unselected", "selected", "info-expanded"],
+      "accessibility": [
+        "Radiogroup fieldset carries an aria-label naming the race for screen reader context."
+      ]
+    },
+    {
+      "id": "ballot-option-list-1-dark",
+      "title": "Ballot Option List (Dark)",
+      "description": "The same ballot adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/ballot-option-list/1-dark.html",
+        "tsx": "tsx/BallotOptionListVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["unselected", "selected", "info-expanded"],
+      "accessibility": [
+        "Selected-row border and radio contrast remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}
