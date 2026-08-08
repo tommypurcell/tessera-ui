@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-kitchen-ticket",
+  "title": "Kitchen Order Ticket",
+  "description": "Kitchen display system order tickets with an elapsed timer, item list, and bump action, plus a completed-state variant.",
+  "category": "application/kitchen-ticket",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "kitchen-ticket",
+    "kitchen",
+    "order",
+    "ticket",
+    "kds"
+  ],
+  "useWhen": [
+    "Kitchen display system order tickets with an elapsed timer, item list, and bump action, plus a completed-state variant."
+  ],
+  "avoidWhen": [
+    "Avoid kitchen order ticket when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Kitchen Order Ticket uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "kitchen-ticket-1",
+      "title": "Active ticket",
+      "description": "Active ticket Kitchen display system order tickets with an elapsed timer, item list, and bump action, plus a completed-state variant.",
+      "source": {
+        "html": "../../../../public/examples/application/kitchen-ticket/1.html",
+        "tsx": "tsx/KitchenTicketVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "kitchen-ticket-1-dark",
+      "title": "Active ticket (Dark)",
+      "description": "Active ticket Kitchen display system order tickets with an elapsed timer, item list, and bump action, plus a completed-state variant.",
+      "source": {
+        "html": "../../../../public/examples/application/kitchen-ticket/1-dark.html",
+        "tsx": "tsx/KitchenTicketVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "kitchen-ticket-2",
+      "title": "Bumped ticket",
+      "description": "Bumped ticket Kitchen display system order tickets with an elapsed timer, item list, and bump action, plus a completed-state variant.",
+      "source": {
+        "html": "../../../../public/examples/application/kitchen-ticket/2.html",
+        "tsx": "tsx/KitchenTicketVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "kitchen-ticket-2-dark",
+      "title": "Bumped ticket (Dark)",
+      "description": "Bumped ticket Kitchen display system order tickets with an elapsed timer, item list, and bump action, plus a completed-state variant.",
+      "source": {
+        "html": "../../../../public/examples/application/kitchen-ticket/2-dark.html",
+        "tsx": "tsx/KitchenTicketVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}
