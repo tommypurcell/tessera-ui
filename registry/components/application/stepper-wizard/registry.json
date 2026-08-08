@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-stepper-wizard",
+  "title": "Stepper Wizard",
+  "description": "Multi-step form flow with a progress header, back/next controls, and a per-step content slot, driven by a typed steps prop contract.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["stepper", "wizard", "multi-step", "form", "onboarding"],
+  "useWhen": [
+    "A form is long enough to benefit from being broken into focused, sequential steps.",
+    "Users need to see overall progress (completed, current, upcoming) across an onboarding or checkout flow.",
+    "Each step has distinct fields or validation and should not overwhelm the user in a single view."
+  ],
+  "avoidWhen": [
+    "The form is short enough to complete in one screen — a single form is faster than paging through steps.",
+    "Steps must be completed out of order — this pattern assumes a linear progression.",
+    "You only need a static progress indicator with no interactive back/next flow — use the simpler `steps` component."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The step header wraps to smaller connector widths on narrow viewports; the body content and footer actions stay full-width within the card.",
+  "accessibility": [
+    "The current step's indicator carries aria-current='step' so assistive tech announces progress accurately.",
+    "Completed steps use a checkmark icon plus a filled background, not color alone, to signal completion.",
+    "The Back button exposes a disabled state on the first step rather than being hidden, keeping focus order stable."
+  ],
+  "compatibleWith": ["application-form-row", "application-dialog", "application-drawer"],
+  "variants": [
+    {
+      "id": "stepper-wizard-1",
+      "title": "Stepper Wizard",
+      "description": "Three-step billing wizard with a progress header (complete/current/upcoming), a form body slot, and back/continue actions.",
+      "source": {
+        "html": "../../../../public/examples/application/stepper-wizard/1.html",
+        "tsx": "tsx/StepperWizardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Each step label stays visible alongside its indicator so the flow doesn't rely on numbers or color alone."
+      ]
+    },
+    {
+      "id": "stepper-wizard-1-dark",
+      "title": "Stepper Wizard (Dark)",
+      "description": "Multi-step wizard adapted for dark surfaces with the same progress header, body slot, and action structure.",
+      "source": {
+        "html": "../../../../public/examples/application/stepper-wizard/1-dark.html",
+        "tsx": "tsx/StepperWizardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Step connector lines and label text must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
