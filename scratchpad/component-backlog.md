@@ -147,7 +147,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [ ] Rich Text Toolbar — WYSIWYG formatting bar (bold/italic/list/link/heading dropdown) with active-state buttons; pairs with editors, not covered by toolbar.
 - [ ] Heatmap Calendar — GitHub-style contribution grid with intensity buckets, month labels, and cell tooltips; distinct from charts and calendar.
 - [ ] Funnel Chart — stepped conversion visualization with per-stage counts, drop-off percentages, and labels; analytics pattern not in charts set.
-- [~] (builder-6) Map Marker Popup — floating card anchored to a pin with title, thumbnail, meta, and directions CTA; geo-UI primitive absent from library.
+- [x] (builder-6) Map Marker Popup — 2 variants (place card with photo+rating+directions, compact locker/drop-off pin popup), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
 - [~] (builder-7) Cookie Consent Banner — bottom sheet with accept/reject/customize actions and category toggles; compliance staple distinct from announcement-banner.
 - [~] (builder-3) Feature Comparison Matrix — sticky-header table comparing plans/products across feature rows with check/dash/limit cells; distinct from pricing table and tables.
 - [ ] Import Wizard — multi-step upload → column-map → preview flow with mapping dropdowns; distinct from stepper-wizard (data-import specific) and file-uploaders.
