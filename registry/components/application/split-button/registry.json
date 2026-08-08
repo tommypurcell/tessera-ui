@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "name": "application-split-button",
+  "title": "Split Button",
+  "description": "A primary action button fused with a caret that opens a menu of related secondary actions.",
+  "category": "application/buttons",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["application", "button", "split-button", "dropdown", "actions"],
+  "useWhen": [
+    "One action is clearly the default (Deploy, Save) but users occasionally need closely related variants of it.",
+    "You want to keep the primary action a single click while still surfacing secondary options without extra buttons cluttering the toolbar."
+  ],
+  "avoidWhen": [
+    "All the actions are equally likely to be used — a plain button group communicates that better than implying one is primary.",
+    "There is no true default action — use a standalone dropdown menu instead of implying one option is primary."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The component is a fixed-width inline-flex cluster; the menu is absolutely positioned and right-aligned so it stays within the viewport when the button sits near the right edge.",
+  "accessibility": [
+    "The caret toggle carries aria-haspopup=\"menu\" and aria-expanded, kept in sync with the menu's visibility.",
+    "The caret has an aria-label describing what it opens, since it is icon-only.",
+    "The menu uses role=\"menu\" with role=\"menuitem\" on each action, and closes on an outside click.",
+    "focus:relative and focus:z-10 on each segment keep the focus ring from being clipped by the adjacent button's shared border."
+  ],
+  "compatibleWith": ["application-button-groups", "application-dropdown"],
+  "variants": [
+    {
+      "id": "split-button-1",
+      "title": "Primary",
+      "description": "Filled primary split button with a Deploy default action and related deployment options in the menu",
+      "source": {
+        "html": "../../../../public/examples/application/split-button/1.html",
+        "tsx": "tsx/SplitButtonVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "open"],
+      "accessibility": ["The caret's aria-expanded state is toggled on click and reset when the menu closes via outside click."]
+    },
+    {
+      "id": "split-button-1-dark",
+      "title": "Primary (Dark)",
+      "description": "Filled primary split button with a Deploy default action and related deployment options in the menu",
+      "source": {
+        "html": "../../../../public/examples/application/split-button/1-dark.html",
+        "tsx": "tsx/SplitButtonVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "open"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    },
+    {
+      "id": "split-button-2",
+      "title": "Secondary",
+      "description": "Outlined secondary split button with a Save default action and related save options in the menu",
+      "source": {
+        "html": "../../../../public/examples/application/split-button/2.html",
+        "tsx": "tsx/SplitButtonVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "open"],
+      "accessibility": ["The caret's aria-expanded state is toggled on click and reset when the menu closes via outside click."]
+    },
+    {
+      "id": "split-button-2-dark",
+      "title": "Secondary (Dark)",
+      "description": "Outlined secondary split button with a Save default action and related save options in the menu",
+      "source": {
+        "html": "../../../../public/examples/application/split-button/2-dark.html",
+        "tsx": "tsx/SplitButtonVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "open"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    }
+  ]
+}
