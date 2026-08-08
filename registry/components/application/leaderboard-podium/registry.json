@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-leaderboard-podium",
+  "title": "Leaderboard Podium",
+  "description": "Top-3 podium visualizations with medals, avatars, and scores, plus a ranked medal-row list for competitive and gamified interfaces.",
+  "category": "application/leaderboard-podium",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "leaderboard-podium",
+    "leaderboard",
+    "podium",
+    "ranking",
+    "medal"
+  ],
+  "useWhen": [
+    "Top-3 podium visualizations with medals, avatars, and scores, plus a ranked medal-row list for competitive and gamified interfaces."
+  ],
+  "avoidWhen": [
+    "Avoid leaderboard podium when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Leaderboard Podium uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Provide meaningful alternative text for informative images and empty alt text for decorative images.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "leaderboard-podium-1",
+      "title": "Podium",
+      "description": "Podium Top-3 podium visualizations with medals, avatars, and scores, plus a ranked medal-row list for competitive and gamified interfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/leaderboard-podium/1.html",
+        "tsx": "tsx/LeaderboardPodiumVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "leaderboard-podium-1-dark",
+      "title": "Podium (Dark)",
+      "description": "Podium Top-3 podium visualizations with medals, avatars, and scores, plus a ranked medal-row list for competitive and gamified interfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/leaderboard-podium/1-dark.html",
+        "tsx": "tsx/LeaderboardPodiumVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "leaderboard-podium-2",
+      "title": "Medal row list",
+      "description": "Medal row list Top-3 podium visualizations with medals, avatars, and scores, plus a ranked medal-row list for competitive and gamified interfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/leaderboard-podium/2.html",
+        "tsx": "tsx/LeaderboardPodiumVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "leaderboard-podium-2-dark",
+      "title": "Medal row list (Dark)",
+      "description": "Medal row list Top-3 podium visualizations with medals, avatars, and scores, plus a ranked medal-row list for competitive and gamified interfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/leaderboard-podium/2-dark.html",
+        "tsx": "tsx/LeaderboardPodiumVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    }
+  ]
+}

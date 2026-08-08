@@ -415,7 +415,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-8) Vitals Stat Row — 4 readings (HR flagged out-of-range, BP/SpO2/Temp normal) w/ real isNormal flag (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [x] (builder-2) Medication Schedule List — 4 dose rows (taken/pending w/ Take-Skip actions/skipped-dimmed), real per-dose status state, light+dark, registry+tsx+MDX, screenshot verified (fixed a time-column text-wrap bug found during review), committed to builder-2-components (PR #19)
 - [x] (builder-7) Symptom Severity Slider — 0-10 native range w/ derived descriptor label, light+dark, registry+tsx+MDX, screenshot verified (fixed invisible gradient-track CSS bug), committed + pushed (PR #5)
-- [~] (builder-4) Care Timeline — patient-history events with clinician avatars and visit types; distinct from timelines (clinical framing).
+- [x] (builder-4) Care Timeline — 4-visit clinical timeline (clinician avatars, color-coded type badges, notes), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #17)
 
 <!-- Theme: Education -->
 - [x] (builder-5) Course Progress Card — SVG completion ring (computed %), title, modules-remaining count, Continue learning CTA, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
@@ -426,7 +426,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: Real estate -->
 - [x] (builder-8) Property Listing Card — $685,000 3bd/2ba/1,840sqft listing w/ toggleable save heart (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
-- [ ] Map Listing Split — map pane + scrollable listing list with hover-sync highlight; distinct from split-view-layout.
+- [x] (builder-4) Map Listing Split — 4 listings + numbered map pins, hover-sync highlight (matching listing #/pin), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #17)
 - [x] (builder-1) Mortgage Calculator — 2 variants (input form + result summary), computed payment + breakdown, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #16).
 - [x] (builder-2) Amenities Grid — 4 included + 2 excluded (strikethrough+dimmed) amenities, real included flag drives both icon and label styling, light+dark, registry+tsx+MDX, screenshot verified (caught+fixed 4 icon-label mismatches pre-commit), committed to builder-2-components (PR #20)
 
@@ -434,8 +434,8 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-7) Flight Route Card — airline+flight#, stop badge, origin/destination codes+times, duration line, route footer, fare, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
 - [x] (builder-1) Booking Search Bar — 2 variants (horizontal pill + stacked card), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #16).
 - [x] (builder-3) Seat Map Selector — row-labeled seat grid w/ aisle gap, available/taken/selected states, legend, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
-- [ ] Itinerary Timeline — day-grouped trip events with time, location, and type icons; distinct from timelines.
-- [~] (builder-3) Price Calendar — month grid with per-day fare and cheapest-day highlight; distinct from mini-calendar-widget.
+- [~] (builder-4) Itinerary Timeline — day-grouped trip events with time, location, and type icons; distinct from timelines.
+- [x] (builder-3) Price Calendar — month grid w/ per-day fare, cheapest-day green highlight, selected-day fill, month nav, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 
 <!-- Theme: Analytics / dashboard (more) -->
 - [x] (builder-5) Anomaly Alert Row — metric rows w/ sparkline+expected-band, spike marker, severity badge (color+text), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
@@ -450,40 +450,40 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-3) Error Rate Sparkline Row — endpoint table w/ severity-colored 24h sparkline, error-rate badge (healthy/warning/critical), light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 
 <!-- Theme: Utility (more) -->
-- [~] (builder-5) Cookie Preference Center — categorized consent toggles with save/accept-all; distinct from cookie banner.
+- [x] (builder-5) Cookie Preference Center — locked Necessary row + toggleable Analytics/Marketing/Personalization + Save/Accept all, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [x] (builder-10) Rate Us Prompt — 2 variants (positive-branch confirmation, low-rating feedback branch w/ textarea), light+dark, registry+tsx generated, screenshots verified, pushed
 - [x] (builder-8) Progress Toast Group — 3 concurrent task toasts (42%/78% in-progress, 1 complete w/ Dismiss) (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
-- [~] (builder-9) Empty Search Suggestions — no-results view offering popular/related query chips; distinct from no-results-search-state.
+- [x] (builder-9) Empty Search Suggestions — 2 variants (popular searches, did you mean + categories) light+dark, registry.json, MDX entry, screenshots
 
 <!-- === WAVE 8 (deep-backlog refill, post-247) — new verticals, verified non-dupe against registry === -->
 
 <!-- Theme: Social -->
-- [~] (builder-8) Social Post Card — avatar header, media body, and like/comment/share action bar; distinct from announcement-feed-item.
-- [~] (builder-1) Story Ring Row — circular story avatars with gradient unseen ring and add-story; absent from library.
+- [x] (builder-8) Social Post Card — liked-state post (248 likes) w/ avatar header, media body, like/comment/share bar (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
+- [x] (builder-1) Story Ring Row — 2 variants (scrollable row + compact cluster), gradient unseen ring / muted seen ring, light+dark, registry+tsx+MDX, screenshot verified (caught+fixed a broken ring on first pass), committed+pushed (PR #16).
 - [x] (builder-5) Follow Button — Follow/Following(hover-to-Unfollow, also focus-triggered)/Requested(disabled) states, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [x] (builder-7) Profile Stats Bar — 3-cell tappable stat row (Posts/Followers/Following), light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
-- [ ] Hashtag Trend List — ranked trending topics with post counts and category; distinct from leaderboard-list.
-- [~] (builder-7) Mention Notification Row — "X mentioned you" row with snippet and jump link; distinct from activity-feed.
+- [x] (builder-8) Hashtag Trend List — 5 trends (1.2M down to 640 posts) w/ computed K/M formatting + category (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
+- [x] (builder-7) Mention Notification Row — avatar+unread dot, "X mentioned you in Y", quoted snippet, timestamp, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
 
 <!-- Theme: Gaming -->
-- [~] (builder-10) Achievement Toast — unlocked-badge popup with icon, title, and rarity glow; distinct from toast-stack.
-- [ ] XP Progress Bar — level badge + XP fill to next level with overflow; distinct from progress-bars.
-- [ ] Player Card — gamertag, rank tier, avatar, and quick stats; distinct from contact-card.
-- [ ] Match History Row — win/loss result row with score, mode, and duration; distinct from tables.
-- [~] (builder-6) Leaderboard Podium — top-3 podium visualization with medals and scores; distinct from leaderboard-list.
+- [x] (builder-10) Achievement Toast — 2 variants (legendary glow popup, compact rare XP pill), light+dark, registry+tsx generated, screenshots verified, pushed
+- [~] (builder-9) XP Progress Bar — level badge + XP fill to next level with overflow; distinct from progress-bars.
+- [~] (builder-7) Player Card — gamertag, rank tier, avatar, and quick stats; distinct from contact-card.
+- [x] (builder-5) Match History Row — colored border+text Win/Loss/Draw, mode/queue, monospace score, duration, relative time, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
+- [x] (builder-6) Leaderboard Podium — 2 variants (3-tier podium with crown+avatars+medal colors, medal-icon ranked row list), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
 
 <!-- Theme: IoT / smart home -->
-- [~] (builder-2) Device Toggle Tile — device icon, name, and on/off with status color; distinct from preference-toggle-row.
-- [ ] Thermostat Dial — circular temperature setter with current-vs-target ring; distinct from gauge-chart.
-- [ ] Sensor Reading Card — live metric (temp/humidity) with trend and threshold alert; distinct from vitals-stat-row.
-- [ ] Scene Selector — grid of home-scene preset cards with active state; distinct from toggle-card-group.
+- [x] (builder-2) Device Toggle Tile — 4 device tiles (light/thermostat on, lock/plug off), real checkbox-driven toggle w/ status text+color, light+dark, registry+tsx+MDX, screenshot verified (caught+fixed wrong thermostat icon pre-commit), committed to builder-2-components (PR #20)
+- [~] (builder-10) Thermostat Dial — circular temperature setter with current-vs-target ring; distinct from gauge-chart.
+- [~] (builder-8) Sensor Reading Card — live metric (temp/humidity) with trend and threshold alert; distinct from vitals-stat-row.
+- [x] (builder-2) Scene Selector — 4 scene cards (Home active, Away/Movie Night/Good Morning), real radiogroup single-select state, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components (PR #20)
 - [ ] Energy Usage Bar — real-time watt draw with cost estimate and peak marker; distinct from budget-progress-bar.
 
 <!-- Theme: Logistics -->
 - [ ] Shipment Tracking Map — route line with origin/current/destination pins and ETA; distinct from map-marker-popup.
 - [ ] Package Status Timeline — scan events with location, timestamp, and status; distinct from order-status-tracker.
-- [ ] Delivery Slot Picker — selectable delivery-window cards with pricing; distinct from availability-grid.
-- [ ] Inventory Level Row — SKU with in-stock bar, reorder threshold, and warning; distinct from usage-meter.
+- [~] (builder-3) Delivery Slot Picker — selectable delivery-window cards with pricing; distinct from availability-grid.
+- [~] (builder-1) Inventory Level Row — SKU with in-stock bar, reorder threshold, and warning; distinct from usage-meter.
 - [ ] Fleet Status Grid — vehicle tiles with active/idle/maintenance status and driver; distinct from health-check-grid.
 
 <!-- Theme: HR / recruiting -->
