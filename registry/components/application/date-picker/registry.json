@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-date-picker",
+  "title": "Date Picker",
+  "description": "Input-triggered calendar popover for choosing a single date, driven by a typed day-grid prop contract.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["date", "calendar", "picker", "input", "overlay"],
+  "useWhen": [
+    "A form field needs a single date value chosen from a visual calendar instead of typed free-form text.",
+    "You want a compact trigger button that expands into a month grid on demand.",
+    "Booking, scheduling, or filtering flows where users pick one specific day."
+  ],
+  "avoidWhen": [
+    "Users need to pick a date range — build a two-ended variant instead of reusing single-date selection state.",
+    "The date is far in the past or future (e.g. birthdate) — a typed or select-based input is faster than paging months.",
+    "You need a persistently visible calendar — use the calendar component directly without the input trigger."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The trigger button is full-width within its container; the calendar popover has a fixed width and should reposition (flip above/below) to stay in the viewport on small screens.",
+  "accessibility": [
+    "The trigger button carries aria-haspopup='dialog' and aria-expanded reflecting the popover's open state.",
+    "The popover uses role='dialog' with an aria-label describing its purpose.",
+    "The current day uses aria-current='date' and the chosen day uses aria-selected, not color alone."
+  ],
+  "compatibleWith": ["application-inputs", "application-popover"],
+  "variants": [
+    {
+      "id": "date-picker-1",
+      "title": "Date Picker",
+      "description": "Labeled trigger button that opens a month calendar with previous/next navigation, today shortcut, and an apply action.",
+      "source": {
+        "html": "../../../../public/examples/application/date-picker/1.html",
+        "tsx": "tsx/DatePickerVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "open", "selected"],
+      "accessibility": [
+        "Today and the selected day are distinguished by both a filled background and an aria attribute, not color alone."
+      ]
+    },
+    {
+      "id": "date-picker-1-dark",
+      "title": "Date Picker (Dark)",
+      "description": "Date picker adapted for dark surfaces with the same trigger, month-grid, and action-row structure.",
+      "source": {
+        "html": "../../../../public/examples/application/date-picker/1-dark.html",
+        "tsx": "tsx/DatePickerVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "open", "selected"],
+      "accessibility": [
+        "Day-grid text and the selected-day fill must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
