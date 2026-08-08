@@ -252,8 +252,8 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 <!-- Theme: Media -->
 - [x] (builder-4) Video Player — 16:9 poster frame + full controls bar (play/scrub/time/volume/speed/fullscreen), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #14)
 - [x] (builder-6) Audio Player — 2 variants (waveform bar player with play/mute, podcast player with cover art, skip controls, and speed badge), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
-- [~] (builder-4) Image Gallery Lightbox — thumbnail grid opening a full-screen viewer with prev/next and caption; distinct from carousel and media.
-- [ ] Image Cropper — draggable crop frame with aspect presets and zoom slider; absent from library.
+- [x] (builder-4) Image Gallery Lightbox — 2 variants (thumbnail grid, full-screen viewer w/ prev/next + counter + caption), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #14)
+- [~] (builder-4) Image Cropper — draggable crop frame with aspect presets and zoom slider; absent from library.
 - [x] (builder-2) Avatar Uploader — circular drop-zone, hover camera overlay, real file input driving live object-URL preview, Replace/Remove actions, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components
 - [x] (builder-2) Media Object Row — 3 podcast-episode rows (thumbnail, truncating title/meta, trailing play button), reusable renderAction slot for custom trailing controls, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components
 - [ ] PDF Page Thumbnails — scrollable page-thumbnail rail with active-page highlight; absent from library.
@@ -285,7 +285,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-8) Donut Chart — 4-segment traffic-sources ring, computed center total + legend via SVG stroke-dasharray (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [ ] Stacked Area Chart — multi-series cumulative trend with legend toggle; absent from charts set.
 - [x] (builder-6) Gauge Chart — 2 variants (standalone threshold-zone gauge, compact gauge with metric+target), light+dark, registry+tsx generated, screenshots verified (fixed a needle/label overlap found during review), committed to builder-6-components.
-- [~] (builder-6) Treemap — nested proportional rectangles with labels for hierarchical size; absent from library.
+- [x] (builder-6) Treemap — 2 variants (single-color intensity scale, multi-category with color-coded legend), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
 - [x] (builder-8) Waterfall Chart — 6-step Q3 revenue bridge, running-total bar positions computed from deltas (tsx light+dark, html light+dark, registry.json, MDX); fixed a flex items-end height bug found during screenshot review; screenshot verified light+dark, pushed to PR #6
 - [ ] Calendar Heat Legend Chart — month grid with value intensity and axis labels; distinct from heatmap-calendar (chart framing).
 
@@ -302,28 +302,28 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-10) Countdown Ring Timer — 2 variants (large radial timer w/ mm:ss center, compact inline ring timer w/ action row), light+dark, registry+tsx generated, screenshots verified (live tick confirmed), pushed
 - [x] (builder-5) Feature Flag Toggle Row — flag key + env pills (Dev/Staging/Prod) + rollout % status + enable switch, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [x] (builder-2) Breadcrumb Page Header — 3-level breadcrumb trail (aria-current=page on last), h1 title + description, trailing action-buttons slot, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components, rebased onto origin/main cleanly (PR #13 confirmed mergeable)
-- [~] (builder-7) Filter Chip Overflow — chip row that collapses extras into a "+N" popover on narrow widths; distinct from data-filter-bar.
+- [x] (builder-7) Filter Chip Overflow — 2 states (collapsed w/ +N trigger, expanded popover), each chip individually removable, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
 
 <!-- === WAVE 5 (deep-backlog refill, post-176) — themed batches, verified non-dupe against registry === -->
 
 <!-- Theme: Layout / structure -->
 - [x] (builder-3) Split View Layout — inbox-style master-detail shell, collapsible list pane, resize handle, active-item aria-current, detail content slot, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 - [x] (builder-10) Sticky Section Header — 2 variants (alphabetical contact list w/ sticky letter headers, settings list w/ sticky category headers), light+dark, sticky pinning verified via actual scroll test, registry+tsx generated, screenshots verified, pushed
-- [~] (builder-9) Masonry Grid — variable-height card grid with balanced columns; distinct from grids (masonry flow).
+- [x] (builder-9) Masonry Grid — 2 variants (image gallery, card masonry) light+dark, registry.json, MDX entry, screenshots
 - [ ] Sidebar Layout Shell — fixed sidebar + topbar + content app frame with collapse; distinct from dashboard-sidebar (full shell).
 - [ ] Card Stack — swipeable stacked-card deck (Tinder-style) with accept/reject; absent from library.
 - [x] (builder-3) Expandable Detail Row — order table w/ chevron toggle, colSpan detail panel with line items + emphasized total, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 
 <!-- Theme: Feedback / status (more) -->
-- [ ] Progress Steps Toast — long-running-task toast showing sub-step progress; distinct from toast-stack.
-- [~] (builder-10) Rate Limit Notice — cooldown banner with countdown to retry availability; distinct from quota-warning-banner.
+- [x] (builder-7) Progress Steps Toast — 4-step deploy task (done/active/pending) w/ derived progress bar and N-of-M label, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
+- [x] (builder-10) Rate Limit Notice — 2 variants (inline warning banner w/ live countdown, compact card w/ disabled→enabled retry button), light+dark, both dynamic states verified via wait+screenshot, registry+tsx generated, screenshots verified, pushed
 - [x] (builder-2) Health Check Grid — 2x2 service tile grid (live-pulse dot on operational, amber degraded, highlighted red outage tile), status conveyed via color+text label together, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components
 - [x] (builder-8) Sync Status Row — 3-state row (syncing/synced/failed) w/ spinning icon + disabled-while-syncing Sync now action (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
-- [ ] Maintenance Mode Screen — full-page scheduled-downtime notice with ETA; distinct from error-page.
+- [~] (builder-9) Maintenance Mode Screen — full-page scheduled-downtime notice with ETA; distinct from error-page.
 
 <!-- Theme: Data entry (more) -->
 - [ ] Multi-Step Form Progress — top progress bar + step labels wrapping a paged form; distinct from stepper-wizard (progress-header variant).
-- [~] (builder-3) Inline Add Row — table footer "add new" row that turns into editable inputs; distinct from data-grid-cell-editor.
+- [x] (builder-3) Inline Add Row — task table w/ always-visible footer inputs (task name + assignee), Add + clear actions, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 - [x] (builder-9) Slug Input — 2 variants (always-editable slug field, read-only preview with Edit trigger) light+dark, registry.json, MDX entry, screenshots
 - [x] (builder-2) Tag Filter Group — 6 independently toggleable tag pills, real multi-select aria-pressed state, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components
 - [x] (builder-8) Rating Scale (NPS) — 0-10 scale w/ detractor/passive/promoter zone coloring derived from score (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
@@ -331,10 +331,10 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: Navigation (more) -->
 - [ ] Breadcrumb Dropdown Overflow — long breadcrumb trail collapsing middle segments into a menu; distinct from breadcrumbs.
-- [ ] Sidebar Search Filter — sidebar-top input that live-filters the nav items below; absent from library.
+- [~] (builder-7) Sidebar Search Filter — sidebar-top input that live-filters the nav items below; absent from library.
 - [ ] Step Progress Sidebar — vertical numbered nav with completion checks for multi-page flows; distinct from wizard-progress-rail (persistent nav).
 - [ ] Tab Overflow Scroller — horizontally scrollable tab strip with edge fade and arrows; distinct from tabs.
-- [~] (builder-2) Recent / Pinned Switcher — workspace/project switcher with pinned + recent sections; distinct from dropdown.
+- [x] (builder-2) Recent / Pinned Switcher — search field + Pinned/Recent sections w/ live filter, active workspace aria-current + checkmark, Create workspace footer action, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components. NOTE: PR #13 was merged mid-session; opened new PR #18 for post-merge commits (Health Check Grid, this component).
 
 <!-- Theme: Dashboard widgets (more) -->
 - [x] (builder-10) Activity Ring Trio — 2 variants (large concentric ring trio w/ legend, compact inline ring trio w/ summary), light+dark, ring circumference/offset math verified against Python, registry+tsx generated, screenshots verified, pushed
@@ -344,10 +344,10 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-8) Comparison Stat Pair — This month (1,284, leading) vs Last month (972), winner computed from real values (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 
 <!-- Theme: Collaboration / content (more) -->
-- [ ] Approval Request Card — pending item with approve/reject actions and requester meta; absent from library.
+- [~] (builder-2) Approval Request Card — pending item with approve/reject actions and requester meta; absent from library.
 - [ ] Version History List — timestamped revision rows with author, diff link, and restore; distinct from changelog-entry.
-- [ ] Task Checklist — nested checkable subtasks with progress count and add-item; distinct from onboarding-checklist.
-- [~] (builder-8) Poll / Vote Card — options with vote bars, counts, and select-to-vote; absent from library.
+- [x] (builder-8) Task Checklist — flat checkable list w/ computed N/M complete count + Enter-to-add task input (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
+- [x] (builder-8) Poll / Vote Card — click-to-vote poll w/ computed percentage-bar results view, 4-option framework poll demo (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [ ] Announcement Feed Item — pinned/starred post card with author, body, and reactions; distinct from activity-feed.
 
 <!-- Theme: Utility (more) -->
@@ -362,7 +362,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 <!-- Theme: Project management -->
 - [ ] Sprint Burndown Chart — ideal vs actual remaining-work line over a sprint with today marker; absent from library.
 - [ ] Board Swimlane — horizontal grouped lane spanning multiple status columns with a lane header; distinct from kanban column.
-- [ ] Task Priority Badge Set — flag/arrow priority indicators (urgent→low) with consistent color scale; distinct from badges.
+- [~] (builder-8) Task Priority Badge Set — flag/arrow priority indicators (urgent→low) with consistent color scale; distinct from badges.
 - [ ] Effort Estimate Chips — story-point / t-shirt-size selectable chip group; distinct from tag-filter-group.
 - [ ] Dependency Link Row — "blocks / blocked by" relationship row with linked-item chips; absent from library.
 - [ ] Milestone Marker Card — dated goal card with progress and linked-task count; distinct from timelines.

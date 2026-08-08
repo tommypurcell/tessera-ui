@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-treemap",
+  "title": "Treemap",
+  "description": "Nested proportional rectangles sized by value for visualizing hierarchical breakdowns like storage usage or revenue by segment.",
+  "category": "application/treemap",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "treemap",
+    "hierarchy",
+    "proportion",
+    "chart",
+    "treemap-chart"
+  ],
+  "useWhen": [
+    "Nested proportional rectangles sized by value for visualizing hierarchical breakdowns like storage usage or revenue by segment."
+  ],
+  "avoidWhen": [
+    "Avoid treemap when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Treemap uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "treemap-1",
+      "title": "Single-color scale",
+      "description": "Single-color scale Nested proportional rectangles sized by value for visualizing hierarchical breakdowns like storage usage or revenue by segment.",
+      "source": {
+        "html": "../../../../public/examples/application/treemap/1.html",
+        "tsx": "tsx/TreemapVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "treemap-1-dark",
+      "title": "Single-color scale (Dark)",
+      "description": "Single-color scale Nested proportional rectangles sized by value for visualizing hierarchical breakdowns like storage usage or revenue by segment.",
+      "source": {
+        "html": "../../../../public/examples/application/treemap/1-dark.html",
+        "tsx": "tsx/TreemapVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "treemap-2",
+      "title": "Multi-category with legend",
+      "description": "Multi-category with legend Nested proportional rectangles sized by value for visualizing hierarchical breakdowns like storage usage or revenue by segment.",
+      "source": {
+        "html": "../../../../public/examples/application/treemap/2.html",
+        "tsx": "tsx/TreemapVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "treemap-2-dark",
+      "title": "Multi-category with legend (Dark)",
+      "description": "Multi-category with legend Nested proportional rectangles sized by value for visualizing hierarchical breakdowns like storage usage or revenue by segment.",
+      "source": {
+        "html": "../../../../public/examples/application/treemap/2-dark.html",
+        "tsx": "tsx/TreemapVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}
