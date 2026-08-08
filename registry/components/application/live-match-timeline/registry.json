@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "name": "application-live-match-timeline",
+  "title": "Live Match Timeline",
+  "description": "Live sports match event timeline: a horizontal minute axis with goal/card/substitution markers plotted proportionally at their minute, alternating above/below the line by team side.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["sports", "match", "live", "timeline", "events"],
+  "useWhen": [
+    "Showing a live or completed sports match's key events (goals, cards, substitutions) at a glance in a single compact bar.",
+    "You need events positioned proportionally along a fixed-length match clock rather than listed chronologically.",
+    "Distinct from a generic Timeline, which lists chronological entries vertically with full descriptions rather than plotting discrete events along a proportional minute-based axis."
+  ],
+  "avoidWhen": [
+    "You need full event descriptions or commentary text — a vertical Timeline or match commentary feed is more appropriate.",
+    "The event count is high enough that markers would overlap at this scale — a scrollable list may read better."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Event marker positions are computed as a percentage of match length, so the timeline reflows correctly at any container width without recalculating pixel offsets.",
+  "accessibility": [
+    "Every event icon carries an aria-label naming the event type (Goal, Yellow card, Substitution), since meaning is otherwise conveyed by icon shape and color alone.",
+    "Each event also displays its minute as visible text, not just position along the axis, so the event's timing isn't lost without spatial context."
+  ],
+  "compatibleWith": ["application-sports-scoreboard"],
+  "variants": [
+    {
+      "id": "live-match-timeline-1",
+      "title": "Live Match Timeline",
+      "description": "Two goals, a yellow card, and a substitution plotted across a 90-minute axis with the home team's events above the line and the away team's below.",
+      "source": {
+        "html": "../../../../public/examples/application/live-match-timeline/1.html",
+        "tsx": "tsx/LiveMatchTimelineVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Each event icon has an aria-label naming its type."
+      ]
+    },
+    {
+      "id": "live-match-timeline-1-dark",
+      "title": "Live Match Timeline (Dark)",
+      "description": "The same match timeline adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/live-match-timeline/1-dark.html",
+        "tsx": "tsx/LiveMatchTimelineVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Event icon and axis contrast remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}
