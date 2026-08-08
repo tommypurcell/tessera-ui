@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-thermostat-dial",
+  "title": "Thermostat Dial",
+  "description": "Circular temperature-setter dial components showing current versus target temperature, for smart-home control panels.",
+  "category": "application/thermostat-dial",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "thermostat-dial",
+    "thermostat",
+    "temperature",
+    "smart home",
+    "dial"
+  ],
+  "useWhen": [
+    "Circular temperature-setter dial components showing current versus target temperature, for smart-home control panels."
+  ],
+  "avoidWhen": [
+    "Avoid thermostat dial when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Thermostat Dial uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "thermostat-dial-1",
+      "title": "Large dial with target controls",
+      "description": "Large dial with target controls Circular temperature-setter dial components showing current versus target temperature, for smart-home control panels.",
+      "source": {
+        "html": "../../../../public/examples/application/thermostat-dial/1.html",
+        "tsx": "tsx/ThermostatDialVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "thermostat-dial-1-dark",
+      "title": "Large dial with target controls (Dark)",
+      "description": "Large dial with target controls Circular temperature-setter dial components showing current versus target temperature, for smart-home control panels.",
+      "source": {
+        "html": "../../../../public/examples/application/thermostat-dial/1-dark.html",
+        "tsx": "tsx/ThermostatDialVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "thermostat-dial-2",
+      "title": "Compact room widget card",
+      "description": "Compact room widget card Circular temperature-setter dial components showing current versus target temperature, for smart-home control panels.",
+      "source": {
+        "html": "../../../../public/examples/application/thermostat-dial/2.html",
+        "tsx": "tsx/ThermostatDialVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "thermostat-dial-2-dark",
+      "title": "Compact room widget card (Dark)",
+      "description": "Compact room widget card Circular temperature-setter dial components showing current versus target temperature, for smart-home control panels.",
+      "source": {
+        "html": "../../../../public/examples/application/thermostat-dial/2-dark.html",
+        "tsx": "tsx/ThermostatDialVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}
