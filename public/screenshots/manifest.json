@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 742,
+  "screenshotCount": 748,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -2944,6 +2944,66 @@
       "sourcePath": "files/application-toasts/toasts-6-dark.html",
       "sourceSha256": "fa299a2afcd3a7e0e3a8425d33de79f81d749e4418c4c049b296fa71d309c625",
       "url": "/screenshots/components/application-toasts/toasts-6-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-toggle-group",
+      "variantId": "toggle-group-1",
+      "appearance": "light",
+      "sourcePath": "files/application-toggle-group/toggle-group-1.html",
+      "sourceSha256": "c6c176bf781395784065a8c2cb268294e37981aaff347d31cf6ddb9eeb53a68a",
+      "url": "/screenshots/components/application-toggle-group/toggle-group-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-toggle-group",
+      "variantId": "toggle-group-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-toggle-group/toggle-group-1-dark.html",
+      "sourceSha256": "6d8c3c1a7baf849f415b1fe4a01582967778ce2a17e3a81d214ee75fbd7a4a5e",
+      "url": "/screenshots/components/application-toggle-group/toggle-group-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-toggle-group",
+      "variantId": "toggle-group-2",
+      "appearance": "light",
+      "sourcePath": "files/application-toggle-group/toggle-group-2.html",
+      "sourceSha256": "de68fce58c1ee1b393cde59fee507ff4d1ddeb81947f14d79966e8cfa606fecb",
+      "url": "/screenshots/components/application-toggle-group/toggle-group-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-toggle-group",
+      "variantId": "toggle-group-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-toggle-group/toggle-group-2-dark.html",
+      "sourceSha256": "dc0e4c4bec7a763a9b3aa670821d2b7866bda9eb548801621740e68652a18781",
+      "url": "/screenshots/components/application-toggle-group/toggle-group-2-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-toggle-group",
+      "variantId": "toggle-group-3",
+      "appearance": "light",
+      "sourcePath": "files/application-toggle-group/toggle-group-3.html",
+      "sourceSha256": "e98aefad7e2006bf06c15d82fe058a1717da05690d8399965093f1dd4a32d332",
+      "url": "/screenshots/components/application-toggle-group/toggle-group-3.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-toggle-group",
+      "variantId": "toggle-group-3-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-toggle-group/toggle-group-3-dark.html",
+      "sourceSha256": "b5ae8cfbc14b68800d8623a4f4cacd9d7934ad0ea80c60879169d4c4925e8ee9",
+      "url": "/screenshots/components/application-toggle-group/toggle-group-3-dark.jpg",
       "width": 600,
       "height": 400
     },
