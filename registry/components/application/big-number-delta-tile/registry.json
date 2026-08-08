@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-big-number-delta-tile",
+  "title": "Big Number Delta Tile",
+  "description": "Oversized KPI tile pairing a large number with a period-over-period percentage change, trend arrow, and plain-language comparison label — a comparison-focused alternative to the more general stat-tile.",
+  "category": "application/forms-and-layout",
+  "tags": ["kpi", "delta", "metric", "dashboard", "big-number"],
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "useWhen": [
+    "The headline metric itself deserves the most visual weight on the page (revenue, active users, etc.).",
+    "You want the period-over-period comparison spelled out in words (\"vs last month\") rather than a bare badge.",
+    "Trend direction and magnitude should be derived automatically from the delta value, not hand-picked."
+  ],
+  "avoidWhen": [
+    "You're placing many metrics in a dense grid — the smaller application-stat-tile fits more tiles per row.",
+    "No comparison period exists for the metric — a plain number without delta is simpler.",
+    "You need an icon slot or sparkline alongside the number — extend stat-tile or use metric-sparkline-card instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The tile is a single block sized to its content; place it in your own grid or flex row to control column count at each breakpoint.",
+  "accessibility": [
+    "Trend direction is conveyed by both an arrow icon and a visually hidden text label (Increased/Decreased by), not color or rotation alone.",
+    "The comparison label (e.g. \"vs last month\") is always visible text, giving context the arrow alone can't.",
+    "Direction and color are derived from the sign of deltaPct, so they can never drift out of sync with the displayed percentage."
+  ],
+  "compatibleWith": ["application-stat-tile", "application-charts", "application-metric-sparkline-card"],
+  "variants": [
+    {
+      "id": "big-number-delta-tile-1",
+      "title": "Big number delta tile",
+      "description": "MRR tile with a large dollar figure, a +12.4% green uptrend, and a \"vs last month\" comparison label, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/big-number-delta-tile/1.html",
+        "tsx": "tsx/BigNumberDeltaTileVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Sign of the delta value alone determines both the arrow direction and green/red coloring."
+      ]
+    },
+    {
+      "id": "big-number-delta-tile-1-dark",
+      "title": "Big number delta tile (Dark)",
+      "description": "The same MRR tile, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/big-number-delta-tile/1-dark.html",
+        "tsx": "tsx/BigNumberDeltaTileVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Number, delta, and comparison text colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
