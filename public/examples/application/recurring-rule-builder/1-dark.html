@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-md bg-gray-950 p-6">
+    <div class="rounded-xl border border-gray-800 bg-gray-900 p-5">
+      <h3 class="text-sm font-semibold text-white">Repeat</h3>
+
+      <div class="mt-3 flex flex-wrap items-center gap-2 text-sm text-gray-300">
+        <span>Every</span>
+        <input
+          type="number"
+          value="2"
+          min="1"
+          class="w-14 rounded-md border border-gray-700 bg-gray-900 px-2 py-1.5 text-center text-sm text-white shadow-sm focus:border-gray-500 focus:outline-none"
+        />
+        <select class="rounded-md border border-gray-700 bg-gray-900 px-2.5 py-1.5 text-sm text-white shadow-sm focus:border-gray-500 focus:outline-none">
+          <option>weeks</option>
+        </select>
+      </div>
+
+      <div class="mt-4">
+        <span class="text-xs font-medium uppercase tracking-wide text-gray-500">On</span>
+        <div class="mt-2 flex flex-wrap gap-1.5">
+          <button type="button" aria-pressed="false" class="flex size-8 items-center justify-center rounded-full text-xs font-medium text-gray-400 ring-1 ring-inset ring-gray-700 hover:bg-gray-800">S</button>
+          <button type="button" aria-pressed="true" class="flex size-8 items-center justify-center rounded-full bg-white text-xs font-medium text-gray-900">M</button>
+          <button type="button" aria-pressed="false" class="flex size-8 items-center justify-center rounded-full text-xs font-medium text-gray-400 ring-1 ring-inset ring-gray-700 hover:bg-gray-800">T</button>
+          <button type="button" aria-pressed="true" class="flex size-8 items-center justify-center rounded-full bg-white text-xs font-medium text-gray-900">W</button>
+          <button type="button" aria-pressed="false" class="flex size-8 items-center justify-center rounded-full text-xs font-medium text-gray-400 ring-1 ring-inset ring-gray-700 hover:bg-gray-800">T</button>
+          <button type="button" aria-pressed="true" class="flex size-8 items-center justify-center rounded-full bg-white text-xs font-medium text-gray-900">F</button>
+          <button type="button" aria-pressed="false" class="flex size-8 items-center justify-center rounded-full text-xs font-medium text-gray-400 ring-1 ring-inset ring-gray-700 hover:bg-gray-800">S</button>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <span class="text-xs font-medium uppercase tracking-wide text-gray-500">Ends</span>
+        <div class="mt-2 flex flex-col gap-2">
+          <label class="flex items-center gap-2 text-sm text-gray-300">
+            <input type="radio" name="ends" checked class="size-4 border-gray-600 bg-gray-800 text-white focus:ring-gray-500" />
+            Never
+          </label>
+          <label class="flex items-center gap-2 text-sm text-gray-300">
+            <input type="radio" name="ends" class="size-4 border-gray-600 bg-gray-800 text-white focus:ring-gray-500" />
+            On date
+            <input
+              type="text"
+              value="Dec 31, 2026"
+              disabled
+              class="ml-1 w-32 rounded-md border border-gray-800 bg-gray-800 px-2 py-1 text-sm text-gray-500"
+            />
+          </label>
+          <label class="flex items-center gap-2 text-sm text-gray-300">
+            <input type="radio" name="ends" class="size-4 border-gray-600 bg-gray-800 text-white focus:ring-gray-500" />
+            After
+            <input type="text" value="12" disabled class="ml-1 w-14 rounded-md border border-gray-800 bg-gray-800 px-2 py-1 text-center text-sm text-gray-500" />
+            occurrences
+          </label>
+        </div>
+      </div>
+
+      <div class="mt-4 rounded-lg bg-gray-800 px-3 py-2.5 text-xs text-gray-400">Repeats every 2 weeks on Monday, Wednesday, Friday. Never ends.</div>
+    </div>
+  </body>
+</html>
