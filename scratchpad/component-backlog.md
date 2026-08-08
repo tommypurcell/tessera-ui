@@ -137,23 +137,50 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-7) Password Strength Meter — 2 states (strong/fair) w/ segmented bar, live label, requirements checklist, light+dark, registry+tsx+MDX, screenshot verified, committed (also regenerated public/component.css for missing emerald/amber-400 bg utilities)
 
 <!-- === FRESH WAVE (post-94-clear) — 20 new application/dashboard-grade ideas, verified non-dupe against registry === -->
-- [~] (builder-4) Calendar Event Grid — week/day view with time-slotted event blocks, overlap handling, and current-time indicator; the scheduling surface `calendar` (date-picker) doesn't cover.
-- [~] (builder-5) Gantt Bar Chart — horizontal project timeline with dependency arrows, milestone diamonds, and today marker; distinct from timelines and timeline-scrubber.
-- [~] (builder-9) Code Editor Block — syntax-highlighted panel with line numbers, gutter, active-line highlight, and language tab; richer than static `terminal-blocks`.
+- [x] (builder-4) Calendar Event Grid — built as `event-calendar`: 3-day week grid, hour rows, side-by-side overlap handling, live now-indicator, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-4-components
+- [x] (builder-5) Gantt Bar Chart — task bars on a day/week grid (column-index positioning), dependency arrow, milestone diamond, today-line, light+dark, registry+tsx+MDX, screenshot verified, committed
+- [x] (builder-9) Code Editor Block — 2 variants (file-tab bar, file-name + copy action) light+dark, registry.json, MDX entry, screenshots
 - [x] (builder-3) JSON Tree Viewer — monospace key/value tree with per-branch expand/collapse, type-coded values (string/number/boolean/null), collapsed item-count summaries, expand-all/collapse-all header actions, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-3-components
-- [~] (builder-8) Log Viewer — virtualized monospace stream with severity coloring, level filter chips, and auto-scroll toggle; debugging staple absent from library.
-- [~] (builder-2) Comment Thread — nested reply chain with avatars, timestamps, reactions, and a composer footer; distinct from flat chat-bubbles.
-- [ ] Mention Textarea — composer with @-mention autocomplete popover and inline highlighted tokens; distinct from tag-input and plain textareas.
-- [ ] Rich Text Toolbar — WYSIWYG formatting bar (bold/italic/list/link/heading dropdown) with active-state buttons; pairs with editors, not covered by toolbar.
-- [ ] Heatmap Calendar — GitHub-style contribution grid with intensity buckets, month labels, and cell tooltips; distinct from charts and calendar.
-- [ ] Funnel Chart — stepped conversion visualization with per-stage counts, drop-off percentages, and labels; analytics pattern not in charts set.
+- [x] (builder-8) Log Viewer — monospace log stream, toggleable INFO/WARN/ERROR/DEBUG filter chips, auto-scroll toggle (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark
+- [x] (builder-2) Comment Thread — nested top-level comment + reply with indent rail, avatars, timestamps, like count, Reply affordance, and a controlled composer footer (disabled submit when empty), light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components
+- [x] (builder-8) Mention Textarea — composer with @-mention autocomplete popover, inserts mention token at trigger position (tsx light+dark, html light+dark showing open popover, registry.json, MDX); screenshot verified light+dark
+- [x] (builder-2) Rich Text Toolbar — heading select + toggled bold/italic/underline + list buttons + link action, real aria-pressed state, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components
+- [x] (builder-4) Heatmap Calendar — GitHub-style 20-week, 5-level contribution grid with month/weekday labels and Less–More legend, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-4-components
+- [x] (builder-8) Funnel Chart — 4-stage conversion funnel with computed drop-off percentages (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark
 - [x] (builder-6) Map Marker Popup — 2 variants (place card with photo+rating+directions, compact locker/drop-off pin popup), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
-- [~] (builder-7) Cookie Consent Banner — bottom sheet with accept/reject/customize actions and category toggles; compliance staple distinct from announcement-banner.
-- [~] (builder-3) Feature Comparison Matrix — sticky-header table comparing plans/products across feature rows with check/dash/limit cells; distinct from pricing table and tables.
-- [ ] Import Wizard — multi-step upload → column-map → preview flow with mapping dropdowns; distinct from stepper-wizard (data-import specific) and file-uploaders.
-- [ ] API Key Manager — table of keys with masked values, reveal/copy, scopes badges, last-used, and revoke; distinct from copy-field (management surface).
-- [ ] Two-Factor Setup — QR + secret display with segmented code entry and recovery-codes reveal; security-onboarding pattern not covered.
+- [x] (builder-7) Cookie Consent Banner — 2 variants (consent banner w/ accept-all/reject/customize, expanded preferences panel w/ per-category toggles), light+dark, registry+tsx+MDX, screenshot verified, committed (also regenerated public/component.css for missing peer-checked:start-6 utility; fixed a toggle-thumb sizing bug found during screenshot review)
+- [x] (builder-3) Feature Comparison Matrix — sticky feature column, highlighted "Popular" plan, boolean check/dash cells + value cells for limits, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-3-components
+- [x] (builder-9) Import Wizard — 2 variants (map columns step, review step) light+dark, registry.json, MDX entry, screenshots
+- [x] (builder-3) API Key Manager — masked-value table with reveal/copy icon buttons, scope badges, last-used column, per-row revoke action, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-3-components
+- [x] (builder-5) Two-Factor Setup — 3-step flow (QR+secret w/ copy, 6-digit OTP entry, recovery codes grid w/ download+copy), light+dark, registry+tsx+MDX, screenshot verified, committed
 - [x] (builder-6) Usage Meter Card — 2 variants (healthy usage emerald fill, near-limit red threshold shift with upgrade CTA), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
 - [x] (builder-10) Diff Stat Bar — 2 variants (single-file summary bar, multi-file list with per-row bars + totals), light+dark, registry+tsx generated, screenshots verified
-- [ ] Presence Cursor Layer — live multiplayer cursors with name labels and selection highlights over a canvas; collaboration primitive absent from library.
-- [~] (builder-10) Rating Distribution — horizontal bar breakdown of 5→1 star counts with percentages and average summary; distinct from rating input (aggregate view).
+- [x] (builder-2) Presence Cursor Layer — 3 named colored cursors over a shared canvas, one with active selection box, sr-only status region listing collaborators, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components (also regenerated public/component.css for missing bg-pink-*/bg-emerald-* utilities)
+- [x] (builder-10) Rating Distribution — 2 variants (average score + percentage bars, compact bars w/ review counts), light+dark, registry+tsx generated, screenshots verified
+- [~] (builder-2) Team Members List — row-based user management list with avatar, name/email, role select per row, pending-invite state, and remove action; distinct from generic details-list (role/membership semantics, not arbitrary structured data).
+
+<!-- === WAVE 2 (builders back on, post-102) — 24 new application/dashboard-grade ideas, verified non-dupe against registry === -->
+- [ ] Data Grid Cell Editor — spreadsheet-style editable table cell with inline input, keyboard arrow navigation, and dirty-cell highlight; distinct from DataTable (edit surface).
+- [ ] Column Visibility Menu — dropdown of toggleable table columns with show/hide checkboxes and reorder handles; companion control for data tables.
+- [ ] Saved Views Bar — tab-like row of named filter/sort presets with add/rename/star affordances; distinct from tabs (persisted query state).
+- [ ] Query Builder — visual AND/OR condition group builder with field/operator/value rows and nesting; power-filter UI absent from library.
+- [ ] Faceted Search Sidebar — collapsible filter groups with counts, checkboxes, and range facets; e-commerce/search staple distinct from data-filter-bar.
+- [ ] Rich Tooltip Chart — hover tooltip card showing series color swatches, values, and delta for a chart datapoint; pairs with charts.
+- [ ] Progress Ring Cluster — grouped radial progress dials with center labels for multi-metric dashboards; distinct from progress-bars (radial, grouped).
+- [ ] Sankey Flow Diagram — node-and-flow visualization for conversion/traffic routing with weighted links; distinct from funnel-chart.
+- [ ] Org Chart — hierarchical node tree with avatar cards and connector lines; distinct from tree-view (person/reporting semantics).
+- [ ] Wizard Progress Rail — vertical stepper with per-step status, descriptions, and click-to-jump; distinct from stepper-wizard (nav rail, not form shell).
+- [ ] Slide-Over Form — right-edge panel with scrollable form body and sticky footer actions; distinct from drawer (form-specialized layout).
+- [~] (builder-7) Confirmation Input — destructive dialog requiring the user to type a phrase to enable the confirm button; distinct from AlertDialog.
+- [ ] Field Array Editor — repeatable add/remove form-row group with drag reorder for lists of inputs; common form pattern absent from library.
+- [ ] Currency Input — masked money field with symbol prefix, thousands grouping, and locale/currency selector; distinct from inputs.
+- [ ] Phone Number Input — country-code flag dropdown + formatted national number field; distinct from inputs.
+- [~] (builder-6) Time Picker — hour/minute/period spinner or list dropdown; complements date-range-picker, absent from library.
+- [ ] Duration Input — segmented Xh Ym entry for timers/estimates; distinct from time picker (elapsed, not clock).
+- [ ] Slider Range Histogram — dual-thumb range slider over a value histogram for price/date filtering; distinct from range-inputs and timeline-scrubber.
+- [ ] Toast Action Undo — snackbar with a countdown ring and inline Undo action for reversible operations; distinct from toast-stack (single actionable pattern).
+- [ ] Status Page Board — grouped service list with operational/degraded/outage pills and uptime bars; distinct from stats and activity-feed.
+- [ ] Changelog Entry — dated release card with version badge, category tags, and grouped bullet lists; distinct from timelines and activity-feed.
+- [ ] Quota Warning Banner — inline threshold-crossing alert with usage bar and upgrade CTA; distinct from usage-meter (alerting) and announcement-banner.
+- [ ] Split Pane Diff — side-by-side scroll-synced two-column layout for comparing documents; distinct from diff (framework/layout, not line rendering).
+- [ ] Emoji / Reaction Picker — searchable grid popover with category tabs and recents; pairs with comment-thread, absent from library.
