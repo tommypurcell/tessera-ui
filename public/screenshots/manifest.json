@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 758,
+  "screenshotCount": 762,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -305,6 +305,46 @@
       "sourceSha256": "5f0c7bfe68ffd283d0b2884916f9e4568d3b8a7212bef7b1c21db50441ec2022",
       "url": "/screenshots/components/application-breadcrumbs/breadcrumbs-5-dark.jpg",
       "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-bulk-action-bar",
+      "variantId": "bulk-action-bar-1",
+      "appearance": "light",
+      "sourcePath": "files/application-bulk-action-bar/bulk-action-bar-1.html",
+      "sourceSha256": "6e6b46d0b5b8abf93e6418d793cff691adbf41de2302a805c9b7769fd7ceb8d6",
+      "url": "/screenshots/components/application-bulk-action-bar/bulk-action-bar-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-bulk-action-bar",
+      "variantId": "bulk-action-bar-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-bulk-action-bar/bulk-action-bar-1-dark.html",
+      "sourceSha256": "2364e245800db7e960d05fe855ff17320133c78ea01383902b8781809cb9e60b",
+      "url": "/screenshots/components/application-bulk-action-bar/bulk-action-bar-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-bulk-action-bar",
+      "variantId": "bulk-action-bar-2",
+      "appearance": "light",
+      "sourcePath": "files/application-bulk-action-bar/bulk-action-bar-2.html",
+      "sourceSha256": "9982d93a3011205130ad491b9ee6a49595c73bb9d47b946d319a66197f95488d",
+      "url": "/screenshots/components/application-bulk-action-bar/bulk-action-bar-2.jpg",
+      "width": 672,
+      "height": 400
+    },
+    {
+      "componentId": "application-bulk-action-bar",
+      "variantId": "bulk-action-bar-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-bulk-action-bar/bulk-action-bar-2-dark.html",
+      "sourceSha256": "b1b5689fc10e54469bdf7e0dfecf93867f236a4605db5f98281008ecfb4eb3ed",
+      "url": "/screenshots/components/application-bulk-action-bar/bulk-action-bar-2-dark.jpg",
+      "width": 672,
       "height": 400
     },
     {
