@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-folder-label-sidebar",
+  "title": "Folder / Label Sidebar",
+  "description": "Mail sidebar listing system folders (Inbox with an unread-count badge, Sent, Drafts, Archive) followed by a Labels group of colored, dot-marked labels.",
+  "category": "application/navigation",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["email", "mail", "folders", "labels", "navigation"],
+  "useWhen": [
+    "An email or messaging client needs a persistent sidebar to switch between system folders and user labels.",
+    "The active folder needs an unread count that's visually distinct from a decorative badge (Inbox's emphasized pill vs. Drafts' plain number).",
+    "Labels are user-defined and color-coded, distinct from the fixed system folder list above them."
+  ],
+  "avoidWhen": [
+    "There's no folder/label concept — use settings-nav-list or side-menu for a general app sidebar instead.",
+    "You need nested/hierarchical labels — extend this with indented sub-items rather than a flat list.",
+    "The folder list is so long it needs its own search/filter — pair this with sidebar-search-filter above the list."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The sidebar is a fixed w-56 column intended for a persistent mail-client rail; collapse or hide it below your chosen mobile breakpoint.",
+  "accessibility": [
+    "The active folder carries aria-current=\"page\", the correct token for identifying the current page in a navigation list.",
+    "The Inbox unread count uses a filled pill for visual emphasis, while less urgent counts (Drafts) use plain muted text — both remain real visible numbers, not color-only cues.",
+    "Label color dots are aria-hidden since the label's visible text name carries the same identifying information."
+  ],
+  "compatibleWith": ["application-settings-nav-list", "application-email-list-row", "application-sidebar-search-filter"],
+  "variants": [
+    {
+      "id": "folder-label-sidebar-1",
+      "title": "Folder / label sidebar",
+      "description": "Four system folders (Inbox active with a 12-count badge, Sent, Drafts, Archive) plus three colored labels (Work, Personal, Urgent).",
+      "source": {
+        "html": "../../../../public/examples/application/folder-label-sidebar/1.html",
+        "tsx": "tsx/FolderLabelSidebarVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "active"],
+      "accessibility": [
+        "Active-folder styling uses both background fill and font weight, not color alone."
+      ]
+    },
+    {
+      "id": "folder-label-sidebar-1-dark",
+      "title": "Folder / label sidebar (Dark)",
+      "description": "Folder/label sidebar adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/folder-label-sidebar/1-dark.html",
+        "tsx": "tsx/FolderLabelSidebarVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "active"],
+      "accessibility": [
+        "Active background, count badge, and label-dot colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
