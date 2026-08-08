@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-donation-progress",
+  "title": "Donation Progress Card",
+  "description": "Fundraiser cards showing amount raised versus a goal, a donor count with avatars, and a donate call to action.",
+  "category": "application/donation-progress",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "donation-progress",
+    "donation",
+    "fundraiser",
+    "progress",
+    "nonprofit"
+  ],
+  "useWhen": [
+    "Fundraiser cards showing amount raised versus a goal, a donor count with avatars, and a donate call to action."
+  ],
+  "avoidWhen": [
+    "Avoid donation progress card when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Donation Progress Card uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Provide meaningful alternative text for informative images and empty alt text for decorative images.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "donation-progress-1",
+      "title": "Campaign card",
+      "description": "Campaign card Fundraiser cards showing amount raised versus a goal, a donor count with avatars, and a donate call to action.",
+      "source": {
+        "html": "../../../../public/examples/application/donation-progress/1.html",
+        "tsx": "tsx/DonationProgressVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "donation-progress-1-dark",
+      "title": "Campaign card (Dark)",
+      "description": "Campaign card Fundraiser cards showing amount raised versus a goal, a donor count with avatars, and a donate call to action.",
+      "source": {
+        "html": "../../../../public/examples/application/donation-progress/1-dark.html",
+        "tsx": "tsx/DonationProgressVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "donation-progress-2",
+      "title": "Compact row",
+      "description": "Compact row Fundraiser cards showing amount raised versus a goal, a donor count with avatars, and a donate call to action.",
+      "source": {
+        "html": "../../../../public/examples/application/donation-progress/2.html",
+        "tsx": "tsx/DonationProgressVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "donation-progress-2-dark",
+      "title": "Compact row (Dark)",
+      "description": "Compact row Fundraiser cards showing amount raised versus a goal, a donor count with avatars, and a donate call to action.",
+      "source": {
+        "html": "../../../../public/examples/application/donation-progress/2-dark.html",
+        "tsx": "tsx/DonationProgressVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    }
+  ]
+}
