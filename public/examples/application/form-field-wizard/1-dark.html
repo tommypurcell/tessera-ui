@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex min-h-96 items-center justify-center bg-gray-950 p-6">
+    <div class="w-full max-w-lg rounded-lg border border-gray-700 bg-gray-900 shadow-sm">
+      <div class="border-b border-gray-700 p-5">
+        <p class="text-xs font-medium uppercase tracking-wide text-gray-500">Form DS-11 &middot; Passport Application</p>
+        <div class="mt-2 flex items-center justify-between">
+          <h2 class="text-base font-semibold text-white">Application sections</h2>
+          <span class="text-xs font-medium text-gray-400">3 of 5 complete</span>
+        </div>
+        <div class="mt-2 h-1.5 w-full rounded-full bg-gray-800">
+          <div class="h-full w-3/5 rounded-full bg-white"></div>
+        </div>
+      </div>
+
+      <ul class="divide-y divide-gray-800">
+        <li>
+          <button type="button" class="flex w-full items-center justify-between px-5 py-3.5 text-left hover:bg-white/5">
+            <div class="flex items-center gap-3">
+              <span class="flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-white">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-3.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                </svg>
+              </span>
+              <span class="text-sm font-medium text-white">Personal information</span>
+            </div>
+            <span class="text-xs text-gray-500">Complete</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="flex w-full items-center justify-between px-5 py-3.5 text-left hover:bg-white/5">
+            <div class="flex items-center gap-3">
+              <span class="flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-white">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-3.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                </svg>
+              </span>
+              <span class="text-sm font-medium text-white">Contact details</span>
+            </div>
+            <span class="text-xs text-gray-500">Complete</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" aria-current="true" class="flex w-full items-center justify-between bg-white/5 px-5 py-3.5 text-left ring-1 ring-inset ring-gray-100">
+            <div class="flex items-center gap-3">
+              <span class="flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-white">
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-3.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                </svg>
+              </span>
+              <span class="text-sm font-semibold text-white">Travel history</span>
+            </div>
+            <span class="text-xs font-medium text-white">Editing</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="flex w-full items-center justify-between px-5 py-3.5 text-left hover:bg-white/5">
+            <div class="flex items-center gap-3">
+              <span class="flex size-6 shrink-0 items-center justify-center rounded-full border-2 border-gray-600 text-xs font-medium text-gray-500">4</span>
+              <span class="text-sm font-medium text-gray-400">Supporting documents</span>
+            </div>
+            <span class="text-xs text-gray-500">Not started</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="flex w-full items-center justify-between px-5 py-3.5 text-left hover:bg-white/5">
+            <div class="flex items-center gap-3">
+              <span class="flex size-6 shrink-0 items-center justify-center rounded-full border-2 border-gray-600 text-xs font-medium text-gray-500">5</span>
+              <span class="text-sm font-medium text-gray-400">Review &amp; sign</span>
+            </div>
+            <span class="text-xs text-gray-500">Not started</span>
+          </button>
+        </li>
+      </ul>
+
+      <div class="flex items-center justify-between border-t border-gray-700 p-4">
+        <button type="button" class="text-sm font-medium text-gray-400 hover:text-gray-200">Save &amp; continue later</button>
+        <button type="button" class="rounded-md bg-white px-3 py-1.5 text-sm font-medium text-gray-900 shadow-sm hover:bg-gray-200">Continue editing</button>
+      </div>
+    </div>
+  </body>
+</html>
