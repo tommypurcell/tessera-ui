@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-candidate-pipeline-stage",
+  "title": "Candidate Pipeline Stage",
+  "description": "A single hiring-stage column with a candidate count badge, holding applicant cards that show avatar, role, source tag, and interview rating.",
+  "category": "application/candidate-pipeline-stage",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "candidate-pipeline-stage",
+    "recruiting",
+    "ats",
+    "hiring pipeline",
+    "candidates",
+    "kanban"
+  ],
+  "useWhen": [
+    "Building an applicant tracking system (ATS) board where candidates move through hiring stages (Applied, Interview, Offer, Hired).",
+    "Each candidate card needs a role, sourcing channel, and (once interviewed) a rating, distinct from generic deal or task cards."
+  ],
+  "avoidWhen": [
+    "The board is a sales/deal pipeline, not recruiting — use `Deal Pipeline Stage` for that domain's card fields (value, close date) instead.",
+    "You only need a single flat candidate list without stage grouping — a plain `details-list` or table communicates that more directly."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The stage column keeps a fixed width with an internally scrollable card list; multiple stage columns should sit side by side in a horizontally scrollable board container.",
+  "accessibility": [
+    "The stage header pairs a color dot with a text label (\"Interview\") and a numeric count badge, none of which is color-only information.",
+    "Each candidate card's source tag (Referral, LinkedIn, Applied) is rendered as text, not an icon-only badge.",
+    "The star rating is paired with a numeric value (e.g. \"4.8\") as text, not conveyed by star count alone."
+  ],
+  "compatibleWith": ["application-board-swimlane", "application-avatar"],
+  "variants": [
+    {
+      "id": "candidate-pipeline-stage-1",
+      "title": "Interview stage",
+      "description": "An 'Interview' hiring-stage column (count badge: 4) with three candidate cards showing avatar, name, role, source tag, and a star rating for two already-interviewed candidates.",
+      "source": {
+        "html": "../../../../public/examples/application/candidate-pipeline-stage/1.html",
+        "tsx": "tsx/CandidatePipelineStageVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Source tags and ratings are all rendered as text, not icon-only."
+      ]
+    },
+    {
+      "id": "candidate-pipeline-stage-1-dark",
+      "title": "Interview stage (Dark)",
+      "description": "Candidate pipeline stage adapted for dark surfaces, including card borders, tag backgrounds, and rating star color.",
+      "source": {
+        "html": "../../../../public/examples/application/candidate-pipeline-stage/1-dark.html",
+        "tsx": "tsx/CandidatePipelineStageVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Card text, tags, and ratings all meet WCAG AA contrast against the dark stage background."
+      ]
+    }
+  ]
+}
