@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-3xl p-6">
+    <div role="group" aria-label="Coverage plan options" class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+      <div class="rounded-xl border border-gray-800 bg-gray-950 p-5 shadow-sm">
+        <p class="text-sm font-semibold text-white">Basic</p>
+        <p class="mt-1 text-2xl font-semibold text-white">$42<span class="text-sm font-normal text-gray-500">/mo</span></p>
+        <dl class="mt-4 flex flex-col gap-2.5 text-sm">
+          <div class="flex items-center justify-between">
+            <dt class="text-gray-400">Deductible</dt>
+            <dd class="font-medium text-white">$2,500</dd>
+          </div>
+          <div class="flex items-center justify-between">
+            <dt class="text-gray-400">Premium</dt>
+            <dd class="font-medium text-white">$42/mo</dd>
+          </div>
+          <div class="flex items-center justify-between">
+            <dt class="text-gray-400">Coverage max</dt>
+            <dd class="font-medium text-white">$50,000</dd>
+          </div>
+        </dl>
+        <button type="button" class="mt-5 w-full rounded-md border border-gray-700 bg-gray-950 py-2 text-sm font-semibold text-gray-200 hover:bg-gray-900">
+          Select Basic
+        </button>
+      </div>
+
+      <div class="relative rounded-xl border-2 border-blue-500 bg-gray-950 p-5 shadow-sm">
+        <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-blue-500 px-2.5 py-0.5 text-xs font-medium text-gray-950">Best value</span>
+        <p class="text-sm font-semibold text-white">Standard</p>
+        <p class="mt-1 text-2xl font-semibold text-white">$78<span class="text-sm font-normal text-gray-500">/mo</span></p>
+        <dl class="mt-4 flex flex-col gap-2.5 text-sm">
+          <div class="flex items-center justify-between">
+            <dt class="text-gray-400">Deductible</dt>
+            <dd class="font-medium text-white">$1,000</dd>
+          </div>
+          <div class="flex items-center justify-between">
+            <dt class="text-gray-400">Premium</dt>
+            <dd class="font-medium text-white">$78/mo</dd>
+          </div>
+          <div class="flex items-center justify-between">
+            <dt class="text-gray-400">Coverage max</dt>
+            <dd class="font-medium text-white">$150,000</dd>
+          </div>
+        </dl>
+        <button type="button" class="mt-5 w-full rounded-md bg-blue-600 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500">
+          Select Standard
+        </button>
+      </div>
+
+      <div class="rounded-xl border border-gray-800 bg-gray-950 p-5 shadow-sm">
+        <p class="text-sm font-semibold text-white">Premium</p>
+        <p class="mt-1 text-2xl font-semibold text-white">$135<span class="text-sm font-normal text-gray-500">/mo</span></p>
+        <dl class="mt-4 flex flex-col gap-2.5 text-sm">
+          <div class="flex items-center justify-between">
+            <dt class="text-gray-400">Deductible</dt>
+            <dd class="font-medium text-white">$250</dd>
+          </div>
+          <div class="flex items-center justify-between">
+            <dt class="text-gray-400">Premium</dt>
+            <dd class="font-medium text-white">$135/mo</dd>
+          </div>
+          <div class="flex items-center justify-between">
+            <dt class="text-gray-400">Coverage max</dt>
+            <dd class="font-medium text-white">Unlimited</dd>
+          </div>
+        </dl>
+        <button type="button" class="mt-5 w-full rounded-md border border-gray-700 bg-gray-950 py-2 text-sm font-semibold text-gray-200 hover:bg-gray-900">
+          Select Premium
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
