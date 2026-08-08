@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-live-stream-badge",
+  "title": "Live Stream Badge",
+  "description": "Pulsing LIVE indicators with concurrent-viewer counts as a thumbnail overlay or a standalone header badge for streaming interfaces.",
+  "category": "application/live-stream-badge",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "live-stream-badge",
+    "live",
+    "stream",
+    "badge",
+    "viewers"
+  ],
+  "useWhen": [
+    "Pulsing LIVE indicators with concurrent-viewer counts as a thumbnail overlay or a standalone header badge for streaming interfaces."
+  ],
+  "avoidWhen": [
+    "Avoid live stream badge when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Live Stream Badge uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Provide meaningful alternative text for informative images and empty alt text for decorative images.",
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "live-stream-badge-1",
+      "title": "Thumbnail overlay",
+      "description": "Thumbnail overlay Pulsing LIVE indicators with concurrent-viewer counts as a thumbnail overlay or a standalone header badge for streaming interfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/live-stream-badge/1.html",
+        "tsx": "tsx/LiveStreamBadgeVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "live-stream-badge-1-dark",
+      "title": "Thumbnail overlay (Dark)",
+      "description": "Thumbnail overlay Pulsing LIVE indicators with concurrent-viewer counts as a thumbnail overlay or a standalone header badge for streaming interfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/live-stream-badge/1-dark.html",
+        "tsx": "tsx/LiveStreamBadgeVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "live-stream-badge-2",
+      "title": "Header badge",
+      "description": "Header badge Pulsing LIVE indicators with concurrent-viewer counts as a thumbnail overlay or a standalone header badge for streaming interfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/live-stream-badge/2.html",
+        "tsx": "tsx/LiveStreamBadgeVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "live-stream-badge-2-dark",
+      "title": "Header badge (Dark)",
+      "description": "Header badge Pulsing LIVE indicators with concurrent-viewer counts as a thumbnail overlay or a standalone header badge for streaming interfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/live-stream-badge/2-dark.html",
+        "tsx": "tsx/LiveStreamBadgeVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

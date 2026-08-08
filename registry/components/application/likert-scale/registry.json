@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-likert-scale",
+  "title": "Likert Scale Row",
+  "description": "Labeled agree-to-disagree radio scale rows for a single question or a multi-row survey table with column headers.",
+  "category": "application/likert-scale",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "likert-scale",
+    "likert",
+    "survey",
+    "scale",
+    "radio"
+  ],
+  "useWhen": [
+    "Labeled agree-to-disagree radio scale rows for a single question or a multi-row survey table with column headers."
+  ],
+  "avoidWhen": [
+    "Avoid likert scale row when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Likert Scale Row uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Associate each form field with a visible or programmatic label before production use.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "likert-scale-1",
+      "title": "Single question",
+      "description": "Single question Labeled agree-to-disagree radio scale rows for a single question or a multi-row survey table with column headers.",
+      "source": {
+        "html": "../../../../public/examples/application/likert-scale/1.html",
+        "tsx": "tsx/LikertScaleVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "likert-scale-1-dark",
+      "title": "Single question (Dark)",
+      "description": "Single question Labeled agree-to-disagree radio scale rows for a single question or a multi-row survey table with column headers.",
+      "source": {
+        "html": "../../../../public/examples/application/likert-scale/1-dark.html",
+        "tsx": "tsx/LikertScaleVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "likert-scale-2",
+      "title": "Survey table",
+      "description": "Survey table Labeled agree-to-disagree radio scale rows for a single question or a multi-row survey table with column headers.",
+      "source": {
+        "html": "../../../../public/examples/application/likert-scale/2.html",
+        "tsx": "tsx/LikertScaleVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "likert-scale-2-dark",
+      "title": "Survey table (Dark)",
+      "description": "Survey table Labeled agree-to-disagree radio scale rows for a single question or a multi-row survey table with column headers.",
+      "source": {
+        "html": "../../../../public/examples/application/likert-scale/2-dark.html",
+        "tsx": "tsx/LikertScaleVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    }
+  ]
+}
