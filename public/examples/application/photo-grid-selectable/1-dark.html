@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-md p-6">
+    <div id="grid-1-dark">
+      <div class="js-bar hidden items-center justify-between rounded-lg bg-gray-100 px-3 py-2 text-sm text-gray-900">
+        <span class="js-count-out font-medium">0 selected</span>
+        <button type="button" class="js-clear text-xs font-medium text-gray-600 hover:text-gray-900">Clear</button>
+      </div>
+
+      <ul class="mt-2 grid grid-cols-3 gap-1.5">
+        <li class="js-tile relative aspect-square cursor-pointer overflow-hidden rounded-md bg-gradient-to-br from-rose-400 to-orange-400" role="button" tabindex="0" aria-pressed="false" aria-label="Select photo 1">
+          <span class="js-check absolute top-1.5 right-1.5 hidden size-5 items-center justify-center rounded-full bg-blue-500 text-white">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+          </span>
+        </li>
+        <li class="js-tile relative aspect-square cursor-pointer overflow-hidden rounded-md bg-gradient-to-br from-sky-400 to-indigo-400" role="button" tabindex="0" aria-pressed="false" aria-label="Select photo 2">
+          <span class="js-check absolute top-1.5 right-1.5 hidden size-5 items-center justify-center rounded-full bg-blue-500 text-white">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+          </span>
+        </li>
+        <li class="js-tile relative aspect-square cursor-pointer overflow-hidden rounded-md bg-gradient-to-br from-emerald-400 to-teal-400" role="button" tabindex="0" aria-pressed="false" aria-label="Select photo 3">
+          <span class="js-check absolute top-1.5 right-1.5 hidden size-5 items-center justify-center rounded-full bg-blue-500 text-white">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+          </span>
+        </li>
+        <li class="js-tile relative aspect-square cursor-pointer overflow-hidden rounded-md bg-gradient-to-br from-amber-400 to-yellow-300" role="button" tabindex="0" aria-pressed="false" aria-label="Select photo 4">
+          <span class="js-check absolute top-1.5 right-1.5 hidden size-5 items-center justify-center rounded-full bg-blue-500 text-white">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+          </span>
+        </li>
+        <li class="js-tile relative aspect-square cursor-pointer overflow-hidden rounded-md bg-gradient-to-br from-fuchsia-400 to-pink-400" role="button" tabindex="0" aria-pressed="false" aria-label="Select photo 5">
+          <span class="js-check absolute top-1.5 right-1.5 hidden size-5 items-center justify-center rounded-full bg-blue-500 text-white">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+          </span>
+        </li>
+        <li class="js-tile relative aspect-square cursor-pointer overflow-hidden rounded-md bg-gradient-to-br from-lime-400 to-emerald-500" role="button" tabindex="0" aria-pressed="false" aria-label="Select photo 6">
+          <span class="js-check absolute top-1.5 right-1.5 hidden size-5 items-center justify-center rounded-full bg-blue-500 text-white">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+            </svg>
+          </span>
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      ;(function () {
+        var root = document.getElementById('grid-1-dark')
+        var tiles = root.querySelectorAll('.js-tile')
+        var bar = root.querySelector('.js-bar')
+        var countOut = root.querySelector('.js-count-out')
+        var clearBtn = root.querySelector('.js-clear')
+        var selected = new Set()
+
+        function render() {
+          countOut.textContent = selected.size + ' selected'
+          bar.classList.toggle('hidden', selected.size === 0)
+          bar.classList.toggle('flex', selected.size > 0)
+        }
+
+        function toggleTile(tile) {
+          var isSelected = selected.has(tile)
+          if (isSelected) {
+            selected.delete(tile)
+          } else {
+            selected.add(tile)
+          }
+          tile.setAttribute('aria-pressed', String(!isSelected))
+          tile.classList.toggle('ring-2', !isSelected)
+          tile.classList.toggle('ring-blue-500', !isSelected)
+          tile.classList.toggle('ring-offset-2', !isSelected)
+          tile.classList.toggle('ring-offset-gray-950', !isSelected)
+          var check = tile.querySelector('.js-check')
+          check.classList.toggle('hidden', isSelected)
+          check.classList.toggle('flex', !isSelected)
+          render()
+        }
+
+        tiles.forEach(function (tile) {
+          tile.addEventListener('click', function () {
+            toggleTile(tile)
+          })
+          tile.addEventListener('keydown', function (event) {
+            if (event.key === 'Enter' || event.key === ' ') {
+              event.preventDefault()
+              toggleTile(tile)
+            }
+          })
+        })
+
+        clearBtn.addEventListener('click', function () {
+          selected.forEach(function (tile) {
+            tile.setAttribute('aria-pressed', 'false')
+            tile.classList.remove('ring-2', 'ring-blue-500', 'ring-offset-2', 'ring-offset-gray-950')
+            var check = tile.querySelector('.js-check')
+            check.classList.add('hidden')
+            check.classList.remove('flex')
+          })
+          selected.clear()
+          render()
+        })
+
+        render()
+      })()
+    </script>
+  </body>
+</html>

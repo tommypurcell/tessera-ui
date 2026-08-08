@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-photo-grid-selectable",
+  "title": "Photo Grid Selectable",
+  "description": "Multi-select photo grid where a count bar appears only when at least one photo is selected, with the count and Clear action derived from the same real selection set.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["photos", "gallery", "selection", "grid"],
+  "useWhen": [
+    "Letting a user multi-select photos for a bulk action (delete, share, add to album) from a dense grid.",
+    "The selection count and a Clear-selection action should stay in sync with which tiles are actually checked.",
+    "Photos are browsed in a grid rather than viewed one at a time in a lightbox."
+  ],
+  "avoidWhen": [
+    "You need a full-screen single-photo viewer with next/prev navigation — use `image-gallery-lightbox` for that viewing pattern instead.",
+    "Only a single photo can ever be selected — a simpler radio-style grid is enough.",
+    "There's no bulk action to take on the selection — a plain (non-selectable) grid is enough."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Fixed-width grid (max-w-md) at a 3-column layout; tiles stay square via aspect-square regardless of container width.",
+  "accessibility": [
+    "Each tile is a real role=\"button\" with aria-pressed reflecting selection state and a descriptive aria-label, and is keyboard-operable via Enter/Space.",
+    "Selection is conveyed by both a checkmark badge and a ring outline together, never by a subtle color change alone.",
+    "The count bar and its Clear action only render when the underlying selection set is non-empty, so they can never show a stale count."
+  ],
+  "compatibleWith": ["application-image-gallery-lightbox", "application-avatar-uploader"],
+  "variants": [
+    {
+      "id": "photo-grid-selectable-1",
+      "title": "Photo Grid Selectable",
+      "description": "6-photo grid (gradient placeholders) with a count bar that appears once a photo is selected and a working Clear action.",
+      "source": {
+        "html": "../../../../public/examples/application/photo-grid-selectable/1.html",
+        "tsx": "tsx/PhotoGridSelectableVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "Count bar visibility, selected count, and per-tile checkmark/ring are all derived from the same selection set, verified interactively."
+      ]
+    },
+    {
+      "id": "photo-grid-selectable-1-dark",
+      "title": "Photo Grid Selectable (Dark)",
+      "description": "Photo grid selectable adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/photo-grid-selectable/1-dark.html",
+        "tsx": "tsx/PhotoGridSelectableVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "Count bar and ring colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}
