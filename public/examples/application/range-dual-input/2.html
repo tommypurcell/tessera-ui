@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex min-h-64 items-center justify-center p-6">
+    <div class="w-full max-w-xs">
+      <span class="mb-1.5 block text-sm font-medium text-gray-700">Price range</span>
+      <div class="flex items-center gap-2">
+        <label class="flex-1">
+          <span class="sr-only">Minimum price</span>
+          <div class="flex items-center rounded-md border border-red-500 bg-white shadow-sm ring-1 ring-red-500">
+            <span aria-hidden="true" class="pl-3 text-sm text-gray-400">$</span>
+            <input
+              type="number"
+              inputmode="numeric"
+              value="200"
+              min="0"
+              aria-invalid="true"
+              aria-describedby="range-dual-error"
+              class="h-10 w-full border-0 bg-transparent px-2 text-sm text-gray-900 focus:outline-none focus:ring-0"
+            />
+          </div>
+        </label>
+
+        <span aria-hidden="true" class="text-sm text-gray-400">–</span>
+
+        <label class="flex-1">
+          <span class="sr-only">Maximum price</span>
+          <div class="flex items-center rounded-md border border-red-500 bg-white shadow-sm ring-1 ring-red-500">
+            <span aria-hidden="true" class="pl-3 text-sm text-gray-400">$</span>
+            <input
+              type="number"
+              inputmode="numeric"
+              value="150"
+              min="0"
+              aria-invalid="true"
+              aria-describedby="range-dual-error"
+              class="h-10 w-full border-0 bg-transparent px-2 text-sm text-gray-900 focus:outline-none focus:ring-0"
+            />
+          </div>
+        </label>
+      </div>
+      <p id="range-dual-error" role="alert" class="mt-1.5 text-xs text-red-600">Minimum must be less than maximum.</p>
+    </div>
+  </body>
+</html>

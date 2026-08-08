@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex min-h-64 items-center justify-center p-6">
+    <div class="w-full max-w-xs">
+      <span class="mb-1.5 block text-sm font-medium text-gray-200">Price range</span>
+      <div class="flex items-center gap-2">
+        <label class="flex-1">
+          <span class="sr-only">Minimum price</span>
+          <div class="flex items-center rounded-md border border-gray-600 bg-gray-900 shadow-sm focus-within:border-gray-400 focus-within:ring-1 focus-within:ring-gray-400">
+            <span aria-hidden="true" class="pl-3 text-sm text-gray-500">$</span>
+            <input
+              type="number"
+              inputmode="numeric"
+              value="25"
+              min="0"
+              class="h-10 w-full border-0 bg-transparent px-2 text-sm text-white focus:outline-none focus:ring-0"
+            />
+          </div>
+        </label>
+
+        <span aria-hidden="true" class="text-sm text-gray-500">–</span>
+
+        <label class="flex-1">
+          <span class="sr-only">Maximum price</span>
+          <div class="flex items-center rounded-md border border-gray-600 bg-gray-900 shadow-sm focus-within:border-gray-400 focus-within:ring-1 focus-within:ring-gray-400">
+            <span aria-hidden="true" class="pl-3 text-sm text-gray-500">$</span>
+            <input
+              type="number"
+              inputmode="numeric"
+              value="150"
+              min="0"
+              class="h-10 w-full border-0 bg-transparent px-2 text-sm text-white focus:outline-none focus:ring-0"
+            />
+          </div>
+        </label>
+      </div>
+    </div>
+  </body>
+</html>
