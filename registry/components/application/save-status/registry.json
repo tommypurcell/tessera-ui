@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "name": "application-save-status",
+  "title": "Save Status Indicator",
+  "description": "Auto-updating inline status text for autosave flows, cycling between a saving spinner, a saved checkmark, and a failed state with a retry action.",
+  "category": "application/feedback",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["autosave", "status", "saving", "saved", "feedback", "indicator"],
+  "useWhen": [
+    "The app autosaves changes in the background and users need a lightweight, glanceable confirmation.",
+    "You want to communicate save state without an intrusive toast for every successful save.",
+    "A save can fail and the user needs an inline way to retry without losing their place."
+  ],
+  "avoidWhen": [
+    "Saves are explicit (a Save button with a page navigation or confirmation) — a toast or button loading state fits better than a persistent indicator.",
+    "The save operation is rare or high-stakes enough that a toast confirmation is more appropriate than an easily-missed inline text.",
+    "You need to show progress percentage, not just a binary saving/saved/failed state — use a progress bar instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The indicator is an inline-sized flex row that wraps naturally inside toolbars, headers, or form footers at any width.",
+  "accessibility": [
+    "Each state is wrapped in role=\"status\" so assistive tech announces the change without requiring focus.",
+    "The failed state's retry action is a real button, not a link styled to look clickable, so it's keyboard-operable.",
+    "State is communicated through icon shape and text together, not through color alone."
+  ],
+  "compatibleWith": ["application-toasts", "application-form-row", "application-inline-edit-field"],
+  "variants": [
+    {
+      "id": "save-status-1",
+      "title": "Saving",
+      "description": "In-progress state with a spinning icon and 'Saving…' text.",
+      "source": {
+        "html": "../../../../public/examples/application/save-status/1.html",
+        "tsx": "tsx/SaveStatusVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["saving"],
+      "accessibility": [
+        "role=\"status\" announces the saving state to screen readers as it appears."
+      ]
+    },
+    {
+      "id": "save-status-1-dark",
+      "title": "Saving (Dark)",
+      "description": "Saving state adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/save-status/1-dark.html",
+        "tsx": "tsx/SaveStatusVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["saving"],
+      "accessibility": [
+        "Spinner and text colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    },
+    {
+      "id": "save-status-2",
+      "title": "Saved",
+      "description": "Success state with a checkmark icon and 'Saved' text.",
+      "source": {
+        "html": "../../../../public/examples/application/save-status/2.html",
+        "tsx": "tsx/SaveStatusVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["saved"],
+      "accessibility": [
+        "Success is conveyed by both the checkmark icon and the visible 'Saved' text."
+      ]
+    },
+    {
+      "id": "save-status-2-dark",
+      "title": "Saved (Dark)",
+      "description": "Saved state adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/save-status/2-dark.html",
+        "tsx": "tsx/SaveStatusVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["saved"],
+      "accessibility": [
+        "Checkmark and text colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    },
+    {
+      "id": "save-status-3",
+      "title": "Failed",
+      "description": "Error state with a warning icon, 'Failed to save' text, and an inline Retry button.",
+      "source": {
+        "html": "../../../../public/examples/application/save-status/3.html",
+        "tsx": "tsx/SaveStatusVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["failed"],
+      "accessibility": [
+        "The Retry action is a real <button>, reachable and activatable by keyboard."
+      ]
+    },
+    {
+      "id": "save-status-3-dark",
+      "title": "Failed (Dark)",
+      "description": "Failed state adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/save-status/3-dark.html",
+        "tsx": "tsx/SaveStatusVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["failed"],
+      "accessibility": [
+        "Error text and retry link colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
