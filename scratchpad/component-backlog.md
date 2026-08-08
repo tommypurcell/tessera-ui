@@ -431,7 +431,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [~] (builder-2) Amenities Grid — icon+label feature grid with included/excluded states; distinct from grids.
 
 <!-- Theme: Travel -->
-- [~] (builder-6) Flight Route Card — origin→destination with times, duration, stops, and airline; absent from library.
+- [ ] Flight Route Card — origin→destination with times, duration, stops, and airline; absent from library.
 - [ ] Booking Search Bar — location + date-range + guests combined search widget; distinct from data-filter-bar.
 - [~] (builder-3) Seat Map Selector — grid of seats with available/taken/selected and legend; absent from library.
 - [ ] Itinerary Timeline — day-grouped trip events with time, location, and type icons; distinct from timelines.
