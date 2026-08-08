@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "application-language-switcher",
+  "title": "Language Switcher",
+  "description": "Language/locale switcher list with a flag, label, and checkmark on the active locale, driven by real selection state.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["locale", "language", "i18n", "switcher"],
+  "useWhen": [
+    "The product supports multiple languages/locales and users need an explicit way to switch between them.",
+    "You want each locale represented with both a flag and a written label, not the flag alone (flags are not reliable language indicators on their own).",
+    "The active locale should be clearly marked so users can confirm which is currently selected."
+  ],
+  "avoidWhen": [
+    "The product only supports one language — there is nothing to switch between.",
+    "You need a full settings row with more locale metadata (date format, currency) — pair this list inside a larger `profile-edit-form` section instead of using it standalone.",
+    "Locale should be inferred automatically with no manual override — a switcher implies user choice; don't add one for a locked locale."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Fixed-width popover-style panel; anchor it to a trigger button (e.g. the current locale name in a footer or header) and let your popover/positioning layer handle placement.",
+  "accessibility": [
+    "The list has role=\"listbox\" with an aria-label describing it as Language, and each row is role=\"option\" with aria-selected reflecting the active locale.",
+    "Flags are decorative (aria-hidden) since the written language name is the accessible label, not the emoji flag.",
+    "The active locale carries both a bold label and an explicit checkmark icon, not color alone, to indicate selection.",
+    "Each option is a real button, keyboard focusable and operable without a pointer."
+  ],
+  "compatibleWith": ["application-dropdown", "application-popover"],
+  "variants": [
+    {
+      "id": "language-switcher-1",
+      "title": "Language Switcher",
+      "description": "Five locales with English (US) active, each row showing a flag and label.",
+      "source": {
+        "html": "../../../../public/examples/application/language-switcher/1.html",
+        "tsx": "tsx/LanguageSwitcherVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "Selecting a locale updates real aria-selected state and the checkmark together, so they can never disagree."
+      ]
+    },
+    {
+      "id": "language-switcher-1-dark",
+      "title": "Language Switcher (Dark)",
+      "description": "Language switcher adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/language-switcher/1-dark.html",
+        "tsx": "tsx/LanguageSwitcherVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "Active-row text and checkmark colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}
