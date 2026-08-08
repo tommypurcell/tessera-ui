@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-data-table",
+  "title": "Data Table",
+  "description": "Sortable, paginated data table with status badges and row actions, driven by typed columns/rows/status prop contracts.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["table", "data-table", "sort", "pagination", "admin", "dashboard"],
+  "useWhen": [
+    "An admin panel or dashboard needs a full data listing with sortable columns, status, and row-level actions.",
+    "Users need to scan, sort, or act on many records without leaving the page.",
+    "You want a single reusable table primitive instead of hand-editing markup for each dataset."
+  ],
+  "avoidWhen": [
+    "The data is small and static — use the simpler application-tables component instead.",
+    "Rows need inline editing or drag-to-reorder — build a dedicated grid component for that.",
+    "You need client-side virtualization for very large datasets — pair this with a virtualization library."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The table scrolls horizontally on narrow viewports via the wrapping overflow-x-auto container; the outer card and pagination footer remain fixed.",
+  "accessibility": [
+    "Sortable column headers are real buttons with aria-sort reflecting the current sort state.",
+    "Status badges pair a color dot with a visible text label, never color alone.",
+    "Row action buttons carry a descriptive aria-label identifying which row they act on."
+  ],
+  "compatibleWith": ["application-pagination", "application-badges", "application-context-menu"],
+  "variants": [
+    {
+      "id": "data-table-1",
+      "title": "Data Table",
+      "description": "Sortable table with a status column, per-row overflow-menu action, and a pagination footer.",
+      "source": {
+        "html": "../../../../public/examples/application/data-table/1.html",
+        "tsx": "tsx/DataTableVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "sorted"],
+      "accessibility": [
+        "The actively sorted column header sets aria-sort so screen readers announce the current order."
+      ]
+    },
+    {
+      "id": "data-table-1-dark",
+      "title": "Data Table (Dark)",
+      "description": "Sortable table adapted for dark dashboard surfaces with the same status and row-action structure.",
+      "source": {
+        "html": "../../../../public/examples/application/data-table/1-dark.html",
+        "tsx": "tsx/DataTableVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "sorted"],
+      "accessibility": [
+        "Header text, row text, and status badge colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
