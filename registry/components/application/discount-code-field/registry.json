@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "application-discount-code-field",
+  "title": "Discount Code Field",
+  "description": "Promo code input with an Apply action that transitions to a real applied (savings, removable) or invalid (inline error) state.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["ecommerce", "promo", "discount", "checkout", "coupon"],
+  "useWhen": [
+    "Letting users enter a promo/coupon code during checkout and see clear confirmation of what it did.",
+    "You need distinct visual states for entering, applying, succeeding, and failing a code — not just a plain text input.",
+    "Pairing with `checkout-order-summary`, which shows the resulting discount line and updated total."
+  ],
+  "avoidWhen": [
+    "You need a general-purpose copyable value display (API keys, invite links) — use `copy-field` instead, which is built for that direction (copying out, not validating in).",
+    "Discounts apply automatically without a user-entered code — this pattern implies manual entry and validation.",
+    "Only one code can ever be valid and there's no failure mode to design for — a plain input may be sufficient."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Input and button share a flex row that keeps the button a fixed width while the input shrinks; stacks acceptably at narrow widths without additional overrides.",
+  "accessibility": [
+    "The invalid state sets aria-invalid on the input and aria-describedby pointing at the error message, which carries role=\"alert\" so it's announced immediately.",
+    "The applied state's remove button has an aria-label naming the specific code, not a generic \"Remove\".",
+    "Success and error feedback are both communicated via text, not color alone (a savings amount sentence, an explicit error sentence).",
+    "The field has an associated <label>, not just a placeholder, so its purpose persists after text is entered."
+  ],
+  "compatibleWith": ["application-checkout-order-summary", "application-cart-line-item"],
+  "variants": [
+    {
+      "id": "discount-code-field-1",
+      "title": "Discount Code Field",
+      "description": "Three states: an empty default field, an applied code with a savings chip, and an invalid code with an inline error.",
+      "source": {
+        "html": "../../../../public/examples/application/discount-code-field/1.html",
+        "tsx": "tsx/DiscountCodeFieldVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["idle", "applied", "invalid"],
+      "accessibility": [
+        "State transitions (idle → applied/invalid) are driven by a real typed state machine, not just class toggles on static markup."
+      ]
+    },
+    {
+      "id": "discount-code-field-1-dark",
+      "title": "Discount Code Field (Dark)",
+      "description": "Discount code field adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/discount-code-field/1-dark.html",
+        "tsx": "tsx/DiscountCodeFieldVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["idle", "applied", "invalid"],
+      "accessibility": [
+        "Applied and invalid state colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}

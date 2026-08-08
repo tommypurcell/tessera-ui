@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-xs p-6">
+    <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-1.5">
+        <label for="promo-default" class="text-sm font-medium text-gray-700">Discount code</label>
+        <div class="flex gap-2">
+          <input
+            id="promo-default"
+            type="text"
+            placeholder="Enter code"
+            class="min-w-0 flex-1 rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 shadow-sm focus:border-gray-500 focus:outline-none"
+          />
+          <button type="button" class="shrink-0 rounded-md border border-gray-300 bg-white px-3.5 py-2 text-sm font-semibold text-gray-700 shadow-sm hover:bg-gray-50">
+            Apply
+          </button>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-1.5">
+        <label for="promo-applied" class="text-sm font-medium text-gray-700">Discount code</label>
+        <div class="flex gap-2">
+          <div class="flex min-w-0 flex-1 items-center justify-between rounded-md border border-emerald-300 bg-emerald-50 px-3 py-2">
+            <span class="text-sm font-medium text-emerald-800">WELCOME10</span>
+            <button type="button" aria-label="Remove discount code WELCOME10" class="text-emerald-600 hover:text-emerald-800">
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <p class="text-xs text-emerald-700">10% off applied — you saved $24.00.</p>
+      </div>
+
+      <div class="flex flex-col gap-1.5">
+        <label for="promo-invalid" class="text-sm font-medium text-gray-700">Discount code</label>
+        <div class="flex gap-2">
+          <input
+            id="promo-invalid"
+            type="text"
+            value="EXPIRED5"
+            aria-invalid="true"
+            aria-describedby="promo-invalid-error"
+            class="min-w-0 flex-1 rounded-md border border-red-400 px-3 py-2 text-sm text-gray-900 shadow-sm focus:border-red-500 focus:outline-none"
+          />
+          <button type="button" class="shrink-0 rounded-md border border-gray-300 bg-white px-3.5 py-2 text-sm font-semibold text-gray-700 shadow-sm hover:bg-gray-50">
+            Apply
+          </button>
+        </div>
+        <p id="promo-invalid-error" role="alert" class="text-xs text-red-600">This code has expired.</p>
+      </div>
+    </div>
+  </body>
+</html>
