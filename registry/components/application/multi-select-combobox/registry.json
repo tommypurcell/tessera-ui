@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "application-multi-select-combobox",
+  "title": "Multi-Select Combobox",
+  "description": "Searchable dropdown that returns multiple checked values from a predefined option list, rendered as removable chips inside the input.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["combobox", "multi-select", "autocomplete", "listbox", "chips"],
+  "useWhen": [
+    "Users need to pick several values from a known, searchable option list (e.g. assignees, tags from a fixed taxonomy).",
+    "The option list is long enough that typing to filter is faster than scrolling a multi-select list.",
+    "Selected values should stay visible as removable chips while more can still be added."
+  ],
+  "avoidWhen": [
+    "Only one value can be selected at a time — use the single-select Combobox instead.",
+    "Users need to enter arbitrary free-text values not from a predefined list — use Tag Input instead.",
+    "The option list is short (under ~8 items) — a multi-select checkbox list is simpler and needs no typing."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The chip input wraps selected chips onto multiple lines as needed; the listbox is absolutely positioned and full-width relative to the input.",
+  "accessibility": [
+    "The input carries role='combobox' with aria-expanded and aria-controls pointing at the listbox.",
+    "The listbox carries role='listbox' and aria-multiselectable='true'; each option is role='option' with aria-selected reflecting its checked state.",
+    "Each chip's remove button has an aria-label naming the specific value being removed.",
+    "Selection is conveyed via a checkmark icon and background tint together, not color alone."
+  ],
+  "compatibleWith": ["application-combobox", "application-tag-input", "application-selects"],
+  "variants": [
+    {
+      "id": "multi-select-combobox-1",
+      "title": "Multi-select combobox",
+      "description": "Open listbox with two values already selected as chips and checkmarked in the option list, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/multi-select-combobox/1.html",
+        "tsx": "tsx/MultiSelectComboboxVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "open", "selected", "no-match"],
+      "accessibility": [
+        "Options use onMouseDown preventDefault so clicking a checked option toggles it off without the input blurring first."
+      ]
+    },
+    {
+      "id": "multi-select-combobox-1-dark",
+      "title": "Multi-select combobox (Dark)",
+      "description": "Open listbox with two values already selected as chips, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/multi-select-combobox/1-dark.html",
+        "tsx": "tsx/MultiSelectComboboxVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "open", "selected", "no-match"],
+      "accessibility": [
+        "Chip and listbox colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

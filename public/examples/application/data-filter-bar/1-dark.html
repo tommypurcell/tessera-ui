@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex justify-center bg-gray-950 p-6">
+    <div class="flex w-full max-w-2xl flex-wrap items-center gap-2 rounded-lg border border-gray-800 bg-gray-900 p-2">
+      <button
+        type="button"
+        class="inline-flex shrink-0 items-center gap-1 rounded-md border border-dashed border-gray-700 px-2.5 py-1 text-sm font-medium text-gray-400 transition-colors hover:border-gray-500 hover:text-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-1 focus-visible:ring-offset-gray-900"
+      >
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-3.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+        </svg>
+        Add filter
+      </button>
+
+      <div role="list" aria-label="Active filters" class="flex flex-wrap items-center gap-2">
+        <span role="listitem" class="inline-flex items-center gap-1.5 rounded-full bg-blue-950 py-1 pr-1.5 pl-3 text-sm font-medium text-blue-300">
+          Status: Active
+          <button type="button" aria-label="Remove filter: Status: Active" class="rounded-full p-0.5 hover:bg-blue-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </span>
+
+        <span role="listitem" class="inline-flex items-center gap-1.5 rounded-full bg-blue-950 py-1 pr-1.5 pl-3 text-sm font-medium text-blue-300">
+          Assignee: Priya Nair
+          <button type="button" aria-label="Remove filter: Assignee: Priya Nair" class="rounded-full p-0.5 hover:bg-blue-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </span>
+
+        <span role="listitem" class="inline-flex items-center gap-1.5 rounded-full bg-blue-950 py-1 pr-1.5 pl-3 text-sm font-medium text-blue-300">
+          Due: This week
+          <button type="button" aria-label="Remove filter: Due: This week" class="rounded-full p-0.5 hover:bg-blue-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </span>
+
+        <button type="button" class="text-sm font-medium text-gray-400 underline-offset-2 hover:text-gray-100 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-1 focus-visible:ring-offset-gray-900">
+          Clear all
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "name": "application-hover-card",
+  "title": "Hover Card",
+  "description": "Sighted-pointer preview cards that reveal rich context — a profile, a link preview — when a user hovers a trigger, without requiring a click.",
+  "category": "application/hover-card",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "hover-card",
+    "hover",
+    "preview",
+    "tooltip",
+    "popover",
+    "card"
+  ],
+  "useWhen": [
+    "Sighted-pointer preview cards that reveal rich context — a profile, a link preview — when a user hovers a trigger, without requiring a click."
+  ],
+  "avoidWhen": [
+    "Avoid hover card when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Hover Card uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Provide meaningful alternative text for informative images and empty alt text for decorative images.",
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "hover-card-1",
+      "title": "Profile preview",
+      "description": "Profile preview Sighted-pointer preview cards that reveal rich context — a profile, a link preview — when a user hovers a trigger, without requiring a click.",
+      "source": {
+        "html": "../../../../public/examples/application/hover-card/1.html",
+        "tsx": "tsx/HoverCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "hover-card-1-dark",
+      "title": "Profile preview (Dark)",
+      "description": "Profile preview Sighted-pointer preview cards that reveal rich context — a profile, a link preview — when a user hovers a trigger, without requiring a click.",
+      "source": {
+        "html": "../../../../public/examples/application/hover-card/1-dark.html",
+        "tsx": "tsx/HoverCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "hover-card-2",
+      "title": "Link preview",
+      "description": "Link preview Sighted-pointer preview cards that reveal rich context — a profile, a link preview — when a user hovers a trigger, without requiring a click.",
+      "source": {
+        "html": "../../../../public/examples/application/hover-card/2.html",
+        "tsx": "tsx/HoverCardVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "hover-card-2-dark",
+      "title": "Link preview (Dark)",
+      "description": "Link preview Sighted-pointer preview cards that reveal rich context — a profile, a link preview — when a user hovers a trigger, without requiring a click.",
+      "source": {
+        "html": "../../../../public/examples/application/hover-card/2-dark.html",
+        "tsx": "tsx/HoverCardVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

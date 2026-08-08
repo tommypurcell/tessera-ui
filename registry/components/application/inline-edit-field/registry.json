@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "application-inline-edit-field",
+  "title": "Inline Edit Field",
+  "description": "Click-to-edit text that swaps to an input with save/cancel affordances, keyboard shortcuts (Enter to save, Escape to cancel), and a hover-revealed edit icon.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["inline-edit", "edit-in-place", "table-cell", "settings", "primitive"],
+  "useWhen": [
+    "Editing a single short value (name, title, label) without navigating to a separate form or opening a modal.",
+    "The field lives inside a settings row or table cell where a full form would be disproportionate.",
+    "You want an explicit save/cancel commit step rather than saving on every keystroke."
+  ],
+  "avoidWhen": [
+    "The value requires validation feedback, multiple related fields, or a multi-line editor — use a real form instead.",
+    "Autosave on every change is the desired behavior — this component only commits on explicit save (Enter or the check button).",
+    "The field must always be visibly editable — this component starts in a read-only display state by design."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The control is inline-sized to its content in both states; ensure the containing row has enough width for the input plus its save/cancel buttons when editing.",
+  "accessibility": [
+    "The display-state trigger is a real button with an aria-label announcing the field name and current value.",
+    "The input has an associated (visually hidden) label tied via htmlFor/id.",
+    "Enter commits and Escape cancels, matching native inline-edit keyboard conventions; blur also commits.",
+    "Save and Cancel are separate buttons with explicit aria-labels, not icon-only ambiguity."
+  ],
+  "compatibleWith": ["application-tables", "application-form-row", "application-inputs"],
+  "variants": [
+    {
+      "id": "inline-edit-field-1",
+      "title": "Inline edit field",
+      "description": "Display state with a hover-revealed edit icon, and the editing state with save/cancel buttons, shown side by side on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/inline-edit-field/1.html",
+        "tsx": "tsx/InlineEditFieldVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "editing"],
+      "accessibility": [
+        "Save and cancel actions use mousedown preventDefault so clicking them doesn't blur-commit before the click registers."
+      ]
+    },
+    {
+      "id": "inline-edit-field-1-dark",
+      "title": "Inline edit field (Dark)",
+      "description": "Display and editing states adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/inline-edit-field/1-dark.html",
+        "tsx": "tsx/InlineEditFieldVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "editing"],
+      "accessibility": [
+        "Input border and focus-ring colors must meet WCAG AA contrast against the dark background."
+      ]
+    }
+  ]
+}

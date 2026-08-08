@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-mention-textarea",
+  "title": "Mention Textarea",
+  "description": "Composer textarea with @-mention autocomplete — typing \"@\" opens a filtered popover of real users below the field, and picking one inserts the mention token at the trigger position.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["mention", "textarea", "composer", "autocomplete", "comment"],
+  "useWhen": [
+    "Writing a comment, note, or message where the author needs to tag a specific person from a known user list.",
+    "You want typed \"@\" to trigger a real filtered popover rather than requiring users to pick from a static picker.",
+    "The composed text is plain text with mention tokens, not rich formatted content."
+  ],
+  "avoidWhen": [
+    "You need free-text tags with no predefined suggestion list — use Tag Input or a plain textarea instead.",
+    "The composer needs rich formatting (bold, links, embeds) — this component only handles plain text plus mention tokens.",
+    "The list of mentionable users is very large and needs server-side search — extend the filter logic before shipping."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The mention popover is anchored below the textarea at a fixed width; on narrow viewports ensure the containing layout leaves room for it to render without being clipped.",
+  "accessibility": [
+    "The mention popover is a role='listbox' with role='option' items, matching combobox conventions.",
+    "Escape closes the mention popover without submitting or clearing the textarea's existing content.",
+    "Options use onMouseDown preventDefault so clicking a suggestion inserts the mention before the textarea blurs."
+  ],
+  "compatibleWith": ["application-tag-input", "application-combobox", "application-chat-bubbles"],
+  "variants": [
+    {
+      "id": "mention-textarea-1",
+      "title": "Mention textarea",
+      "description": "Textarea with an in-progress \"@m\" mention showing a filtered single-match popover, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/mention-textarea/1.html",
+        "tsx": "tsx/MentionTextareaVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "mentioning", "no-match"],
+      "accessibility": [
+        "The Post button remains reachable by keyboard even while the mention popover is open."
+      ]
+    },
+    {
+      "id": "mention-textarea-1-dark",
+      "title": "Mention textarea (Dark)",
+      "description": "Textarea with an in-progress mention popover, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/mention-textarea/1-dark.html",
+        "tsx": "tsx/MentionTextareaVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "mentioning", "no-match"],
+      "accessibility": [
+        "Popover and textarea border colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
