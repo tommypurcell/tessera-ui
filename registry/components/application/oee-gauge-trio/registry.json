@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "name": "application-oee-gauge-trio",
+  "title": "OEE Gauge Trio",
+  "description": "Overall Equipment Effectiveness dashboard components showing availability, performance, and quality with a combined score, for manufacturing floor displays.",
+  "category": "application/oee-gauge-trio",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "oee-gauge-trio",
+    "oee",
+    "manufacturing",
+    "availability",
+    "performance",
+    "quality"
+  ],
+  "useWhen": [
+    "Overall Equipment Effectiveness dashboard components showing availability, performance, and quality with a combined score, for manufacturing floor displays."
+  ],
+  "avoidWhen": [
+    "Avoid oee gauge trio when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "OEE Gauge Trio uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "oee-gauge-trio-1",
+      "title": "Three semicircular gauges with overall score",
+      "description": "Three semicircular gauges with overall score Overall Equipment Effectiveness dashboard components showing availability, performance, and quality with a combined score, for manufacturing floor displays.",
+      "source": {
+        "html": "../../../../public/examples/application/oee-gauge-trio/1.html",
+        "tsx": "tsx/OeeGaugeTrioVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "oee-gauge-trio-1-dark",
+      "title": "Three semicircular gauges with overall score (Dark)",
+      "description": "Three semicircular gauges with overall score Overall Equipment Effectiveness dashboard components showing availability, performance, and quality with a combined score, for manufacturing floor displays.",
+      "source": {
+        "html": "../../../../public/examples/application/oee-gauge-trio/1-dark.html",
+        "tsx": "tsx/OeeGaugeTrioVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "oee-gauge-trio-2",
+      "title": "Compact horizontal bar breakdown",
+      "description": "Compact horizontal bar breakdown Overall Equipment Effectiveness dashboard components showing availability, performance, and quality with a combined score, for manufacturing floor displays.",
+      "source": {
+        "html": "../../../../public/examples/application/oee-gauge-trio/2.html",
+        "tsx": "tsx/OeeGaugeTrioVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "oee-gauge-trio-2-dark",
+      "title": "Compact horizontal bar breakdown (Dark)",
+      "description": "Compact horizontal bar breakdown Overall Equipment Effectiveness dashboard components showing availability, performance, and quality with a combined score, for manufacturing floor displays.",
+      "source": {
+        "html": "../../../../public/examples/application/oee-gauge-trio/2-dark.html",
+        "tsx": "tsx/OeeGaugeTrioVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

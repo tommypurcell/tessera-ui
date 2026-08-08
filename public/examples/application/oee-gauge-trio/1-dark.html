@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-lg flex-col gap-4 p-6">
+    <div class="rounded-lg border border-gray-800 bg-gray-900 p-6">
+      <div class="flex items-center justify-between">
+        <p class="text-sm font-semibold text-white">Line 3 · OEE</p>
+        <p class="font-mono text-2xl font-bold text-white">80%</p>
+      </div>
+
+      <div class="mt-4 grid grid-cols-3 gap-4">
+        <div class="flex flex-col items-center gap-1.5">
+          <svg class="h-14 w-24" viewBox="0 0 100 55" role="img" aria-label="Availability 94 percent">
+            <path d="M10 50 A40 40 0 0 1 90 50" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" class="text-gray-800" />
+            <path
+              d="M10 50 A40 40 0 0 1 90 50"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="8"
+              stroke-linecap="round"
+              stroke-dasharray="125.7"
+              stroke-dashoffset="7.5"
+              class="text-green-400"
+            />
+          </svg>
+          <p class="font-mono text-lg font-bold text-white">94%</p>
+          <p class="text-[11px] font-medium text-gray-400">Availability</p>
+        </div>
+
+        <div class="flex flex-col items-center gap-1.5">
+          <svg class="h-14 w-24" viewBox="0 0 100 55" role="img" aria-label="Performance 87 percent">
+            <path d="M10 50 A40 40 0 0 1 90 50" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" class="text-gray-800" />
+            <path
+              d="M10 50 A40 40 0 0 1 90 50"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="8"
+              stroke-linecap="round"
+              stroke-dasharray="125.7"
+              stroke-dashoffset="16.3"
+              class="text-amber-400"
+            />
+          </svg>
+          <p class="font-mono text-lg font-bold text-white">87%</p>
+          <p class="text-[11px] font-medium text-gray-400">Performance</p>
+        </div>
+
+        <div class="flex flex-col items-center gap-1.5">
+          <svg class="h-14 w-24" viewBox="0 0 100 55" role="img" aria-label="Quality 98 percent">
+            <path d="M10 50 A40 40 0 0 1 90 50" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" class="text-gray-800" />
+            <path
+              d="M10 50 A40 40 0 0 1 90 50"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="8"
+              stroke-linecap="round"
+              stroke-dasharray="125.7"
+              stroke-dashoffset="2.5"
+              class="text-blue-400"
+            />
+          </svg>
+          <p class="font-mono text-lg font-bold text-white">98%</p>
+          <p class="text-[11px] font-medium text-gray-400">Quality</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
