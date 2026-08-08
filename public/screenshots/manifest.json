@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 762,
+  "screenshotCount": 766,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -855,6 +855,46 @@
       "sourceSha256": "ff0f3801a91e8375f8a16e473d308603fd85ddda099c639de16a2c905d0ac28e",
       "url": "/screenshots/components/application-checkboxes/checkboxes-3-dark.jpg",
       "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-code-editor-block",
+      "variantId": "code-editor-block-1",
+      "appearance": "light",
+      "sourcePath": "files/application-code-editor-block/code-editor-block-1.html",
+      "sourceSha256": "7b769c253b8fc38b42bc7dcd07c67092f859f6d3372a707a22747e57d7278f1d",
+      "url": "/screenshots/components/application-code-editor-block/code-editor-block-1.jpg",
+      "width": 672,
+      "height": 453
+    },
+    {
+      "componentId": "application-code-editor-block",
+      "variantId": "code-editor-block-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-code-editor-block/code-editor-block-1-dark.html",
+      "sourceSha256": "6aff9184cf0637630ed52c2e7f422beec63facd5a65baa1e323a63cde11b16fa",
+      "url": "/screenshots/components/application-code-editor-block/code-editor-block-1-dark.jpg",
+      "width": 672,
+      "height": 453
+    },
+    {
+      "componentId": "application-code-editor-block",
+      "variantId": "code-editor-block-2",
+      "appearance": "light",
+      "sourcePath": "files/application-code-editor-block/code-editor-block-2.html",
+      "sourceSha256": "2815da5fb83470afc4bb29e17e0c03d6846f30518f16c3f808d080e5a0ecd8c4",
+      "url": "/screenshots/components/application-code-editor-block/code-editor-block-2.jpg",
+      "width": 672,
+      "height": 400
+    },
+    {
+      "componentId": "application-code-editor-block",
+      "variantId": "code-editor-block-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-code-editor-block/code-editor-block-2-dark.html",
+      "sourceSha256": "723388c3ea0b558733a95824771ed3d26a7e0f0fe96de9219dfa87b90f0ff6d5",
+      "url": "/screenshots/components/application-code-editor-block/code-editor-block-2-dark.jpg",
+      "width": 672,
       "height": 400
     },
     {
