@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "name": "application-workout-set-row",
+  "title": "Workout Set Row",
+  "description": "Per-set reps and weight input rows with a done checkbox for logging an exercise during a workout, plus a compact multi-exercise summary list showing overall completion status.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["application", "fitness", "workout", "exercise", "log"],
+  "useWhen": [
+    "Logging a workout in progress, where each set of an exercise needs its own editable reps/weight and a completion toggle.",
+    "Summarizing a workout's exercises and their completion status (complete, in progress, not started) in a single list."
+  ],
+  "avoidWhen": [
+    "You need a generic 'add a row to a table' pattern with no fitness-specific fields — use inline-add-row instead.",
+    "Only aggregate exercise data is needed, not per-set granularity — a simpler summary card may suffice."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The set-input grid uses a fixed 4-column template (set number, reps, weight, done) that stays legible on narrow viewports since each column is intentionally compact; the summary list is a single-column stack that reflows at any width.",
+  "accessibility": [
+    "Each done checkbox carries an aria-label naming its specific set number (e.g. 'Set 1 done'), since the visual column header alone isn't repeated per row for assistive tech.",
+    "Reps and weight inputs use type=\"text\" with real values rather than placeholder-only fields, so screen readers announce the current value, not just a hint.",
+    "Each summary row's status (Complete / In progress / Not started) is shown as explicit text, not color or icon alone."
+  ],
+  "compatibleWith": ["application-inline-add-row", "application-quantity-inputs"],
+  "variants": [
+    {
+      "id": "workout-set-row-1",
+      "title": "Set input grid",
+      "description": "One exercise with three set rows, each with editable reps/weight inputs and a done checkbox",
+      "source": {
+        "html": "../../../../public/examples/application/workout-set-row/1.html",
+        "tsx": "tsx/WorkoutSetRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["done", "not-done"],
+      "accessibility": ["Each done checkbox's aria-label names its specific set number."]
+    },
+    {
+      "id": "workout-set-row-1-dark",
+      "title": "Set input grid (Dark)",
+      "description": "One exercise with three set rows, each with editable reps/weight inputs and a done checkbox",
+      "source": {
+        "html": "../../../../public/examples/application/workout-set-row/1-dark.html",
+        "tsx": "tsx/WorkoutSetRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["done", "not-done"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    },
+    {
+      "id": "workout-set-row-2",
+      "title": "Exercise summary list",
+      "description": "Three exercises with complete/in-progress/not-started status text and a set/rep/weight summary line",
+      "source": {
+        "html": "../../../../public/examples/application/workout-set-row/2.html",
+        "tsx": "tsx/WorkoutSetRowVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["complete", "in-progress", "not-started"],
+      "accessibility": ["Status is always explicit text, not conveyed by color alone."]
+    },
+    {
+      "id": "workout-set-row-2-dark",
+      "title": "Exercise summary list (Dark)",
+      "description": "Three exercises with complete/in-progress/not-started status text and a set/rep/weight summary line",
+      "source": {
+        "html": "../../../../public/examples/application/workout-set-row/2-dark.html",
+        "tsx": "tsx/WorkoutSetRowVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["complete", "in-progress", "not-started"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    }
+  ]
+}
