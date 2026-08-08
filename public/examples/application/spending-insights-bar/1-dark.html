@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex justify-center p-6">
+    <div class="w-full max-w-md rounded-xl border border-gray-700 bg-gray-900 p-6">
+      <div class="flex items-baseline justify-between">
+        <h2 class="text-sm font-semibold text-white">Spending this month</h2>
+        <span class="text-xs text-gray-400">vs. 6-month average</span>
+      </div>
+
+      <ul class="mt-5 flex flex-col gap-4">
+        <li>
+          <div class="flex items-baseline justify-between text-sm">
+            <span class="font-medium text-gray-300">Groceries</span>
+            <span class="font-semibold text-red-400">$612 <span class="font-normal text-gray-500">avg $480</span></span>
+          </div>
+          <div class="relative mt-1.5 h-2 w-full rounded-full bg-gray-800">
+            <div class="h-2 rounded-full bg-red-500" style="width: 90%" role="img" aria-label="Groceries: $612 spent, average $480, 27% over average"></div>
+            <div class="absolute top-1/2 h-3.5 w-0.5 -translate-y-1/2 rounded-full bg-gray-400" style="left: 71%" aria-hidden="true"></div>
+          </div>
+        </li>
+
+        <li>
+          <div class="flex items-baseline justify-between text-sm">
+            <span class="font-medium text-gray-300">Dining out</span>
+            <span class="font-semibold text-red-400">$340 <span class="font-normal text-gray-500">avg $210</span></span>
+          </div>
+          <div class="relative mt-1.5 h-2 w-full rounded-full bg-gray-800">
+            <div class="h-2 rounded-full bg-red-500" style="width: 68%" role="img" aria-label="Dining out: $340 spent, average $210, 62% over average"></div>
+            <div class="absolute top-1/2 h-3.5 w-0.5 -translate-y-1/2 rounded-full bg-gray-400" style="left: 42%" aria-hidden="true"></div>
+          </div>
+        </li>
+
+        <li>
+          <div class="flex items-baseline justify-between text-sm">
+            <span class="font-medium text-gray-300">Transportation</span>
+            <span class="font-semibold text-emerald-400">$95 <span class="font-normal text-gray-500">avg $140</span></span>
+          </div>
+          <div class="relative mt-1.5 h-2 w-full rounded-full bg-gray-800">
+            <div class="h-2 rounded-full bg-emerald-500" style="width: 19%" role="img" aria-label="Transportation: $95 spent, average $140, 32% under average"></div>
+            <div class="absolute top-1/2 h-3.5 w-0.5 -translate-y-1/2 rounded-full bg-gray-400" style="left: 28%" aria-hidden="true"></div>
+          </div>
+        </li>
+
+        <li>
+          <div class="flex items-baseline justify-between text-sm">
+            <span class="font-medium text-gray-300">Entertainment</span>
+            <span class="font-semibold text-white">$88 <span class="font-normal text-gray-500">avg $90</span></span>
+          </div>
+          <div class="relative mt-1.5 h-2 w-full rounded-full bg-gray-800">
+            <div class="h-2 rounded-full bg-gray-500" style="width: 18%" role="img" aria-label="Entertainment: $88 spent, average $90, on average"></div>
+            <div class="absolute top-1/2 h-3.5 w-0.5 -translate-y-1/2 rounded-full bg-gray-400" style="left: 18%" aria-hidden="true"></div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="mt-5 flex items-center gap-4 border-t border-gray-800 pt-3 text-xs text-gray-400">
+        <span class="flex items-center gap-1.5"><span class="h-2 w-2 rounded-full bg-red-500"></span>Over average</span>
+        <span class="flex items-center gap-1.5"><span class="h-2 w-2 rounded-full bg-emerald-500"></span>Under average</span>
+        <span class="flex items-center gap-1.5"><span class="h-3.5 w-0.5 rounded-full bg-gray-400"></span>6-mo avg</span>
+      </div>
+    </div>
+  </body>
+</html>
