@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "name": "application-testimonial-card",
+  "title": "Testimonial Card",
+  "description": "Marketing testimonial card: a star rating, blockquote, and reviewer avatar with name and role.",
+  "category": "application/cards",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["testimonial", "review", "quote", "social-proof", "marketing"],
+  "useWhen": [
+    "Displaying a customer quote or review as social proof on a marketing or pricing page.",
+    "You need a star rating paired with the quote and reviewer identity.",
+    "Distinct from Social Post Card, which shows a photo post with like/comment interactions rather than a quoted customer endorsement with a rating."
+  ],
+  "avoidWhen": [
+    "The content is a social media post with likes/comments — use Social Post Card instead.",
+    "There's no rating to show — a plain quote/attribution block is simpler."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The quote wraps normally at any width; avatar and name/role stay aligned on one row via flex regardless of name length.",
+  "accessibility": [
+    "The star row uses role=\"img\" with an aria-label stating the numeric rating, since the visual star fill alone isn't announced by screen readers.",
+    "The quote is marked up as a real <blockquote>, and the avatar's alt text is the reviewer's name."
+  ],
+  "compatibleWith": ["application-social-post-card"],
+  "variants": [
+    {
+      "id": "testimonial-card-1",
+      "title": "Testimonial Card",
+      "description": "A 5-star rating, a customer quote, and a reviewer avatar with name and role.",
+      "source": {
+        "html": "../../../../public/examples/application/testimonial-card/1.html",
+        "tsx": "tsx/TestimonialCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Star rating carries role=\"img\" with a numeric aria-label."
+      ]
+    },
+    {
+      "id": "testimonial-card-1-dark",
+      "title": "Testimonial Card (Dark)",
+      "description": "The same testimonial card adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/testimonial-card/1-dark.html",
+        "tsx": "tsx/TestimonialCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Star, quote, and reviewer text contrast remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}
