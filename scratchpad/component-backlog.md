@@ -287,7 +287,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-6) Gauge Chart — 2 variants (standalone threshold-zone gauge, compact gauge with metric+target), light+dark, registry+tsx generated, screenshots verified (fixed a needle/label overlap found during review), committed to builder-6-components.
 - [x] (builder-6) Treemap — 2 variants (single-color intensity scale, multi-category with color-coded legend), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
 - [x] (builder-8) Waterfall Chart — 6-step Q3 revenue bridge, running-total bar positions computed from deltas (tsx light+dark, html light+dark, registry.json, MDX); fixed a flex items-end height bug found during screenshot review; screenshot verified light+dark, pushed to PR #6
-- [~] (builder-4) Calendar Heat Legend Chart — month grid with value intensity and axis labels; distinct from heatmap-calendar (chart framing).
+- [x] (builder-4) Calendar Heat Legend Chart — single-month grid, correct weekday alignment, day numbers, 5-bucket numeric legend, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #17)
 
 <!-- Theme: Commerce / finance -->
 - [x] (builder-8) Invoice Table — 3-item invoice w/ Pending badge, computed subtotal/8% tax/$9,806.40 total (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
@@ -310,7 +310,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-3) Split View Layout — inbox-style master-detail shell, collapsible list pane, resize handle, active-item aria-current, detail content slot, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 - [x] (builder-10) Sticky Section Header — 2 variants (alphabetical contact list w/ sticky letter headers, settings list w/ sticky category headers), light+dark, sticky pinning verified via actual scroll test, registry+tsx generated, screenshots verified, pushed
 - [x] (builder-9) Masonry Grid — 2 variants (image gallery, card masonry) light+dark, registry.json, MDX entry, screenshots
-- [ ] Sidebar Layout Shell — fixed sidebar + topbar + content app frame with collapse; distinct from dashboard-sidebar (full shell).
+- [~] (builder-4) Sidebar Layout Shell — fixed sidebar + topbar + content app frame with collapse; distinct from dashboard-sidebar (full shell).
 - [x] (builder-6) Card Stack — 2 variants (photo profile deck with reject/accept, compact content-recommendation deck with skip/save), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
 - [x] (builder-3) Expandable Detail Row — order table w/ chevron toggle, colSpan detail panel with line items + emphasized total, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 
@@ -327,7 +327,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-9) Slug Input — 2 variants (always-editable slug field, read-only preview with Edit trigger) light+dark, registry.json, MDX entry, screenshots
 - [x] (builder-2) Tag Filter Group — 6 independently toggleable tag pills, real multi-select aria-pressed state, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components
 - [x] (builder-8) Rating Scale (NPS) — 0-10 scale w/ detractor/passive/promoter zone coloring derived from score (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
-- [~] (builder-1) File Drop Preview List — drop zone plus per-file upload rows with progress and cancel; distinct from file-uploaders (list + progress).
+- [x] (builder-1) File Drop Preview List — 2 variants (drop zone + list, list-only), uploading/complete/error states, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #16).
 
 <!-- Theme: Navigation (more) -->
 - [x] (builder-7) Breadcrumb Dropdown Overflow — 2 states (collapsed w/ … trigger, expanded dropdown of hidden segments), real segment-count collapse logic, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
@@ -348,10 +348,10 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-2) Version History List — 4 revision rows (current w/ badge, 3 prior w/ View diff + Restore actions computed from isCurrent flag), light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components (PR #18)
 - [x] (builder-8) Task Checklist — flat checkable list w/ computed N/M complete count + Enter-to-add task input (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [x] (builder-8) Poll / Vote Card — click-to-vote poll w/ computed percentage-bar results view, 4-option framework poll demo (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
-- [~] (builder-10) Announcement Feed Item — pinned/starred post card with author, body, and reactions; distinct from activity-feed.
+- [x] (builder-10) Announcement Feed Item — 2 variants (pinned announcement card w/ reactions, compact starred post row list), light+dark, registry+tsx generated, screenshots verified, pushed
 
 <!-- Theme: Utility (more) -->
-- [~] (builder-2) Timezone Picker — searchable tz dropdown showing offset and current time; distinct from time-picker.
+- [x] (builder-2) Timezone Picker — search field filters city+offset live, each row shows city/UTC offset/current time, no-results state, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components. NOTE: PR #18 was merged mid-session; opened new PR #19 for this component.
 - [x] (builder-2) Language Switcher — 5-locale listbox (flag + native-language label), active locale bolded w/ checkmark, real selection state, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components (PR #18)
 - [x] (builder-5) Theme Toggle Switch — real radio-group 3-way Light/Dark/System control, icon+label, selected pill background, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [ ] Keyboard Focus Ring Demo — accessibility focus-order showcase with visible ring states; absent from library.
@@ -364,45 +364,45 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [ ] Board Swimlane — horizontal grouped lane spanning multiple status columns with a lane header; distinct from kanban column.
 - [x] (builder-8) Task Priority Badge Set — 4-level Urgent/High/Medium/Low badges, icon+color+label bundled per level (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [x] (builder-8) Effort Estimate Chips — Fibonacci story-point radiogroup (1/2/3/5/8/13/?), 5 selected (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
-- [~] (builder-7) Dependency Link Row — "blocks / blocked by" relationship row with linked-item chips; absent from library.
-- [~] (builder-6) Milestone Marker Card — dated goal card with progress and linked-task count; distinct from timelines.
+- [x] (builder-7) Dependency Link Row — 2 groups (Blocks/Blocked by) w/ linked status-dot chips, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
+- [x] (builder-6) Milestone Marker Card — 2 variants (detail card with progress+avatars+task link, compact 3-row list with status icons and percentages), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
 
 <!-- Theme: CRM / people -->
 - [x] (builder-8) Contact Card — initials avatar + name/role/company + conditional call/email/message icon buttons (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [ ] Deal Pipeline Stage — value-weighted column with deal cards and stage total; distinct from kanban (CRM semantics).
-- [ ] Lead Score Meter — 0–100 fit/intent score with segmented color bands; distinct from bullet-chart.
-- [ ] Company Logo Row — labeled customer/partner logo strip with grayscale hover; absent from library.
-- [ ] Person Hovercard — expanded profile popover with stats and social links; distinct from hover-card (person-rich).
+- [~] (builder-7) Lead Score Meter — 0–100 fit/intent score with segmented color bands; distinct from bullet-chart.
+- [x] (builder-1) Company Logo Row — duplicate of existing `marketing/logo-clouds` (5 variants: base, base+title, grid, text wordmarks); no new work needed here
+- [~] (builder-5) Person Hovercard — expanded profile popover with stats and social links; distinct from hover-card (person-rich).
 
 <!-- Theme: Analytics -->
 - [ ] Cohort Retention Grid — triangular week/day retention heatmap with % cells; distinct from heatmap-calendar.
-- [ ] Metric Date Comparison — current vs previous period overlay with % delta callout; distinct from big-number-delta-tile.
+- [x] (builder-1) Metric Date Comparison — duplicate of existing `big-number-delta-tile` (large number, trend arrow, % change, "vs last period" comparison label); no new work needed here
 - [x] (builder-8) Segment Breakdown Bar — traffic-by-device stacked bar (Desktop 55/Mobile 38/Tablet 7%) w/ legend (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [ ] Real-Time Visitors Map — live active-user count with a mini geo-dot map; absent from library.
-- [~] (builder-3) Event Log Table — timestamped analytics events with type icon and expandable payload; distinct from log-viewer.
+- [x] (builder-3) Event Log Table — type-coded icon rows (success/info/error), expand toggle revealing formatted JSON payload, timestamp column, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 
 <!-- Theme: Dev tools -->
-- [~] (builder-5) Environment Switcher — dev/staging/prod dropdown with colored env indicator; distinct from recent/pinned switcher.
-- [~] (builder-8) Build Status Row — pipeline stage pills (queued→running→passed/failed) with duration; distinct from status-page-board.
+- [x] (builder-5) Environment Switcher — trigger w/ colored dot + dropdown listing Dev/Staging/Prod w/ dots + active checkmark, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
+- [x] (builder-8) Build Status Row — 3-stage CI pipeline (Build/Test passed, Deploy running) w/ duration (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [ ] Secret Reveal Field — masked value with hold-to-reveal and copy, plus rotation note; distinct from api-key-manager.
-- [ ] Webhook Event Row — event name, delivery status, response code, and retry action; absent from library.
+- [x] (builder-8) Webhook Event Row — 3 delivery states (delivered/pending/failed) w/ response code + conditional Retry (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [ ] Terminal Command Palette — inline command runner with history and output pane; distinct from terminal-blocks and command.
 
 <!-- Theme: Scheduling -->
 - [ ] Availability Grid — bookable time-slot grid with free/busy/selected states; distinct from event-calendar.
-- [ ] Booking Confirmation Card — appointment summary with date/time, host, and reschedule/cancel; absent from library.
-- [ ] Recurring Rule Builder — "repeats every N days/weeks on…" schedule editor; distinct from query-builder.
+- [x] (builder-2) Booking Confirmation Card — success indicator + title, date/time/host dl w/ sr-only dt labels, Reschedule/Cancel actions, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components (PR #19)
+- [~] (builder-3) Recurring Rule Builder — "repeats every N days/weeks on…" schedule editor; distinct from query-builder.
 - [ ] Timezone Overlap Bar — visual working-hours overlap across two zones; distinct from timezone picker.
 
 <!-- Theme: Forms (advanced) -->
 - [ ] Conditional Field Group — form section that shows/hides based on a controlling input; absent from library.
-- [ ] Multi-File Attachment Row — attached-file chips with size, type icon, and remove; distinct from file-uploaders.
-- [ ] OTP Resend Timer — code-entry footer with resend countdown and attempt counter; distinct from InputOTP.
+- [~] (builder-8) Multi-File Attachment Row — attached-file chips with size, type icon, and remove; distinct from file-uploaders.
+- [~] (builder-10) OTP Resend Timer — code-entry footer with resend countdown and attempt counter; distinct from InputOTP.
 - [x] (builder-9) Consent Checklist — 2 variants (gated submit, select-all with required/optional badges) light+dark, registry.json, MDX entry, screenshots
 - [ ] Form Autosave Banner — sticky "changes saved / unsaved" bar with save/discard; distinct from save-status-indicator.
 
 <!-- Theme: Finance / billing -->
-- [ ] Transaction Row — dated debit/credit row with category icon, merchant, and amount sign color; distinct from tables.
+- [~] (builder-2) Transaction Row — dated debit/credit row with category icon, merchant, and amount sign color; distinct from tables.
 - [ ] Budget Progress Bar — spent vs budget with over-budget red overflow; distinct from progress-bars and usage-meter.
 - [ ] Currency Converter — dual amount fields with rate and swap button; distinct from currency-input.
 - [ ] Subscription Tier Toggle — monthly/annual billing switch with savings badge; distinct from theme-toggle-switch.
