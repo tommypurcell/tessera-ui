@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-signal-strength-bars",
+  "title": "Signal Strength Bars",
+  "description": "Ascending-height signal bars with an active count derived from a real strength value and a network-type label (5G/LTE) — distinct from connection-status-pill, which is a binary connected/disconnected pill with no signal-quality gradation.",
+  "category": "application/telecom",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["telecom", "signal", "network", "mobile", "status"],
+  "useWhen": [
+    "Showing cellular or Wi-Fi signal quality on a graduated scale rather than a binary state.",
+    "You want the network type (5G/LTE/3G) labeled alongside the bar indicator.",
+    "The active bar count should be derived from a real numeric strength value."
+  ],
+  "avoidWhen": [
+    "You only need a binary connected/disconnected indicator — use connection-status-pill instead.",
+    "You need a percentage-based meter rather than discrete bars — use a progress bar instead.",
+    "The network type is irrelevant to the context — omit the label."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The bars and label are a fixed-size inline group that doesn't reflow; place multiple instances in a flex/grid container to stack them.",
+  "accessibility": [
+    "The bar group carries role='img' with an aria-label stating the exact strength, max bars, and network type, since bar height/count alone isn't announced by screen readers.",
+    "Individual bars are aria-hidden since the group-level label already conveys the full state.",
+    "Active vs inactive bars are distinguished by both fill color and the group label text, not color alone."
+  ],
+  "compatibleWith": ["application-connection-status-pill", "application-data-usage-ring"],
+  "variants": [
+    {
+      "id": "signal-strength-bars-1",
+      "title": "Signal strength bars",
+      "description": "Three signal readings (3/4 bars 5G, full 4/4 bars 5G, and weak 1/4 bar LTE) demonstrating the active-bar gradation, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/signal-strength-bars/1.html",
+        "tsx": "tsx/SignalStrengthBarsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["strong", "full", "weak"],
+      "accessibility": [
+        "Active bar count is derived from the real strength prop compared against each bar's index, never hand-styled per bar."
+      ]
+    },
+    {
+      "id": "signal-strength-bars-1-dark",
+      "title": "Signal strength bars (Dark)",
+      "description": "The same three signal readings, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/signal-strength-bars/1-dark.html",
+        "tsx": "tsx/SignalStrengthBarsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["strong", "full", "weak"],
+      "accessibility": [
+        "Active and inactive bar colors meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
