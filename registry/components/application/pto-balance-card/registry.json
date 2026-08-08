@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "application-pto-balance-card",
+  "title": "PTO Balance Card",
+  "description": "PTO balance card with a remaining-days readout, a usage progress bar, and an accrued/used/pending stat row computed from real numeric inputs.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["hr", "pto", "leave", "balance"],
+  "useWhen": [
+    "Showing an employee's paid-time-off balance in an HR dashboard or self-service portal.",
+    "You want accrued/used/pending figures and the derived remaining balance to always agree, computed from the same source numbers.",
+    "A direct \"Request time off\" action belongs right next to the balance it affects."
+  ],
+  "avoidWhen": [
+    "You're showing a subscription/billing plan, not leave balance — use `plan-and-billing-card` for that unrelated billing context.",
+    "There's no request flow — drop the action button and show the balance as a read-only summary.",
+    "The organization tracks leave in hours rather than days — adjust the unit throughout rather than hardcoding \"days\"."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Single-column card; the three-stat row stays in a fixed 3-column grid at any card width, wrapping text rather than columns.",
+  "accessibility": [
+    "Remaining days is computed (accrued − used − pending) rather than hardcoded, so it can never drift out of sync with the stat row below it.",
+    "The progress bar's fill percentage is derived from the same real numbers as the stat row, not an independent hardcoded value.",
+    "Accrued/Used/Pending use a <dl> so each figure has a programmatic label, not just visual proximity to its heading.",
+    "Pending days are colored distinctly (amber) from confirmed used days, signaling their provisional status through both color and the \"Pending\" label text."
+  ],
+  "compatibleWith": ["application-approval-request-card", "application-progress-bars"],
+  "variants": [
+    {
+      "id": "pto-balance-card-1",
+      "title": "PTO Balance Card",
+      "description": "15 accrued days, 6 used, 2 pending, 9 remaining, with a usage progress bar and a request button.",
+      "source": {
+        "html": "../../../../public/examples/application/pto-balance-card/1.html",
+        "tsx": "tsx/PtoBalanceCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "All displayed figures (remaining, progress bar width) are derived from the same accrued/used/pending inputs, eliminating drift."
+      ]
+    },
+    {
+      "id": "pto-balance-card-1-dark",
+      "title": "PTO Balance Card (Dark)",
+      "description": "PTO balance card adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/pto-balance-card/1-dark.html",
+        "tsx": "tsx/PtoBalanceCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Progress bar and pending-stat colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}
