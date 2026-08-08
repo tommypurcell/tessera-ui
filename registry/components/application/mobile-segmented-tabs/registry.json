@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-mobile-segmented-tabs",
+  "title": "Mobile Segmented Tabs",
+  "description": "A sticky top pill-segmented control in a mobile app header that filters the scrollable list below it.",
+  "category": "application/mobile-segmented-tabs",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "mobile-segmented-tabs",
+    "mobile",
+    "segmented control",
+    "tabs",
+    "sticky header",
+    "filter"
+  ],
+  "useWhen": [
+    "A mobile screen needs to filter or switch between a small number of views of the same content (All/Unread/Flagged) without leaving the page.",
+    "The control should stay pinned near the top while a long list scrolls beneath it."
+  ],
+  "avoidWhen": [
+    "Global, persistent navigation between unrelated app sections is needed — `Tab Bar Mobile`'s bottom icon nav fits that role better.",
+    "There are more than 3-4 options, or options need icons — a segmented pill control gets cramped; consider a scrollable tab strip instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The segmented control's buttons flex-1 to fill the available width evenly regardless of container size; the list below scrolls independently under the sticky header.",
+  "accessibility": [
+    "The control uses role=\"tablist\" with role=\"tab\" buttons and aria-selected, so assistive technology announces the current filter and available options.",
+    "The selected tab is distinguished by both a white/filled background and bold text weight, not color alone.",
+    "Unread messages are marked with a visible dot indicator alongside bold sender text, giving a redundant, non-color-only unread signal."
+  ],
+  "compatibleWith": ["application-tab-bar-mobile", "application-mobile-filter-sheet"],
+  "variants": [
+    {
+      "id": "mobile-segmented-tabs-1",
+      "title": "Inbox filter tabs",
+      "description": "A phone-frame inbox screen with a sticky All/Unread/Flagged segmented control beneath the header and a scrollable message list with unread dots, sender, snippet, and timestamp.",
+      "source": {
+        "html": "../../../../public/examples/application/mobile-segmented-tabs/1.html",
+        "tsx": "tsx/MobileSegmentedTabsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["selected", "unselected"],
+      "accessibility": [
+        "role=\"tablist\"/role=\"tab\" with aria-selected communicates the active filter to assistive technology."
+      ]
+    },
+    {
+      "id": "mobile-segmented-tabs-1-dark",
+      "title": "Inbox filter tabs (Dark)",
+      "description": "Mobile segmented tabs adapted for dark surfaces, including the selected-tab pill and unread indicator dots.",
+      "source": {
+        "html": "../../../../public/examples/application/mobile-segmented-tabs/1-dark.html",
+        "tsx": "tsx/MobileSegmentedTabsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["selected", "unselected"],
+      "accessibility": [
+        "Tab labels, message text, and timestamps all meet WCAG AA contrast against the dark header and list background."
+      ]
+    }
+  ]
+}
