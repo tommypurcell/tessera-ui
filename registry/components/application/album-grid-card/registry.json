@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-album-grid-card",
+  "title": "Album Grid Card",
+  "description": "Square album-cover grid tile with a hover-revealed play overlay and title/artist text — distinct from dish-card, which is a horizontal food-photo card with price and rating rather than a square media grid tile.",
+  "category": "application/media",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["music", "album", "grid", "media", "player"],
+  "useWhen": [
+    "Displaying a browsable grid of albums or playlists with cover art.",
+    "You want a play action to appear only on hover/focus without disrupting the grid layout.",
+    "Title and artist should be legible below the art rather than overlaid on it."
+  ],
+  "avoidWhen": [
+    "You're showing food items with price and rating — use dish-card instead.",
+    "You need a full track list with playback state — use track-list-row instead.",
+    "The grid needs drag-to-reorder — use queue-list instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Cards are fixed-width and wrap in a flex/grid container; the cover art scales as a square via aspect-square so it never distorts.",
+  "accessibility": [
+    "The play button has a descriptive aria-label naming the track and artist, not just an icon.",
+    "The overlay is reachable via keyboard focus (focus-visible), not hover-only.",
+    "Title and artist are always-visible text below the art, never conveyed only via the hover overlay."
+  ],
+  "compatibleWith": ["application-now-playing-bar", "application-track-list-row"],
+  "variants": [
+    {
+      "id": "album-grid-card-1",
+      "title": "Album grid card",
+      "description": "A four-card grid of album covers with one card showing its hover play overlay in a persistent-on state, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/album-grid-card/1.html",
+        "tsx": "tsx/AlbumGridCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "Each play button's aria-label names both the track title and artist."
+      ]
+    },
+    {
+      "id": "album-grid-card-1-dark",
+      "title": "Album grid card (Dark)",
+      "description": "The same four-card album grid, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/album-grid-card/1-dark.html",
+        "tsx": "tsx/AlbumGridCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "hover"],
+      "accessibility": [
+        "The overlay play button meets WCAG AA contrast against the darkened cover art on dark surfaces."
+      ]
+    }
+  ]
+}
