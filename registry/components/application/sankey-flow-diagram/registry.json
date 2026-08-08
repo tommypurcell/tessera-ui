@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-sankey-flow-diagram",
+  "title": "Sankey Flow Diagram",
+  "description": "A node-and-flow visualization that traces weighted paths across stages — e.g. traffic source through funnel stage to outcome — using proportionally sized ribbons.",
+  "category": "application/sankey-flow-diagram",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "sankey-flow-diagram",
+    "sankey",
+    "flow",
+    "diagram",
+    "funnel",
+    "visualization"
+  ],
+  "useWhen": [
+    "Visualizing how a quantity splits and recombines across multiple stages, such as traffic source through conversion outcome.",
+    "The relative proportion of each path (not just each stage total) is the point — ribbon width encodes flow volume."
+  ],
+  "avoidWhen": [
+    "You only need stage-over-stage drop-off without tracing which upstream source contributed — use `Funnel Chart` instead.",
+    "There are more than 3-4 stages or many nodes per stage — a Sankey gets visually tangled past that; consider a table breakdown instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The diagram is a single SVG with viewBox scaling that shrinks proportionally with its container; below roughly 400px width, node labels will crowd and should be hidden or moved to a tooltip.",
+  "accessibility": [
+    "Each node's label and value are rendered as real text elements, not embedded in the SVG as unlabeled shapes.",
+    "Ribbon color is tied to its source node's color and is a secondary cue — the node labels and values are the primary source of truth.",
+    "Provide a text or table fallback of the same flow data for screen reader users, since the ribbon geometry itself does not convey magnitude non-visually."
+  ],
+  "compatibleWith": ["application-charts"],
+  "variants": [
+    {
+      "id": "sankey-flow-diagram-1",
+      "title": "Three-column flow",
+      "description": "A signup funnel by traffic source: two sources flow into two mid-stage outcomes, which flow into three final outcomes, all as proportionally weighted ribbons.",
+      "source": {
+        "html": "../../../../public/examples/application/sankey-flow-diagram/1.html",
+        "tsx": "tsx/SankeyFlowDiagramVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Every node shows its label and numeric value as text directly beside its bar."
+      ]
+    },
+    {
+      "id": "sankey-flow-diagram-1-dark",
+      "title": "Three-column flow (Dark)",
+      "description": "Three-column Sankey flow adapted for dark surfaces, with node and ribbon colors re-tuned for dark contrast.",
+      "source": {
+        "html": "../../../../public/examples/application/sankey-flow-diagram/1-dark.html",
+        "tsx": "tsx/SankeyFlowDiagramVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Node colors and ribbon fills meet WCAG AA contrast against the dark card background; label text uses a light gray, not pure node color."
+      ]
+    }
+  ]
+}
