@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-md p-6">
+    <div class="rounded-xl border border-gray-800 bg-gray-900 p-5">
+      <div class="mb-4 rounded-md bg-gray-100 py-1.5 text-center text-xs font-medium uppercase tracking-wide text-gray-900">
+        Stage
+      </div>
+
+      <div class="grid grid-cols-3 gap-2">
+        <button
+          type="button"
+          aria-pressed="true"
+          aria-label="Section Floor A, price tier Platinum, $250, selected"
+          class="flex h-16 flex-col items-center justify-center rounded-md bg-violet-500 text-white ring-2 ring-violet-400 ring-offset-2 ring-offset-gray-900"
+        >
+          <span class="text-xs font-semibold">Floor A</span>
+          <span class="text-[11px] text-violet-100">$250</span>
+        </button>
+
+        <button
+          type="button"
+          aria-pressed="false"
+          aria-label="Section Floor B, price tier Platinum, $250"
+          class="flex h-16 flex-col items-center justify-center rounded-md bg-violet-600 text-white hover:bg-violet-500"
+        >
+          <span class="text-xs font-semibold">Floor B</span>
+          <span class="text-[11px] text-violet-100">$250</span>
+        </button>
+
+        <button
+          type="button"
+          aria-pressed="false"
+          aria-label="Section Floor C, price tier Platinum, $250"
+          class="flex h-16 flex-col items-center justify-center rounded-md bg-violet-600 text-white hover:bg-violet-500"
+        >
+          <span class="text-xs font-semibold">Floor C</span>
+          <span class="text-[11px] text-violet-100">$250</span>
+        </button>
+
+        <button
+          type="button"
+          aria-pressed="false"
+          aria-label="Section Lower Left, price tier Gold, $145"
+          class="flex h-16 flex-col items-center justify-center rounded-md bg-amber-600 text-white hover:bg-amber-500"
+        >
+          <span class="text-xs font-semibold">Lower L</span>
+          <span class="text-[11px] text-amber-50">$145</span>
+        </button>
+
+        <button
+          type="button"
+          disabled
+          aria-label="Section Lower Center, price tier Gold, $145, sold out"
+          class="flex h-16 cursor-not-allowed flex-col items-center justify-center rounded-md bg-gray-800 text-gray-600"
+        >
+          <span class="text-xs font-semibold">Lower C</span>
+          <span class="text-[11px]">Sold out</span>
+        </button>
+
+        <button
+          type="button"
+          aria-pressed="false"
+          aria-label="Section Lower Right, price tier Gold, $145"
+          class="flex h-16 flex-col items-center justify-center rounded-md bg-amber-600 text-white hover:bg-amber-500"
+        >
+          <span class="text-xs font-semibold">Lower R</span>
+          <span class="text-[11px] text-amber-50">$145</span>
+        </button>
+
+        <button
+          type="button"
+          aria-pressed="false"
+          aria-label="Section Upper Left, price tier Silver, $85"
+          class="flex h-16 flex-col items-center justify-center rounded-md bg-sky-600 text-white hover:bg-sky-500"
+        >
+          <span class="text-xs font-semibold">Upper L</span>
+          <span class="text-[11px] text-sky-50">$85</span>
+        </button>
+
+        <button
+          type="button"
+          aria-pressed="false"
+          aria-label="Section Upper Center, price tier Silver, $85"
+          class="flex h-16 flex-col items-center justify-center rounded-md bg-sky-600 text-white hover:bg-sky-500"
+        >
+          <span class="text-xs font-semibold">Upper C</span>
+          <span class="text-[11px] text-sky-50">$85</span>
+        </button>
+
+        <button
+          type="button"
+          aria-pressed="false"
+          aria-label="Section Upper Right, price tier Silver, $85"
+          class="flex h-16 flex-col items-center justify-center rounded-md bg-sky-600 text-white hover:bg-sky-500"
+        >
+          <span class="text-xs font-semibold">Upper R</span>
+          <span class="text-[11px] text-sky-50">$85</span>
+        </button>
+      </div>
+
+      <div class="mt-5 flex flex-wrap items-center justify-center gap-4 border-t border-gray-800 pt-3 text-xs text-gray-400">
+        <span class="flex items-center gap-1.5">
+          <span class="size-2.5 rounded-sm bg-violet-500"></span>
+          Platinum &middot; $250
+        </span>
+        <span class="flex items-center gap-1.5">
+          <span class="size-2.5 rounded-sm bg-amber-600"></span>
+          Gold &middot; $145
+        </span>
+        <span class="flex items-center gap-1.5">
+          <span class="size-2.5 rounded-sm bg-sky-600"></span>
+          Silver &middot; $85
+        </span>
+        <span class="flex items-center gap-1.5">
+          <span class="size-2.5 rounded-sm bg-gray-800"></span>
+          Sold out
+        </span>
+      </div>
+    </div>
+  </body>
+</html>

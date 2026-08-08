@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-venue-section-map",
+  "title": "Venue Section Map",
+  "description": "Zoomed-out venue/stadium map of clickable seating-section blocks, colored by price tier, with a tier-to-price legend and a sold-out state.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["venue", "stadium", "tickets", "sections", "events"],
+  "useWhen": [
+    "Letting a user choose a general seating section (e.g. Floor, Lower, Upper) in a large venue before drilling into individual seats.",
+    "You need a price-tier legend so users understand what each section color means.",
+    "Distinct from Seat Map Selector, which lets a user pick individual numbered seats within one small section rather than choosing among a venue's sections."
+  ],
+  "avoidWhen": [
+    "The venue is small enough that individual seat selection is the first step — use Seat Map Selector directly.",
+    "There's only one price tier or one section — a simple ticket-tier list (see Ticket Tier Selector) is simpler."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Sections lay out in a 3-column grid that stays legible down to narrow viewports; the legend wraps onto multiple lines rather than truncating.",
+  "accessibility": [
+    "Each section button has an aria-label stating its name, price tier, price, and selected/sold-out state, since tier is otherwise conveyed by color alone.",
+    "Sold-out sections are real disabled buttons, not just visually muted, removing them from the tab order.",
+    "The selected section is marked with aria-pressed=\"true\" in addition to a visual ring."
+  ],
+  "compatibleWith": ["application-ticket-tier-selector", "application-seat-map-selector"],
+  "variants": [
+    {
+      "id": "venue-section-map-1",
+      "title": "Venue Section Map",
+      "description": "3x3 grid of Floor/Lower/Upper sections across Platinum/Gold/Silver tiers, one selected section, one sold-out section, and a legend.",
+      "source": {
+        "html": "../../../../public/examples/application/venue-section-map/1.html",
+        "tsx": "tsx/VenueSectionMapVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "selected", "sold-out"],
+      "accessibility": [
+        "Sold-out section is a real disabled button; selected section carries aria-pressed=\"true\"."
+      ]
+    },
+    {
+      "id": "venue-section-map-1-dark",
+      "title": "Venue Section Map (Dark)",
+      "description": "The same section grid adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/venue-section-map/1-dark.html",
+        "tsx": "tsx/VenueSectionMapVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "selected", "sold-out"],
+      "accessibility": [
+        "Tier color contrast and sold-out muting remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}
