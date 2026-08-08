@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-settings-nav-list",
+  "title": "Settings Nav List",
+  "description": "Grouped vertical settings menu with section headers, icon-labeled items, and a highlighted active section.",
+  "category": "application/navigation",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["settings", "navigation", "sidebar", "menu", "preferences"],
+  "useWhen": [
+    "A settings or preferences area has enough pages to benefit from grouped categories (Account, Workspace, etc).",
+    "You want icons alongside labels to speed up scanning a long settings list.",
+    "The active section needs a clear, persistent visual indicator as the user moves between settings pages."
+  ],
+  "avoidWhen": [
+    "There are only 2-3 settings pages — a simple tab bar is lighter weight than a grouped sidebar list.",
+    "The layout needs to collapse into icon-only or a drawer on mobile — extend this component with your own responsive wrapper.",
+    "Navigation targets other app sections, not settings sub-pages — use side-menu or dashboard-sidebar instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The nav is a fixed w-56 column intended for a settings-page sidebar; collapse or hide it below your chosen mobile breakpoint.",
+  "accessibility": [
+    "The active item carries aria-current=\"page\", the correct token for identifying the current page in a navigation list.",
+    "Icons are aria-hidden since the visible text label is always present alongside them.",
+    "The nav is wrapped in a labeled <nav> landmark so screen reader users can jump directly to it."
+  ],
+  "compatibleWith": ["application-side-menu", "application-tabs", "application-breadcrumbs"],
+  "variants": [
+    {
+      "id": "settings-nav-list-1",
+      "title": "Settings nav list",
+      "description": "Two grouped sections (Account, Workspace) with icon-labeled items and 'Profile' highlighted as active.",
+      "source": {
+        "html": "../../../../public/examples/application/settings-nav-list/1.html",
+        "tsx": "tsx/SettingsNavListVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "active"],
+      "accessibility": [
+        "Active state is shown with both a background fill and font-weight change, not color alone."
+      ]
+    },
+    {
+      "id": "settings-nav-list-1-dark",
+      "title": "Settings nav list (Dark)",
+      "description": "Settings nav list adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/settings-nav-list/1-dark.html",
+        "tsx": "tsx/SettingsNavListVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "active"],
+      "accessibility": [
+        "Active background and text colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
