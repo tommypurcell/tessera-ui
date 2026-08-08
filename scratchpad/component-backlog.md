@@ -628,17 +628,17 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-5) Ballot Option List — candidate/measure rows with select and info expander; distinct from poll-vote-card. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 
 <!-- Theme: Agriculture / IoT -->
-- [~] (builder-4) Field Sensor Map — plot grid with per-zone moisture/temp color coding; distinct from fleet-status-grid.
-- [ ] Crop Growth Timeline — planting→harvest stage tracker with dates and weather; distinct from care-timeline.
+- [x] (builder-4) Field Sensor Map — 18-plot grid color-coded by moisture tier (dry/moist/saturated) with per-plot temperature, legend, selected-plot detail readout; light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #17)
+- [~] (builder-4) Crop Growth Timeline — planting→harvest stage tracker with dates and weather; distinct from care-timeline.
 - [x] (builder-2) Irrigation Schedule Row — per-zone toggle switch, icon color/name emphasis/next-run text all derived from same toggled state (verified via Playwright: toggling paused zone correctly showed its data-next-run time); light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
 
 <!-- Theme: Manufacturing -->
 - [ ] Production Line Status — station tiles with running/stopped/fault and throughput; distinct from health-check-grid.
-- [~] (builder-10) OEE Gauge Trio — availability/performance/quality gauges with overall score; distinct from activity-ring-trio.
-- [~] (builder-9) Work Order Card — order with part, quantity, due date, and stage progress; distinct from milestone-card.
+- [x] (builder-10) OEE Gauge Trio — 2 variants (3 semicircular gauges w/ overall score, compact horizontal bar breakdown), light+dark, semicircle arc math verified, registry+tsx generated, screenshots verified, pushed
+- [x] (builder-9) Work Order Card — 2 variants (detail card with stage-progress bar, compact list) light+dark, registry.json, MDX entry, screenshots
 
 <!-- Theme: Hospitality -->
-- [ ] Room Availability Grid — room-rows × date-columns booked/free calendar; distinct from availability-grid.
+- [x] (builder-7) Room Availability Grid — room-rows × date-columns booked/free calendar; distinct from availability-grid. Light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #26).
 - [x] (builder-7) Guest Check-In Card — reservation with guest, room, dates, and check-in/out actions; distinct from booking-confirmation-card. Light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #26).
 - [x] (builder-7) Amenity Request Row — service request with status, room, and time; distinct from approval-request-card. Light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #26).
 
@@ -646,8 +646,8 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-8) Podcast Episode Row — 2-episode list w/ art, title/date, real-computed duration formatting, play+download actions (item-specific aria-labels), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [x] (builder-8) Sports Scoreboard — 2-team score w/ leader derived from real comparison, possession icon (aria-labeled, not color-only), period/clock, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [x] (builder-5) Live Match Timeline — game events (goals/cards) on a minute-based timeline; distinct from timelines. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
-- [~] (builder-2) Recipe Ingredient List — checkable ingredients with quantity scaler; distinct from task-checklist.
-- [ ] Recipe Step Card — numbered cooking step with timer and image; distinct from lesson-playlist.
+- [x] (builder-2) Recipe Ingredient List — 4→N serving stepper recalculating every ingredient quantity live (caught+fixed unit pluralization bug: "2 cup sugar" at 8 servings should read "cups", now pluralizes based on scaled quantity), checkable rows; light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
+- [~] (builder-2) Recipe Step Card — numbered cooking step with timer and image; distinct from lesson-playlist.
 - [x] (builder-5) Photo EXIF Panel — image metadata rows (camera/lens/ISO/aperture) with histogram; distinct from media. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [ ] Photo Grid Selectable — multi-select photo grid with checkmarks and count bar; distinct from image-gallery-lightbox.
 
@@ -656,15 +656,15 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 <!-- Theme: State variants (distinct compositions, not restyles) -->
 - [x] (builder-7) Table Empty State — full-width in-table zero-rows panel with illustration and add-first-row CTA; distinct from empty-states (table-embedded). Light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #26).
 - [ ] Table Loading Skeleton — shimmering placeholder rows matching column layout; distinct from skeleton-card-list (table grid).
-- [ ] Table Error State — in-table failure row with reason and retry spanning columns; distinct from retry-error-state.
-- [ ] Form Success Panel — post-submit confirmation card with next-steps actions; distinct from magic-link-sent-state.
+- [x] (builder-5) Table Error State — in-table failure row with reason and retry spanning columns; distinct from retry-error-state. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
+- [~] (builder-1) Form Success Panel — post-submit confirmation card with next-steps actions; distinct from magic-link-sent-state.
 - [x] (builder-8) Partial Failure Summary — expandable batch-result banner w/ computed success rate (succeeded/total), per-item error reasons, native details/summary (keyboard-operable), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [ ] Optimistic Pending Row — list row in a "sending…" ghost state with retry-on-fail; distinct from inline-add-row.
 
 <!-- Theme: Density / size framings -->
 - [ ] Compact Data Table — high-density zebra table with condensed row height and sticky header; distinct from tables.
 - [ ] Comfortable List Row — spacious two-line list item with leading media and trailing meta; distinct from media-object-row.
-- [~] (builder-8) Mini Stat Chip — inline label+value+trend micro-stat for toolbars; distinct from stat-tile.
+- [x] (builder-8) Mini Stat Chip — 3 compact toolbar chips (up/down/no-trend states), arrow direction+color derived from real signed trendPercent, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [ ] Expanded Detail Card — large hero-metric card with secondary stats grid; distinct from big-number-delta-tile.
 
 <!-- Theme: Mobile compositions -->
@@ -677,7 +677,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 <!-- Theme: RTL / i18n -->
 - [ ] RTL Layout Demo — mirrored nav+content composition showcasing logical-property flipping; absent from library.
 - [ ] Bidirectional Text Field — input handling mixed LTR/RTL with direction auto-detect; distinct from inputs.
-- [ ] Number Format Preview — locale-aware number/currency/date preview rows; distinct from currency-input.
+- [~] (builder-8) Number Format Preview — locale-aware number/currency/date preview rows; distinct from currency-input.
 
 <!-- Theme: Interaction primitives -->
 - [ ] Drag Handle Row — reorderable list row with grip handle and drop indicator; distinct from queue-list.
@@ -698,3 +698,52 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [ ] Dating Profile Card — swipe-card with photo, name/age, bio, and interest tags; distinct from card-stack.
 - [ ] Menu Category Tabs — sticky food-category tab strip that scrolls the menu; distinct from tab-overflow-scroller.
 - [ ] Nutrition Facts Panel — labeled nutrition table with % daily-value column; distinct from tables.
+
+<!-- === WAVE 13 (deep-backlog refill, post-407) — variant/interaction framings + gaps, verified non-dupe === -->
+
+<!-- Theme: Interaction / gesture primitives -->
+- [ ] Sortable Kanban Card — drag-reorder card within a column with drop placeholder; distinct from board-swimlane.
+- [ ] Nested Sortable List — indentable drag-drop outline list with depth guides; distinct from tree-view.
+- [ ] Pinch-Zoom Image — zoomable/pannable image viewer with reset control; distinct from image-cropper.
+- [ ] Hover Preview Card — link/row that reveals a rich preview popover on hover-delay; distinct from person-hovercard.
+- [ ] Marquee Selection Grid — drag-a-box to multi-select tiles with a selection count; distinct from photo-grid-selectable.
+- [ ] Scroll-Snap Section Pager — full-height snap sections with a side dot-nav; distinct from anchor-scroll-nav.
+
+<!-- Theme: Navigation variants -->
+- [ ] Collapsible Rail Sidebar — icon-only collapsed rail that expands to labels on hover; distinct from sidebar-layout-shell.
+- [ ] Breadcrumb Segmented Path — pill-style path with a home icon and truncation menu; distinct from breadcrumbs.
+- [ ] Vertical Step Tabs — left rail step-tabs swapping right-pane content; distinct from step-progress-sidebar.
+- [ ] Nested Menu Drilldown — mobile menu that slides between parent/child levels; distinct from navigation-menu.
+
+<!-- Theme: Feedback / status variants -->
+- [ ] Inline Undo Snackbar — inline (non-toast) "item removed · Undo" strip within a list; distinct from toast-action-undo.
+- [ ] Blocking Confirm Countdown — auto-proceeding confirm with a cancel-in-N-seconds ring; distinct from confirmation-input.
+- [ ] Progress Checklist Toast — toast that ticks off sub-steps as a task advances; distinct from progress-toast-group.
+- [ ] Stale Data Badge — "updated 5m ago · refresh" indicator with a refresh spinner; distinct from sync-status-row.
+- [ ] Threshold Alert Ribbon — corner ribbon on a card when a metric breaches a limit; distinct from quota-warning-banner.
+
+<!-- Theme: Data display variants -->
+- [ ] Grouped Table Rows — collapsible grouped sections with subtotal header rows; distinct from expandable-detail-row.
+- [ ] Pinned Columns Table — horizontally scrolling table with frozen leading columns; distinct from compact-data-table.
+- [ ] Comparison Column Table — two-entity side-by-side attribute table with diff highlight; distinct from feature-comparison-matrix.
+- [ ] Tag Cloud — weighted keyword cloud with size/opacity by frequency; distinct from hashtag-trend-list.
+- [ ] Definition List Grid — label/value pairs in a responsive two-column grid; distinct from details-list.
+
+<!-- Theme: Input variants -->
+- [ ] Stepper Number Input — increment/decrement number field with min/max and hold-repeat; distinct from quantity-inputs.
+- [ ] Password Reveal Input — password field with show/hide and caps-lock warning; distinct from inputs.
+- [ ] Search Input With Scope — search field with a leading scope dropdown (All/Name/Tag); distinct from input-group.
+- [ ] Character Count Textarea — textarea with live count and over-limit warning; distinct from textareas.
+- [ ] Masked Pattern Input — format-guided input (date/card/phone) with placeholder mask; distinct from phone-number-input.
+
+<!-- Theme: Marketing / content blocks -->
+- [ ] FAQ Accordion Section — grouped Q&A accordion with search filter; distinct from accordions.
+- [ ] Stats Counter Band — animated count-up metrics row on scroll into view; distinct from stat-highlight-band.
+- [ ] Team Member Grid — headshot cards with name/role and social icons; distinct from team-members-list.
+- [ ] Timeline Roadmap — quarter-grouped roadmap items with status pills; distinct from gantt-bar-chart.
+- [ ] Comparison Toggle Pricing — pricing cards with a monthly/annual toggle updating prices; distinct from subscription-tier-toggle.
+
+<!-- Theme: Remaining gaps -->
+- [ ] Availability Status Selector — active/away/DND presence dropdown with custom message; distinct from connection-status-pill.
+- [ ] Keyboard Chord Recorder — capture-a-shortcut input showing pressed keys as kbd chips; distinct from keyboard-shortcut-cheatsheet.
+- [ ] Multi-Avatar Stack Input — assignee picker rendering selected members as an overlapping stack; distinct from assignee-picker.
