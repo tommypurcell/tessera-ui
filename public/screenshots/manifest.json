@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 770,
+  "screenshotCount": 774,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -2235,6 +2235,46 @@
       "sourceSha256": "435922b8155b4136666e3dc2790e884e489e8dc0adeff3950391feb9a82b311d",
       "url": "/screenshots/components/application-range-inputs/range-inputs-5.jpg",
       "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-saved-views-bar",
+      "variantId": "saved-views-bar-1",
+      "appearance": "light",
+      "sourcePath": "files/application-saved-views-bar/saved-views-bar-1.html",
+      "sourceSha256": "ceee218cc9ba652942049a5a53216f17a958bc89ae5a6cc0ad8669d2e8a29419",
+      "url": "/screenshots/components/application-saved-views-bar/saved-views-bar-1.jpg",
+      "width": 672,
+      "height": 400
+    },
+    {
+      "componentId": "application-saved-views-bar",
+      "variantId": "saved-views-bar-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-saved-views-bar/saved-views-bar-1-dark.html",
+      "sourceSha256": "8002f7af76a394ebb41d21f6cdfd324a2f4008ca968096b3ff8663b2b207bc7e",
+      "url": "/screenshots/components/application-saved-views-bar/saved-views-bar-1-dark.jpg",
+      "width": 672,
+      "height": 400
+    },
+    {
+      "componentId": "application-saved-views-bar",
+      "variantId": "saved-views-bar-2",
+      "appearance": "light",
+      "sourcePath": "files/application-saved-views-bar/saved-views-bar-2.html",
+      "sourceSha256": "ea4343935402d1515bdd83576c5e0b7a366e6d8abeb8e12949ce822f7536ec40",
+      "url": "/screenshots/components/application-saved-views-bar/saved-views-bar-2.jpg",
+      "width": 672,
+      "height": 400
+    },
+    {
+      "componentId": "application-saved-views-bar",
+      "variantId": "saved-views-bar-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-saved-views-bar/saved-views-bar-2-dark.html",
+      "sourceSha256": "be22ec4f34a6879ff476befb48bf37e8e97a53ce6d92a78e07c32bee6ad4af73",
+      "url": "/screenshots/components/application-saved-views-bar/saved-views-bar-2-dark.jpg",
+      "width": 672,
       "height": 400
     },
     {
