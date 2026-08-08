@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-xs flex-col items-center gap-4 p-6">
+    <div class="relative flex size-44 items-center justify-center">
+      <svg class="size-44 -rotate-90" viewBox="0 0 160 160" role="img" aria-label="6.4 of 10 gigabytes used">
+        <circle cx="80" cy="80" r="70" fill="none" stroke="currentColor" stroke-width="12" class="text-gray-800" />
+        <circle
+          cx="80"
+          cy="80"
+          r="70"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="12"
+          stroke-linecap="round"
+          stroke-dasharray="439.8"
+          stroke-dashoffset="158.3"
+          class="text-blue-400"
+        />
+      </svg>
+
+      <div class="absolute flex flex-col items-center">
+        <p class="font-mono text-3xl font-semibold text-white">6.4<span class="text-lg text-gray-500">GB</span></p>
+        <p class="text-xs font-medium text-gray-500">of 10 GB</p>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <p class="text-sm font-semibold text-white">14 days left in cycle</p>
+      <p class="text-xs text-gray-400">Projected to use 9.1 GB by renewal</p>
+    </div>
+
+    <button
+      type="button"
+      class="w-full rounded-md border border-gray-700 px-4 py-2.5 text-sm font-semibold text-gray-200 transition hover:bg-gray-800"
+    >
+      Upgrade plan
+    </button>
+  </body>
+</html>

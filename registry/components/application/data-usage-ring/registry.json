@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-data-usage-ring",
+  "title": "Data Usage Ring",
+  "description": "Circular data-usage ring components showing GB used versus plan limit with a days-left billing-cycle projection.",
+  "category": "application/data-usage-ring",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "data-usage-ring",
+    "data usage",
+    "billing cycle",
+    "quota",
+    "mobile plan"
+  ],
+  "useWhen": [
+    "Circular data-usage ring components showing GB used versus plan limit with a days-left billing-cycle projection."
+  ],
+  "avoidWhen": [
+    "Avoid data usage ring when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Data Usage Ring uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "data-usage-ring-1",
+      "title": "Large usage ring with days-left projection",
+      "description": "Large usage ring with days-left projection Circular data-usage ring components showing GB used versus plan limit with a days-left billing-cycle projection.",
+      "source": {
+        "html": "../../../../public/examples/application/data-usage-ring/1.html",
+        "tsx": "tsx/DataUsageRingVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "data-usage-ring-1-dark",
+      "title": "Large usage ring with days-left projection (Dark)",
+      "description": "Large usage ring with days-left projection Circular data-usage ring components showing GB used versus plan limit with a days-left billing-cycle projection.",
+      "source": {
+        "html": "../../../../public/examples/application/data-usage-ring/1-dark.html",
+        "tsx": "tsx/DataUsageRingVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "data-usage-ring-2",
+      "title": "Compact near-limit warning widget",
+      "description": "Compact near-limit warning widget Circular data-usage ring components showing GB used versus plan limit with a days-left billing-cycle projection.",
+      "source": {
+        "html": "../../../../public/examples/application/data-usage-ring/2.html",
+        "tsx": "tsx/DataUsageRingVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "data-usage-ring-2-dark",
+      "title": "Compact near-limit warning widget (Dark)",
+      "description": "Compact near-limit warning widget Circular data-usage ring components showing GB used versus plan limit with a days-left billing-cycle projection.",
+      "source": {
+        "html": "../../../../public/examples/application/data-usage-ring/2-dark.html",
+        "tsx": "tsx/DataUsageRingVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

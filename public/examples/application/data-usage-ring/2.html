@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-xs flex-col gap-4 p-6">
+    <div class="flex items-center gap-4 rounded-lg border border-red-200 bg-red-50/40 p-4">
+      <div class="relative flex size-16 shrink-0 items-center justify-center">
+        <svg class="size-16 -rotate-90" viewBox="0 0 72 72" role="img" aria-label="9.2 of 10 gigabytes used, nearing limit">
+          <circle cx="36" cy="36" r="32" fill="none" stroke="currentColor" stroke-width="6" class="text-red-100" />
+          <circle
+            cx="36"
+            cy="36"
+            r="32"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="6"
+            stroke-linecap="round"
+            stroke-dasharray="201.1"
+            stroke-dashoffset="16.1"
+            class="text-red-500"
+          />
+        </svg>
+        <p class="absolute font-mono text-xs font-semibold text-red-700">92%</p>
+      </div>
+
+      <div class="min-w-0">
+        <p class="text-sm font-semibold text-gray-900">9.2 of 10 GB used</p>
+        <p class="text-xs text-red-600">Nearing your data limit</p>
+      </div>
+    </div>
+  </body>
+</html>
