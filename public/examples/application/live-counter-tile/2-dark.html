@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-xs flex-col gap-4 p-6">
+    <div class="flex items-center gap-3 rounded-lg border border-gray-800 bg-gray-900 px-4 py-3">
+      <span class="relative flex size-2 shrink-0">
+        <span class="absolute inline-flex size-full animate-ping rounded-full bg-red-400 opacity-75"></span>
+        <span class="relative inline-flex size-2 rounded-full bg-red-500"></span>
+      </span>
+
+      <p class="text-sm text-gray-300">
+        <span id="counter-2-dark" class="font-mono font-semibold tabular-nums text-white">1,042</span>
+        watching now
+      </p>
+    </div>
+
+    <script>
+      ;(function () {
+        var el = document.getElementById('counter-2-dark')
+        var value = 1042
+
+        function tick() {
+          value += Math.floor(Math.random() * 7) - 2
+          el.textContent = value.toLocaleString('en-US')
+        }
+
+        setInterval(tick, 1200)
+      })()
+    </script>
+  </body>
+</html>

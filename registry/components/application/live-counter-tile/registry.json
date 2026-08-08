@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-live-counter-tile",
+  "title": "Live Counter Tile",
+  "description": "Animated ticking number tile components for displaying realtime metrics like active sessions or live viewers.",
+  "category": "application/live-counter-tile",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "live-counter-tile",
+    "realtime",
+    "live",
+    "counter",
+    "metric"
+  ],
+  "useWhen": [
+    "Animated ticking number tile components for displaying realtime metrics like active sessions or live viewers."
+  ],
+  "avoidWhen": [
+    "Avoid live counter tile when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Live Counter Tile uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "live-counter-tile-1",
+      "title": "Large tile with live pulse indicator",
+      "description": "Large tile with live pulse indicator Animated ticking number tile components for displaying realtime metrics like active sessions or live viewers.",
+      "source": {
+        "html": "../../../../public/examples/application/live-counter-tile/1.html",
+        "tsx": "tsx/LiveCounterTileVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "live-counter-tile-1-dark",
+      "title": "Large tile with live pulse indicator (Dark)",
+      "description": "Large tile with live pulse indicator Animated ticking number tile components for displaying realtime metrics like active sessions or live viewers.",
+      "source": {
+        "html": "../../../../public/examples/application/live-counter-tile/1-dark.html",
+        "tsx": "tsx/LiveCounterTileVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "live-counter-tile-2",
+      "title": "Compact inline live counter",
+      "description": "Compact inline live counter Animated ticking number tile components for displaying realtime metrics like active sessions or live viewers.",
+      "source": {
+        "html": "../../../../public/examples/application/live-counter-tile/2.html",
+        "tsx": "tsx/LiveCounterTileVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "live-counter-tile-2-dark",
+      "title": "Compact inline live counter (Dark)",
+      "description": "Compact inline live counter Animated ticking number tile components for displaying realtime metrics like active sessions or live viewers.",
+      "source": {
+        "html": "../../../../public/examples/application/live-counter-tile/2-dark.html",
+        "tsx": "tsx/LiveCounterTileVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

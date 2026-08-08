@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-xs flex-col gap-4 p-6">
+    <div class="rounded-lg border border-gray-800 bg-gray-900 p-6">
+      <div class="flex items-center gap-1.5">
+        <span class="relative flex size-2">
+          <span class="absolute inline-flex size-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+          <span class="relative inline-flex size-2 rounded-full bg-green-500"></span>
+        </span>
+        <p class="text-xs font-medium text-gray-400">Live</p>
+      </div>
+
+      <p id="counter-1-dark" class="mt-2 font-mono text-4xl font-semibold tabular-nums text-white">18,204</p>
+      <p class="mt-1 text-sm text-gray-400">Active sessions</p>
+    </div>
+
+    <script>
+      ;(function () {
+        var el = document.getElementById('counter-1-dark')
+        var value = 18204
+
+        function formatNumber(n) {
+          return n.toLocaleString('en-US')
+        }
+
+        function tick() {
+          value += Math.floor(Math.random() * 5) - 1
+          el.textContent = formatNumber(value)
+        }
+
+        setInterval(tick, 1500)
+      })()
+    </script>
+  </body>
+</html>
