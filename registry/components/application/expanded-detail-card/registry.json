@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-expanded-detail-card",
+  "title": "Expanded Detail Card",
+  "description": "Dashboard hero-metric card: a large primary metric with a delta badge and comparison caption, followed by a secondary stats grid breaking the metric down further.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["dashboard", "metrics", "kpi", "stats", "analytics"],
+  "useWhen": [
+    "Anchoring a dashboard section with one primary KPI plus a breakdown of the components that make it up (e.g. new/expansion/churned MRR).",
+    "You need more context than a single number and delta — a related-stats grid underneath.",
+    "Distinct from Big Number Delta Tile, which is a small single-metric tile with no secondary breakdown, rather than an expanded card meant to anchor a dashboard section."
+  ],
+  "avoidWhen": [
+    "You only need a compact single-metric tile with no breakdown — use Big Number Delta Tile instead.",
+    "The secondary stats aren't meaningfully related to the primary metric — a plain stat grid may be clearer without a shared hero."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The secondary stats grid stays at three columns since values are short; the hero metric and delta badge stay on one line via items-baseline so their differing font sizes align on the text baseline.",
+  "accessibility": [
+    "The delta direction icon is aria-hidden and paired with a visually hidden \"Increased by\"/\"Decreased by\" prefix, so the trend is announced correctly regardless of icon rotation.",
+    "Negative secondary stats are marked in red text in addition to their minus sign, never color alone.",
+    "Secondary stats use a semantic definition list (dl/dt/dd) for clear label/value association."
+  ],
+  "compatibleWith": ["application-big-number-delta-tile", "application-metric-sparkline-card"],
+  "variants": [
+    {
+      "id": "expanded-detail-card-1",
+      "title": "Expanded Detail Card",
+      "description": "Monthly recurring revenue hero metric with a positive delta, comparison caption, and a New/Expansion/Churned secondary stats grid.",
+      "source": {
+        "html": "../../../../public/examples/application/expanded-detail-card/1.html",
+        "tsx": "tsx/ExpandedDetailCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["positive-delta", "negative-delta"],
+      "accessibility": [
+        "Delta direction is announced via a visually hidden text prefix alongside the icon."
+      ]
+    },
+    {
+      "id": "expanded-detail-card-1-dark",
+      "title": "Expanded Detail Card (Dark)",
+      "description": "The same hero-metric card adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/expanded-detail-card/1-dark.html",
+        "tsx": "tsx/ExpandedDetailCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["positive-delta", "negative-delta"],
+      "accessibility": [
+        "Metric, delta, and secondary stat contrast remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}
