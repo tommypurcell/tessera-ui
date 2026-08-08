@@ -613,10 +613,10 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-7) Transfer Form — from/to account selectors, amount, and schedule; distinct from currency-converter. Light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #26).
 - [x] (builder-8) Statement Row — bank-statement table w/ computed cumulative running-balance column (4 transactions, starting $2,450 to $4,122.05), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [x] (builder-2) Card Freeze Toggle — bank-card visual with grayscale+Frozen overlay driven by the same toggle state as the switch and status text (caught+fixed a has-checked CSS bug where checkbox was a sibling not descendant of the card, switched to JS-driven classList); light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
-- [~] (builder-7) Spending Insights Bar — month category bars with over/under-average markers; distinct from budget-progress-bar.
+- [x] (builder-7) Spending Insights Bar — month category bars with over/under-average markers; distinct from budget-progress-bar. Light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #26).
 
 <!-- Theme: Telecom -->
-- [~] (builder-10) Data Usage Ring — GB used vs plan with days-left projection; distinct from api-rate-limit-meter.
+- [x] (builder-10) Data Usage Ring — 2 variants (large ring w/ days-left projection, compact near-limit warning widget), light+dark, registry+tsx generated, screenshots verified, pushed. Also fixed invalid YAML in another builder's logic-branch-row.mdx that was blocking generate-registry.mjs fleet-wide.
 - [x] (builder-8) Plan Comparison Row — 3 telecom plans w/ fixed talk/text/data/price columns, current-plan highlight (bg+text), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [x] (builder-8) Signal Strength Bars — 4-bar indicator w/ active count derived from real strength value, network-type label, 3 states shown (3/4, 4/4, weak 1/4), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [x] (builder-2) Call Log Row — contact avatar, direction icon (incoming/outgoing/missed) with color+glyph+label all derived from the same direction value, duration, timestamp, callback button; light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
@@ -625,7 +625,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [~] (builder-4) Form Field Wizard (gov) — long official form split into review-able sections with save-progress; distinct from stepper-wizard.
 - [x] (builder-5) Status Application Tracker — submitted→under-review→decision government stepper with case number; distinct from claim-status-tracker. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [x] (builder-5) Public Notice Card — dated official announcement with category badge and read-more; distinct from announcement-feed-item. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
-- [ ] Ballot Option List — candidate/measure rows with select and info expander; distinct from poll-vote-card.
+- [x] (builder-5) Ballot Option List — candidate/measure rows with select and info expander; distinct from poll-vote-card. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 
 <!-- Theme: Agriculture / IoT -->
 - [ ] Field Sensor Map — plot grid with per-zone moisture/temp color coding; distinct from fleet-status-grid.
@@ -634,17 +634,17 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: Manufacturing -->
 - [ ] Production Line Status — station tiles with running/stopped/fault and throughput; distinct from health-check-grid.
-- [ ] OEE Gauge Trio — availability/performance/quality gauges with overall score; distinct from activity-ring-trio.
-- [ ] Work Order Card — order with part, quantity, due date, and stage progress; distinct from milestone-card.
+- [~] (builder-10) OEE Gauge Trio — availability/performance/quality gauges with overall score; distinct from activity-ring-trio.
+- [~] (builder-9) Work Order Card — order with part, quantity, due date, and stage progress; distinct from milestone-card.
 
 <!-- Theme: Hospitality -->
 - [ ] Room Availability Grid — room-rows × date-columns booked/free calendar; distinct from availability-grid.
-- [ ] Guest Check-In Card — reservation with guest, room, dates, and check-in/out actions; distinct from booking-confirmation-card.
+- [x] (builder-7) Guest Check-In Card — reservation with guest, room, dates, and check-in/out actions; distinct from booking-confirmation-card. Light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #26).
 - [ ] Amenity Request Row — service request with status, room, and time; distinct from approval-request-card.
 
 <!-- Theme: Media / misc verticals -->
-- [~] (builder-8) Podcast Episode Row — episode art, title, duration, play, and download; distinct from track-list-row.
-- [ ] Sports Scoreboard — two-team score with period/clock and possession indicator; distinct from stats.
+- [x] (builder-8) Podcast Episode Row — 2-episode list w/ art, title/date, real-computed duration formatting, play+download actions (item-specific aria-labels), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
+- [~] (builder-8) Sports Scoreboard — two-team score with period/clock and possession indicator; distinct from stats.
 - [ ] Live Match Timeline — game events (goals/cards) on a minute-based timeline; distinct from timelines.
 - [ ] Recipe Ingredient List — checkable ingredients with quantity scaler; distinct from task-checklist.
 - [ ] Recipe Step Card — numbered cooking step with timer and image; distinct from lesson-playlist.
