@@ -202,10 +202,10 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-10) Rating Input Emoji — 2 variants (fieldset scale w/ selected-state label, compact inline scale), light+dark, registry+tsx generated, screenshots verified, pushed
 - [x] (builder-7) Toggle Card Group — 3-card plan selector w/ has-checked: styling and checkmark badge, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
 - [x] (builder-7) Range Dual Input — 2 variants (valid + invalid min>max error state) w/ shared alert message, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
-- [~] (builder-4) Markdown Editor — textarea with toolbar and live split preview pane; distinct from rich-text-toolbar (markdown + preview).
+- [x] (builder-4) Markdown Editor — formatting toolbar + raw-markdown textarea + live split preview pane, Split/Preview toggle, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #14)
 
 <!-- Theme: Navigation -->
-- [ ] Mega Menu Panel — full-width dropdown with multi-column link groups and featured card; distinct from navigation-menu (wide panel layout).
+- [x] (builder-4) Mega Menu Panel — full-width panel, 3 labeled link-group columns + featured promo card w/ badge and CTA, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #14)
 - [ ] Command Bar Breadcrumb — editable breadcrumb where segments become dropdowns for sibling nav; distinct from breadcrumbs (interactive).
 - [ ] Bottom Sheet Nav — mobile draggable sheet with snap points and handle; distinct from drawer (mobile snap behavior).
 - [x] (builder-10) Floating Action Menu — 2 variants (labeled stacked FAB, icon-only stacked FAB), light+dark, checkbox-driven (no JS), registry+tsx generated, screenshots verified, pushed
@@ -213,7 +213,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-3) Pagination Cursor — "Showing X-Y of total" range, rows-per-page select, disabled-aware prev/next icon buttons, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 
 <!-- Theme: Feedback / status -->
-- [~] (builder-9) Inline Validation Hint — field-level success/error message with icon that animates in on blur; distinct from form-row (live feedback state).
+- [x] (builder-9) Inline Validation Hint — 2 variants (message below field, trailing icon in field) light+dark, registry.json, MDX entry, screenshots
 - [x] (builder-1) Loading Overlay — 2 variants (contained card overlay + full-surface overlay), dimmed/blurred scrim w/ role=status spinner+message, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #9).
 - [x] (builder-1) Skeleton Card List — 2 variants (3-card grid + 3-row list), role=status container, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #9).
 - [x] (builder-1) Retry Error State — 2 variants (full centered panel + compact inline banner), both role=alert w/ cause message + retry button, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #9).
@@ -243,9 +243,9 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: Empty / error states -->
 - [ ] First-Run Empty State — illustrative zero-data panel with primary CTA and secondary hint; distinct from empty-states (onboarding-focused).
-- [~] (builder-1) 404 / Error Page — full-page code, message, illustration, and home/back actions; distinct from retry-error-state (route-level).
+- [x] (builder-1) 404 / Error Page — 2 variants (404 Not Found + 500 Server Error), real h1, dual actions, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #16).
 - [x] (builder-8) No-Results Search State — zero-result state w/ real query echo + conditional Clear filters action (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
-- [~] (builder-7) Permission Denied State — locked panel with reason and request-access button; distinct from empty-states.
+- [x] (builder-7) Permission Denied State — 2 states (denied w/ request CTA, request-sent confirmation), light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
 
 <!-- === WAVE 4 (deep-backlog refill, post-145) — themed batches, verified non-dupe against registry === -->
 
@@ -254,25 +254,25 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [ ] Audio Player — waveform/progress track with play, time, and volume; absent from library.
 - [ ] Image Gallery Lightbox — thumbnail grid opening a full-screen viewer with prev/next and caption; distinct from carousel and media.
 - [ ] Image Cropper — draggable crop frame with aspect presets and zoom slider; absent from library.
-- [ ] Avatar Uploader — circular drop-zone with preview, replace, and remove; distinct from file-uploaders (avatar-specialized).
+- [x] (builder-2) Avatar Uploader — circular drop-zone, hover camera overlay, real file input driving live object-URL preview, Replace/Remove actions, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components
 - [x] (builder-2) Media Object Row — 3 podcast-episode rows (thumbnail, truncating title/meta, trailing play button), reusable renderAction slot for custom trailing controls, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components
 - [ ] PDF Page Thumbnails — scrollable page-thumbnail rail with active-page highlight; absent from library.
 
 <!-- Theme: Collaboration -->
-- [~] (builder-2) Reaction Bar — inline emoji reaction counts with add-reaction popover trigger; distinct from emoji-picker (aggregated counts).
+- [x] (builder-2) Reaction Bar — aggregated reaction pills w/ per-emoji count, toggleable reacted-by-you state (aria-pressed, count updates live), dashed add-reaction trigger, light+dark, registry+tsx+MDX, screenshot verified (caught+fixed a wrong-icon-path bug pre-commit), committed to builder-2-components
 - [x] (builder-8) Typing Indicator — avatar + staggered bouncing-dot bubble, label pluralizes from real names array (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
-- [~] (builder-6) Assignee Picker — searchable member dropdown with avatar checkmarks for task assignment; distinct from team-members-list.
-- [ ] Share Dialog — invite-by-email field, role dropdown, member list, and copy-link row; absent from library.
-- [ ] Comment Composer — rich input with mention/attach/emoji toolbar and submit; distinct from mention-textarea (full composer).
-- [ ] Live Presence Avatars — realtime viewer avatar row with join/leave animation; distinct from avatar (presence layer).
+- [x] (builder-6) Assignee Picker — 2 variants (single-select dropdown with search, multi-select checkbox list with stacked-avatar trigger), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
+- [x] (builder-3) Share Dialog — email+role invite row, member list w/ fixed Owner text + editable role selects, copy-link footer, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
+- [x] (builder-1) Comment Composer — 2 variants (full avatar-led composer + compact reply pill), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #16).
+- [~] (builder-10) Live Presence Avatars — realtime viewer avatar row with join/leave animation; distinct from avatar (presence layer).
 
 <!-- Theme: Settings -->
-- [ ] Settings Nav List — grouped vertical settings menu with icons and active section; distinct from side-menu (settings layout).
-- [~] (builder-5) Preference Toggle Row — label + description + trailing switch settings row; distinct from toggles (row composition).
+- [x] (builder-7) Settings Nav List — 2 grouped sections (Account/Workspace) w/ icon-labeled items and active-page highlight, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
+- [x] (builder-5) Preference Toggle Row — label+description+switch settings rows, locked/non-interactive row for mandatory settings, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [x] (builder-1) Danger Zone Panel — 2 variants (single action + 3-row panel), red-bordered section w/ native <dialog> confirm guard, light+dark, registry+tsx+MDX, screenshot + live open verified, committed+pushed (PR #9).
-- [ ] Plan & Billing Card — current-plan summary with usage, renewal date, and manage button; distinct from usage-meter and pricing.
-- [ ] Notification Preferences Grid — channel × event matrix of checkboxes (email/push/SMS); absent from library.
-- [ ] Profile Edit Form — avatar + fields + save-bar settings form layout; distinct from form-row (page composition).
+- [x] (builder-5) Plan & Billing Card — plan+price+status badge, usage bar w/ counts, renewal date, Manage/Upgrade actions, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
+- [~] (builder-3) Notification Preferences Grid — channel × event matrix of checkboxes (email/push/SMS); absent from library.
+- [~] (builder-9) Profile Edit Form — avatar + fields + save-bar settings form layout; distinct from form-row (page composition).
 
 <!-- Theme: Mobile -->
 - [ ] Tab Bar (mobile) — fixed bottom icon+label nav with active indicator and badge; distinct from dock (mobile app bar).
@@ -282,11 +282,11 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [ ] Action Sheet — mobile bottom list of grouped actions with cancel; distinct from bottom-sheet-nav (action list).
 
 <!-- Theme: Data-viz (more) -->
-- [ ] Donut Chart — proportion ring with center total and legend; distinct from charts and progress-ring-cluster.
+- [x] (builder-8) Donut Chart — 4-segment traffic-sources ring, computed center total + legend via SVG stroke-dasharray (tsx light+dark, html light+dark, registry.json, MDX); screenshot verified light+dark, pushed to PR #6
 - [ ] Stacked Area Chart — multi-series cumulative trend with legend toggle; absent from charts set.
 - [ ] Gauge Chart — semicircular needle gauge with threshold zones; distinct from bullet-chart and progress.
 - [ ] Treemap — nested proportional rectangles with labels for hierarchical size; absent from library.
-- [ ] Waterfall Chart — sequential increase/decrease bars with running total; absent from library.
+- [~] (builder-8) Waterfall Chart — sequential increase/decrease bars with running total; absent from library.
 - [ ] Calendar Heat Legend Chart — month grid with value intensity and axis labels; distinct from heatmap-calendar (chart framing).
 
 <!-- Theme: Commerce / finance -->
@@ -299,7 +299,60 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 <!-- Theme: Utility / misc -->
 - [x] (builder-1) Copyable Code Snippet — duplicate of existing `code-editor-block` variant 2 "File name with copy action" (file-name header, Copy button, syntax-highlighted numbered lines); no new work needed here
 - [x] (builder-5) QR Code Card — QR tile (white bg, always-scannable contrast) + caption + encoded value text + Download/Copy link actions, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
-- [~] (builder-10) Countdown Ring Timer — animated radial timer with remaining time in center; distinct from countdown (radial).
+- [x] (builder-10) Countdown Ring Timer — 2 variants (large radial timer w/ mm:ss center, compact inline ring timer w/ action row), light+dark, registry+tsx generated, screenshots verified (live tick confirmed), pushed
 - [ ] Feature Flag Toggle Row — flag name, environment pills, and enable switch with rollout %; absent from library.
 - [ ] Breadcrumb Page Header — title + breadcrumb + action buttons page-header composite; distinct from breadcrumbs (header block).
 - [ ] Filter Chip Overflow — chip row that collapses extras into a "+N" popover on narrow widths; distinct from data-filter-bar.
+
+<!-- === WAVE 5 (deep-backlog refill, post-176) — themed batches, verified non-dupe against registry === -->
+
+<!-- Theme: Layout / structure -->
+- [ ] Split View Layout — resizable master-detail two-pane shell with a collapsible list side; distinct from resizable (app layout composition).
+- [ ] Sticky Section Header — list header that pins to the top while its group scrolls; absent from library.
+- [ ] Masonry Grid — variable-height card grid with balanced columns; distinct from grids (masonry flow).
+- [ ] Sidebar Layout Shell — fixed sidebar + topbar + content app frame with collapse; distinct from dashboard-sidebar (full shell).
+- [ ] Card Stack — swipeable stacked-card deck (Tinder-style) with accept/reject; absent from library.
+- [ ] Expandable Detail Row — table row that expands inline to reveal a detail panel; distinct from tables and accordions.
+
+<!-- Theme: Feedback / status (more) -->
+- [ ] Progress Steps Toast — long-running-task toast showing sub-step progress; distinct from toast-stack.
+- [ ] Rate Limit Notice — cooldown banner with countdown to retry availability; distinct from quota-warning-banner.
+- [ ] Health Check Grid — service tiles with green/yellow/red status and latency; distinct from status-page-board (compact grid).
+- [ ] Sync Status Row — last-synced timestamp with spinning/success/error icon and manual sync; absent from library.
+- [ ] Maintenance Mode Screen — full-page scheduled-downtime notice with ETA; distinct from error-page.
+
+<!-- Theme: Data entry (more) -->
+- [ ] Multi-Step Form Progress — top progress bar + step labels wrapping a paged form; distinct from stepper-wizard (progress-header variant).
+- [ ] Inline Add Row — table footer "add new" row that turns into editable inputs; distinct from data-grid-cell-editor.
+- [ ] Slug Input — text field that live-generates a URL slug with editable override; absent from library.
+- [ ] Tag Filter Group — toggleable tag pills for multi-facet selection; distinct from tag-input (filter mode).
+- [ ] Rating Scale (NPS) — 0–10 numeric scale row with detractor/passive/promoter coloring; distinct from rating-input-emoji.
+- [ ] File Drop Preview List — drop zone plus per-file upload rows with progress and cancel; distinct from file-uploaders (list + progress).
+
+<!-- Theme: Navigation (more) -->
+- [ ] Breadcrumb Dropdown Overflow — long breadcrumb trail collapsing middle segments into a menu; distinct from breadcrumbs.
+- [ ] Sidebar Search Filter — sidebar-top input that live-filters the nav items below; absent from library.
+- [ ] Step Progress Sidebar — vertical numbered nav with completion checks for multi-page flows; distinct from wizard-progress-rail (persistent nav).
+- [ ] Tab Overflow Scroller — horizontally scrollable tab strip with edge fade and arrows; distinct from tabs.
+- [ ] Recent / Pinned Switcher — workspace/project switcher with pinned + recent sections; distinct from dropdown.
+
+<!-- Theme: Dashboard widgets (more) -->
+- [ ] Activity Ring Trio — three concentric goal rings (Apple-Fitness style); distinct from progress-ring-cluster (concentric).
+- [ ] Metric Trend Grid — grid of small KPI + sparkline cells for an at-a-glance board; distinct from metric-sparkline-card (grid).
+- [ ] Top Movers List — gainers/losers rows with % change and direction color; distinct from leaderboard-list.
+- [ ] Live Counter Tile — animated ticking number tile for realtime metrics; distinct from big-number-delta-tile.
+- [ ] Comparison Stat Pair — two side-by-side metrics with a vs divider and winner highlight; absent from library.
+
+<!-- Theme: Collaboration / content (more) -->
+- [ ] Approval Request Card — pending item with approve/reject actions and requester meta; absent from library.
+- [ ] Version History List — timestamped revision rows with author, diff link, and restore; distinct from changelog-entry.
+- [ ] Task Checklist — nested checkable subtasks with progress count and add-item; distinct from onboarding-checklist.
+- [ ] Poll / Vote Card — options with vote bars, counts, and select-to-vote; absent from library.
+- [ ] Announcement Feed Item — pinned/starred post card with author, body, and reactions; distinct from activity-feed.
+
+<!-- Theme: Utility (more) -->
+- [ ] Timezone Picker — searchable tz dropdown showing offset and current time; distinct from time-picker.
+- [ ] Language Switcher — flag/label locale dropdown with checkmark on active; absent from library.
+- [ ] Theme Toggle Switch — animated light/dark/system three-way control; distinct from toggles.
+- [ ] Keyboard Focus Ring Demo — accessibility focus-order showcase with visible ring states; absent from library.
+- [ ] Copy Share Link Row — read-only link with copy + expiry/permission dropdown; distinct from copy-field and share-dialog.

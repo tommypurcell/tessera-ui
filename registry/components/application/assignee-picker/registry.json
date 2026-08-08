@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "name": "application-assignee-picker",
+  "title": "Assignee Picker",
+  "description": "Searchable member dropdowns with avatars and checkmarks for single or multi-person task assignment in project and issue tools.",
+  "category": "application/assignee-picker",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "assignee-picker",
+    "assignee",
+    "member",
+    "avatar",
+    "task"
+  ],
+  "useWhen": [
+    "Searchable member dropdowns with avatars and checkmarks for single or multi-person task assignment in project and issue tools."
+  ],
+  "avoidWhen": [
+    "Avoid assignee picker when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Assignee Picker uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Provide meaningful alternative text for informative images and empty alt text for decorative images.",
+    "Associate each form field with a visible or programmatic label before production use.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "assignee-picker-1",
+      "title": "Single select",
+      "description": "Single select Searchable member dropdowns with avatars and checkmarks for single or multi-person task assignment in project and issue tools.",
+      "source": {
+        "html": "../../../../public/examples/application/assignee-picker/1.html",
+        "tsx": "tsx/AssigneePickerVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images.",
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "assignee-picker-1-dark",
+      "title": "Single select (Dark)",
+      "description": "Single select Searchable member dropdowns with avatars and checkmarks for single or multi-person task assignment in project and issue tools.",
+      "source": {
+        "html": "../../../../public/examples/application/assignee-picker/1-dark.html",
+        "tsx": "tsx/AssigneePickerVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images.",
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "assignee-picker-2",
+      "title": "Multi select",
+      "description": "Multi select Searchable member dropdowns with avatars and checkmarks for single or multi-person task assignment in project and issue tools.",
+      "source": {
+        "html": "../../../../public/examples/application/assignee-picker/2.html",
+        "tsx": "tsx/AssigneePickerVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "assignee-picker-2-dark",
+      "title": "Multi select (Dark)",
+      "description": "Multi select Searchable member dropdowns with avatars and checkmarks for single or multi-person task assignment in project and issue tools.",
+      "source": {
+        "html": "../../../../public/examples/application/assignee-picker/2-dark.html",
+        "tsx": "tsx/AssigneePickerVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    }
+  ]
+}
