@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-xs flex-col items-center gap-2 p-6">
+    <ol class="flex items-center" aria-label="Progress">
+      <li class="flex items-center">
+        <span class="flex size-7 items-center justify-center rounded-full bg-green-500 text-white">
+          <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+          <span class="sr-only">Step 1 complete</span>
+        </span>
+      </li>
+      <li class="h-px w-6 bg-green-500" aria-hidden="true"></li>
+      <li class="flex items-center">
+        <span class="flex size-7 items-center justify-center rounded-full bg-green-500 text-white">
+          <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+          <span class="sr-only">Step 2 complete</span>
+        </span>
+      </li>
+      <li class="h-px w-6 bg-gray-700" aria-hidden="true"></li>
+      <li class="flex items-center">
+        <span
+          class="flex size-7 items-center justify-center rounded-full border-2 border-white text-sm font-semibold text-white"
+          aria-current="step"
+        >
+          3
+        </span>
+      </li>
+      <li class="h-px w-6 bg-gray-700" aria-hidden="true"></li>
+      <li class="flex items-center">
+        <span class="flex size-7 items-center justify-center rounded-full border-2 border-gray-700 text-sm font-medium text-gray-500">
+          4
+        </span>
+      </li>
+    </ol>
+  </body>
+</html>

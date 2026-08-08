@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-step-indicator-dots",
+  "title": "Step Indicator Dots",
+  "description": "Minimal dot and numbered-circle progress indicator components for short multi-step flows.",
+  "category": "application/step-indicator-dots",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "step-indicator-dots",
+    "progress",
+    "dots",
+    "steps",
+    "flow"
+  ],
+  "useWhen": [
+    "Minimal dot and numbered-circle progress indicator components for short multi-step flows."
+  ],
+  "avoidWhen": [
+    "Avoid step indicator dots when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Step Indicator Dots uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "step-indicator-dots-1",
+      "title": "Minimal dot row with active pulse",
+      "description": "Minimal dot row with active pulse Minimal dot and numbered-circle progress indicator components for short multi-step flows.",
+      "source": {
+        "html": "../../../../public/examples/application/step-indicator-dots/1.html",
+        "tsx": "tsx/StepIndicatorDotsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "step-indicator-dots-1-dark",
+      "title": "Minimal dot row with active pulse (Dark)",
+      "description": "Minimal dot row with active pulse Minimal dot and numbered-circle progress indicator components for short multi-step flows.",
+      "source": {
+        "html": "../../../../public/examples/application/step-indicator-dots/1-dark.html",
+        "tsx": "tsx/StepIndicatorDotsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "step-indicator-dots-2",
+      "title": "Numbered circles with completed checkmarks",
+      "description": "Numbered circles with completed checkmarks Minimal dot and numbered-circle progress indicator components for short multi-step flows.",
+      "source": {
+        "html": "../../../../public/examples/application/step-indicator-dots/2.html",
+        "tsx": "tsx/StepIndicatorDotsVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "step-indicator-dots-2-dark",
+      "title": "Numbered circles with completed checkmarks (Dark)",
+      "description": "Numbered circles with completed checkmarks Minimal dot and numbered-circle progress indicator components for short multi-step flows.",
+      "source": {
+        "html": "../../../../public/examples/application/step-indicator-dots/2-dark.html",
+        "tsx": "tsx/StepIndicatorDotsVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}
