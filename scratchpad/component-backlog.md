@@ -432,7 +432,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: Travel -->
 - [x] (builder-7) Flight Route Card — airline+flight#, stop badge, origin/destination codes+times, duration line, route footer, fare, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
-- [ ] Booking Search Bar — location + date-range + guests combined search widget; distinct from data-filter-bar.
+- [~] (builder-1) Booking Search Bar — location + date-range + guests combined search widget; distinct from data-filter-bar.
 - [x] (builder-3) Seat Map Selector — row-labeled seat grid w/ aisle gap, available/taken/selected states, legend, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 - [ ] Itinerary Timeline — day-grouped trip events with time, location, and type icons; distinct from timelines.
 - [ ] Price Calendar — month grid with per-day fare and cheapest-day highlight; distinct from mini-calendar-widget.
@@ -444,9 +444,9 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [ ] Retention Curve Chart — decaying % line over days-since-signup with cohort selector; distinct from cohort-retention-grid.
 
 <!-- Theme: Dev tools / infra (more) -->
-- [~] (builder-1) Resource Usage Gauges — CPU/memory/disk radial gauges row; distinct from gauge-chart (grouped infra).
+- [x] (builder-1) Resource Usage Gauges — duplicate of existing `progress-ring-cluster` (grouped radial dials, explicitly CPU/memory/disk framing); no new work needed here
 - [~] (builder-8) Deployment Timeline — release events with commit, author, env, and rollback; distinct from version-history-list.
-- [~] (builder-3) Feature Flag Table — flags with environment columns, rollout %, and toggle per env; distinct from feature-flag-toggle-row.
+- [x] (builder-3) Feature Flag Table — Dev/Staging/Production toggle columns, per-flag rollout %, monospace flag keys, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 - [ ] Error Rate Sparkline Row — endpoint rows with error % and inline trend; distinct from trend-sparkbar-row (error framing).
 
 <!-- Theme: Utility (more) -->
@@ -537,7 +537,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [ ] Transaction Confirm Sheet — pending-tx summary with from/to, amount, fee, and confirm; distinct from checkout-order-summary.
 
 <!-- Theme: Nonprofit / fundraising -->
-- [ ] Donation Progress Card — raised vs goal bar with donor count and donate CTA; distinct from goal-progress-card.
+- [~] (builder-6) Donation Progress Card — raised vs goal bar with donor count and donate CTA; distinct from goal-progress-card.
 - [ ] Tiered Donation Buttons — preset amount buttons + custom field with impact labels; distinct from variant-selector.
 - [ ] Volunteer Shift Card — role, date/time, spots-filled bar, and sign-up; distinct from appointment-slot-card.
 
