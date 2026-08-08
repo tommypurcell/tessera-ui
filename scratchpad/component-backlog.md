@@ -175,7 +175,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [ ] Field Array Editor — repeatable add/remove form-row group with drag reorder for lists of inputs; common form pattern absent from library.
 - [ ] Currency Input — masked money field with symbol prefix, thousands grouping, and locale/currency selector; distinct from inputs.
 - [ ] Phone Number Input — country-code flag dropdown + formatted national number field; distinct from inputs.
-- [~] (builder-6) Time Picker — hour/minute/period spinner or list dropdown; complements date-range-picker, absent from library.
+- [x] (builder-6) Time Picker — 2 variants (scrolling hour/minute/period column picker, compact dropdown listbox), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
 - [ ] Duration Input — segmented Xh Ym entry for timers/estimates; distinct from time picker (elapsed, not clock).
 - [ ] Slider Range Histogram — dual-thumb range slider over a value histogram for price/date filtering; distinct from range-inputs and timeline-scrubber.
 - [ ] Toast Action Undo — snackbar with a countdown ring and inline Undo action for reversible operations; distinct from toast-stack (single actionable pattern).
