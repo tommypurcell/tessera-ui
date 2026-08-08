@@ -579,17 +579,17 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: Developer API console -->
 - [x] (builder-8) Endpoint Method Row — 5-row REST reference (GET/POST/PUT/PATCH/DELETE) with color-coded method pills and monospace paths, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
-- [~] (builder-4) Request Builder — method/URL/headers/body tabs with a send button; distinct from query-builder.
+- [x] (builder-4) Request Builder — method/URL/Send bar + Params/Headers/Body/Auth tabs + editable header rows, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #17)
 - [x] (builder-5) Response Viewer — status badge, timing, and collapsible JSON body with copy; distinct from json-tree-viewer. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [x] (builder-8) API Rate Limit Meter — endpoint quota bar with computed usage percent, amber near-limit state (color+text), reset-time note, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [~] (builder-10) Code Language Tabs — snippet panel with curl/JS/Python tabs and copy; distinct from code-editor-block.
 
 <!-- Theme: Data pipeline / ETL -->
-- [ ] Pipeline Flow Node — draggable process node with input/output ports and status; distinct from sankey-flow-diagram.
+- [~] (builder-4) Pipeline Flow Node — draggable process node with input/output ports and status; distinct from sankey-flow-diagram.
 - [x] (builder-8) Job Run Row — 3-state (succeeded/running/failed) run summary row w/ formatted duration, toLocaleString record counts, logs link, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [x] (builder-8) Schema Field List — 5-column users table w/ PK icon marker, type badges, nullable/not-null states, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [~] (builder-9) Data Quality Score — pass/fail check summary ring with failing-rule list; distinct from lead-score-meter.
-- [ ] Column Mapping Rows — source→target field mapping with dropdowns and auto-match; distinct from import-wizard.
+- [x] (builder-5) Column Mapping Rows — source→target field mapping with dropdowns and auto-match; distinct from import-wizard. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 
 <!-- Theme: Survey builder -->
 - [ ] Question Type Palette — draggable question-type cards (MC, rating, text, scale); distinct from query-builder.
@@ -602,11 +602,11 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 <!-- === WAVE 11 (deep-backlog refill, post-331) — new verticals, verified non-dupe against registry === -->
 
 <!-- Theme: POS / retail -->
-- [ ] POS Keypad — numeric amount pad with total display and quick-cash buttons; distinct from quantity-inputs.
+- [~] (builder-2) POS Keypad — numeric amount pad with total display and quick-cash buttons; distinct from quantity-inputs.
 - [ ] Receipt Preview — itemized thermal-receipt layout with tax/total and footer; distinct from invoice-table.
-- [ ] Barcode Scan Row — scanned-item row with SKU, qty, price, and void; distinct from cart-line-item.
+- [~] (builder-8) Barcode Scan Row — scanned-item row with SKU, qty, price, and void; distinct from cart-line-item.
 - [x] (builder-8) Tip Selector — preset %-tip buttons w/ computed tip/total/per-person split (real math from bill×percent÷splitCount), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
-- [~] (builder-8) Cash Drawer Summary — expected vs counted totals with variance highlight; distinct from comparison-stat-pair.
+- [x] (builder-8) Cash Drawer Summary — expected/counted totals w/ computed signed variance, balanced/over/short states (color+text), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 
 <!-- Theme: Banking -->
 - [~] (builder-7) Account Balance Card — masked balance with show/hide, account number, and quick actions; distinct from token-balance-row.
