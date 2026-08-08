@@ -557,7 +557,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 <!-- Theme: Events / ticketing -->
 - [x] (builder-5) Event Ticket Card — perforated dashed-divider+notch ticket, event/date/venue/section/ticket#, white-tile QR stub, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [~] (builder-5) Ticket Tier Selector — quantity steppers per price tier with running total; distinct from variant-selector.
-- [ ] Event Countdown Hero — headline event with days/hrs/min countdown and RSVP; distinct from countdown-ring-timer.
+- [~] (builder-10) Event Countdown Hero — headline event with days/hrs/min countdown and RSVP; distinct from countdown-ring-timer.
 - [ ] Venue Section Map — clickable stadium/venue section blocks with price legend; distinct from seat-map-selector.
 - [ ] Schedule Agenda List — day-grouped session rows with time, track, and speaker; distinct from itinerary-timeline.
 - [~] (builder-7) Speaker Card — headshot, name, title, talk, and social links; distinct from contact-card.
@@ -566,7 +566,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [ ] Video Thumbnail Card — thumbnail with duration badge, title, channel, and views; distinct from image-gallery-lightbox.
 - [ ] Watch Progress Bar — resume-position red bar overlaid on a thumbnail; distinct from progress-bars.
 - [ ] Channel Header — banner, avatar, subscriber count, and subscribe button; distinct from auth-card-shell.
-- [ ] Live Stream Badge — pulsing LIVE indicator with concurrent-viewer count; distinct from connection-status-pill.
+- [~] (builder-6) Live Stream Badge — pulsing LIVE indicator with concurrent-viewer count; distinct from connection-status-pill.
 - [ ] Playback Speed Menu — speed option list with checkmark and quality submenu; distinct from dropdown.
 - [ ] Up-Next Autoplay Card — countdown-to-next-video card with cancel and play-now; distinct from toast-action-undo.
 
