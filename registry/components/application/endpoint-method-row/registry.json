@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-endpoint-method-row",
+  "title": "Endpoint Method Row",
+  "description": "API-reference list of HTTP method pill, path, and description rows — distinct from webhook-event-row, which shows delivered webhook event history (timestamps, status, payload) rather than a reference of available endpoints.",
+  "category": "application/developer-tools",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["api", "developer-tools", "reference", "http", "documentation"],
+  "useWhen": [
+    "Documenting a list of available API endpoints with their HTTP methods.",
+    "You want each method (GET/POST/PUT/PATCH/DELETE) to be instantly scannable via a distinct color.",
+    "Paths should render in a monospace font distinct from the description text."
+  ],
+  "avoidWhen": [
+    "You need a history of actual webhook deliveries with status and timestamps — use webhook-event-row instead.",
+    "You need an interactive request builder — use request-builder instead.",
+    "There's only a single endpoint to document — inline code is simpler."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Rows are full-width within their container; the description column truncates with ellipsis if the row runs out of horizontal space.",
+  "accessibility": [
+    "The HTTP method pill uses both a distinct background/text color per method and readable text, never color alone.",
+    "Path segments are rendered as monospace <code> to visually distinguish them from prose.",
+    "List semantics (ul/li) allow assistive tech to announce the number of endpoints."
+  ],
+  "compatibleWith": ["application-webhook-event-row", "application-request-builder", "application-response-viewer"],
+  "variants": [
+    {
+      "id": "endpoint-method-row-1",
+      "title": "Endpoint method row",
+      "description": "A five-endpoint REST reference (GET/POST/PUT/PATCH/DELETE on /v1/users) with color-coded method pills, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/endpoint-method-row/1.html",
+        "tsx": "tsx/EndpointMethodRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Each method pill's color is distinct across all five HTTP methods for quick visual scanning."
+      ]
+    },
+    {
+      "id": "endpoint-method-row-1-dark",
+      "title": "Endpoint method row (Dark)",
+      "description": "The same five-endpoint reference, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/endpoint-method-row/1-dark.html",
+        "tsx": "tsx/EndpointMethodRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Method pill background/text pairs meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
