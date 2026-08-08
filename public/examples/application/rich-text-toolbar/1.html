@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-lg p-6">
+    <div class="rounded-lg border border-gray-200 bg-white shadow-sm">
+      <div role="toolbar" aria-label="Formatting" class="flex flex-wrap items-center gap-1 border-b border-gray-200 p-1.5">
+        <label class="sr-only" for="heading-select">Text style</label>
+        <select id="heading-select" class="rounded-md border-0 bg-transparent py-1 pl-2 pr-6 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600">
+          <option>Paragraph</option>
+          <option>Heading 1</option>
+          <option>Heading 2</option>
+          <option>Heading 3</option>
+        </select>
+
+        <div role="separator" aria-orientation="vertical" class="mx-1 h-5 w-px bg-gray-200"></div>
+
+        <button type="button" aria-label="Bold" aria-pressed="true" class="inline-flex size-8 items-center justify-center rounded-md bg-gray-200 text-sm font-bold text-gray-900">
+          B
+        </button>
+        <button type="button" aria-label="Italic" aria-pressed="false" class="inline-flex size-8 items-center justify-center rounded-md text-sm italic text-gray-700 hover:bg-gray-100">
+          I
+        </button>
+        <button type="button" aria-label="Underline" aria-pressed="false" class="inline-flex size-8 items-center justify-center rounded-md text-sm text-gray-700 underline hover:bg-gray-100">
+          U
+        </button>
+
+        <div role="separator" aria-orientation="vertical" class="mx-1 h-5 w-px bg-gray-200"></div>
+
+        <button type="button" aria-label="Bulleted list" aria-pressed="false" class="inline-flex size-8 items-center justify-center rounded-md text-gray-700 hover:bg-gray-100">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+          </svg>
+        </button>
+        <button type="button" aria-label="Numbered list" aria-pressed="false" class="inline-flex size-8 items-center justify-center rounded-md text-gray-700 hover:bg-gray-100">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.242 5.992h12m-12 6.003H20.24m-12 5.999h12M4.117 7.495v-3.75H2.99m1.125 3.75H2.99m1.125 0H5.24m-1.92 2.577a1.125 1.125 0 1 1 1.591 1.59l-1.83 1.83h2.16M2.99 15.745h1.125a1.125 1.125 0 0 1 0 2.25H3.74m0-.002h.375a1.125 1.125 0 0 1 0 2.25H2.99" />
+          </svg>
+        </button>
+
+        <div role="separator" aria-orientation="vertical" class="mx-1 h-5 w-px bg-gray-200"></div>
+
+        <button type="button" aria-label="Insert link" aria-pressed="false" class="inline-flex size-8 items-center justify-center rounded-md text-gray-700 hover:bg-gray-100">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="p-4">
+        <p class="text-sm leading-relaxed text-gray-700">
+          <strong>Ship on Friday</strong> only if the migration has been dry-run against staging.
+          Otherwise, hold for Monday.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
