@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-stale-data-badge",
+  "title": "Stale Data Badge",
+  "description": "Small inline 'updated N ago' badge that flags itself stale once elapsed time crosses a threshold, with a compact refresh action — distinct from sync-status-row, which is a full syncing/success/error status row rather than a compact staleness indicator with no sync lifecycle of its own.",
+  "category": "application/feedback",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["stale", "freshness", "refresh", "badge", "status"],
+  "useWhen": [
+    "Showing how recently a piece of data was fetched, inline next to the data itself.",
+    "You want the stale/fresh state derived from a real elapsed-time comparison against a threshold.",
+    "A compact badge fits better than a full status row with sync lifecycle states."
+  ],
+  "avoidWhen": [
+    "You need to represent an active syncing/success/error lifecycle — use sync-status-row instead.",
+    "There's no meaningful staleness threshold for the data — a plain timestamp is simpler.",
+    "You need a full-width row layout — this badge is sized for inline placement."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The badge sizes to its content and can sit inline next to other elements; multiple badges wrap naturally in a flex container.",
+  "accessibility": [
+    "Stale state is conveyed by both an amber color scheme and a color-shifted status dot, never color alone — the visible 'Updated Nm ago' text is the primary signal.",
+    "The refresh button has an explicit aria-label ('Refresh data') independent of the spinning icon.",
+    "Elapsed time is computed from real Date values (now - updatedAt), never a hand-typed string that could drift from the actual timestamp."
+  ],
+  "compatibleWith": ["application-sync-status-row"],
+  "variants": [
+    {
+      "id": "stale-data-badge-1",
+      "title": "Stale data badge",
+      "description": "A fresh badge (2 minutes old, under the 5-minute threshold) beside a stale badge (12 minutes old, past the threshold), on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/stale-data-badge/1.html",
+        "tsx": "tsx/StaleDataBadgeVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["fresh", "stale"],
+      "accessibility": [
+        "Elapsed minutes are computed as Math.floor((now - updatedAt) / 60000), never hand-typed independently of the two timestamps."
+      ]
+    },
+    {
+      "id": "stale-data-badge-1-dark",
+      "title": "Stale data badge (Dark)",
+      "description": "The same fresh and stale badge pair, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/stale-data-badge/1-dark.html",
+        "tsx": "tsx/StaleDataBadgeVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["fresh", "stale"],
+      "accessibility": [
+        "Badge colors meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
