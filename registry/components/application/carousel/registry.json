@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "application-carousel",
+  "title": "Carousel",
+  "description": "Single-image-at-a-time carousel with previous/next controls and dot indicators.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["carousel", "slider", "gallery", "media", "navigation"],
+  "useWhen": [
+    "Showcasing a small set of images or featured items one at a time in a fixed amount of space.",
+    "Building a hero banner or product gallery where the user browses sequentially rather than scanning a grid.",
+    "The number of items is small enough that dot indicators stay legible (roughly 2-7)."
+  ],
+  "avoidWhen": [
+    "The content should all be visible and scannable at once — a grid or `scroll-area` list serves that better than hiding items behind navigation.",
+    "You have more than ~8 items — dot indicators stop being useful navigation at that count; use thumbnails or pagination instead.",
+    "Accessibility is a hard requirement and you cannot commit to keyboard support and pause-on-hover for autoplay — a static grid avoids the risk entirely."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Fills its container width at a fixed aspect-driven height; controls remain touch-target sized (32px) at all viewport widths.",
+  "accessibility": [
+    "The carousel region has role=\"region\" with aria-roledescription=\"carousel\" and an aria-label describing its content.",
+    "Previous/next controls are icon-only buttons with explicit aria-label text.",
+    "Each slide's alt text states its position (\"Slide 2 of 3\") in addition to describing the image.",
+    "Dot indicators are real buttons in a role=\"tablist\" with aria-selected reflecting the active slide, not decorative spans."
+  ],
+  "compatibleWith": ["application-card"],
+  "variants": [
+    {
+      "id": "carousel-1",
+      "title": "Carousel",
+      "description": "Image carousel with previous/next arrow buttons and dot slide indicators.",
+      "source": {
+        "html": "../../../../public/examples/application/carousel/1.html",
+        "tsx": "tsx/CarouselVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Dot indicators and arrow buttons are keyboard-focusable and operable without a pointer."
+      ]
+    },
+    {
+      "id": "carousel-1-dark",
+      "title": "Carousel (Dark)",
+      "description": "Image carousel adapted for dark surfaces, with previous/next controls and dot indicators.",
+      "source": {
+        "html": "../../../../public/examples/application/carousel/1-dark.html",
+        "tsx": "tsx/CarouselVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Control button backgrounds carry enough opacity/contrast against varied photo content in dark mode."
+      ]
+    }
+  ]
+}
