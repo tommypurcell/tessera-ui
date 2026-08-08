@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "application-team-members-list",
+  "title": "Team Members List",
+  "description": "Row-based team management list with avatar, name/email, a per-row role select, a pending-invite state, and a remove action.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["team", "members", "roles", "settings", "management"],
+  "useWhen": [
+    "Building a settings page where an admin manages who belongs to a workspace/organization and what role they hold.",
+    "You need to represent both active members (with an assignable role) and pending invitees in one consistent list.",
+    "Each row needs its own inline action (role change, remove/cancel) rather than a bulk table toolbar."
+  ],
+  "avoidWhen": [
+    "The list is large enough to need sorting, filtering, or pagination — pair this pattern with `tables` instead once row count grows past a page's worth.",
+    "You're displaying arbitrary structured data with no membership/role semantics — use the generic `details-list` instead.",
+    "Roles aren't user-editable inline — a read-only `avatar-group` or plain list is simpler when there's nothing to manage."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Rows are a single flex line with a truncating name/email column; on narrow viewports, wrap this list in a horizontally scrollable container or drop the role select to a secondary line to avoid clipping the email in the min-w-0 column.",
+  "accessibility": [
+    "Each role <select> has an associated (visually hidden) label naming the specific member it controls, since multiple selects share the same visual context.",
+    "Remove/cancel-invite buttons are icon-only with an explicit aria-label that includes the member's name.",
+    "Pending invites are communicated via a text badge (\"Invite pending\"), not color alone, so the state is conveyed to screen readers and colorblind users alike.",
+    "Avatar images are decorative (empty alt) since the name is present as adjacent text; members without a photo fall back to text initials rather than a broken image."
+  ],
+  "compatibleWith": ["application-avatar", "application-tables", "application-selects"],
+  "variants": [
+    {
+      "id": "team-members-list-1",
+      "title": "Team Members List",
+      "description": "Two active members with role selects and one pending invitee, plus an Invite member action.",
+      "source": {
+        "html": "../../../../public/examples/application/team-members-list/1.html",
+        "tsx": "tsx/TeamMembersListVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "pending"],
+      "accessibility": [
+        "Role changes and removals are driven by real state in the React variant, not just visual mockups."
+      ]
+    },
+    {
+      "id": "team-members-list-1-dark",
+      "title": "Team Members List (Dark)",
+      "description": "Team members list adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/team-members-list/1-dark.html",
+        "tsx": "tsx/TeamMembersListVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "pending"],
+      "accessibility": [
+        "Pending-invite badge and hover states are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}
