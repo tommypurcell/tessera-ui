@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-sm p-6">
+    <div class="overflow-hidden rounded-lg border border-gray-800">
+      <div class="flex flex-col items-center justify-center gap-1 bg-gray-900 py-4" role="status" aria-live="polite">
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="size-5 animate-spin text-indigo-400" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+        </svg>
+        <p class="text-xs font-medium text-gray-400">Refreshing&hellip;</p>
+      </div>
+
+      <div class="flex flex-col divide-y divide-gray-800 bg-gray-950 opacity-60">
+        <div class="flex items-center gap-3 p-4">
+          <div class="size-9 shrink-0 rounded-full bg-gray-800"></div>
+          <div class="flex flex-1 flex-col gap-1">
+            <p class="text-sm font-medium text-white">New comment on your post</p>
+            <p class="text-xs text-gray-500">2 minutes ago</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 p-4">
+          <div class="size-9 shrink-0 rounded-full bg-gray-800"></div>
+          <div class="flex flex-1 flex-col gap-1">
+            <p class="text-sm font-medium text-white">Ava Wilson mentioned you</p>
+            <p class="text-xs text-gray-500">1 hour ago</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 p-4">
+          <div class="size-9 shrink-0 rounded-full bg-gray-800"></div>
+          <div class="flex flex-1 flex-col gap-1">
+            <p class="text-sm font-medium text-white">Your report is ready</p>
+            <p class="text-xs text-gray-500">3 hours ago</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

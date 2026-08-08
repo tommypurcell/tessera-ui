@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "name": "application-danger-zone-panel",
+  "title": "Danger Zone Panel",
+  "description": "A visually separated, red-bordered settings section grouping destructive account or project actions, each guarded by a confirmation step.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["application", "settings", "destructive", "danger-zone"],
+  "useWhen": [
+    "A settings page has one or more irreversible actions (delete account, delete project, leave organization) that should be visually set apart from routine settings.",
+    "Each destructive action needs a description of its consequences alongside the trigger, not just a bare button."
+  ],
+  "avoidWhen": [
+    "The action is reversible or low-stakes — mixing it into this panel overstates its severity and trains users to ignore the warning styling.",
+    "You only have a single destructive action with no other settings context — a standalone alert dialog trigger may be simpler than a full panel."
+  ],
+  "dependencies": ["application-alert-dialog"],
+  "responsiveBehavior": "Each row is a flex layout that keeps the label and description on the left and the action button pinned right; on narrow viewports, wrap the row to stack the button below the text if the button label is long.",
+  "accessibility": [
+    "The panel is a <section> with aria-labelledby pointing at the \"Danger zone\" heading, so screen readers announce it as a distinct region.",
+    "Every destructive trigger opens a confirmation dialog (see the alert-dialog component) rather than acting immediately — irreversible actions should never fire on a single accidental click.",
+    "Color (red border/text) is reinforced by explicit heading and description text, never relying on color alone to convey severity."
+  ],
+  "compatibleWith": ["application-alert-dialog", "application-form-row"],
+  "variants": [
+    {
+      "id": "danger-zone-panel-1",
+      "title": "Single action",
+      "description": "One destructive row (delete account) wired to an alert dialog confirmation",
+      "source": {
+        "html": "../../../../public/examples/application/danger-zone-panel/1.html",
+        "tsx": "tsx/DangerZonePanelVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "confirm-open"],
+      "accessibility": ["The trigger button opens a dialog rather than deleting immediately, giving the user a chance to back out."]
+    },
+    {
+      "id": "danger-zone-panel-1-dark",
+      "title": "Single action (Dark)",
+      "description": "One destructive row (delete account) wired to an alert dialog confirmation",
+      "source": {
+        "html": "../../../../public/examples/application/danger-zone-panel/1-dark.html",
+        "tsx": "tsx/DangerZonePanelVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "confirm-open"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    },
+    {
+      "id": "danger-zone-panel-2",
+      "title": "Multiple actions",
+      "description": "Three destructive rows (transfer ownership, leave organization, delete project) grouped in one panel with a shared header",
+      "source": {
+        "html": "../../../../public/examples/application/danger-zone-panel/2.html",
+        "tsx": "tsx/DangerZonePanelVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": ["Each row's button carries its own accessible name via visible text, distinguishing otherwise similarly styled destructive actions."]
+    },
+    {
+      "id": "danger-zone-panel-2-dark",
+      "title": "Multiple actions (Dark)",
+      "description": "Three destructive rows (transfer ownership, leave organization, delete project) grouped in one panel with a shared header",
+      "source": {
+        "html": "../../../../public/examples/application/danger-zone-panel/2-dark.html",
+        "tsx": "tsx/DangerZonePanelVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    }
+  ]
+}
