@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 802,
+  "screenshotCount": 806,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -895,6 +895,46 @@
       "sourceSha256": "723388c3ea0b558733a95824771ed3d26a7e0f0fe96de9219dfa87b90f0ff6d5",
       "url": "/screenshots/components/application-code-editor-block/code-editor-block-2-dark.jpg",
       "width": 672,
+      "height": 400
+    },
+    {
+      "componentId": "application-consent-checklist",
+      "variantId": "consent-checklist-1",
+      "appearance": "light",
+      "sourcePath": "files/application-consent-checklist/consent-checklist-1.html",
+      "sourceSha256": "8c4185914b35cb4945fb824d46943fa2f466870edb0ab72bffd63ec889d223ad",
+      "url": "/screenshots/components/application-consent-checklist/consent-checklist-1.jpg",
+      "width": 600,
+      "height": 402
+    },
+    {
+      "componentId": "application-consent-checklist",
+      "variantId": "consent-checklist-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-consent-checklist/consent-checklist-1-dark.html",
+      "sourceSha256": "f8e4ea9cdf54a112d5bcacb1738f8c67e236b3645df221b164f4ce0fa1fd7cbd",
+      "url": "/screenshots/components/application-consent-checklist/consent-checklist-1-dark.jpg",
+      "width": 600,
+      "height": 402
+    },
+    {
+      "componentId": "application-consent-checklist",
+      "variantId": "consent-checklist-2",
+      "appearance": "light",
+      "sourcePath": "files/application-consent-checklist/consent-checklist-2.html",
+      "sourceSha256": "c2d3272737e742d86c3adf3889c7424993695ed03f17f850540b0e65af9a30f1",
+      "url": "/screenshots/components/application-consent-checklist/consent-checklist-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-consent-checklist",
+      "variantId": "consent-checklist-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-consent-checklist/consent-checklist-2-dark.html",
+      "sourceSha256": "6e91009ae0dd7ab5646d04990909b4a915c4eb8dbb8fca068f2a6bf2f97645f2",
+      "url": "/screenshots/components/application-consent-checklist/consent-checklist-2-dark.jpg",
+      "width": 600,
       "height": 400
     },
     {
