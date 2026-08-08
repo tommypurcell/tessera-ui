@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 748,
+  "screenshotCount": 754,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -3105,6 +3105,66 @@
       "sourceSha256": "2973f4ccfbd0e971c55a1800f5265276564f699355c8411feb46cbeaa7d2e342",
       "url": "/screenshots/components/application-toolbar/toolbar-1-dark.jpg",
       "width": 720,
+      "height": 400
+    },
+    {
+      "componentId": "application-typography",
+      "variantId": "typography-1",
+      "appearance": "light",
+      "sourcePath": "files/application-typography/typography-1.html",
+      "sourceSha256": "2dc9628c8306dab32178bd9709c95816a938096e145202fb35dc763357208acb",
+      "url": "/screenshots/components/application-typography/typography-1.jpg",
+      "width": 672,
+      "height": 400
+    },
+    {
+      "componentId": "application-typography",
+      "variantId": "typography-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-typography/typography-1-dark.html",
+      "sourceSha256": "12cdff590ce6851159f213fdbc4e46679650a4a1d3c04a6b126c8edc8acf6a10",
+      "url": "/screenshots/components/application-typography/typography-1-dark.jpg",
+      "width": 672,
+      "height": 400
+    },
+    {
+      "componentId": "application-typography",
+      "variantId": "typography-2",
+      "appearance": "light",
+      "sourcePath": "files/application-typography/typography-2.html",
+      "sourceSha256": "edb52a0d7bcaebbb42ae1e2f7d0273e6b17129e131d919135522cdb816da256a",
+      "url": "/screenshots/components/application-typography/typography-2.jpg",
+      "width": 672,
+      "height": 472
+    },
+    {
+      "componentId": "application-typography",
+      "variantId": "typography-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-typography/typography-2-dark.html",
+      "sourceSha256": "9c01c71c3fab745a42c784ee18983d84773759beccbfe24c294c40e76d0b23a3",
+      "url": "/screenshots/components/application-typography/typography-2-dark.jpg",
+      "width": 672,
+      "height": 472
+    },
+    {
+      "componentId": "application-typography",
+      "variantId": "typography-3",
+      "appearance": "light",
+      "sourcePath": "files/application-typography/typography-3.html",
+      "sourceSha256": "79b910f3a7c8843ad613dbad7f5885ad8b93cd1d1e18a3dbbe9139c7a1fcc6b8",
+      "url": "/screenshots/components/application-typography/typography-3.jpg",
+      "width": 672,
+      "height": 400
+    },
+    {
+      "componentId": "application-typography",
+      "variantId": "typography-3-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-typography/typography-3-dark.html",
+      "sourceSha256": "03d374aa9c95aa20c2ff1c04b78a3ddb7e6c52024f6ab28d16f0ca56df5e45f6",
+      "url": "/screenshots/components/application-typography/typography-3-dark.jpg",
+      "width": 672,
       "height": 400
     },
     {
