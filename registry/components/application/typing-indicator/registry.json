@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-typing-indicator",
+  "title": "Typing Indicator",
+  "description": "Animated \"X is typing…\" row for chat threads, with an avatar and staggered bouncing dots — the label pluralizes automatically from a real list of typing users.",
+  "category": "application/media",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["typing-indicator", "chat", "presence", "realtime"],
+  "useWhen": [
+    "Showing that one or more other users are actively composing a message in a chat thread.",
+    "You want the \"X is typing…\" / \"X and Y are typing…\" / \"X and N others are typing…\" copy generated from a real names array.",
+    "The indicator should disappear automatically when nobody is typing (pass an empty array)."
+  ],
+  "avoidWhen": [
+    "You need to show full message content, not just a composing signal — use chat-bubbles instead.",
+    "The presence signal isn't about active typing (e.g. just \"online\") — use a presence dot on an avatar instead.",
+    "Reduced motion must be strictly honored and no fallback exists — consider a static \"typing…\" label behind a prefers-reduced-motion check in your integration."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The row is a single inline-flex line sized to its content; it fits naturally at the bottom of a chat thread at any width.",
+  "accessibility": [
+    "The wrapper carries role='status' and aria-live='polite' so screen readers announce when someone starts or stops typing.",
+    "A visually hidden label states the full pluralized typing message; the animated dots are purely visual.",
+    "The component renders nothing when the names array is empty, so no stale or misleading status persists."
+  ],
+  "compatibleWith": ["application-chat-bubbles", "application-avatar-group", "application-comment-thread"],
+  "variants": [
+    {
+      "id": "typing-indicator-1",
+      "title": "Typing indicator",
+      "description": "Single-user typing indicator with avatar initials and a bouncing three-dot bubble, on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/typing-indicator/1.html",
+        "tsx": "tsx/TypingIndicatorVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The animated dots are decorative; the sr-only label carries the actual status text."
+      ]
+    },
+    {
+      "id": "typing-indicator-1-dark",
+      "title": "Typing indicator (Dark)",
+      "description": "The same single-user typing indicator, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/typing-indicator/1-dark.html",
+        "tsx": "tsx/TypingIndicatorVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Avatar and bubble colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
