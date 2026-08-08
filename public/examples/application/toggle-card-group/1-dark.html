@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-2xl p-6">
+    <fieldset class="grid grid-cols-1 gap-3 sm:grid-cols-3">
+      <legend class="sr-only">Plan</legend>
+
+      <label
+        for="plan-starter"
+        class="relative flex cursor-pointer flex-col gap-1 rounded-lg border border-gray-700 bg-gray-900 p-4 shadow-sm transition-colors hover:bg-gray-800 has-checked:border-blue-300 has-checked:ring-1 has-checked:ring-blue-300"
+      >
+        <input type="radio" name="plan" value="starter" id="plan-starter" class="peer sr-only" />
+        <span
+          aria-hidden="true"
+          class="absolute right-3 top-3 flex size-5 items-center justify-center rounded-full border border-gray-600 text-gray-900 opacity-0 peer-checked:border-blue-300 peer-checked:bg-blue-300 peer-checked:opacity-100"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+          </svg>
+        </span>
+        <span class="text-sm font-semibold text-white">Starter</span>
+        <span class="text-xs leading-relaxed text-gray-400">For individuals trying things out.</span>
+      </label>
+
+      <label
+        for="plan-team"
+        class="relative flex cursor-pointer flex-col gap-1 rounded-lg border border-gray-700 bg-gray-900 p-4 shadow-sm transition-colors hover:bg-gray-800 has-checked:border-blue-300 has-checked:ring-1 has-checked:ring-blue-300"
+      >
+        <input type="radio" name="plan" value="team" id="plan-team" class="peer sr-only" checked />
+        <span
+          aria-hidden="true"
+          class="absolute right-3 top-3 flex size-5 items-center justify-center rounded-full border border-gray-600 text-gray-900 opacity-0 peer-checked:border-blue-300 peer-checked:bg-blue-300 peer-checked:opacity-100"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+          </svg>
+        </span>
+        <span class="text-sm font-semibold text-white">Team</span>
+        <span class="text-xs leading-relaxed text-gray-400">For small teams shipping together.</span>
+      </label>
+
+      <label
+        for="plan-enterprise"
+        class="relative flex cursor-pointer flex-col gap-1 rounded-lg border border-gray-700 bg-gray-900 p-4 shadow-sm transition-colors hover:bg-gray-800 has-checked:border-blue-300 has-checked:ring-1 has-checked:ring-blue-300"
+      >
+        <input type="radio" name="plan" value="enterprise" id="plan-enterprise" class="peer sr-only" />
+        <span
+          aria-hidden="true"
+          class="absolute right-3 top-3 flex size-5 items-center justify-center rounded-full border border-gray-600 text-gray-900 opacity-0 peer-checked:border-blue-300 peer-checked:bg-blue-300 peer-checked:opacity-100"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+          </svg>
+        </span>
+        <span class="text-sm font-semibold text-white">Enterprise</span>
+        <span class="text-xs leading-relaxed text-gray-400">Custom limits and SSO for large orgs.</span>
+      </label>
+    </fieldset>
+  </body>
+</html>

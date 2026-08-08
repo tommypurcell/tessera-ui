@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-toggle-card-group",
+  "title": "Toggle Card Group",
+  "description": "Grid of selectable cards backed by native radio inputs, each showing a title, description, and a checkmark badge when selected.",
+  "category": "application/forms",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["radio", "card", "select", "plan", "toggle", "form"],
+  "useWhen": [
+    "Choosing between a small number of options that each need a title and a short explanatory description.",
+    "Plan, tier, or mode selection where a rich card reads better than a plain radio list or button group.",
+    "You want the entire card to be clickable, not just a small radio dot."
+  ],
+  "avoidWhen": [
+    "Options are short single words with no description — use radio-groups or a segmented control instead.",
+    "More than about 4-6 options are needed — a grid of description-bearing cards gets unwieldy; use a select or combobox instead.",
+    "Multiple options can be selected at once — swap the radio inputs for checkboxes and adjust the selection state accordingly."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Cards stack in a single column on narrow viewports and lay out in a 3-column grid from the sm breakpoint up.",
+  "accessibility": [
+    "Built on native <input type=\"radio\"> elements grouped by a shared name, so arrow-key navigation and selection work without custom JavaScript.",
+    "The checkmark badge is aria-hidden since selection state is already exposed via the underlying radio input's checked state.",
+    "A visually hidden <legend> names the group for screen reader users."
+  ],
+  "compatibleWith": ["application-radio-groups", "application-segmented-control", "application-form-row"],
+  "variants": [
+    {
+      "id": "toggle-card-group-1",
+      "title": "Toggle card group",
+      "description": "Three-card plan selector with title, description, and a checkmark badge on the selected card.",
+      "source": {
+        "html": "../../../../public/examples/application/toggle-card-group/1.html",
+        "tsx": "tsx/ToggleCardGroupVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "selected", "hover"],
+      "accessibility": [
+        "The has-checked: variant styles the whole label, so the selected card is visually obvious without relying only on the small radio dot."
+      ]
+    },
+    {
+      "id": "toggle-card-group-1-dark",
+      "title": "Toggle card group (Dark)",
+      "description": "Toggle card group adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/toggle-card-group/1-dark.html",
+        "tsx": "tsx/ToggleCardGroupVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "selected", "hover"],
+      "accessibility": [
+        "Selected-state border and checkmark colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
