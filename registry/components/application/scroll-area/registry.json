@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-scroll-area",
+  "title": "Scroll Area",
+  "description": "Custom-styled scrollable containers with a slim themed scrollbar for lists, feeds, and horizontal chip rows in web applications.",
+  "category": "application/scroll-area",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "scroll-area",
+    "scroll",
+    "overflow",
+    "list",
+    "scrollbar"
+  ],
+  "useWhen": [
+    "Custom-styled scrollable containers with a slim themed scrollbar for lists, feeds, and horizontal chip rows in web applications."
+  ],
+  "avoidWhen": [
+    "Avoid scroll area when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Scroll Area uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Provide meaningful alternative text for informative images and empty alt text for decorative images.",
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "scroll-area-1",
+      "title": "Vertical list",
+      "description": "Vertical list Custom-styled scrollable containers with a slim themed scrollbar for lists, feeds, and horizontal chip rows in web applications.",
+      "source": {
+        "html": "../../../../public/examples/application/scroll-area/1.html",
+        "tsx": "tsx/ScrollAreaVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "scroll-area-1-dark",
+      "title": "Vertical list (Dark)",
+      "description": "Vertical list Custom-styled scrollable containers with a slim themed scrollbar for lists, feeds, and horizontal chip rows in web applications.",
+      "source": {
+        "html": "../../../../public/examples/application/scroll-area/1-dark.html",
+        "tsx": "tsx/ScrollAreaVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "scroll-area-2",
+      "title": "Horizontal chips",
+      "description": "Horizontal chips Custom-styled scrollable containers with a slim themed scrollbar for lists, feeds, and horizontal chip rows in web applications.",
+      "source": {
+        "html": "../../../../public/examples/application/scroll-area/2.html",
+        "tsx": "tsx/ScrollAreaVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "scroll-area-2-dark",
+      "title": "Horizontal chips (Dark)",
+      "description": "Horizontal chips Custom-styled scrollable containers with a slim themed scrollbar for lists, feeds, and horizontal chip rows in web applications.",
+      "source": {
+        "html": "../../../../public/examples/application/scroll-area/2-dark.html",
+        "tsx": "tsx/ScrollAreaVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

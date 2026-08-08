@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "name": "application-popover",
+  "title": "Popover",
+  "description": "Anchored overlay panels for contextual help, user info, and inline actions that appear next to a trigger element in web applications.",
+  "category": "application/popover",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "popover",
+    "overlay",
+    "dialog",
+    "tooltip",
+    "anchored"
+  ],
+  "useWhen": [
+    "Anchored overlay panels for contextual help, user info, and inline actions that appear next to a trigger element in web applications."
+  ],
+  "avoidWhen": [
+    "Avoid popover when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [
+    "@tailwindcss/forms"
+  ],
+  "responsiveBehavior": "Popover uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Provide meaningful alternative text for informative images and empty alt text for decorative images.",
+    "Associate each form field with a visible or programmatic label before production use."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "popover-1",
+      "title": "Help text",
+      "description": "Help text Anchored overlay panels for contextual help, user info, and inline actions that appear next to a trigger element in web applications.",
+      "source": {
+        "html": "../../../../public/examples/application/popover/1.html",
+        "tsx": "tsx/PopoverVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "popover-1-dark",
+      "title": "Help text (Dark)",
+      "description": "Help text Anchored overlay panels for contextual help, user info, and inline actions that appear next to a trigger element in web applications.",
+      "source": {
+        "html": "../../../../public/examples/application/popover/1-dark.html",
+        "tsx": "tsx/PopoverVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "popover-2",
+      "title": "Profile card",
+      "description": "Profile card Anchored overlay panels for contextual help, user info, and inline actions that appear next to a trigger element in web applications.",
+      "source": {
+        "html": "../../../../public/examples/application/popover/2.html",
+        "tsx": "tsx/PopoverVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "popover-2-dark",
+      "title": "Profile card (Dark)",
+      "description": "Profile card Anchored overlay panels for contextual help, user info, and inline actions that appear next to a trigger element in web applications.",
+      "source": {
+        "html": "../../../../public/examples/application/popover/2-dark.html",
+        "tsx": "tsx/PopoverVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "popover-3",
+      "title": "Share link",
+      "description": "Share link Anchored overlay panels for contextual help, user info, and inline actions that appear next to a trigger element in web applications.",
+      "source": {
+        "html": "../../../../public/examples/application/popover/3.html",
+        "tsx": "tsx/PopoverVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    },
+    {
+      "id": "popover-3-dark",
+      "title": "Share link (Dark)",
+      "description": "Share link Anchored overlay panels for contextual help, user info, and inline actions that appear next to a trigger element in web applications.",
+      "source": {
+        "html": "../../../../public/examples/application/popover/3-dark.html",
+        "tsx": "tsx/PopoverVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Associate each form field with a visible or programmatic label before production use."
+      ]
+    }
+  ]
+}

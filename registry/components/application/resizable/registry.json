@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-resizable",
+  "title": "Resizable",
+  "description": "Split-panel layouts with a draggable divider for resizing adjacent panes in editors, dashboards, and multi-pane application views.",
+  "category": "application/resizable",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "resizable",
+    "split",
+    "panel",
+    "divider",
+    "drag"
+  ],
+  "useWhen": [
+    "Split-panel layouts with a draggable divider for resizing adjacent panes in editors, dashboards, and multi-pane application views."
+  ],
+  "avoidWhen": [
+    "Avoid resizable when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Resizable uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "resizable-1",
+      "title": "Horizontal split",
+      "description": "Horizontal split Split-panel layouts with a draggable divider for resizing adjacent panes in editors, dashboards, and multi-pane application views.",
+      "source": {
+        "html": "../../../../public/examples/application/resizable/1.html",
+        "tsx": "tsx/ResizableVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "resizable-1-dark",
+      "title": "Horizontal split (Dark)",
+      "description": "Horizontal split Split-panel layouts with a draggable divider for resizing adjacent panes in editors, dashboards, and multi-pane application views.",
+      "source": {
+        "html": "../../../../public/examples/application/resizable/1-dark.html",
+        "tsx": "tsx/ResizableVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "resizable-2",
+      "title": "Vertical split",
+      "description": "Vertical split Split-panel layouts with a draggable divider for resizing adjacent panes in editors, dashboards, and multi-pane application views.",
+      "source": {
+        "html": "../../../../public/examples/application/resizable/2.html",
+        "tsx": "tsx/ResizableVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "resizable-2-dark",
+      "title": "Vertical split (Dark)",
+      "description": "Vertical split Split-panel layouts with a draggable divider for resizing adjacent panes in editors, dashboards, and multi-pane application views.",
+      "source": {
+        "html": "../../../../public/examples/application/resizable/2-dark.html",
+        "tsx": "tsx/ResizableVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}
