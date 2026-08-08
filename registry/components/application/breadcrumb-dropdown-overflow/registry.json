@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-breadcrumb-dropdown-overflow",
+  "title": "Breadcrumb Dropdown Overflow",
+  "description": "Breadcrumb trail that collapses middle segments into a '…' trigger, opening a dropdown listing the hidden segments, while keeping the first and last two visible.",
+  "category": "application/navigation",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["breadcrumb", "navigation", "overflow", "dropdown"],
+  "useWhen": [
+    "A page's path is deep enough (5+ levels) that a full breadcrumb trail would wrap or overflow its container.",
+    "Users still need access to every ancestor page, not just the visible ones.",
+    "The first (root) and last two (current context) segments are the most useful to keep always visible."
+  ],
+  "avoidWhen": [
+    "The path is shallow (4 or fewer segments) — render the plain breadcrumbs component with no collapsing needed.",
+    "Segment order/hierarchy doesn't matter to users — a simple 'Back' link may be clearer than a breadcrumb trail at all.",
+    "You need responsive truncation that changes with viewport width — this component collapses by segment count, not container width."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The trail is an inline-sized flex row; combine with your own resize-based logic if you want the collapse threshold to react to container width rather than a fixed segment count.",
+  "accessibility": [
+    "The overflow trigger uses aria-haspopup=\"dialog\" and aria-expanded reflecting whether the hidden-segments dropdown is open.",
+    "The current page segment is a <span aria-current=\"page\">, not a link, matching breadcrumb accessibility conventions.",
+    "Chevron separators are aria-hidden since they're purely visual; the list structure alone conveys the hierarchy to assistive tech."
+  ],
+  "compatibleWith": ["application-breadcrumbs", "application-dropdown", "application-side-menu"],
+  "variants": [
+    {
+      "id": "breadcrumb-dropdown-overflow-1",
+      "title": "Collapsed",
+      "description": "Home, a collapsed '…' trigger, then Settings and the current 'API Keys' page.",
+      "source": {
+        "html": "../../../../public/examples/application/breadcrumb-dropdown-overflow/1.html",
+        "tsx": "tsx/BreadcrumbDropdownOverflowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The trigger's aria-label describes its action ('Show hidden breadcrumb segments'), not just '…'."
+      ]
+    },
+    {
+      "id": "breadcrumb-dropdown-overflow-1-dark",
+      "title": "Collapsed (Dark)",
+      "description": "Collapsed breadcrumb trail adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/breadcrumb-dropdown-overflow/1-dark.html",
+        "tsx": "tsx/BreadcrumbDropdownOverflowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Link and chevron colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    },
+    {
+      "id": "breadcrumb-dropdown-overflow-2",
+      "title": "Overflow open",
+      "description": "The '…' trigger expanded, showing the hidden Workspace, Acme Corp, and Admin segments in a dropdown.",
+      "source": {
+        "html": "../../../../public/examples/application/breadcrumb-dropdown-overflow/2.html",
+        "tsx": "tsx/BreadcrumbDropdownOverflowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["open"],
+      "accessibility": [
+        "Hidden segments retain their original order in the dropdown, matching the real path hierarchy."
+      ]
+    },
+    {
+      "id": "breadcrumb-dropdown-overflow-2-dark",
+      "title": "Overflow open (Dark)",
+      "description": "Open overflow dropdown state adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/breadcrumb-dropdown-overflow/2-dark.html",
+        "tsx": "tsx/BreadcrumbDropdownOverflowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["open"],
+      "accessibility": [
+        "Dropdown background and border colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
