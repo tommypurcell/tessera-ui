@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-request-builder",
+  "title": "Request Builder",
+  "description": "An API client request bar (method, URL, Send) paired with Params/Headers/Body/Auth tabs, shown with editable key-value header rows.",
+  "category": "application/request-builder",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "request-builder",
+    "api client",
+    "http request",
+    "headers",
+    "rest",
+    "developer tools"
+  ],
+  "useWhen": [
+    "Building a developer-facing API client or API testing tool where users construct and send HTTP requests.",
+    "The request needs structured Params/Headers/Body/Auth sections rather than a single free-text request definition."
+  ],
+  "avoidWhen": [
+    "You're building a structured filter/condition builder rather than an HTTP request — use `Query Builder` for that instead.",
+    "You only need to display a fixed API call, not let users edit it — a code block from `terminal-blocks` is simpler for read-only examples."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The method selector, URL field, and Send button share one row via flex, with the URL field absorbing available width; on narrow viewports, wrap Send below the URL rather than shrinking the URL field below a usable width.",
+  "accessibility": [
+    "The method select has a visually hidden label (sr-only) associating it with 'HTTP method' for screen readers.",
+    "Each header row's remove button carries an aria-label (\"Remove header\") since only an icon is shown.",
+    "The active tab (Headers) is marked with both a bottom border and aria-current=\"true\", not color alone."
+  ],
+  "compatibleWith": ["application-response-viewer", "application-json-tree-viewer"],
+  "variants": [
+    {
+      "id": "request-builder-1",
+      "title": "Headers tab",
+      "description": "A POST request bar (method select, URL, Send button) with Params/Headers/Body/Auth tabs, Headers active, showing two editable key-value header rows and an 'Add header' affordance.",
+      "source": {
+        "html": "../../../../public/examples/application/request-builder/1.html",
+        "tsx": "tsx/RequestBuilderVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The method select has an associated (visually hidden) label; each remove button carries an aria-label."
+      ]
+    },
+    {
+      "id": "request-builder-1-dark",
+      "title": "Headers tab (Dark)",
+      "description": "Request builder adapted for dark surfaces, including the method-select highlight and header-row backgrounds.",
+      "source": {
+        "html": "../../../../public/examples/application/request-builder/1-dark.html",
+        "tsx": "tsx/RequestBuilderVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "URL bar, tabs, and header-row text all meet WCAG AA contrast against the dark card background."
+      ]
+    }
+  ]
+}
