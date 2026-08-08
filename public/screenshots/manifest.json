@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 754,
+  "screenshotCount": 758,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -1674,6 +1674,46 @@
       "sourcePath": "files/application-media/media-8.html",
       "sourceSha256": "8c0bb07bf9300bb6f8b6efaaec716b1951d46c9171bc79a06012f962e9679d84",
       "url": "/screenshots/components/application-media/media-8.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-metric-sparkline-card",
+      "variantId": "metric-sparkline-card-1",
+      "appearance": "light",
+      "sourcePath": "files/application-metric-sparkline-card/metric-sparkline-card-1.html",
+      "sourceSha256": "ebf0198973a2ed0d2b85061250ddf50e572e4616fcd2a6e7f2b543c960b42fc0",
+      "url": "/screenshots/components/application-metric-sparkline-card/metric-sparkline-card-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-metric-sparkline-card",
+      "variantId": "metric-sparkline-card-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-metric-sparkline-card/metric-sparkline-card-1-dark.html",
+      "sourceSha256": "d977252dd394131c2fde976b95583195489199e602792b820b9c9f3dd339ee9c",
+      "url": "/screenshots/components/application-metric-sparkline-card/metric-sparkline-card-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-metric-sparkline-card",
+      "variantId": "metric-sparkline-card-2",
+      "appearance": "light",
+      "sourcePath": "files/application-metric-sparkline-card/metric-sparkline-card-2.html",
+      "sourceSha256": "9ae59931e887256fbb90ef994f695c632528ea6a2e85fb08414c0c5b199fb0dc",
+      "url": "/screenshots/components/application-metric-sparkline-card/metric-sparkline-card-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-metric-sparkline-card",
+      "variantId": "metric-sparkline-card-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-metric-sparkline-card/metric-sparkline-card-2-dark.html",
+      "sourceSha256": "16fd7ad24a52901896ce009d08a6d8d2c66502c548ab2a2e4734e7c24bc47425",
+      "url": "/screenshots/components/application-metric-sparkline-card/metric-sparkline-card-2-dark.jpg",
       "width": 600,
       "height": 400
     },
