@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "application-segmented-control",
+  "title": "Segmented Control",
+  "description": "iOS-style single-select pill toggle group for switching between views or modes, with roving-tabindex keyboard navigation and a real radiogroup underneath.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["segmented-control", "toggle", "radiogroup", "view-switcher", "primitive"],
+  "useWhen": [
+    "Switching between a small set of mutually exclusive views or modes (e.g. Day/Week/Month/Year).",
+    "You want a compact, button-like alternative to tabs or a select for 2-5 options.",
+    "The choice should be visually obvious at a glance without opening a menu."
+  ],
+  "avoidWhen": [
+    "You have more than about five options — use a select or dropdown menu instead.",
+    "The options represent separate pages or routed content — use tabs instead.",
+    "Multiple options can be selected at once — use a toggle group instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The control is an inline-flex block sized to its content; wrap it or let it scroll horizontally on narrow viewports if the option count is large.",
+  "accessibility": [
+    "Rendered as role=\"radiogroup\" with each option as role=\"radio\" and aria-checked reflecting selection.",
+    "Keyboard support: ArrowLeft/ArrowRight (and Up/Down) move and select the adjacent option, Home/End jump to the first/last option.",
+    "Only the selected option is in the tab order (roving tabindex), matching the native radio-group interaction pattern.",
+    "Focus rings are visible via focus-visible and offset against the track background."
+  ],
+  "compatibleWith": ["application-tabs", "application-toggle-group", "application-toolbar"],
+  "variants": [
+    {
+      "id": "segmented-control-1",
+      "title": "Segmented control",
+      "description": "Four-option segmented control (Day/Week/Month/Year) with a selected pill on a light track.",
+      "source": {
+        "html": "../../../../public/examples/application/segmented-control/1.html",
+        "tsx": "tsx/SegmentedControlVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "Selection state is conveyed via aria-checked, not color alone — the selected pill also has a background and shadow."
+      ]
+    },
+    {
+      "id": "segmented-control-1-dark",
+      "title": "Segmented control (Dark)",
+      "description": "Four-option segmented control adapted for dark surfaces, with the selected pill lifted above a darker track.",
+      "source": {
+        "html": "../../../../public/examples/application/segmented-control/1-dark.html",
+        "tsx": "tsx/SegmentedControlVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "Track, pill, and text colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}

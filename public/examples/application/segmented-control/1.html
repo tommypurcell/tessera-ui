@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex justify-center p-6">
+    <div
+      role="radiogroup"
+      aria-label="View mode"
+      class="inline-flex items-center gap-1 rounded-lg bg-gray-100 p-1"
+    >
+      <button
+        type="button"
+        role="radio"
+        aria-checked="true"
+        class="rounded-md bg-white px-3 py-1.5 text-sm font-medium text-gray-900 shadow-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-1 focus-visible:ring-offset-gray-100"
+      >
+        Day
+      </button>
+
+      <button
+        type="button"
+        role="radio"
+        aria-checked="false"
+        class="rounded-md px-3 py-1.5 text-sm font-medium text-gray-600 transition-colors hover:text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-1 focus-visible:ring-offset-gray-100"
+      >
+        Week
+      </button>
+
+      <button
+        type="button"
+        role="radio"
+        aria-checked="false"
+        class="rounded-md px-3 py-1.5 text-sm font-medium text-gray-600 transition-colors hover:text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-1 focus-visible:ring-offset-gray-100"
+      >
+        Month
+      </button>
+
+      <button
+        type="button"
+        role="radio"
+        aria-checked="false"
+        class="rounded-md px-3 py-1.5 text-sm font-medium text-gray-600 transition-colors hover:text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-1 focus-visible:ring-offset-gray-100"
+      >
+        Year
+      </button>
+    </div>
+  </body>
+</html>
