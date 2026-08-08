@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-card-stack",
+  "title": "Card Stack",
+  "description": "Swipeable stacked-card decks with accept/reject actions for Tinder-style matching or content recommendation flows.",
+  "category": "application/card-stack",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "card-stack",
+    "card",
+    "stack",
+    "swipe",
+    "deck"
+  ],
+  "useWhen": [
+    "Swipeable stacked-card decks with accept/reject actions for Tinder-style matching or content recommendation flows."
+  ],
+  "avoidWhen": [
+    "Avoid card stack when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Card Stack uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Provide meaningful alternative text for informative images and empty alt text for decorative images.",
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "card-stack-1",
+      "title": "Profile deck",
+      "description": "Profile deck Swipeable stacked-card decks with accept/reject actions for Tinder-style matching or content recommendation flows.",
+      "source": {
+        "html": "../../../../public/examples/application/card-stack/1.html",
+        "tsx": "tsx/CardStackVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "card-stack-1-dark",
+      "title": "Profile deck (Dark)",
+      "description": "Profile deck Swipeable stacked-card decks with accept/reject actions for Tinder-style matching or content recommendation flows.",
+      "source": {
+        "html": "../../../../public/examples/application/card-stack/1-dark.html",
+        "tsx": "tsx/CardStackVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "card-stack-2",
+      "title": "Content recommendation",
+      "description": "Content recommendation Swipeable stacked-card decks with accept/reject actions for Tinder-style matching or content recommendation flows.",
+      "source": {
+        "html": "../../../../public/examples/application/card-stack/2.html",
+        "tsx": "tsx/CardStackVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "card-stack-2-dark",
+      "title": "Content recommendation (Dark)",
+      "description": "Content recommendation Swipeable stacked-card decks with accept/reject actions for Tinder-style matching or content recommendation flows.",
+      "source": {
+        "html": "../../../../public/examples/application/card-stack/2-dark.html",
+        "tsx": "tsx/CardStackVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}
