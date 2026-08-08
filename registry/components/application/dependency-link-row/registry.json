@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-dependency-link-row",
+  "title": "Dependency Link Row",
+  "description": "Two-group relationship panel showing which issues an item blocks and which block it, each as a row of linked chips carrying a status-colored dot.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["dependency", "blocks", "blocked-by", "issue-tracker", "relationship"],
+  "useWhen": [
+    "An issue-tracker or project-management detail view needs to surface blocking relationships between items.",
+    "Users need to jump directly to a related issue, not just see that a relationship exists.",
+    "The relationship has a clear direction (this blocks that, or is blocked by that) worth labeling separately."
+  ],
+  "avoidWhen": [
+    "The relationship is symmetric with no direction (e.g. 'related to') — a single unlabeled chip row is simpler.",
+    "There are no dependencies to show — omit the panel entirely rather than rendering an empty state for it.",
+    "You need to visualize many interlinked dependencies at once — use a dependency graph or org-chart-style diagram instead of stacked rows."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The panel is a fixed max-w-md card whose chip rows wrap naturally to fill the available width at any viewport size.",
+  "accessibility": [
+    "Each group has a heading combining an icon and a count ('Blocks 2 issues'), so the relationship type and quantity are both announced as text.",
+    "Status dots on each chip are aria-hidden since they're supplementary to the issue ID, which is always visible text.",
+    "Each chip is a real link, so the underlying issue is reachable and activatable by keyboard."
+  ],
+  "compatibleWith": ["application-kanban-column", "application-badges", "application-tag-input"],
+  "variants": [
+    {
+      "id": "dependency-link-row-1",
+      "title": "Dependency link row",
+      "description": "Two groups: 'Blocks 2 issues' and 'Blocked by 1 issue', each with linked issue-ID chips and a status dot.",
+      "source": {
+        "html": "../../../../public/examples/application/dependency-link-row/1.html",
+        "tsx": "tsx/DependencyLinkRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Group headings pair a directional icon with text so the relationship reads correctly even without color."
+      ]
+    },
+    {
+      "id": "dependency-link-row-1-dark",
+      "title": "Dependency link row (Dark)",
+      "description": "Dependency link row adapted for dark application surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/dependency-link-row/1-dark.html",
+        "tsx": "tsx/DependencyLinkRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Chip border, background, and status-dot colors must meet WCAG AA contrast on dark surfaces."
+      ]
+    }
+  ]
+}
