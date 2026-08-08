@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-shipment-tracking-map",
+  "title": "Shipment Tracking Map",
+  "description": "A route map with a dashed path connecting origin, current position, and destination pins, plus a footer summarizing the package's current location and ETA.",
+  "category": "application/shipment-tracking-map",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "shipment-tracking-map",
+    "shipment",
+    "tracking",
+    "delivery",
+    "map",
+    "logistics"
+  ],
+  "useWhen": [
+    "Order tracking, delivery, or logistics apps that need to visualize a package's journey from origin to destination.",
+    "The current in-transit position matters visually, not just the final ETA."
+  ],
+  "avoidWhen": [
+    "You only need a single anchored point of interest — use `Map Marker Popup` for a simple pin-with-card pattern instead.",
+    "The route doesn't have a meaningful start/current/end structure — a simple status list may communicate progress more directly than a route map."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The map pane keeps a fixed aspect-ratio-like height while stretching full width; pin positions use percentage-based left/top so they stay correctly placed at any card width.",
+  "accessibility": [
+    "The three pin types (origin, current, destination) are visually distinguished by size and icon, not color alone — origin and destination are small dots, current position is a larger icon pin.",
+    "The footer states the package ID, current location, and estimated delivery as text, so the essential tracking info doesn't require reading the map.",
+    "The route path is decorative (a visual path, not literal geography) and should be paired with real accessible location data in a production integration."
+  ],
+  "compatibleWith": ["application-map-marker-popup", "application-timeline-scrubber"],
+  "variants": [
+    {
+      "id": "shipment-tracking-map-1",
+      "title": "In-transit package",
+      "description": "A dashed route curve connecting a small gray origin dot, a large blue truck-icon current-position pin with a ring glow, and a small dark destination dot, with a footer showing package ID, current location, and ETA.",
+      "source": {
+        "html": "../../../../public/examples/application/shipment-tracking-map/1.html",
+        "tsx": "tsx/ShipmentTrackingMapVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "in-transit"],
+      "accessibility": [
+        "Package ID, current location, and ETA are all rendered as text in the footer below the map."
+      ]
+    },
+    {
+      "id": "shipment-tracking-map-1-dark",
+      "title": "In-transit package (Dark)",
+      "description": "Shipment tracking map adapted for dark surfaces, including the route line and pin colors.",
+      "source": {
+        "html": "../../../../public/examples/application/shipment-tracking-map/1-dark.html",
+        "tsx": "tsx/ShipmentTrackingMapVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "in-transit"],
+      "accessibility": [
+        "Route line, pins, and footer text all meet WCAG AA contrast against the dark map background."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-step-progress-sidebar",
+  "title": "Step Progress Sidebar",
+  "description": "A persistent vertical step nav for multi-page flows — completed steps show a checkmark, the current step is highlighted, upcoming steps are numbered and muted.",
+  "category": "application/step-progress-sidebar",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "step-progress-sidebar",
+    "steps",
+    "progress",
+    "onboarding",
+    "wizard",
+    "sidebar nav"
+  ],
+  "useWhen": [
+    "A multi-step flow (onboarding, checkout, setup wizard) spans separate pages and benefits from a persistent, always-visible step list beside the content.",
+    "Users may want to jump back to a completed step, which a persistent sidebar nav supports better than a top-only progress bar."
+  ],
+  "avoidWhen": [
+    "The flow is a single page with inline sections — a horizontal `Stepper Wizard` header is more compact and doesn't need a dedicated sidebar column.",
+    "Steps must be completed strictly in order with no jumping back — a simple linear progress bar communicates that constraint more directly."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The step list is a fixed-width sidebar beside the flex-1 step content; collapse to a horizontal step bar above the content on narrow viewports instead of shrinking the sidebar further.",
+  "accessibility": [
+    "The step list is wrapped in <nav aria-label=\"...\"> with an ordered list (<ol>), since step order is meaningful.",
+    "The current step carries aria-current=\"step\" in addition to its visual highlight (raised card, ring, dark badge).",
+    "Completed steps pair a checkmark icon with the completed state — icon plus position, not color alone — so screen readers relying on DOM order still get sequence information."
+  ],
+  "compatibleWith": ["application-stepper-wizard", "application-steps", "application-form-row"],
+  "variants": [
+    {
+      "id": "step-progress-sidebar-1",
+      "title": "Onboarding steps",
+      "description": "A five-step onboarding sidebar: two completed steps (checkmarks), the current step (raised card, dark badge, aria-current), and two upcoming muted steps, beside a matching form pane.",
+      "source": {
+        "html": "../../../../public/examples/application/step-progress-sidebar/1.html",
+        "tsx": "tsx/StepProgressSidebarVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "completed", "current", "upcoming"],
+      "accessibility": [
+        "The current step carries aria-current=\"step\"; completed steps show a checkmark icon, not color alone."
+      ]
+    },
+    {
+      "id": "step-progress-sidebar-1-dark",
+      "title": "Onboarding steps (Dark)",
+      "description": "Step progress sidebar adapted for dark surfaces, including the completed-step checkmark color and current-step highlight.",
+      "source": {
+        "html": "../../../../public/examples/application/step-progress-sidebar/1-dark.html",
+        "tsx": "tsx/StepProgressSidebarVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "completed", "current", "upcoming"],
+      "accessibility": [
+        "Step badges and labels meet WCAG AA contrast at every state against the dark sidebar background."
+      ]
+    }
+  ]
+}

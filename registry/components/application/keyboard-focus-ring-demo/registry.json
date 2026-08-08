@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-keyboard-focus-ring-demo",
+  "title": "Keyboard Focus Ring Demo",
+  "description": "An accessibility showcase pairing common interactive controls with numbered tab-order badges and a visible keyboard focus ring, for documenting focus-order and focus-visible behavior.",
+  "category": "application/keyboard-focus-ring-demo",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "keyboard-focus-ring-demo",
+    "accessibility",
+    "focus ring",
+    "tab order",
+    "keyboard navigation",
+    "a11y"
+  ],
+  "useWhen": [
+    "Documenting or testing a form/toolbar's keyboard tab order for accessibility review.",
+    "Teaching or demonstrating the difference between a focus-visible keyboard ring and default browser/mouse focus behavior."
+  ],
+  "avoidWhen": [
+    "This is a documentation/demo pattern, not a reusable interactive control — don't ship the numbered badges in production UI.",
+    "You just need a real focus ring style on a component — apply the ring utility classes directly rather than reaching for this demo shell."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Controls wrap via flex-wrap at narrow widths; the numbered badges stay anchored to each control's top-left corner regardless of wrap position.",
+  "accessibility": [
+    "The focus ring shown uses `outline`, which (unlike `box-shadow`-only rings) is not clipped by `overflow: hidden` ancestors and remains visible against any background.",
+    "Numbered tab-order badges are purely illustrative; the real accessible tab order is still driven by DOM order and tabindex, not by the badge numbers.",
+    "The explanatory note clarifies that the ring is a focus-visible (keyboard) indicator, not shown for mouse-initiated focus, which is the correct default browser behavior to preserve."
+  ],
+  "compatibleWith": ["application-inputs", "application-buttons", "application-checkboxes"],
+  "variants": [
+    {
+      "id": "keyboard-focus-ring-demo-1",
+      "title": "Tab order showcase",
+      "description": "A button, link, checkbox, and text input, each numbered 1–4 for tab order, with a visible blue focus ring shown on the first control and an explanatory note.",
+      "source": {
+        "html": "../../../../public/examples/application/keyboard-focus-ring-demo/1.html",
+        "tsx": "tsx/KeyboardFocusRingDemoVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "focused"],
+      "accessibility": [
+        "Demonstrates outline-based focus rings, which stay visible even inside overflow-hidden containers."
+      ]
+    },
+    {
+      "id": "keyboard-focus-ring-demo-1-dark",
+      "title": "Tab order showcase (Dark)",
+      "description": "Keyboard focus ring demo adapted for dark surfaces, including the focus ring color re-tuned for dark contrast.",
+      "source": {
+        "html": "../../../../public/examples/application/keyboard-focus-ring-demo/1-dark.html",
+        "tsx": "tsx/KeyboardFocusRingDemoVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "focused"],
+      "accessibility": [
+        "The focus ring, badges, and note text all meet WCAG AA contrast against the dark card background."
+      ]
+    }
+  ]
+}

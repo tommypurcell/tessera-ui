@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-metric-trend-grid",
+  "title": "Metric Trend Grid",
+  "description": "A grid of compact KPI cells, each pairing a label, value, and delta with an inline sparkline — a full at-a-glance board rather than a single metric card.",
+  "category": "application/metric-trend-grid",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "metric-trend-grid",
+    "metrics",
+    "kpi",
+    "dashboard",
+    "sparkline",
+    "grid"
+  ],
+  "useWhen": [
+    "Building a dashboard overview where several KPIs each need a value, a delta, and a quick trend shape, all scannable in one glance.",
+    "You have 4-9 metrics to show side by side and a full chart per metric would be too much visual weight."
+  ],
+  "avoidWhen": [
+    "You only need to show a single KPI — use `Metric Sparkline Card` on its own instead of a grid wrapper.",
+    "The metrics need precise value-at-point inspection — a full chart with axes and a tooltip communicates that better than a compact sparkline."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The grid is 3 columns at the reference width; drop to 2 columns on tablet and 1 column on mobile so each cell keeps enough width for its sparkline to stay legible.",
+  "accessibility": [
+    "Each cell states its label, value, and delta as visible text — the sparkline is a supplementary visual, not the only place the trend is communicated.",
+    "Delta color (green/red) is paired with a +/- sign in the text itself, not conveyed by color alone.",
+    "Trend color correctly reflects whether an increase is good or bad per metric (e.g. rising error rate is shown red, not green), not simply mapped to the sign of the delta."
+  ],
+  "compatibleWith": ["application-stat-tile", "application-stats", "application-charts"],
+  "variants": [
+    {
+      "id": "metric-trend-grid-1",
+      "title": "Six-metric board",
+      "description": "A 3x2 grid of KPI cells (Revenue, Active users, Churn rate, Avg. session, Support tickets, Error rate), each with a value, colored delta, and a computed inline sparkline whose color reflects whether the trend is favorable.",
+      "source": {
+        "html": "../../../../public/examples/application/metric-trend-grid/1.html",
+        "tsx": "tsx/MetricTrendGridVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Each metric's label, value, and delta are all rendered as text alongside its sparkline."
+      ]
+    },
+    {
+      "id": "metric-trend-grid-1-dark",
+      "title": "Six-metric board (Dark)",
+      "description": "Metric trend grid adapted for dark surfaces, with sparkline and delta colors re-tuned for dark contrast.",
+      "source": {
+        "html": "../../../../public/examples/application/metric-trend-grid/1-dark.html",
+        "tsx": "tsx/MetricTrendGridVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Delta text and sparkline strokes meet WCAG AA contrast against the dark cell background."
+      ]
+    }
+  ]
+}

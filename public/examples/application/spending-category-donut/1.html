@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex min-h-72 items-center justify-center bg-gray-50 p-6">
+    <div class="w-full max-w-md rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
+      <p class="text-sm font-semibold text-gray-900">Spending by category</p>
+      <p class="text-xs text-gray-500">This month</p>
+
+      <div class="mt-4 flex items-center gap-6">
+        <div class="relative shrink-0" style="width: 180px; height: 180px">
+          <svg viewBox="0 0 180 180" class="size-full">
+            <circle cx="90.0" cy="90.0" r="70" fill="none" stroke="#f3f4f6" stroke-width="22" />
+            <circle cx="90.0" cy="90.0" r="70" fill="none" stroke="#3b82f6" stroke-width="22" stroke-dasharray="227.77 212.06" stroke-dashoffset="0.00" transform="rotate(-90 90.0 90.0)" />
+          <circle cx="90.0" cy="90.0" r="70" fill="none" stroke="#8b5cf6" stroke-width="22" stroke-dasharray="97.39 342.43" stroke-dashoffset="-227.77" transform="rotate(-90 90.0 90.0)" />
+          <circle cx="90.0" cy="90.0" r="70" fill="none" stroke="#ec4899" stroke-width="22" stroke-dasharray="53.41 386.42" stroke-dashoffset="-325.15" transform="rotate(-90 90.0 90.0)" />
+          <circle cx="90.0" cy="90.0" r="70" fill="none" stroke="#f59e0b" stroke-width="22" stroke-dasharray="28.27 411.55" stroke-dashoffset="-378.56" transform="rotate(-90 90.0 90.0)" />
+          <circle cx="90.0" cy="90.0" r="70" fill="none" stroke="#10b981" stroke-width="22" stroke-dasharray="32.99 406.84" stroke-dashoffset="-406.84" transform="rotate(-90 90.0 90.0)" />
+          </svg>
+          <div class="absolute inset-0 flex flex-col items-center justify-center">
+            <span class="text-xl font-semibold text-gray-900">$2,800</span>
+            <span class="text-xs text-gray-500">total</span>
+          </div>
+        </div>
+
+        <div class="min-w-0 flex-1 space-y-2">
+          <div class="flex items-center justify-between text-sm"><span class="flex items-center gap-2"><span class="size-2.5 rounded-full" style="background-color: #3b82f6"></span><span class="text-gray-900">Housing</span></span><span class="text-gray-500">$1,450 <span class="ml-1 text-xs">(52%)</span></span></div>
+        <div class="flex items-center justify-between text-sm"><span class="flex items-center gap-2"><span class="size-2.5 rounded-full" style="background-color: #8b5cf6"></span><span class="text-gray-900">Food</span></span><span class="text-gray-500">$620 <span class="ml-1 text-xs">(22%)</span></span></div>
+        <div class="flex items-center justify-between text-sm"><span class="flex items-center gap-2"><span class="size-2.5 rounded-full" style="background-color: #ec4899"></span><span class="text-gray-900">Transport</span></span><span class="text-gray-500">$340 <span class="ml-1 text-xs">(12%)</span></span></div>
+        <div class="flex items-center justify-between text-sm"><span class="flex items-center gap-2"><span class="size-2.5 rounded-full" style="background-color: #f59e0b"></span><span class="text-gray-900">Subscriptions</span></span><span class="text-gray-500">$180 <span class="ml-1 text-xs">(6%)</span></span></div>
+        <div class="flex items-center justify-between text-sm"><span class="flex items-center gap-2"><span class="size-2.5 rounded-full" style="background-color: #10b981"></span><span class="text-gray-900">Other</span></span><span class="text-gray-500">$210 <span class="ml-1 text-xs">(8%)</span></span></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

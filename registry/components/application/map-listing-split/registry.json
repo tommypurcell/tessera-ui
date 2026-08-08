@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-map-listing-split",
+  "title": "Map Listing Split",
+  "description": "A scrollable listing list paired with a map pane, where a listing's highlighted state syncs with its numbered pin on the map.",
+  "category": "application/map-listing-split",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "map-listing-split",
+    "map",
+    "listings",
+    "split view",
+    "real estate",
+    "hover sync"
+  ],
+  "useWhen": [
+    "Browsing geographically-anchored listings (rentals, stores, events) where seeing location alongside details helps users choose.",
+    "Hovering or selecting a list item should highlight its corresponding map pin, and vice versa, to reinforce the location-to-listing relationship."
+  ],
+  "avoidWhen": [
+    "The listings have no meaningful location — a plain list or grid is simpler without the map pane.",
+    "You need a generic two-pane layout unrelated to geography — use `Split Pane Diff` or a plain layout grid instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The listing list keeps a fixed width beside a flex-1 map pane; on narrow viewports, stack the list above the map or make the map a toggleable full-screen view instead of shrinking both panes.",
+  "accessibility": [
+    "Each listing and its map pin share the same visible number, so the correspondence between panes doesn't rely on hover/color alone.",
+    "The highlighted listing uses both a background tint and a ring border, and its pin uses both a larger size and a ring glow, so the highlight is legible without relying on a single visual cue.",
+    "Listing price, bed/bath count, and name are all rendered as text, keeping the essential information available even without the map."
+  ],
+  "compatibleWith": ["application-map-marker-popup", "application-filters"],
+  "variants": [
+    {
+      "id": "map-listing-split-1",
+      "title": "Rental listings",
+      "description": "Four rental listings in a scrollable left panel beside a map pane with numbered pins; listing #2 ('Harbor View') is shown highlighted in sync with its enlarged, ring-glowing map pin.",
+      "source": {
+        "html": "../../../../public/examples/application/map-listing-split/1.html",
+        "tsx": "tsx/MapListingSplitVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "highlighted"],
+      "accessibility": [
+        "Each listing card and its map pin share the same number, giving a non-color-dependent correspondence."
+      ]
+    },
+    {
+      "id": "map-listing-split-1-dark",
+      "title": "Rental listings (Dark)",
+      "description": "Map listing split adapted for dark surfaces, including the map grid pattern and pin colors.",
+      "source": {
+        "html": "../../../../public/examples/application/map-listing-split/1-dark.html",
+        "tsx": "tsx/MapListingSplitVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "highlighted"],
+      "accessibility": [
+        "Listing text, pin numbers, and the highlight ring all meet WCAG AA contrast against the dark panes."
+      ]
+    }
+  ]
+}

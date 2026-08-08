@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-board-swimlane",
+  "title": "Board Swimlane",
+  "description": "A board layout that groups cards into horizontal lanes (e.g. by team) spanning shared status columns, with a labeled lane header per row.",
+  "category": "application/board-swimlane",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "board-swimlane",
+    "swimlane",
+    "kanban",
+    "board",
+    "lanes",
+    "project management"
+  ],
+  "useWhen": [
+    "A Kanban-style board needs a second grouping dimension (team, epic, priority) that spans across the same status columns.",
+    "Users need to compare progress across groups at each status without switching board views."
+  ],
+  "avoidWhen": [
+    "There's only one grouping and no need to compare across teams/categories — a single-lane board of status columns is simpler.",
+    "The lanes would each need vastly different column sets — swimlanes assume shared columns across every lane; use separate boards instead if that assumption breaks."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The grid uses a fixed-width lane-label column plus equal-width status columns; on narrow viewports, make the whole board horizontally scrollable rather than shrinking columns below a legible width.",
+  "accessibility": [
+    "Each lane's label pairs a color dot with a text name, not color alone, so lanes are distinguishable without relying on color perception.",
+    "Completed cards use both a strikethrough and (in a real implementation) an aria-label or visually hidden text stating their status, not strikethrough styling alone.",
+    "Column headers stay visible and associated with their cards via consistent grid position across every lane."
+  ],
+  "compatibleWith": ["application-details-list", "application-filters"],
+  "variants": [
+    {
+      "id": "board-swimlane-1",
+      "title": "Team lanes",
+      "description": "A three-column (To Do / In Progress / Done) board with two team swimlanes (Design, Engineering), each with a colored lane label and cards including a strikethrough-styled completed state.",
+      "source": {
+        "html": "../../../../public/examples/application/board-swimlane/1.html",
+        "tsx": "tsx/BoardSwimlaneVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "completed"],
+      "accessibility": [
+        "Each lane pairs a color dot with a text team name."
+      ]
+    },
+    {
+      "id": "board-swimlane-1-dark",
+      "title": "Team lanes (Dark)",
+      "description": "Board swimlane adapted for dark surfaces, including card borders and completed-card muting.",
+      "source": {
+        "html": "../../../../public/examples/application/board-swimlane/1-dark.html",
+        "tsx": "tsx/BoardSwimlaneVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "completed"],
+      "accessibility": [
+        "Column headers, lane labels, and card text all meet WCAG AA contrast against the dark board background."
+      ]
+    }
+  ]
+}

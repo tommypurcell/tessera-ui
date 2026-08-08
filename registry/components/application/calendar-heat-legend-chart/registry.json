@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-calendar-heat-legend-chart",
+  "title": "Calendar Heat Legend Chart",
+  "description": "A single-month calendar grid with intensity-colored day cells, correctly aligned weekday axis labels, and a numeric-bucket legend — framed as a chart, not a contribution strip.",
+  "category": "application/calendar-heat-legend-chart",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "calendar-heat-legend-chart",
+    "calendar",
+    "heatmap",
+    "chart",
+    "legend",
+    "intensity"
+  ],
+  "useWhen": [
+    "Reporting a single month's daily metric (deploys, incidents, orders) where the calendar date grid itself is the primary chart, with a numeric legend rather than a relative Less/More scale.",
+    "Users need to read an exact day-of-month value alongside its intensity, not just scan for streak patterns across many months."
+  ],
+  "avoidWhen": [
+    "You need the GitHub-style multi-month contribution strip with a relative Less/More scale — use `Heatmap Calendar` for that framing instead.",
+    "The data isn't naturally daily/monthly — a generic `charts` bar or line chart communicates other cadences more directly."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The 7-column grid scales its cell size with the card's width; keep the card at least ~280px wide so day numbers stay legible.",
+  "accessibility": [
+    "Weekday header labels are always visible above the grid, giving every cell a positional (day-of-week) reference in addition to color.",
+    "Each cell shows its day-of-month number as text, not just an unlabeled colored square.",
+    "The legend uses discrete numeric buckets (0, 1–3, 4–6, 7–9, 10+) stated as text, not a color-only relative scale."
+  ],
+  "compatibleWith": ["application-calendar", "application-charts", "application-heatmap-calendar"],
+  "variants": [
+    {
+      "id": "calendar-heat-legend-chart-1",
+      "title": "Month intensity grid",
+      "description": "An August 2026 calendar grid with weekday-aligned day cells shaded by deploy count, and a five-bucket numeric legend.",
+      "source": {
+        "html": "../../../../public/examples/application/calendar-heat-legend-chart/1.html",
+        "tsx": "tsx/CalendarHeatLegendChartVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Every cell shows both its day number and legend-mapped intensity level as text/color together."
+      ]
+    },
+    {
+      "id": "calendar-heat-legend-chart-1-dark",
+      "title": "Month intensity grid (Dark)",
+      "description": "Calendar heat legend chart adapted for dark surfaces, with intensity steps re-tuned for dark contrast.",
+      "source": {
+        "html": "../../../../public/examples/application/calendar-heat-legend-chart/1-dark.html",
+        "tsx": "tsx/CalendarHeatLegendChartVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Cell fill colors and day-number text meet WCAG AA contrast against the dark card background."
+      ]
+    }
+  ]
+}

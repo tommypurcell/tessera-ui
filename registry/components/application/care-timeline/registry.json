@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-care-timeline",
+  "title": "Care Timeline",
+  "description": "A vertical patient-history timeline with clinician avatars, color-coded visit-type badges (checkup, lab work, prescription, procedure), dates, and clinical notes.",
+  "category": "application/care-timeline",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "care-timeline",
+    "healthcare",
+    "patient history",
+    "timeline",
+    "clinical",
+    "visit"
+  ],
+  "useWhen": [
+    "Displaying a patient's chronological visit history in a healthcare or telehealth application.",
+    "Each entry needs a provider identity, a visit-type classification, and optional clinical notes together."
+  ],
+  "avoidWhen": [
+    "The events aren't clinical/patient-specific — use the generic `timelines` component for milestone or general activity history.",
+    "You need editable structured medical records rather than a read-only chronological view — this is a display pattern, not a records-management UI."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The vertical rail and entries stack in a single column at all widths; the connecting line and avatar column keep a fixed offset regardless of container width.",
+  "accessibility": [
+    "The timeline is a real ordered list (<ol>) since visit order is chronologically meaningful.",
+    "Each visit-type badge uses both a distinct color and text label (Checkup, Lab work, Prescription, Procedure), not color alone.",
+    "Clinician initials in the avatar are paired with the full name as text beside it, so the avatar isn't the only identifying information."
+  ],
+  "compatibleWith": ["application-timelines", "application-avatar"],
+  "variants": [
+    {
+      "id": "care-timeline-1",
+      "title": "Patient history",
+      "description": "A four-visit care timeline (Checkup, Lab work, Prescription, Procedure) with clinician avatars, color-coded type badges, dates, and notes connected by a vertical rail.",
+      "source": {
+        "html": "../../../../public/examples/application/care-timeline/1.html",
+        "tsx": "tsx/CareTimelineVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Each entry's clinician name, visit type, and date are all rendered as visible text."
+      ]
+    },
+    {
+      "id": "care-timeline-1-dark",
+      "title": "Patient history (Dark)",
+      "description": "Care timeline adapted for dark surfaces, with visit-type badge colors re-tuned for dark contrast.",
+      "source": {
+        "html": "../../../../public/examples/application/care-timeline/1-dark.html",
+        "tsx": "tsx/CareTimelineVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Avatar, badge, and note text all meet WCAG AA contrast against the dark card background."
+      ]
+    }
+  ]
+}

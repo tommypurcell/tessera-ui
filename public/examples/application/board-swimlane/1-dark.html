@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex min-h-96 items-center justify-center bg-gray-950 p-6">
+    <div class="w-full max-w-2xl overflow-hidden rounded-lg border border-gray-700 bg-gray-900 shadow-sm">
+      <div class="grid grid-cols-[140px_1fr_1fr_1fr] border-b border-gray-700 bg-white/5 text-xs font-semibold uppercase tracking-wide text-gray-400">
+        <div class="px-3 py-2">Team</div>
+        <div class="border-l border-gray-700 px-3 py-2">To Do</div>
+        <div class="border-l border-gray-700 px-3 py-2">In Progress</div>
+        <div class="border-l border-gray-700 px-3 py-2">Done</div>
+      </div>
+
+      <div class="grid grid-cols-[140px_1fr_1fr_1fr] border-b border-gray-700">
+        <div class="flex items-center gap-2 px-3 py-3">
+          <span class="size-2 rounded-full bg-violet-400"></span>
+          <span class="text-sm font-medium text-white">Design</span>
+        </div>
+        <div class="space-y-2 border-l border-gray-700 p-2">
+          <div class="rounded-md border border-gray-700 bg-gray-800 p-2 text-xs text-gray-200 shadow-sm">Icon set refresh</div>
+        </div>
+        <div class="space-y-2 border-l border-gray-700 p-2">
+          <div class="rounded-md border border-gray-700 bg-gray-800 p-2 text-xs text-gray-200 shadow-sm">Empty-state illustrations</div>
+          <div class="rounded-md border border-gray-700 bg-gray-800 p-2 text-xs text-gray-200 shadow-sm">Dark mode audit</div>
+        </div>
+        <div class="space-y-2 border-l border-gray-700 p-2">
+          <div class="rounded-md border border-gray-700 bg-gray-800 p-2 text-xs text-gray-500 shadow-sm line-through">Button variants</div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[140px_1fr_1fr_1fr]">
+        <div class="flex items-center gap-2 px-3 py-3">
+          <span class="size-2 rounded-full bg-blue-400"></span>
+          <span class="text-sm font-medium text-white">Engineering</span>
+        </div>
+        <div class="space-y-2 border-l border-gray-700 p-2">
+          <div class="rounded-md border border-gray-700 bg-gray-800 p-2 text-xs text-gray-200 shadow-sm">Rate limiting</div>
+          <div class="rounded-md border border-gray-700 bg-gray-800 p-2 text-xs text-gray-200 shadow-sm">Webhook retries</div>
+        </div>
+        <div class="space-y-2 border-l border-gray-700 p-2">
+          <div class="rounded-md border border-gray-700 bg-gray-800 p-2 text-xs text-gray-200 shadow-sm">Registry search index</div>
+        </div>
+        <div class="space-y-2 border-l border-gray-700 p-2">
+          <div class="rounded-md border border-gray-700 bg-gray-800 p-2 text-xs text-gray-500 shadow-sm line-through">CLI auth flow</div>
+          <div class="rounded-md border border-gray-700 bg-gray-800 p-2 text-xs text-gray-500 shadow-sm line-through">Theme scan v1</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

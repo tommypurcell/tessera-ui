@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-itinerary-timeline",
+  "title": "Itinerary Timeline",
+  "description": "A day-grouped trip itinerary listing events with a type icon (flight, hotel, activity, dining), time, title, and location.",
+  "category": "application/itinerary-timeline",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "itinerary-timeline",
+    "itinerary",
+    "trip",
+    "travel",
+    "timeline",
+    "schedule"
+  ],
+  "useWhen": [
+    "Displaying a multi-day travel or event schedule where each entry has a time, type, title, and location.",
+    "Users need to scan a trip quickly by day, distinguishing flights, lodging, activities, and dining at a glance via icon."
+  ],
+  "avoidWhen": [
+    "The events aren't day-grouped or travel-specific — use the generic `timelines` component instead.",
+    "You need editable scheduling with drag-to-reorder — this is a read-only display pattern, not a scheduling editor."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Day groups and their events stack in a single column at all widths; the time label stays right-aligned on the same line as the title via flex, wrapping below it only on very narrow containers.",
+  "accessibility": [
+    "Each day group has a visible heading (\"Day 1 · Mar 14\") that precedes its list of events, giving the timeline a clear hierarchical structure.",
+    "Event type icons are decorative (aria-hidden) since the event title and context (airline, hotel name, restaurant) already convey the type in text.",
+    "Time, title, and location are all rendered as separate text elements within each event, not combined into a single unlabeled string."
+  ],
+  "compatibleWith": ["application-timelines", "application-care-timeline"],
+  "variants": [
+    {
+      "id": "itinerary-timeline-1",
+      "title": "Two-day trip",
+      "description": "A two-day Lisbon itinerary: Day 1 (flight, hotel check-in) and Day 2 (walking tour, dinner), each event with a type icon, time, title, and location.",
+      "source": {
+        "html": "../../../../public/examples/application/itinerary-timeline/1.html",
+        "tsx": "tsx/ItineraryTimelineVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Day headings and event details are all rendered as real text, structuring the itinerary for screen readers."
+      ]
+    },
+    {
+      "id": "itinerary-timeline-1-dark",
+      "title": "Two-day trip (Dark)",
+      "description": "Itinerary timeline adapted for dark surfaces, with event-type icon colors re-tuned for dark contrast.",
+      "source": {
+        "html": "../../../../public/examples/application/itinerary-timeline/1-dark.html",
+        "tsx": "tsx/ItineraryTimelineVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Day headings, event titles, and location text all meet WCAG AA contrast against the dark card background."
+      ]
+    }
+  ]
+}
