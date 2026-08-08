@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "name": "application-anomaly-alert-row",
+  "title": "Anomaly Alert Row",
+  "description": "Metric row for anomaly monitoring: name and expected-range/current-value text, a sparkline with a shaded expected band and a spike marker, and a severity badge.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["monitoring", "anomaly", "alert", "sparkline", "devops"],
+  "useWhen": [
+    "Building an observability or monitoring dashboard where metrics need to show whether they're within an expected range.",
+    "You want a compact sparkline showing the expected band alongside the actual trend, not just a bare number.",
+    "Pairing with Environment Switcher or Feature Flag Toggle Row in an ops/admin panel."
+  ],
+  "avoidWhen": [
+    "The metric has no meaningful \"expected range\" concept — a plain Trend Sparkbar Row or Stat Tile is enough.",
+    "You need a full interactive time-series chart with zoom/pan — this is a compact glanceable row, not a chart component."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Each row is a single flex line; the sparkline and badge are fixed-width and never shrink, while the metric name/range text truncates or wraps first on narrow viewports.",
+  "accessibility": [
+    "Severity is conveyed by both badge color and visible text (\"Normal\", \"Warning\", \"Critical\"), never color alone.",
+    "The expected range and current value are always stated as text next to the sparkline, so the anomaly is understandable without interpreting the chart.",
+    "The sparkline SVG is aria-hidden since its information is fully redundant with the adjacent text."
+  ],
+  "compatibleWith": ["application-trend-sparkbar-row", "application-status-page-board"],
+  "variants": [
+    {
+      "id": "anomaly-alert-row-1",
+      "title": "Anomaly Alert Row",
+      "description": "Three metric rows: a Critical API error rate spike, a Warning checkout latency spike, and a Normal signup conversion rate within its expected band.",
+      "source": {
+        "html": "../../../../public/examples/application/anomaly-alert-row/1.html",
+        "tsx": "tsx/AnomalyAlertRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["normal", "warning", "critical"],
+      "accessibility": [
+        "Each row's severity badge text names the state explicitly rather than relying on the sparkline color alone."
+      ]
+    },
+    {
+      "id": "anomaly-alert-row-1-dark",
+      "title": "Anomaly Alert Row (Dark)",
+      "description": "The same three metric rows adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/anomaly-alert-row/1-dark.html",
+        "tsx": "tsx/AnomalyAlertRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["normal", "warning", "critical"],
+      "accessibility": [
+        "Sparkline and badge colors remain distinguishable at dark-surface contrast."
+      ]
+    }
+  ]
+}

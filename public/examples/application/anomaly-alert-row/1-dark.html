@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-lg flex-col p-6">
+    <div class="rounded-lg border border-gray-800 bg-gray-900">
+      <ul class="divide-y divide-gray-800">
+        <li class="flex items-center gap-4 px-4 py-3.5">
+          <div class="min-w-0 flex-1">
+            <p class="text-sm font-medium text-gray-100">API error rate</p>
+            <p class="mt-0.5 text-xs text-gray-400">Expected 0.1–0.4% &middot; now 3.8%</p>
+          </div>
+
+          <svg class="h-8 w-24 shrink-0" viewBox="0 0 96 32" fill="none" aria-hidden="true">
+            <rect x="0" y="20" width="96" height="8" fill="#374151" rx="2" />
+            <path d="M0 24 L20 23 L40 24 L60 25 L72 24 L84 6 L96 8" stroke="#f87171" stroke-width="2" fill="none" />
+            <circle cx="84" cy="6" r="3" fill="#f87171" />
+          </svg>
+
+          <span class="shrink-0 rounded-full bg-red-500/10 px-2.5 py-1 text-xs font-medium text-red-400">Critical</span>
+        </li>
+
+        <li class="flex items-center gap-4 px-4 py-3.5">
+          <div class="min-w-0 flex-1">
+            <p class="text-sm font-medium text-gray-100">Checkout latency (p95)</p>
+            <p class="mt-0.5 text-xs text-gray-400">Expected 180–260ms &middot; now 410ms</p>
+          </div>
+
+          <svg class="h-8 w-24 shrink-0" viewBox="0 0 96 32" fill="none" aria-hidden="true">
+            <rect x="0" y="18" width="96" height="8" fill="#374151" rx="2" />
+            <path d="M0 22 L20 21 L40 22 L60 22 L72 21 L84 12 L96 13" stroke="#fbbf24" stroke-width="2" fill="none" />
+            <circle cx="84" cy="12" r="3" fill="#fbbf24" />
+          </svg>
+
+          <span class="shrink-0 rounded-full bg-amber-500/10 px-2.5 py-1 text-xs font-medium text-amber-400">Warning</span>
+        </li>
+
+        <li class="flex items-center gap-4 px-4 py-3.5">
+          <div class="min-w-0 flex-1">
+            <p class="text-sm font-medium text-gray-100">Signup conversion</p>
+            <p class="mt-0.5 text-xs text-gray-400">Expected 4.2–5.1% &middot; now 4.6%</p>
+          </div>
+
+          <svg class="h-8 w-24 shrink-0" viewBox="0 0 96 32" fill="none" aria-hidden="true">
+            <rect x="0" y="14" width="96" height="8" fill="#374151" rx="2" />
+            <path d="M0 18 L20 17 L40 18 L60 17 L72 18 L84 17 L96 18" stroke="#34d399" stroke-width="2" fill="none" />
+          </svg>
+
+          <span class="shrink-0 rounded-full bg-emerald-500/10 px-2.5 py-1 text-xs font-medium text-emerald-400">Normal</span>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
