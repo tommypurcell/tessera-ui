@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-sm flex-col gap-6 p-6">
+    <div class="flex flex-col gap-1.5">
+      <label for="full-name" class="text-sm font-medium text-gray-700">
+        Full name
+        <span aria-hidden="true" class="ml-0.5 text-red-600">*</span>
+      </label>
+
+      <input
+        id="full-name"
+        type="text"
+        aria-describedby="full-name-help"
+        class="rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 shadow-sm focus:border-gray-500 focus:outline-none"
+      />
+
+      <p id="full-name-help" class="text-xs text-gray-500">As it appears on your ID.</p>
+    </div>
+
+    <div class="flex flex-col gap-1.5">
+      <label for="email" class="text-sm font-medium text-gray-700">Email address</label>
+
+      <input
+        id="email"
+        type="email"
+        aria-invalid="true"
+        aria-describedby="email-error"
+        value="not-an-email"
+        class="rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 shadow-sm focus:border-gray-500 focus:outline-none"
+      />
+
+      <p id="email-error" role="alert" class="text-xs text-red-600">Enter a valid email address.</p>
+    </div>
+  </body>
+</html>

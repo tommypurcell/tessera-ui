@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-form-row",
+  "title": "Form Row",
+  "description": "Label, help text, and error state wired to a real form control with correct id, aria-describedby, and aria-invalid associations.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["form", "input", "label", "validation", "primitive", "accessibility"],
+  "useWhen": [
+    "Building a form field that needs a label, optional help text, and an error state with correct accessibility wiring.",
+    "Wrapping an existing input, select, or textarea component so it gets consistent label and error handling for free.",
+    "Replacing hand-rolled label/input/error markup that is re-implemented slightly differently on every form."
+  ],
+  "avoidWhen": [
+    "The field has no label — a labelless control usually indicates a missing accessibility requirement, not a case for this component.",
+    "You need a full multi-field form layout with grid alignment — compose several form rows inside your own layout instead.",
+    "The control is a checkbox or radio group, where the label typically follows rather than precedes the control."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The row is a single-column flex stack at all widths; place it inside your own responsive grid to control multi-column form layouts.",
+  "accessibility": [
+    "The label's htmlFor and the control's id are always associated, whether the control is the built-in input or a child element you pass in.",
+    "Help text and error text are linked to the control via aria-describedby so both are announced when the field receives focus.",
+    "The control receives aria-invalid when an error is present, and the error text carries role=\"alert\" so screen readers announce it."
+  ],
+  "compatibleWith": ["application-inputs", "application-selects", "application-textareas", "application-toggles"],
+  "variants": [
+    {
+      "id": "form-row-1",
+      "title": "Form row",
+      "description": "Label, control, help text, and error state with real id/aria-describedby/aria-invalid wiring, accepting any input as a child.",
+      "source": {
+        "html": "../../../../public/examples/application/form-row/1.html",
+        "tsx": "tsx/FormRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "error"],
+      "accessibility": [
+        "Required fields mark the asterisk aria-hidden and rely on the label text plus form-level instructions to convey the requirement."
+      ]
+    },
+    {
+      "id": "form-row-1-dark",
+      "title": "Form row (Dark)",
+      "description": "Label, control, help text, and error state adapted for dark form surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/form-row/1-dark.html",
+        "tsx": "tsx/FormRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "error"],
+      "accessibility": [
+        "Label, help text, and error text colors must meet WCAG AA contrast on dark form backgrounds."
+      ]
+    }
+  ]
+}

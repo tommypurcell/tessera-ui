@@ -24,7 +24,7 @@
     "Growth indicators that use color (green up / red down) must include an accessible text label or icon label.",
     "Decorative trend icons should carry aria-hidden='true'; the trend text label carries the meaning."
   ],
-  "compatibleWith": ["application-charts", "application-tables", "application-badges"],
+  "compatibleWith": ["application-charts", "application-tables", "application-badges", "application-stat-tile"],
   "variants": [
     {
       "id": "stats-1",
