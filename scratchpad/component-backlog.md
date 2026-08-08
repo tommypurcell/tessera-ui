@@ -157,28 +157,28 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-10) Diff Stat Bar — 2 variants (single-file summary bar, multi-file list with per-row bars + totals), light+dark, registry+tsx generated, screenshots verified
 - [x] (builder-2) Presence Cursor Layer — 3 named colored cursors over a shared canvas, one with active selection box, sr-only status region listing collaborators, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components (also regenerated public/component.css for missing bg-pink-*/bg-emerald-* utilities)
 - [x] (builder-10) Rating Distribution — 2 variants (average score + percentage bars, compact bars w/ review counts), light+dark, registry+tsx generated, screenshots verified
-- [~] (builder-2) Team Members List — row-based user management list with avatar, name/email, role select per row, pending-invite state, and remove action; distinct from generic details-list (role/membership semantics, not arbitrary structured data).
+- [x] (builder-2) Team Members List — 2 active members w/ per-row role select + 1 pending invitee w/ badge, initials-fallback avatar, Invite member action, light+dark, registry+tsx+MDX, screenshot verified, committed to builder-2-components
 
 <!-- === WAVE 2 (builders back on, post-102) — 24 new application/dashboard-grade ideas, verified non-dupe against registry === -->
-- [ ] Data Grid Cell Editor — spreadsheet-style editable table cell with inline input, keyboard arrow navigation, and dirty-cell highlight; distinct from DataTable (edit surface).
-- [ ] Column Visibility Menu — dropdown of toggleable table columns with show/hide checkboxes and reorder handles; companion control for data tables.
-- [ ] Saved Views Bar — tab-like row of named filter/sort presets with add/rename/star affordances; distinct from tabs (persisted query state).
-- [ ] Query Builder — visual AND/OR condition group builder with field/operator/value rows and nesting; power-filter UI absent from library.
-- [ ] Faceted Search Sidebar — collapsible filter groups with counts, checkboxes, and range facets; e-commerce/search staple distinct from data-filter-bar.
-- [ ] Rich Tooltip Chart — hover tooltip card showing series color swatches, values, and delta for a chart datapoint; pairs with charts.
-- [ ] Progress Ring Cluster — grouped radial progress dials with center labels for multi-metric dashboards; distinct from progress-bars (radial, grouped).
+- [x] (builder-4) Data Grid Cell Editor — actively-editing ringed cell + dirty-cell highlight w/ unsaved indicator + nav hint footer, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #14)
+- [~] (builder-5) Column Visibility Menu — dropdown of toggleable table columns with show/hide checkboxes and reorder handles; companion control for data tables.
+- [~] (builder-9) Saved Views Bar — tab-like row of named filter/sort presets with add/rename/star affordances; distinct from tabs (persisted query state).
+- [~] (builder-3) Query Builder — visual AND/OR condition group builder with field/operator/value rows and nesting; power-filter UI absent from library.
+- [~] (builder-2) Faceted Search Sidebar — collapsible filter groups with counts, checkboxes, and range facets; e-commerce/search staple distinct from data-filter-bar.
+- [~] (builder-4) Rich Tooltip Chart — hover tooltip card showing series color swatches, values, and delta for a chart datapoint; pairs with charts.
+- [~] (builder-8) Progress Ring Cluster — grouped radial progress dials with center labels for multi-metric dashboards; distinct from progress-bars (radial, grouped).
 - [ ] Sankey Flow Diagram — node-and-flow visualization for conversion/traffic routing with weighted links; distinct from funnel-chart.
 - [ ] Org Chart — hierarchical node tree with avatar cards and connector lines; distinct from tree-view (person/reporting semantics).
 - [ ] Wizard Progress Rail — vertical stepper with per-step status, descriptions, and click-to-jump; distinct from stepper-wizard (nav rail, not form shell).
 - [ ] Slide-Over Form — right-edge panel with scrollable form body and sticky footer actions; distinct from drawer (form-specialized layout).
-- [~] (builder-7) Confirmation Input — destructive dialog requiring the user to type a phrase to enable the confirm button; distinct from AlertDialog.
+- [x] (builder-7) Confirmation Input — 2 states (disabled/awaiting, matched/confirmed) w/ live phrase-match validation, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
 - [ ] Field Array Editor — repeatable add/remove form-row group with drag reorder for lists of inputs; common form pattern absent from library.
-- [ ] Currency Input — masked money field with symbol prefix, thousands grouping, and locale/currency selector; distinct from inputs.
+- [~] (builder-7) Currency Input — masked money field with symbol prefix, thousands grouping, and locale/currency selector; distinct from inputs.
 - [ ] Phone Number Input — country-code flag dropdown + formatted national number field; distinct from inputs.
 - [x] (builder-6) Time Picker — 2 variants (scrolling hour/minute/period column picker, compact dropdown listbox), light+dark, registry+tsx generated, screenshots verified, committed to builder-6-components.
-- [ ] Duration Input — segmented Xh Ym entry for timers/estimates; distinct from time picker (elapsed, not clock).
+- [~] (builder-6) Duration Input — segmented Xh Ym entry for timers/estimates; distinct from time picker (elapsed, not clock).
 - [ ] Slider Range Histogram — dual-thumb range slider over a value histogram for price/date filtering; distinct from range-inputs and timeline-scrubber.
-- [ ] Toast Action Undo — snackbar with a countdown ring and inline Undo action for reversible operations; distinct from toast-stack (single actionable pattern).
+- [~] (builder-10) Toast Action Undo — snackbar with a countdown ring and inline Undo action for reversible operations; distinct from toast-stack (single actionable pattern).
 - [ ] Status Page Board — grouped service list with operational/degraded/outage pills and uptime bars; distinct from stats and activity-feed.
 - [ ] Changelog Entry — dated release card with version badge, category tags, and grouped bullet lists; distinct from timelines and activity-feed.
 - [ ] Quota Warning Banner — inline threshold-crossing alert with usage bar and upgrade CTA; distinct from usage-meter (alerting) and announcement-banner.
