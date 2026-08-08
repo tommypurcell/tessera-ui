@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex justify-center p-6">
+    <div class="flex w-full max-w-md items-center gap-3 rounded-lg border border-gray-200 bg-white p-3">
+      <img
+        src="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=160&h=160&fit=crop"
+        alt="Spicy Thai basil noodles"
+        class="size-16 shrink-0 rounded-md object-cover"
+      />
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-1.5">
+          <h3 class="truncate text-sm font-medium text-gray-900">Thai Basil Noodles</h3>
+          <span class="flex items-center gap-0.5" role="img" aria-label="Spice level: hot">
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-3 text-red-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10 18a5.5 5.5 0 005.5-5.5c0-2.5-1.5-4-2.5-5.5-.5 1-1.5 1.5-2 1-.5-1-.5-3-1-4.5-2 1.5-4.5 5-4.5 9a5.5 5.5 0 005.5 5.5z" clip-rule="evenodd" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-3 text-red-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10 18a5.5 5.5 0 005.5-5.5c0-2.5-1.5-4-2.5-5.5-.5 1-1.5 1.5-2 1-.5-1-.5-3-1-4.5-2 1.5-4.5 5-4.5 9a5.5 5.5 0 005.5 5.5z" clip-rule="evenodd" />
+            </svg>
+          </span>
+        </div>
+        <p class="truncate text-xs text-gray-500">Rice noodles, chili, Thai basil, egg</p>
+        <p class="mt-1 text-sm font-semibold text-gray-900">$12.00</p>
+      </div>
+      <div class="flex shrink-0 items-center gap-2 rounded-md border border-gray-200 px-1 py-1">
+        <button type="button" aria-label="Decrease quantity" class="flex size-6 items-center justify-center rounded text-gray-500 hover:bg-gray-100">
+          <svg xmlns="http://www.w3.org/2000/svg" class="size-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6" />
+          </svg>
+        </button>
+        <span class="w-4 text-center text-sm font-medium text-gray-900">2</span>
+        <button type="button" aria-label="Increase quantity" class="flex size-6 items-center justify-center rounded text-gray-500 hover:bg-gray-100">
+          <svg xmlns="http://www.w3.org/2000/svg" class="size-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12m6-6H6" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex justify-center bg-gray-950 p-6">
+    <div class="w-full max-w-sm rounded-xl border border-gray-800 bg-gray-900 p-5">
+      <div class="flex items-center gap-4">
+        <div class="relative flex size-24 shrink-0 items-center justify-center">
+          <svg viewBox="0 0 100 100" class="size-24 -rotate-90" role="img" aria-label="Data quality score: 82 out of 100">
+            <circle cx="50" cy="50" r="40" fill="none" stroke-width="10" class="stroke-gray-800" />
+            <circle
+              cx="50"
+              cy="50"
+              r="40"
+              fill="none"
+              stroke-width="10"
+              stroke-linecap="round"
+              class="stroke-green-400"
+              stroke-dasharray="251.33"
+              stroke-dashoffset="45.24"
+            />
+          </svg>
+          <span class="absolute text-xl font-semibold text-white">82</span>
+        </div>
+        <div>
+          <h2 class="text-sm font-semibold text-white">Data quality score</h2>
+          <p class="mt-1 text-xs text-gray-400">14 of 17 checks passing</p>
+        </div>
+      </div>
+
+      <div class="mt-4 border-t border-gray-800 pt-3">
+        <p class="text-xs font-medium tracking-wide text-gray-500 uppercase">Failing rules</p>
+        <ul class="mt-2 flex flex-col gap-2">
+          <li class="flex items-start gap-2 text-sm text-gray-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-4 shrink-0 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+            Email format valid (312 rows failed)
+          </li>
+          <li class="flex items-start gap-2 text-sm text-gray-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-4 shrink-0 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+            No duplicate customer IDs (8 rows failed)
+          </li>
+          <li class="flex items-start gap-2 text-sm text-gray-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-4 shrink-0 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+            Signup date not in future (2 rows failed)
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

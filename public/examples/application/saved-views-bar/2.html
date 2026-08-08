@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="flex justify-center p-6">
+    <div role="tablist" aria-label="Saved views" class="flex w-full max-w-xl flex-wrap items-center gap-2">
+      <button
+        type="button"
+        role="tab"
+        aria-selected="true"
+        class="inline-flex items-center gap-1.5 rounded-full bg-gray-900 py-1.5 pr-2 pl-3 text-sm font-medium text-white"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-3.5 text-amber-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.958a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.447a1 1 0 00-.363 1.118l1.287 3.959c.3.921-.755 1.688-1.538 1.118l-3.367-2.447a1 1 0 00-1.176 0l-3.367 2.447c-.783.57-1.838-.197-1.538-1.118l1.286-3.959a1 1 0 00-.363-1.118L2.063 9.385c-.783-.57-.38-1.81.588-1.81h4.163a1 1 0 00.95-.69l1.285-3.958z" />
+        </svg>
+        Q3 renewals
+        <span
+          aria-label="View options"
+          class="ml-0.5 inline-flex size-5 items-center justify-center rounded-full text-gray-400 hover:bg-white/10 hover:text-white"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="size-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </span>
+      </button>
+
+      <button
+        type="button"
+        role="tab"
+        aria-selected="false"
+        class="inline-flex items-center gap-1.5 rounded-full border border-gray-200 px-3 py-1.5 text-sm font-medium text-gray-600 hover:bg-gray-50"
+      >
+        At risk
+      </button>
+
+      <button
+        type="button"
+        role="tab"
+        aria-selected="false"
+        class="inline-flex items-center gap-1.5 rounded-full border border-gray-200 px-3 py-1.5 text-sm font-medium text-gray-600 hover:bg-gray-50"
+      >
+        Enterprise
+      </button>
+
+      <button
+        type="button"
+        class="inline-flex items-center gap-1.5 rounded-full border border-dashed border-gray-300 px-3 py-1.5 text-sm font-medium text-gray-500 hover:border-gray-400 hover:text-gray-700 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.5v15m7.5-7.5h-15" />
+        </svg>
+        New view
+      </button>
+    </div>
+  </body>
+</html>

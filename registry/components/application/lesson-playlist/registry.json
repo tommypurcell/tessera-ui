@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-lesson-playlist",
+  "title": "Lesson Playlist",
+  "description": "Ordered course-lesson list with completed, in-progress, available, and locked states — distinct from application-task-checklist since lessons have a gated, ordered progression rather than freely toggleable items.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["course", "lesson", "playlist", "education", "progress", "primitive"],
+  "useWhen": [
+    "Showing an ordered list of video or reading lessons within a course module.",
+    "Gating later lessons behind a locked state until earlier ones are completed.",
+    "Highlighting the current in-progress lesson distinctly from completed and upcoming ones."
+  ],
+  "avoidWhen": [
+    "Items can be completed in any order with no gating — use application-task-checklist instead.",
+    "There is no real duration or lock semantics — a plain list or application-onboarding-checklist may be simpler.",
+    "The content isn't lesson/course-shaped — use application-tables or a generic list instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The list has a fixed max width; lesson titles truncate with an ellipsis rather than wrapping so duration stays visible on one line.",
+  "accessibility": [
+    "Each lesson is a real button element, with locked lessons carrying the disabled attribute so they cannot be activated.",
+    "Completed, current, and locked states are each communicated by an icon or badge plus text styling, not color alone.",
+    "The module header states the completed-of-total count in real text, not only through visual progress."
+  ],
+  "compatibleWith": ["application-task-checklist", "application-onboarding-checklist", "application-progress-bars"],
+  "variants": [
+    {
+      "id": "lesson-playlist-1",
+      "title": "Module list",
+      "description": "Course-module lesson list with a header showing completed-of-total count, and completed/current/available/locked row states.",
+      "source": {
+        "html": "../../../../public/examples/application/lesson-playlist/1.html",
+        "tsx": "tsx/LessonPlaylistVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["completed", "current", "available", "locked"],
+      "accessibility": [
+        "Locked lessons are real disabled buttons, not just visually dimmed clickable rows."
+      ]
+    },
+    {
+      "id": "lesson-playlist-1-dark",
+      "title": "Module list (Dark)",
+      "description": "Module-list lesson playlist adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/lesson-playlist/1-dark.html",
+        "tsx": "tsx/LessonPlaylistVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["completed", "current", "available", "locked"],
+      "accessibility": [
+        "Completed, current, and locked state colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    },
+    {
+      "id": "lesson-playlist-2",
+      "title": "Numbered with progress bar",
+      "description": "Compact numbered lesson list with a playback progress bar under the current in-progress lesson.",
+      "source": {
+        "html": "../../../../public/examples/application/lesson-playlist/2.html",
+        "tsx": "tsx/LessonPlaylistVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["completed", "current", "available", "locked"],
+      "accessibility": [
+        "The progress bar is supplementary to the lesson's visible current-state styling, not the only indicator of progress."
+      ]
+    },
+    {
+      "id": "lesson-playlist-2-dark",
+      "title": "Numbered with progress bar (Dark)",
+      "description": "Numbered lesson playlist with a progress bar, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/lesson-playlist/2-dark.html",
+        "tsx": "tsx/LessonPlaylistVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["completed", "current", "available", "locked"],
+      "accessibility": [
+        "Progress bar and lesson number badge contrast must meet WCAG AA on dark backgrounds."
+      ]
+    }
+  ]
+}

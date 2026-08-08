@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "name": "application-toggle-group",
+  "title": "Toggle Group",
+  "description": "Connected group of toggle buttons for single- or multi-select choices, driven by a typed items array and a controlled value.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["toggle", "segmented-control", "button-group", "select", "primitive", "form"],
+  "useWhen": [
+    "Letting a user pick one option from a small connected set, such as text alignment or a calendar view.",
+    "Letting a user toggle several independent options at once, such as bold/italic/underline formatting.",
+    "You want a typed items array and controlled value/values instead of hand-editing a row of buttons."
+  ],
+  "avoidWhen": [
+    "There are more than five or six options — use a select or dropdown menu instead.",
+    "The choice navigates to a different view entirely — use tabs instead of a toggle group.",
+    "Only a single boolean option exists — use a switch or checkbox instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The group sizes to its content and does not wrap; place it in a flex or grid container to control alignment at each breakpoint.",
+  "accessibility": [
+    "The container carries role='group' with an aria-label describing the group's purpose.",
+    "Each button carries aria-pressed reflecting its selected state, not color alone.",
+    "Icon-only buttons carry an aria-label; buttons with visible text do not duplicate it."
+  ],
+  "compatibleWith": ["application-tabs", "application-button-groups", "application-toolbar"],
+  "variants": [
+    {
+      "id": "toggle-group-1",
+      "title": "Single-select (icon)",
+      "description": "Connected single-select segmented control with icon buttons, such as text alignment.",
+      "source": {
+        "html": "../../../../public/examples/application/toggle-group/1.html",
+        "tsx": "tsx/ToggleGroupVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "The selected button is distinguished by a background, ring, and aria-pressed, not color alone."
+      ]
+    },
+    {
+      "id": "toggle-group-1-dark",
+      "title": "Single-select (icon, Dark)",
+      "description": "Single-select icon segmented control adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/toggle-group/1-dark.html",
+        "tsx": "tsx/ToggleGroupVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "Selected and unselected button contrast must meet WCAG AA on dark backgrounds."
+      ]
+    },
+    {
+      "id": "toggle-group-2",
+      "title": "Multi-select (formatting)",
+      "description": "Connected multi-select toggle group, such as bold/italic/underline text formatting, where each button toggles independently.",
+      "source": {
+        "html": "../../../../public/examples/application/toggle-group/2.html",
+        "tsx": "tsx/ToggleGroupVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "Each button's aria-pressed state is independent so screen readers announce multiple active options correctly."
+      ]
+    },
+    {
+      "id": "toggle-group-2-dark",
+      "title": "Multi-select (formatting, Dark)",
+      "description": "Multi-select formatting toggle group adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/toggle-group/2-dark.html",
+        "tsx": "tsx/ToggleGroupVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "Active and inactive button contrast must meet WCAG AA on dark backgrounds."
+      ]
+    },
+    {
+      "id": "toggle-group-3",
+      "title": "Single-select (pill)",
+      "description": "Pill-shaped single-select toggle group for switching views, such as a Day/Week/Month calendar switcher.",
+      "source": {
+        "html": "../../../../public/examples/application/toggle-group/3.html",
+        "tsx": "tsx/ToggleGroupVariant3.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "The selected pill is distinguished by a filled background and shadow, not color alone."
+      ]
+    },
+    {
+      "id": "toggle-group-3-dark",
+      "title": "Single-select (pill, Dark)",
+      "description": "Pill-shaped single-select toggle group adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/toggle-group/3-dark.html",
+        "tsx": "tsx/ToggleGroupVariant3Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "selected"],
+      "accessibility": [
+        "Selected and unselected pill contrast must meet WCAG AA on dark backgrounds."
+      ]
+    }
+  ]
+}

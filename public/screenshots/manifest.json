@@ -5,7 +5,7 @@
     "width": 1200,
     "height": 800
   },
-  "screenshotCount": 742,
+  "screenshotCount": 860,
   "screenshots": [
     {
       "componentId": "accordions",
@@ -305,6 +305,46 @@
       "sourceSha256": "5f0c7bfe68ffd283d0b2884916f9e4568d3b8a7212bef7b1c21db50441ec2022",
       "url": "/screenshots/components/application-breadcrumbs/breadcrumbs-5-dark.jpg",
       "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-bulk-action-bar",
+      "variantId": "bulk-action-bar-1",
+      "appearance": "light",
+      "sourcePath": "files/application-bulk-action-bar/bulk-action-bar-1.html",
+      "sourceSha256": "6e6b46d0b5b8abf93e6418d793cff691adbf41de2302a805c9b7769fd7ceb8d6",
+      "url": "/screenshots/components/application-bulk-action-bar/bulk-action-bar-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-bulk-action-bar",
+      "variantId": "bulk-action-bar-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-bulk-action-bar/bulk-action-bar-1-dark.html",
+      "sourceSha256": "2364e245800db7e960d05fe855ff17320133c78ea01383902b8781809cb9e60b",
+      "url": "/screenshots/components/application-bulk-action-bar/bulk-action-bar-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-bulk-action-bar",
+      "variantId": "bulk-action-bar-2",
+      "appearance": "light",
+      "sourcePath": "files/application-bulk-action-bar/bulk-action-bar-2.html",
+      "sourceSha256": "9982d93a3011205130ad491b9ee6a49595c73bb9d47b946d319a66197f95488d",
+      "url": "/screenshots/components/application-bulk-action-bar/bulk-action-bar-2.jpg",
+      "width": 672,
+      "height": 400
+    },
+    {
+      "componentId": "application-bulk-action-bar",
+      "variantId": "bulk-action-bar-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-bulk-action-bar/bulk-action-bar-2-dark.html",
+      "sourceSha256": "b1b5689fc10e54469bdf7e0dfecf93867f236a4605db5f98281008ecfb4eb3ed",
+      "url": "/screenshots/components/application-bulk-action-bar/bulk-action-bar-2-dark.jpg",
+      "width": 672,
       "height": 400
     },
     {
@@ -818,6 +858,206 @@
       "height": 400
     },
     {
+      "componentId": "application-code-editor-block",
+      "variantId": "code-editor-block-1",
+      "appearance": "light",
+      "sourcePath": "files/application-code-editor-block/code-editor-block-1.html",
+      "sourceSha256": "7b769c253b8fc38b42bc7dcd07c67092f859f6d3372a707a22747e57d7278f1d",
+      "url": "/screenshots/components/application-code-editor-block/code-editor-block-1.jpg",
+      "width": 672,
+      "height": 453
+    },
+    {
+      "componentId": "application-code-editor-block",
+      "variantId": "code-editor-block-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-code-editor-block/code-editor-block-1-dark.html",
+      "sourceSha256": "6aff9184cf0637630ed52c2e7f422beec63facd5a65baa1e323a63cde11b16fa",
+      "url": "/screenshots/components/application-code-editor-block/code-editor-block-1-dark.jpg",
+      "width": 672,
+      "height": 453
+    },
+    {
+      "componentId": "application-code-editor-block",
+      "variantId": "code-editor-block-2",
+      "appearance": "light",
+      "sourcePath": "files/application-code-editor-block/code-editor-block-2.html",
+      "sourceSha256": "2815da5fb83470afc4bb29e17e0c03d6846f30518f16c3f808d080e5a0ecd8c4",
+      "url": "/screenshots/components/application-code-editor-block/code-editor-block-2.jpg",
+      "width": 672,
+      "height": 400
+    },
+    {
+      "componentId": "application-code-editor-block",
+      "variantId": "code-editor-block-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-code-editor-block/code-editor-block-2-dark.html",
+      "sourceSha256": "723388c3ea0b558733a95824771ed3d26a7e0f0fe96de9219dfa87b90f0ff6d5",
+      "url": "/screenshots/components/application-code-editor-block/code-editor-block-2-dark.jpg",
+      "width": 672,
+      "height": 400
+    },
+    {
+      "componentId": "application-consent-checklist",
+      "variantId": "consent-checklist-1",
+      "appearance": "light",
+      "sourcePath": "files/application-consent-checklist/consent-checklist-1.html",
+      "sourceSha256": "8c4185914b35cb4945fb824d46943fa2f466870edb0ab72bffd63ec889d223ad",
+      "url": "/screenshots/components/application-consent-checklist/consent-checklist-1.jpg",
+      "width": 600,
+      "height": 402
+    },
+    {
+      "componentId": "application-consent-checklist",
+      "variantId": "consent-checklist-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-consent-checklist/consent-checklist-1-dark.html",
+      "sourceSha256": "f8e4ea9cdf54a112d5bcacb1738f8c67e236b3645df221b164f4ce0fa1fd7cbd",
+      "url": "/screenshots/components/application-consent-checklist/consent-checklist-1-dark.jpg",
+      "width": 600,
+      "height": 402
+    },
+    {
+      "componentId": "application-consent-checklist",
+      "variantId": "consent-checklist-2",
+      "appearance": "light",
+      "sourcePath": "files/application-consent-checklist/consent-checklist-2.html",
+      "sourceSha256": "c2d3272737e742d86c3adf3889c7424993695ed03f17f850540b0e65af9a30f1",
+      "url": "/screenshots/components/application-consent-checklist/consent-checklist-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-consent-checklist",
+      "variantId": "consent-checklist-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-consent-checklist/consent-checklist-2-dark.html",
+      "sourceSha256": "6e91009ae0dd7ab5646d04990909b4a915c4eb8dbb8fca068f2a6bf2f97645f2",
+      "url": "/screenshots/components/application-consent-checklist/consent-checklist-2-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-consent-version-banner",
+      "variantId": "consent-version-banner-1",
+      "appearance": "light",
+      "sourcePath": "files/application-consent-version-banner/consent-version-banner-1.html",
+      "sourceSha256": "1f6a786254630a517a204adb609c9db187a82181a8130bd2517678017db1d285",
+      "url": "/screenshots/components/application-consent-version-banner/consent-version-banner-1.jpg",
+      "width": 608,
+      "height": 400
+    },
+    {
+      "componentId": "application-consent-version-banner",
+      "variantId": "consent-version-banner-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-consent-version-banner/consent-version-banner-1-dark.html",
+      "sourceSha256": "8c2487ce577e3389a9ca0337829b8f2a34235888017c10365242056831dc8a9c",
+      "url": "/screenshots/components/application-consent-version-banner/consent-version-banner-1-dark.jpg",
+      "width": 608,
+      "height": 400
+    },
+    {
+      "componentId": "application-consent-version-banner",
+      "variantId": "consent-version-banner-2",
+      "appearance": "light",
+      "sourcePath": "files/application-consent-version-banner/consent-version-banner-2.html",
+      "sourceSha256": "e2761bff4088713a2c53da97bfc490a541805811568a1ef868e21cd42c8e408c",
+      "url": "/screenshots/components/application-consent-version-banner/consent-version-banner-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-consent-version-banner",
+      "variantId": "consent-version-banner-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-consent-version-banner/consent-version-banner-2-dark.html",
+      "sourceSha256": "a114bc5b93ca725333274fba68556a6af0b2b0d5862c54038a1526813525ea7f",
+      "url": "/screenshots/components/application-consent-version-banner/consent-version-banner-2-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-credit-card-form",
+      "variantId": "credit-card-form-1",
+      "appearance": "light",
+      "sourcePath": "files/application-credit-card-form/credit-card-form-1.html",
+      "sourceSha256": "6e224cf92a9066b51f5384c9caeb1e946dae1d8366a34a0977b5200f242fcb98",
+      "url": "/screenshots/components/application-credit-card-form/credit-card-form-1.jpg",
+      "width": 600,
+      "height": 470
+    },
+    {
+      "componentId": "application-credit-card-form",
+      "variantId": "credit-card-form-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-credit-card-form/credit-card-form-1-dark.html",
+      "sourceSha256": "4311cdc9bcfd27b4f750625c8026a7f149663b18395659ea1399b7d102140cd9",
+      "url": "/screenshots/components/application-credit-card-form/credit-card-form-1-dark.jpg",
+      "width": 600,
+      "height": 470
+    },
+    {
+      "componentId": "application-credit-card-form",
+      "variantId": "credit-card-form-2",
+      "appearance": "light",
+      "sourcePath": "files/application-credit-card-form/credit-card-form-2.html",
+      "sourceSha256": "76d8add8a4cad3cc0049df626864bda2bf69696e5f73b793a6c0b7a50c1455e3",
+      "url": "/screenshots/components/application-credit-card-form/credit-card-form-2.jpg",
+      "width": 600,
+      "height": 502
+    },
+    {
+      "componentId": "application-credit-card-form",
+      "variantId": "credit-card-form-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-credit-card-form/credit-card-form-2-dark.html",
+      "sourceSha256": "452747ee659d4ec82286298521589e14476fe1a181d79e776ab305eff822feac",
+      "url": "/screenshots/components/application-credit-card-form/credit-card-form-2-dark.jpg",
+      "width": 600,
+      "height": 502
+    },
+    {
+      "componentId": "application-data-quality-score",
+      "variantId": "data-quality-score-1",
+      "appearance": "light",
+      "sourcePath": "files/application-data-quality-score/data-quality-score-1.html",
+      "sourceSha256": "d90531d204d2495d2cc508685abcf7b0c7a9a1d35fb412059bf85d9104fe7b4d",
+      "url": "/screenshots/components/application-data-quality-score/data-quality-score-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-data-quality-score",
+      "variantId": "data-quality-score-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-data-quality-score/data-quality-score-1-dark.html",
+      "sourceSha256": "9bd8b9ca4b7b82e19178bffbcea22d3c7668b5861e985e3df86ecd1e614b4e3e",
+      "url": "/screenshots/components/application-data-quality-score/data-quality-score-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-data-quality-score",
+      "variantId": "data-quality-score-2",
+      "appearance": "light",
+      "sourcePath": "files/application-data-quality-score/data-quality-score-2.html",
+      "sourceSha256": "3d99b3872c7d01594f9e252e32d244496231b8a9844e4ba7a491485c02463acb",
+      "url": "/screenshots/components/application-data-quality-score/data-quality-score-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-data-quality-score",
+      "variantId": "data-quality-score-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-data-quality-score/data-quality-score-2-dark.html",
+      "sourceSha256": "f67df122045b00b9e585bd7b5f386ac2fcb517cf92ea027294d4ad98f1285023",
+      "url": "/screenshots/components/application-data-quality-score/data-quality-score-2-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
       "componentId": "application-details-list",
       "variantId": "details-list-1",
       "appearance": "light",
@@ -895,6 +1135,46 @@
       "sourceSha256": "d3dd130ef99c37ef680e1a3be6509b9d6cef2d5f785c2bf29a06e13cfd36be19",
       "url": "/screenshots/components/application-details-list/details-list-4-dark.jpg",
       "width": 816,
+      "height": 400
+    },
+    {
+      "componentId": "application-dish-card",
+      "variantId": "dish-card-1",
+      "appearance": "light",
+      "sourcePath": "files/application-dish-card/dish-card-1.html",
+      "sourceSha256": "7d13233dcb00bb86a0600cba45a60dfbdbc18cf256260d75f7f10b8213c3c458",
+      "url": "/screenshots/components/application-dish-card/dish-card-1.jpg",
+      "width": 600,
+      "height": 406
+    },
+    {
+      "componentId": "application-dish-card",
+      "variantId": "dish-card-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-dish-card/dish-card-1-dark.html",
+      "sourceSha256": "631ccfb009a81962b4fbac932667ce71facab22c1a608cb2ac77cf6a93184814",
+      "url": "/screenshots/components/application-dish-card/dish-card-1-dark.jpg",
+      "width": 600,
+      "height": 406
+    },
+    {
+      "componentId": "application-dish-card",
+      "variantId": "dish-card-2",
+      "appearance": "light",
+      "sourcePath": "files/application-dish-card/dish-card-2.html",
+      "sourceSha256": "01ed9a21cc8aa439cc91b9ba1e4cd7aba274bdfef59ea75e206043136598861a",
+      "url": "/screenshots/components/application-dish-card/dish-card-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-dish-card",
+      "variantId": "dish-card-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-dish-card/dish-card-2-dark.html",
+      "sourceSha256": "c024caafd0f29c66464f4808f1d42f5ca85f7da3213ad47bc9b7cf5d2c116048",
+      "url": "/screenshots/components/application-dish-card/dish-card-2-dark.jpg",
+      "width": 600,
       "height": 400
     },
     {
@@ -1074,6 +1354,46 @@
       "sourcePath": "files/application-dropdown/dropdown-3-dark.html",
       "sourceSha256": "f7b4018bd4f8dd734489a59f3fdca2d18d97fcf68f534b917add308b3a50c264",
       "url": "/screenshots/components/application-dropdown/dropdown-3-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-empty-search-suggestions",
+      "variantId": "empty-search-suggestions-1",
+      "appearance": "light",
+      "sourcePath": "files/application-empty-search-suggestions/empty-search-suggestions-1.html",
+      "sourceSha256": "68ad5e676af9e511feb90197f28cd6e7d9e28813003e627d00adb7bce5fa917a",
+      "url": "/screenshots/components/application-empty-search-suggestions/empty-search-suggestions-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-empty-search-suggestions",
+      "variantId": "empty-search-suggestions-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-empty-search-suggestions/empty-search-suggestions-1-dark.html",
+      "sourceSha256": "67148a24c4b28eb4e6bf864df1cf74c0da8873e6de5f509fd084edc21351c301",
+      "url": "/screenshots/components/application-empty-search-suggestions/empty-search-suggestions-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-empty-search-suggestions",
+      "variantId": "empty-search-suggestions-2",
+      "appearance": "light",
+      "sourcePath": "files/application-empty-search-suggestions/empty-search-suggestions-2.html",
+      "sourceSha256": "30c33cb70915713590edf070b7202903cec4b3f4ff1596061c142fd086c10265",
+      "url": "/screenshots/components/application-empty-search-suggestions/empty-search-suggestions-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-empty-search-suggestions",
+      "variantId": "empty-search-suggestions-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-empty-search-suggestions/empty-search-suggestions-2-dark.html",
+      "sourceSha256": "7ed1ab0bbb1288bada9339f48bfdfaba06a22786ff9f32ff246843d006b045d1",
+      "url": "/screenshots/components/application-empty-search-suggestions/empty-search-suggestions-2-dark.jpg",
       "width": 600,
       "height": 400
     },
@@ -1378,6 +1698,86 @@
       "height": 400
     },
     {
+      "componentId": "application-import-wizard",
+      "variantId": "import-wizard-1",
+      "appearance": "light",
+      "sourcePath": "files/application-import-wizard/import-wizard-1.html",
+      "sourceSha256": "920a21714bdd0e68e7b1ac8a049515220cc195ed990722fed1481374ed2c7c3a",
+      "url": "/screenshots/components/application-import-wizard/import-wizard-1.jpg",
+      "width": 600,
+      "height": 552
+    },
+    {
+      "componentId": "application-import-wizard",
+      "variantId": "import-wizard-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-import-wizard/import-wizard-1-dark.html",
+      "sourceSha256": "308b46ffa9f50bfeb5f06c8eaeac42553c14ba32f7896ca238620d2639db5039",
+      "url": "/screenshots/components/application-import-wizard/import-wizard-1-dark.jpg",
+      "width": 600,
+      "height": 552
+    },
+    {
+      "componentId": "application-import-wizard",
+      "variantId": "import-wizard-2",
+      "appearance": "light",
+      "sourcePath": "files/application-import-wizard/import-wizard-2.html",
+      "sourceSha256": "5c0c4633e010ee98e1bd4450a508ad7a59b727dd7a36e263889ff5cf63c82aba",
+      "url": "/screenshots/components/application-import-wizard/import-wizard-2.jpg",
+      "width": 600,
+      "height": 558
+    },
+    {
+      "componentId": "application-import-wizard",
+      "variantId": "import-wizard-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-import-wizard/import-wizard-2-dark.html",
+      "sourceSha256": "e99cfba46d4f21572c893ed900e413d5dd7f0ecb5e79df919ac64ea8ee1cc897",
+      "url": "/screenshots/components/application-import-wizard/import-wizard-2-dark.jpg",
+      "width": 600,
+      "height": 558
+    },
+    {
+      "componentId": "application-inline-validation-hint",
+      "variantId": "inline-validation-hint-1",
+      "appearance": "light",
+      "sourcePath": "files/application-inline-validation-hint/inline-validation-hint-1.html",
+      "sourceSha256": "9903d100b6e40632dc5652617d375e14941e211b1a9ddbdd1c543f403641ad34",
+      "url": "/screenshots/components/application-inline-validation-hint/inline-validation-hint-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-inline-validation-hint",
+      "variantId": "inline-validation-hint-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-inline-validation-hint/inline-validation-hint-1-dark.html",
+      "sourceSha256": "6b17efc19d0a064ed342b96135cd6bfc3768cc4109a0f878c195be8eb2ab8152",
+      "url": "/screenshots/components/application-inline-validation-hint/inline-validation-hint-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-inline-validation-hint",
+      "variantId": "inline-validation-hint-2",
+      "appearance": "light",
+      "sourcePath": "files/application-inline-validation-hint/inline-validation-hint-2.html",
+      "sourceSha256": "9944d8379b1270469b498d2e9528d373206f5b5a089a283d44b1d9241effce9a",
+      "url": "/screenshots/components/application-inline-validation-hint/inline-validation-hint-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-inline-validation-hint",
+      "variantId": "inline-validation-hint-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-inline-validation-hint/inline-validation-hint-2-dark.html",
+      "sourceSha256": "c6246fd232ab1ed58fdbfc6ef071e3a430d3b5c3839769581a9ef2a118d7f1e0",
+      "url": "/screenshots/components/application-inline-validation-hint/inline-validation-hint-2-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
       "componentId": "application-inputs",
       "variantId": "inputs-1",
       "appearance": "light",
@@ -1454,6 +1854,46 @@
       "sourcePath": "files/application-inputs/inputs-4-dark.html",
       "sourceSha256": "9a9d52e7a13fee5945a577b253d9f084801f4b626132ea91cd114b3a5d3a29a7",
       "url": "/screenshots/components/application-inputs/inputs-4-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-lesson-playlist",
+      "variantId": "lesson-playlist-1",
+      "appearance": "light",
+      "sourcePath": "files/application-lesson-playlist/lesson-playlist-1.html",
+      "sourceSha256": "a8db44dd08bffd64585305a89c7325c180456bcf6f7b56955ad5f833a485aa8c",
+      "url": "/screenshots/components/application-lesson-playlist/lesson-playlist-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-lesson-playlist",
+      "variantId": "lesson-playlist-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-lesson-playlist/lesson-playlist-1-dark.html",
+      "sourceSha256": "e9e8b274b22d12f4b023c8005ed508310d967be1aea2274c049395005933f570",
+      "url": "/screenshots/components/application-lesson-playlist/lesson-playlist-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-lesson-playlist",
+      "variantId": "lesson-playlist-2",
+      "appearance": "light",
+      "sourcePath": "files/application-lesson-playlist/lesson-playlist-2.html",
+      "sourceSha256": "498359d95c1eb4108e0decac506088e6a69b320e556488bc0092f6293325be8c",
+      "url": "/screenshots/components/application-lesson-playlist/lesson-playlist-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-lesson-playlist",
+      "variantId": "lesson-playlist-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-lesson-playlist/lesson-playlist-2-dark.html",
+      "sourceSha256": "9210d0525f369bbcc2a66edcf89e217a8f2943b5bcdcc5161458ffe6909dc5e7",
+      "url": "/screenshots/components/application-lesson-playlist/lesson-playlist-2-dark.jpg",
       "width": 600,
       "height": 400
     },
@@ -1598,6 +2038,86 @@
       "height": 400
     },
     {
+      "componentId": "application-maintenance-mode-screen",
+      "variantId": "maintenance-mode-screen-1",
+      "appearance": "light",
+      "sourcePath": "files/application-maintenance-mode-screen/maintenance-mode-screen-1.html",
+      "sourceSha256": "9f4f742be709bdc435070ea0e425adf1f91a2790a55de22258a14dcddad2d6b1",
+      "url": "/screenshots/components/application-maintenance-mode-screen/maintenance-mode-screen-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-maintenance-mode-screen",
+      "variantId": "maintenance-mode-screen-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-maintenance-mode-screen/maintenance-mode-screen-1-dark.html",
+      "sourceSha256": "cc948c0db2d3359b6bb4cd99281403645c3ed715908246657781cbbdecf17abb",
+      "url": "/screenshots/components/application-maintenance-mode-screen/maintenance-mode-screen-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-maintenance-mode-screen",
+      "variantId": "maintenance-mode-screen-2",
+      "appearance": "light",
+      "sourcePath": "files/application-maintenance-mode-screen/maintenance-mode-screen-2.html",
+      "sourceSha256": "8bf9a442812390ef157c05bdc259290777345b9cedc7015a7cce8084ad118db2",
+      "url": "/screenshots/components/application-maintenance-mode-screen/maintenance-mode-screen-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-maintenance-mode-screen",
+      "variantId": "maintenance-mode-screen-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-maintenance-mode-screen/maintenance-mode-screen-2-dark.html",
+      "sourceSha256": "a963b65cdb717003d5f7af1f9b5ea24d6b3f50ca8fd9b0716d6dd5b4f5486d73",
+      "url": "/screenshots/components/application-maintenance-mode-screen/maintenance-mode-screen-2-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-masonry-grid",
+      "variantId": "masonry-grid-1",
+      "appearance": "light",
+      "sourcePath": "files/application-masonry-grid/masonry-grid-1.html",
+      "sourceSha256": "d781f6893220d91a7c11cba55bde976faded40be472ebd54c69fa2011f823f18",
+      "url": "/screenshots/components/application-masonry-grid/masonry-grid-1.jpg",
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "componentId": "application-masonry-grid",
+      "variantId": "masonry-grid-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-masonry-grid/masonry-grid-1-dark.html",
+      "sourceSha256": "8fb352f7c27d84ee99f2570634c327b218d05aabce7ecebacc351c4da8ae8155",
+      "url": "/screenshots/components/application-masonry-grid/masonry-grid-1-dark.jpg",
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "componentId": "application-masonry-grid",
+      "variantId": "masonry-grid-2",
+      "appearance": "light",
+      "sourcePath": "files/application-masonry-grid/masonry-grid-2.html",
+      "sourceSha256": "012bb963c74136af22c8ac0c480275d9b6737f192d21fa472cf3ba1b989bc694",
+      "url": "/screenshots/components/application-masonry-grid/masonry-grid-2.jpg",
+      "width": 1200,
+      "height": 400
+    },
+    {
+      "componentId": "application-masonry-grid",
+      "variantId": "masonry-grid-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-masonry-grid/masonry-grid-2-dark.html",
+      "sourceSha256": "1cc7016eb3d29837096b23a1310ff15fae9d7adafa2b94146304f12443ae6f85",
+      "url": "/screenshots/components/application-masonry-grid/masonry-grid-2-dark.jpg",
+      "width": 1200,
+      "height": 400
+    },
+    {
       "componentId": "application-media",
       "variantId": "media-1",
       "appearance": "light",
@@ -1674,6 +2194,46 @@
       "sourcePath": "files/application-media/media-8.html",
       "sourceSha256": "8c0bb07bf9300bb6f8b6efaaec716b1951d46c9171bc79a06012f962e9679d84",
       "url": "/screenshots/components/application-media/media-8.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-metric-sparkline-card",
+      "variantId": "metric-sparkline-card-1",
+      "appearance": "light",
+      "sourcePath": "files/application-metric-sparkline-card/metric-sparkline-card-1.html",
+      "sourceSha256": "ebf0198973a2ed0d2b85061250ddf50e572e4616fcd2a6e7f2b543c960b42fc0",
+      "url": "/screenshots/components/application-metric-sparkline-card/metric-sparkline-card-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-metric-sparkline-card",
+      "variantId": "metric-sparkline-card-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-metric-sparkline-card/metric-sparkline-card-1-dark.html",
+      "sourceSha256": "d977252dd394131c2fde976b95583195489199e602792b820b9c9f3dd339ee9c",
+      "url": "/screenshots/components/application-metric-sparkline-card/metric-sparkline-card-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-metric-sparkline-card",
+      "variantId": "metric-sparkline-card-2",
+      "appearance": "light",
+      "sourcePath": "files/application-metric-sparkline-card/metric-sparkline-card-2.html",
+      "sourceSha256": "9ae59931e887256fbb90ef994f695c632528ea6a2e85fb08414c0c5b199fb0dc",
+      "url": "/screenshots/components/application-metric-sparkline-card/metric-sparkline-card-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-metric-sparkline-card",
+      "variantId": "metric-sparkline-card-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-metric-sparkline-card/metric-sparkline-card-2-dark.html",
+      "sourceSha256": "16fd7ad24a52901896ce009d08a6d8d2c66502c548ab2a2e4734e7c24bc47425",
+      "url": "/screenshots/components/application-metric-sparkline-card/metric-sparkline-card-2-dark.jpg",
       "width": 600,
       "height": 400
     },
@@ -1856,6 +2416,46 @@
       "url": "/screenshots/components/application-pagination/pagination-3-dark.jpg",
       "width": 600,
       "height": 400
+    },
+    {
+      "componentId": "application-profile-edit-form",
+      "variantId": "profile-edit-form-1",
+      "appearance": "light",
+      "sourcePath": "files/application-profile-edit-form/profile-edit-form-1.html",
+      "sourceSha256": "699c2fc2a5cbf6dda686bea96badd76aea08d21dd4fe4806a340cfd8374795b4",
+      "url": "/screenshots/components/application-profile-edit-form/profile-edit-form-1.jpg",
+      "width": 608,
+      "height": 631
+    },
+    {
+      "componentId": "application-profile-edit-form",
+      "variantId": "profile-edit-form-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-profile-edit-form/profile-edit-form-1-dark.html",
+      "sourceSha256": "ec112f0b90120a709bc361080575490ce519fc6802a3f1a1a889b7a8ec853a20",
+      "url": "/screenshots/components/application-profile-edit-form/profile-edit-form-1-dark.jpg",
+      "width": 608,
+      "height": 631
+    },
+    {
+      "componentId": "application-profile-edit-form",
+      "variantId": "profile-edit-form-2",
+      "appearance": "light",
+      "sourcePath": "files/application-profile-edit-form/profile-edit-form-2.html",
+      "sourceSha256": "e7219fe3ff4fcb59ea3b86d20d8625b6a7407cd236fb0ec64b2e7d1e7faaddc1",
+      "url": "/screenshots/components/application-profile-edit-form/profile-edit-form-2.jpg",
+      "width": 608,
+      "height": 519
+    },
+    {
+      "componentId": "application-profile-edit-form",
+      "variantId": "profile-edit-form-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-profile-edit-form/profile-edit-form-2-dark.html",
+      "sourceSha256": "3ba47d5b5893f0fbfd8f072962264d06c5604ae760ee7ce4898565f21cc21ac7",
+      "url": "/screenshots/components/application-profile-edit-form/profile-edit-form-2-dark.jpg",
+      "width": 608,
+      "height": 519
     },
     {
       "componentId": "application-progress-bars",
@@ -2078,6 +2678,126 @@
       "height": 400
     },
     {
+      "componentId": "application-receipt-preview",
+      "variantId": "receipt-preview-1",
+      "appearance": "light",
+      "sourcePath": "files/application-receipt-preview/receipt-preview-1.html",
+      "sourceSha256": "0b75e795bc416264ce07c35c26935862a6275c235dfa5e535284f1b9e81a8ac6",
+      "url": "/screenshots/components/application-receipt-preview/receipt-preview-1.jpg",
+      "width": 600,
+      "height": 409
+    },
+    {
+      "componentId": "application-receipt-preview",
+      "variantId": "receipt-preview-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-receipt-preview/receipt-preview-1-dark.html",
+      "sourceSha256": "df644958b86009c06e9058118cc65d8e8c3291b87c6c02feffed5ff589af337e",
+      "url": "/screenshots/components/application-receipt-preview/receipt-preview-1-dark.jpg",
+      "width": 600,
+      "height": 409
+    },
+    {
+      "componentId": "application-receipt-preview",
+      "variantId": "receipt-preview-2",
+      "appearance": "light",
+      "sourcePath": "files/application-receipt-preview/receipt-preview-2.html",
+      "sourceSha256": "1c6a88795a4ae23d3dbb71b79d3b46f1d633dadbf713f87366f7277ce70cc461",
+      "url": "/screenshots/components/application-receipt-preview/receipt-preview-2.jpg",
+      "width": 600,
+      "height": 442
+    },
+    {
+      "componentId": "application-receipt-preview",
+      "variantId": "receipt-preview-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-receipt-preview/receipt-preview-2-dark.html",
+      "sourceSha256": "efd841fd8917c23d9b81b60ae246be35670a05945ce0f889cbc84e2154792530",
+      "url": "/screenshots/components/application-receipt-preview/receipt-preview-2-dark.jpg",
+      "width": 600,
+      "height": 442
+    },
+    {
+      "componentId": "application-saved-views-bar",
+      "variantId": "saved-views-bar-1",
+      "appearance": "light",
+      "sourcePath": "files/application-saved-views-bar/saved-views-bar-1.html",
+      "sourceSha256": "ceee218cc9ba652942049a5a53216f17a958bc89ae5a6cc0ad8669d2e8a29419",
+      "url": "/screenshots/components/application-saved-views-bar/saved-views-bar-1.jpg",
+      "width": 672,
+      "height": 400
+    },
+    {
+      "componentId": "application-saved-views-bar",
+      "variantId": "saved-views-bar-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-saved-views-bar/saved-views-bar-1-dark.html",
+      "sourceSha256": "8002f7af76a394ebb41d21f6cdfd324a2f4008ca968096b3ff8663b2b207bc7e",
+      "url": "/screenshots/components/application-saved-views-bar/saved-views-bar-1-dark.jpg",
+      "width": 672,
+      "height": 400
+    },
+    {
+      "componentId": "application-saved-views-bar",
+      "variantId": "saved-views-bar-2",
+      "appearance": "light",
+      "sourcePath": "files/application-saved-views-bar/saved-views-bar-2.html",
+      "sourceSha256": "ea4343935402d1515bdd83576c5e0b7a366e6d8abeb8e12949ce822f7536ec40",
+      "url": "/screenshots/components/application-saved-views-bar/saved-views-bar-2.jpg",
+      "width": 672,
+      "height": 400
+    },
+    {
+      "componentId": "application-saved-views-bar",
+      "variantId": "saved-views-bar-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-saved-views-bar/saved-views-bar-2-dark.html",
+      "sourceSha256": "be22ec4f34a6879ff476befb48bf37e8e97a53ce6d92a78e07c32bee6ad4af73",
+      "url": "/screenshots/components/application-saved-views-bar/saved-views-bar-2-dark.jpg",
+      "width": 672,
+      "height": 400
+    },
+    {
+      "componentId": "application-secret-reveal-field",
+      "variantId": "secret-reveal-field-1",
+      "appearance": "light",
+      "sourcePath": "files/application-secret-reveal-field/secret-reveal-field-1.html",
+      "sourceSha256": "f9edd373aeb0f4ebc784c568437c3c79ddf2cf6c46c03104e2a8deaac84aa035",
+      "url": "/screenshots/components/application-secret-reveal-field/secret-reveal-field-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-secret-reveal-field",
+      "variantId": "secret-reveal-field-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-secret-reveal-field/secret-reveal-field-1-dark.html",
+      "sourceSha256": "4eb407f18065d8ad7894ba57be705f5e8e7e0cae55df78829d4326c91f970e78",
+      "url": "/screenshots/components/application-secret-reveal-field/secret-reveal-field-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-secret-reveal-field",
+      "variantId": "secret-reveal-field-2",
+      "appearance": "light",
+      "sourcePath": "files/application-secret-reveal-field/secret-reveal-field-2.html",
+      "sourceSha256": "999d14ffd00b2c2c4d31dc063484c9de6fca8b21368625cd8b8a002617434302",
+      "url": "/screenshots/components/application-secret-reveal-field/secret-reveal-field-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-secret-reveal-field",
+      "variantId": "secret-reveal-field-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-secret-reveal-field/secret-reveal-field-2-dark.html",
+      "sourceSha256": "3179724337631921e61d71cdd263eb8d3752a40168dbd215f1e3a64853bf8404",
+      "url": "/screenshots/components/application-secret-reveal-field/secret-reveal-field-2-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
       "componentId": "application-selects",
       "variantId": "selects-1",
       "appearance": "light",
@@ -2134,6 +2854,46 @@
       "sourcePath": "files/application-selects/selects-3-dark.html",
       "sourceSha256": "9e5467b72d1e046c47b2fc69b753803ddfecdebaffc159fb76b39431b6b6d756",
       "url": "/screenshots/components/application-selects/selects-3-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-service-reminder-row",
+      "variantId": "service-reminder-row-1",
+      "appearance": "light",
+      "sourcePath": "files/application-service-reminder-row/service-reminder-row-1.html",
+      "sourceSha256": "b02ccbae38edb913f894ebec64220512b5393b4f72d2188966fde81ce5850480",
+      "url": "/screenshots/components/application-service-reminder-row/service-reminder-row-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-service-reminder-row",
+      "variantId": "service-reminder-row-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-service-reminder-row/service-reminder-row-1-dark.html",
+      "sourceSha256": "ac62fd1c2714aa3cb45b20ab46182d8cbbfb28e3723cf839479b9d9c8759be4b",
+      "url": "/screenshots/components/application-service-reminder-row/service-reminder-row-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-service-reminder-row",
+      "variantId": "service-reminder-row-2",
+      "appearance": "light",
+      "sourcePath": "files/application-service-reminder-row/service-reminder-row-2.html",
+      "sourceSha256": "0a60a5fdb0bcde6dadd844958f381788b33b414468780ba84a8242b7369cc521",
+      "url": "/screenshots/components/application-service-reminder-row/service-reminder-row-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-service-reminder-row",
+      "variantId": "service-reminder-row-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-service-reminder-row/service-reminder-row-2-dark.html",
+      "sourceSha256": "ec0f678633ab8b7c2f339248ddc5e15f2563cc6206cab4e57919075819a8668e",
+      "url": "/screenshots/components/application-service-reminder-row/service-reminder-row-2-dark.jpg",
       "width": 600,
       "height": 400
     },
@@ -2205,6 +2965,46 @@
       "sourceSha256": "32162ac63f2993ccaaae924396526c631ab6a4da048b67276587926fb2e6e2c8",
       "url": "/screenshots/components/application-skip-links/skip-links-3.jpg",
       "width": 1200,
+      "height": 400
+    },
+    {
+      "componentId": "application-slug-input",
+      "variantId": "slug-input-1",
+      "appearance": "light",
+      "sourcePath": "files/application-slug-input/slug-input-1.html",
+      "sourceSha256": "da26770266d8181987b608a2e2fc4a813db9ed49a0b9ce3f2eb920eb28c38528",
+      "url": "/screenshots/components/application-slug-input/slug-input-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-slug-input",
+      "variantId": "slug-input-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-slug-input/slug-input-1-dark.html",
+      "sourceSha256": "ecb7e5aff5abab63f7a94b67086bf8551f758cb34b83cfde0c6e988c19f6c2dc",
+      "url": "/screenshots/components/application-slug-input/slug-input-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-slug-input",
+      "variantId": "slug-input-2",
+      "appearance": "light",
+      "sourcePath": "files/application-slug-input/slug-input-2.html",
+      "sourceSha256": "adfa033713849b48e741be1303aac3d8e7c9f769ce696ca3426599ec51f81667",
+      "url": "/screenshots/components/application-slug-input/slug-input-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-slug-input",
+      "variantId": "slug-input-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-slug-input/slug-input-2-dark.html",
+      "sourceSha256": "ce7c37e4a881d2dfacab6d9de05b3130e65e527deaa595ab7560a05cb4cb45f3",
+      "url": "/screenshots/components/application-slug-input/slug-input-2-dark.jpg",
+      "width": 600,
       "height": 400
     },
     {
@@ -2445,6 +3245,46 @@
       "sourceSha256": "c8dc7625c503bb1d21f771a5147d0aa902cd82acfc3b88ef9bc23119ce4f98f6",
       "url": "/screenshots/components/application-steps/steps-5-dark.jpg",
       "width": 816,
+      "height": 400
+    },
+    {
+      "componentId": "application-tab-overflow-scroller",
+      "variantId": "tab-overflow-scroller-1",
+      "appearance": "light",
+      "sourcePath": "files/application-tab-overflow-scroller/tab-overflow-scroller-1.html",
+      "sourceSha256": "557075b3d977d042d8da89250c65997925d11dda2fd843f34f79074f4ae860d6",
+      "url": "/screenshots/components/application-tab-overflow-scroller/tab-overflow-scroller-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-tab-overflow-scroller",
+      "variantId": "tab-overflow-scroller-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-tab-overflow-scroller/tab-overflow-scroller-1-dark.html",
+      "sourceSha256": "3dcbbb791e0a493a99812a918245ad7c71ca72dddbff67afc33cb0e50e772f7b",
+      "url": "/screenshots/components/application-tab-overflow-scroller/tab-overflow-scroller-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-tab-overflow-scroller",
+      "variantId": "tab-overflow-scroller-2",
+      "appearance": "light",
+      "sourcePath": "files/application-tab-overflow-scroller/tab-overflow-scroller-2.html",
+      "sourceSha256": "dd882025d41ab402e60795a6b32f8328b49ffaa98b3d5f13acf5a2d72282d73e",
+      "url": "/screenshots/components/application-tab-overflow-scroller/tab-overflow-scroller-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-tab-overflow-scroller",
+      "variantId": "tab-overflow-scroller-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-tab-overflow-scroller/tab-overflow-scroller-2-dark.html",
+      "sourceSha256": "c30c18435429e9a4839d0645cfcdae42373b71b8a0e68f128e7e622b08993477",
+      "url": "/screenshots/components/application-tab-overflow-scroller/tab-overflow-scroller-2-dark.jpg",
+      "width": 600,
       "height": 400
     },
     {
@@ -2768,6 +3608,46 @@
       "height": 400
     },
     {
+      "componentId": "application-tiered-donation-buttons",
+      "variantId": "tiered-donation-buttons-1",
+      "appearance": "light",
+      "sourcePath": "files/application-tiered-donation-buttons/tiered-donation-buttons-1.html",
+      "sourceSha256": "5c6347013c7b61cde336a9316f8de8feb59846eea73a2361a46abe9d496ffc2d",
+      "url": "/screenshots/components/application-tiered-donation-buttons/tiered-donation-buttons-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-tiered-donation-buttons",
+      "variantId": "tiered-donation-buttons-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-tiered-donation-buttons/tiered-donation-buttons-1-dark.html",
+      "sourceSha256": "bae75d7578b9f8f0754819c1c57e2a141726a32fc3305898ab00e7bf56ef156b",
+      "url": "/screenshots/components/application-tiered-donation-buttons/tiered-donation-buttons-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-tiered-donation-buttons",
+      "variantId": "tiered-donation-buttons-2",
+      "appearance": "light",
+      "sourcePath": "files/application-tiered-donation-buttons/tiered-donation-buttons-2.html",
+      "sourceSha256": "6e5b27dc9b9041d07b4d93a0a6b697c8d1d7cef971790a2c189ca23f31a696c0",
+      "url": "/screenshots/components/application-tiered-donation-buttons/tiered-donation-buttons-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-tiered-donation-buttons",
+      "variantId": "tiered-donation-buttons-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-tiered-donation-buttons/tiered-donation-buttons-2-dark.html",
+      "sourceSha256": "b05e10b572afbfffd7f654d690dee9d772e2affc462e79d519da39737737307b",
+      "url": "/screenshots/components/application-tiered-donation-buttons/tiered-donation-buttons-2-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
       "componentId": "application-timelines",
       "variantId": "timelines-1",
       "appearance": "light",
@@ -2948,6 +3828,66 @@
       "height": 400
     },
     {
+      "componentId": "application-toggle-group",
+      "variantId": "toggle-group-1",
+      "appearance": "light",
+      "sourcePath": "files/application-toggle-group/toggle-group-1.html",
+      "sourceSha256": "c6c176bf781395784065a8c2cb268294e37981aaff347d31cf6ddb9eeb53a68a",
+      "url": "/screenshots/components/application-toggle-group/toggle-group-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-toggle-group",
+      "variantId": "toggle-group-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-toggle-group/toggle-group-1-dark.html",
+      "sourceSha256": "6d8c3c1a7baf849f415b1fe4a01582967778ce2a17e3a81d214ee75fbd7a4a5e",
+      "url": "/screenshots/components/application-toggle-group/toggle-group-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-toggle-group",
+      "variantId": "toggle-group-2",
+      "appearance": "light",
+      "sourcePath": "files/application-toggle-group/toggle-group-2.html",
+      "sourceSha256": "de68fce58c1ee1b393cde59fee507ff4d1ddeb81947f14d79966e8cfa606fecb",
+      "url": "/screenshots/components/application-toggle-group/toggle-group-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-toggle-group",
+      "variantId": "toggle-group-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-toggle-group/toggle-group-2-dark.html",
+      "sourceSha256": "dc0e4c4bec7a763a9b3aa670821d2b7866bda9eb548801621740e68652a18781",
+      "url": "/screenshots/components/application-toggle-group/toggle-group-2-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-toggle-group",
+      "variantId": "toggle-group-3",
+      "appearance": "light",
+      "sourcePath": "files/application-toggle-group/toggle-group-3.html",
+      "sourceSha256": "e98aefad7e2006bf06c15d82fe058a1717da05690d8399965093f1dd4a32d332",
+      "url": "/screenshots/components/application-toggle-group/toggle-group-3.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-toggle-group",
+      "variantId": "toggle-group-3-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-toggle-group/toggle-group-3-dark.html",
+      "sourceSha256": "b5ae8cfbc14b68800d8623a4f4cacd9d7934ad0ea80c60879169d4c4925e8ee9",
+      "url": "/screenshots/components/application-toggle-group/toggle-group-3-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
       "componentId": "application-toggles",
       "variantId": "toggles-1",
       "appearance": "light",
@@ -3045,6 +3985,66 @@
       "sourceSha256": "2973f4ccfbd0e971c55a1800f5265276564f699355c8411feb46cbeaa7d2e342",
       "url": "/screenshots/components/application-toolbar/toolbar-1-dark.jpg",
       "width": 720,
+      "height": 400
+    },
+    {
+      "componentId": "application-typography",
+      "variantId": "typography-1",
+      "appearance": "light",
+      "sourcePath": "files/application-typography/typography-1.html",
+      "sourceSha256": "2dc9628c8306dab32178bd9709c95816a938096e145202fb35dc763357208acb",
+      "url": "/screenshots/components/application-typography/typography-1.jpg",
+      "width": 672,
+      "height": 400
+    },
+    {
+      "componentId": "application-typography",
+      "variantId": "typography-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-typography/typography-1-dark.html",
+      "sourceSha256": "12cdff590ce6851159f213fdbc4e46679650a4a1d3c04a6b126c8edc8acf6a10",
+      "url": "/screenshots/components/application-typography/typography-1-dark.jpg",
+      "width": 672,
+      "height": 400
+    },
+    {
+      "componentId": "application-typography",
+      "variantId": "typography-2",
+      "appearance": "light",
+      "sourcePath": "files/application-typography/typography-2.html",
+      "sourceSha256": "edb52a0d7bcaebbb42ae1e2f7d0273e6b17129e131d919135522cdb816da256a",
+      "url": "/screenshots/components/application-typography/typography-2.jpg",
+      "width": 672,
+      "height": 472
+    },
+    {
+      "componentId": "application-typography",
+      "variantId": "typography-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-typography/typography-2-dark.html",
+      "sourceSha256": "9c01c71c3fab745a42c784ee18983d84773759beccbfe24c294c40e76d0b23a3",
+      "url": "/screenshots/components/application-typography/typography-2-dark.jpg",
+      "width": 672,
+      "height": 472
+    },
+    {
+      "componentId": "application-typography",
+      "variantId": "typography-3",
+      "appearance": "light",
+      "sourcePath": "files/application-typography/typography-3.html",
+      "sourceSha256": "79b910f3a7c8843ad613dbad7f5885ad8b93cd1d1e18a3dbbe9139c7a1fcc6b8",
+      "url": "/screenshots/components/application-typography/typography-3.jpg",
+      "width": 672,
+      "height": 400
+    },
+    {
+      "componentId": "application-typography",
+      "variantId": "typography-3-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-typography/typography-3-dark.html",
+      "sourceSha256": "03d374aa9c95aa20c2ff1c04b78a3ddb7e6c52024f6ab28d16f0ca56df5e45f6",
+      "url": "/screenshots/components/application-typography/typography-3-dark.jpg",
+      "width": 672,
       "height": 400
     },
     {
@@ -3206,6 +4206,86 @@
       "url": "/screenshots/components/application-vertical-menu/vertical-menu-8-dark.jpg",
       "width": 600,
       "height": 478
+    },
+    {
+      "componentId": "application-weather-widget",
+      "variantId": "weather-widget-1",
+      "appearance": "light",
+      "sourcePath": "files/application-weather-widget/weather-widget-1.html",
+      "sourceSha256": "d92572eb8fd1c69f8cbb0377582969cc45e22dfb9460261d6fc53c7142fee296",
+      "url": "/screenshots/components/application-weather-widget/weather-widget-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-weather-widget",
+      "variantId": "weather-widget-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-weather-widget/weather-widget-1-dark.html",
+      "sourceSha256": "95801dd2dcc5599979feed9bf0c6deb5a5bd72adc769ffd63b5a740239aacd66",
+      "url": "/screenshots/components/application-weather-widget/weather-widget-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-weather-widget",
+      "variantId": "weather-widget-2",
+      "appearance": "light",
+      "sourcePath": "files/application-weather-widget/weather-widget-2.html",
+      "sourceSha256": "be35e4092c63997c10a0a82a8072765bbb38cfd8d73b23f920e13a763d141c54",
+      "url": "/screenshots/components/application-weather-widget/weather-widget-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-weather-widget",
+      "variantId": "weather-widget-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-weather-widget/weather-widget-2-dark.html",
+      "sourceSha256": "ff1dfe857605ccada2051c4d427587d26bbfffda07e3d599d8217b6757dde392",
+      "url": "/screenshots/components/application-weather-widget/weather-widget-2-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-xp-progress-bar",
+      "variantId": "xp-progress-bar-1",
+      "appearance": "light",
+      "sourcePath": "files/application-xp-progress-bar/xp-progress-bar-1.html",
+      "sourceSha256": "70222edb7b7417ef9ca515d8890b10165d0a64c31adacd688b20df330cb5aa7f",
+      "url": "/screenshots/components/application-xp-progress-bar/xp-progress-bar-1.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-xp-progress-bar",
+      "variantId": "xp-progress-bar-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-xp-progress-bar/xp-progress-bar-1-dark.html",
+      "sourceSha256": "20d8ae5a83e15e583f288be06bab2a6509e6d6b445199a382544bc596c7756c1",
+      "url": "/screenshots/components/application-xp-progress-bar/xp-progress-bar-1-dark.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-xp-progress-bar",
+      "variantId": "xp-progress-bar-2",
+      "appearance": "light",
+      "sourcePath": "files/application-xp-progress-bar/xp-progress-bar-2.html",
+      "sourceSha256": "e868486b24194807417f505c9c70768b227e38705bc47ab356154d510abefd91",
+      "url": "/screenshots/components/application-xp-progress-bar/xp-progress-bar-2.jpg",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "componentId": "application-xp-progress-bar",
+      "variantId": "xp-progress-bar-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-xp-progress-bar/xp-progress-bar-2-dark.html",
+      "sourceSha256": "81f3ac5995016117fe834e6f4eaafbdf01cdca86d96f5ad5d50b4f49e3020782",
+      "url": "/screenshots/components/application-xp-progress-bar/xp-progress-bar-2-dark.jpg",
+      "width": 600,
+      "height": 400
     },
     {
       "componentId": "building-blocks-actions",
@@ -7426,6 +8506,106 @@
       "url": "/screenshots/components/transcript-ribbon/conversation-flow.jpg",
       "width": 1156,
       "height": 468
+    },
+    {
+      "componentId": "application-work-order-card",
+      "variantId": "work-order-card-1",
+      "appearance": "light",
+      "sourcePath": "files/application-work-order-card/work-order-card-1.html",
+      "sourceSha256": "2085311c757e5f46af1a635cea72e8060ffa6dfc1d340dc7963e6417a80a8c3d",
+      "url": "/screenshots/components/application-work-order-card/work-order-card-1.jpg",
+      "width": 600,
+      "height": 312
+    },
+    {
+      "componentId": "application-work-order-card",
+      "variantId": "work-order-card-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-work-order-card/work-order-card-1-dark.html",
+      "sourceSha256": "908133693707a05b04a1a87124f0334a08b651ce73ac1c47688bf2219cbe7aa8",
+      "url": "/screenshots/components/application-work-order-card/work-order-card-1-dark.jpg",
+      "width": 600,
+      "height": 312
+    },
+    {
+      "componentId": "application-work-order-card",
+      "variantId": "work-order-card-2",
+      "appearance": "light",
+      "sourcePath": "files/application-work-order-card/work-order-card-2.html",
+      "sourceSha256": "a80fd04e452b92f315a677d5de3b4fa5fce48a74ca85481eeb13dcffebf23bab",
+      "url": "/screenshots/components/application-work-order-card/work-order-card-2.jpg",
+      "width": 600,
+      "height": 238
+    },
+    {
+      "componentId": "application-work-order-card",
+      "variantId": "work-order-card-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-work-order-card/work-order-card-2-dark.html",
+      "sourceSha256": "a71e1cb8d0f55f6f3983340963e9d2d53ee52b3d469a91c08bb268a2a05770aa",
+      "url": "/screenshots/components/application-work-order-card/work-order-card-2-dark.jpg",
+      "width": 600,
+      "height": 238
+    },
+    {
+      "componentId": "application-compact-data-table",
+      "variantId": "compact-data-table-1",
+      "appearance": "light",
+      "sourcePath": "files/application-compact-data-table/compact-data-table-1.html",
+      "sourceSha256": "9fbc29c2a7945ca905c0350d9135d4e761726528c8ead5426c9b21af287666b4",
+      "url": "/screenshots/components/application-compact-data-table/compact-data-table-1.jpg",
+      "width": 600,
+      "height": 271
+    },
+    {
+      "componentId": "application-compact-data-table",
+      "variantId": "compact-data-table-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-compact-data-table/compact-data-table-1-dark.html",
+      "sourceSha256": "c580b66f805fe642544bfb01f288b651ecf9b500b8a300f53e182df6b2af5d43",
+      "url": "/screenshots/components/application-compact-data-table/compact-data-table-1-dark.jpg",
+      "width": 600,
+      "height": 271
+    },
+    {
+      "componentId": "application-drag-handle-row",
+      "variantId": "drag-handle-row-1",
+      "appearance": "light",
+      "sourcePath": "files/application-drag-handle-row/drag-handle-row-1.html",
+      "sourceSha256": "eb4d87989545abf9f50ee68fe2e2771b65d54c6f8437e3fb8aa1e6b1889d17af",
+      "url": "/screenshots/components/application-drag-handle-row/drag-handle-row-1.jpg",
+      "width": 600,
+      "height": 228
+    },
+    {
+      "componentId": "application-drag-handle-row",
+      "variantId": "drag-handle-row-1-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-drag-handle-row/drag-handle-row-1-dark.html",
+      "sourceSha256": "ba53afd7d321292d2b1bd27a69fac86c3fd433c70c04cd879a2503e339a16426",
+      "url": "/screenshots/components/application-drag-handle-row/drag-handle-row-1-dark.jpg",
+      "width": 600,
+      "height": 228
+    },
+    {
+      "componentId": "application-drag-handle-row",
+      "variantId": "drag-handle-row-2",
+      "appearance": "light",
+      "sourcePath": "files/application-drag-handle-row/drag-handle-row-2.html",
+      "sourceSha256": "c8b6d6eda0a8f9cd2d6153e87dc508f5952994b783e311c5fbaa361e5e8cee34",
+      "url": "/screenshots/components/application-drag-handle-row/drag-handle-row-2.jpg",
+      "width": 600,
+      "height": 286
+    },
+    {
+      "componentId": "application-drag-handle-row",
+      "variantId": "drag-handle-row-2-dark",
+      "appearance": "dark",
+      "sourcePath": "files/application-drag-handle-row/drag-handle-row-2-dark.html",
+      "sourceSha256": "ecc15f21eb9c3f84c3a4b4c38e53f9d981763a1901a8d7ceb162617eb046aad6",
+      "url": "/screenshots/components/application-drag-handle-row/drag-handle-row-2-dark.jpg",
+      "width": 600,
+      "height": 286
     }
   ]
 }

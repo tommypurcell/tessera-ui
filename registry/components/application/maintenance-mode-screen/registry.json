@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-maintenance-mode-screen",
+  "title": "Maintenance Mode Screen",
+  "description": "Full-page scheduled-downtime notice with an ETA, distinct from an error page since it communicates planned maintenance rather than an unexpected failure.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["maintenance", "downtime", "status", "full-page", "primitive"],
+  "useWhen": [
+    "Taking the whole app offline for planned maintenance and communicating an expected return time.",
+    "Reassuring users that data is safe and no action is needed during a scheduled upgrade.",
+    "Offering a live countdown and an email notify-me form so users can find out when service resumes."
+  ],
+  "avoidWhen": [
+    "The outage is unexpected, not scheduled — use an error page instead, since 'scheduled maintenance' copy would be misleading.",
+    "Only part of a page or feature is affected — use a smaller inline banner or empty state, not a full-page takeover.",
+    "No real ETA or countdown target is available — state a vaguer timeframe rather than fabricating a specific time."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The content is centered and constrained to a max width at any viewport size; the countdown row wraps its own content but does not reflow into multiple lines at reasonable widths.",
+  "accessibility": [
+    "The heading uses a real h1 since this is expected to be the only content on the page.",
+    "The status icon is decorative (aria-hidden); the heading and body text carry the actual meaning.",
+    "The email field in variant 2 has a visually hidden (sr-only) label so screen reader users get an accessible name even though the placeholder is the only visible hint."
+  ],
+  "compatibleWith": ["application-announcement-banner"],
+  "variants": [
+    {
+      "id": "maintenance-mode-screen-1",
+      "title": "ETA notice",
+      "description": "Centered icon, message, and plain-text ETA with a status-page link.",
+      "source": {
+        "html": "../../../../public/examples/application/maintenance-mode-screen/1.html",
+        "tsx": "tsx/MaintenanceModeScreenVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The ETA text states an exact time in words, not just an icon or a relative countdown."
+      ]
+    },
+    {
+      "id": "maintenance-mode-screen-1-dark",
+      "title": "ETA notice (Dark)",
+      "description": "ETA maintenance notice adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/maintenance-mode-screen/1-dark.html",
+        "tsx": "tsx/MaintenanceModeScreenVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Text and badge contrast must meet WCAG AA on dark backgrounds."
+      ]
+    },
+    {
+      "id": "maintenance-mode-screen-2",
+      "title": "Countdown with notify form",
+      "description": "Maintenance screen with a live hours/minutes/seconds countdown and an email notify-me form.",
+      "source": {
+        "html": "../../../../public/examples/application/maintenance-mode-screen/2.html",
+        "tsx": "tsx/MaintenanceModeScreenVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The countdown numbers are paired with real text labels (hours/minutes/seconds), not color or position alone."
+      ]
+    },
+    {
+      "id": "maintenance-mode-screen-2-dark",
+      "title": "Countdown with notify form (Dark)",
+      "description": "Countdown maintenance screen with a notify form, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/maintenance-mode-screen/2-dark.html",
+        "tsx": "tsx/MaintenanceModeScreenVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Countdown text and form field contrast must meet WCAG AA on dark backgrounds."
+      ]
+    }
+  ]
+}

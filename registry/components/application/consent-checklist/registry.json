@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "name": "application-consent-checklist",
+  "title": "Consent Checklist",
+  "description": "Required-agreement checklist that gates a submit button until every required item is checked — distinct from a plain application-checkboxes list, which has no submission-gating behavior.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["consent", "checkbox", "form", "legal", "onboarding", "primitive"],
+  "useWhen": [
+    "Requiring explicit agreement to terms, a privacy policy, or an age confirmation before account creation.",
+    "Collecting granular data-processing consent where some items are required and others optional.",
+    "Disabling a submit action until every required checkbox is checked, with visible help text explaining why."
+  ],
+  "avoidWhen": [
+    "The checkboxes are ordinary form options with no gating behavior — use application-checkboxes instead.",
+    "Only one agreement exists — a single inline checkbox next to the submit button is simpler than a list.",
+    "Consent must be recorded with a timestamp and audit trail — this component is presentation only; wire your own consent-logging backend."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The card has a fixed max width; each checkbox label wraps its text normally at any width without truncation.",
+  "accessibility": [
+    "Each checkbox is wrapped in a real label so the whole label text is part of the click target and the accessible name.",
+    "The disabled submit button in variant 1 carries aria-disabled reflecting its real disabled state, paired with help text explaining the requirement.",
+    "Required and Optional badges in variant 2 use both text and a color difference, not color alone."
+  ],
+  "compatibleWith": ["application-checkboxes", "application-form-row"],
+  "variants": [
+    {
+      "id": "consent-checklist-1",
+      "title": "Gated submit",
+      "description": "Agreement checklist that disables the submit button, with help text, until every item is checked.",
+      "source": {
+        "html": "../../../../public/examples/application/consent-checklist/1.html",
+        "tsx": "tsx/ConsentChecklistVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["incomplete", "complete"],
+      "accessibility": [
+        "The disabled submit button carries aria-disabled and is paired with visible help text stating the requirement."
+      ]
+    },
+    {
+      "id": "consent-checklist-1-dark",
+      "title": "Gated submit (Dark)",
+      "description": "Gated-submit consent checklist adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/consent-checklist/1-dark.html",
+        "tsx": "tsx/ConsentChecklistVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["incomplete", "complete"],
+      "accessibility": [
+        "Enabled and disabled button states must remain visually distinct on dark backgrounds."
+      ]
+    },
+    {
+      "id": "consent-checklist-2",
+      "title": "Select-all with required/optional badges",
+      "description": "Consent list with a select-all master checkbox and a Required or Optional badge per item, for granular data-processing consent.",
+      "source": {
+        "html": "../../../../public/examples/application/consent-checklist/2.html",
+        "tsx": "tsx/ConsentChecklistVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The select-all checkbox is a real, separately labeled control distinct from the individual item checkboxes."
+      ]
+    },
+    {
+      "id": "consent-checklist-2-dark",
+      "title": "Select-all with required/optional badges (Dark)",
+      "description": "Select-all consent checklist adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/consent-checklist/2-dark.html",
+        "tsx": "tsx/ConsentChecklistVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Required and Optional badge contrast must meet WCAG AA on dark backgrounds."
+      ]
+    }
+  ]
+}
