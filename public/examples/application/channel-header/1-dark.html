@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto max-w-xl p-6">
+    <div id="channel-1-dark" class="overflow-hidden rounded-xl border border-gray-800 bg-gray-950 shadow-sm">
+      <div class="h-24 w-full bg-gradient-to-r from-violet-500 to-fuchsia-500"></div>
+
+      <div class="flex items-end justify-between px-5">
+        <div aria-hidden="true" class="-mt-8 size-16 shrink-0 rounded-full border-4 border-gray-950 bg-gradient-to-br from-cyan-400 to-blue-500"></div>
+      </div>
+
+      <div class="flex items-start justify-between gap-4 px-5 pt-3 pb-5">
+        <div class="min-w-0">
+          <h3 class="truncate text-base font-semibold text-white">Systems Deep Dive</h3>
+          <p class="mt-0.5 text-sm text-gray-400">284K subscribers &middot; 312 videos</p>
+        </div>
+
+        <button
+          type="button"
+          class="js-subscribe shrink-0 rounded-full bg-white px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-200"
+          aria-pressed="false"
+        >
+          Subscribe
+        </button>
+      </div>
+    </div>
+
+    <script>
+      ;(function () {
+        var root = document.getElementById('channel-1-dark')
+        var button = root.querySelector('.js-subscribe')
+
+        button.addEventListener('click', function () {
+          var subscribed = button.getAttribute('aria-pressed') === 'true'
+          var next = !subscribed
+
+          button.setAttribute('aria-pressed', String(next))
+          button.textContent = next ? 'Subscribed' : 'Subscribe'
+
+          if (next) {
+            button.classList.remove('bg-white', 'text-gray-900', 'hover:bg-gray-200')
+            button.classList.add('border', 'border-gray-700', 'bg-gray-950', 'text-gray-200', 'hover:bg-gray-900')
+          } else {
+            button.classList.remove('border', 'border-gray-700', 'bg-gray-950', 'text-gray-200', 'hover:bg-gray-900')
+            button.classList.add('bg-white', 'text-gray-900', 'hover:bg-gray-200')
+          }
+        })
+      })()
+    </script>
+  </body>
+</html>
