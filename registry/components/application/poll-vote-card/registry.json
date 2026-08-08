@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-poll-vote-card",
+  "title": "Poll / Vote Card",
+  "description": "Click-to-vote poll card that switches to a percentage-bar results view after voting — percentages and the leading-option highlight are computed from real vote counts, not hand-typed.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["poll", "vote", "survey", "results", "community"],
+  "useWhen": [
+    "Running a lightweight single-choice poll where users pick one option and immediately see results.",
+    "You want the percentage bars and winning option computed from real vote counts, not designed per-instance.",
+    "The poll should transition from an interactive voting state to a read-only results state on submit."
+  ],
+  "avoidWhen": [
+    "Users need to change or retract their vote after submitting — this component's local state doesn't model that.",
+    "You need multi-select voting (checkboxes, not radios) — extend the state model before reusing this markup.",
+    "Results need to be live/real-time across multiple users — wire the vote counts to a real backend and re-render."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The card and its option rows are a single-column block that reflows naturally to any container width.",
+  "accessibility": [
+    "Before voting, options are a real role='radiogroup' of role='radio' buttons; after voting, the group role is dropped since the options are no longer interactive controls.",
+    "The leading option after voting is marked with both bar color and bold text, not color alone.",
+    "The total vote count is shown as visible text below the results, not implied by bar widths alone."
+  ],
+  "compatibleWith": ["application-radio-groups", "application-progress-bars", "application-stat-tile"],
+  "variants": [
+    {
+      "id": "poll-vote-card-1",
+      "title": "Poll / vote card",
+      "description": "Four-option framework poll shown in its post-vote results state (Next.js leading at 45% of 150 votes), on a light surface.",
+      "source": {
+        "html": "../../../../public/examples/application/poll-vote-card/1.html",
+        "tsx": "tsx/PollVoteCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["voting", "results"],
+      "accessibility": [
+        "Percentages are computed with Math.round from real vote counts, so they always sum close to 100%."
+      ]
+    },
+    {
+      "id": "poll-vote-card-1-dark",
+      "title": "Poll / vote card (Dark)",
+      "description": "The same four-option poll results view, adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/poll-vote-card/1-dark.html",
+        "tsx": "tsx/PollVoteCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["voting", "results"],
+      "accessibility": [
+        "Bar fill and text colors must meet WCAG AA contrast on dark backgrounds."
+      ]
+    }
+  ]
+}
