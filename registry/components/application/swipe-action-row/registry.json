@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-swipe-action-row",
+  "title": "Swipe Action Row",
+  "description": "A list row that reveals archive and delete actions when swiped horizontally, shown mid-swipe with the row content shifted to expose the action buttons underneath.",
+  "category": "application/swipe-action-row",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "swipe-action-row",
+    "swipe",
+    "list",
+    "archive",
+    "delete",
+    "mobile"
+  ],
+  "useWhen": [
+    "A mobile-style list (notifications, messages, inbox items) needs quick per-row actions without a persistent visible button.",
+    "The action is destructive or secondary enough that hiding it behind a swipe reduces visual clutter in the default row state."
+  ],
+  "avoidWhen": [
+    "Users need to act on many rows at once — use `Bulk Action Bar` with checkboxes instead of one-at-a-time swipes.",
+    "The interface is primarily mouse-driven (desktop) — swipe gestures aren't discoverable without a touch affordance; expose the actions as visible buttons instead."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Each row's content translates horizontally to reveal a fixed-width action strip; the action buttons keep a consistent tap-target width regardless of row content length.",
+  "accessibility": [
+    "Swipe-revealed actions must also be reachable without a swipe gesture — provide an equivalent long-press menu or visible affordance for keyboard and screen reader users in a real implementation.",
+    "Each action button pairs an icon with an implicit color meaning (amber = archive, red = delete); provide a text label or aria-label since the icon alone isn't announced.",
+    "The row's underlying content order in the DOM should remain logical (name, message, timestamp) regardless of the visual swipe transform."
+  ],
+  "compatibleWith": ["application-bulk-action-bar", "application-toast-stack"],
+  "variants": [
+    {
+      "id": "swipe-action-row-1",
+      "title": "Notification list",
+      "description": "A three-row notification list with the middle row shown mid-swipe, content shifted left to reveal amber archive and red delete buttons.",
+      "source": {
+        "html": "../../../../public/examples/application/swipe-action-row/1.html",
+        "tsx": "tsx/SwipeActionRowVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "swiped"],
+      "accessibility": [
+        "In production, pair each swipe action with an aria-label (e.g. 'Archive', 'Delete') since the icons carry no text."
+      ]
+    },
+    {
+      "id": "swipe-action-row-1-dark",
+      "title": "Notification list (Dark)",
+      "description": "Swipe action row adapted for dark surfaces, including the action-strip colors and row shadow.",
+      "source": {
+        "html": "../../../../public/examples/application/swipe-action-row/1-dark.html",
+        "tsx": "tsx/SwipeActionRowVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "swiped"],
+      "accessibility": [
+        "Action-button colors meet WCAG AA contrast against their icon and against the dark list background."
+      ]
+    }
+  ]
+}
