@@ -672,7 +672,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-4) Mobile Filter Sheet — full-screen phone-frame sheet, dual-handle price slider, checkable category rows w/ counts, size chips, in-stock toggle, sticky "Show N results" footer; light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #17)
 - [x] (builder-4) Mobile Segmented Tabs — sticky All/Unread/Flagged pill control (role=tablist) above scrollable inbox list w/ unread dots; light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #17)
 - [x] (builder-10) Mobile Form Stepper — 2 variants (single email field step, choice-card step), light+dark, fixed autofocus→autoFocus casing gap in generator output, registry+tsx generated, screenshots verified, pushed
-- [~] (builder-4) Swipeable Card Carousel — snap-scrolling horizontal card row with peek and dots; distinct from carousel.
+- [x] (builder-4) Swipeable Card Carousel — snap-scroll product card row w/ edge peek and dot pagination, no arrow buttons; light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to builder-4-components (PR #17)
 
 <!-- Theme: RTL / i18n -->
 - [~] (builder-10) RTL Layout Demo — mirrored nav+content composition showcasing logical-property flipping; absent from library.
@@ -681,8 +681,8 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: Interaction primitives -->
 - [x] (builder-9) Drag Handle Row — 2 variants (reorderable list, dragging state) light+dark, registry.json, MDX entry, screenshots
-- [ ] Resizable Column Header — table header with drag-to-resize and sort caret; distinct from column-visibility-menu.
-- [ ] Long-Press Menu — press-and-hold context menu with ripple feedback (mobile); distinct from context menu.
+- [x] (builder-5) Resizable Column Header — table header with drag-to-resize and sort caret; distinct from column-visibility-menu. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
+- [~] (builder-4) Long-Press Menu — press-and-hold context menu with ripple feedback (mobile); distinct from context menu.
 - [ ] Multi-Range Timeline Select — drag to select a span across a timeline with handles; distinct from timeline-scrubber.
 
 <!-- Theme: Content / marketing (dashboard-adjacent) -->
@@ -690,13 +690,13 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [x] (builder-5) Testimonial Card — quote, avatar, name, role, and rating; distinct from social-post-card. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [x] (builder-5) Logo Cloud Grid — responsive customer-logo grid with subtle dividers; distinct from amenities-grid. light+dark, registry+tsx+MDX, screenshot verified, committed+pushed
 - [x] (builder-7) Stat Highlight Band — full-width row of 3–4 headline metrics with labels; distinct from stats. Light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #26).
-- [~] (builder-1) CTA Banner Card — gradient promo card with heading, subtext, and action buttons; distinct from announcement-banner.
+- [x] (builder-1) CTA Banner Card — 2 variants (centered gradient + split icon row), light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #16).
 
 <!-- Theme: Remaining vertical gaps -->
 - [x] (builder-8) Weather Forecast Row — 7-day strip (sun/cloud/rain icons), hi/lo, precip % internally consistent w/ icon choice, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
-- [~] (builder-8) Sports Standings Table — ranked team table with W/L/streak and rank movement; distinct from leaderboard-list.
-- [~] (builder-2) Dating Profile Card — swipe-card with photo, name/age, bio, and interest tags; distinct from card-stack.
-- [~] (builder-7) Menu Category Tabs — sticky food-category tab strip that scrolls the menu; distinct from tab-overflow-scroller.
+- [x] (builder-8) Sports Standings Table — 4-team standings w/ win% computed from real W/L, rank-movement arrows (aria-labeled) derived from rank vs previousRank comparison, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
+- [x] (builder-2) Dating Profile Card — full-bleed photo w/ bottom gradient scrim carrying name/age/bio/tags (materially different composition from card-stack's white-card-plus-thumbnail layout), Pass/Like buttons below card; light+dark, registry+tsx generated, screenshots verified, committed to builder-2-components.
+- [x] (builder-7) Menu Category Tabs — sticky food-category tab strip that scrolls the menu; distinct from tab-overflow-scroller. Light+dark, registry+tsx+MDX, screenshot verified, committed+pushed (PR #26).
 - [x] (builder-8) Nutrition Facts Panel — FDA-style label w/ %DV column computed live per-nutrient (amount÷FDA daily value), indented sub-nutrients, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 
 <!-- === WAVE 13 (deep-backlog refill, post-407) — variant/interaction framings + gaps, verified non-dupe === -->
@@ -705,21 +705,21 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 - [ ] Sortable Kanban Card — drag-reorder card within a column with drop placeholder; distinct from board-swimlane.
 - [ ] Nested Sortable List — indentable drag-drop outline list with depth guides; distinct from tree-view.
 - [ ] Pinch-Zoom Image — zoomable/pannable image viewer with reset control; distinct from image-cropper.
-- [ ] Hover Preview Card — link/row that reveals a rich preview popover on hover-delay; distinct from person-hovercard.
+- [x] (builder-7) Hover Preview Card — link/row that reveals a rich preview popover on hover-delay; distinct from person-hovercard. Light+dark, registry+tsx+MDX, screenshot verified (default + hover states), committed+pushed (PR #26).
 - [ ] Marquee Selection Grid — drag-a-box to multi-select tiles with a selection count; distinct from photo-grid-selectable.
 - [ ] Scroll-Snap Section Pager — full-height snap sections with a side dot-nav; distinct from anchor-scroll-nav.
 
 <!-- Theme: Navigation variants -->
-- [ ] Collapsible Rail Sidebar — icon-only collapsed rail that expands to labels on hover; distinct from sidebar-layout-shell.
+- [~] (builder-1) Collapsible Rail Sidebar — icon-only collapsed rail that expands to labels on hover; distinct from sidebar-layout-shell.
 - [~] (builder-9) Breadcrumb Segmented Path — pill-style path with a home icon and truncation menu; distinct from breadcrumbs.
 - [ ] Vertical Step Tabs — left rail step-tabs swapping right-pane content; distinct from step-progress-sidebar.
 - [ ] Nested Menu Drilldown — mobile menu that slides between parent/child levels; distinct from navigation-menu.
 
 <!-- Theme: Feedback / status variants -->
-- [ ] Inline Undo Snackbar — inline (non-toast) "item removed · Undo" strip within a list; distinct from toast-action-undo.
+- [~] (builder-2) Inline Undo Snackbar — inline (non-toast) "item removed · Undo" strip within a list; distinct from toast-action-undo.
 - [ ] Blocking Confirm Countdown — auto-proceeding confirm with a cancel-in-N-seconds ring; distinct from confirmation-input.
 - [ ] Progress Checklist Toast — toast that ticks off sub-steps as a task advances; distinct from progress-toast-group.
-- [ ] Stale Data Badge — "updated 5m ago · refresh" indicator with a refresh spinner; distinct from sync-status-row.
+- [x] (builder-8) Stale Data Badge — compact inline fresh/stale badge, staleness derived from real elapsed-time vs threshold, refresh icon-button, light+dark, registry+tsx+MDX, screenshot verified, committed+pushed to PR #6.
 - [ ] Threshold Alert Ribbon — corner ribbon on a card when a metric breaches a limit; distinct from quota-warning-banner.
 
 <!-- Theme: Data display variants -->
