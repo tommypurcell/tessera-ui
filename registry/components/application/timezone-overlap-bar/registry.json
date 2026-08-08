@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "name": "application-timezone-overlap-bar",
+  "title": "Timezone Overlap Bar",
+  "description": "A 24-hour visual track comparing working hours across two or more timezones, highlighting the shared window when everyone is available.",
+  "category": "application/data-display",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["application", "timezone", "scheduling", "availability"],
+  "useWhen": [
+    "Scheduling a meeting or call across two or more timezones and needing to see the shared working-hours window at a glance.",
+    "A distributed team page or scheduling tool needs to show relative availability rather than let users mentally convert times."
+  ],
+  "avoidWhen": [
+    "The user only needs to pick a single timezone value, not compare working hours across zones — use the timezone-picker component instead.",
+    "Precise minute-level scheduling is required — this is a glanceable overview, not a booking calendar."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Each timezone row is a fixed-height track with a proportionally positioned highlight; the label column has a fixed width so multiple rows stay aligned, and the whole bar shrinks with its container down to narrow viewports.",
+  "accessibility": [
+    "Each timezone's working-hours range is echoed as plain text (e.g. '9am–5pm') alongside the visual bar, not conveyed by position alone.",
+    "The overlap window is stated in text ('4h overlap', '1 hour when all three teams overlap') independent of the highlighted bar segment.",
+    "A text legend maps each color to its meaning (working hours vs. overlap) for users who cannot distinguish the color difference visually."
+  ],
+  "compatibleWith": ["application-timezone-picker", "application-booking-confirmation-card"],
+  "variants": [
+    {
+      "id": "timezone-overlap-bar-1",
+      "title": "Two zones",
+      "description": "San Francisco and London working-hours bars with the shared overlap window highlighted and labeled",
+      "source": {
+        "html": "../../../../public/examples/application/timezone-overlap-bar/1.html",
+        "tsx": "tsx/TimezoneOverlapBarVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": ["Working hours and the overlap window are both stated in text, not conveyed by bar position alone."]
+    },
+    {
+      "id": "timezone-overlap-bar-1-dark",
+      "title": "Two zones (Dark)",
+      "description": "San Francisco and London working-hours bars with the shared overlap window highlighted and labeled",
+      "source": {
+        "html": "../../../../public/examples/application/timezone-overlap-bar/1-dark.html",
+        "tsx": "tsx/TimezoneOverlapBarVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    },
+    {
+      "id": "timezone-overlap-bar-2",
+      "title": "Three zones",
+      "description": "Stacked Austin/Berlin/Singapore availability bars with a shared 3-way overlap marker beneath",
+      "source": {
+        "html": "../../../../public/examples/application/timezone-overlap-bar/2.html",
+        "tsx": "tsx/TimezoneOverlapBarVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": ["The 3-way overlap duration is stated in text below the bars."]
+    },
+    {
+      "id": "timezone-overlap-bar-2-dark",
+      "title": "Three zones (Dark)",
+      "description": "Stacked Austin/Berlin/Singapore availability bars with a shared 3-way overlap marker beneath",
+      "source": {
+        "html": "../../../../public/examples/application/timezone-overlap-bar/2-dark.html",
+        "tsx": "tsx/TimezoneOverlapBarVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": ["Colors meet WCAG AA contrast on dark surfaces."]
+    }
+  ]
+}
