@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-pdf-page-thumbnails",
+  "title": "PDF Page Thumbnails",
+  "description": "A scrollable rail of document page thumbnails with an active-page highlight, paired with a main viewer pane showing the selected page.",
+  "category": "application/pdf-page-thumbnails",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "pdf-page-thumbnails",
+    "pdf",
+    "document viewer",
+    "thumbnails",
+    "page navigation",
+    "sidebar"
+  ],
+  "useWhen": [
+    "Viewing a multi-page document (PDF, slide deck, scanned pages) where jumping directly to a page beats sequential scrolling.",
+    "Users benefit from a persistent visual map of the whole document alongside the page they're currently reading."
+  ],
+  "avoidWhen": [
+    "The document is a single page or very short — the thumbnail rail adds overhead without navigational benefit.",
+    "You need general file browsing across many separate documents — a `File Tree` or list view fits that better than page-level thumbnails."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The thumbnail rail keeps a fixed width and scrolls its own y-axis independently of the main viewer pane; on narrow viewports collapse the rail into a toggleable drawer instead of shrinking it further.",
+  "accessibility": [
+    "The rail is wrapped in a <nav aria-label=\"Page thumbnails\"> landmark distinct from the main viewer content.",
+    "Each thumbnail button carries aria-current=\"true\" on the active page, not solely a border/color change.",
+    "Page numbers are rendered as visible text below each thumbnail and restated in the viewer pane (\"Page 1 of 5\"), not conveyed by position alone."
+  ],
+  "compatibleWith": ["application-side-menu", "application-dashboard-sidebar"],
+  "variants": [
+    {
+      "id": "pdf-page-thumbnails-1",
+      "title": "Thumbnail rail with viewer",
+      "description": "A five-page thumbnail rail (page 1 active, ring-highlighted) beside a main viewer pane showing the selected page and a 'Page 1 of 5' caption.",
+      "source": {
+        "html": "../../../../public/examples/application/pdf-page-thumbnails/1.html",
+        "tsx": "tsx/PdfPageThumbnailsVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The active thumbnail carries aria-current=\"true\" and a page-number label."
+      ]
+    },
+    {
+      "id": "pdf-page-thumbnails-1-dark",
+      "title": "Thumbnail rail with viewer (Dark)",
+      "description": "PDF page thumbnail rail and viewer adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/pdf-page-thumbnails/1-dark.html",
+        "tsx": "tsx/PdfPageThumbnailsVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "The active-thumbnail border and page-number text meet WCAG AA contrast against the dark rail background."
+      ]
+    }
+  ]
+}

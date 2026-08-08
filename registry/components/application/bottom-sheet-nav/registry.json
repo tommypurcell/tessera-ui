@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-bottom-sheet-nav",
+  "title": "Bottom Sheet Nav",
+  "description": "A mobile-native bottom sheet with a drag handle, snap-point indicator dots, and an icon-and-label navigation row, anchored to the bottom of the viewport.",
+  "category": "application/bottom-sheet-nav",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "bottom-sheet-nav",
+    "bottom sheet",
+    "mobile",
+    "navigation",
+    "snap points",
+    "drag handle"
+  ],
+  "useWhen": [
+    "Building a mobile view where the primary navigation or filter controls should stay reachable at the bottom of the thumb zone.",
+    "The sheet needs to support drag gestures between snap heights (peek, half, full) in a real implementation, signaled by the handle and snap dots."
+  ],
+  "avoidWhen": [
+    "You're building a desktop or general side-panel overlay — use `Sheet` or `Drawer`, which don't imply drag/snap gesture behavior.",
+    "The navigation is simple and always full-height when open — a standard modal `Dialog` is simpler without the snap-point affordance."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The sheet spans the full width of its mobile container and is anchored to the bottom edge; on wider viewports this pattern should be swapped for a standard sidebar or dropdown nav instead of stretching full-width.",
+  "accessibility": [
+    "The drag handle is decorative; provide keyboard-operable snap controls (e.g. buttons) alongside it for non-pointer users in a real implementation.",
+    "Each nav item is a real <button> with a visible icon and text label together, not an icon-only tap target.",
+    "The active nav item is distinguished by both a color change and (in production) aria-current, not color alone."
+  ],
+  "compatibleWith": ["application-sheet", "application-drawer"],
+  "variants": [
+    {
+      "id": "bottom-sheet-nav-1",
+      "title": "Filter sheet",
+      "description": "A phone-frame mockup with an 'Explore' grid behind a bottom sheet showing a drag handle, three snap-point dots, and a four-item icon nav row with Filters active.",
+      "source": {
+        "html": "../../../../public/examples/application/bottom-sheet-nav/1.html",
+        "tsx": "tsx/BottomSheetNavVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Each nav destination pairs an icon with a visible text label."
+      ]
+    },
+    {
+      "id": "bottom-sheet-nav-1-dark",
+      "title": "Filter sheet (Dark)",
+      "description": "Bottom sheet nav adapted for dark surfaces, including the device frame, sheet background, and active nav item color.",
+      "source": {
+        "html": "../../../../public/examples/application/bottom-sheet-nav/1-dark.html",
+        "tsx": "tsx/BottomSheetNavVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Handle, snap dots, and nav icons all meet WCAG AA contrast against the dark sheet background."
+      ]
+    }
+  ]
+}

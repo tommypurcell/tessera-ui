@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "name": "application-image-cropper",
+  "title": "Image Cropper",
+  "description": "A draggable crop frame over an image with a rule-of-thirds grid and corner handles, aspect-ratio presets, and a zoom slider.",
+  "category": "application/image-cropper",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "image-cropper",
+    "crop",
+    "image editor",
+    "aspect ratio",
+    "zoom",
+    "upload"
+  ],
+  "useWhen": [
+    "Users upload an image (avatar, cover photo, product photo) and need to crop it to a specific aspect ratio before saving.",
+    "Precise framing matters enough to warrant a rule-of-thirds grid and zoom control, not just a fixed auto-crop."
+  ],
+  "avoidWhen": [
+    "The image is always used as-is with no user framing control — skip the cropper and just constrain display with `AspectRatio`.",
+    "You need a full raster editing surface (filters, brightness, drawing) — this component is crop/zoom-only, not a general image editor."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The crop stage keeps a fixed aspect ratio container that scales with its parent width; the aspect-preset buttons and zoom slider stack in the same order below it at all widths.",
+  "accessibility": [
+    "Each corner handle should be keyboard-resizable via arrow keys in a real implementation, in addition to pointer drag.",
+    "Aspect preset buttons use aria-pressed to indicate the active ratio, not color alone.",
+    "The zoom slider's thumb position is paired with min/max magnifying-glass icons so its direction is clear without reading a label."
+  ],
+  "compatibleWith": ["application-file-uploaders", "application-aspect-ratio"],
+  "variants": [
+    {
+      "id": "image-cropper-1",
+      "title": "Crop frame",
+      "description": "A square crop frame with a rule-of-thirds grid, four corner handles, a darkened mask outside the frame, aspect-ratio presets (1:1 active), and a zoom slider.",
+      "source": {
+        "html": "../../../../public/examples/application/image-cropper/1.html",
+        "tsx": "tsx/ImageCropperVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "The active aspect-ratio preset carries aria-pressed=\"true\"."
+      ]
+    },
+    {
+      "id": "image-cropper-1-dark",
+      "title": "Crop frame (Dark)",
+      "description": "Image cropper adapted for dark surfaces, including the crop-frame handles and mask opacity.",
+      "source": {
+        "html": "../../../../public/examples/application/image-cropper/1-dark.html",
+        "tsx": "tsx/ImageCropperVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Handles, grid lines, and controls all meet WCAG AA contrast against the dark card background."
+      ]
+    }
+  ]
+}

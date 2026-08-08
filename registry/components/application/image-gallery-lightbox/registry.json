@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "name": "application-image-gallery-lightbox",
+  "title": "Image Gallery Lightbox",
+  "description": "A thumbnail grid that opens into a full-screen viewer with prev/next navigation, a position counter, and a caption.",
+  "category": "application/image-gallery-lightbox",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "image-gallery-lightbox",
+    "lightbox",
+    "gallery",
+    "image viewer",
+    "thumbnails",
+    "full screen"
+  ],
+  "useWhen": [
+    "Presenting a set of images as browsable thumbnails that expand to a focused, distraction-free full-screen view.",
+    "Each image benefits from a caption or metadata that would clutter a plain thumbnail grid."
+  ],
+  "avoidWhen": [
+    "You need an auto-advancing showcase rather than a user-browsed grid — `Carousel` fits that better.",
+    "The images are illustrative content within a layout, not a browsable set — the plain `media` component is simpler."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "The thumbnail grid is a fixed 3-column layout that can drop to 2 columns on narrow viewports; the full-screen viewer's image scales to fit within the available height at any width.",
+  "accessibility": [
+    "The open viewer uses role=\"dialog\" and aria-modal=\"true\" with an aria-label describing it as an image viewer.",
+    "Previous, next, and close controls all carry descriptive aria-labels since only icons are shown.",
+    "The position counter (\"3 / 12\") and caption are rendered as visible text, giving screen reader users the same context as sighted users."
+  ],
+  "compatibleWith": ["application-carousel", "application-media"],
+  "variants": [
+    {
+      "id": "image-gallery-lightbox-1",
+      "title": "Thumbnail grid",
+      "description": "A 3x2 thumbnail grid with the first tile shown active (ring highlight) and a '+8' overflow tile for remaining images.",
+      "source": {
+        "html": "../../../../public/examples/application/image-gallery-lightbox/1.html",
+        "tsx": "tsx/ImageGalleryLightboxVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Each thumbnail is a real <button>, keyboard-reachable and operable without a pointer."
+      ]
+    },
+    {
+      "id": "image-gallery-lightbox-1-dark",
+      "title": "Thumbnail grid (Dark)",
+      "description": "Thumbnail grid adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/image-gallery-lightbox/1-dark.html",
+        "tsx": "tsx/ImageGalleryLightboxVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "The active-tile ring and overflow-tile overlay meet WCAG AA contrast against the dark background."
+      ]
+    },
+    {
+      "id": "image-gallery-lightbox-2",
+      "title": "Full-screen viewer",
+      "description": "The open lightbox: position counter, close button, prev/next arrows, the focused image, and a title/subtitle caption.",
+      "source": {
+        "html": "../../../../public/examples/application/image-gallery-lightbox/2.html",
+        "tsx": "tsx/ImageGalleryLightboxVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": ["default", "open"],
+      "accessibility": [
+        "role=\"dialog\" and aria-modal=\"true\" mark the viewer as a modal overlay for assistive technology."
+      ]
+    },
+    {
+      "id": "image-gallery-lightbox-2-dark",
+      "title": "Full-screen viewer (Dark)",
+      "description": "Full-screen lightbox viewer adapted for a dark page context; the viewer itself stays dark-chrome by convention.",
+      "source": {
+        "html": "../../../../public/examples/application/image-gallery-lightbox/2-dark.html",
+        "tsx": "tsx/ImageGalleryLightboxVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default", "open"],
+      "accessibility": [
+        "Controls and caption text meet WCAG AA contrast against the dark viewer background."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" class="font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="min-h-96 bg-gray-50">
+    <nav class="flex items-center gap-6 border-b border-gray-200 bg-white px-6 py-3">
+      <span class="text-sm font-semibold text-gray-900">Tessera</span>
+      <button type="button" aria-expanded="true" class="flex items-center gap-1 text-sm font-medium text-gray-900">
+        Products
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+        </svg>
+      </button>
+      <span class="text-sm font-medium text-gray-500">Solutions</span>
+      <span class="text-sm font-medium text-gray-500">Pricing</span>
+      <span class="text-sm font-medium text-gray-500">Docs</span>
+    </nav>
+
+    <div class="border-b border-gray-200 bg-white shadow-lg shadow-gray-900/5">
+      <div class="mx-auto grid max-w-3xl grid-cols-[1fr_1fr_1fr_1.1fr] gap-6 px-6 py-6">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-wide text-gray-400">Build</p>
+          <ul class="mt-3 space-y-3">
+            <li><a href="#" class="block text-sm font-medium text-gray-900 hover:text-gray-600">Component Registry</a><p class="mt-0.5 text-xs text-gray-500">Copy-and-own UI primitives</p></li>
+            <li><a href="#" class="block text-sm font-medium text-gray-900 hover:text-gray-600">Theme Engine</a><p class="mt-0.5 text-xs text-gray-500">Token-based restyling</p></li>
+            <li><a href="#" class="block text-sm font-medium text-gray-900 hover:text-gray-600">CLI</a><p class="mt-0.5 text-xs text-gray-500">Install components locally</p></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-wide text-gray-400">Ship</p>
+          <ul class="mt-3 space-y-3">
+            <li><a href="#" class="block text-sm font-medium text-gray-900 hover:text-gray-600">Dark Mode Generator</a><p class="mt-0.5 text-xs text-gray-500">Auto-derive dark variants</p></li>
+            <li><a href="#" class="block text-sm font-medium text-gray-900 hover:text-gray-600">Screenshot Previews</a><p class="mt-0.5 text-xs text-gray-500">Verify visually, every time</p></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-wide text-gray-400">Learn</p>
+          <ul class="mt-3 space-y-3">
+            <li><a href="#" class="block text-sm font-medium text-gray-900 hover:text-gray-600">Documentation</a></li>
+            <li><a href="#" class="block text-sm font-medium text-gray-900 hover:text-gray-600">Changelog</a></li>
+            <li><a href="#" class="block text-sm font-medium text-gray-900 hover:text-gray-600">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="rounded-lg bg-gray-50 p-4">
+          <span class="inline-flex items-center rounded-full bg-gray-900 px-2 py-0.5 text-[11px] font-medium text-white">New</span>
+          <p class="mt-2 text-sm font-semibold text-gray-900">Theme Scan v2</p>
+          <p class="mt-1 text-xs leading-relaxed text-gray-600">Learns your design tokens straight from an existing Tailwind config.</p>
+          <a href="#" class="mt-3 inline-flex items-center gap-1 text-xs font-medium text-gray-900 hover:underline">
+            Read the announcement
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0-6.75-6.75M19.5 12l-6.75 6.75" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
