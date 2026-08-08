@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+    <style>
+      .flip-scene {
+        perspective: 1200px;
+      }
+      .flip-card {
+        transform-style: preserve-3d;
+        transition: transform 0.5s;
+      }
+      .flip-toggle:checked ~ .flip-scene .flip-card {
+        transform: rotateY(180deg);
+      }
+      .flip-face {
+        backface-visibility: hidden;
+      }
+      .flip-face-back {
+        transform: rotateY(180deg);
+      }
+    </style>
+  </head>
+  <body class="mx-auto flex max-w-xs flex-col items-center gap-3 p-6">
+    <div class="flex w-full items-center justify-between text-xs font-medium text-gray-400">
+      <span>Card 7 of 20</span>
+      <span>65% mastered</span>
+    </div>
+
+    <input type="checkbox" id="flip-2-dark" class="flip-toggle sr-only" />
+
+    <label for="flip-2-dark" class="flip-scene block h-36 w-full cursor-pointer">
+      <div class="flip-card relative size-full">
+        <div class="flip-face absolute inset-0 flex flex-col items-center justify-center gap-1 rounded-lg border border-gray-700 bg-gray-800 p-6 text-center shadow-sm">
+          <p class="text-base font-semibold text-white">¿Cómo estás?</p>
+          <p class="text-xs text-gray-500">Tap to reveal translation</p>
+        </div>
+
+        <div class="flip-face flip-face-back absolute inset-0 flex flex-col items-center justify-center gap-1 rounded-lg border border-gray-700 bg-gray-900 p-6 text-center shadow-sm">
+          <p class="text-base font-semibold text-white">How are you?</p>
+        </div>
+      </div>
+    </label>
+
+    <div class="h-1.5 w-full overflow-hidden rounded-full bg-gray-800">
+      <div class="h-full w-[65%] rounded-full bg-white"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-rep-counter-ring",
+  "title": "Rep Counter Ring",
+  "description": "Circular rep-count and rest-timer ring components for workout tracking apps, showing progress toward a target with a live countdown.",
+  "category": "application/rep-counter-ring",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "rep-counter-ring",
+    "workout",
+    "reps",
+    "rest timer",
+    "fitness"
+  ],
+  "useWhen": [
+    "Circular rep-count and rest-timer ring components for workout tracking apps, showing progress toward a target with a live countdown."
+  ],
+  "avoidWhen": [
+    "Avoid rep counter ring when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Rep Counter Ring uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "rep-counter-ring-1",
+      "title": "Rep count ring with target and log action",
+      "description": "Rep count ring with target and log action Circular rep-count and rest-timer ring components for workout tracking apps, showing progress toward a target with a live countdown.",
+      "source": {
+        "html": "../../../../public/examples/application/rep-counter-ring/1.html",
+        "tsx": "tsx/RepCounterRingVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "rep-counter-ring-1-dark",
+      "title": "Rep count ring with target and log action (Dark)",
+      "description": "Rep count ring with target and log action Circular rep-count and rest-timer ring components for workout tracking apps, showing progress toward a target with a live countdown.",
+      "source": {
+        "html": "../../../../public/examples/application/rep-counter-ring/1-dark.html",
+        "tsx": "tsx/RepCounterRingVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "rep-counter-ring-2",
+      "title": "Rest timer ring with live countdown",
+      "description": "Rest timer ring with live countdown Circular rep-count and rest-timer ring components for workout tracking apps, showing progress toward a target with a live countdown.",
+      "source": {
+        "html": "../../../../public/examples/application/rep-counter-ring/2.html",
+        "tsx": "tsx/RepCounterRingVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "rep-counter-ring-2-dark",
+      "title": "Rest timer ring with live countdown (Dark)",
+      "description": "Rest timer ring with live countdown Circular rep-count and rest-timer ring components for workout tracking apps, showing progress toward a target with a live countdown.",
+      "source": {
+        "html": "../../../../public/examples/application/rep-counter-ring/2-dark.html",
+        "tsx": "tsx/RepCounterRingVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

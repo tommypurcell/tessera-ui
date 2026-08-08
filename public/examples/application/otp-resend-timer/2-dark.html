@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-xs flex-col items-center gap-3 p-6">
+    <p class="text-sm font-medium text-gray-200">Enter the 6-digit code</p>
+
+    <div class="flex gap-2" role="group" aria-label="One-time code">
+      <span class="flex size-10 items-center justify-center rounded-md border border-red-500/40 bg-red-500/10 text-sm font-semibold text-red-300">9</span>
+      <span class="flex size-10 items-center justify-center rounded-md border border-red-500/40 bg-red-500/10 text-sm font-semibold text-red-300">0</span>
+      <span class="flex size-10 items-center justify-center rounded-md border border-red-500/40 bg-red-500/10 text-sm font-semibold text-red-300">1</span>
+      <span class="flex size-10 items-center justify-center rounded-md border border-red-500/40 bg-red-500/10 text-sm font-semibold text-red-300">2</span>
+      <span class="flex size-10 items-center justify-center rounded-md border border-red-500/40 bg-red-500/10 text-sm font-semibold text-red-300">3</span>
+      <span class="flex size-10 items-center justify-center rounded-md border border-red-500/40 bg-red-500/10 text-sm font-semibold text-red-300">4</span>
+    </div>
+
+    <p class="text-sm text-red-400">Incorrect code. 2 attempts remaining.</p>
+
+    <p class="text-sm text-gray-400" role="status" aria-live="polite">
+      Resend code in <span id="otp-timer-2-dark" class="font-mono font-medium text-gray-200">00:45</span>
+    </p>
+
+    <script>
+      ;(function () {
+        var timeEl = document.getElementById('otp-timer-2-dark')
+        var statusEl = timeEl.parentElement
+        var remaining = 45
+
+        function tick() {
+          if (remaining <= 0) return
+          remaining -= 1
+          var mins = Math.floor(remaining / 60)
+          var secs = remaining % 60
+          timeEl.textContent = String(mins).padStart(2, '0') + ':' + String(secs).padStart(2, '0')
+
+          if (remaining === 0) {
+            statusEl.innerHTML = 'Didn’t get a code? <button type="button" class="font-semibold text-blue-400 hover:text-blue-300">Resend</button>'
+          }
+        }
+
+        setInterval(tick, 1000)
+      })()
+    </script>
+  </body>
+</html>

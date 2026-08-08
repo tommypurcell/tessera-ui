@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-price-ticker-strip",
+  "title": "Price Ticker Strip",
+  "description": "Scrolling and flash-updating asset price ticker components with up/down coloring, for finance and crypto dashboards.",
+  "category": "application/price-ticker-strip",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "price-ticker-strip",
+    "ticker",
+    "price",
+    "stocks",
+    "crypto"
+  ],
+  "useWhen": [
+    "Scrolling and flash-updating asset price ticker components with up/down coloring, for finance and crypto dashboards."
+  ],
+  "avoidWhen": [
+    "Avoid price ticker strip when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Price Ticker Strip uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment.",
+    "Do not use color, iconography, or position as the only way to communicate meaning or state."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "price-ticker-strip-1",
+      "title": "Infinite scrolling multi-asset ticker strip",
+      "description": "Infinite scrolling multi-asset ticker strip Scrolling and flash-updating asset price ticker components with up/down coloring, for finance and crypto dashboards.",
+      "source": {
+        "html": "../../../../public/examples/application/price-ticker-strip/1.html",
+        "tsx": "tsx/PriceTickerStripVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "price-ticker-strip-1-dark",
+      "title": "Infinite scrolling multi-asset ticker strip (Dark)",
+      "description": "Infinite scrolling multi-asset ticker strip Scrolling and flash-updating asset price ticker components with up/down coloring, for finance and crypto dashboards.",
+      "source": {
+        "html": "../../../../public/examples/application/price-ticker-strip/1-dark.html",
+        "tsx": "tsx/PriceTickerStripVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "price-ticker-strip-2",
+      "title": "Compact price rows with flash-on-update",
+      "description": "Compact price rows with flash-on-update Scrolling and flash-updating asset price ticker components with up/down coloring, for finance and crypto dashboards.",
+      "source": {
+        "html": "../../../../public/examples/application/price-ticker-strip/2.html",
+        "tsx": "tsx/PriceTickerStripVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "price-ticker-strip-2-dark",
+      "title": "Compact price rows with flash-on-update (Dark)",
+      "description": "Compact price rows with flash-on-update Scrolling and flash-updating asset price ticker components with up/down coloring, for finance and crypto dashboards.",
+      "source": {
+        "html": "../../../../public/examples/application/price-ticker-strip/2-dark.html",
+        "tsx": "tsx/PriceTickerStripVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}

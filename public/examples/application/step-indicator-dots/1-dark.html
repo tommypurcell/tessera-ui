@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-xs flex-col items-center gap-6 p-6">
+    <ol class="flex items-center" aria-label="Progress">
+      <li class="flex items-center">
+        <span class="size-2.5 rounded-full bg-white"></span>
+      </li>
+      <li class="h-px w-8 bg-white" aria-hidden="true"></li>
+      <li class="flex items-center">
+        <span class="relative flex size-3.5 items-center justify-center rounded-full bg-white" aria-current="step">
+          <span class="absolute inline-flex size-full animate-ping rounded-full bg-white opacity-40"></span>
+        </span>
+      </li>
+      <li class="h-px w-8 bg-gray-700" aria-hidden="true"></li>
+      <li class="flex items-center">
+        <span class="size-2.5 rounded-full bg-gray-700"></span>
+      </li>
+      <li class="h-px w-8 bg-gray-700" aria-hidden="true"></li>
+      <li class="flex items-center">
+        <span class="size-2.5 rounded-full bg-gray-700"></span>
+      </li>
+    </ol>
+
+    <div class="text-center">
+      <p class="text-sm font-semibold text-white">Choose your plan</p>
+      <p class="text-xs text-gray-400">Step 2 of 4</p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" class="dark font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/component.css" rel="stylesheet" />
+    <script src="/component.js" defer></script>
+  </head>
+  <body class="mx-auto flex max-w-xs flex-col items-center gap-4 p-6">
+    <div id="rest-1-dark" class="relative flex size-36 items-center justify-center">
+      <svg class="size-36 -rotate-90" viewBox="0 0 140 140" role="img" aria-label="Rest timer, 25 seconds remaining">
+        <circle cx="70" cy="70" r="60" fill="none" stroke="currentColor" stroke-width="10" class="text-gray-800" />
+        <circle
+          class="js-ring text-teal-400 transition-[stroke-dashoffset] duration-1000 ease-linear"
+          cx="70"
+          cy="70"
+          r="60"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="10"
+          stroke-linecap="round"
+          stroke-dasharray="377"
+          stroke-dashoffset="167.6"
+        />
+      </svg>
+
+      <div class="absolute flex flex-col items-center">
+        <p class="js-time font-mono text-3xl font-semibold text-white">00:25</p>
+        <p class="text-xs font-medium text-gray-500 uppercase">Resting</p>
+      </div>
+    </div>
+
+    <p class="text-sm text-gray-400">Next: Set 3 of 4 · Barbell squat</p>
+
+    <script>
+      ;(function () {
+        var root = document.getElementById('rest-1-dark')
+        var ring = root.querySelector('.js-ring')
+        var timeEl = root.querySelector('.js-time')
+        var total = 45
+        var remaining = 25
+        var circumference = 377
+
+        function tick() {
+          if (remaining <= 0) return
+          remaining -= 1
+          var mins = Math.floor(remaining / 60)
+          var secs = remaining % 60
+          timeEl.textContent = String(mins).padStart(2, '0') + ':' + String(secs).padStart(2, '0')
+          ring.style.strokeDashoffset = String(circumference * (1 - remaining / total))
+        }
+
+        setInterval(tick, 1000)
+      })()
+    </script>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "name": "application-announcement-feed-item",
+  "title": "Announcement Feed Item",
+  "description": "Pinned and starred announcement post components with author, body text, and reactions, for team feeds and update streams.",
+  "category": "application/announcement-feed-item",
+  "frameworks": [
+    "html",
+    "react"
+  ],
+  "styling": "tailwind",
+  "tags": [
+    "application",
+    "announcement-feed-item",
+    "pinned",
+    "starred",
+    "post",
+    "reactions"
+  ],
+  "useWhen": [
+    "Pinned and starred announcement post components with author, body text, and reactions, for team feeds and update streams."
+  ],
+  "avoidWhen": [
+    "Avoid announcement feed item when a simpler pattern communicates the same content or action."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Announcement Feed Item uses responsive Tailwind utilities where present. Test its layout and interaction states at mobile, tablet, and desktop widths before shipping.",
+  "accessibility": [
+    "Provide meaningful alternative text for informative images and empty alt text for decorative images.",
+    "Keep semantic HTML structure and visible text labels when adapting this component.",
+    "Preserve the component’s semantic HTML when adapting its visual treatment."
+  ],
+  "compatibleWith": [],
+  "variants": [
+    {
+      "id": "announcement-feed-item-1",
+      "title": "Pinned announcement card with reactions",
+      "description": "Pinned announcement card with reactions Pinned and starred announcement post components with author, body text, and reactions, for team feeds and update streams.",
+      "source": {
+        "html": "../../../../public/examples/application/announcement-feed-item/1.html",
+        "tsx": "tsx/AnnouncementFeedItemVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "announcement-feed-item-1-dark",
+      "title": "Pinned announcement card with reactions (Dark)",
+      "description": "Pinned announcement card with reactions Pinned and starred announcement post components with author, body text, and reactions, for team feeds and update streams.",
+      "source": {
+        "html": "../../../../public/examples/application/announcement-feed-item/1-dark.html",
+        "tsx": "tsx/AnnouncementFeedItemVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Provide meaningful alternative text for informative images and empty alt text for decorative images."
+      ]
+    },
+    {
+      "id": "announcement-feed-item-2",
+      "title": "Compact starred post row",
+      "description": "Compact starred post row Pinned and starred announcement post components with author, body text, and reactions, for team feeds and update streams.",
+      "source": {
+        "html": "../../../../public/examples/application/announcement-feed-item/2.html",
+        "tsx": "tsx/AnnouncementFeedItemVariant2.tsx"
+      },
+      "appearance": "light",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    },
+    {
+      "id": "announcement-feed-item-2-dark",
+      "title": "Compact starred post row (Dark)",
+      "description": "Compact starred post row Pinned and starred announcement post components with author, body text, and reactions, for team feeds and update streams.",
+      "source": {
+        "html": "../../../../public/examples/application/announcement-feed-item/2-dark.html",
+        "tsx": "tsx/AnnouncementFeedItemVariant2Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": [
+        "default"
+      ],
+      "accessibility": [
+        "Keep semantic HTML structure and visible text labels when adapting this component."
+      ]
+    }
+  ]
+}
