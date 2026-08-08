@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "name": "application-body-metrics-card",
+  "title": "Body Metrics Card",
+  "description": "Body metrics card with weight, BMI, and body fat cells, each showing a trend arrow whose direction and color are computed from a real signed delta.",
+  "category": "application/forms-and-layout",
+  "frameworks": ["html", "react"],
+  "styling": "tailwind",
+  "tags": ["health", "fitness", "metrics", "trend"],
+  "useWhen": [
+    "Showing a health/fitness dashboard summary of a user's most recent body measurements.",
+    "Each metric benefits from a trend indicator showing change since the last reading, not just the current value.",
+    "Different metrics have different \"good\" directions (e.g. weight down is good for a loss goal, but up is good for a gain goal) and the trend color should reflect that."
+  ],
+  "avoidWhen": [
+    "You need general vital signs (heart rate, blood pressure) rather than body composition metrics — use `vitals-stat-row` for that clinical framing instead.",
+    "There's no historical comparison available — drop the trend arrows and show plain values rather than fabricating a direction.",
+    "This is used for clinical diagnosis or medical decision-making — this is a consumer fitness-tracking UI pattern, not a substitute for validated medical device software."
+  ],
+  "dependencies": [],
+  "responsiveBehavior": "Three-column grid with dividers; each cell's text wraps rather than overflowing at narrow card widths.",
+  "accessibility": [
+    "Trend direction (up/down arrow) and color (good/bad) are both computed from the same signed delta and a per-metric increaseIsGood flag, so they can never disagree with each other.",
+    "\"Good\" vs. \"concerning\" trends are distinguished by icon direction and color together, with the numeric delta always shown as text — not color alone.",
+    "Each metric's label, value, and delta are all real text content, remaining fully readable to screen readers."
+  ],
+  "compatibleWith": ["application-vitals-stat-row", "application-stat-tile"],
+  "variants": [
+    {
+      "id": "body-metrics-card-1",
+      "title": "Body Metrics Card",
+      "description": "Weight and BMI trending down (shown as good/green), body fat trending up and flagged red as an undesirable change.",
+      "source": {
+        "html": "../../../../public/examples/application/body-metrics-card/1.html",
+        "tsx": "tsx/BodyMetricsCardVariant1.tsx"
+      },
+      "appearance": "light",
+      "states": ["default"],
+      "accessibility": [
+        "Trend arrow direction and good/bad color are both derived from the same real delta value per metric."
+      ]
+    },
+    {
+      "id": "body-metrics-card-1-dark",
+      "title": "Body Metrics Card (Dark)",
+      "description": "Body metrics card adapted for dark surfaces.",
+      "source": {
+        "html": "../../../../public/examples/application/body-metrics-card/1-dark.html",
+        "tsx": "tsx/BodyMetricsCardVariant1Dark.tsx"
+      },
+      "appearance": "dark",
+      "states": ["default"],
+      "accessibility": [
+        "Trend colors are tuned to meet WCAG AA contrast against the dark surface."
+      ]
+    }
+  ]
+}
