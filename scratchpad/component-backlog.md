@@ -432,7 +432,7 @@ Reference libraries (design inspiration ONLY — adapt to Tessera's native `regi
 
 <!-- Theme: Travel -->
 - [x] (builder-7) Flight Route Card — airline+flight#, stop badge, origin/destination codes+times, duration line, route footer, fare, light+dark, registry+tsx+MDX, screenshot verified, committed + pushed (PR #5)
-- [~] (builder-6) Booking Search Bar — location + date-range + guests combined search widget; distinct from data-filter-bar.
+- [ ] Booking Search Bar — location + date-range + guests combined search widget; distinct from data-filter-bar.
 - [x] (builder-3) Seat Map Selector — row-labeled seat grid w/ aisle gap, available/taken/selected states, legend, light+dark, registry+tsx+MDX, screenshot verified, pushed to builder-3-components (PR #7)
 - [ ] Itinerary Timeline — day-grouped trip events with time, location, and type icons; distinct from timelines.
 - [ ] Price Calendar — month grid with per-day fare and cheapest-day highlight; distinct from mini-calendar-widget.
