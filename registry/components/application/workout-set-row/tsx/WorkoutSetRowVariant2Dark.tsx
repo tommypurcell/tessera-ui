@@ -1,4 +1,8 @@
-export function WorkoutSetRowVariant2Dark() {
+import type { HTMLAttributes } from 'react'
+
+export type WorkoutSetRowVariant2DarkProps = HTMLAttributes<HTMLElement>
+
+export function WorkoutSetRowVariant2Dark(props: WorkoutSetRowVariant2DarkProps) {
   return (
     <ul className="flex flex-col divide-y divide-gray-800 rounded-lg border border-gray-800">
       <li className="flex items-center justify-between gap-3 p-3">

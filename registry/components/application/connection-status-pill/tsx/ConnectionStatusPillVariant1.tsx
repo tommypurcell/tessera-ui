@@ -1,4 +1,8 @@
-export function ConnectionStatusPillVariant1() {
+import type { HTMLAttributes } from 'react'
+
+export type ConnectionStatusPillVariant1Props = HTMLAttributes<HTMLElement>
+
+export function ConnectionStatusPillVariant1(props: ConnectionStatusPillVariant1Props) {
   return (
     <div className="flex flex-col gap-3">
       <span className="inline-flex w-fit items-center gap-2 rounded-full border border-green-200 bg-green-50 py-1 pr-3 pl-2 text-sm font-medium text-green-700" role="status">

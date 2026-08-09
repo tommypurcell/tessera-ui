@@ -1,4 +1,8 @@
-export function MortgageCalculatorVariant1() {
+import type { HTMLAttributes } from 'react'
+
+export type MortgageCalculatorVariant1Props = HTMLAttributes<HTMLElement>
+
+export function MortgageCalculatorVariant1(props: MortgageCalculatorVariant1Props) {
   return (
     <div className="rounded-lg border border-gray-200 p-5">
       <h3 className="text-sm font-semibold text-gray-900">Mortgage calculator</h3>

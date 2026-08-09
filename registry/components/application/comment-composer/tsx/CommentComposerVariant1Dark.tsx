@@ -1,4 +1,8 @@
-export function CommentComposerVariant1Dark() {
+import type { HTMLAttributes } from 'react'
+
+export type CommentComposerVariant1DarkProps = HTMLAttributes<HTMLElement>
+
+export function CommentComposerVariant1Dark(props: CommentComposerVariant1DarkProps) {
   return (
     <div className="flex gap-3">
       <img

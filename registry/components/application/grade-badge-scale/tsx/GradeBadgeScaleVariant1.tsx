@@ -1,3 +1,5 @@
+import type { HTMLAttributes } from 'react'
+
 const grades = [
   { letter: 'A', bg: 'bg-green-100', text: 'text-green-700' },
   { letter: 'B', bg: 'bg-lime-100', text: 'text-lime-700' },
@@ -6,7 +8,9 @@ const grades = [
   { letter: 'F', bg: 'bg-red-100', text: 'text-red-700' },
 ]
 
-export function GradeBadgeScaleVariant1() {
+export type GradeBadgeScaleVariant1Props = HTMLAttributes<HTMLElement>
+
+export function GradeBadgeScaleVariant1(props: GradeBadgeScaleVariant1Props) {
   return (
     <div className="flex flex-wrap items-center gap-2">
       {grades.map((grade) => (

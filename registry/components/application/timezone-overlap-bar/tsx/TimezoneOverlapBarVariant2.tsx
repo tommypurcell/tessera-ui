@@ -1,4 +1,8 @@
-export function TimezoneOverlapBarVariant2() {
+import type { HTMLAttributes } from 'react'
+
+export type TimezoneOverlapBarVariant2Props = HTMLAttributes<HTMLElement>
+
+export function TimezoneOverlapBarVariant2(props: TimezoneOverlapBarVariant2Props) {
   return (
     <div className="rounded-lg border border-gray-200 p-4">
       <h3 className="text-sm font-semibold text-gray-900">Team availability</h3>

@@ -41,13 +41,13 @@ export function InputOtpVariant1Dark({
             <legend className="text-sm font-medium text-gray-200">Verification code</legend>
             <p className="text-xs text-gray-400">Enter the 6-digit code we sent to your phone.</p>
             <div className="flex items-center gap-2" role="group" aria-label="One-time code">
-              <input inputmode="numeric" maxlength="1" value="4" aria-label="Digit 1" className="h-12 w-11 rounded-lg border border-gray-700 bg-gray-900 text-center text-lg font-semibold text-white shadow-sm focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/40 focus:outline-none" />
-              <input inputmode="numeric" maxlength="1" value="8" aria-label="Digit 2" className="h-12 w-11 rounded-lg border border-gray-700 bg-gray-900 text-center text-lg font-semibold text-white shadow-sm focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/40 focus:outline-none" />
-              <input inputmode="numeric" maxlength="1" value="2" aria-label="Digit 3" className="h-12 w-11 rounded-lg border border-gray-700 bg-gray-900 text-center text-lg font-semibold text-white shadow-sm focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/40 focus:outline-none" />
+              <input inputMode="numeric" maxLength={1} value="4" aria-label="Digit 1" className="h-12 w-11 rounded-lg border border-gray-700 bg-gray-900 text-center text-lg font-semibold text-white shadow-sm focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/40 focus:outline-none" />
+              <input inputMode="numeric" maxLength={1} value="8" aria-label="Digit 2" className="h-12 w-11 rounded-lg border border-gray-700 bg-gray-900 text-center text-lg font-semibold text-white shadow-sm focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/40 focus:outline-none" />
+              <input inputMode="numeric" maxLength={1} value="2" aria-label="Digit 3" className="h-12 w-11 rounded-lg border border-gray-700 bg-gray-900 text-center text-lg font-semibold text-white shadow-sm focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/40 focus:outline-none" />
               <span aria-hidden="true" className="px-1 text-lg text-gray-600">–</span>
-              <input inputmode="numeric" maxlength="1" value="1" aria-label="Digit 4" className="h-12 w-11 rounded-lg border-2 border-indigo-400 bg-gray-900 text-center text-lg font-semibold text-white shadow-sm ring-2 ring-indigo-400/40 focus:outline-none" />
-              <input inputmode="numeric" maxlength="1" value="" aria-label="Digit 5" className="h-12 w-11 rounded-lg border border-gray-700 bg-gray-900 text-center text-lg font-semibold text-white shadow-sm focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/40 focus:outline-none" />
-              <input inputmode="numeric" maxlength="1" value="" aria-label="Digit 6" className="h-12 w-11 rounded-lg border border-gray-700 bg-gray-900 text-center text-lg font-semibold text-white shadow-sm focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/40 focus:outline-none" />
+              <input inputMode="numeric" maxLength={1} value="1" aria-label="Digit 4" className="h-12 w-11 rounded-lg border-2 border-indigo-400 bg-gray-900 text-center text-lg font-semibold text-white shadow-sm ring-2 ring-indigo-400/40 focus:outline-none" />
+              <input inputMode="numeric" maxLength={1} value="" aria-label="Digit 5" className="h-12 w-11 rounded-lg border border-gray-700 bg-gray-900 text-center text-lg font-semibold text-white shadow-sm focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/40 focus:outline-none" />
+              <input inputMode="numeric" maxLength={1} value="" aria-label="Digit 6" className="h-12 w-11 rounded-lg border border-gray-700 bg-gray-900 text-center text-lg font-semibold text-white shadow-sm focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/40 focus:outline-none" />
             </div>
           </fieldset>
       
@@ -55,10 +55,10 @@ export function InputOtpVariant1Dark({
           <fieldset className="flex flex-col gap-3">
             <legend className="text-sm font-medium text-gray-200">Confirm code</legend>
             <div className="flex items-center gap-2" role="group" aria-label="One-time code, invalid">
-              <input inputmode="numeric" maxlength="1" value="0" aria-invalid="true" aria-label="Digit 1" className="h-12 w-11 rounded-lg border border-red-500/70 bg-gray-900 text-center text-lg font-semibold text-red-300 shadow-sm focus:border-red-400 focus:ring-2 focus:ring-red-400/40 focus:outline-none" />
-              <input inputmode="numeric" maxlength="1" value="0" aria-invalid="true" aria-label="Digit 2" className="h-12 w-11 rounded-lg border border-red-500/70 bg-gray-900 text-center text-lg font-semibold text-red-300 shadow-sm focus:border-red-400 focus:ring-2 focus:ring-red-400/40 focus:outline-none" />
-              <input inputmode="numeric" maxlength="1" value="0" aria-invalid="true" aria-label="Digit 3" className="h-12 w-11 rounded-lg border border-red-500/70 bg-gray-900 text-center text-lg font-semibold text-red-300 shadow-sm focus:border-red-400 focus:ring-2 focus:ring-red-400/40 focus:outline-none" />
-              <input inputmode="numeric" maxlength="1" value="0" aria-invalid="true" aria-label="Digit 4" className="h-12 w-11 rounded-lg border border-red-500/70 bg-gray-900 text-center text-lg font-semibold text-red-300 shadow-sm focus:border-red-400 focus:ring-2 focus:ring-red-400/40 focus:outline-none" />
+              <input inputMode="numeric" maxLength={1} value="0" aria-invalid="true" aria-label="Digit 1" className="h-12 w-11 rounded-lg border border-red-500/70 bg-gray-900 text-center text-lg font-semibold text-red-300 shadow-sm focus:border-red-400 focus:ring-2 focus:ring-red-400/40 focus:outline-none" />
+              <input inputMode="numeric" maxLength={1} value="0" aria-invalid="true" aria-label="Digit 2" className="h-12 w-11 rounded-lg border border-red-500/70 bg-gray-900 text-center text-lg font-semibold text-red-300 shadow-sm focus:border-red-400 focus:ring-2 focus:ring-red-400/40 focus:outline-none" />
+              <input inputMode="numeric" maxLength={1} value="0" aria-invalid="true" aria-label="Digit 3" className="h-12 w-11 rounded-lg border border-red-500/70 bg-gray-900 text-center text-lg font-semibold text-red-300 shadow-sm focus:border-red-400 focus:ring-2 focus:ring-red-400/40 focus:outline-none" />
+              <input inputMode="numeric" maxLength={1} value="0" aria-invalid="true" aria-label="Digit 4" className="h-12 w-11 rounded-lg border border-red-500/70 bg-gray-900 text-center text-lg font-semibold text-red-300 shadow-sm focus:border-red-400 focus:ring-2 focus:ring-red-400/40 focus:outline-none" />
             </div>
             <p role="alert" className="text-xs text-red-400">That code is incorrect. Please try again.</p>
           </fieldset>

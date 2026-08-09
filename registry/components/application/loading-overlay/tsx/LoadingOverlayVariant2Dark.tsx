@@ -1,4 +1,8 @@
-export function LoadingOverlayVariant2Dark() {
+import type { HTMLAttributes } from 'react'
+
+export type LoadingOverlayVariant2DarkProps = HTMLAttributes<HTMLElement>
+
+export function LoadingOverlayVariant2Dark(props: LoadingOverlayVariant2DarkProps) {
   return (
     <div className="relative h-80 overflow-hidden bg-gray-950">
       <div className="grid grid-cols-3 gap-4 p-6">

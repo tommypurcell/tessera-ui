@@ -1,4 +1,8 @@
-export function DangerZonePanelVariant1() {
+import type { HTMLAttributes } from 'react'
+
+export type DangerZonePanelVariant1Props = HTMLAttributes<HTMLElement>
+
+export function DangerZonePanelVariant1(props: DangerZonePanelVariant1Props) {
   return (
     <>
       <section className="rounded-lg border border-red-200 bg-red-50/50" aria-labelledby="dangerZoneTitle">

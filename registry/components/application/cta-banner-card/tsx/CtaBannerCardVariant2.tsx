@@ -1,4 +1,8 @@
-export function CtaBannerCardVariant2() {
+import type { HTMLAttributes } from 'react'
+
+export type CtaBannerCardVariant2Props = HTMLAttributes<HTMLElement>
+
+export function CtaBannerCardVariant2(props: CtaBannerCardVariant2Props) {
   return (
     <div className="flex items-center gap-6 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-600 p-6">
       <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-white/20">

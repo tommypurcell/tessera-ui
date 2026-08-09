@@ -1,4 +1,8 @@
-export function DangerZonePanelVariant2Dark() {
+import type { HTMLAttributes } from 'react'
+
+export type DangerZonePanelVariant2DarkProps = HTMLAttributes<HTMLElement>
+
+export function DangerZonePanelVariant2Dark(props: DangerZonePanelVariant2DarkProps) {
   return (
     <section className="rounded-lg border border-red-900/60" aria-labelledby="dangerZoneTitle2">
       <div className="border-b border-red-900/60 bg-red-950/20 px-5 py-4">

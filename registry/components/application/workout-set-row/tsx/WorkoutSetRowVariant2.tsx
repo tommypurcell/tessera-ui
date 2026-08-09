@@ -1,4 +1,8 @@
-export function WorkoutSetRowVariant2() {
+import type { HTMLAttributes } from 'react'
+
+export type WorkoutSetRowVariant2Props = HTMLAttributes<HTMLElement>
+
+export function WorkoutSetRowVariant2(props: WorkoutSetRowVariant2Props) {
   return (
     <ul className="flex flex-col divide-y divide-gray-200 rounded-lg border border-gray-200">
       <li className="flex items-center justify-between gap-3 p-3">

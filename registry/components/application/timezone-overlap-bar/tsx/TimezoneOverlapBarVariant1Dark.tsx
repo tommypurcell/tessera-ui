@@ -1,4 +1,8 @@
-export function TimezoneOverlapBarVariant1Dark() {
+import type { HTMLAttributes } from 'react'
+
+export type TimezoneOverlapBarVariant1DarkProps = HTMLAttributes<HTMLElement>
+
+export function TimezoneOverlapBarVariant1Dark(props: TimezoneOverlapBarVariant1DarkProps) {
   return (
     <div className="rounded-lg border border-gray-800 p-4">
       <div className="flex items-center justify-between">

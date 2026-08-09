@@ -1,4 +1,8 @@
-export function FileDropPreviewListVariant2Dark() {
+import type { HTMLAttributes } from 'react'
+
+export type FileDropPreviewListVariant2DarkProps = HTMLAttributes<HTMLElement>
+
+export function FileDropPreviewListVariant2Dark(props: FileDropPreviewListVariant2DarkProps) {
   return (
     <ul className="flex flex-col divide-y divide-gray-800 rounded-lg border border-gray-800" aria-label="Uploaded files">
       <li className="flex items-center gap-3 p-3">

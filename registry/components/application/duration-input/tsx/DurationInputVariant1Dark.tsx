@@ -44,7 +44,7 @@ export function DurationInputVariant1Dark({
                 <input
                   id="duration-input-hours-dark"
                   type="text"
-                  inputmode="numeric"
+                  inputMode="numeric"
                   value="2"
                   className="w-12 border-0 bg-transparent py-2 pl-3 text-right text-sm text-white focus:outline-none focus:ring-0"
                 />
@@ -56,7 +56,7 @@ export function DurationInputVariant1Dark({
                 <input
                   id="duration-input-minutes-dark"
                   type="text"
-                  inputmode="numeric"
+                  inputMode="numeric"
                   value="45"
                   className="w-12 border-0 bg-transparent py-2 pl-3 text-right text-sm text-white focus:outline-none focus:ring-0"
                 />

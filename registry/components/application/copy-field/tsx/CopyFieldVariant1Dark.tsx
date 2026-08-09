@@ -42,8 +42,7 @@ export function CopyFieldVariant1Dark({
               <input
                 id="copy-field-api-key-dark"
                 type="text"
-                readonly
-                value="sk_live_51Hh2xK9pQrT7wYzB3fLm"
+                readOnly                value="sk_live_51Hh2xK9pQrT7wYzB3fLm"
                 className="block w-full truncate rounded-l-md border-0 bg-transparent px-3 py-2 font-mono text-sm text-gray-200 focus:outline-none focus:ring-0"
               />
               <button

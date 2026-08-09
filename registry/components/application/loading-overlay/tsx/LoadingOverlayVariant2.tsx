@@ -1,4 +1,8 @@
-export function LoadingOverlayVariant2() {
+import type { HTMLAttributes } from 'react'
+
+export type LoadingOverlayVariant2Props = HTMLAttributes<HTMLElement>
+
+export function LoadingOverlayVariant2(props: LoadingOverlayVariant2Props) {
   return (
     <div className="relative h-80 overflow-hidden">
       <div className="grid grid-cols-3 gap-4 p-6">

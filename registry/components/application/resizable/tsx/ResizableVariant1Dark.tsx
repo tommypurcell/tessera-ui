@@ -66,7 +66,7 @@ export function ResizableVariant1Dark({
       
             <div className="flex-1 overflow-auto p-4">
               <h3 className="text-xs font-semibold uppercase tracking-wide text-gray-500">index.ts</h3>
-              <pre className="mt-2 whitespace-pre-wrap font-mono text-sm leading-relaxed text-gray-300">export function createStore(initialState) {
+              <pre className="mt-2 whitespace-pre-wrap font-mono text-sm leading-relaxed text-gray-300">{`export function createStore(initialState) {
         let state = initialState
         const listeners = new Set()
       
@@ -77,7 +77,7 @@ export function ResizableVariant1Dark({
             return () => listeners.delete(fn)
           },
         }
-      }</pre>
+      }`}</pre>
             </div>
           </div>
     </>

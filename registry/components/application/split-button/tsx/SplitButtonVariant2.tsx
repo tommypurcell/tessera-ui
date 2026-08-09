@@ -1,4 +1,8 @@
-export function SplitButtonVariant2() {
+import type { HTMLAttributes } from 'react'
+
+export type SplitButtonVariant2Props = HTMLAttributes<HTMLElement>
+
+export function SplitButtonVariant2(props: SplitButtonVariant2Props) {
   return (
     <div className="relative inline-flex">
       <span className="inline-flex divide-x divide-gray-300 overflow-hidden rounded-md border border-gray-300 bg-white shadow-sm">

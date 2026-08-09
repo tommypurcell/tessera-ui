@@ -1,10 +1,14 @@
+import type { HTMLAttributes } from 'react'
+
 const signers = [
   { name: 'Ava Wilson', meta: 'Client · Signed Jun 12, 2026', status: 'signed' as const },
   { name: 'Marcus Chen', meta: 'Vendor · Signed Jun 13, 2026', status: 'signed' as const },
   { name: 'Sofia Ramirez', meta: 'Witness · Awaiting signature', status: 'pending' as const },
 ]
 
-export function DocumentSignatureBlockVariant1Dark() {
+export type DocumentSignatureBlockVariant1DarkProps = HTMLAttributes<HTMLElement>
+
+export function DocumentSignatureBlockVariant1Dark(props: DocumentSignatureBlockVariant1DarkProps) {
   return (
     <div className="rounded-lg border border-gray-800">
       <div className="border-b border-gray-800 px-4 py-3">

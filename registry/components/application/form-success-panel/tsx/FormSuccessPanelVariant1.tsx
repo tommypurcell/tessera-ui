@@ -1,4 +1,8 @@
-export function FormSuccessPanelVariant1() {
+import type { HTMLAttributes } from 'react'
+
+export type FormSuccessPanelVariant1Props = HTMLAttributes<HTMLElement>
+
+export function FormSuccessPanelVariant1(props: FormSuccessPanelVariant1Props) {
   return (
     <div className="flex min-h-96 flex-col items-center justify-center p-6 text-center">
       <div className="flex size-14 items-center justify-center rounded-full bg-green-50">

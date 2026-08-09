@@ -44,20 +44,20 @@ export function DiffVariant1({
       
             <div className="grid grid-cols-2 divide-x divide-gray-200 font-mono text-sm">
               <div>
-                <p className="px-4 py-1.5 text-gray-500">function greet(name) {</p>
+                <p className="px-4 py-1.5 text-gray-500">function greet(name) {'{'}</p>
                 <p className="bg-red-50 px-4 py-1.5 text-red-700">&nbsp;&nbsp;return 'Hi ' + name;</p>
-                <p className="px-4 py-1.5 text-gray-500">}</p>
+                <p className="px-4 py-1.5 text-gray-500">{'}'}</p>
               </div>
               <div>
-                <p className="px-4 py-1.5 text-gray-500">function greet(name) {</p>
-                <p className="bg-green-50 px-4 py-1.5 text-green-700">&nbsp;&nbsp;return `Hello, ${name}!`;</p>
-                <p className="px-4 py-1.5 text-gray-500">}</p>
+                <p className="px-4 py-1.5 text-gray-500">function greet(name) {'{'}</p>
+                <p className="bg-green-50 px-4 py-1.5 text-green-700">&nbsp;&nbsp;return `Hello, !`;</p>
+                <p className="px-4 py-1.5 text-gray-500">{'}'}</p>
               </div>
             </div>
           </div>
       
           <p className="sr-only">
-            Line 2 changed from "return 'Hi ' + name;" to "return `Hello, ${name}!`;"
+            Line 2 changed from "return 'Hi ' + name;" to "return `Hello, !`;"
           </p>
     </>
   )

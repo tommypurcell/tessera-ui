@@ -1,4 +1,8 @@
-export function TagInputVariant1Dark() {
+import type { HTMLAttributes } from 'react'
+
+export type TagInputVariant1DarkProps = HTMLAttributes<HTMLElement>
+
+export function TagInputVariant1Dark(props: TagInputVariant1DarkProps) {
   return (
     <div>
       <label htmlFor="tagInput" className="mb-1.5 block text-sm font-medium text-gray-300">

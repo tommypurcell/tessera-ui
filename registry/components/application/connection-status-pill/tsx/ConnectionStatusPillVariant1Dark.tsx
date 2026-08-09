@@ -1,4 +1,8 @@
-export function ConnectionStatusPillVariant1Dark() {
+import type { HTMLAttributes } from 'react'
+
+export type ConnectionStatusPillVariant1DarkProps = HTMLAttributes<HTMLElement>
+
+export function ConnectionStatusPillVariant1Dark(props: ConnectionStatusPillVariant1DarkProps) {
   return (
     <div className="flex flex-col gap-3">
       <span

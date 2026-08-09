@@ -1,4 +1,8 @@
-export function ConnectionStatusPillVariant2Dark() {
+import type { HTMLAttributes } from 'react'
+
+export type ConnectionStatusPillVariant2DarkProps = HTMLAttributes<HTMLElement>
+
+export function ConnectionStatusPillVariant2Dark(props: ConnectionStatusPillVariant2DarkProps) {
   return (
     <div className="flex w-full items-center justify-between rounded-lg border border-gray-800 bg-gray-900 px-4 py-3 shadow-sm">
       <p className="text-sm font-medium text-white">Realtime sync</p>

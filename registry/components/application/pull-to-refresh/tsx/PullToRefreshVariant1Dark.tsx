@@ -1,4 +1,8 @@
-export function PullToRefreshVariant1Dark() {
+import type { HTMLAttributes } from 'react'
+
+export type PullToRefreshVariant1DarkProps = HTMLAttributes<HTMLElement>
+
+export function PullToRefreshVariant1Dark(props: PullToRefreshVariant1DarkProps) {
   return (
     <div className="overflow-hidden rounded-lg border border-gray-800">
       <div className="flex flex-col items-center justify-center gap-1 bg-gray-900 py-4" role="status" aria-label="Pull to refresh">

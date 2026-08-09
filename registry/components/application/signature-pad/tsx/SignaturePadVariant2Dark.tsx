@@ -56,7 +56,7 @@ export function SignaturePadVariant2Dark({
                 className="block w-full rounded-md border-gray-700 bg-gray-800 text-sm text-gray-200 shadow-sm focus:border-white focus:ring-white"
               />
               <div className="mt-3 flex h-20 items-center justify-center rounded-md border border-dashed border-gray-700 bg-gray-800/60">
-                <p className="text-3xl text-white" style={{fontFamily: ''Brush Script MT', cursive'}}>Jordan Ellis</p>
+                <p className="text-3xl text-white" style={{ fontFamily: "'Brush Script MT', cursive" }}>Jordan Ellis</p>
               </div>
             </div>
       

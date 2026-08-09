@@ -1,3 +1,5 @@
+import type { HTMLAttributes } from 'react'
+
 const rows = [
   { cohort: 'May', values: ['100%', '71%', '54%'] },
   { cohort: 'Jun', values: ['100%', '74%', null] },
@@ -7,7 +9,9 @@ const rows = [
 const cellShades = ['bg-emerald-500', 'bg-emerald-700', 'bg-emerald-900']
 const cellTextShades = ['text-white', 'text-white', 'text-emerald-200']
 
-export function CohortRetentionGridVariant2Dark() {
+export type CohortRetentionGridVariant2DarkProps = HTMLAttributes<HTMLElement>
+
+export function CohortRetentionGridVariant2Dark(props: CohortRetentionGridVariant2DarkProps) {
   return (
     <div className="rounded-lg border border-gray-800 p-4">
       <h3 className="text-sm font-semibold text-white">Monthly retention</h3>

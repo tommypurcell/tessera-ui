@@ -1,4 +1,8 @@
-export function MobileListSectionVariant2() {
+import type { HTMLAttributes } from 'react'
+
+export type MobileListSectionVariant2Props = HTMLAttributes<HTMLElement>
+
+export function MobileListSectionVariant2(props: MobileListSectionVariant2Props) {
   return (
     <div className="flex flex-col gap-6">
       <div>

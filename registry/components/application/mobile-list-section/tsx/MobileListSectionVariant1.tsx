@@ -1,4 +1,8 @@
-export function MobileListSectionVariant1() {
+import type { HTMLAttributes } from 'react'
+
+export type MobileListSectionVariant1Props = HTMLAttributes<HTMLElement>
+
+export function MobileListSectionVariant1(props: MobileListSectionVariant1Props) {
   return (
     <div>
       <h2 className="px-4 text-xs font-semibold tracking-wide text-gray-500 uppercase">Account</h2>

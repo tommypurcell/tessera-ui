@@ -1,4 +1,8 @@
-export function AspectRatioVariant1() {
+import type { HTMLAttributes } from 'react'
+
+export type AspectRatioVariant1Props = HTMLAttributes<HTMLElement>
+
+export function AspectRatioVariant1(props: AspectRatioVariant1Props) {
   return (
     <div className="aspect-video w-full overflow-hidden rounded-lg bg-gray-100">
       <img

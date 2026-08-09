@@ -1,4 +1,8 @@
-export function ErrorPageVariant1Dark() {
+import type { HTMLAttributes } from 'react'
+
+export type ErrorPageVariant1DarkProps = HTMLAttributes<HTMLElement>
+
+export function ErrorPageVariant1Dark(props: ErrorPageVariant1DarkProps) {
   return (
     <div className="flex min-h-96 flex-col items-center justify-center p-6 text-center">
       <p className="text-sm font-semibold text-indigo-400">404</p>

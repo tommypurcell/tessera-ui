@@ -1,10 +1,14 @@
+import type { HTMLAttributes } from 'react'
+
 const rows = [
   { name: 'USB-C Cable 2m', sku: 'CBL-USC-2M', width: '82%', bar: 'bg-green-500', count: '164 units', countColor: 'text-gray-700' },
   { name: 'Wireless Mouse', sku: 'WM-2201-BLK', width: '18%', bar: 'bg-amber-500', count: '36 units', countColor: 'text-amber-700' },
   { name: 'Laptop Stand', sku: 'LPS-ALU-01', width: '2%', bar: 'bg-red-500', count: '0 units', countColor: 'text-red-700' },
 ]
 
-export function InventoryLevelRowVariant2() {
+export type InventoryLevelRowVariant2Props = HTMLAttributes<HTMLElement>
+
+export function InventoryLevelRowVariant2(props: InventoryLevelRowVariant2Props) {
   return (
     <ul className="flex flex-col divide-y divide-gray-200 rounded-lg border border-gray-200">
       {rows.map((row) => (

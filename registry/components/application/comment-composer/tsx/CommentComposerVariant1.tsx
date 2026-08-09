@@ -1,4 +1,8 @@
-export function CommentComposerVariant1() {
+import type { HTMLAttributes } from 'react'
+
+export type CommentComposerVariant1Props = HTMLAttributes<HTMLElement>
+
+export function CommentComposerVariant1(props: CommentComposerVariant1Props) {
   return (
     <div className="flex gap-3">
       <img

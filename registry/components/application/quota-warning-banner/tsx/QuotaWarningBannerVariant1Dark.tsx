@@ -1,4 +1,8 @@
-export function QuotaWarningBannerVariant1Dark() {
+import type { HTMLAttributes } from 'react'
+
+export type QuotaWarningBannerVariant1DarkProps = HTMLAttributes<HTMLElement>
+
+export function QuotaWarningBannerVariant1Dark(props: QuotaWarningBannerVariant1DarkProps) {
   return (
     <div className="flex gap-3 rounded-lg border border-amber-200 bg-amber-50 p-4 dark:border-amber-900/60 dark:bg-amber-950/50" role="alert">
       <svg

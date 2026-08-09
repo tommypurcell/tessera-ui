@@ -1,4 +1,8 @@
-export function InventoryLevelRowVariant1() {
+import type { HTMLAttributes } from 'react'
+
+export type InventoryLevelRowVariant1Props = HTMLAttributes<HTMLElement>
+
+export function InventoryLevelRowVariant1(props: InventoryLevelRowVariant1Props) {
   return (
     <div className="rounded-lg border border-amber-200 bg-amber-50/50 p-4">
       <div className="flex items-center justify-between gap-3">

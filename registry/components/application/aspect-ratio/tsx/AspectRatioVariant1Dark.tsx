@@ -1,4 +1,8 @@
-export function AspectRatioVariant1Dark() {
+import type { HTMLAttributes } from 'react'
+
+export type AspectRatioVariant1DarkProps = HTMLAttributes<HTMLElement>
+
+export function AspectRatioVariant1Dark(props: AspectRatioVariant1DarkProps) {
   return (
     <div className="aspect-video w-full overflow-hidden rounded-lg bg-gray-800">
       <img

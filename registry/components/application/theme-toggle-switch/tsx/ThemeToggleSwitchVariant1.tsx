@@ -1,3 +1,4 @@
+import type { JSX } from 'react'
 export type ThemeOption = 'light' | 'dark' | 'system'
 
 export type ThemeToggleSwitchVariant1Props = {
