@@ -73,25 +73,25 @@ export function CodeLanguageTabsVariant1Dark({
             </div>
       
             <div className="hidden p-4 font-mono text-sm text-gray-300 peer-checked/curl:block">
-              <pre className="whitespace-pre-wrap">curl -X POST https://api.tessera.dev/v1/components \
-        -H "Authorization: Bearer $TOKEN" \
-        -d '{"slug": "rating"}'</pre>
+              <pre className="whitespace-pre-wrap">{`curl -X POST https://api.tessera.dev/v1/components \\
+        -H "Authorization: Bearer $TOKEN" \\
+        -d '{"slug": "rating"}'`}</pre>
             </div>
             <div className="hidden p-4 font-mono text-sm text-gray-300 peer-checked/js:block">
-              <pre className="whitespace-pre-wrap">const res = await fetch('https://api.tessera.dev/v1/components', {
+              <pre className="whitespace-pre-wrap">{`const res = await fetch('https://api.tessera.dev/v1/components', {
         method: 'POST',
-        headers: { Authorization: `Bearer ${'$'}{TOKEN}` },
+        headers: { Authorization: \`Bearer \${TOKEN}\` },
         body: JSON.stringify({ slug: 'rating' }),
-      })</pre>
+      })`}</pre>
             </div>
             <div className="hidden p-4 font-mono text-sm text-gray-300 peer-checked/py:block">
-              <pre className="whitespace-pre-wrap">import requests
-      
+              <pre className="whitespace-pre-wrap">{`import requests
+
       requests.post(
           "https://api.tessera.dev/v1/components",
           headers={"Authorization": f"Bearer {TOKEN}"},
           json={"slug": "rating"},
-      )</pre>
+      )`}</pre>
             </div>
           </div>
     </>

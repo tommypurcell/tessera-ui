@@ -63,7 +63,7 @@ export function PopoverVariant3Dark({
                   <input
                     id="popover-share-link-dark"
                     type="text"
-                    readonly
+                    readOnly
                     value="https://tessera.dev/s/9fk2p"
                     className="block w-full rounded-md border-gray-700 bg-gray-800 text-sm text-gray-200 shadow-sm focus:border-white focus:ring-white"
                   />

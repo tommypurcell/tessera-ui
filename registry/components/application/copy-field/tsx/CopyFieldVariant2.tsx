@@ -42,8 +42,7 @@ export function CopyFieldVariant2({
               <input
                 id="copy-field-invite-link"
                 type="text"
-                readonly
-                value="https://tessera.dev/invite/8k2nfq"
+                readOnly                value="https://tessera.dev/invite/8k2nfq"
                 className="block w-full truncate rounded-l-md border-0 bg-transparent px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-0"
               />
               <button

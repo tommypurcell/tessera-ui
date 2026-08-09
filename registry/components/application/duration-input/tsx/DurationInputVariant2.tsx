@@ -51,7 +51,7 @@ export function DurationInputVariant2({
               <input
                 id="duration-input-custom-h"
                 type="text"
-                inputmode="numeric"
+                inputMode="numeric"
                 placeholder="0"
                 disabled
                 className="w-10 rounded-md border-gray-300 bg-gray-50 py-1 text-center text-sm text-gray-400 shadow-sm"
@@ -61,7 +61,7 @@ export function DurationInputVariant2({
               <input
                 id="duration-input-custom-m"
                 type="text"
-                inputmode="numeric"
+                inputMode="numeric"
                 placeholder="00"
                 disabled
                 className="w-10 rounded-md border-gray-300 bg-gray-50 py-1 text-center text-sm text-gray-400 shadow-sm"

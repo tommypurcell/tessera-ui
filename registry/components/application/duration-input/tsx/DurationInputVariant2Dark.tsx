@@ -51,7 +51,7 @@ export function DurationInputVariant2Dark({
               <input
                 id="duration-input-custom-h-dark"
                 type="text"
-                inputmode="numeric"
+                inputMode="numeric"
                 placeholder="0"
                 disabled
                 className="w-10 rounded-md border-gray-700 bg-gray-800 py-1 text-center text-sm text-gray-500 shadow-sm"
@@ -61,7 +61,7 @@ export function DurationInputVariant2Dark({
               <input
                 id="duration-input-custom-m-dark"
                 type="text"
-                inputmode="numeric"
+                inputMode="numeric"
                 placeholder="00"
                 disabled
                 className="w-10 rounded-md border-gray-700 bg-gray-800 py-1 text-center text-sm text-gray-500 shadow-sm"
