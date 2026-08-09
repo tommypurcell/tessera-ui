@@ -1,4 +1,8 @@
-export function CommentComposerVariant2() {
+import type { HTMLAttributes } from 'react'
+
+export type CommentComposerVariant2Props = HTMLAttributes<HTMLElement>
+
+export function CommentComposerVariant2(props: CommentComposerVariant2Props) {
   return (
     <div className="flex items-center gap-2 rounded-full border border-gray-300 bg-white py-1.5 pr-1.5 pl-4 focus-within:border-indigo-600 focus-within:ring-1 focus-within:ring-indigo-600">
       <label htmlFor="replyBody" className="sr-only">

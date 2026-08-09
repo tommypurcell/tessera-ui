@@ -1,4 +1,8 @@
-export function CommentComposerVariant2Dark() {
+import type { HTMLAttributes } from 'react'
+
+export type CommentComposerVariant2DarkProps = HTMLAttributes<HTMLElement>
+
+export function CommentComposerVariant2Dark(props: CommentComposerVariant2DarkProps) {
   return (
     <div className="flex items-center gap-2 rounded-full border border-gray-700 bg-gray-900 py-1.5 pr-1.5 pl-4 focus-within:border-indigo-400 focus-within:ring-1 focus-within:ring-indigo-400">
       <label htmlFor="replyBody" className="sr-only">

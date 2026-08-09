@@ -1,4 +1,8 @@
-export function PullToRefreshVariant2() {
+import type { HTMLAttributes } from 'react'
+
+export type PullToRefreshVariant2Props = HTMLAttributes<HTMLElement>
+
+export function PullToRefreshVariant2(props: PullToRefreshVariant2Props) {
   return (
     <div className="overflow-hidden rounded-lg border border-gray-200">
       <div className="flex flex-col items-center justify-center gap-1 bg-gray-50 py-4" role="status" aria-live="polite">

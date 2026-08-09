@@ -1,4 +1,8 @@
-export function AlertDialogVariant1Dark() {
+import type { HTMLAttributes } from 'react'
+
+export type AlertDialogVariant1DarkProps = HTMLAttributes<HTMLElement>
+
+export function AlertDialogVariant1Dark(props: AlertDialogVariant1DarkProps) {
   return (
     <>
       <button

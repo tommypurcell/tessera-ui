@@ -1,4 +1,8 @@
-export function AspectRatioVariant3() {
+import type { HTMLAttributes } from 'react'
+
+export type AspectRatioVariant3Props = HTMLAttributes<HTMLElement>
+
+export function AspectRatioVariant3(props: AspectRatioVariant3Props) {
   return (
     <div className="relative w-full overflow-hidden rounded-lg bg-gray-900" style={{ aspectRatio: '21 / 9' }}>
       <div className="absolute inset-0 flex items-center justify-center">

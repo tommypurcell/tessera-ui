@@ -1,4 +1,8 @@
-export function FileDropPreviewListVariant1() {
+import type { HTMLAttributes } from 'react'
+
+export type FileDropPreviewListVariant1Props = HTMLAttributes<HTMLElement>
+
+export function FileDropPreviewListVariant1(props: FileDropPreviewListVariant1Props) {
   return (
     <div>
       <div className="rounded-lg border-2 border-dashed border-gray-300 px-6 py-8 text-center">

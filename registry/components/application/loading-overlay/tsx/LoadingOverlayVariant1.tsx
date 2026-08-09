@@ -1,4 +1,8 @@
-export function LoadingOverlayVariant1() {
+import type { HTMLAttributes } from 'react'
+
+export type LoadingOverlayVariant1Props = HTMLAttributes<HTMLElement>
+
+export function LoadingOverlayVariant1(props: LoadingOverlayVariant1Props) {
   return (
     <div className="relative overflow-hidden rounded-lg border border-gray-200">
       <div className="flex flex-col gap-3 p-6">

@@ -1,4 +1,8 @@
-export function AlertDialogVariant1() {
+import type { HTMLAttributes } from 'react'
+
+export type AlertDialogVariant1Props = HTMLAttributes<HTMLElement>
+
+export function AlertDialogVariant1(props: AlertDialogVariant1Props) {
   return (
     <>
       <button data-modal-open className="rounded border border-gray-300 bg-gray-100 px-3 py-1.5 text-sm text-gray-900">

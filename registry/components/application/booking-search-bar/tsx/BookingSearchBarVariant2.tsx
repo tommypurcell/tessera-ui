@@ -1,4 +1,8 @@
-export function BookingSearchBarVariant2() {
+import type { HTMLAttributes } from 'react'
+
+export type BookingSearchBarVariant2Props = HTMLAttributes<HTMLElement>
+
+export function BookingSearchBarVariant2(props: BookingSearchBarVariant2Props) {
   return (
     <div>
       <div className="flex flex-col divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">

@@ -1,3 +1,4 @@
+import type { HTMLAttributes } from 'react'
 import { Fragment } from 'react'
 
 const sets = [
@@ -6,7 +7,9 @@ const sets = [
   { set: 3, reps: '8', weight: '140 lb', done: false },
 ]
 
-export function WorkoutSetRowVariant1Dark() {
+export type WorkoutSetRowVariant1DarkProps = HTMLAttributes<HTMLElement>
+
+export function WorkoutSetRowVariant1Dark(props: WorkoutSetRowVariant1DarkProps) {
   return (
     <div className="rounded-lg border border-gray-800 p-4">
       <h3 className="text-sm font-semibold text-white">Barbell Bench Press</h3>

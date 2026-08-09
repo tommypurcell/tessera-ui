@@ -1,4 +1,8 @@
-export function StoryRingRowVariant2Dark() {
+import type { HTMLAttributes } from 'react'
+
+export type StoryRingRowVariant2DarkProps = HTMLAttributes<HTMLElement>
+
+export function StoryRingRowVariant2Dark(props: StoryRingRowVariant2DarkProps) {
   return (
     <ul className="flex gap-3" aria-label="Stories">
       <li>

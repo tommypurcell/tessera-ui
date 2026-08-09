@@ -1,4 +1,8 @@
-export function FormSuccessPanelVariant2Dark() {
+import type { HTMLAttributes } from 'react'
+
+export type FormSuccessPanelVariant2DarkProps = HTMLAttributes<HTMLElement>
+
+export function FormSuccessPanelVariant2Dark(props: FormSuccessPanelVariant2DarkProps) {
   return (
     <div className="rounded-lg border border-green-900/60 bg-green-950/20 p-5">
       <div className="flex items-center gap-3">

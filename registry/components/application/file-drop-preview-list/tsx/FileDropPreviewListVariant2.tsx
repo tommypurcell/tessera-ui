@@ -1,4 +1,8 @@
-export function FileDropPreviewListVariant2() {
+import type { HTMLAttributes } from 'react'
+
+export type FileDropPreviewListVariant2Props = HTMLAttributes<HTMLElement>
+
+export function FileDropPreviewListVariant2(props: FileDropPreviewListVariant2Props) {
   return (
     <ul className="flex flex-col divide-y divide-gray-200 rounded-lg border border-gray-200" aria-label="Uploaded files">
       <li className="flex items-center gap-3 p-3">

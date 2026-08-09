@@ -1,4 +1,8 @@
-export function SkeletonCardListVariant1() {
+import type { HTMLAttributes } from 'react'
+
+export type SkeletonCardListVariant1Props = HTMLAttributes<HTMLElement>
+
+export function SkeletonCardListVariant1(props: SkeletonCardListVariant1Props) {
   return (
     <div className="grid grid-cols-3 gap-4" role="status" aria-label="Loading cards">
       {Array.from({ length: 3 }).map((_, index) => (

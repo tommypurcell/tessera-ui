@@ -1,4 +1,8 @@
-export function TagInputVariant2() {
+import type { HTMLAttributes } from 'react'
+
+export type TagInputVariant2Props = HTMLAttributes<HTMLElement>
+
+export function TagInputVariant2(props: TagInputVariant2Props) {
   return (
     <div>
       <label htmlFor="tagInput2" className="mb-1.5 block text-sm font-medium text-gray-700">

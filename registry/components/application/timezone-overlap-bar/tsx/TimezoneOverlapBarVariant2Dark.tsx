@@ -1,4 +1,8 @@
-export function TimezoneOverlapBarVariant2Dark() {
+import type { HTMLAttributes } from 'react'
+
+export type TimezoneOverlapBarVariant2DarkProps = HTMLAttributes<HTMLElement>
+
+export function TimezoneOverlapBarVariant2Dark(props: TimezoneOverlapBarVariant2DarkProps) {
   return (
     <div className="rounded-lg border border-gray-800 p-4">
       <h3 className="text-sm font-semibold text-white">Team availability</h3>

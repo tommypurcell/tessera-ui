@@ -1,3 +1,4 @@
+import type { JSX } from 'react'
 export type CallDirection = 'incoming' | 'outgoing' | 'missed'
 
 export type CallLogEntry = {

@@ -1,4 +1,8 @@
-export function SkeletonCardListVariant1Dark() {
+import type { HTMLAttributes } from 'react'
+
+export type SkeletonCardListVariant1DarkProps = HTMLAttributes<HTMLElement>
+
+export function SkeletonCardListVariant1Dark(props: SkeletonCardListVariant1DarkProps) {
   return (
     <div className="grid grid-cols-3 gap-4" role="status" aria-label="Loading cards">
       {Array.from({ length: 3 }).map((_, index) => (

@@ -1,4 +1,8 @@
-export function DocumentSignatureBlockVariant2Dark() {
+import type { HTMLAttributes } from 'react'
+
+export type DocumentSignatureBlockVariant2DarkProps = HTMLAttributes<HTMLElement>
+
+export function DocumentSignatureBlockVariant2Dark(props: DocumentSignatureBlockVariant2DarkProps) {
   return (
     <div className="rounded-lg border border-gray-800 p-4">
       <div className="flex items-center justify-between">

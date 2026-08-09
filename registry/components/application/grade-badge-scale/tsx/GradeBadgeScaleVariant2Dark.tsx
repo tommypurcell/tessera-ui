@@ -1,3 +1,5 @@
+import type { HTMLAttributes } from 'react'
+
 const rows = [
   { title: 'Midterm Essay', letter: 'A', percent: '96%', bg: 'bg-green-900/40', text: 'text-green-300', sub: 'text-green-400' },
   { title: 'Lab Report 3', letter: 'B', percent: '85%', bg: 'bg-lime-900/40', text: 'text-lime-300', sub: 'text-lime-400' },
@@ -5,7 +7,9 @@ const rows = [
   { title: 'Final Project', letter: 'F', percent: '52%', bg: 'bg-red-900/40', text: 'text-red-300', sub: 'text-red-400' },
 ]
 
-export function GradeBadgeScaleVariant2Dark() {
+export type GradeBadgeScaleVariant2DarkProps = HTMLAttributes<HTMLElement>
+
+export function GradeBadgeScaleVariant2Dark(props: GradeBadgeScaleVariant2DarkProps) {
   return (
     <ul className="flex flex-col divide-y divide-gray-800 rounded-lg border border-gray-800">
       {rows.map((row) => (

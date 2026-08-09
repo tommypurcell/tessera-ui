@@ -1,4 +1,8 @@
-export function CtaBannerCardVariant1Dark() {
+import type { HTMLAttributes } from 'react'
+
+export type CtaBannerCardVariant1DarkProps = HTMLAttributes<HTMLElement>
+
+export function CtaBannerCardVariant1Dark(props: CtaBannerCardVariant1DarkProps) {
   return (
     <div className="rounded-2xl bg-gradient-to-br from-indigo-700 to-purple-800 p-8 text-center">
       <h2 className="text-2xl font-bold text-white">Upgrade to Pro</h2>

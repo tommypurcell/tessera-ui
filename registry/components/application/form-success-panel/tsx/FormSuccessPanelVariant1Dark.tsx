@@ -1,4 +1,8 @@
-export function FormSuccessPanelVariant1Dark() {
+import type { HTMLAttributes } from 'react'
+
+export type FormSuccessPanelVariant1DarkProps = HTMLAttributes<HTMLElement>
+
+export function FormSuccessPanelVariant1Dark(props: FormSuccessPanelVariant1DarkProps) {
   return (
     <div className="flex min-h-96 flex-col items-center justify-center p-6 text-center">
       <div className="flex size-14 items-center justify-center rounded-full bg-green-950/50">

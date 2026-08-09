@@ -1,4 +1,8 @@
-export function MobileListSectionVariant2Dark() {
+import type { HTMLAttributes } from 'react'
+
+export type MobileListSectionVariant2DarkProps = HTMLAttributes<HTMLElement>
+
+export function MobileListSectionVariant2Dark(props: MobileListSectionVariant2DarkProps) {
   return (
     <div className="flex flex-col gap-6">
       <div>

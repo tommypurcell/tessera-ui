@@ -1,4 +1,8 @@
-export function StoryRingRowVariant2() {
+import type { HTMLAttributes } from 'react'
+
+export type StoryRingRowVariant2Props = HTMLAttributes<HTMLElement>
+
+export function StoryRingRowVariant2(props: StoryRingRowVariant2Props) {
   return (
     <ul className="flex gap-3" aria-label="Stories">
       <li>

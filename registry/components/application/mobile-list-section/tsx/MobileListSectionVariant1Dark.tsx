@@ -1,4 +1,8 @@
-export function MobileListSectionVariant1Dark() {
+import type { HTMLAttributes } from 'react'
+
+export type MobileListSectionVariant1DarkProps = HTMLAttributes<HTMLElement>
+
+export function MobileListSectionVariant1Dark(props: MobileListSectionVariant1DarkProps) {
   return (
     <div>
       <h2 className="px-4 text-xs font-semibold tracking-wide text-gray-500 uppercase">Account</h2>

@@ -1,4 +1,8 @@
-export function MortgageCalculatorVariant2Dark() {
+import type { HTMLAttributes } from 'react'
+
+export type MortgageCalculatorVariant2DarkProps = HTMLAttributes<HTMLElement>
+
+export function MortgageCalculatorVariant2Dark(props: MortgageCalculatorVariant2DarkProps) {
   return (
     <div className="rounded-lg border border-gray-800 p-5">
       <p className="text-xs font-medium text-gray-400">Estimated monthly payment</p>

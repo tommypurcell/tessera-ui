@@ -1,4 +1,8 @@
-export function BookingSearchBarVariant1() {
+import type { HTMLAttributes } from 'react'
+
+export type BookingSearchBarVariant1Props = HTMLAttributes<HTMLElement>
+
+export function BookingSearchBarVariant1(props: BookingSearchBarVariant1Props) {
   return (
     <div className="flex items-stretch divide-x divide-gray-200 rounded-full border border-gray-200 shadow-sm">
       <label className="flex flex-1 flex-col gap-0.5 px-5 py-2.5">

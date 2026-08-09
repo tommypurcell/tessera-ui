@@ -1,3 +1,5 @@
+import type { HTMLAttributes } from 'react'
+
 const rows = [
   { cohort: 'Jun 30', values: ['100%', '58%', '44%', '37%', '33%'] },
   { cohort: 'Jul 7', values: ['100%', '61%', '46%', '39%', null] },
@@ -8,7 +10,9 @@ const rows = [
 const cellShades = ['bg-indigo-500', 'bg-indigo-600', 'bg-indigo-700', 'bg-indigo-800', 'bg-indigo-900']
 const cellTextShades = ['text-white', 'text-white', 'text-white', 'text-white', 'text-indigo-200']
 
-export function CohortRetentionGridVariant1Dark() {
+export type CohortRetentionGridVariant1DarkProps = HTMLAttributes<HTMLElement>
+
+export function CohortRetentionGridVariant1Dark(props: CohortRetentionGridVariant1DarkProps) {
   return (
     <div>
       <div className="overflow-x-auto rounded-lg border border-gray-800 p-4">

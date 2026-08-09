@@ -1,10 +1,14 @@
+import type { HTMLAttributes } from 'react'
+
 const rows = [
   { titleWidth: 'w-1/2', metaWidth: 'w-1/3' },
   { titleWidth: 'w-2/3', metaWidth: 'w-1/4' },
   { titleWidth: 'w-2/5', metaWidth: 'w-1/3' },
 ]
 
-export function SkeletonCardListVariant2() {
+export type SkeletonCardListVariant2Props = HTMLAttributes<HTMLElement>
+
+export function SkeletonCardListVariant2(props: SkeletonCardListVariant2Props) {
   return (
     <div className="flex flex-col divide-y divide-gray-200 rounded-lg border border-gray-200" role="status" aria-label="Loading list">
       {rows.map((row, index) => (

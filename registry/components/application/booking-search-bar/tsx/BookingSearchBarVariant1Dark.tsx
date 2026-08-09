@@ -1,4 +1,8 @@
-export function BookingSearchBarVariant1Dark() {
+import type { HTMLAttributes } from 'react'
+
+export type BookingSearchBarVariant1DarkProps = HTMLAttributes<HTMLElement>
+
+export function BookingSearchBarVariant1Dark(props: BookingSearchBarVariant1DarkProps) {
   return (
     <div className="flex items-stretch divide-x divide-gray-800 rounded-full border border-gray-800 bg-gray-900 shadow-sm">
       <label className="flex flex-1 flex-col gap-0.5 px-5 py-2.5">

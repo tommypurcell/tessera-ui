@@ -1,4 +1,8 @@
-export function ErrorPageVariant2() {
+import type { HTMLAttributes } from 'react'
+
+export type ErrorPageVariant2Props = HTMLAttributes<HTMLElement>
+
+export function ErrorPageVariant2(props: ErrorPageVariant2Props) {
   return (
     <div className="flex min-h-96 flex-col items-center justify-center p-6 text-center">
       <div className="flex size-14 items-center justify-center rounded-full bg-red-50">

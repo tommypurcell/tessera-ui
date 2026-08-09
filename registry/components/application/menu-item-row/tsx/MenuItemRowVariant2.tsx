@@ -1,10 +1,14 @@
+import type { HTMLAttributes } from 'react'
+
 const items = [
   { name: 'Margherita Pizza', desc: 'Tomato, mozzarella, basil', price: '$16' },
   { name: 'Caesar Salad', desc: 'Romaine, parmesan, croutons', price: '$12' },
   { name: 'Tiramisu', desc: 'Espresso, mascarpone, cocoa', price: '$9' },
 ]
 
-export function MenuItemRowVariant2() {
+export type MenuItemRowVariant2Props = HTMLAttributes<HTMLElement>
+
+export function MenuItemRowVariant2(props: MenuItemRowVariant2Props) {
   return (
     <ul className="flex flex-col divide-y divide-gray-200">
       {items.map((item) => (

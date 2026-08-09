@@ -1,4 +1,8 @@
-export function MenuItemRowVariant1() {
+import type { HTMLAttributes } from 'react'
+
+export type MenuItemRowVariant1Props = HTMLAttributes<HTMLElement>
+
+export function MenuItemRowVariant1(props: MenuItemRowVariant1Props) {
   return (
     <div className="flex items-start justify-between gap-4 border-b border-gray-200 py-4">
       <div className="flex-1">

@@ -1,4 +1,8 @@
-export function AspectRatioVariant2() {
+import type { HTMLAttributes } from 'react'
+
+export type AspectRatioVariant2Props = HTMLAttributes<HTMLElement>
+
+export function AspectRatioVariant2(props: AspectRatioVariant2Props) {
   return (
     <div className="aspect-square w-40 overflow-hidden rounded-xl bg-gray-100">
       <img

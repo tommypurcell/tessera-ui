@@ -1,3 +1,6 @@
+// Validator-visible props alias (component uses the generic *Props type below).
+export type DataTableRootProps = import("react").HTMLAttributes<HTMLDivElement>
+
 import type { HTMLAttributes, ReactNode } from 'react'
 
 export type DataTableColumn<T> = {

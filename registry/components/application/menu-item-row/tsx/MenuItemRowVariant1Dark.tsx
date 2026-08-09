@@ -1,4 +1,8 @@
-export function MenuItemRowVariant1Dark() {
+import type { HTMLAttributes } from 'react'
+
+export type MenuItemRowVariant1DarkProps = HTMLAttributes<HTMLElement>
+
+export function MenuItemRowVariant1Dark(props: MenuItemRowVariant1DarkProps) {
   return (
     <div className="flex items-start justify-between gap-4 border-b border-gray-800 py-4">
       <div className="flex-1">
