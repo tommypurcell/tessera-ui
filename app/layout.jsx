@@ -1,5 +1,6 @@
 import './globals.css'
 
+import { Analytics } from '@vercel/analytics/next'
 import { getSearchItems } from '../src/lib/content'
 import { SITE_DESCRIPTION, SITE_TITLE } from '../src/constants/seo'
 import { siteUrl } from '../src/lib/site'
@@ -43,6 +44,7 @@ export default function RootLayout({ children }) {
         <SiteHeader searchItems={searchItems} />
         <div className="flex flex-1 flex-col [&>*]:w-full">{children}</div>
         <SiteFooter />
+        <Analytics />
       </body>
     </html>
   )
