@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Check, Copy, Menu, MoreVertical, Search, X } from 'lucide-react'
+import { Check, Copy, Github, Menu, MoreVertical, Search, X } from 'lucide-react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import ThemeToggle from './ThemeToggle'
@@ -154,6 +154,15 @@ export default function SiteHeader({ searchItems }) {
               <MoreVertical className="size-[1.125rem]" aria-hidden="true" />
             </a>
           </div>
+          <a
+            href="https://github.com/tommypurcell/tessera-ui"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Tessera UI on GitHub"
+            className="inline-flex size-9 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-600 transition-colors hover:bg-gray-50 hover:text-gray-950"
+          >
+            <Github className="size-4" aria-hidden="true" />
+          </a>
           <ThemeToggle />
           <button type="button" onClick={() => setOpen(true)} className="inline-flex items-center gap-2 rounded-md border border-gray-200 bg-white px-3 py-2 text-sm text-gray-600 hover:bg-gray-50" aria-label="Open search">
             <Search className="size-4" /> <span>Search</span><span className="hidden items-center gap-1 sm:inline-flex"><Keycap>⌘</Keycap><Keycap>K</Keycap></span>
